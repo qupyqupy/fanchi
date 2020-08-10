@@ -1,0 +1,232 @@
+<hr>
+<p>當你在看這篇文章時，你可以發現你能自由編輯目前畫面的所有東西。再講白一點，你可以<span style="color: rgb(255, 0, 0);">隨意剪下、貼上你所看得到的所有網頁顯示元素</span>，能做到這點正是 designMode 的強大之處。
+</p>
+<pre class="pre_js">
+document.designMode = &quot;on&quot;;//on || off</pre>
+
+
+<p><button onclick="document.designMode=&quot;off&quot;">這只是個體驗開始，為了後面的例子能順利執行，請點這按鈕關掉 designMode。</button><br>
+</p>
+<hr>
+<p>contenteditable 、 designMode 能讓使用者在瀏覽器上直接編輯網頁，達到所視即所得的效果，這感覺有點像<span style="color: rgb(255, 0, 0);">把瀏覽器變身成簡易版的 FrontPage or Dreamweaver</span><span style="color: rgb(255, 0, 0);"></span>。
+</p>
+<p>那可以應用在哪些方面呢？舉個例子：像是寫 Blog 時會用到的編輯器有些就是此等應用。
+</p>
+<p>
+</p>
+<p>先來講講&nbsp;contenteditable ，它可以任意讓網頁的某元素區塊變成可編輯的狀態，用法如下。
+</p>
+<pre class="pre_html">
+&lt;div contenteditable=&quot;true&quot;&gt;&lt;/div&gt;</pre>
+
+
+<p>當然也可以使用 js 來控制，這也是實際應用時，會用到的方式。
+</p>
+<pre class="pre_html">
+&lt;div id=&quot;edit_area&quot;&gt;&lt;/div&gt;</pre>
+<pre class="pre_js">
+document.getElementById(&quot;edit_area&quot;).contentEditable = true ; // true || false </pre>
+
+
+
+<p>這時候你應該已經得到了一個可編輯的 div 區塊了，但你或許會疑惑｛<span style="color: rgb(255, 0, 0);">既然能讓使用者編輯，那我要怎麼取得編輯後的結果呢？</span>｝最簡單的方式就是利用 innerHTML，用法如下。
+</p>
+<pre class="pre_html">
+&lt;div id=&quot;edit_area&quot;&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;textarea id=&quot;source_code&quot;&gt;&lt;/textarea&gt;
+&lt;br&gt;
+&lt;button onclick=&quot;output();&quot;&gt;output&lt;/button&gt;</pre>
+
+<pre class="pre_css">
+#edit_area {
+  background: #cccccc;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+#source_code {
+  width: 100%;
+}</pre>
+
+<pre class="pre_js">
+document.getElementById(&quot;edit_area&quot;).contentEditable = true ;
+
+function output() {
+  var sourceArea = document.getElementById(&quot;source_code&quot;);
+  var editArea = document.getElementById(&quot;edit_area&quot;);
+  sourceArea.innerHTML= editArea.innerHTML;
+}</pre>
+
+
+<p>代碼裡可以看到，我有一個 id 為 edit_area 的可編輯&nbsp;div 區塊（灰色底帶陰影），一個準備用來放 source code 的 textArea，還有一個輸出用的 button，<span style="color: rgb(255, 0, 0);">此時你可以到 yahoo 或是任何一個網站，把它們的 logo 直接複製到系統剪貼簿，再回來貼上 div 區塊內並且按下 output 按鈕</span>，沒有意外的話～你可以看到 img 的元素出現在 textArea 裡面。
+</p>
+<div id="edit_area" style="background:#cccccc; box-shadow:10px 10px 5px #888888;" contenteditable="true">貼張圖進來吧!!
+</div>
+<br>
+<textarea id="source_code" style="width:100%;"></textarea>
+<p>
+	<br>
+</p>
+<button onclick="output();">output</button>
+<p><br>
+</p>
+<p>這樣就算完成一個編輯器最基本的架構了，但你或許還想要更細膩的編輯方式，例如文字樣式的設置，雖然可以在任一個可編輯的區塊內用 Ctrl + B 、Ctrl + U、Ctrl + I 等快捷鍵將框選的文字設成粗體、底線、斜體，但實在<span style="color: rgb(255, 0, 0);">不能期待大眾使用者都清楚這方法</span>。
+</p>
+<p>一般使用者還是需要一個功能按鈕來達到他們心中想要的效果，這時候就必須用到&nbsp;execCommand 這方法了，用法如下。
+</p>
+<pre class="pre_js">
+document.execCommand(&quot;fontsize&quot;, false, 60);</pre>
+
+
+<p>第一個參數是須設定的屬性，第二個參數我不太了解用處，但目前看到的都是設為 false，第三個參數就是改變屬性的值了。當執行這行時，會將框選的文字設為 60 大小。
+</p>
+<p>知道了基本原理，那就來做一個簡單的範例吧！
+</p>
+<pre class="pre_html">
+&lt;button onclick=&#39;fontStyle(&quot;b&quot;);&#39;&gt;粗體&lt;/button&gt;
+&lt;button onclick=&#39;fontStyle(&quot;i&quot;);&#39;&gt;斜體&lt;/button&gt;
+&lt;button onclick=&#39;fontStyle(&quot;u&quot;);&#39;&gt;底線&lt;/button&gt;
+&lt;br/&gt;
+&lt;div id=&quot;edit_div&quot; contenteditable=&quot;true&quot;&gt;我是一段給人編輯的文字。&lt;/div&gt;</pre>
+
+<pre class="pre_css">
+#edit_div {
+  background: #cccccc;
+  box-shadow: 10px 10px 5px #888888;
+}</pre>
+
+<pre class="pre_js">
+function fontStyle(s) {
+  if (s == &quot;b&quot;) {
+    document.execCommand(&quot;bold&quot;);
+  } 
+  else if (s == &quot;i&quot;) {
+    document.execCommand(&quot;italic&quot;);
+  }
+  else if (s == &quot;u&quot;) {
+    document.execCommand(&quot;underline&quot;);
+  }
+}</pre>
+
+
+<p>從代碼裡可以看到有三個按鈕分別是用來設定粗體、斜體、底線的文字效果，一個可編輯的 div 區塊。試試框選一段文字後按下按鈕，文字立馬就會改變它的樣式。
+</p>
+<p><button onclick="fontStyle(&quot;b&quot;);">粗體</button>
+	<button onclick="fontStyle(&quot;i&quot;);">斜體</button>
+	<button onclick="fontStyle(&quot;u&quot;);">底線</button>
+	<br>
+</p>
+<div id="edit_div" contenteditable="true" style="background:#cccccc; box-shadow: 10px 10px 5px #888888;">我是一段給人編輯的文字。
+</div><br>
+<p>
+</p>
+<p>這真的十分方便，之前在 flash 裡面做編輯器的時候，還需要用程式去算改變格式的範圍，在這方面 execCommand 的使用方式真的直覺太多太多了。
+</p>
+<p>
+</p>
+<div>
+	<hr>
+	<p>designMode&nbsp;跟&nbsp;contenteditable&nbsp;是同樣的功能，最大的不同在於<span style="color: rgb(255, 0, 0);">它只能將整個網頁變成編輯器，而不是 contenteditable 那樣指定某個區塊</span>，這聽起來有些滑稽，畢竟使用者能自由編輯整個頁面，要是刪除了重要的按鈕，那這頁面存在的意義是甚麼？
+	</p>
+	<p>
+	</p>
+</div>
+<pre class="pre_js">
+document.designMode = &quot;on&quot;;//on || off</pre>
+
+
+<p>針對這樣的特性，所以大部分有用到 designMode 的編輯器都會搭配 iframe 來設計，用 iframe 載入可以整份編輯的頁面，再利用父頁面跟 iframe 之間的溝通，就可以達到一個正常編輯器的功能。但不得不說，<span style="color: rgb(255, 0, 0);">即便有這樣的用法我還是比較喜歡 contenteditable 使用上更直覺的方式</span>。
+</p>
+<p>接下來就做個 iframe 搭配 designMode 的編輯器範例吧！
+</p>
+<pre class="pre_html">
+&lt;iframe onload=&quot;initIfame();&quot; id=&quot;edit_frame&quot; name=&quot;edit_frame&quot; src=&quot;http://qupyqupy.pixnet.net&quot;&gt;&lt;/iframe&gt;
+&lt;br/&gt;
+&lt;textarea id=&quot;iframe_source_area&quot;&gt;&lt;/textarea&gt;
+&lt;br/&gt;
+&lt;button onclick=&quot;outputIframe();&quot;&gt;output&lt;/button&gt;</pre>
+
+<pre class="pre_css">
+#edit_frame {
+  width: 100%;
+  height: 150px;
+}
+
+#iframe_source_area {
+  resize: none;
+  width: 100%;
+  height: 150px;
+}
+
+button {
+  width: 100%;
+}</pre>
+
+<pre class="pre_js">
+var editFrame ;
+var frameSourceArea = document.getElementById(&quot;iframe_source_area&quot;) ;
+
+function initIfame() {
+  editFrame = window.frames[&quot;edit_frame&quot;].document ; 
+  editFrame.designMode = &quot;on&quot; ;
+}
+
+function outputIframe() { 
+  frameSourceArea.innerHTML = editFrame.body.innerHTML ; 
+}</pre>
+
+
+<p>代碼中可以看到有一個 iframe 的可編輯區塊，一個 textarea 用來裝 iframe 的 source code。
+</p>
+<iframe onload="initIfame();" id="edit_frame" name="edit_frame" src="http://qupyqupy.pixnet.net" style="width:100%; height:150px;" class="pix-iframe">
+</iframe>
+<br>
+<textarea id="iframe_source_area" style="resize:none; width:100%; height:150px;"></textarea>
+<br>
+<button onclick="outputIframe();" style="width:100%;">output</button>
+<p><br>
+</p>
+<hr>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<script>  
+  var editFrame ;
+　var frameSourceArea = document.getElementById("iframe_source_area") ;
+  document.designMode = "on";
+  document.getElementById("edit_area").contentEditable = true ; 
+    function output() {
+        document.getElementById("source_code").innerHTML= document.getElementById("edit_area").innerHTML;
+    }
+  function fontStyle(s) {
+		if (s == "b") {
+			document.execCommand("bold");
+		}
+		else if (s == "i") {
+			document.execCommand("italic");
+		}
+		else if (s == "u") {
+			document.execCommand("underline");
+		}
+	}
+	function initIfame() { 
+		editFrame = window.frames["edit_frame"].document ; 
+		editFrame.designMode = "on" ;
+	}	
+	function outputIframe() { 
+		frameSourceArea.innerHTML = editFrame.body.innerHTML ; 
+	}
+</script>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+
+

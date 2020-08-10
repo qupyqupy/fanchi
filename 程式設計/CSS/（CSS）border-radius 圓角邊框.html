@@ -1,0 +1,434 @@
+<hr>
+<p>border-radius 屬性能夠作出圓角的效果。方法很簡單如下：
+</p>
+<pre class="pre_html">
+&lt;div id=&quot;square_div&quot;&gt;&lt;/div&gt;</pre>
+
+<pre class="pre_css">
+#square_div{
+  background-color: red;
+  width: 80px;
+  height: 50px;
+  border-radius: 25px;
+}</pre>
+
+<p>從上面的代碼可以得到一個紅色且四個圓角半徑為 25px 的圖形。
+</p>
+<hr>
+<p>border-radius 當然不是只能設定一個參數，它能接收四個圓角的半徑。
+</p>
+<p>舉個例子：border-radius: a b c d：
+</p>
+<ul>
+	<li>只輸入a，則四個角都套用a。</li>
+	<li>只輸入a、b，則左上右下套用a、 右上左下套用b。</li>
+	<li>只輸入a、b、c，則左上套用a、右上左下套用b、右下套用 c。</li>
+	<li>a、b、c、d都輸入，則左上套用a、 右上套用b、右下套用c、左下套用d。</li>
+</ul>
+<p>下面輸入框可以操作下，看一看實際效果。
+</p>
+<label for="css_test">border-radius:</label>
+<input id="css_test" style="width:300px;" value="10px 10px 10px 10px" onkeyup="changeRadius();">
+<br>
+<br>
+<div id="radius_test" style="background:green; width:200px; height:100px;">
+</div>
+<p>
+</p>
+<p>下方是上面這隻程式的代碼。
+</p>
+<pre class="pre_html">
+&lt;label for=&quot;css_test&quot;&gt;border-radius:&lt;/label&gt;
+&lt;input id=&quot;css_test&quot; value=&quot;10px 10px 10px 10px&quot; onkeyup=&quot;changeRadius();&quot;&gt;&lt;/input&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;div id=&quot;radius_test&quot;&gt;&lt;/div&gt;</pre>
+
+<pre class="pre_css">
+#css_test {
+  width: 300px;
+}
+
+#radius_test {
+  background: green;
+  width: 200px;
+  height: 100px;
+}</pre>
+
+<pre class="pre_js">
+var radiusTest = document.getElementById(&quot;radius_test&quot;);
+var cssTest = document.getElementById(&quot;css_test&quot;);
+
+function changeRadius() {
+  radiusTest.style.borderRadius = cssTest.value;
+}
+
+changeRadius();</pre>
+
+
+<hr>
+<p>
+</p>
+<p>但這樣使用實在不太直覺，因此有另外個別設定圓角的方式。<br>
+</p>
+<p>用下方四種屬性即可個別設定四個圓角半徑。
+</p>
+<ul>
+	<li>border-top-right-radius</li>
+	<li>border-top-left-radius</li>
+	<li>border-bottom-right-radius</li>
+	<li>border-bottom-left-radius</li>
+</ul>
+
+<pre class="pre_html">
+&lt;div id=&quot;square_div&quot;&gt;&lt;/div&gt;</pre>
+
+<pre class="pre_css">
+#square_div {
+  background-color: red;
+  width: 80px;
+  height: 50px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 40px;
+}</pre>
+
+
+<p>上方代碼可以得到一個不規則的紅色形狀，這是由於四個角都設定不一樣的圓角半徑所致，運用這個特性可以創造各種圓滑的形狀。
+</p>
+<p>此外這四個屬性還能設定圓角的水平、垂直半徑，這樣可以可以達到相當多的形狀變化。
+</p>
+<p>下方的程式可以操作下，分別設定水平、垂直的數值來看看出來的形狀效果。
+</p>
+<p>
+</p>
+<div style="position:relative; width:100%; height:350px;">
+	<div id="css_output" style="position:absolute; background:#CC3333; top:60px; width:300px; height:200px; text-align:center; color:#FFCC22">
+	</div>
+	<div style="position:absolute; top:10px; left:10px;">
+		<label>水平</label>
+		<input type="number" id="top_left_vertical" style="width:50px;" value="0" step="10" min="0" onkeypress="return isKeyInNum(event)" onchange="changeGraphics();">
+		<label>px</label>
+		<br>
+		<label>垂直</label>
+		<input type="number" id="top_left_horizon" style="width:50px;" value="0" step="10" min="0" onkeypress="return isKeyInNum(event)" onchange="changeGraphics();">
+		<label>px</label>
+	</div>
+	<div style="position:absolute; top:10px; left:210px;">
+		<label>水平</label>
+		<input type="number" id="top_right_vertical" style="width:50px;" value="0" step="10" min="0" onkeypress="return isKeyInNum(event)" onchange="changeGraphics();">
+		<label>px</label>
+		<br>
+		<label>垂直</label>
+		<input type="number" id="top_right_horizon" style="width:50px;" value="0" step="10" min="0" onkeypress="return isKeyInNum(event)" onchange="changeGraphics();">
+		<label>px</label>
+	</div>
+	<div style="position:absolute; top:280px; left:10px;">
+		<label>水平</label>
+		<input type="number" id="bottom_left_vertical" style="width:50px;" value="0" step="10" min="0" onkeypress="return isKeyInNum(event)" onchange="changeGraphics();">
+		<label>px</label>
+		<br>
+		<label>垂直</label>
+		<input type="number" id="bottom_left_horizon" style="width:50px;" value="0" step="10" min="0" onkeypress="return isKeyInNum(event)" onchange="changeGraphics();">
+		<label>px</label>
+	</div>
+	<div style="position:absolute; top:280px; left:210px;">
+		<label>水平</label>
+		<input type="number" id="bottom_right_vertical" style="width:50px;" value="0" step="10" min="0" onkeypress="return isKeyInNum(event)" onchange="changeGraphics();">
+		<label>px</label>
+		<br>
+		<label>垂直</label>
+		<input type="number" id="bottom_right_horizon" style="width:50px;" value="0" step="10" min="0" onkeypress="return isKeyInNum(event)" onchange="changeGraphics();">
+		<label>px</label>
+	</div>
+</div>
+<p><br>
+</p>
+<p>以下是上面這隻程式的代碼。
+</p>
+<pre class="pre_html">
+&lt;div&gt;
+  &lt;div id=&quot;css_output&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;top_left&quot;&gt;
+    &lt;label&gt;水平&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;top_left_vertical&quot; value=&quot;0&quot; step=&quot;10&quot; min=&quot;0&quot; onKeyPress=&quot;return isKeyInNum(event)&quot; onChange=&quot;changeGraphics();&quot;&gt;
+    &lt;/input&gt;
+    &lt;label&gt;px&lt;/label&gt;
+    &lt;br/&gt;
+    &lt;label&gt;垂直&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;top_left_horizon&quot; value=&quot;0&quot; step=&quot;10&quot; min=&quot;0&quot; onKeyPress=&quot;return isKeyInNum(event)&quot; onChange=&quot;changeGraphics();&quot;&gt;
+    &lt;/input&gt;
+    &lt;label&gt;px&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;top_right&quot;&gt;
+    &lt;label&gt;水平&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;top_right_vertical&quot; value=&quot;0&quot; step=&quot;10&quot; min=&quot;0&quot; onKeyPress=&quot;return isKeyInNum(event)&quot; onChange=&quot;changeGraphics();&quot;&gt;
+    &lt;/input&gt;
+    &lt;label&gt;px&lt;/label&gt;
+    &lt;br/&gt;
+    &lt;label&gt;垂直&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;top_right_horizon&quot; value=&quot;0&quot; step=&quot;10&quot; min=&quot;0&quot; onKeyPress=&quot;return isKeyInNum(event)&quot; onChange=&quot;changeGraphics();&quot;&gt;
+    &lt;/input&gt;
+    &lt;label&gt;px&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;bottom_left&quot;&gt;
+    &lt;label&gt;水平&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;bottom_left_vertical&quot; value=&quot;0&quot; step=&quot;10&quot; min=&quot;0&quot; onKeyPress=&quot;return isKeyInNum(event)&quot; onChange=&quot;changeGraphics();&quot;&gt;
+    &lt;/input&gt;
+    &lt;label&gt;px&lt;/label&gt;
+    &lt;br/&gt;
+    &lt;label&gt;垂直&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;bottom_left_horizon&quot; value=&quot;0&quot; step=&quot;10&quot; min=&quot;0&quot; onKeyPress=&quot;return isKeyInNum(event)&quot; onChange=&quot;changeGraphics();&quot;&gt;
+    &lt;/input&gt;
+    &lt;label&gt;px&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;bottom_right&quot;&gt;
+    &lt;label&gt;水平&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;bottom_right_vertical&quot; value=&quot;0&quot; step=&quot;10&quot; min=&quot;0&quot; onKeyPress=&quot;return isKeyInNum(event)&quot; onChange=&quot;changeGraphics();&quot;&gt;
+    &lt;/input&gt;
+    &lt;label&gt;px&lt;/label&gt;
+    &lt;br/&gt;
+    &lt;label&gt;垂直&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;bottom_right_horizon&quot; value=&quot;0&quot; step=&quot;10&quot; min=&quot;0&quot; onKeyPress=&quot;return isKeyInNum(event)&quot; onChange=&quot;changeGraphics();&quot;&gt;
+    &lt;/input&gt;
+    &lt;label&gt;px&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="pre_css">
+div {
+  position: relative;
+}
+
+input {
+  width: 50px;
+}
+
+#css_output {
+  position: absolute;
+  background: #CC3333;
+  top: 60px;
+  width: 300px;
+  height: 200px;
+  text-align: center; 
+  color: #FFCC22;
+}
+
+.top_left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.top_right {
+  position: absolute;
+  top: 10px;
+  left: 210px;
+}
+
+.bottom_left {
+  position: absolute;
+  top: 280px;
+  left: 10px;
+}
+
+.bottom_right {
+  position: absolute;
+  top: 280px;
+  left: 210px;
+}</pre>
+
+<pre class="pre_js">
+var cssOutput = document.getElementById(&quot;css_output&quot;);
+var topLeftV = document.getElementById(&quot;top_left_vertical&quot;);
+var topLeftH = document.getElementById(&quot;top_left_horizon&quot;);
+var topRightV = document.getElementById(&quot;top_right_vertical&quot;);
+var topRightH = document.getElementById(&quot;top_right_horizon&quot;);
+var bottomLeftV = document.getElementById(&quot;bottom_left_vertical&quot;);
+var bottomLeftH = document.getElementById(&quot;bottom_left_horizon&quot;);
+var bottomRightV = document.getElementById(&quot;bottom_right_vertical&quot;);
+var bottomRightH = document.getElementById(&quot;bottom_right_horizon&quot;);
+var radiusO = {
+  &quot;topLeftV&quot;: 0,
+  &quot;topLeftH&quot;: 0,
+  &quot;topRightV&quot;: 0,
+  &quot;topRightH&quot;: 0,
+  &quot;bottomLeftV&quot;: 0,
+  &quot;bottomLeftH&quot;: 0,
+  &quot;bottomRightV&quot;: 0,
+  &quot;bottomRightH&quot;: 0
+};
+
+function isKeyInNum(e) {
+  var code = e.charCode ? e.charCode : e.keyCode;
+  var b1 = !e.shiftKey ;
+  var b2 = !e.ctrlKey ;
+  var b3 = !e.altKey ; 
+  var b4 = !e.metaKey ; 
+  var b5 = code != 46 ; 
+  var b6 = code &gt; 31 ; 
+  var b7 = code &lt; 48 || code &gt; 57 ; 
+  var b8 = b6 &amp;&amp; b7 ; 
+  
+  if (b1 &amp;&amp; b2 &amp;&amp; b3 &amp;&amp; b4 &amp;&amp; b5 &amp;&amp; b8) {
+    return false;
+  }
+  else {
+    return true;
+  }
+};
+
+function changeGraphics() {
+  radiusO.topLeftV = toNum(topLeftV.value);
+  radiusO.topLeftH = toNum(topLeftH.value);
+  radiusO.topRightV = toNum(topRightV.value);
+  radiusO.topRightH = toNum(topRightH.value);
+  radiusO.bottomLeftV = toNum(bottomLeftV.value);
+  radiusO.bottomLeftH = toNum(bottomLeftH.value);
+  radiusO.bottomRightV = toNum(bottomRightV.value);
+  radiusO.bottomRightH = toNum(bottomRightH.value);
+  
+  if (radiusO.topLeftH === 0) {
+    radiusO.topLeftH = radiusO.topLeftV ;
+  }
+  
+  if (radiusO.topRightH === 0) {
+    radiusO.topRightH = radiusO.topRightV ;
+  }
+  
+  if (radiusO.bottomLeftH === 0) {
+    radiusO.bottomLeftH = radiusO.bottomLeftV ;
+  }
+  
+  if (radiusO.bottomRightH === 0) {
+    radiusO.bottomRightH = radiusO.bottomRightV ;
+  }
+  
+  cssOutput.style.borderTopLeftRadius = radiusO.topLeftV + &quot;px &quot; + radiusO.topLeftH + &quot;px&quot;;
+  cssOutput.style.borderTopRightRadius = radiusO.topRightV + &quot;px &quot; + radiusO.topRightH + &quot;px&quot;;
+  cssOutput.style.borderBottomLeftRadius = radiusO.bottomLeftV + &quot;px &quot; + radiusO.bottomLeftH + &quot;px&quot;;
+  cssOutput.style.borderBottomRightRadius = radiusO.bottomRightV + &quot;px &quot; + radiusO.bottomRightH + &quot;px&quot;;
+  cssOutput.innerHTML = &quot;border-top-left-radius: &quot; + radiusO.topLeftV + &quot;px &quot; + radiusO.topLeftH + &quot;px;&lt;br/&gt;&quot;
+    + &quot;border-top-right-radius: &quot; + radiusO.topRightV + &quot;px &quot; + radiusO.topRightH + &quot;px;&lt;br/&gt;&quot;
+    + &quot;border-bottom-left-radius: &quot; + radiusO.bottomLeftV + &quot;px &quot; + radiusO.bottomLeftH + &quot;px;&lt;br/&gt;&quot;
+    + &quot;border-bottom-right-radius: &quot; + radiusO.bottomRightV + &quot;px &quot; + radiusO.bottomRightH + &quot;px;&lt;br/&gt;&quot;;
+};
+
+function toNum(v) {
+  var result = parseFloat(v);
+  
+  if (isNaN(result)) {
+    result = 0 ;
+  }
+  
+  return result ;
+};</pre>
+
+
+<hr>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<script>	
+	var cssOutput = document.getElementById("css_output");
+	var topLeftV = document.getElementById("top_left_vertical");
+	var topLeftH = document.getElementById("top_left_horizon");
+	var topRightV = document.getElementById("top_right_vertical");
+	var topRightH = document.getElementById("top_right_horizon");
+	var bottomLeftV = document.getElementById("bottom_left_vertical");
+	var bottomLeftH = document.getElementById("bottom_left_horizon");
+	var bottomRightV = document.getElementById("bottom_right_vertical");
+	var bottomRightH = document.getElementById("bottom_right_horizon");
+	var radiusO = {
+		"topLeftV":0,
+		"topLeftH":0,
+		"topRightV":0,
+		"topRightH":0,
+		"bottomLeftV":0,
+		"bottomLeftH":0,
+		"bottomRightV":0,
+		"bottomRightH":0
+	};
+	var radiusTest = document.getElementById("radius_test");
+	var cssTest = document.getElementById("css_test");
+	function changeRadius() {
+		radiusTest.style.borderRadius = cssTest.value; 
+	};
+	function isKeyInNum(e) {
+		var code = e.charCode ? e.charCode : e.keyCode;
+		var b1 = !e.shiftKey ;
+		var b2 = !e.ctrlKey ;
+		var b3 = !e.altKey ; 
+		var b4 = !e.metaKey ; 
+		var b5 = code != 46 ; 
+		var b6 = code &gt; 31 ; 
+		var b7 = code &lt; 48 || code &gt; 57 ; 
+		var b8 = b6 && b7 ; 
+        	if (b1 && b2 && b3 && b4 && b5 && b8) {
+        		return false;
+       		}
+        	else {
+        	 	return true; 
+        	}       
+	};
+function changeGraphics() {
+		radiusO.topLeftV = toNum(topLeftV.value);
+		radiusO.topLeftH = toNum(topLeftH.value);
+		radiusO.topRightV = toNum(topRightV.value);
+		radiusO.topRightH = toNum(topRightH.value);
+		radiusO.bottomLeftV = toNum(bottomLeftV.value);
+		radiusO.bottomLeftH = toNum(bottomLeftH.value);
+		radiusO.bottomRightV = toNum(bottomRightV.value);
+		radiusO.bottomRightH = toNum(bottomRightH.value);
+		if (radiusO.topLeftH == 0) {
+			radiusO.topLeftH = radiusO.topLeftV ;
+		}
+		if (radiusO.topRightH == 0) {
+			radiusO.topRightH = radiusO.topRightV ;
+		}
+		if (radiusO.bottomLeftH == 0) {
+			radiusO.bottomLeftH = radiusO.bottomLeftV ;
+		}
+		if (radiusO.bottomRightH == 0) {
+			radiusO.bottomRightH = radiusO.bottomRightV ;
+		}
+		cssOutput.style.borderTopLeftRadius = radiusO.topLeftV + "px " + radiusO.topLeftH + "px";
+		cssOutput.style.borderTopRightRadius = radiusO.topRightV + "px " + radiusO.topRightH + "px";
+		cssOutput.style.borderBottomLeftRadius = radiusO.bottomLeftV + "px " + radiusO.bottomLeftH + "px";
+		cssOutput.style.borderBottomRightRadius = radiusO.bottomRightV + "px " + radiusO.bottomRightH + "px";
+		cssOutput.innerHTML = "border-top-left-radius: " + radiusO.topLeftV + "px " + radiusO.topLeftH + "px;<br>"
+							+ "border-top-right-radius: " + radiusO.topRightV + "px " + radiusO.topRightH + "px;<br>"
+							+ "border-bottom-left-radius: " + radiusO.bottomLeftV + "px " + radiusO.bottomLeftH + "px;<br>"
+							+ "border-bottom-right-radius: " + radiusO.bottomRightV + "px " + radiusO.bottomRightH + "px;<br>";
+	};
+	function toNum(v) {
+		var result = parseFloat(v);
+		if (isNaN(result)) {
+			result = 0 ;
+		}
+		return result ; 
+	};
+	changeRadius();
+</script>
+
+

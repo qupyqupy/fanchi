@@ -1,0 +1,266 @@
+<style>
+    canvas {
+      border: 2px dashed lightblue;
+    }
+</style>
+<hr>
+<p>對於慣於使用 CSS 來設定 Element 外觀的前端開發者而言，對於 Canvas 可能會有些抗拒，原因是 Canvas 所有的呈現圖像皆須以 JavaScript 手動刻出來，雖然很麻煩但是能製作出來非常炫麗的效果，了解原理以後在撰寫方面也比較自由。
+</p>
+<p>在開始之前首先我們必須針對不支援 Canvas 的瀏覽器作處理。（<span style="color: rgb(255, 0, 0);">儘管目前大多數瀏覽器都支援，但我認為仍需添加這機制，就算是提醒用戶升級瀏覽器這樣對於整體網站的顧客友善度也是好的</span>）<br>
+</p>
+<pre class="pre_html">
+&lt;canvas&gt;
+  &lt;p&gt;Your Broswer not support canvas&lt;/p&gt;
+&lt;/canvas&gt;</pre>
+
+<p>運用瀏覽器不認識 Canvas 會忽略它的這個特點，可在 Canvas 區塊內添加所謂的替代顯示方案，可以加上文字、圖片、甚至是 Flash。
+</p>
+<p>有了替代顯示方案後，我們可以開始著重在 Canvas 本身的撰寫，首先我們先創造一個 Canvas Element 並且用 Canvas 本身的 width 、 height 屬性設定寬高。<span style="color: rgb(255, 0, 0);">大多數的開發者可能會習慣用 CSS 來設定，但此舉會造成在 Canvas 上繪製的圖像變形</span>。
+</p>
+<pre class="pre_html">
+&lt;canvas id=&quot;game&quot; width=&quot;320px&quot; height=&quot;240px&quot;&gt;
+  &lt;p&gt;Your Broswer not support canvas&lt;/p&gt;
+&lt;/canvas&gt;</pre>
+
+<pre class="pre_css">
+#game {
+  border: 2px dashed lightblue;
+}</pre>
+
+<p>下面是上面代碼的呈現效果，我們可以得到一個淡藍色的虛線框畫布。
+</p>
+<canvas id="demoA" width="320px" height="240px">
+<p>Your Broswer not support canvas
+</p>
+</canvas>
+<p><span class="redactor-invisible-space"><br></span>
+</p>
+<hr>
+<p>
+</p>
+<p><span class="redactor-invisible-space">有了畫布，我們就可以開始撰寫 JavaScript 代碼。</span>
+</p>
+<p>
+</p>
+<p>要在 Canvas 上畫圖要先認識&nbsp;<strong>getContext()</strong> 方法，它是畫面顯示的管理員，任何圖像都需要經過它繪製、呈現。
+</p>
+<p>如果<span style="color: rgb(255, 0, 0);">講白話一點 Canvas 是一個白板，getContext() </span><span style="color: rgb(255, 0, 0);">是取得筆、板擦這些工具，JavaScript 則是拿工具在白板上畫的人，寫 JavaScript 的人是神（大誤）</span>。
+</p>
+<pre class="pre_js">
+var canvas = document.getElementById(&quot;game&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);</pre>
+
+
+<p>如上方代碼，我們用&nbsp;<strong>getContext("2d")</strong> 取得了畫圖用的工具。
+</p>
+<p>到這裡也許有人有疑問，為什麼是 2d？那是因為我們接下來<span style="color: rgb(255, 0, 0);">要畫的是 2d 的圖像，所以取得 2d 的工具來作畫</span>。也許未來會有 3d、4d、5d（誇飾法）。<span class="redactor-invisible-space">而時下最炫麗的 WebGL 則是採用&nbsp;<strong>getContext("webgl")</strong><span class="redactor-invisible-space">、<strong>getContext("experimental-webgl")</strong><span class="redactor-invisible-space"> 方法。<span class="redactor-invisible-space"></span></span></span></span>
+</p>
+<p>再來我們要認識取得的 <span style="color: rgb(255, 0, 0);">2d 工具</span>裡面有些甚麼東西可以用，最基礎的有三個。
+</p>
+<ul>
+	<li><strong>stroke（輪廓）</strong></li>
+	<li><strong>fill（色塊）</strong></li>
+	<li><strong>clear（板擦）</strong></li>
+</ul>
+<p>針對&nbsp;<strong>stroke（輪廓）</strong>部分，先來看一段代碼演示。
+</p>
+<pre class="pre_js">
+var canvas = document.getElementById(&quot;game&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);
+drawStroke(ctx, {x:30, y:30}, {x:150, y:30}, 8, &quot;lightgreen&quot;, &quot;butt&quot;);
+drawStroke(ctx, {x:30, y:50}, {x:150, y:50}, 10, &quot;rgb(200, 200, 0)&quot;, &quot;round&quot;);
+drawStroke(ctx, {x:30, y:70}, {x:150, y:70}, 12, &quot;rgba(255, 0, 0, 0.2)&quot;, &quot;square&quot;);
+
+function drawStroke(context, xy, txy, thickness, color, cap) {
+  context.beginPath();
+  context.moveTo(xy.x, xy.y);
+  context.lineTo(txy.x, txy.y);
+  context.lineWidth = thickness ; 
+  context.strokeStyle = color;
+  context.lineCap = cap;
+  context.stroke();
+}</pre>
+
+
+<p>由上方代碼我們可以得到三個顏色形狀皆不同的線段，由於畫線段是個重複指令極多的動作，因此我寫了一個 drawStroke 的函式來統一處理。
+</p>
+<ul>
+	<li><strong>beginPath() </strong><br>就如他的字面上的意義一樣，開始一個新的路徑。如果沒有下這個指令的話，當執行 <strong>stroke()</strong> 時，你之前設定的線段也都會再畫一次。</li>
+	<li><strong>moveTo()、lineTo()</strong><br>設定線段的起始點、終點。</li>
+	<li><strong>lineWidth</strong><br>線段的粗細。</li>
+	<li><strong>strokeStyle</strong><br>設定線段的顏色。從上方代碼可以知道設定顏色的方式可以接受 rgb()、<span style="color: rgb(255, 0, 0);">rgba() 的方式，因此能實現透明度線段的功能</span>。</li>
+	<li><strong>lineCap&nbsp;</strong><br>設定線段的結尾方式，共有三種 buff（方形）、round（圓形）、square（方形，但會額外增長線段寬度的一半長度）</li>
+	<li><strong>stroke()</strong><br>將設定的線段畫在畫布上。特別要注意的是每次執行&nbsp;<strong>stroke()</strong> 時，它只會實現最後一次 beginPath() 之後的設定。</li>
+</ul>
+<p>經過這些指令就可以畫出一個簡單的線段。也許有些人現在會覺得［<span style="color: rgb(255, 0, 0);">就只是畫線段，這超麻煩的，而且又沒甚麼特別炫</span>。］但這看起來簡單、樸素的東西，卻是之後華麗特效的關鍵（像是彈跳的圖表、粒子特效、遊戲連連看的即時演算線段）。<span class="redactor-invisible-space"></span>
+</p>
+<canvas id="demoB" width="320px" height="240px"></canvas>
+<p><br>
+</p>
+<p>而在繪製輪廓時，總會遇到兩線相交的時刻，此時如果想設定交點的樣式怎麼辦呢？
+</p>
+<p>透過 <strong>lineJoin</strong> 就可以達到這需求，看下列代碼。
+</p>
+<pre class="pre_js">
+var canvas = document.getElementById(&quot;game&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);
+ctx.moveTo(150, 50);
+ctx.lineTo(50, 100);
+ctx.lineTo(100, 200);
+ctx.lineWidth = 60 ; 
+ctx.lineJoin = &quot;round&quot;;
+ctx.stroke();</pre>
+
+
+<p>上方代碼我們可以得到兩條相交的線段，且其交點為圓角，會得到這結果是因為設定了 <strong>lineJoin = "round"</strong> 的關係。
+</p>
+<label>可以設定 round、bevel、mitre（default），試著操作下方程式看看效果差異。
+<p>
+</p></label>
+<select onchange="ljChange(this);" style="width:50%; height:40px;">
+	<option label="round" value="round">
+	</option>
+	<option label="bevel" value="bevel">
+	</option>
+	<option label="miter" value="miter">
+	</option>
+</select>
+<p><br>
+</p>
+<canvas id="demoE" width="320px" height="240px"></canvas>
+<p><br>
+</p>
+<p>了解了輪廓的畫法後，再來看看&nbsp;fill（色塊），其實用法跟&nbsp;stroke()<span class="redactor-invisible-space" style="font-family: inherit; line-height: 1.6em; background-color: initial;">&nbsp;差不多，先來看一段代碼演示。</span><br>
+</p>
+<pre class="pre_js">
+var canvas = document.getElementById(&quot;game&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);
+ctx.moveTo(50, 50);
+ctx.lineTo(0, 100);
+ctx.lineTo(100, 200);
+ctx.fillStyle = &quot;rgba(200, 200, 100, 0.5)&quot;;
+ctx.closePath();
+ctx.fill();</pre>
+
+
+<p>從代碼可以看到三個沒見過的指令 closePath()、fill()、fillStyle。
+</p>
+<ul>
+	<li><strong>closePath()</strong><br>把現在的線段關閉成一個封閉的形狀，會從最近一次的起點、終點之間畫條線。</li>
+	<li><strong>fill()</strong><br>將目前的封閉圖案填色，必須要有兩條線段以上才看得出效果。值得一提的是<span style="color: rgb(255, 0, 0);">就算沒有 closePath() 它一樣可以畫出一個封閉圖像，但這在代碼撰寫上實在不是一個好的習慣</span>。</li>
+	<li><strong>fillStyle</strong><br>用法跟&nbsp;strokeStyle 一樣，一樣能接收 rgb()、rgba()。</li>
+</ul>
+<canvas id="demoC" width="320px" height="240px"></canvas>
+<p><br>
+</p>
+<p>現在我們能透過 <strong>stroke()</strong>、<strong>fill() </strong>來畫出圖案，但要能擦掉才是重點啊！其實用法很簡單，我們來看一段代碼演示。
+</p>
+<pre class="pre_js">
+var canvas = document.getElementById(&quot;game&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);
+ctx.moveTo(50, 50);
+ctx.lineTo(0, 100);
+ctx.lineTo(100, 200);
+ctx.fillStyle = &quot;rgba(200, 200, 100, 0.5)&quot;;
+ctx.closePath();
+ctx.fill();
+ctx.clearRect(0, 0, 100, 100);</pre>
+
+
+<p><strong>clearRect(x, y, width, height) </strong>，x、y 代表著清除圖形的起點座標，width、height 代表清除的範圍。
+</p>
+<p>以此範例而言，會在座標(0, 0) 的位置將範圍寬 100 高 100 內的所有圖案清除掉。<br>
+</p>
+<canvas id="demoD" width="320px" height="240px"></canvas>
+<p><br>
+</p>
+<hr>
+<p>雖然學會以上方法我們已經能夠畫出眾多不同的形狀組合，但一點一滴用 moveTo、lineTo 實在有些刻苦，當然這點可以透過我們<span style="color: rgb(255, 0, 0);">自己寫函式來簡化，除此之外也有內建的函示可以調用</span>。
+</p>
+<p><strong>fillRect()</strong>、<strong>strokeRect()</strong> 分別可以繪製出方形的色塊、輪廓，以下是代碼演示。
+</p>
+<pre class="pre_js">
+var canvas = document.getElementById(&quot;game&quot;);
+var ctx = canvas.getContext(&quot;2d&quot;);
+ctx.strokeStyle = &quot;lightblue&quot;;
+ctx.strokeRect(10, 10, 50, 50);
+ctx.fillStyle = &quot;lightgray&quot;;
+ctx.fillRect(100, 10 , 50, 50);</pre>
+
+
+<p>由上方代碼可以得到一個淺藍的方形輪廓跟淺灰的方形色塊。
+</p>
+<canvas id="demoG" width="320px" height="240px"></canvas>
+<p><br>
+</p>
+<hr>
+<p>
+</p>
+<p><br>
+</p>
+<p>
+</p>
+<p><br>
+</p>
+<script>    var canvas = document.getElementById("demoB");
+    var ctx = canvas.getContext("2d");
+    drawStroke(ctx, {x:30, y:30}, {x:150, y:30}, 8, "lightgreen", "butt");
+    drawStroke(ctx, {x:30, y:50}, {x:150, y:50}, 10, "rgb(200, 200, 0)", "round");
+    drawStroke(ctx, {x:30, y:70}, {x:150, y:70}, 12, "rgba(255, 0, 0, 0.2)", "square");
+    function drawStroke(context, xy, txy, thickness, color, cap) {
+      context.beginPath();
+      context.moveTo(xy.x, xy.y);
+      context.lineTo(txy.x, txy.y);
+      context.lineWidth = thickness ; 
+      context.strokeStyle = color;
+      context.lineCap = cap;
+      context.stroke();
+    }
+var canvasC = document.getElementById("demoC");
+    var ctxC = canvasC.getContext("2d");
+    ctxC.moveTo(50, 50);
+ctxC.lineTo(0, 100);
+ctxC.lineTo(100, 200);
+ctxC.fillStyle = "rgba(200, 200, 100, 0.5)";
+ctxC.closePath();
+ctxC.fill();
+var canvasD = document.getElementById("demoD");
+    var ctxD = canvasD.getContext("2d");
+    ctxD.moveTo(50, 50);
+ctxD.lineTo(0, 100);
+ctxD.lineTo(100, 200);
+ctxD.fillStyle = "rgba(200, 200, 100, 0.5)";
+ctxD.closePath();
+ctxD.fill();
+ctxD.clearRect(0,0,100,100);
+var canvasE = document.getElementById("demoE");
+var ctxE = canvasE.getContext("2d");
+ctxE.moveTo(150, 50);
+ctxE.lineTo(50, 100);
+ctxE.lineTo(100, 200);
+ctxE.lineWidth = 60 ; 
+ctxE.lineJoin = "round";
+ctxE.stroke();
+function ljChange(comboElemtn) {
+ctxE.clearRect(0, 0, 320, 240);
+ctxE.beginPath();
+ctxE.moveTo(150, 50);
+ctxE.lineTo(50, 100);
+ctxE.lineTo(100, 200);
+ctxE.lineWidth = 60 ; 
+ctxE.lineJoin = comboElemtn.value;
+ctxE.stroke();
+}
+var canvasG = document.getElementById("demoG");
+var ctxG = canvasG.getContext("2d");
+    ctxG.strokeStyle = "lightblue";
+    ctxG.strokeRect(10, 10, 50, 50);
+    ctxG.fillStyle = "lightgray";
+    ctxG.fillRect(100, 10 , 50, 50);
+</script>
+<p><br>
+</p>
+<p><br>
+</p>
+
+

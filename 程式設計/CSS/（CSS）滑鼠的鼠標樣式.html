@@ -1,0 +1,52 @@
+<style type="text/css">#cursor_button_area button {
+  margin: 5px;
+  width: 23%;
+}
+</style>
+<hr />
+<p>我看過很多的前端網站設計，似乎現在因為大趨勢是朝行動載具方向前進，所以導致很多網頁對於鼠標的樣式非常的不講究，但適當的鼠標確實能對桌上型電腦的使用者提供不小的操作提示。</p>
+
+<p>點擊下列按鈕即可得到相對應的 CSS 語法。</p>
+
+<pre class="pre_css" id="css_result">
+button {
+    cursor: not-allowed;
+}</pre>
+
+<div id="cursor_button_area"></div>
+
+<p>提供一個好用的 CSS 語法，下列語法會自動將頁面上該設為禁用鼠標的 Element 自動加上禁用鼠標。</p>
+
+<pre class="pre_css" id="css_result">
+:disabled, [disabled], [aria-disabled=&rdquo;true&rdquo;] {
+    cursor: not-allowed;
+}</pre>
+
+<hr /><script>
+var button_area = document.getElementById("cursor_button_area");
+
+var css_result_area = document.getElementById("css_result");
+
+var styles = ["default","crosshair","help","move","pointer","progress","text","wait","e-resize","ne-resize","nw-resize","n-resize","se-resize","sw-resize","s-resize","w-resize","none","context-menu","cell","vertical-text","alias","copy","no-drop","not-allowed","ew-resize","ns-resize",
+"nesw-resize","nwse-resize","col-resize","row-resize","all-scroll","zoom-in","zoom-out"];
+
+var buttons = [];
+
+for (var i = 0 ; i < styles.length ; i++) {
+  var temp = document.createElement("BUTTON");
+  temp.innerHTML = styles[i];
+  temp.style.cursor = styles[i];
+  temp.onclick = setCssStyle ;
+  button_area.appendChild(temp); 
+}
+
+function setCssStyle(ev) {
+  css_result_area.innerHTML = "button {\r\n\    cursor: " + ev.currentTarget.innerHTML + ";\r\n}";
+}
+
+
+
+
+</script>
+
+

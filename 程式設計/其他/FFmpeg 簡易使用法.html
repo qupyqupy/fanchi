@@ -1,0 +1,39 @@
+<hr />
+<p>&nbsp;</p>
+
+<ol>
+	<li>到<a href="http://ffmpeg.zeranoe.com/builds/" target="_blank">http://ffmpeg.zeranoe.com/builds/</a> 下載ffmpeg-static壓縮檔。</li>
+	<li>因為ffmpeg的介面是屬於CLI，為了方便日後使用，要設定windows環境變數。<br />
+	先解壓縮檔案，得到的內容物如下圖：<br />
+	<img alt="image005.jpg" src="https://pic.pimg.tw/qupyqupy/1499077511-2509257866.jpg?v=1499077519" title="image005.jpg" /></li>
+	<li>新增資料夾<span class="global_name_span">C:\Program Files\ffmpeg\</span>將內容物複製到裡面，方便日後管理。</li>
+	<li>在我的電腦按右鍵，點選<span class="global_name_span">內容</span><br />
+	<img alt="image006.jpg" src="https://pic.pimg.tw/qupyqupy/1499077511-1837776022.jpg?v=1499077519" title="image006.jpg" /></li>
+	<li>點選<span class="global_name_span">進階系統設定</span>開啟<span class="global_name_span">系統內容</span>面板，點選<span class="global_name_span">環境變數</span>。<br />
+	<img alt="image008.jpg" src="https://pic.pimg.tw/qupyqupy/1499077511-1744637332.jpg?v=1499077519" title="image008.jpg" /></li>
+	<li>在<span class="global_name_span">系統變數</span>區塊點選<span class="global_name_span">新增</span>開啟<span class="global_name_span">新增系統變數</span>面板。<br />
+	<strong>變數名稱：</strong>FFMPEG_HOME<br />
+	<strong>變數値：</strong>C:\Program Files\ffmpeg\bin<br />
+	<img alt="image012.jpg" src="https://pic.pimg.tw/qupyqupy/1499077511-1581106381.jpg?v=1499077519" title="image012.jpg" /></li>
+	<li>在<span class="global_name_span">系統變數</span>區塊內找到<span class="global_name_span">Path</span>變數，選取後點選<span class="global_name_span">編輯</span>開啟面板。<br />
+	在變數輸入框最後加上<span class="global_name_span">;%FFMPEG_HOME%</span><br />
+	<img alt="image014.jpg" src="https://pic.pimg.tw/qupyqupy/1499077511-1132542366.jpg?v=1499077519" title="image014.jpg" /></li>
+	<li>設定完環境變數要重啟電腦讓它生效。</li>
+	<li>製作bat檔案方便之後轉檔，新增一個純文字檔，把下列指令貼入後存檔為.bat檔案。
+	<pre>
+set input=%1
+set output=build/%~n1%~x1
+echo =========== start ==============
+mkdir build
+ffmpeg -i %input% %output%
+echo =========== over ==============
+pause
+</pre>
+	</li>
+	<li>直接把要轉檔的影片拖曳到.bat檔上就可以進行轉檔了，轉好的檔案會在原影片資料夾的build資料夾中。</li>
+</ol>
+
+<hr />
+<p>&nbsp;</p>
+
+

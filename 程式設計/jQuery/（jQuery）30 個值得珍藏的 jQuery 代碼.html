@@ -1,0 +1,236 @@
+<hr>
+<p>1.&nbsp;修改 jQuery 預設編碼（例如預設 UTF-8 改為 GB2312）。
+</p>
+<pre>$.ajaxSetup({
+  ajaxSettings:{contentType:"application/x-www-form-urlencoded;chartset=GB2312"}
+});
+</pre>
+<p><br>
+</p>
+<p>2.&nbsp;從一個未排序的集合中找出某個元素的索引號。
+</p>
+<p><span style="color: rgb(255, 0, 0);">prevAll([expr])：查詢目前元素之前所有的同級元素。</span>
+</p>
+<pre>$("ul&gt;li").click(function(){
+  var index=$(this).prevAll().length; 
+});
+</pre>
+<p><br>
+</p>
+<p>3.&nbsp;檢測各種瀏覽器。
+</p>
+<pre>Safari：(if($.browser.safari))
+IE6 及之後版本：(if($.browser.msie&&$.browser.version&gt;6)
+IE6 及之前版本：(if($.browser.msie&&$.browser.version&lt;=6)
+FireFox2 及之後版本：(if($.browser.mozilla&&$.browser.version&gt;='1.8')
+</pre>
+<p><br>
+</p>
+<p>4.&nbsp;註冊和禁用 jQuery 全域事件。
+</p>
+<p>jQuery 註冊 AJAX 全域事件 ajaxStart、ajaxStop。
+</p>
+<pre>$(document).ajaxStart(function(){
+  $("#background, #progressBar").show();
+}).ajaxStop(function(){
+  $("#background, #progressBar").hide();
+});
+</pre>
+<p><br>
+</p>
+<p>5.使用 .siblings() 來選擇同級元素。
+</p>
+<pre>$("#nav li").click(function() {
+  $(this).addClass('active').siblings().removeClass('active');
+})
+</pre>
+<p><br>
+</p>
+<p>6.選取頁面上的所有核取方塊。
+</p>
+<pre>var tog = false ; 
+$('a').click(function(){
+  $("input[type=checkbox]").attr("checked", !tog);
+  tog = !tog;
+});
+</pre>
+<p><br>
+</p>
+<p>7.解決 jQuery 與 prototype 共存時，$ 全域變數衝突問題。
+</p>
+<p><span style="color: rgb(255, 0, 0);">要先引入 prototype.js ，再引入 jquery.js。</span>
+</p>
+<pre>&lt;script src="prototype.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  jQuery.noConflict();  
+&lt;/script&gt;
+</pre>
+<p><br>
+</p>
+<p>8.設置 IE 特有的功能。
+</p>
+<pre>if($.browser.msie) {
+  // IE 下要執行的功能
+}
+</pre>
+<p><br>
+</p>
+<p>9.使用 jQuery 來切換樣式表。
+</p>
+<p>找出希望切換的媒體類型（media-type），然後把 href 設定成新的樣式表。
+</p>
+<pre>$('link[media="screen"]').attr('href', 'alternative.css');
+</pre>
+<p><br>
+</p>
+<p>10.在建立元素時，使用物件字面量（literal）來定義屬性。
+</p>
+<pre>var e = $("", {href:"#", class:"a-class another-class", title:"..."});
+</pre>
+<p><br>
+</p>
+<p>11.查詢已經被選取的 option 元素。
+</p>
+<pre>$('#someElement').find('option:selected');
+</pre>
+<p><br>
+</p>
+<p>12.判斷元素是否鎖定了事件。
+</p>
+<p><span style="color: rgb(255, 0, 0);">jQuery event 判斷元素上是否鎖定事件，這方法只適用於 jQuery 鎖定的事件。</span><span style="color: rgb(255, 0, 0);"></span>
+</p>
+<pre>var $events = $("#foo").data("events");
+if($events && events["click"]) {
+}
+</pre>
+<p><br>
+</p>
+<p>13.禁用滑鼠右鍵功能表單。
+</p>
+<pre>$(document).bind("contextmenu", function(e){
+  return false;
+});
+</pre>
+<p><br>
+</p>
+<p>14.驗證某個元素是否為空。
+</p>
+<pre>if(!$('#keks').html()) {  
+}
+</pre>
+<p><br>
+</p>
+<p>15.使用 jQuery 來替代一個元素。
+</p>
+<pre>$('#id-div').replaceWith('id-replace');
+</pre>
+<p><br>
+</p>
+<p>16.隱藏一個包含某個文字值的元素。
+</p>
+<pre>$('p.value:contains("id-text-value")').hide();
+</pre>
+<p><br>
+</p>
+<p>17.檢查某個元素是否存在。
+</p>
+<pre>if($('#someDiv').length) {
+}
+</pre>
+<p><br>
+</p>
+<p>18.把已建立的元素動態地新增到 DOM 中。
+</p>
+<pre>var newDiv = $('&lt;div&gt;&lt;/div&gt;');
+newDiv.attr('id', 'myNewDiv').appendTo('body');
+</pre>
+<p><br>
+</p>
+<p>19.在 jQuery 中 cloned 一個元素。
+</p>
+<pre>var id-cloned= $("#somediv").clone();
+</pre>
+<p><br>
+</p>
+<p>20.使用 closest 來取得父元素。
+</p>
+<pre>$('#searchBox').closest('div')
+</pre>
+<p><br>
+</p>
+<p>21.判斷某個元素是否為空。
+</p>
+<pre>if($('#keks').is(":empty")) {
+}
+</pre>
+<p><br>
+</p>
+<p>22.替換字串中的詞。
+</p>
+<pre>var el = $('#id');
+el.html(el.html().replace(/word/ig, ''));
+</pre>
+<p><br>
+</p>
+<p>23.新增 html 到元素中。
+</p>
+<pre>$('#lal').append('sometext');
+</pre>
+<p><br>
+</p>
+<p>24.判斷影像是否已經被完全載入。
+</p>
+<pre>$('#id-Image').attr('src', 'image.jpg').load(function(){
+  alert('image has been loaded');
+})
+</pre>
+<p><br>
+</p>
+<p>25.基於一些輸入文字來過濾一個元素清單。
+</p>
+<pre>$('.someClass').filter(function(){
+  return $(this).attr('value') == $('input#someId').val();
+})
+</pre>
+<p><br>
+</p>
+<p>26.測試某個元素是否可見。
+</p>
+<pre>if($(element).is(':visible')) {
+}
+</pre>
+<p><br>
+</p>
+<p>27.把函數鎖定到事件上。
+</p>
+<pre>$('#foo').click(function(event){
+  alert('user clicked on foo');
+})
+</pre>
+<p><br>
+</p>
+<p>28.讓 cookie 過期。
+</p>
+<pre>var date = new Date();
+date.setTime(date.getTime() + (x * 60 * 1000));
+$.cookie('example', 'foo', {expires:date});
+</pre>
+<p><br>
+</p>
+<p>29.使用多個屬性來進行過濾。
+</p>
+<pre>var elements = $('#someid input[type=sometype][value=somevalue]').get();
+</pre>
+<p><br>
+</p>
+<p>30.建立嵌套的篩檢程式。
+</p>
+<pre>.filter(":not(:has(.selected))");
+</pre>
+<p>
+</p>
+<hr>
+<p><br>
+</p>
+
