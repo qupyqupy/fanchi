@@ -1,0 +1,88 @@
+<style type="text/css">.story_content {
+ 
+}
+.story_btn {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+</style>
+<hr />
+<p>這篇純粹把 NDS 版本的劇情節錄下來，雖然 NDS 的重製版增加了不少的元素，也實現了不少超任版本的遺憾（譬如說沒有投石車加入我方、騎士室內實用性不大等）但整體架構跟超任版本沒差多少，但死忠的遊戲迷依然可以玩玩看這版。</p>
+
+<hr />
+<p>開頭動畫。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HbFTqRVT-24?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<p>序章。</p>
+
+<p>看故事，原本當馬爾斯替身的應該是弗雷，但是由於是新角色，所以我讓別人代替弗雷犧牲了。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WAOoSVTYROA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<button class="story_btn" id="sbtn1" onclick="handler(1);">第 1~5 章</button>
+
+<div class="story_content" id="story_content1">&nbsp;</div>
+
+<button class="story_btn" id="sbtn2" onclick="handler(2);">第 6~10 章</button>
+
+<div class="story_content" id="story_content2">&nbsp;</div>
+
+<button class="story_btn" id="sbtn3" onclick="handler(3);">第 11~15 章</button>
+
+<div class="story_content" id="story_content3">&nbsp;</div>
+
+<button class="story_btn" id="sbtn4" onclick="handler(4);">第 16~20 章</button>
+
+<div class="story_content" id="story_content4">&nbsp;</div>
+
+<button class="story_btn" id="sbtn5" onclick="handler(5);">第 21~24 章</button>
+
+<div class="story_content" id="story_content5">&nbsp;</div>
+
+<button class="story_btn" id="sbtn6" onclick="handler(6);">終章、結局</button>
+
+<div class="story_content" id="story_content6">&nbsp;</div>
+
+<hr />
+<script>
+
+var contentArr = [];
+contentArr.push("");
+contentArr.push('<p></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hHAZVW_pnYo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/C3z3gu6D3so?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0-eyWzI5KHc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/A7Oi5GA7aM8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qRRKnN-OPw4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+contentArr.push('<p></p><p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/q2PqAcPheVo" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/TqJvAgs0_7c" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/zIU2Io5KJ50" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/OEj9s2lz-YQ" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/oLXaWoaA0jk" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/VwYyaOQKkNA" title="YouTube video player" width="560"></iframe></p>');
+
+contentArr.push('<p></p><p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/fQF6b2F-ARA" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/vBzMOaIY1A4" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/p-3ltKqSWkk" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/n9I1bW8PR70" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/pFpQmKf1UzA" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ofskVfdsy2o" title="YouTube video player" width="560"></iframe></p>');
+
+contentArr.push('<p></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/u6kjuXksDDE" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/2gaRS4r5y5U" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ojoThSCgIro" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/w1S2SVdKmw8" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/CwhoTWJrarM" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/DaNarzJZyFY" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/3eFhdkuB3UQ" title="YouTube video player" width="560"></iframe></p>');
+
+contentArr.push('<p></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kIcFe3MsMxk" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/gBWH9Hb4XyE" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/EIrSsvibKKc" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/jfKckrcyLxo" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Dxl5aNyNanI" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ePsY7eSrr40" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/QAkzlbY8XOY" title="YouTube video player" width="560"></iframe></p>');
+
+contentArr.push('<p></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/sSl-bxHLzXo" title="YouTube video player" width="560"> </iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/WaHKpKkuyr8" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/qL5ajemZRXQ" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5UgJDLcsdOQ" title="YouTube video player" width="560"></iframe></p>');
+
+function handler(val) {
+  var el = document.getElementById("story_content" + val);
+  if (el.innerHTML == "&nbsp;" || el.innerHTML =="") {
+    mcinit();
+    el.style.display = "inline";
+    el.innerHTML = contentArr[val] ;
+    scroll(0,document.getElementById("sbtn" + val).offsetTop + document.getElementById("sbtn" + val).offsetParent.offsetTop);
+  }
+  else {
+    el.innerHTML = "";
+  }
+}
+
+function mcinit() {
+  for (var i = 1 ; i <= 6 ; i++) {
+    document.getElementById("story_content" + i).innerHTML ="";
+    document.getElementById("story_content" + i).style.display ="none";
+  }
+}
+
+mcinit();
+</script>
+

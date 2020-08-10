@@ -1,0 +1,177 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">CH01 - CH05</option>
+  <option value="2">CH06 - CH10</option>
+  <option value="3">CH11 - CH15</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">CH01 - CH05</option>
+  <option value="2">CH06 - CH10</option>
+  <option value="3">CH11 - CH15</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">CH01 - CH05</div><p>擊敗<span class="global_name_span">波贊魯</span>後<span class="global_name_span">潔西卡</span>為了不必要的爭端，建議把聖劍、魔劍都封印起來，但<span class="global_name_span">馬修</span>因為對<span class="global_name_span">澤瑞達</span>的感情而猶豫。</p> <p>此時空中出現紅色的流星墬往伊雷斯大陸，新的冒險即將開始。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FZzZYmgH5uQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>交出魔劍的對話，<span class="global_name_span">潔西卡</span>最後還是會被<span class="global_name_span">艾梅達</span>的嘴砲說服。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vp96Pxf36ZQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人即將到達伊雷斯大陸時，出現在眾人面前的是因世界樹力量而現世的英靈，在用實力獲得英靈的認可後，圍繞大陸的迷霧總算慢慢散去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0N58TV3Gj0Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">馬修</span>等人在經過世界樹時，竟遇到神祕的克利姆索騎士，在阻止敵人摧毀世界樹的行動後，眾人繼續前行。</p> <p>到達隕石墬落地點時，竟發現這是艘巨大的飛船，而飛船旁的兩人其中帶面具的男人手中持有的正是 150 年前離開大陸的真魔劍，男人似乎還有事情要辦，急忙離開戰場。</p> <p>留下斷後的<span class="global_name_span">希琳卡</span>沒想到竟然有控制魔劍的力量，在短暫交手後便離去了。</p> <div class="global_ps_text"> <p>00:11 - 樹的陰影、月的騎士。</p> <p>04:20 - 隕星的真相。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4-s4YjybYv8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">艾梅達</span>從英靈那邊得知，帶面具的男人正是 150 年前帶著真魔劍回到紅月的克利姆索尼亞王子<span class="global_name_span">雷因法魯斯</span>雖然不知道他的目的為何，但眾人還是決定要阻止他破壞世界樹的行為。</p> <p>此時自稱王國守護者的神秘騎士忽然出現，並對眾人展開攻擊，雙方打鬥間發現彼此的目的一致，於是便一起追擊<span class="global_name_span">雷因法魯斯</span>。</p> <p>總算追上<span class="global_name_span">雷因法魯斯</span>，但激戰間<span class="global_name_span">馬修</span>手中的魔劍被對方擊斷。鑄劍者軍團因此元氣大傷，在<span class="global_name_span">迷之騎士</span>的建議下，眾人決定前往卡昆西斯王國。</p> <div class="global_ps_text"> <p>00:11 - 謎之追擊者。</p> <p>12:29 - 斷章故事［王國守護者］。</p> <p>30:32 - 魔劍 VS 魔劍。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ork_SMouF4Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">馬修</span>透過世界樹的記憶之力，了解了關於<span class="global_name_span">雷因法魯斯</span>過去的記憶，這人似乎並不是單純的侵略者，他背上扛著種族的延續重大責任。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/12m39tuWn1s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>魔劍斷掉後<span class="global_name_span">馬修</span>陷入無止盡的悔恨當中，在虛實之間<span class="global_name_span">馬修</span>又遇見了<span class="global_name_span">澤瑞達</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oh5CLE_kdiQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH06 - CH10</div><p><span class="global_name_span">馬修</span>在虛實之間遇見了<span class="global_name_span">卡奧斯</span>，混沌之神企圖用復活<span class="global_name_span">澤瑞達</span>的條件，來誘惑<span class="global_name_span">馬修</span>為黑暗效力，但<span class="global_name_span">澤瑞達</span>殘存的意識化作<span class="global_name_span">馬修</span>的力量，擊敗了<span class="global_name_span">卡奧斯</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TnYWNe4SeFk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>鑄劍者軍團在前往［卡昆西斯］王城時，得知［雷根布魯克］帝國的［炎晶魔導師團］正對［卡昆西斯］發起攻擊，於是眾人決定前往支援，並且暫時擊退［炎晶魔導師團］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0PN8RIehvLA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>怕［卡昆西斯］王城也遭受攻擊，眾人便急速往王城出發，途中果然又遇到［雷根布魯克］帝國的軍隊，此時帝國兵正準備毀掉王國境內的世界樹，由於帝國兵勢強大，眾人陷入苦戰，危機時刻<span class="global_name_span">雪露法妮爾</span><span class="global_name_span">安潔麗娜</span>的英靈現身幫助眾人一同擊退帝國軍。</p> <p>在<span class="global_name_span">雪露法妮爾</span><span class="global_name_span">安潔麗娜</span>的口中得知在［雷根布魯克］帝國境內，有種名為［水晶病］的疾病在蔓延。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BXJprala3io?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">格尼爾</span>透過世界樹的記憶看到了當初<span class="global_name_span">艾蜜莉</span>從<span class="global_name_span">蘭迪烏斯</span>手上暫時接過［王國守護者］責任的那一刻。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qjIwnmF7ouc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人繼續趕往王城，途中救了［卡昆西斯］的王子<span class="global_name_span">奧利佛</span>。</p> <div class="global_ps_text"> <p>02:03 - 這裡［奧利佛］說的話，幾乎可以確定［謎之騎士］就是［艾蜜莉］。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tf4X-dGRhTY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［卡昆西斯］王成此時正遭到［翠晶翼兵團］的攻擊，雖然鑄劍者軍團及時救援成功，然而混亂之際［翠晶翼兵團］的<span class="global_name_span">文森特</span>趁機擄走了［卡昆西斯］的公主<span class="global_name_span">梅露帕妮</span>。</p> <p>正當眾人困擾該怎麼追上［翠晶翼兵團］，<span class="global_name_span">安潔莉卡</span>駕駛著飛空艇華麗登場。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5uujAKzd7Fg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>指揮著［卡昆西斯］軍隊的<span class="global_name_span">伊露希亞</span>想起了十年前與<span class="global_name_span">文森特</span>的愛恨情仇。</p> <p>因為自己的大意與<span class="global_name_span">文森特</span>的背叛，導至［卡昆西斯］王妃的犧牲。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SkgUA0wJ2j4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雖然追上並且成功擊敗［翠晶翼兵團］［炎晶魔導師團］，但由於已經追入［雷根布魯克］境內，眾人還是跟丟了<span class="global_name_span">梅露帕妮</span>的行蹤。</p> <p>此時<span class="global_name_span">謎之騎士</span>要鑄劍者軍團跟著她走，並且準備敘述這一切的因果。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hEGubswA5K4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">艾梅達</span>誤入<span class="global_name_span">基扎洛夫</span>設下的陷阱，所幸<span class="global_name_span">西格瑪</span><span class="global_name_span">蘭迪烏斯</span>的即時救援，才免於被奪取聖劍記憶的力量。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zpdLQr9cQmk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH11 - CH15</div> <p>為了追蹤到<span class="global_name_span">文森特</span>的蹤跡，<span class="global_name_span">謎之騎士</span>帶領眾人來到［古代天候中樞］欲以新生聖劍的力量來消除迷霧，然而卻遇到大量素體的阻擾，不過最後靠著眾人協力還是成功重啟［古代天后中樞］。</p> <p>另一方面<span class="global_name_span">文森特</span>將公主<span class="global_name_span">梅露帕妮</span>交給燦晶騎士團的<span class="global_name_span">海倫娜</span>後，獨自前往［北疆魔城］與<span class="global_name_span">希琳卡</span>等人會面。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/q_z8flAypdg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">謎之騎士</span>對<span class="global_name_span">馬修</span>敘述了曾經的英雄們修復［古代天候中樞］的故事，並且得知<span class="global_name_span">蘭迪烏斯</span>極有可能還活著。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/s4V8BgqXIrI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人朝著水晶曠野中央的世界樹前進，卻遇到神秘人物<span class="global_name_span">茉</span>與［幽晶禁衛軍］團長<span class="global_name_span">阿米斯特</span>擋在眾人面前，擊敗他們後，透過與世界樹的交流，得知了<span class="global_name_span">文森特</span>前往北方的事實。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ietOXEFixgc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>夜晚獨自離開營地的<span class="global_name_span">奧利佛</span>遇上了神秘人物<span class="global_name_span">茉</span>，透過<span class="global_name_span">茉</span>的力量，發現<span class="global_name_span">梅露帕妮</span>正與［雷根布魯克］女王<span class="global_name_span">羅澤希爾</span>在一起，於是原本敵對的兩人結伴同行前往［雷根布魯克］王城。</p> <div class="global_ps_text"> <p>21:05 - <span class="global_name_span">茉</span>所說的主人，估計就是<span class="global_name_span">基扎洛夫</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/04M0Wb6v9m8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>發現<span class="global_name_span">奧利佛</span>不見的眾人正著急的尋找，卻在此時遇上了燦晶騎士團的<span class="global_name_span">海倫娜</span>，雙方交手到一半忽然遇到了魔族的無差別攻擊，權衡利害後決定聯手消滅魔族。</p> <p>擊退魔族後，從<span class="global_name_span">海倫娜</span>口中得知<span class="global_name_span">梅露帕妮</span>的下落，但眾人為了<span class="global_name_span">奧利佛</span>的安危還是決定先前往北方魔地調查。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/L2N56Eu886w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">希琳卡</span>在北方魔地設下陷阱，但<span class="global_name_span">馬修</span>在<span class="global_name_span">澤瑞達</span>的提醒下，識破了這詭計。眼見事情朝著不可預期的方向發展，<span class="global_name_span">謎之騎士</span>決定帶領眾人尋找強大的助力。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rxQsylLdluA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">謎之騎士</span>帶著眾人來到［霜之世界樹］尋找經過歲月磨練，已經轉職成法師<span class="global_name_span">蘭迪烏斯</span>，在聽完眾人對現實狀況的詳述後，<span class="global_name_span">蘭迪烏斯</span>決定與眾人一起行動。</p> <p>另一方面<span class="global_name_span">奧利佛</span>與<span class="global_name_span">茉</span>也來到［雷根布魯克］王城。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ien7y-GsH_Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">馬修</span>找上<span class="global_name_span">蘭迪烏斯</span>詢問關於自己身世的問題，原來真相就是<span class="global_name_span">馬修</span>是<span class="global_name_span">蘭迪烏斯</span>與<span class="global_name_span">妮絲蒂爾</span>的後人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1i6mQAP2qgA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
