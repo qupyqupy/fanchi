@@ -1,0 +1,626 @@
+<style type="text/css">body #container3,
+body #content,
+body .article-content {
+  width: 100%;
+}
+
+.base_country {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.tree hr {
+  border: 1px solid gray !important;
+}
+.tree li.game_light_point div,
+.game_light {
+  background: #FFCC99;
+  color: #000000;
+}
+.tree ul li.game_dark_point div,
+.game_dark {
+  background: #666666;
+  color: #FFFFFF;
+}
+.tree li.game_empire_point div,
+.game_empire {
+  background: #669999;
+  color: #FFFFFF;
+}
+.tree ul li.game_tyrant_point div,
+.game_tyrant {
+  background: #666699;
+  color: #FFFFFF;
+}
+
+.tree {
+  display: inline-block;
+}
+
+.tree * {
+  margin: 0; 
+  padding: 0;
+}
+
+.tree .game_light_point .half_cell {
+  display: inline-block;
+  background: #FFFFCC;
+  width: 30%;
+}
+
+.tree ul {
+  padding-top: 20px; 
+  position: relative;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li {
+  float: left; 
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 1px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li::before, 
+.tree li::after {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%; 
+  height: 20px;
+}
+.tree li::after{
+  right: auto; 
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+.tree li:only-child::after, 
+.tree li:only-child::before {
+  display: none;
+}
+
+.tree li:only-child { 
+  padding-top: 0;
+}
+
+.tree li:first-child::before, 
+.tree li:last-child::after {
+  border: 0 none;
+}
+
+.tree li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before {
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0; height: 20px;
+}
+
+.tree li div{
+  width: 130px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li div.select_point {
+  width: auto;
+}
+.tree li div.select_point b {
+  display: inline-block;
+  margin-top: 5px;
+}
+.tree li div.select_point span {
+  display: inline-block;;
+  padding: 5px;
+}
+.tree li div:hover, 
+.tree li div:hover+ul li div {
+  background: #c8e4f8; 
+  color: #000; 
+  border: 1px solid #94a0b4;
+}
+
+.tree li div:hover+ul li::after, 
+.tree li div:hover+ul li::before, 
+.tree li div:hover+ul::before, 
+.tree li div:hover+ul ul::before {
+	border-color:  #94a0b4;
+}
+</style>
+<hr />
+<div class="base_country game_light">光輝</div>
+
+<div class="base_country game_dark">黑暗</div>
+
+<div class="base_country game_empire">帝國</div>
+
+<div class="base_country game_tyrant">霸者</div>
+
+<div class="tree">
+<ul>
+	<li>
+	<div data-mark="1">01 序章</div>
+
+	<ul>
+		<li>
+		<div data-mark="2">02 旅立ち</div>
+
+		<ul>
+			<li>
+			<div data-mark="3">03 光の大神殿</div>
+
+			<ul>
+				<li>
+				<div data-mark="4">04 カルザス城攻防</div>
+
+				<ul>
+					<li>
+					<div data-mark="5">05 炎の中で</div>
+
+					<ul>
+						<li>
+						<div data-mark="6">06 聖地レイテル</div>
+
+						<ul>
+							<li>
+							<div class="select_point" data-mark="7">07 魔族の少女
+							<hr /> <strong>對於雷歐（レオン）的邀請</strong><br />
+							<span class="game_empire">接受</span> <span class="game_light">拒絕</span></div>
+
+							<ul>
+								<li class="game_empire_point">
+								<div data-mark="37">37 ゴーアヘッド</div>
+
+								<ul>
+									<li>
+									<div data-mark="38">38 WANTED</div>
+
+									<ul>
+										<li>
+										<div data-mark="39">39 老劍士立つ</div>
+
+										<ul>
+											<li>
+											<div class="select_point" data-mark="40">40 神秘の秘劍
+											<hr /> <strong>由艾爾文取得聖劍</strong><br />
+											<span class="game_dark">背叛帝國</span> <span class="game_empire">不背叛帝國</span></div>
+
+											<ul>
+												<li class="game_dark_point">
+												<div data-mark="56">56 霸道</div>
+
+												<ul>
+													<li>
+													<div data-mark="57">57 帝王ベルンハルト</div>
+
+													<ul>
+														<li>
+														<div data-mark="58">58 ジェサイド</div>
+
+														<ul>
+															<li>
+															<div data-mark="59">59 カルザス城陷落</div>
+
+															<ul>
+																<li>
+																<div class="select_point" data-mark="60">60 真魔劍アルハザ－ド
+																<hr /> <strong>是否背叛黑暗勢力</strong><br />
+																<span class="game_tyrant">背叛</span> <span class="game_dark">不背叛</span></div>
+
+																<ul>
+																	<li class="game_tyrant_point">
+																	<div data-mark="66">66 霸者の道</div>
+
+																	<ul>
+																		<li>
+																		<div data-mark="67">67 青龍の炎</div>
+
+																		<ul>
+																			<li>
+																			<div data-mark="68">68 皇帝ベルンハルト</div>
+
+																			<ul>
+																				<li>
+																				<div data-mark="69">69 神の遺跡</div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="70">70 ネオ．グロリア</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																		</ul>
+																		</li>
+																	</ul>
+																	</li>
+																	<li>
+																	<div data-mark="61">61 闇の使者</div>
+
+																	<ul>
+																		<li>
+																		<div data-mark="62">62 波頭に散りて</div>
+
+																		<ul>
+																			<li>
+																			<div data-mark="63">63 ツインキャッスル</div>
+
+																			<ul>
+																				<li>
+																				<div data-mark="64">64 帝國最後の日</div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="65">65 闇の傳說へ</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																		</ul>
+																		</li>
+																	</ul>
+																	</li>
+																</ul>
+																</li>
+															</ul>
+															</li>
+														</ul>
+														</li>
+													</ul>
+													</li>
+												</ul>
+												</li>
+												<li>
+												<div data-mark="41">41 悲しみの追擊者</div>
+
+												<ul>
+													<li>
+													<div data-mark="42">42 ジェノサイダー</div>
+
+													<ul>
+														<li>
+														<div data-mark="43">43 鐵壁の防御陣</div>
+
+														<ul>
+															<li>
+															<div data-mark="44">44 カルザス陷落</div>
+
+															<ul>
+																<li>
+																<div class="select_point" data-mark="45">45 トライアングル
+																<hr /> <strong>根據追擊對象產生分歧</strong><br />
+																<span>波塞魯(ボーゼル)</span> <span>潔西卡(ジェシカ)</span></div>
+
+																<ul>
+																	<li>
+																	<div class="select_point" data-mark="46">46 愛妹ソニア
+																	<hr /> <strong>是否成功說服索妮雅(ソニア)</strong><br />
+																	<span>成功</span> <span>失敗</span></div>
+
+																	<ul>
+																		<li>
+																		<div data-mark="47">47 ダーク．ブレイカー</div>
+
+																		<ul>
+																			<li>
+																			<div data-mark="48">48 海に散る星</div>
+
+																			<ul>
+																				<li>
+																				<div data-mark="49">49 雙塔の古城</div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="50">50 決戰</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																		</ul>
+																		</li>
+																		<li>
+																		<div data-mark="74">74 サッド．アタック</div>
+
+																		<ul>
+																			<li>
+																			<div data-mark="75">75 海に散る星</div>
+
+																			<ul>
+																				<li>
+																				<div data-mark="76">76 雙塔の古城</div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="77">77 決戰</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																		</ul>
+																		</li>
+																	</ul>
+																	</li>
+																	<li>
+																	<div data-mark="51">51 悲色の大河</div>
+
+																	<ul>
+																		<li>
+																		<div data-mark="52">52 光、落ちて</div>
+
+																		<ul>
+																			<li>
+																			<div data-mark="53">53 ダークパワー</div>
+
+																			<ul>
+																				<li>
+																				<div class="select_point" data-mark="54">54 魔の城ヴェルゼリア
+																				<hr /> <strong>是否成功說服索妮雅(ソニア)</strong><br />
+																				<span>成功</span> <span>失敗</span></div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="78">78 はるか、傳說へ</div>
+																					</li>
+																					<li>
+																					<div data-mark="55">55 サッド．アタック</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																		</ul>
+																		</li>
+																	</ul>
+																	</li>
+																</ul>
+																</li>
+															</ul>
+															</li>
+														</ul>
+														</li>
+													</ul>
+													</li>
+												</ul>
+												</li>
+											</ul>
+											</li>
+										</ul>
+										</li>
+									</ul>
+									</li>
+								</ul>
+								</li>
+								<li class="game_light_point">
+								<div data-mark="8">08 空のかけ橋</div>
+
+								<ul>
+									<li>
+									<div data-mark="9">09 老劍士の砦</div>
+
+									<ul>
+										<li>
+										<div data-mark="10">10 猛將バルガス</div>
+
+										<ul>
+											<li>
+											<div data-mark="11">11 聖劍ラングリッサー</div>
+
+											<ul>
+												<li>
+												<div data-mark="12">12 鐵壁の騎士團</div>
+
+												<ul>
+													<li>
+													<div class="select_point" data-mark="13">13 帝王ベルンハルト
+													<hr /> <strong>根據擊倒對象進入分歧</strong><br />
+													<span>波塞魯(ボーゼル)</span> <span>貝恩哈特(ベルンハルト)</span></div>
+
+													<ul>
+														<li>
+														<div data-mark="14">14 港の攻防戰</div>
+
+														<ul>
+															<li>
+															<div data-mark="15">15 マリオネット</div>
+
+															<ul>
+																<li>
+																<div data-mark="16">16 復活の魔劍</div>
+
+																<ul>
+																	<li>
+																	<div data-mark="17">17 封印のかぎ</div>
+
+																	<ul>
+																		<li>
+																		<div class="select_point" data-mark="18">18 リベンジャー
+																		<hr /> <strong>追擊索妮雅(ソニア)</strong><br />
+																		<span>是</span> <span>否</span></div>
+
+																		<ul>
+																			<li>
+																			<div data-mark="22">22 ルナティック</div>
+
+																			<ul>
+																				<li>
+																				<div data-mark="23">23 大陸最強の騎士</div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="24">24 傳說の終わりに</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																			<li>
+																			<div data-mark="19">19 大陸最強の騎士</div>
+
+																			<ul>
+																				<li>
+																				<div data-mark="20">20 聖魔劍</div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="21">21 傳說を越えて</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																		</ul>
+																		</li>
+																	</ul>
+																	</li>
+																</ul>
+																</li>
+															</ul>
+															</li>
+														</ul>
+														</li>
+														<li>
+														<div class="select_point" data-mark="25">25 港の攻防戰
+														<hr /> <strong>15回合以內過關</strong><br />
+														<span>是</span> <span>否</span></div>
+
+														<ul>
+															<li>
+															<div>
+															<div class="half_cell" data-mark="26">26 迎擊イメルタ</div>
+
+															<div class="half_cell" data-mark="28">28 いてつく炎</div>
+															</div>
+
+															<ul>
+																<li>
+																<div>
+																<div class="half_cell" data-mark="27">27 マリオネット</div>
+
+																<div class="half_cell" data-mark="29">29 デッドエンド</div>
+																</div>
+
+																<ul>
+																	<li>
+																	<div class="select_point" data-mark="30">30 復活の魔劍
+																	<hr /> <strong>選擇留在隊伍內的夥伴</strong><br />
+																	<span>蘭娜(ラーナ)</span> <span>亞龍(アーロン)</span></div>
+
+																	<ul>
+																		<li>
+																		<div data-mark="31">31 封印のかぎ</div>
+
+																		<ul>
+																			<li>
+																			<div data-mark="32">32 リベンジャー</div>
+
+																			<ul>
+																				<li>
+																				<div data-mark="23">23 大陸最強の騎士</div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="24">24 傳說の終わりに</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																		</ul>
+																		</li>
+																		<li>
+																		<div data-mark="33">33 封印のかぎ</div>
+
+																		<ul>
+																			<li>
+																			<div data-mark="34">34 リベンジャー</div>
+
+																			<ul>
+																				<li>
+																				<div data-mark="35">35 大陸最強の騎士</div>
+
+																				<ul>
+																					<li>
+																					<div data-mark="36">36 傳說の終わりに</div>
+																					</li>
+																				</ul>
+																				</li>
+																			</ul>
+																			</li>
+																		</ul>
+																		</li>
+																	</ul>
+																	</li>
+																</ul>
+																</li>
+															</ul>
+															</li>
+														</ul>
+														</li>
+													</ul>
+													</li>
+												</ul>
+												</li>
+											</ul>
+											</li>
+										</ul>
+										</li>
+									</ul>
+									</li>
+								</ul>
+								</li>
+							</ul>
+							</li>
+						</ul>
+						</li>
+					</ul>
+					</li>
+				</ul>
+				</li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+
+<hr />
+

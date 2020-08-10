@@ -1,0 +1,1251 @@
+<style>
+@keyframes scaleAn
+{
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes scaleAn
+{
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scaleAn
+{
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-o-keyframes scaleAn
+{
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dino_title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  background: #336699;
+  border-bottom: 5px solid #003366;
+  color: #FFFFFF;
+  padding: 5px 10px;
+}
+
+.badman_cell {
+  display: inline-block;
+  position: relative;
+  border: 2px solid #666666;
+  padding: 5px;
+  width: 180px;
+  height: 360px;
+  margin: 5px 11px;
+  font-size: 16px;
+  transition: all 1s;
+}
+.badman_cell:hover {
+  background: #6699CC;
+  border: 2px solid #99CCFF;
+  box-shadow: 0px 0px 5px #99CCFF;
+}
+div .badman_cell * {
+  margin: 0px;
+  padding: 0px;
+}
+.badman_cell h3 {
+  background: #333333;  
+  color: #FFFFFF;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.badman_cell .img_m {
+  position: absolute;
+  border: 2px solid #666666;
+  border-radius: 40%;
+  background: #666666;
+  width: 50px;
+  right: 5px;
+  bottom: 5px;
+}
+.badman_cell:hover .img_m {
+  animation: scaleAn 1.5s;
+  -moz-animation: scaleAn 1.5s;
+  -webkit-animation: scaleAn 1.5s;
+  -o-animation: scaleAn 1.5s;
+  animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+}
+.badman_cell .img_h {
+  display: block;
+  height: 100px;
+  max-width: 100%;
+  margin: 10px auto;
+}
+.badman_cell p {
+  margin: 1px;
+  line-height: normal;
+}
+.badman_cell p strong {
+  display: inline-block;
+  width: 50%;
+  background: #336699;
+  color: #FFFFFF;
+  padding: 2px;
+}
+.badman_cell p span {
+  display: inline-block;
+  width: 39%;
+  margin-left: 5px;
+  color: #666666;
+  padding: 2px;
+  border-bottom: 2px dashed #006699;
+}
+.badman_cell:hover p span {
+  color: #FFFFFF;
+}
+
+.badman_kind2,
+.badman_kind3 {
+	margin-top: 20px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<hr/>
+<div ng-app="dinoApp" ng-controller="dinoAppCtrl">
+  <div class="badman_kind1">
+    <h1 class="dino_title">三疊紀</h1>
+    <div class="badman_cell" ng-repeat="badMan in badMans">
+      <h3>{{badMan.name}}</h3>
+      <img class="img_m" src="{{badMan.move_img}}"/>
+      <img class="img_h" src="{{badMan.fight_img}}"/>
+      <p><strong>生命值</strong><span>{{badMan.life}}</span></p>
+      <p><strong>速度</strong><span>{{badMan.speed}}</span></p>
+      <p><strong>活動區</strong><span>{{badMan.action_area}}</span></p>
+      <p><strong>武器</strong><span>{{badMan.weapon}}</span></p>
+      <p><strong>射程</strong><span>{{badMan.attack_area}}</span></p>
+      <p><strong>攻擊力</strong><span>{{badMan.AT}}</span></p>
+      <p><strong>防禦力</strong><span>{{badMan.DF}}</span></p>
+      <p><strong>身長</strong><span>{{badMan.body_length}}</span></p>
+    </div>
+  </div>
+  <div class="badman_kind2">
+    <h1 class="dino_title">侏儸紀</h1>
+    <div class="badman_cell" ng-repeat="badMan in badMans2">
+      <h3>{{badMan.name}}</h3>
+      <img class="img_m" src="{{badMan.move_img}}"/>
+      <img class="img_h" src="{{badMan.fight_img}}"/>
+      <p><strong>生命值</strong><span>{{badMan.life}}</span></p>
+      <p><strong>速度</strong><span>{{badMan.speed}}</span></p>
+      <p><strong>活動區</strong><span>{{badMan.action_area}}</span></p>
+      <p><strong>武器</strong><span>{{badMan.weapon}}</span></p>
+      <p><strong>射程</strong><span>{{badMan.attack_area}}</span></p>
+      <p><strong>攻擊力</strong><span>{{badMan.AT}}</span></p>
+      <p><strong>防禦力</strong><span>{{badMan.DF}}</span></p>
+      <p><strong>身長</strong><span>{{badMan.body_length}}</span></p>
+    </div>
+  </div>
+  <div class="badman_kind3">
+    <h1 class="dino_title">白堊紀</h1>
+    <div class="badman_cell" ng-repeat="badMan in badMans3">
+      <h3>{{badMan.name}}</h3>
+      <img class="img_m" src="{{badMan.move_img}}"/>
+      <img class="img_h" src="{{badMan.fight_img}}"/>
+      <p><strong>生命值</strong><span>{{badMan.life}}</span></p>
+      <p><strong>速度</strong><span>{{badMan.speed}}</span></p>
+      <p><strong>活動區</strong><span>{{badMan.action_area}}</span></p>
+      <p><strong>武器</strong><span>{{badMan.weapon}}</span></p>
+      <p><strong>射程</strong><span>{{badMan.attack_area}}</span></p>
+      <p><strong>攻擊力</strong><span>{{badMan.AT}}</span></p>
+      <p><strong>防禦力</strong><span>{{badMan.DF}}</span></p>
+      <p><strong>身長</strong><span>{{badMan.body_length}}</span></p>
+    </div>
+  </div>
+</div>
+<hr/>
+<script type="text/javascript">
+var badMans = [{
+	"name": "喙頭龍",
+	"life": 20,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "石頭",
+	"attack_area": 2,
+	"AT": 10,
+	"DF": 20,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472482468-3525497836.jpg?v=1472482500",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472482468-2348162430.jpg?v=1472482500"
+},{
+	"name": "蛇頸蜥",
+	"life": 40,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 40,
+	"DF": 25,
+	"body_length": 5,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472482468-1275483003.jpg?v=1472482500",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472482468-3661744195.jpg?v=1472482500"
+},{
+	"name": "包魯龍",
+	"life": 20,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 20,
+	"DF": 20,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472482468-2201314363.jpg?v=1472482500",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472482468-2964307465.jpg?v=1472482500"
+},{
+	"name": "犬颌龍",
+	"life": 30,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 20,
+	"DF": 40,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472482471-2454504014.jpg?v=1472482501",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472482471-441444252.jpg?v=1472482501"
+},{
+	"name": "寬額龍",
+	"life": 30,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 35,
+	"DF": 25,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472482471-3669625411.jpg?v=1472482501",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472482474-1555501057.jpg?v=1472482501"
+},{
+	"name": "小灰獸",
+	"life": 15,
+	"speed": 4,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 15,
+	"DF": 15,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472482476-671053667.jpg?v=1472482501",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472482476-3802367432.jpg?v=1472482501"
+},{
+	"name": "恐齒龍",
+	"life": 20,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 20,
+	"DF": 20,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472482478-3610170380.jpg?v=1472482501",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472482479-518356336.jpg?v=1472482501"
+},{
+	"name": "萊斯龍",
+	"life": 20,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 15,
+	"DF": 20,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472482479-1626945806.jpg?v=1472482501",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472482479-3222713748.jpg?v=1472482501"
+},{
+	"name": "摩斯獸",
+	"life": 40,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 40,
+	"DF": 35,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891183-634799392.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891183-2933205335.jpg?v=1472891212"
+},{
+	"name": "引龍",
+	"life": 30,
+	"speed": 2,
+	"action_area": "海/陸",
+	"weapon": "尾巴",
+	"attack_area": 1,
+	"AT": 20,
+	"DF": 40,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891183-4012964698.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891183-3188166828.jpg?v=1472891212"
+},{
+	"name": "原盤龍",
+	"life": 30,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "尾巴",
+	"attack_area": 1,
+	"AT": 60,
+	"DF": 30,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891183-2087090170.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891184-276034188.jpg?v=1472891212"
+},{
+	"name": "矮腳龍",
+	"life": 25,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "尾巴",
+	"attack_area": 1,
+	"AT": 25,
+	"DF": 20,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891184-2470997131.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891184-3982370678.jpg?v=1472891212"
+},{
+	"name": "泰坦鱷",
+	"life": 30,
+	"speed": 2,
+	"action_area": "海中",
+	"weapon": "尾巴",
+	"attack_area": 1,
+	"AT": 60,
+	"DF": 30,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891184-2081945006.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891184-762532965.jpg?v=1472891212"
+},{
+	"name": "山西龍",
+	"life": 40,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "石頭",
+	"attack_area": 3,
+	"AT": 40,
+	"DF": 30,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891184-219397900.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891185-205142619.jpg?v=1472891212"
+},{
+	"name": "杯喙龍",
+	"life": 30,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "尾巴",
+	"attack_area": 1,
+	"AT": 40,
+	"DF": 30,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891185-3230805630.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891185-3859354644.jpg?v=1472891212"
+},{
+	"name": "漸新龍",
+	"life": 50,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "尾巴",
+	"attack_area": 1,
+	"AT": 80,
+	"DF": 100,
+	"body_length": 7,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891186-533249972.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891185-893982382.jpg?v=1472891212"
+},{
+	"name": "戟刺鮫",
+	"life": 15,
+	"speed": 5,
+	"action_area": "海中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 10,
+	"DF": 5,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891185-1600465067.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891186-3804840038.jpg?v=1472891212"
+},{
+	"name": "脊甲魚",
+	"life": 15,
+	"speed": 2,
+	"action_area": "海/陸",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 15,
+	"DF": 20,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891185-1771989384.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891186-3934514260.jpg?v=1472891212"
+},{
+	"name": "鐘口龍",
+	"life": 50,
+	"speed": 2,
+	"action_area": "海/陸",
+	"weapon": "尾巴",
+	"attack_area": 1,
+	"AT": 100,
+	"DF": 50,
+	"body_length": 5,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891186-1285323643.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891186-3882613108.jpg?v=1472891212"
+},{
+	"name": "飛蜥",
+	"life": 10,
+	"speed": 5,
+	"action_area": "空中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 10,
+	"DF": 5,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891186-2201031130.jpg?v=1472891212",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891186-269156327.jpg?v=1472891212"
+},{
+	"name": "海洋蜥",
+	"life": 50,
+	"speed": 4,
+	"action_area": "海中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 60,
+	"DF": 35,
+	"body_length": 7,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891187-1071548564.jpg?v=1472891213",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891187-2142311429.jpg?v=1472891213"
+},{
+	"name": "海龜",
+	"life": 50,
+	"speed": 3,
+	"action_area": "海中",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 50,
+	"DF": 120,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891187-508141838.jpg?v=1472891213",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891187-2458750639.jpg?v=1472891213"
+},{
+	"name": "突顎龜",
+	"life": 20,
+	"speed": 3,
+	"action_area": "海中",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 15,
+	"DF": 25,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891187-1412314847.jpg?v=1472891213",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891188-2101213369.jpg?v=1472891213"
+},{
+	"name": "地龍",
+	"life": 50,
+	"speed": 2,
+	"action_area": "海中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 100,
+	"DF": 50,
+	"body_length": 5,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891188-3681767680.jpg?v=1472891213",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891188-201774464.jpg?v=1472891213"
+},{
+	"name": "巨鱷",
+	"life": 120,
+	"speed": 2,
+	"action_area": "海/陸",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 255,
+	"DF": 130,
+	"body_length": 17,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891188-471995890.jpg?v=1472891213",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891188-3746705761.jpg?v=1472891213"
+},{
+	"name": "鱷龍",
+	"life": 60,
+	"speed": 2,
+	"action_area": "海/陸",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 15,
+	"DF": 25,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891188-2379099973.jpg?v=1472891213",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891189-4111334869.jpg?v=1472891213"
+},{
+	"name": "陸龜",
+	"life": 25,
+	"speed": 3,
+	"action_area": "海中",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 25,
+	"DF": 60,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472891188-2062724265.jpg?v=1472891213",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472891189-140740058.jpg?v=1472891213"
+}
+];
+
+var badMans2 = [{
+	"name": "厚鬃狗",
+	"life": 20,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 35,
+	"DF": 20,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960871-4259279091.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960871-916019935.jpg?v=1472960890"
+},{
+	"name": "紐齒獸",
+	"life": 20,
+	"speed": 4,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 25,
+	"DF": 20,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960871-3213417495.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960871-3740347727.jpg?v=1472960890"
+},{
+	"name": "海豚",
+	"life": 40,
+	"speed": 5,
+	"action_area": "海中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 40,
+	"DF": 25,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960871-2126766838.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960872-4156642415.jpg?v=1472960890"
+},{
+	"name": "犰狳",
+	"life": 30,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 20,
+	"DF": 100,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960872-3814162940.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960872-1101462353.jpg?v=1472960890"
+},{
+	"name": "始祖鳥",
+	"life": 10,
+	"speed": 5,
+	"action_area": "空中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 10,
+	"DF": 5,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960872-1024272031.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960873-3312280647.jpg?v=1472960890"
+},{
+	"name": "賊鳥",
+	"life": 30,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "腳踢",
+	"attack_area": 1,
+	"AT": 45,
+	"DF": 20,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960873-4287261197.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960873-2953499188.jpg?v=1472960890"
+},{
+	"name": "河象",
+	"life": 50,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "鼻子",
+	"attack_area": 1,
+	"AT": 50,
+	"DF": 50,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960874-949745337.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960874-2953114705.jpg?v=1472960890"
+},{
+	"name": "殺人鯨",
+	"life": 50,
+	"speed": 3,
+	"action_area": "海中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 60,
+	"DF": 35,
+	"body_length": 6,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960875-4100167710.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960875-387332123.jpg?v=1472960890"
+},{
+	"name": "巨尾鼠",
+	"life": 30,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 25,
+	"DF": 40,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960875-2437985875.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960875-3308181703.jpg?v=1472960890"
+},{
+	"name": "恐角獸",
+	"life": 80,
+	"speed": 4,
+	"action_area": "陸地",
+	"weapon": "角刺",
+	"attack_area": 1,
+	"AT": 70,
+	"DF": 100,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960876-3241631856.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960876-2170596640.jpg?v=1472960890"
+},{
+	"name": "兜齒獸",
+	"life": 30,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "頭撞",
+	"attack_area": 1,
+	"AT": 60,
+	"DF": 30,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960876-2656170521.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960876-2084465710.jpg?v=1472960890"
+},{
+	"name": "老鷹",
+	"life": 20,
+	"speed": 8,
+	"action_area": "空中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 35,
+	"DF": 15,
+	"body_length": 1,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960876-1878403313.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960876-1547697417.jpg?v=1472960890"
+},{
+	"name": "雙門齒獸",
+	"life": 60,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "石頭",
+	"attack_area": 3,
+	"AT": 120,
+	"DF": 60,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960877-1539118954.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960877-2704427200.jpg?v=1472960890"
+},{
+	"name": "袋虎",
+	"life": 25,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 50,
+	"DF": 40,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960877-269749731.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960877-2723982345.jpg?v=1472960890"
+},{
+	"name": "恐鳥",
+	"life": 40,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "腳踢",
+	"attack_area": 1,
+	"AT": 80,
+	"DF": 40,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960877-3855757329.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960877-493868393.jpg?v=1472960890"
+},{
+	"name": "營穴鳥",
+	"life": 30,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "腳踢",
+	"attack_area": 1,
+	"AT": 65,
+	"DF": 30,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960878-2263936242.jpg?v=1472960890",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960878-3327640499.jpg?v=1472960891"
+},{
+	"name": "原蹄獸",
+	"life": 30,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 30,
+	"DF": 20,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960878-599436390.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960879-2333800686.jpg?v=1472960891"
+},{
+	"name": "俾路支獸",
+	"life": 150,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "頭撞",
+	"attack_area": 1,
+	"AT": 80,
+	"DF": 100,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960879-1367366450.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960879-3787257881.jpg?v=1472960891"
+},{
+	"name": "火獸",
+	"life": 80,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "鼻子",
+	"attack_area": 1,
+	"AT": 70,
+	"DF": 70,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960879-851082886.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960879-3549661976.jpg?v=1472960891"
+},{
+	"name": "藍鯨",
+	"life": 255,
+	"speed": 4,
+	"action_area": "海中",
+	"weapon": "尾巴",
+	"attack_area": 1,
+	"AT": 150,
+	"DF": 130,
+	"body_length": 30,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960880-4034231314.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960880-1522712307.jpg?v=1472960891"
+},{
+	"name": "河馬",
+	"life": 80,
+	"speed": 2,
+	"action_area": "海/陸",
+	"weapon": "頭撞",
+	"attack_area": 1,
+	"AT": 80,
+	"DF": 70,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960880-4162873761.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960880-3371050942.jpg?v=1472960891"
+},{
+	"name": "斯劍虎",
+	"life": 30,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 55,
+	"DF": 45,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960880-153808082.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960880-3460554529.jpg?v=1472960891"
+},{
+	"name": "灰熊",
+	"life": 60,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "石頭",
+	"attack_area": 4,
+	"AT": 150,
+	"DF": 60,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960880-3822345530.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960881-3152535949.jpg?v=1472960891"
+},{
+	"name": "老虎",
+	"life": 40,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 120,
+	"DF": 60,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960881-3650454442.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960881-2032968738.jpg?v=1472960891"
+},{
+	"name": "大犰狳",
+	"life": 60,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 60,
+	"DF": 120,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960881-3141983684.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960882-3638817425.jpg?v=1472960891"
+},{
+	"name": "基異龍",
+	"life": 150,
+	"speed": 4,
+	"action_area": "海中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 100,
+	"DF": 100,
+	"body_length": 20,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960882-921099646.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960882-3236658026.jpg?v=1472960891"
+},{
+	"name": "埃及后獸",
+	"life": 80,
+	"speed": 4,
+	"action_area": "陸地",
+	"weapon": "角刺",
+	"attack_area": 1,
+	"AT": 100,
+	"DF": 100,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960882-1717259419.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960883-141302765.jpg?v=1472960891"
+},{
+	"name": "大獺獸",
+	"life": 100,
+	"speed": 2,
+	"action_area": "陸地",
+	"weapon": "石頭",
+	"attack_area": 4,
+	"AT": 100,
+	"DF": 100,
+	"body_length": 7,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960882-955746321.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960883-2840154741.jpg?v=1472960891"
+},{
+	"name": "獅子",
+	"life": 40,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 100,
+	"DF": 50,
+	"body_length": 3,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1472960883-21857334.jpg?v=1472960891",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1472960883-419854175.jpg?v=1472960891"
+}
+];
+
+var badMans3 = [{
+	"name": "海蟒",
+	"life": 80,
+	"speed": 4,
+	"action_area": "海中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 100,
+	"DF": 80,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028708-3136564664.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028690-3622222641.jpg?v=1473028767"
+},{
+	"name": "捏西",
+	"life": 120,
+	"speed": 4,
+	"action_area": "海中",
+	"weapon": "牙齒",
+	"attack_area": 1,
+	"AT": 100,
+	"DF": 100,
+	"body_length": 20,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028690-1346023891.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028691-725917150.jpg?v=1473028767"
+},{
+	"name": "裝甲車",
+	"life": 100,
+	"speed": 4,
+	"action_area": "陸地",
+	"weapon": "大砲",
+	"attack_area": 3,
+	"AT": 90,
+	"DF": 120,
+	"body_length": 5,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028690-1449085171.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028691-1149110216.jpg?v=1473028767"
+},{
+	"name": "機槍陣地",
+	"life": 20,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "機槍",
+	"attack_area": 3,
+	"AT": 25,
+	"DF": 20,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028691-2043812639.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028691-3624250872.jpg?v=1473028767"
+},{
+	"name": "星際怪獸",
+	"life": 100,
+	"speed": 5,
+	"action_area": "空中",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 60,
+	"DF": 100,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028691-3275728373.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028691-2511270145.jpg?v=1473028767"
+},{
+	"name": "流星裝置",
+	"life": 255,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "流星",
+	"attack_area": 3,
+	"AT": 120,
+	"DF": 255,
+	"body_length": 50,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028692-1853510140.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028691-4007779690.jpg?v=1473028767"
+},{
+	"name": "雪人",
+	"life": 50,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 80,
+	"DF": 50,
+	"body_length": 5,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028692-108160601.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028692-2915995868.jpg?v=1473028767"
+},{
+	"name": "大金剛",
+	"life": 200,
+	"speed": 3,
+	"action_area": "陸地",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 140,
+	"DF": 200,
+	"body_length": 20,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028692-2647660437.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028692-153024411.jpg?v=1473028767"
+},{
+	"name": "海龍",
+	"life": 150,
+	"speed": 4,
+	"action_area": "海/陸",
+	"weapon": "火焰",
+	"attack_area": 1,
+	"AT": 150,
+	"DF": 200,
+	"body_length": 20,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028692-4024983617.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028693-1805998487.jpg?v=1473028767"
+},{
+	"name": "火星怪獸",
+	"life": 100,
+	"speed": 5,
+	"action_area": "空中",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 60,
+	"DF": 100,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028693-3048177459.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028693-3552928619.jpg?v=1473028767"
+},{
+	"name": "機甲戰士",
+	"life": 150,
+	"speed": 4,
+	"action_area": "海中",
+	"weapon": "劍",
+	"attack_area": 1,
+	"AT": 150,
+	"DF": 200,
+	"body_length": 20,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028693-2160567129.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028694-473951478.jpg?v=1473028767"
+},{
+	"name": "迫擊砲車",
+	"life": 15,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "大砲",
+	"attack_area": 3,
+	"AT": 50,
+	"DF": 10,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028694-2948697220.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028694-2528113339.jpg?v=1473028767"
+},{
+	"name": "修護車",
+	"life": 10,
+	"speed": 5,
+	"action_area": "陸地",
+	"weapon": "機槍",
+	"attack_area": 3,
+	"AT": 5,
+	"DF": 10,
+	"body_length": 4,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028694-1959439981.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028693-1341450574.jpg?v=1473028767"
+},{
+	"name": "摩托車兵",
+	"life": 5,
+	"speed": 6,
+	"action_area": "陸地",
+	"weapon": "機槍",
+	"attack_area": 3,
+	"AT": 10,
+	"DF": 10,
+	"body_length": 2,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028695-1531342386.jpg?v=1473028767",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028695-120062123.jpg?v=1473028767"
+},{
+	"name": "砲艇",
+	"life": 160,
+	"speed": 5,
+	"action_area": "海中",
+	"weapon": "大砲",
+	"attack_area": 3,
+	"AT": 180,
+	"DF": 200,
+	"body_length": 25,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028694-1324873675.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028694-1054250323.jpg?v=1473028768"
+},{
+	"name": "戰鬥機",
+	"life": 40,
+	"speed": 9,
+	"action_area": "空中",
+	"weapon": "機槍",
+	"attack_area": 3,
+	"AT": 140,
+	"DF": 40,
+	"body_length": 20,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028694-3986216158.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028699-106706832.jpg?v=1473028768"
+},{
+	"name": "加農砲塔",
+	"life": 200,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "大砲",
+	"attack_area": 6,
+	"AT": 255,
+	"DF": 200,
+	"body_length": 20,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028699-167918428.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028699-113396605.jpg?v=1473028768"
+},{
+	"name": "雷射砲台",
+	"life": 150,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "雷射",
+	"attack_area": 3,
+	"AT": 100,
+	"DF": 150,
+	"body_length": 5,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028699-3290488236.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028699-1712618381.jpg?v=1473028768"
+},{
+	"name": "高砲陣地",
+	"life": 50,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "大砲",
+	"attack_area": 5,
+	"AT": 120,
+	"DF": 50,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028700-1465409326.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028700-843327019.jpg?v=1473028768"
+},{
+	"name": "飛彈基地",
+	"life": 50,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "飛彈",
+	"attack_area": 5,
+	"AT": 180,
+	"DF": 50,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028700-4002813859.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028700-678888888.jpg?v=1473028768"
+},{
+	"name": "火箭陣地",
+	"life": 50,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "火焰",
+	"attack_area": 4,
+	"AT": 150,
+	"DF": 50,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028700-3085619120.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028701-2515081076.jpg?v=1473028768"
+},{
+	"name": "彗星裝置",
+	"life": 255,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "彗星",
+	"attack_area": 3,
+	"AT": 120,
+	"DF": 255,
+	"body_length": 50,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028701-997405579.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028700-2687172779.jpg?v=1473028768"
+},{
+	"name": "火焰裝置",
+	"life": 255,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "火焰",
+	"attack_area": 3,
+	"AT": 120,
+	"DF": 255,
+	"body_length": 50,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028701-4010193201.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028702-3474988996.jpg?v=1473028768"
+},{
+	"name": "洪水裝置",
+	"life": 255,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "洪水",
+	"attack_area": 3,
+	"AT": 120,
+	"DF": 255,
+	"body_length": 50,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028702-1835653506.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028702-221172631.jpg?v=1473028768"
+},{
+	"name": "地震裝置",
+	"life": 255,
+	"speed": 0,
+	"action_area": "陸地",
+	"weapon": "地震",
+	"attack_area": 3,
+	"AT": 120,
+	"DF": 255,
+	"body_length": 50,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028702-3644266494.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028703-647671985.jpg?v=1473028768"
+},{
+	"name": "戰車",
+	"life": 160,
+	"speed": 4,
+	"action_area": "陸地",
+	"weapon": "大砲",
+	"attack_area": 4,
+	"AT": 180,
+	"DF": 220,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028703-2743968576.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028703-331022791.jpg?v=1473028768"
+},{
+	"name": "自走砲車",
+	"life": 80,
+	"speed": 4,
+	"action_area": "陸地",
+	"weapon": "大砲",
+	"attack_area": 5,
+	"AT": 200,
+	"DF": 120,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028703-2538070306.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028703-3583477056.jpg?v=1473028768"
+},{
+	"name": "飛碟",
+	"life": 60,
+	"speed": 8,
+	"action_area": "空中",
+	"weapon": "雷射",
+	"attack_area": 3,
+	"AT": 100,
+	"DF": 60,
+	"body_length": 10,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028703-1028419171.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028703-2049706786.jpg?v=1473028768"
+},{
+	"name": "飛天金剛",
+	"life": 150,
+	"speed": 4,
+	"action_area": "空中",
+	"weapon": "拳頭",
+	"attack_area": 1,
+	"AT": 150,
+	"DF": 200,
+	"body_length": 20,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028704-2039047071.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028704-2493462065.jpg?v=1473028768"
+},{
+	"name": "潛艇",
+	"life": 160,
+	"speed": 4,
+	"action_area": "海中",
+	"weapon": "飛彈",
+	"attack_area": 5,
+	"AT": 200,
+	"DF": 100,
+	"body_length": 30,
+	"move_img": "https://pic.pimg.tw/qupyqupy/1473028704-2288078527.jpg?v=1473028768",
+	"fight_img": "https://pic.pimg.tw/qupyqupy/1473028705-1698415480.jpg?v=1473028768"
+}
+]
+
+var dinoApp = angular.module("dinoApp",[])
+.controller("dinoAppCtrl", function($scope) {
+  $scope.badMans = badMans;
+  $scope.badMans2 = badMans2;
+  $scope.badMans3 = badMans3;
+});
+</script>
+

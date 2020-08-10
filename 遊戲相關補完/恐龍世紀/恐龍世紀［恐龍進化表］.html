@@ -1,0 +1,862 @@
+<style>
+#dino_content {
+  position: relative;
+}
+.justify {
+　text-align: justify;
+　text-justify: inter-ideograph;
+　-ms-text-justify: inter-ideograph;
+　-moz-text-align-last:justify;
+　-webkit-text-align-last:justify;
+}
+.justify::after {
+　content: '';
+　display: inline-block;
+　width: 100%;
+}
+.dragon_detail {
+  position: absolute;
+  border: 2px solid #696969;
+  border-radius: 10px;
+  background: rgba(255,255,255, 0.9);
+  padding: 10px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  z-index: 10;
+  transform: scale(0);
+}
+.dragon_detail_show {
+  transform: scale(1) !important;
+}
+
+.dragon_detail img {
+  float: right;
+  width: 43%;
+  box-shadow: 1px 1px 2px #222222;
+  border-radius: 10px;
+}
+.dragon_detail h1 {
+  width: 180px;
+  font-weight: bold;
+  font-size: 2em;
+  margin: 10px 50px;
+  text-align: center;
+  color: #8B8878;
+  text-shadow: 1px 0px 2px #FFF8DC,
+    0px 1px 2px #FFF8DC,
+    -1px 0px 2px #FFF8DC,
+    0px -1px 2px #FFF8DC;
+}
+.dragon_detail p {
+  margin: 5px;
+  color: #363636;
+  width: 50%;
+  border-bottom: 2px dashed #458B00;
+  padding-bottom: 3px;
+}
+.dragon_detail p b {
+  display: inline-block;
+  width: 40%;
+  margin-right: 1px;
+  background: #00688B;
+  color: #FFFFFF;
+  padding: 0px 5px;
+}
+.dragon_detail p span::before {
+  content: "：";
+  font-weight: bold;
+}
+.tree {
+  display: inline-block;
+}
+
+.tree * {
+  margin: 0;
+  padding: 0;
+}
+.tree img {
+  width: 43px;
+}
+.tree ul {
+  padding-top: 20px; 
+  position: relative;   
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.tree li {
+  float: left; 
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 1px 0 1px;  
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.tree li::before, 
+.tree li::after {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%; 
+  height: 20px;
+}
+.tree li::after{
+  right: auto; 
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+.tree li:only-child::after, 
+.tree li:only-child::before {
+  display: none;
+}
+.tree li:only-child { 
+  padding-top: 0;
+}
+.tree li:first-child::before, 
+.tree li:last-child::after {
+  border: 0 none;
+}
+.tree li:last-child::before{
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+.tree ul ul::before{
+  content: '';
+  position: absolute; 
+  top: 0; 
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0; 
+  height: 20px;
+}
+.tree li div{
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 3px;
+  color: #666;
+  background: rgba(0,0,0,0);
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;    
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;  
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.tree li div:hover {
+  transform: scale(1.2);
+}
+.tree li div:hover, 
+.tree li div:hover+ul li div {
+  background: #c8e4f8; 
+  color: #000; 
+  border: 1px solid #94a0b4;
+}
+.tree li div:hover+ul li::after, 
+.tree li div:hover+ul li::before, 
+.tree li div:hover+ul::before, 
+.tree li div:hover+ul ul::before {
+  border-color:  #94a0b4;
+}
+</style>
+
+<div id="dino_content"></div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script type="text/javascript">
+  var jq3_1 = $.noConflict(true);
+</script>
+
+
+<script>
+var html_content = '<hr/><div class="dragon_detail"> </div><div class="tree"> <ul> <li> <div data-name="巴氏龍"><img src="https://pic.pimg.tw/qupyqupy/1472620624-83023487.jpg?v=1472620683"/><br/>巴氏龍</div><ul> <li> <div data-name="稻井龍"><img src="https://pic.pimg.tw/qupyqupy/1472620624-2179636633.jpg?v=1472620683"/><br/>稻井龍</div><ul> <li> <div data-name="諾杜龍"><img src="https://pic.pimg.tw/qupyqupy/1472620624-2215772058.jpg?v=1472620683"/><br/>諾杜龍</div><ul> <li> <div data-name="達烏瑪龍"><img src="https://pic.pimg.tw/qupyqupy/1472620629-1312489001.jpg?v=1472620683"/><br/>達烏瑪龍</div><ul> <li> <div data-name="雙葉龍"><img src="https://pic.pimg.tw/qupyqupy/1472620629-2492609670.jpg?v=1472620683"/><br/>雙葉龍</div><ul> <li> <div data-name="蛇頸龍"><img src="https://pic.pimg.tw/qupyqupy/1472620629-4002559903.jpg?v=1472620683"/><br/>蛇頸龍</div></li></ul> </li></ul> </li></ul> </li></ul> </li><li> <div data-name="似蜥龍"><img src="https://pic.pimg.tw/qupyqupy/1472620631-3806090389.jpg?v=1472620684"/><br/>似蜥龍</div><ul> <li> <div data-name="板龍"><img src="https://pic.pimg.tw/qupyqupy/1472620631-1114250872.jpg?v=1472620684"/><br/>板龍</div><ul> <li> <div data-name="梁龍"><img src="https://pic.pimg.tw/qupyqupy/1472620631-545189625.jpg?v=1472620684"/><br/>梁龍</div><ul> <li> <div data-name="圓頂龍"><img src="https://pic.pimg.tw/qupyqupy/1472620632-4157274412.jpg?v=1472620684"/><br/>圓頂龍</div><ul> <li> <div data-name="雷龍"><img src="https://pic.pimg.tw/qupyqupy/1472620633-2146064828.jpg?v=1472620684"/><br/>雷龍</div><ul> <li> <div data-name="腕龍"><img src="https://pic.pimg.tw/qupyqupy/1472620633-1650983202.jpg?v=1472620684"/><br/>腕龍</div><ul> <li> <div data-name="超龍"><img src="https://pic.pimg.tw/qupyqupy/1472620633-228974765.jpg?v=1472620684"/><br/>超龍</div><ul> <li> <div data-name="特超龍"><img src="https://pic.pimg.tw/qupyqupy/1472620633-4137400234.jpg?v=1472620684"/><br/>特超龍</div></li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li><li> <div data-name="肯都洛龍"><img src="https://pic.pimg.tw/qupyqupy/1472620633-3270727001.jpg?v=1472620684"/><br/>肯都洛龍</div><ul> <li> <div data-name="沱江龍"><img src="https://pic.pimg.tw/qupyqupy/1472620634-1863716568.jpg?v=1472620684"/><br/>沱江龍</div><ul> <li> <div data-name="劍龍"><img src="https://pic.pimg.tw/qupyqupy/1472620635-3624711518.jpg?v=1472620684"/><br/>劍龍</div></li></ul> </li></ul> </li></ul> </li><li> <div data-name="彎龍"><img src="https://pic.pimg.tw/qupyqupy/1472620635-4105016134.jpg?v=1472620684"/><br/>彎龍</div><ul> <li> <div data-name="鸚鵡龍"><img src="https://pic.pimg.tw/qupyqupy/1472620636-2035320008.jpg?v=1472620685"/><br/>鸚鵡龍</div><ul> <li> <div data-name="原角龍"><img src="https://pic.pimg.tw/qupyqupy/1472620636-2778441060.jpg?v=1472620685"/><br/>原角龍</div><ul> <li> <div data-name="盾孔龍"><img src="https://pic.pimg.tw/qupyqupy/1472620637-4293965740.jpg?v=1472620685"/><br/>盾孔龍</div><ul> <li> <div data-name="獨角龍"><img src="https://pic.pimg.tw/qupyqupy/1472620640-2057939903.jpg?v=1472620685"/><br/>獨角龍</div><ul> <li> <div data-name="三角龍"><img src="https://pic.pimg.tw/qupyqupy/1472620640-3549218018.jpg?v=1472620685"/><br/>三角龍</div></li></ul> </li></ul> </li></ul> </li></ul> </li><li> <div data-name="泰農氏龍"><img src="https://pic.pimg.tw/qupyqupy/1472620642-2538467943.jpg?v=1472620685"/><br/>泰農氏龍</div><ul> <li> <div data-name="史克氏龍"><img src="https://pic.pimg.tw/qupyqupy/1472620643-3535657271.jpg?v=1472620685"/><br/>史克氏龍</div><ul> <li> <div data-name="肋龍"><img src="https://pic.pimg.tw/qupyqupy/1472620644-1754666746.jpg?v=1472620685"/><br/>肋龍</div><ul> <li> <div data-name="優甲龍"><img src="https://pic.pimg.tw/qupyqupy/1472620645-541011142.jpg?v=1472620685"/><br/>優甲龍</div><ul> <li> <div data-name="曲龍"><img src="https://pic.pimg.tw/qupyqupy/1472620646-1415654261.jpg?v=1472620685"/><br/>曲龍</div></li></ul> </li></ul> </li></ul> </li><li> <div data-name="禽龍"><img src="https://pic.pimg.tw/qupyqupy/1472620647-2512988645.jpg?v=1472620685"/><br/>禽龍</div><ul> <li> <div data-name="天堂龍"><img src="https://pic.pimg.tw/qupyqupy/1472620648-1350297489.jpg?v=1472620685"/><br/>天堂龍</div><ul> <li> <div data-name="慈母龍"><img src="https://pic.pimg.tw/qupyqupy/1472620648-3378732853.jpg?v=1472620685"/><br/>慈母龍</div><ul> <li> <div data-name="副龍節龍"><img src="https://pic.pimg.tw/qupyqupy/1472620650-3939091169.jpg?v=1472620685"/><br/>副龍節龍</div><ul> <li> <div data-name="盔龍"><img src="https://pic.pimg.tw/qupyqupy/1472620650-1621684396.jpg?v=1472620685"/><br/>盔龍</div><ul> <li> <div data-name="粗齒龍"><img src="https://pic.pimg.tw/qupyqupy/1472620652-2690815003.jpg?v=1472620685"/><br/>粗齒龍</div><ul> <li> <div data-name="蘭伯龍"><img src="https://pic.pimg.tw/qupyqupy/1472620653-1616931681.jpg?v=1472620685"/><br/>蘭伯龍</div></li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li><li> <div data-name="狹嘴龍"><img src="https://pic.pimg.tw/qupyqupy/1472620665-3768799477.jpg?v=1472620686"/><br/>狹嘴龍</div><ul> <li> <div data-name="魚龍1"><img src="https://pic.pimg.tw/qupyqupy/1472620665-3877619118.jpg?v=1472620687"/><br/>魚龍1</div><ul> <li> <div data-name="魚龍2"><img src="https://pic.pimg.tw/qupyqupy/1472620666-2300714604.jpg?v=1472620687"/><br/>魚龍2</div><ul> <li> <div data-name="魚龍3"><img src="https://pic.pimg.tw/qupyqupy/1472620666-316905179.jpg?v=1472620687"/><br/>魚龍3</div></li></ul> </li></ul> </li></ul> </li><li> <div data-name="細顎龍"><img src="https://pic.pimg.tw/qupyqupy/1472620659-2936445296.jpg?v=1472620686"/><br/>細顎龍</div><ul> <li> <div data-name="細爪龍"><img src="https://pic.pimg.tw/qupyqupy/1472620660-2726429777.jpg?v=1472620686"/><br/>細爪龍</div><ul> <li> <div data-name="似鳥龍"><img src="https://pic.pimg.tw/qupyqupy/1472620660-13518922.jpg?v=1472620686"/><br/>似鳥龍</div><ul> <li> <div data-name="亞畢氏龍"><img src="https://pic.pimg.tw/qupyqupy/1472620660-3778130771.jpg?v=1472620686"/><br/>亞畢氏龍</div><ul> <li> <div data-name="異手龍"><img src="https://pic.pimg.tw/qupyqupy/1472620661-4111725424.jpg?v=1472620686"/><br/>異手龍</div><ul> <li> <div data-name="無齒龍"><img src="https://pic.pimg.tw/qupyqupy/1472620662-685721845.jpg?v=1472620686"/><br/>無齒龍</div><ul> <li> <div data-name="風神翼龍"><img src="https://pic.pimg.tw/qupyqupy/1472620662-2300455421.jpg?v=1472620686"/><br/>風神翼龍</div></li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li><li> <div data-name="多氏龍"><img src="https://pic.pimg.tw/qupyqupy/1472620653-2256821836.jpg?v=1472620686"/><br/>多氏龍</div><ul> <li> <div data-name="虛形龍"><img src="https://pic.pimg.tw/qupyqupy/1472620654-2018356925.jpg?v=1472620686"/><br/>虛形龍</div><ul> <li> <div data-name="恐爪龍"><img src="https://pic.pimg.tw/qupyqupy/1472620655-2745184258.jpg?v=1472620686"/><br/>恐爪龍</div><ul> <li> <div data-name="德氏龍"><img src="https://pic.pimg.tw/qupyqupy/1472620656-3420761113.jpg?v=1472620686"/><br/>德氏龍</div><ul> <li> <div data-name="冠額龍"><img src="https://pic.pimg.tw/qupyqupy/1472620656-861836993.jpg?v=1472620686"/><br/>冠額龍</div><ul> <li> <div data-name="班龍"><img src="https://pic.pimg.tw/qupyqupy/1472620658-4182663558.jpg?v=1472620686"/><br/>班龍</div><ul> <li> <div data-name="異特龍"><img src="https://pic.pimg.tw/qupyqupy/1472620658-3923320460.jpg?v=1472620686"/><br/>異特龍</div><ul> <li> <div data-name="棘龍"><img src="https://pic.pimg.tw/qupyqupy/1472620659-1757526668.jpg?v=1472620686"/><br/>棘龍</div></li></ul> </li></ul> </li><li> <div data-name="角鼻龍"><img src="https://pic.pimg.tw/qupyqupy/1472620667-3822276794.jpg?v=1472620687"/><br/>角鼻龍</div><ul> <li> <div data-name="亞伯脫龍"><img src="https://pic.pimg.tw/qupyqupy/1472620667-2117759450.jpg?v=1472620687"/><br/>亞伯脫龍</div><ul> <li> <div data-name="暴龍"><img src="https://pic.pimg.tw/qupyqupy/1472620668-2101843491.jpg?v=1472620687"/><br/>暴龍</div></li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul> </li></ul></div><hr/>';
+
+var dragon_data = {
+  "巴氏龍":{
+    "life": 25,
+    "speed": 5,
+    "active_area": "陸地",
+    "weapon": "拳頭",
+    "range": 1,
+    "at": 25,
+    "df": 20,
+    "height": 1,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620624-3066474909.jpg?v=1472620683"
+  },
+  "稻井龍":{
+    "life": 30,
+    "speed": 4,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 35,
+    "df": 25,
+    "height": 2,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620624-2097508905.jpg?v=1472620683"
+  },
+  "諾杜龍":{
+    "life": 40,
+    "speed": 3,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 60,
+    "df": 30,
+    "height": 3,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620624-594166339.jpg?v=1472620683"
+  },
+  "達烏瑪龍":{
+    "life": 60,
+    "speed": 3,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 100,
+    "df": 40,
+    "height": 4,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620629-1565166419.jpg?v=1472620683"
+  },
+  "雙葉龍":{
+    "life": 80,
+    "speed": 4,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 150,
+    "df": 60,
+    "height": 6,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620629-32767658.jpg?v=1472620683"
+  },
+  "蛇頸龍":{
+    "life": 100,
+    "speed": 4,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 200,
+    "df": 80,
+    "height": 10,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620630-1994589024.jpg?v=1472620683"
+  },
+  "似蜥龍":{
+    "life": 40,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "拳頭",
+    "range": 1,
+    "at": 25,
+    "df": 20,
+    "height": 2,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620631-2321342484.jpg?v=1472620684"
+  },
+  "板龍":{
+    "life": 60,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "拳頭",
+    "range": 1,
+    "at": 40,
+    "df": 40,
+    "height": 8,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620632-2063283797.jpg?v=1472620684"
+  },
+  "梁龍":{
+    "life": 100,
+    "speed": 2,
+    "active_area": "海/陸",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 80,
+    "df": 80,
+    "height": 27,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620632-3593636996.jpg?v=1472620684"
+  },
+  "圓頂龍":{
+    "life": 120,
+    "speed": 2,
+    "active_area": "海/陸",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 90,
+    "df": 90,
+    "height": 18,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620632-1027506117.jpg?v=1472620684"
+  },
+  "雷龍":{
+    "life": 150,
+    "speed": 2,
+    "active_area": "海/陸",
+    "weapon": "地震",
+    "range": 2,
+    "at": 100,
+    "df": 100,
+    "height": 21,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620633-2163692873.jpg?v=1472620684"
+  },
+  "腕龍":{
+    "life": 190,
+    "speed": 2,
+    "active_area": "海/陸",
+    "weapon": "地震",
+    "range": 2,
+    "at": 110,
+    "df": 110,
+    "height": 23,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620633-3470374875.jpg?v=1472620684"
+  },
+  "超龍":{
+    "life": 225,
+    "speed": 2,
+    "active_area": "海/陸",
+    "weapon": "地震",
+    "range": 3,
+    "at": 125,
+    "df": 120,
+    "height": 25,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620634-3361807164.jpg?v=1472620684"
+  },
+  "特超龍":{
+    "life": 255,
+    "speed": 2,
+    "active_area": "海/陸",
+    "weapon": "地震",
+    "range": 4,
+    "at": 210,
+    "df": 210,
+    "height": 30,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620634-1488751321.jpg?v=1472620684"
+  },
+  "肯都洛龍":{
+    "life": 40,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 100,
+    "df": 210,
+    "height": 5,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620634-3617272078.jpg?v=1472620684"
+  },
+  "沱江龍":{
+    "life": 50,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 120,
+    "df": 170,
+    "height": 7,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620635-672541669.jpg?v=1472620684"
+  },
+  "劍龍":{
+    "life": 60,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 150,
+    "df": 180,
+    "height": 9,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620635-2017482042.jpg?v=1472620684"
+  },
+  "彎龍":{
+    "life": 50,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "石頭",
+    "range": 4,
+    "at": 80,
+    "df": 45,
+    "height": 7,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620636-2812208481.jpg?v=1472620684"
+  },
+  "鸚鵡龍":{
+    "life": 20,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "頭撞",
+    "range": 1,
+    "at": 10,
+    "df": 20,
+    "height": 1,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620636-2847413282.jpg?v=1472620685"
+  },
+  "原角龍":{
+    "life": 30,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "角刺",
+    "range": 1,
+    "at": 20,
+    "df": 150,
+    "height": 2,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620636-3557243253.jpg?v=1472620685"
+  },
+  "盾孔龍":{
+    "life": 50,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "角刺",
+    "range": 1,
+    "at": 80,
+    "df": 180,
+    "height": 5,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620638-2987821374.jpg?v=1472620685"
+  },
+  "獨角龍":{
+    "life": 60,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "角刺",
+    "range": 1,
+    "at": 120,
+    "df": 200,
+    "height": 6,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620640-687729100.jpg?v=1472620685"
+  },
+  "三角龍":{
+    "life": 80,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "角刺",
+    "range": 1,
+    "at": 180,
+    "df": 230,
+    "height": 9,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620640-2829698903.jpg?v=1472620685"
+  },
+  "泰農氏龍":{
+    "life": 40,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "石頭",
+    "range": 4,
+    "at": 80,
+    "df": 30,
+    "height": 6,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620642-3791434304.jpg?v=1472620685"
+  },
+  "史克氏龍":{
+    "life": 35,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 20,
+    "df": 100,
+    "height": 1,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620643-526604144.jpg?v=1472620685"
+  },
+  "肋龍":{
+    "life": 60,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 60,
+    "df": 120,
+    "height": 5,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620645-3281147262.jpg?v=1472620685"
+  },
+  "優甲龍":{
+    "life": 100,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 100,
+    "df": 200,
+    "height": 7,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620645-3830217939.jpg?v=1472620685"
+  },
+  "曲龍":{
+    "life": 150,
+    "speed": 2,
+    "active_area": "陸地",
+    "weapon": "尾巴",
+    "range": 1,
+    "at": 150,
+    "df": 255,
+    "height": 5,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620646-2379848351.jpg?v=1472620685"
+  },
+  "禽龍":{
+    "life": 65,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "石頭",
+    "range": 4,
+    "at": 40,
+    "df": 60,
+    "height": 9,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620648-466636265.jpg?v=1472620685"
+  },
+  "天堂龍":{
+    "life": 60,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "石頭",
+    "range": 4,
+    "at": 35,
+    "df": 50,
+    "height": 7,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620648-2225637384.jpg?v=1472620685"
+  },
+  "慈母龍":{
+    "life": 65,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "石頭",
+    "range": 4,
+    "at": 40,
+    "df": 60,
+    "height": 9,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620649-1325650335.jpg?v=1472620685"
+  },
+  "副龍節龍":{
+    "life": 75,
+    "speed": 3,
+    "active_area": "海/陸",
+    "weapon": "石頭",
+    "range": 5,
+    "at": 50,
+    "df": 90,
+    "height": 10,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620650-2350468134.jpg?v=1472620685"
+  },
+  "盔龍":{
+    "life": 80,
+    "speed": 3,
+    "active_area": "海/陸",
+    "weapon": "石頭",
+    "range": 5,
+    "at": 50,
+    "df": 120,
+    "height": 10,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620650-2043393801.jpg?v=1472620685"
+  },
+  "粗齒龍":{
+    "life": 100,
+    "speed": 3,
+    "active_area": "海/陸",
+    "weapon": "石頭",
+    "range": 5,
+    "at": 60,
+    "df": 100,
+    "height": 13,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620652-3468129978.jpg?v=1472620685"
+  },
+  "蘭伯龍":{
+    "life": 110,
+    "speed": 3,
+    "active_area": "海/陸",
+    "weapon": "石頭",
+    "range": 5,
+    "at": 70,
+    "df": 100,
+    "height": 15,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620653-316569767.jpg?v=1472620686"
+  },
+  "多氏龍":{
+    "life": 25,
+    "speed": 4,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 40,
+    "df": 20,
+    "height": 2,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620653-1601081240.jpg?v=1472620686"
+  },
+  "虛形龍":{
+    "life": 30,
+    "speed": 4,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 60,
+    "df": 30,
+    "height": 3,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620654-3802878302.jpg?v=1472620686"
+  },
+  "恐爪龍":{
+    "life": 40,
+    "speed": 4,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 80,
+    "df": 40,
+    "height": 4,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620655-668577337.jpg?v=1472620686"
+  },
+  "德氏龍":{
+    "life": 60,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 120,
+    "df": 60,
+    "height": 6,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620656-513078061.jpg?v=1472620686"
+  },
+  "冠額龍":{
+    "life": 60,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 120,
+    "df": 80,
+    "height": 6,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620657-4249461109.jpg?v=1472620686"
+  },
+  "班龍":{
+    "life": 80,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 180,
+    "df": 70,
+    "height": 9,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620658-1820458677.jpg?v=1472620686"
+  },
+  "異特龍":{
+    "life": 90,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 200,
+    "df": 80,
+    "height": 10,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620659-1924970513.jpg?v=1472620686"
+  },
+  "棘龍":{
+    "life": 100,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 220,
+    "df": 100,
+    "height": 12,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620659-2837958667.jpg?v=1472620686"
+  },
+  "細顎龍":{
+    "life": 20,
+    "speed": 4,
+    "active_area": "陸地",
+    "weapon": "石頭",
+    "range": 2,
+    "at": 20,
+    "df": 10,
+    "height": 1,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620660-1587632327.jpg?v=1472620686"
+  },
+  "細爪龍":{
+    "life": 25,
+    "speed": 4,
+    "active_area": "陸地",
+    "weapon": "石頭",
+    "range": 2,
+    "at": 35,
+    "df": 20,
+    "height": 2,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620660-1205735676.jpg?v=1472620686"
+  },
+  "似鳥龍":{
+    "life": 25,
+    "speed": 5,
+    "active_area": "陸地",
+    "weapon": "石頭",
+    "range": 2,
+    "at": 45,
+    "df": 30,
+    "height": 3,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620660-1101461112.jpg?v=1472620686"
+  },
+  "亞畢氏龍":{
+    "life": 20,
+    "speed": 5,
+    "active_area": "空中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 30,
+    "df": 20,
+    "height": 2,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620661-2888607841.jpg?v=1472620686"
+  },
+  "異手龍":{
+    "life": 30,
+    "speed": 7,
+    "active_area": "空中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 40,
+    "df": 20,
+    "height": 1,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620661-188425359.jpg?v=1472620686"
+  },
+  "無齒龍":{
+    "life": 50,
+    "speed": 8,
+    "active_area": "空中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 80,
+    "df": 40,
+    "height": 8,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620662-3016851591.jpg?v=1472620686"
+  },
+  "風神翼龍":{
+    "life": 60,
+    "speed": 8,
+    "active_area": "空中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 150,
+    "df": 70,
+    "height": 15,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620665-2312346861.jpg?v=1472620686"
+  },
+  "狹嘴龍":{
+    "life": 25,
+    "speed": 5,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 40,
+    "df": 20,
+    "height": 1,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620665-1196733734.jpg?v=1472620686"
+  },
+  "魚龍1":{
+    "life": 40,
+    "speed": 5,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 80,
+    "df": 35,
+    "height": 2,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620665-3939655577.jpg?v=1472620687"
+  },
+  "魚龍2":{
+    "life": 60,
+    "speed": 5,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 120,
+    "df": 50,
+    "height": 6,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620667-854003888.jpg?v=1472620687"
+  },
+  "魚龍3":{
+    "life": 80,
+    "speed": 5,
+    "active_area": "海中",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 160,
+    "df": 80,
+    "height": 12,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620667-202867422.jpg?v=1472620687"
+  },
+  "角鼻龍":{
+    "life": 60,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 120,
+    "df": 50,
+    "height": 6,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620667-1164073213.jpg?v=1472620687"
+  },
+  "亞伯脫龍":{
+    "life": 70,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 160,
+    "df": 65,
+    "height": 8,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620668-1484290805.jpg?v=1472620687"
+  },
+  "暴龍":{
+    "life": 120,
+    "speed": 3,
+    "active_area": "陸地",
+    "weapon": "牙齒",
+    "range": 1,
+    "at": 255,
+    "df": 130,
+    "height": 15,
+    "body_img":"https://pic.pimg.tw/qupyqupy/1472620669-2371813980.jpg?v=1472620687"
+  }
+}
+
+jq3_1(function() {
+    var sx, sy;
+    jq3_1("#dino_content").html(html_content);
+
+    jq3_1(".tree div").on("click", function() {
+      var target = dragon_data[jq3_1(this).attr("data-name")];
+      var detail_content = '<h1>' + jq3_1(this).attr("data-name") + '</h1>' +
+      '<img src="' + target.body_img + '"/>' +
+      '<p><b class="justify">生命值</b><span>' + target.life + '</span></p>' +
+      '<p><b class="justify">速度</b><span>' + target.speed + '</span></p>' +
+      '<p><b class="justify">活動區</b><span>' + target.active_area + '</span></p>' +
+      '<p><b class="justify">武器</b><span>' + target.weapon + '</span></p>' +
+      '<p><b class="justify">射程</b><span>' + target.range + '</span></p>' +
+      '<p><b class="justify">攻擊力</b><span>' + target.at + '</span></p>' +
+      '<p><b class="justify">防禦力</b><span>' + target.df + '</span></p>' +
+      '<p><b class="justify">身長</b><span>' + target.height + '</span></p>';
+      jq3_1(".dragon_detail")
+        .html(detail_content)
+        .css("left", sx)
+        .css("top", sy)
+        .addClass("dragon_detail_show");
+    })
+    .on("mouseout",function(e){
+      jq3_1(".dragon_detail").removeClass("dragon_detail_show");
+    })
+    .on("mousemove", function (e) {
+      var tempX = jq3_1('#dino_content').offset().left ;
+      var tempY = jq3_1('#dino_content').offset().top ;
+      var minX = jq3_1('#dino_content').width() - 305 ;
+      var minY = jq3_1('#dino_content').height() - 350 ;
+      sx = jq3_1(this).offset().left - tempX;
+      sy = jq3_1(this).offset().top - tempY;
+      
+      if (sx > minX) {
+        sx = minX ;
+      }
+      if (sy > minY) {
+        sy = minY ;
+      }
+    });
+});
+</script>
+
+
+

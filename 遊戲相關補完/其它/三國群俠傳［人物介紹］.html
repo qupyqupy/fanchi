@@ -1,0 +1,592 @@
+<style type="text/css">
+.sango_pnamme .global_divtd {
+	width: 33%;
+}
+.global_divtd img+img {
+    width: 50%;
+}
+.sango_pnamme {
+  background: #888888;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+}
+.sango_title {
+  margin: 10px 0;
+  border: 5px double;
+  padding: 5px;
+}
+.sango_title::before {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: bold;
+}
+.sango_title.liu {
+  border-color: #669933;
+}
+.sango_title.liu::before {
+  content: "蜀國";
+  background: #669933;
+}
+.sango_title.chu {
+  border-color: #003366;
+}
+.sango_title.chu::before {
+  content: "魏國";
+  background: #003366;
+}
+.sango_title.shu {
+  border-color: #CC6600;
+}
+.sango_title.shu::before {
+  content: "吳國";
+  background: #FF9933;
+}
+.sango_title.other {
+  border-color: #999999;
+}
+.sango_title.other::before {
+  content: "其他勢力";
+  background: #CCCCCC;
+}
+.sango_title.badman {
+  border-color: #669999;
+}
+.sango_title.badman::before {
+  content: "敵人";
+  background: #669999;
+}
+.sango_people_info {
+  position: relative;
+  border: 2px dashed;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.sango_people_info .body_img {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px #003366;
+}
+.sango_people_info .head_img {
+  float: right;
+}
+.sango_people_info .p_name {
+  font-size: 20px;
+  font-weight: bold;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.sango_people_info .join_note,
+.sango_people_info .change_note {
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(200, 200, 200, 0.6);
+}
+.sango_people_info .change_note {
+  display: block;
+}
+.sango_people_info .join_note::before {
+  content: "入隊條件：";
+  font-weight: bold;
+}
+.sango_people_info .change_note:before {
+  content: "隊伍數值變化：";
+  font-weight: bold;
+}
+.sango_people_info .find_note {
+  display: block;
+}
+
+.sango_people_info.chu {
+  border-color: #0099CC;
+}
+.sango_people_info.chu .p_name {
+  background: #6699CC;
+  color: #FFFFFF;
+}
+.sango_people_info.liu {
+  border-color: #336600;
+}
+.sango_people_info.liu .p_name {
+  background: #669933;
+  color: #FFFFFF;
+}
+.sango_people_info.shu {
+  border-color: #CC6600;
+}
+.sango_people_info.shu .p_name {
+  background: #FF9966;
+  color: #FFFFFF;
+}
+.sango_people_info.other {
+  border-color: #666666;
+}
+.sango_people_info.other .p_name {
+  background: #999999;
+  color: #FFFFFF;
+}
+</style>
+<hr />
+<div class="sango_title liu"></div>
+  <div class="sango_people_info liu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471914069-892745779.jpg?v=1471914083"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471914069-2483503514.jpg?v=1471914083"/>
+    <p class="p_name">劉備</p>
+    <span class="join_note">德100＋</span>
+    <span class="change_note">德＋20</span>
+    <span class="find_note">當找回五位以上的蜀國將臣，與［諸葛亮］交談，發生［劉備受困江夏］事件。到［江夏］會發生［蔡夫人暗殺］事件，此時會有兩種情況：<br/>
+    <ul>
+    	<li>主角智慧超過80：可以選擇直接突圍或是找秘道逃走。</li>
+    	<li>主角智慧未超過80：只能直接突圍。</li>
+    </ul>
+    如果選擇直接突圍而且隊伍裡面有［關羽］、［張飛］的話，可以經歷兩人的特殊事件。</span>
+  </div>
+<div class="sango_people_info liu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726989-3730973609.jpg?v=1471727050"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726997-4087175983.jpg?v=1471727051"/>
+    <p class="p_name">諸葛亮</p>
+    <span class="join_note">智80＋，德80＋</span>
+    <span class="change_note">智＋25，德＋15，醫＋10</span>
+    <span class="find_note">除了觸發［劉備受困江夏］的事件時可以無條件加入外。正統的加入方法應該是當找回兩位以上的蜀國將臣時，與［諸葛亮］交談，會發生［諸葛亮］的君臣之間的答問事件。只要照下列回答，便可以隨時邀請諸葛亮加入隊伍。<br/>
+    <ul>
+    <li>君臣之間，以忠為本。君有信、臣有義！</li>
+    <li>貫徹初衷、堅守本分，盡忠輔佐君主。</li>
+    <li>英雄不以成敗論之，既然已經竭盡所能，也已經足夠了。</li>
+    </ul></span>
+  </div>
+  <div class="sango_people_info liu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726990-3497981653.jpg?v=1471727050"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726993-29285218.jpg?v=1471727050"/>
+    <p class="p_name">馬良</p>
+    <span class="join_note">無條件加入</span>
+    <span class="change_note">智＋15，德＋10，醫＋10</span>
+    <span class="find_note">到［襄陽］之後得知［馬良］住在這，幫［馬良］找到［華陀］。［華陀］會隨機出現在［成都］、［建業］、［鄴城］、［武威］、［長安］。<br/>
+    找到［華陀］後前往［長安］市集買［清腑丹］之後，回到［襄陽］進太守府醫治好［劉琮］的傷。事情結束後馬良決定為蜀國效力。 </span>
+  </div>
+<div class="sango_people_info liu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726996-263812952.jpg?v=1471727051"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726996-4212050831.jpg?v=1471727051"/>
+    <p class="p_name">關羽</p>
+    <span class="join_note">德80＋</span>
+    <span class="change_note">德＋10，勇＋10 </span>
+    <span class="find_note">當主角仁德超過75，且三次以上拜訪在［解良］賣饅頭的［關羽］會發生惡霸事件。此時會有兩個選擇：<br/>
+    <b>與關羽一起聯手嚴懲惡霸：</b><br/>
+    事件結束後，關羽會跪在宗祠，只有當主角智慧超過70才能說服關羽前往蜀國。<br/>
+    <b>阻止關羽下重手殺人：</b><br/>
+    打敗關羽後，會有周倉帶著官兵前來叫陣的事件，戰鬥結束後會有兩個選擇。<br/>
+
+    <ul>
+    	<li>選擇殺了周倉等人，可以得到無常戒。</li>
+    	<li>如果放了周倉等人可得到偃月刀。</li>
+    </ul> <br/>
+    接著便是護送關羽雙親前往成都，在這邊有四種過五關的方式。<br/>
+    <ul>
+    	<li>呂布有加入的話，可以直接通過，每關還可以得到300兩。</li>
+    	<li>有呂布給的令牌的話，可以直接通過，每關還可以得到300兩。</li>
+    	<li>用2000兩買通行證。</li>
+    	<li>以武力方式突破五關。（此方法要注意關羽雙親的安全，較為麻煩）</li>
+    </ul></span>
+  </div>
+     <div class="sango_people_info liu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726996-3552880974.jpg?v=1471727051"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471727001-2988002640.jpg?v=1471727051"/>
+    <p class="p_name">馬超</p>
+    <span class="join_note">勇90＋</span>
+    <span class="change_note">智－5，勇＋10</span>
+    <span class="find_note">在［武威］的酒館與［馬超］交談，再與隔壁桌的客人交談後前往馬家舊宅，遇見一群董卓軍的官兵此時有兩種選擇：<br/>
+    <ul>
+    	<li>硬闖：打兩場戰鬥，在屋內找到飛翼槍。</li>
+    	<li>想其它辦法：前往酒館與小二交談，之後去買六壺英雄醉。（是ㄧ個隨機出現的商人在販賣，在長安可遇到。）接著將酒交給官兵可得飛翼槍。</li>
+    </ul>
+    槍給［馬超］後，［馬超］決定前往蜀國。</span>
+  </div>
+  <div class="sango_people_info liu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726993-2577608418.jpg?v=1471727051"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471914070-3750494133.jpg?v=1471914083"/>
+    <p class="p_name">張飛</p>
+    <span class="join_note">勝場數超過50、殺敵數超過200</span>
+    <span class="change_note">智－10；勇＋20</span>
+    <span class="find_note">到［下邳］會發現已被［董卓］的部隊所佔領，在城內與一個矮小老婆婆交談後，出城外四處走走會遇到［張飛］，接著回［成都王殿］跟［諸葛亮］交談。再回到［下邳］附近找尋［張飛］，第三次找到［張飛］時會兩種不同情況。<br/>
+    <ul>
+    	<li>關羽、劉備在隊伍中，張飛直接回蜀國。</li>
+    	<li>關羽、劉備不在隊伍中，打贏張飛後，張飛回蜀國。</li>
+    </ul></span>
+  </div>
+  <div class="sango_people_info liu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471768734-1763443421.jpg?v=1471768740"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471768733-423033296.jpg?v=1471768740"/>
+    <p class="p_name">趙雲</p>
+    <span class="join_note">德80＋</span>
+    <span class="change_note">德＋10，勇＋10</span>
+    <span class="find_note">到［北平］發生［袁紹攻打］事件，打贏後進城和所有城民對話之後，［趙雲］會出現，此時有兩種選擇：<br/>
+    <ul>
+    	<li>和趙雲直接攻入敵陣：經過六場戰鬥，可救出公孫瓚，得道具［銀驥］。</li>
+    	<li>化妝後混入敵軍陣營：只打一場戰鬥，可得道具［無嗔戒］。（北平武器店裡拿到炭灰、用羅漢丹和許家村民房內的老婦人換粉彩、答對長安城門外小女童的所有字謎得到黏土。）</li>
+    </ul></span>
+  </div>
+<div class="sango_people_info liu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726988-2581978455.jpg?v=1471727050" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726991-1545037775.jpg?v=1471727050" />
+<p class="p_name">黃忠</p>
+<span class="join_note">勇60＋</span> <span class="change_note">智＋5，勇＋10</span> <span class="find_note">到［長沙］與［黃忠］交談。出城後再進入，找［酒館小二］交談得知［黃忠］常到對門的馬廄，到馬廄與［馬夫］交談。接著出城再進入，在馬廄找到［黃忠］，並接受［黃忠］的挑戰。</span>
+
+<ul>
+	<li>輸給黃忠：黃忠前往成都，之後可以在成都王殿上邀請黃忠加入。</li>
+	<li>打敗黃忠：黃忠會送給主角破蒼穹並且隱退，自此不再出現。</li>
+</ul>
+</span></div>
+  
+<div class="sango_title chu"></div>
+<div class="sango_people_info chu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1472030030-2662163338.jpg?v=1472030073"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1472030030-3853177016.jpg?v=1472030073"/>
+    <p class="p_name">曹操</p>
+    <span class="join_note">勇100＋</span>
+    <span class="change_note">智＋5，德－10，勇＋10 </span>
+    <span class="find_note">當找回五位以上的魏國將臣，與［司馬懿］交談，發生［曹操受困烏林］事件。完成事件後就可以邀請［曹操］加入。 </span>
+  </div>
+  <div class="sango_people_info chu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726990-2188306931.jpg?v=1471727050"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1472030035-2733087690.jpg?v=1472030073"/>
+    <p class="p_name">司馬懿</p>
+    <span class="join_note">智90＋，德50－</span>
+    <span class="change_note">智＋20，德－5，醫＋10</span>
+    <span class="find_note">當找回兩位以上的魏國將臣時，與［司馬懿］交談，會發生［司馬懿］探聽未來事件。只要都告訴［司馬懿］，之後就可以邀請［司馬懿］加入隊伍。  </span>
+  </div>
+    <div class="sango_people_info chu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726994-3804897377.jpg?v=1471727051"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471768731-3174917887.jpg?v=1471768740"/>
+    <p class="p_name">張遼</p>
+    <span class="join_note">勇90＋</span>
+    <span class="change_note">智＋5，勇＋10</span>
+    <span class="find_note">在［虎牢關］將［張遼］打敗後，會有兩種狀況：<br/>
+    <ul>
+    	<li>主角智慧高於80：張遼直接回歸魏國。</li>
+    	<li>主角智慧低於80：在呂布離開洛陽後，可在呂布家門前發現張遼，只要送張遼，諸葛弩、射日弓、掣星穿天弓其中一把武器，張遼就會回歸魏國。</li>
+    </ul></span>
+  </div>
+    <div class="sango_people_info chu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471914073-3116028533.jpg?v=1471914083"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471914072-688564496.jpg?v=1471914083"/>
+    <p class="p_name">夏侯惇</p>
+    <span class="join_note">勇80＋</span>
+    <span class="change_note">勇＋10</span>
+    <span class="find_note">［張飛］回歸蜀國後，與［司馬懿］交談得知［夏侯惇］率軍攻打下邳。前往［夏侯惇軍營］與他交談，協助他擊敗［高順］，此時會有兩種情況：<br/>
+    <ul>
+    	<li>主角醫術高於80，幫夏侯惇療傷，可得嘯月刀。</li>
+    	<li>主角醫術低於80，讓夏侯惇自行恢復。</li></span>
+  </div>
+
+  <div class="sango_people_info chu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726994-510416561.jpg?v=1471727051"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726995-1454804209.jpg?v=1471727051"/>
+    <p class="p_name">賈詡</p>
+    <span class="join_note">智70－</span>
+    <span class="change_note">智＋20，勇－10</span>
+    <span class="find_note">當主角完成事件率達到40%以上時，會觸發［郭汜］攻打［南陽］的事件。進入［南陽］後，查看公告欄，［賈詡］會出現。事件過後，前往［郭祀軍營］解決掉［郭祀］，接著回［南陽］，［賈詡］便會回歸魏國。</span>
+  </div>
+  <div class="sango_people_info chu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726991-2556094719.jpg?v=1471727050"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726993-1491312526.jpg?v=1471727051"/>
+    <p class="p_name">典韋</p>
+    <span class="join_note">勇90＋</span>
+    <span class="change_note">智－5，勇＋10</span>
+    <span class="find_note">在［睢陽］劉氏的家中，發生［劉寡婦］事件，事件告一段落後後前往李府討公道。與［典韋］一起攻入李府，完成［華容道］小遊戲，並且解決掉［李永］後，［典韋］便會回歸魏國。 </span>
+  </div>
+  <div class="sango_people_info chu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726992-108220489.jpg?v=1471727050"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726992-1630913346.jpg?v=1471727051"/>
+    <p class="p_name">荀彧</p>
+    <span class="join_note">智70＋</span>
+    <span class="change_note">智＋15，醫＋10</span>
+    <span class="find_note">在［長安］道觀的書房裡與［荀彧］交談，幫他收集到［治論］、［仇國論］、［乾象歷注］、［左傳春秋］、［戰國策］，［荀彧］便會回歸魏國。 （五本書都可以在書店買到。）</span>
+  </div>
+<div class="sango_people_info chu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726988-866330902.jpg?v=1471727050" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726991-1907315539.jpg?v=1471727050" />
+<p class="p_name">許褚</p>
+<span class="join_note">無條件加入</span> <span class="change_note">智－10，勇＋10</span> <span class="find_note">在［許家村］中與［許褚］一同擊退村北破廟的盜賊後。再到許褚家中與其交談，之後便可在鄴城王殿邀請［許褚］加入。 </span></div>
+
+<div class="sango_title shu"></div>
+  <div class="sango_people_info shu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726996-3154922031.jpg?v=1471727051"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471914070-3036117958.jpg?v=1471914083"/>
+    <p class="p_name">孫權</p>
+    <span class="join_note">智100＋</span>
+    <span class="change_note">智＋10，德＋10，勇＋5 </span>
+    <span class="find_note">當找回吳國人物五位以上，與［周瑜］交談，發生［孫權受困柴桑］事件。前往［柴桑］會有兩種情況：<br/>
+    <ul>
+    	<li>隊伍中有周瑜、陸遜、魯肅其中一人，會發生等半個月再突圍事件。</li>
+    	<li>隊伍中沒有任何吳國智者，則會直接突圍。</li>
+    </ul></span>
+  </div>
+<div class="sango_people_info shu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726989-3020312141.jpg?v=1471727050" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726995-4007066948.jpg?v=1471727051" />
+<p class="p_name">周瑜</p>
+<span class="join_note">智70＋，德50＋</span> <span class="change_note">智＋15，勇＋5，醫＋10</span> <span class="find_note">除了觸發［孫權在柴桑］的事件時可以無條件加入外。正統的加入方法應該是當找回兩位以上的吳國將臣，［周瑜］會告知希望能夠得到［焦尾琴］的事件。只要將［焦尾琴］贈與［周瑜］，則可以邀請［周瑜］加入隊伍。<br />
+［焦尾琴］可以在［匈奴王營帳］找［匈奴王］獲得，若主角智慧超過75，會有兩個選擇。<br />
+
+<ul>
+	<li>好言勸說：不用戰鬥即可取得。</li>
+	<li>武力解決：單挑贏了匈奴王便可取得。</li>
+</ul>
+</span>
+</div>
+
+<div class="sango_people_info shu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726989-1543535443.jpg?v=1471727050" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471738750-2276677846.jpg?v=1471738783" />
+<p class="p_name">魯肅</p>
+<span class="join_note">德75＋</span> <span class="change_note">智＋10，德＋10，醫＋10</span> <span class="find_note">在［長沙］找到［魯肅］，與其交談得知［魯肅］希望能拿到［周瑜］邀聘的邀聘書。
+
+<ul>
+	<li>帶周瑜來找魯肅的話，魯肅除了前往建業以外，還會送［鳳凰聯紻扣］、［九明慎思冠］、［苡瑀巾］。</li>
+	<li>去建業找周瑜拿邀聘書，再來找魯肅，魯肅會前往建業，之後可在建業王殿邀他加入。</li>
+</ul></span></div>
+
+<div class="sango_people_info shu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726990-4012546459.jpg?v=1471727050" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726992-2620788477.jpg?v=1471727051" />
+<p class="p_name">呂蒙</p>
+<span class="join_note">智80＋</span> <span class="change_note">智＋10，勇＋10</span> <span class="find_note">完成幫助［黃蓋平定山越］的事件後，［呂蒙］會被救回。只要將［黃石兵書］、［孫子兵法］、［六韜］贈與［呂蒙］後，［呂蒙］將回吳國。<br />
+［黃石兵書］、［孫子兵法］、［六韜］這三本書在書店都能買到。</span></div>
+
+<div class="sango_people_info shu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726993-2695767650.jpg?v=1471727051" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726993-3428075263.jpg?v=1471727051" />
+<p class="p_name">黃蓋</p>
+<span class="join_note">勇90＋</span> <span class="change_note">勇＋10</span> <span class="find_note">當主角等級達10級以上，到［武陵城］會遇見［黃蓋］，並且協助［黃蓋］成功討伐山越後，［黃蓋］就會返回吳國建業。
+
+<div class="global_ps_text">由於山越在初期是很強的。<br />
+而且當開始協助［黃蓋］討伐山越時，是沒有回頭路的，所以最好等等級練強一點再來。</div>
+</span></div>
+
+<div class="sango_people_info shu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471738769-3413706428.jpg?v=1471738783" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726995-2578159155.jpg?v=1471727051" />
+<p class="p_name">太史慈</p>
+<span class="join_note">無條件加入</span> <span class="change_note">德＋10，勇＋10</span> <span class="find_note">到［北海］找［太史慈］並且幫忙他找到［華陀］醫治母親，［華陀］會隨機出現在［成都］、［建業］、［鄴城］、［武威］、［長安］。
+
+<ul>
+	<li>先前已幫華陀製作麻沸散成功，則直接醫好太史慈母親。</li>
+	<li>未幫華陀成功製作麻沸散，則需臭麻子花和曼陀羅果這兩種藥材。（北海藥鋪、華山之巔取得）</li>
+</ul>
+</span></div>
+
+<div class="sango_people_info shu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726989-1108532232.jpg?v=1471727050" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726992-180657143.jpg?v=1471727051" />
+<p class="p_name">陸遜</p>
+<span class="join_note">完成30%的特殊物品。</span> <span class="change_note">智＋10</span> <span class="find_note">在［八卦石陣］中發現［陸遜］，只要幫助［陸遜］脫離［八卦石陣］，［陸遜］便會回到吳國建業。
+
+<ul>
+	<li>諸葛亮在隊伍中，可以直接解開八卦石陣。</li>
+	<li>諸葛亮沒在隊伍中，則須先到成都王殿去找諸葛亮，求得解決方法。</li>
+</ul>
+</span></div>
+
+<div class="sango_people_info shu"><img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726995-3383485169.jpg?v=1471727051" /> <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726993-1520051137.jpg?v=1471727051" />
+<p class="p_name">甘寧</p>
+<span class="join_note">勇90＋</span> <span class="change_note">德－5，勇＋10</span> <span class="find_note">到［新野］跟衙門官差談話，接著離開新野之際，［蒼溟］會出現提醒給錢賄賂官差，接著用100兩賄賂衙門的官差，進入衙門的牢房與［甘寧］交談。<br />
+出了衙門之後，查看一旁告示板，此時出現救［甘寧］兩種選項： 
+
+<ul>
+	<li>出重金賄賂：需要一萬兩。</li>
+	<li>直接殺入衙門：打兩場戰鬥。</li>
+</ul>
+</span></div>
+  <div class="sango_people_info shu">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726996-3788564263.jpg?v=1471727051"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471914070-700101275.jpg?v=1471914083"/>
+    <p class="p_name">孫尚香</p>
+    <span class="join_note">無條件加入</span>
+    <span class="change_note">智－5，勇＋10</span>
+    <span class="find_note">當發生［孫權在柴桑］事件時，［孫尚香］會跑入王殿要求同行。此時選擇答應，等救回［孫權］後離開王殿，［孫尚香］會追出來要求單挑，此時有兩種情況：<br/>
+    <ul>
+    	<li>打輸：孫尚香加入。</li>
+    	<li>打贏：如果主角還未遇到過貂蟬，只要去找孫權說話，會發生［孫權委託找尋孫尚香］的事件。之後在武陵茶樓找到孫尚香，再到長安酒館找到孫尚香，然後必須在黃忠事件結束後到劉備回歸成都之前，而且隊伍中有空位，到長沙酒樓找孫尚香加入。（得到無心戒）</li>
+    </ul></span>
+  </div>
+<div class="sango_title other"></div>
+  <div class="sango_people_info other">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471768733-2372284809.jpg?v=1471768740"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471768734-2493740660.jpg?v=1471768740"/>
+    <p class="p_name">張角</p>
+    <span class="join_note">無條件加入</span>
+    <span class="change_note">智＋10，德－10，醫＋10</span>
+    <span class="find_note">在［鉅鹿］觸發［降雨事件］後，出城外往西走（跟著大路走）遇到黃巾賊，順著事件走最後擊敗［張角］並且阻止他自殺，隨後就可以在［鉅鹿］找他加入。 </span>
+  </div>
+  <div class="sango_people_info other">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471914071-3609408098.jpg?v=1471914083"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726997-1438632544.jpg?v=1471727051"/>
+    <p class="p_name">呂布</p>
+    <span class="join_note">無條件加入</span>
+    <span class="change_note">智－15，德－15，勇＋25</span>
+    <span class="find_note">必須在集齊七鼎之前完成，否則［呂布］就會出現在［虎牢關］。前往［洛陽］送［赤兔馬］給［呂布］，接著確保主角的智慧、仁德都超過80，然後出［洛陽］再進入找尋［呂布］，會發生［勸說呂布］事件。緊接著前往［天香閣］見［貂蟬］，請［貂蟬］勸說［呂布］，帶［貂蟬］去見［呂布］，接著出［洛陽］後再馬上進入，［呂布］、［貂蟬］會離開洛陽，之後可以在［新野］民房找到兩人加入。</span>
+  </div>
+  <div class="sango_people_info other">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471726995-3916540073.jpg?v=1471727051"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471726998-826296613.jpg?v=1471727051"/>
+    <p class="p_name">貂蟬</p>
+    <span class="join_note">無條件加入</span>
+    <span class="change_note">智＋10，德＋10，勇－15，醫＋10</span>
+    <span class="find_note">必須在集齊七鼎之前完成。前往［洛陽］送［赤兔馬］給［呂布］，接著確保主角的智慧、仁德都超過80，然後出［洛陽］再進入找尋［呂布］，會發生［勸說呂布］事件。緊接著前往［天香閣］見［貂蟬］，此時會有兩個選項可以讓［貂蟬］加入。<br/>
+    <ul>
+    	<li>請［貂蟬］勸說［呂布］，帶［貂蟬］去見［呂布］，接著出［洛陽］後再馬上進入，［呂布］、［貂蟬］會離開洛陽，之後可以在［新野］民房找到兩人加入。</li>
+    	<li>拒絕［貂蟬］的請求，［貂蟬］會離去，當符合［找回太史慈］、［向張角取回太平要術］、［沒遇過孫尚香］、［隊伍中有空位］四個條件，可以在［北海］客棧找到［貂蟬］，選擇［還有很多事情］則［貂蟬］加入，但不能將她解散，否則將會永遠不再出現。</li>
+    </ul></span>
+  </div>
+  <div class="sango_people_info other">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471914068-3774163441.jpg?v=1471914083"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471914068-1123151840.jpg?v=1471914083"/>
+    <p class="p_name">孟獲</p>
+    <span class="join_note">無條件加入</span>
+    <span class="change_note">智－10，勇＋10</span>
+    <span class="find_note">完成［七敗孟獲］即可加入。這一段有些繁複，不過簡單的說就是治療好南蠻村莊的疾病，順著劇情走就會加入了。<br/>
+    <ul>
+    	<li>到南蠻部落發生第一次的戰鬥。</li>
+    	<li>到南蠻村長家中與村長交談。再次進入部落到村長家中會發生第二次的戰鬥。</li>
+    	<li>與南蠻村中跳舞的巫祭交談後出村，發生第三次戰鬥。</li>
+    	<li>找到華陀前往南蠻部落，發生第四次戰鬥。</li>
+    	<li>帶著華陀找村長交談後會發生第五次戰鬥。</li>
+    	<li>治療好南蠻的瘧疾以後，根村長交談後出村，會發生最後兩場戰鬥。</li>
+    </ul></span>
+  </div>
+    <div class="sango_people_info other">
+    <img class="body_img" src="https://pic.pimg.tw/qupyqupy/1471914071-2066138838.jpg?v=1471914083"/>
+    <img class="head_img" src="https://pic.pimg.tw/qupyqupy/1471914072-4231287839.jpg?v=1471914084"/>
+    <p class="p_name">華陀</p>
+    <span class="join_note">德70＋</span>
+    <span class="change_note">德＋20，勇－10，醫＋50</span>
+    <span class="find_note">［華陀］會在［成都］、［建業］、［鄴城］、［武威］、［長安］隨機出現，完成［襄陽馬良］、［北海太史老夫人］、［南蠻瘧疾］三個事件，並且幫助［華陀］製作麻沸散即可加入。麻沸散原料位置如下：<br/>
+    <ul>
+    	<li>石蛄：鐘山北斗仙人的石洞的牆上。</li>
+    	<li>枯血藤：南蠻村落廣場上的草藤。</li>
+    	<li>酥麻草：華山山道右側山壁上。</li>
+    	<li>碧煙棠：洛陽賭場連贏三次。</li>
+    </ul></span>
+  </div>
+
+<div class="global_divtable">
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">南華老仙</div>
+<div class="global_divtd">于吉</div>
+<div class="global_divtd">左慈</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-16 22-53-37-009.jpg" src="https://pic.pimg.tw/qupyqupy/1471726987-2681057642.jpg?v=1471727050" title="TKS 2016-08-16 22-53-37-009.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-16 22-57-50-434.jpg" src="https://pic.pimg.tw/qupyqupy/1471726987-756605276.jpg?v=1471727050" title="TKS 2016-08-16 22-57-50-434.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-16 22-53-31-799.jpg" src="https://pic.pimg.tw/qupyqupy/1471726987-3072561477.jpg?v=1471727050" title="TKS 2016-08-16 22-53-31-799.jpg" /></div>
+</div>
+
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">北斗</div>
+<div class="global_divtd">南斗</div>
+<div class="global_divtd">蒼溟</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-20 10-22-30-213.jpg" src="https://pic.pimg.tw/qupyqupy/1471726992-1702520642.jpg?v=1471727051" title="TKS 2016-08-20 10-22-30-213.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-20 11-21-07-458.jpg" src="https://pic.pimg.tw/qupyqupy/1471726994-1657509251.jpg?v=1471727051" title="TKS 2016-08-20 11-21-07-458.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-16 22-41-18-516.jpg" src="https://pic.pimg.tw/qupyqupy/1471726987-3675909102.jpg?v=1471727050" title="TKS 2016-08-16 22-41-18-516.jpg" /></div>
+</div>
+
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">主角</div>
+<div class="global_divtd"></div>
+<div class="global_divtd"></div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-16 23-04-06-691.jpg" src="https://pic.pimg.tw/qupyqupy/1471726987-1886167857.jpg?v=1471727050" title="TKS 2016-08-16 23-04-06-691.jpg" /><img alt="TKS 2016-08-16 22-39-42-827.jpg" src="https://pic.pimg.tw/qupyqupy/1471726987-862514168.jpg?v=1471727050" title="TKS 2016-08-16 22-39-42-827.jpg" /></div>
+<div class="global_divtd"></div>
+<div class="global_divtd"></div>
+</div>
+</div>
+
+<div class="sango_title badman"></div>
+<div class="global_divtable">
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">山越頭子</div>
+<div class="global_divtd">李永</div>
+<div class="global_divtd">郭祀</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-19 06-17-01-024.jpg" src="https://pic.pimg.tw/qupyqupy/1471726990-2086880218.jpg?v=1471727050" title="TKS 2016-08-19 06-17-01-024.jpg" /><img alt="TKS 2016-08-19 06-17-01-023.jpg" src="https://pic.pimg.tw/qupyqupy/1471726990-169803188.jpg?v=1471727050" title="TKS 2016-08-19 06-17-01-023.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-20 07-58-56-010.jpg" src="https://pic.pimg.tw/qupyqupy/1471726991-1065340628.jpg?v=1471727050" title="TKS 2016-08-20 07-58-56-010.jpg" /><img alt="TKS 2016-08-20 07-58-56-011.jpg" src="https://pic.pimg.tw/qupyqupy/1471726991-2377184136.jpg?v=1471727050" title="TKS 2016-08-20 07-58-56-011.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-20 12-28-14-392.jpg" src="https://pic.pimg.tw/qupyqupy/1471726994-3080868863.jpg?v=1471727051" title="TKS 2016-08-20 12-28-14-392.jpg" /><img alt="TKS 2016-08-20 12-28-14-391.jpg" src="https://pic.pimg.tw/qupyqupy/1471727046-3252090345.jpg?v=1471727051" title="TKS 2016-08-20 12-28-14-391.jpg" /></div>
+</div>
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">周倉</div>
+<div class="global_divtd">張寶</div>
+<div class="global_divtd">張粱</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-20 18-42-48-582.jpg" src="https://pic.pimg.tw/qupyqupy/1471726999-2044031000.jpg?v=1471727051" title="TKS 2016-08-20 18-42-48-582.jpg" /><img alt="TKS 2016-08-20 18-42-45-279.jpg" src="https://pic.pimg.tw/qupyqupy/1471726997-3045765416.jpg?v=1471727051" title="TKS 2016-08-20 18-42-45-279.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-21 15-06-33-526.jpg" src="https://pic.pimg.tw/qupyqupy/1471768734-2819210791.jpg?v=1471768740" title="TKS 2016-08-21 15-06-33-526.jpg" /><img alt="TKS 2016-08-21 14-54-26-030.jpg" src="https://pic.pimg.tw/qupyqupy/1471768733-3504637776.jpg?v=1471768740" title="TKS 2016-08-21 14-54-26-030.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-21 15-06-36-895.jpg" src="https://pic.pimg.tw/qupyqupy/1471768734-507881283.jpg?v=1471768740" title="TKS 2016-08-21 15-06-36-895.jpg" /><img alt="TKS 2016-08-21 14-57-14-731.jpg" src="https://pic.pimg.tw/qupyqupy/1471768734-914775061.jpg?v=1471768740" title="TKS 2016-08-21 14-57-14-731.jpg" /></div>
+</div>
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">袁紹</div>
+<div class="global_divtd">天師精魄</div>
+<div class="global_divtd">袁術</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-21 13-48-28-847.jpg" src="https://pic.pimg.tw/qupyqupy/1471768731-1496167803.jpg?v=1471768740" title="TKS 2016-08-21 13-48-28-847.jpg" /><img alt="TKS 2016-08-21 13-41-22-136.jpg" src="https://pic.pimg.tw/qupyqupy/1471768731-2994397909.jpg?v=1471768740" title="TKS 2016-08-21 13-41-22-136.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-23 08-00-03-798.jpg" src="https://pic.pimg.tw/qupyqupy/1471914072-1152173262.jpg?v=1471914084" title="TKS 2016-08-23 08-00-03-798.jpg" /><img alt="TKS 2016-08-23 07-59-23-518.jpg" src="https://pic.pimg.tw/qupyqupy/1471914073-2081612193.jpg?v=1471914084" title="TKS 2016-08-23 07-59-23-518.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-21 19-16-32-226.jpg" src="https://pic.pimg.tw/qupyqupy/1471914070-366712521.jpg?v=1471914083" title="TKS 2016-08-21 19-16-32-226.jpg" /><img alt="TKS 2016-08-21 19-19-00-098.jpg" src="https://pic.pimg.tw/qupyqupy/1471914071-3717613049.jpg?v=1471914083" title="TKS 2016-08-21 19-19-00-098.jpg" /></div>
+</div>
+
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">祝融</div>
+<div class="global_divtd">顏良</div>
+<div class="global_divtd">文醜</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-21 18-11-48-160.jpg" src="https://pic.pimg.tw/qupyqupy/1471914068-165439945.jpg?v=1471914083" title="TKS 2016-08-21 18-11-48-160.jpg" /><img alt="TKS 2016-08-21 18-10-44-578.jpg" src="https://pic.pimg.tw/qupyqupy/1471914068-3815476434.jpg?v=1471914083" title="TKS 2016-08-21 18-10-44-578.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-21 18-26-50-532.jpg" src="https://pic.pimg.tw/qupyqupy/1471914068-2734768297.jpg?v=1471914083" title="TKS 2016-08-21 18-26-50-532.jpg" /><img alt="TKS 2016-08-21 18-37-01-884.jpg" src="https://pic.pimg.tw/qupyqupy/1471914069-3405178235.jpg?v=1471914083" title="TKS 2016-08-21 18-37-01-884.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-21 18-26-51-718.jpg" src="https://pic.pimg.tw/qupyqupy/1471914068-3433432014.jpg?v=1471914083" title="TKS 2016-08-21 18-26-51-718.jpg" /><img alt="TKS 2016-08-21 18-36-01-464.jpg" src="https://pic.pimg.tw/qupyqupy/1471914069-1051369039.jpg?v=1471914083" title="TKS 2016-08-21 18-36-01-464.jpg" /></div>
+</div>
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">嚴白虎</div>
+<div class="global_divtd">西羌王</div>
+<div class="global_divtd">匈奴王</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-21 19-16-27-546.jpg" src="https://pic.pimg.tw/qupyqupy/1471914070-1207796398.jpg?v=1471914083" title="TKS 2016-08-21 19-16-27-546.jpg" /><img alt="TKS 2016-08-21 19-16-23-427.jpg" src="https://pic.pimg.tw/qupyqupy/1471914070-2907581517.jpg?v=1471914083" title="TKS 2016-08-21 19-16-23-427.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-22 06-41-26-930.jpg" src="https://pic.pimg.tw/qupyqupy/1471914071-1558403721.jpg?v=1471914083" title="TKS 2016-08-22 06-41-26-930.jpg" /><img alt="TKS 2016-08-22 06-32-23-313.jpg" src="https://pic.pimg.tw/qupyqupy/1471914071-2679099409.jpg?v=1471914083" title="TKS 2016-08-22 06-32-23-313.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-22 21-11-52-508.jpg" src="https://pic.pimg.tw/qupyqupy/1471914072-2820418511.jpg?v=1471914083" title="TKS 2016-08-22 21-11-52-508.jpg" /><img alt="TKS 2016-08-22 21-11-33-865.jpg" src="https://pic.pimg.tw/qupyqupy/1471914071-2529478438.jpg?v=1471914083" title="TKS 2016-08-22 21-11-33-865.jpg" /></div>
+</div>
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">高順</div>
+<div class="global_divtd">李榷</div>
+<div class="global_divtd">李儒</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-22 21-25-03-979.jpg" src="https://pic.pimg.tw/qupyqupy/1471914072-645175339.jpg?v=1471914083" title="TKS 2016-08-22 21-25-03-979.jpg" /><img alt="TKS 2016-08-22 21-25-07-222.jpg" src="https://pic.pimg.tw/qupyqupy/1471914072-3539545826.jpg?v=1471914083" title="TKS 2016-08-22 21-25-07-222.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-23 13-55-44-486.jpg" src="https://pic.pimg.tw/qupyqupy/1472030030-3917346833.jpg?v=1472030073" title="TKS 2016-08-23 13-55-44-486.jpg" /><img alt="TKS 2016-08-23 13-55-41-801.jpg" src="https://pic.pimg.tw/qupyqupy/1472030030-3042736898.jpg?v=1472030073" title="TKS 2016-08-23 13-55-41-801.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-23 13-55-51-100.jpg" src="https://pic.pimg.tw/qupyqupy/1472030030-811083001.jpg?v=1472030073" title="TKS 2016-08-23 13-55-51-100.jpg" /><img alt="TKS 2016-08-23 15-58-44-939.jpg" src="https://pic.pimg.tw/qupyqupy/1472030034-1860689297.jpg?v=1472030073" title="TKS 2016-08-23 15-58-44-939.jpg" /></div>
+</div>
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">麒麟</div>
+<div class="global_divtd">大鵬金翅鳥</div>
+<div class="global_divtd">赤兔馬</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-23 15-16-54-604.jpg" src="https://pic.pimg.tw/qupyqupy/1472030030-438111600.jpg?v=1472030073" title="TKS 2016-08-23 15-16-54-604.jpg" /><img alt="TKS 2016-08-23 15-16-56-225.jpg" src="https://pic.pimg.tw/qupyqupy/1472030034-3003920816.jpg?v=1472030073" title="TKS 2016-08-23 15-16-56-225.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-23 16-27-47-456.jpg" src="https://pic.pimg.tw/qupyqupy/1472030035-2321571133.jpg?v=1472030073" title="TKS 2016-08-23 16-27-47-456.jpg" /><img alt="TKS 2016-08-23 16-27-49-873.jpg" src="https://pic.pimg.tw/qupyqupy/1472030036-4282701780.jpg?v=1472030073" title="TKS 2016-08-23 16-27-49-873.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-23 17-20-06-071.jpg" src="https://pic.pimg.tw/qupyqupy/1472030038-830792486.jpg?v=1472030073" title="TKS 2016-08-23 17-20-06-071.jpg" /><img alt="TKS 2016-08-23 17-20-08-051.jpg" src="https://pic.pimg.tw/qupyqupy/1472030038-3656289347.jpg?v=1472030073" title="TKS 2016-08-23 17-20-08-051.jpg" /></div>
+</div>
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">華雄</div>
+<div class="global_divtd">董卓</div>
+<div class="global_divtd">刑天</div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-23 15-32-17-084.jpg" src="https://pic.pimg.tw/qupyqupy/1472030031-3485110475.jpg?v=1472030073" title="TKS 2016-08-23 15-32-17-084.jpg" /><img alt="TKS 2016-08-23 15-32-18-331.jpg" src="https://pic.pimg.tw/qupyqupy/1472030067-3769667309.jpg?v=1472030073" title="TKS 2016-08-23 15-32-18-331.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-23 15-38-39-505.jpg" src="https://pic.pimg.tw/qupyqupy/1472030034-493788229.jpg?v=1472030073" title="TKS 2016-08-23 15-38-39-505.jpg" /><img alt="TKS 2016-08-23 15-38-52-093.jpg" src="https://pic.pimg.tw/qupyqupy/1472030048-979699484.jpg?v=1472030073" title="TKS 2016-08-23 15-38-52-093.jpg" /></div>
+<div class="global_divtd"><img alt="TKS 2016-08-24 07-47-39-053.jpg" src="https://pic.pimg.tw/qupyqupy/1472030039-101691985.jpg?v=1472030073" title="TKS 2016-08-24 07-47-39-053.jpg" /><img alt="TKS 2016-08-24 10-40-46-160.jpg" src="https://pic.pimg.tw/qupyqupy/1472030039-2594841441.jpg?v=1472030073" title="TKS 2016-08-24 10-40-46-160.jpg" /></div>
+</div>
+<div class="global_divtr sango_pnamme">
+<div class="global_divtd">北溟巨鯤</div>
+<div class="global_divtd"></div>
+<div class="global_divtd"></div>
+</div>
+<div class="global_divtr">
+<div class="global_divtd"><img alt="TKS 2016-08-24 10-40-46-161.jpg" src="https://pic.pimg.tw/qupyqupy/1472030039-119085641.jpg?v=1472030073" title="TKS 2016-08-24 10-40-46-161.jpg" /><img alt="TKS 2016-08-24 10-40-46-162.jpg" src="https://pic.pimg.tw/qupyqupy/1472030040-133881350.jpg?v=1472030073" title="TKS 2016-08-24 10-40-46-162.jpg" /></div>
+<div class="global_divtd"></div>
+<div class="global_divtd"></div>
+</div>
+</div>
+<hr />
+
