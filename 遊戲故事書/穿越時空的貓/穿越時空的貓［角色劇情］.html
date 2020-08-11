@@ -1,0 +1,312 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>免費角色：</label> 
+<select id="head_select_o" style="width: 20%;">
+  <option value="1">伽琉</option>
+  <option value="2">紗希</option>
+  <option value="3">基爾德那</option>
+ </select>
+ <label>夢見男角色：</label> 
+<select id="head_select_m" style="width: 20%;">
+  <option value="1">達爾尼思</option>
+  <option value="2">尤因</option>
+  <option value="3">尼洛</option>
+  <option value="4">克利霍</option>
+  <option value="5">克勞特</option>
+  <option value="6">茲爾巴</option>
+  <option value="7">賽溫</option>
+  <option value="8">雷文</option>
+  <option value="9">洛基德</option>
+ </select>
+ <label>夢見女角色：</label> 
+ <select id="head_select_w" style="width: 20%;">
+  <option value="1">由奈</option>
+  <option value="2">蕾蕾</option>
+  <option value="3">瑪莉艾爾</option>
+  <option value="4">蘇依萊</option>
+  <option value="5">羅維娜</option>
+  <option value="6">謝奈</option>
+  <option value="7">千代</option>
+  <option value="8">尼姬</option>
+  <option value="9">伊絲卡</option>
+  <option value="10">桔梗</option>
+  <option value="11">娜基</option>
+  <option value="12">蘇賽特</option>
+  <option value="13">林麗</option>
+  <option value="14">小町</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<p><label>免費角色：</label> 
+<select id="foot_select_o" style="width: 20%;">
+  <option value="1">伽琉</option>
+  <option value="2">紗希</option>
+  <option value="3">基爾德那</option>
+ </select>
+ <label>夢見男角色：</label> 
+<select id="foot_select_m" style="width: 20%;">
+  <option value="1">達爾尼思</option>
+  <option value="2">尤因</option>
+  <option value="3">尼洛</option>
+  <option value="4">克利霍</option>
+  <option value="5">克勞特</option>
+  <option value="6">茲爾巴</option>
+  <option value="7">賽溫</option>
+  <option value="8">雷文</option>
+  <option value="9">洛基德</option>
+ </select>
+ <label>夢見女角色：</label> 
+ <select id="foot_select_w" style="width: 20%;">
+  <option value="1">由奈</option>
+  <option value="2">蕾蕾</option>
+  <option value="3">瑪莉艾爾</option>
+  <option value="4">蘇依萊</option>
+  <option value="5">羅維娜</option>
+  <option value="6">謝奈</option>
+  <option value="7">千代</option>
+  <option value="8">尼姬</option>
+  <option value="9">伊絲卡</option>
+  <option value="10">桔梗</option>
+  <option value="11">娜基</option>
+  <option value="12">蘇賽特</option>
+  <option value="13">林麗</option>
+  <option value="14">小町</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+  (function(){
+    var contentArr = [] ;
+    contentArr.push('');
+  contentArr.push('<div class="title_text">伽琉</div> <p><span class="global_name_span">阿爾德</span>在古代遇見一名追殺［食火鳥］的火術師<span class="global_name_span">伽琉</span>，之後在未來世界意外打倒［食火鳥］的<span class="global_name_span">阿爾德</span>想起<span class="global_name_span">伽琉</span>似乎很想要［食火鳥的灰燼］，於是拿到古代給他，沒想到<span class="global_name_span">伽琉</span>竟將<span class="global_name_span">阿爾德</span>當成新的對手，雙方交戰過後，戰敗的<span class="global_name_span">伽琉</span>為了挑戰更強大的敵人來磨練自己，所以決定與眾人一起旅行。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ors7Qn3w9C4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>來到未來的<span class="global_name_span">伽琉</span>想要找個強大的對手來試試自己的火焰，最後戰勝合成人類並且成功讓應該沒感情的機器人產生了恐懼。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dKoMdXlK7A0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>來到現代的<span class="global_name_span">伽琉</span>聽到關於［沙羅曼達使者］的消息，但真相只是一個操縱火蜥蜴的魔獸所為，<span class="global_name_span">伽琉</span>二話不說就把這魔獸燒成灰燼，而在一旁觀看的人類小孩，心中也彷彿被<span class="global_name_span">伽琉</span>的火焰鼓勵一般，縱使雙親被魔獸奪去生命，想必自己ㄧ個人也能好好活下去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7rZVJkoBpL4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了成為最強火焰使，<span class="global_name_span">伽琉</span>決心參加ㄧ個試煉，度過重重難關後，<span class="global_name_span">伽琉</span>要面對的是從小扶養自己長大的<span class="global_name_span">焰龍瓦修塔爾</span>，通過試煉後，<span class="global_name_span">焰龍瓦修塔爾</span>的生命也走到了盡頭，在最後的時刻將自己的力量留給了<span class="global_name_span">伽琉</span>。</p> <div class="global_ps_text"> <p>雖然<span class="global_name_span">伽琉</span>是<span class="global_name_span">焰龍瓦修塔爾</span>的活祭品，但是到了最後可以看出<span class="global_name_span">焰龍瓦修達爾</span>是真的把<span class="global_name_span">伽琉</span>當作自己的孩子看待，只是可能因為教育的關係，<span class="global_name_span">伽琉</span>即使心領神會感到來自<span class="global_name_span">焰龍瓦修塔爾</span>的暖意，依然沒辦法坦率的說出自己內心的感激。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E6hmuc55G14?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼承<span class="global_name_span">焰龍瓦修塔爾</span>力量的<span class="global_name_span">伽琉</span>遇到ㄧ名咒術師，以與傳說中的［黑炎魔龍］戰鬥為誘餌，引誘<span class="global_name_span">伽琉</span>幫忙復活［黑炎魔龍］，但依照<span class="global_name_span">伽琉</span>的個性當然等不了孵化的時間，貿然就把蛋殼給打碎，咒術師登時間氣的無法言喻，要眾人等待ㄧ段時間再來與孵化後的［黑炎魔龍］戰鬥。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/k2ZCtJIZzII?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>再度來到咒術師處，準備對戰孵化後的［黑炎魔龍］，而這時的的咒術師也現出真面目，正是許久不見的<span class="global_name_span">巨魔男爵</span>，然而此時的［黑炎魔龍］仍未是完全體，被眾人輕易的打倒了，<span class="global_name_span">巨魔男爵</span>也隨即落跑。</p> <p><span class="global_name_span">伽琉</span>為了能與完全體的［黑炎魔龍］對戰，來到古代昔日<span class="global_name_span">沙羅曼達</span>棲息處，總算成功復活［黑炎魔龍］並且擊敗了牠，取得了牠身上獨特的黑焰力量，從此晉升為火焰陣角。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7gqU4phL6nQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>取得［黑炎之力］的<span class="global_name_span">伽琉</span>為了證明自己的成長，經過<span class="global_name_span">沙羅曼達</span>的眷屬、稻草人、<span class="global_name_span">沙羅曼達</span>的幻靈種種考驗，總算獲得了不落於<span class="global_name_span">焰龍瓦修塔爾</span>的評價。</p> <p>而<span class="global_name_span">伽琉</span>真正的目地只是為了讓養育自己長大的<span class="global_name_span">焰龍瓦修塔爾</span>能夠真正的安息，不用為了擔心他而繼續徘徊在這世上。</p> <div class="global_ps_text"> <p>最後可以看出來<span class="global_name_span">伽琉</span>雖然個性大喇喇的，但本質上還是ㄧ個善解人意的暖男。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YQBNXHv8cSw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">紗希</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AK94hQN9l4k?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">紗希</span>準備去探望<span class="global_name_span">麻結</span>，卻在前往的路上遭到了神秘機器人的襲擊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RJxJll7RSS0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>依照機器人離開前的話，<span class="global_name_span">紗希</span>來到IDA學園的露臺，果然又遇到了機器人襲擊，這起事件也引起了<span class="global_name_span">伊絲卡</span>的注意，於是IDEA正式參與調查。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Wa82R60_IKI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>根據線索眾人又追查到機器人的下個出現位置，擊退後，<span class="global_name_span">伊絲卡</span>推論出這起事件應該跟［搖籃系統］有關。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1j2qqkCmdRM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>追查到［IDA市］之後，眾人終於見到了這次事件的禍首<span class="global_name_span">中樞AI</span>，但與之交戰後，它便逃走了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fP8XPzfZE0Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>再次追查到<span class="global_name_span">中樞AI</span>的位置，總算了解它之所以引起那麼大動靜的原因，只為了自己不被遺忘，因為歸根究柢它仍只是ㄧ個系統，雖然看起來有自己的人格特質，但只要ㄧ經過初始化後，就會徹底消失。</p> <p>了解了它的痛苦後，在<span class="global_name_span">紗希</span>保證不會忘記它的承諾下，這起事件總算有了完美的結束，<span class="global_name_span">紗希</span>本人也正式成為IDEA的ㄧ員。</p> <div class="global_ps_text"> <p>這段劇情看下來讓我想起了［尼爾：自動人形］的故事，雖然故事量不同，但是都在探討著生命的意義。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0DebmkvzNic?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>成為IDEAㄧ員的<span class="global_name_span">紗希</span>正煩惱著自己到底能做些甚麼？但隨即在一起事件中，重拾了自己的信心，也明白了自己在IDEA中的責任。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fUOgme4BmOI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">基爾德那</div> <p><span class="global_name_span">基爾德那</span>所居住的島上有四個古老的魔導機被人喚醒，這很有可能危害到島上居民的安全，於是<span class="global_name_span">基爾德那</span>將其逐一擊敗，並且吸收了魔導機的力量，當擊敗最後一架時，<span class="global_name_span">基爾德那</span>發現幕後的黑手正是以前跟自己爭奪過魔獸王寶座的<span class="global_name_span">乍席爾</span>。</p> <p>前往魔獸城擊敗<span class="global_name_span">乍席爾</span>後，<span class="global_name_span">基爾德那</span>放走了他，看來在與<span class="global_name_span">阿爾德</span>冒險的過程中，似乎<span class="global_name_span">基爾德那</span>也沾染到一點他溫柔的性格氣息。</p> <div class="global_ps_text"> <p>02:13 ~ 05:28 - 走路戰鬥。</p> <p>10:32 ~ 22:25 - 走路戰鬥。</p> <p>25:28 ~ 30:13 - 走路戰鬥。</p> <p>32:50 ~ 33:45 - 走路戰鬥。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kYN5xLXTEQo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>擊敗<span class="global_name_span">乍席爾</span>後，島上的魔導機似乎因為對<span class="global_name_span">基爾德那</span>手上的劍產生反應，又開始活動了起來，於是<span class="global_name_span">基爾德那</span>再度對他們展開討伐。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/B3bQK0OMb0g?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在對魔導機的討伐過程中，<span class="global_name_span">基爾德那</span>的配劍完全吸收了魔導機的詛咒，終於解決了魔導機對島上居民的危害。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oCKtIGiShhM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_o");
+  var footSelect = document.getElementById("foot_select_o");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">達爾尼思</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YdjZuEQw4Oo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>由於魔獸強盜的日溢猖獗，<span class="global_name_span">達爾尼思</span>承接了原本屬於王城衛士的巡邏工作，但是卻因為自己心慈手軟而讓惹事的魔獸趁機逃跑。</p> <div class="global_ps_text"> <p>03:05 - 這裡講的［不要趕盡殺絕］的概念是現在人類缺乏的，我們過度的開發自然資源，導致各種野生動物的棲息地受到破壞，所以蝙蝠帶著病毒飛入人類社會，熊也為了食物被迫到人類生活區翻垃圾。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HVfo_Ugi6Nc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>村內老人因為擔心孫子在［月影之森］碰到魔獸，所以拜託<span class="global_name_span">達爾尼思</span>前去看看，不過在那遇到的卻是被魔物攻擊的魔獸，救了魔獸後，<span class="global_name_span">達爾尼思</span>編造了一個理由，把發現魔獸這件事情呼弄了過去，也許這一個善舉可以讓人類與魔獸之間產生ㄧ些好的關係改變。</p> <div class="global_ps_text"> <p>06:57 - <span class="global_name_span">達爾尼思</span>對<span class="global_name_span">阿爾德</span>說的這句話真是基情滿滿。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/77WXqbh6z4Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">尤因</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vL_qJeRccFk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一名奇怪的年輕人找上<span class="global_name_span">尤因</span>想要買一把受詛咒的武器，但<span class="global_name_span">尤因</span>看透這年輕人的本質，想要透過<span class="global_name_span">阿爾德</span>身上的［巨魔怨念］嚇退這年輕人。</p> <p>但沒想到，這年輕人卻是不受教訓，無奈之下<span class="global_name_span">尤因</span>只好弄來一把已經被清除了負面能量的妖刀交差。</p> <div class="global_ps_text"> <p>從這事件可以看出<span class="global_name_span">尤因</span>不是一個單純的武器商人，他其實也透過這種生意模式幫助其他被負面能量纏身的人們。還有<span class="global_name_span">尤因</span>雖然外表是個大老爺子，但其實非常喜歡吃甜點。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/G-BanZo320I?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">尤因</span>告知<span class="global_name_span">阿爾德</span>自己追尋一把稱為［惡靈殺手］的武器，講到一半忽然有個男人闖入，希望<span class="global_name_span">尤因</span>幫他賣掉一把詛咒武器。</p> <p>原來這名男人原是海賊團的成員，因為自己私自從寶物內取走詛咒的斧頭，導致整個海賊團團滅，但實際上這並不是詛咒的關係，而只是單純的厄運接踵而至的緣故，然而未被安葬的海賊團員正在肆虐，<span class="global_name_span">尤因</span>為了拯救眾人只好動用了未知的力量，事後海賊團員也獲得了弔慰，事件總算告一段落。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0r4IXdCedZo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">尤因</span>一直尋找的［惡靈殺手］終於有著落了，但沒想到這是魔獸們設下的陷阱，原來他們的目的是附身在<span class="global_name_span">尤因</span>身上的［惡靈之槍］，擊敗魔獸後前往魔獸城調查，卻意外發現了［惡靈殺手］的線索，於是前往古代的［帕西法爾宮殿］。</p> <p>在古代遇見了那時代的［惡靈之槍］正在迷惑著一名士兵，<span class="global_name_span">尤因</span>見狀連忙上前阻止，雖然成功擊退了古代的［惡靈之槍］，然而<span class="global_name_span">尤因</span>身上的［惡靈之槍］卻前去隱藏［惡靈殺手］，好在被<span class="global_name_span">尤因</span>等人及時識破。</p> <p>最後<span class="global_name_span">尤因</span>透過奸計騙回了原本惡靈從自己身上取走的代價，在藉由<span class="global_name_span">阿爾德</span>之手成功消滅了［惡靈之槍］，然而就算身體恢復健康，<span class="global_name_span">尤因</span>依然喜愛吃著甜食。</p> <div class="global_ps_text"> <p>16:18 - <span class="global_name_span">尤因</span>之所以愛吃甜食，也是因為［惡靈之槍］對身體造成傷害的緣故。</p> </div> <div class="global_ps_text"> <p>07:35 ~ 13:50 - 走路戰鬥。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/k_Wfwel_RNo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">尼洛</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/c1Bh4GPodQc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">尼洛</span>在古代接受ㄧ個女孩子的請託，前去尋找她心儀的男生，這男生為了獲取ㄧ名富家女的芳心，於是前往魔物眾多的地方，只為了獲得ㄧ個寶石，但富家女竟然只是把這男生當猴耍，事後經過<span class="global_name_span">尼洛</span>的磋和，這男生與委託的女孩總算了解彼此心意。</p> <div class="global_ps_text"> <p>這故事講的是［真愛往往就在身邊］。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SQWlgBkXENg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在現代［臨迪］流傳著ㄧ個香水師的事情，但經過了ㄧ系列接觸後，竟然發現這傳說的香水師是個以小孩生命為材料，試圖讓自己常保年輕的巫女，<span class="global_name_span">尼洛</span>仗義解決了這事件，救回了小孩，巫女也因為香水效力到期的緣故，受到反噬而化為灰燼。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/69DPk72NpWg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">克利霍</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oAEXrrO9BFk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">克利霍</span>遇見了以前在KMS公司的同事，受到請託來幫忙尋找調查員，並且幫助他取得了公司需要的資料。</p> <div class="global_ps_text"> <p>這段劇情可以看出KMS公司似乎對重返汙染的地表有著某些計畫。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/txo9r-mPeR0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">克利霍</span>原本預計要用來研究的天然樣本被一旁的人誤以為是甚麼貴重的寶物，而擅自偷走，所幸最後追了回來，<span class="global_name_span">阿爾德</span>在這起事件後，也了解了<span class="global_name_span">克利霍</span>等人為了恢復自然的決心。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HLLHX0aWhog?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">克勞特</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/w5H8TzTE7tY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">克勞特</span>遇見了兒時的玩伴，眼見其心情十分低落，便開始四處調查，沒想到兒時玩伴竟與不良人士ㄧ起幹著不法勾當，為了兒時玩伴<span class="global_name_span">克勞特</span>出面打發了不良人士，<span class="global_name_span">克勞特</span>之所以會這麼在意兒時玩伴只因為兒時兩人間的ㄧ個承諾。</p> <div class="global_ps_text"> <p>16:42 - <span class="global_name_span">克勞特</span>與兒時玩伴的回憶。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kYXIHfagMjU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">克勞特</span>為了調查祖傳寶玉的使用方法，到處請人幫忙，最後成功通過寶玉的試煉，獲得了藏在裡面的知識。</p> <div class="global_ps_text"> <p>04:20 - 兩個國王之間的對話。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0fJAmJ2t4u0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">克勞特</span>獲得寶玉知識後，成功完成了國王的繼承儀式，下ㄧ步<span class="global_name_span">克勞特</span>透過［傑諾領域］的系統，將［凱琉奇路王國］的歷史知識散播到［艾路茲恩］各處，希望能讓王國在大家的腦海中復甦，而他本人最大的目標就是回到本被汙染的大地上重新建立起ㄧ個王國。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wZqh5_rqPsM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在圖書館內<span class="global_name_span">克勞特</span>邂逅了神秘的王家女子<span class="global_name_span">申西雅</span>，兩人ㄧ拍即和隨即準備舉行王國漂浮儀式，準備將國土復活。</p> <p>但王國漂浮儀式必須是要有兩個王族血統的人來舉行，而解開種種美麗的誤會後，兩人終於發現彼此是不同國家的後裔，<span class="global_name_span">申西雅</span>無奈下也只好回到書中繼續等待。</p> <div class="global_ps_text"> <p>其實嘛，我覺得<span class="global_name_span">申西雅</span>與<span class="global_name_span">克勞特</span>也挺登對的，為什麼兩個不結婚生子，這樣兩個人的國家都能湊到有兩個王族血統的人，這不是挺好的嗎？</p> </div> <div class="global_ps_text"> <p>10:15 - <span class="global_name_span">申西雅</span>登場，看到她如此榮重的登場方式，我猜想她之後應該也會以夢見角的方式重新回歸。</p> <p>15:30 - <span class="global_name_span">克勞特</span>與<span class="global_name_span">申西雅</span>彼此看似正經但又充滿喜感的對話。</p> <p>19:00 - 氣勢萬鈞的王國漂浮儀式。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DshUFIuFJsM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">茲爾巴</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IOBB0kfYXTQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>ㄧ個女孩子正在尋找哥哥，<span class="global_name_span">茲爾巴</span>向來熱心就幫忙尋找，這ㄧ來剛好解救了女孩的哥哥免於強盜的毒手，但兄妹倆人重逢後卻沒辦法好好說話，<span class="global_name_span">茲爾巴</span>於是建議妹妹現場透過寫信的方式表達自己的真實想法。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MrXPJX2GRVI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">茲爾巴</span>遇到ㄧ對夫妻似乎在溝通方面有些問題，於是自告奮勇提出幫忙太太送信給丈夫，不經意間<span class="global_name_span">茲爾巴</span>發現了太太懷孕的事實，於是透過花語來告知丈夫［幸福的到來］。</p> <div class="global_ps_text"> <p>看著劇情其實也猜到<span class="global_name_span">茲爾巴</span>的太太已經離開人世，而用書信來連結對亡妻的思念，這點顯得格外重情。現在的人應該很難想像當初資訊不發達的年代，透過寫信ㄧ股腦表達心中思念的方法，不管對收信或寫信的人而言，都是極具感染的，比起現在的通訊軟體，想到就打的形式，人與人之間就少了那ㄧ層浪漫。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/s8iqXE8nccs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">賽溫</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UzTIG6Jukow?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">賽溫</span>的女同學為了擺脫班上某位男生的糾纏，決定找<span class="global_name_span">賽溫</span>充當男友，本來想置身事外的<span class="global_name_span">賽溫</span>被那位男生激到，於是決定跟他分個勝負。</p> <p>最後<span class="global_name_span">賽溫</span>獲得勝利，並且當起了紅娘來牽成兩人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IR75dAaiRzk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>ㄧ個不尋常的科學家妄想用<span class="global_name_span">賽溫</span>造出不需［傑諾陵晶］驅動的能源，得知科學家目地的眾人，拋棄了原本想要幫助他的念頭，瀟灑的轉身離去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/K1Ht5XaBfTM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">雷文</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RZpH_Guk6I8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">雷文</span>與<span class="global_name_span">阿爾德</span>聽說在某個旅館內過夜會夢到可怕情景，於是兩人親自前往調查，最後發現是某個詛咒，在眾人的努力下，總算獲得解決。</p> <div class="global_ps_text"> <p>08:05 - 這裡可以得知<span class="global_name_span">雷文</span>喪失了記憶。這當中的故事看來是要等<span class="global_name_span">雷文</span>AS版出來後才能補完。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RbihJzoU3lI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">雷文</span>與<span class="global_name_span">阿爾德</span>幫忙ㄧ個女孩尋找戀人的下落，但最後卻只帶回了男子的遺書，受不了女孩悲傷的<span class="global_name_span">雷文</span>運用了法力，短暫將男子的靈魂招回人間，讓女孩最後還能有與戀人告別的機會。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/g8apUXRpi4Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">洛基德</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1VUps4YDKaA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">洛基德</span>採藥草的途中，遇到一個小女孩正在採花，因為<span class="global_name_span">洛基德</span>外貌的緣故，這小女孩對其相當的不友善，然而為了女孩的安全，<span class="global_name_span">洛基德</span>與<span class="global_name_span">阿爾德</span>還是跟了上去。</p> <p>即便幫助了小女孩，但她對<span class="global_name_span">洛基德</span>的態度仍然十分不好，之後在［月影之森］遇到了危險，還好<span class="global_name_span">洛基德</span>及時趕到，但就算是救了女孩，女孩的媽媽卻帶著士兵前來，並且把<span class="global_name_span">洛基德</span>當做壞人，不過最後女孩終於感受到<span class="global_name_span">洛基德</span>的善意，兩人成為了好朋友。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zvQe9eNfdnQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［米格蘭斯城］的警衛人員傳喚了<span class="global_name_span">洛基德</span>，並且要脅了<span class="global_name_span">洛基德</span>為他們工作，就算是如此，只要能幫助到［米格蘭斯城］的人，<span class="global_name_span">洛基德</span>仍然十分樂意。</p> <p>但這種需索無度的要脅已經惹怒了<span class="global_name_span">阿爾德</span>，<span class="global_name_span">洛基德</span>也為了朋友而反抗，最後<span class="global_name_span">米格蘭斯王</span>出面替<span class="global_name_span">洛基德</span>背書，而王國的警衛人員也因此閉嘴。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wsvKZ4GvinM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在王城中，傳聞有人正在宣傳魔獸與人類和平共存的言論，調查之下發現這人竟然是ㄧ隻魔獸，然而就算這行為是好的，但終究是兩面不討好，不僅人類方無法理解，魔獸方也對這行為感覺到了背叛。</p> <p>這魔獸最後被同伴抓回了魔獸城，並且最終喪命，臨終之時總算認出<span class="global_name_span">洛基德</span>是自己失散多年的兒子，<span class="global_name_span">洛基德</span>在父母的墓前下定決心終有一日要將父親的遺志實現。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yuj4sOyQjF4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">洛基德</span>之前幫助的小女孩，在長期相處下已經對<span class="global_name_span">洛基德</span>產生了很大的好感，甚至為了長大後能嫁給他，花了心思幫忙打扮<span class="global_name_span">洛基德</span>，希望自己的母親能接受他。</p> <p>但<span class="global_name_span">洛基德</span>因為與自己父親相遇過後，心態已經有了變化，希望魔獸與人類雙方的理解能在於內心的交流而不是純粹外表的認同，可是這卻讓女孩傷心不已，獨自跑出去的女孩在途中遇到了魔物的襲擊，<span class="global_name_span">洛基德</span>在戰鬥中為了救女孩的母親而受到魔物的致命一擊因而喪命。</p> <p>放心不下同伴安危的<span class="global_name_span">洛基德</span>用強大的意志力，以雙拳擊飛前來收割靈魂的死神，並且成功復活，女孩的母親也因為<span class="global_name_span">洛基德</span>的捨命相救，對其完全的改觀了。</p> <div class="global_ps_text"> <p>04:13 - 打扮過後的<span class="global_name_span">洛基德</span>。</p> <p>24:05 - 死神前來被擊飛的片段。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/k5gz9c3kk_Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">由奈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/225T9qghTJ0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一個雨水研究員，偶然間聽到<span class="global_name_span">由奈</span>有著祈雨的能力，為了自己的研究而央求<span class="global_name_span">由奈</span>求雨，不過尚欠儀式所需的神水，於是<span class="global_name_span">由奈</span>與<span class="global_name_span">阿爾德</span>便開始尋找［東國的神水］。</p> <p>過程中<span class="global_name_span">阿爾德</span>得知其實<span class="global_name_span">由奈</span>的祈雨能力被封印，但兩人還是想盡力幫忙研究員，在收集完道具後，開始了求雨的儀式，雖然過程有點突槌，但雨總算是降下來了。</p> <div class="global_ps_text"> <p>09:28 - 這邊看著<span class="global_name_span">由奈</span>吞下神水後的反應，我猜這神水大概是類似清酒之類的存在，所以後來<span class="global_name_span">由奈</span>其實是發酒瘋而潛力爆發，雨才降了下來。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KYPXM6Lq9gk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>婆婆給<span class="global_name_span">由奈</span>的水鏡突然破裂，雖然最後找到<span class="global_name_span">拉切特</span>幫忙修復，但同時間<span class="global_name_span">由奈</span>也得知這水鏡其實是村人為了避免自己力量失控釀成災禍而給自己下的封印。</p> <p>得知村人送自己出外旅行的真正理由，<span class="global_name_span">由奈</span>不由得心情低落，決定出外吹吹風平復心情。此時<span class="global_name_span">拉切特</span>私下叮囑<span class="global_name_span">阿爾德</span>不要再讓<span class="global_name_span">由奈</span>使用這被封印的力量，不然可能有性命的危險。</p> <div class="global_ps_text"> <p>01:30 - 天氣會隨著<span class="global_name_span">由奈</span>而變化，很明顯<span class="global_name_span">由奈</span>的力量在此刻已經逐漸被釋放。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Z3FsJE5scTo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">由奈</span>心情低落，所以<span class="global_name_span">阿爾德</span>決定帶她去陽光明媚的沙漠散散心，卻不巧遇到作惡的魔法師。</p> <p>由於魔法師的［日照結界］十分強大，眼見<span class="global_name_span">阿爾德</span>危在旦夕，<span class="global_name_span">由奈</span>情急之下釋放自己的力量，總算打敗了魔法師，但失控的力量卻讓天空不斷下著豪雨，所幸<span class="global_name_span">阿爾德</span>急中生智，一番嘴遁後，<span class="global_name_span">由奈</span>信心大增，總算獲得控制自己力量的方法。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Wu24MK2htmQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>因為一場意外，<span class="global_name_span">由奈</span>的衣服上依附著<span class="global_name_span">溫蒂妮</span>的眷族<span class="global_name_span">小拓</span>，雖然<span class="global_name_span">小拓</span>有些無鬧，但是在與<span class="global_name_span">由奈</span>相處的過程中，逐漸產生了友誼，於是<span class="global_name_span">小拓</span>放棄了分離的機會，決心與<span class="global_name_span">由奈</span>一起旅行。</p> <div class="global_ps_text"> <p>02:40 - 這一段不知道是翻譯問題，而是原本劇情就這樣，我一度以為<span class="global_name_span">由奈</span>是想上廁所。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YI32OAMRBqw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">蕾蕾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cUyW2-vZ1a0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">蕾蕾</span>透過自己可以跟貓溝通的能力，幫忙ㄧ隻貓找到主人成功回家。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bW27xTBwF74?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">蕾蕾</span>用她的赤子之心成功感化了一個騙徒。</p> <div class="global_ps_text"> <p>06:22 - <span class="global_name_span">阿爾德</span>對<span class="global_name_span">蕾蕾</span>講的這句話，相信很多人的成長過程中也被人提醒過，是否就是從這句提醒開始，我們逐漸失去了赤子之心。</p> <p>08:11 - <span class="global_name_span">蕾蕾</span>這裡對於自己被騙的反應相當美好，會有這種反應的人不會是以自己為出發點的利己主義者，我們被現代教育教得太過功利，太過計較，偶爾跳脫這種思維看世界，也許可以當個一時半刻的<span class="global_name_span">蕾蕾</span>體驗這種無憂無慮的生活？。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nV_b7nYMxn0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">瑪莉艾爾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RuzTt0U949I?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">瑪莉艾爾</span>幫助一個小女孩找回她飼養的貓<span class="global_name_span">小奶白</span>而女孩的父親也在過程中知道了女孩繼母的種種惡跡，斷然與其分手，事後<span class="global_name_span">瑪莉艾爾</span>在女孩父親那得到ㄧ封自己父親寫給自己的信。</p> <div class="global_ps_text"> <p>17:30 - 父親信的內容。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0vLvj9du1l0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在村子裡聽到關於村人被魔物襲擊的事情，為了村民的安全眾人前往調查，卻發現只是一個小偷用魔物的吼叫聲嚇跑來往的人，以便調查人口販子的身分，追根究柢是希望能從人販手中救回自己的兒子。</p> <p>雖然<span class="global_name_span">阿爾德</span>有點懷疑，但是在<span class="global_name_span">瑪莉艾爾</span>真心的幫助下，小偷的兒子總算被救回了，可以說如果沒有<span class="global_name_span">瑪莉艾爾</span>對小偷的信任就不會有這個善的結果，相信人在某些方面上果然很重要。</p> <p>小偷深受感動，決定金盆洗手，<span class="global_name_span">瑪莉艾爾</span>也介紹個神殿的工作給他，看來小偷的生活將會逐漸步上正軌。</p> <div class="global_ps_text"> <p><span class="global_name_span">瑪莉艾爾</span>的個性其實跟<span class="global_name_span">蕾蕾</span>很像，同樣的赤子之心。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/W9gSIM3zS7Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在［臨迪］遇到了之前幫助過的<span class="global_name_span">小奶白</span>ㄧ家人，從女孩的父親口中得知<span class="global_name_span">瑪莉艾爾</span>的母親生著重病，在眾人努力下，總算將<span class="global_name_span">瑪莉艾爾</span>的母親治癒了，母女倆也敞開心扉互相溝通了解。</p> <p>在交談過程中，<span class="global_name_span">瑪莉艾爾</span>發現之前幫助過的小偷先生，就是自己小時候遺憾不能治癒的人，在不知不覺中，<span class="global_name_span">瑪莉艾爾</span>也治癒了小偷，填補了自己幼時的缺憾。</p> <div class="global_ps_text"> <p>05:25 - 這裡<span class="global_name_span">瑪莉艾爾</span>訴說著覺得自己成不了神官的理由。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3vLYFEQTlwM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">瑪莉艾爾</span>穿上正式的儀式服裝，原來是為了幫<span class="global_name_span">小奶白</span>ㄧ家人的父親與新女友證婚，過程中發現<span class="global_name_span">小奶白</span>的男友竟然被改造成魔獸，雖然最後成功變回貓的型態，但其生命也燃燒殆盡。</p> <p>為了逆天改命<span class="global_name_span">瑪莉艾爾</span>覺醒了復活的能力，成功救回<span class="global_name_span">小奶白</span>的男友<span class="global_name_span">提奧</span>，結果在父親與新女友的結婚典禮上，<span class="global_name_span">小奶白</span>與<span class="global_name_span">提奧</span>也硬插一腳舉行了貓咪的婚禮。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_8ZzIzRAAjU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">蘇依萊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8G9gufDBO-4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">拉克西斯</span>緊急尋找<span class="global_name_span">蘇依萊</span>前往［卡雷克濕原］討伐速度很快的魔物，雖然<span class="global_name_span">蘇依萊</span>將用來牽制魔物的辣椒粉扔錯了方向，但妖風驟起，將粉包命中魔物。</p> <p>成功討伐魔物回到城中後，眾人無不驚嘆<span class="global_name_span">蘇依萊</span>的能力，因此冠以<span class="global_name_span">蘇依萊</span>賢才之名，事後<span class="global_name_span">拉克西斯</span>向<span class="global_name_span">阿爾德</span>說到也許是<span class="global_name_span">蘇依萊</span>身上的幸運之旗帶給她如此強運。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0spMdgL1AoY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>騎士團的人因位有名商人遲遲未到達，所以急忙請<span class="global_name_span">蘇依萊</span>前去查看，但沒想到卻因此落入魔獸們的陷阱當中，但她卻反過來搗毀魔獸們的陰謀，因此拯救了王城，<span class="global_name_span">拉克西斯</span>因此決定冠以她［向陽英雄］的稱號。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CQJWriKcp4E?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">羅維娜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DcoSqsou-10?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>ㄧ名少年因為對<span class="global_name_span">羅維娜</span>非人的外表有歧視，不斷對其惡作劇，然而<span class="global_name_span">羅維娜</span>並不以為意，反而最後還救下被綁架的少年。少年也明白了自己的愚蠢行為，相信以後會成為一個不錯的大人吧。</p> <div class="global_ps_text"> <p>這段故事是以種族歧視的話題來敘述以德報怨的偉大情操，像<span class="global_name_span">羅維娜</span>那樣把自己夢想、初衷始中放在心裡的人，才能如此灑脫面對各種負面情緒，只希望更多的人能聽到她的歌聲。</p> <p>11:11 - ［覺得自己錯了就說對不起，被別人幫助就說謝謝］如此簡單的想法，是否已經被我們遺忘了許久。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Sq4-YIJMuCk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>ㄧ名畫家對<span class="global_name_span">羅維娜</span>美麗的外表讚嘆不已，因此想為她畫幅畫，然而畫家的弟弟卻因為對魔獸的偏見，不停的抵制她，最後甚至設下了陷阱讓眾人身陷危險，然而<span class="global_name_span">羅維娜</span>卻不在意，甚至鼓勵畫家用美麗的畫來傳達想法給弟弟。</p> <p>其實<span class="global_name_span">羅維娜</span>也不是不會受傷，但她仍然堅持用笑容把自己的歌聲傳達給大家，這也是她可佩的地方。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BU0SSSbGdEg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">謝奈（阿爾德的官配）</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ap54kkMm2Fo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">謝奈</span>身受魅惑詛咒之苦，任何異性看到她也被為其著迷，不巧這天ㄧ對未婚夫妻在王宮內遇到<span class="global_name_span">謝奈</span>，男方馬上就被魅惑了，甚至要跟未婚妻解除婚約。</p> <p>還好在<span class="global_name_span">拉切特</span>的幫忙下，最後解除了危機。</p> <div class="global_ps_text"> <p>06:00 - <span class="global_name_span">謝奈</span>說著自己被下詛咒的始末。</p> <p>12:50 - 花語，桃紅色的花是［小時候的誓言］藍色是［純粹］紅花是［永恆之愛］。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vm7Xk-HFSKA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">謝奈</span>的魅惑能力在未來也產生巨大的危機，三名男人同時中了魅惑，各顯奇招就為了獨佔心儀之人，在擊敗他們後，拜託司政官處理善後之事，事件似乎就告一段落了。</p> <p><span class="global_name_span">謝奈</span>對<span class="global_name_span">阿爾德</span>如此熱心親切的對待自己似乎也暗自擔心是不是因為魅惑的緣故。</p> <div class="global_ps_text"> <p>有打通關第一部劇情的人就知道，<span class="global_name_span">阿爾德</span>之所以不會被魅惑，最根本的原因是因為他跟<span class="global_name_span">謝奈</span>不是同一個物種。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0okiYgsUlIs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">謝奈</span>拜託<span class="global_name_span">拉切特</span>調查<span class="global_name_span">阿爾德</span>是否中了魅惑，結果雖然沒有中魅惑，但持續的影響下去也許就中了，<span class="global_name_span">謝奈</span>因此想要離開眾人。</p> <p>為了能跟<span class="global_name_span">謝奈</span>繼續當夥伴，<span class="global_name_span">阿爾德</span>跟<span class="global_name_span">拉切特</span>詢問了解咒之法，最後成功解咒。</p> <p>然而真正解咒的原因卻不是ㄧ開始<span class="global_name_span">拉切特</span>所講的，而是因為找到了［真實的愛］，意思就是說<span class="global_name_span">謝奈</span>因為這旅行的過程，以及最後<span class="global_name_span">阿爾德</span>在她與魔物之間成功辨認出她的原因，其實已經愛上了<span class="global_name_span">阿爾德</span>。</p> <div class="global_ps_text"> <p>15:00 - 就算解除了詛咒，<span class="global_name_span">謝奈</span>依舊是人見人愛的萬人迷。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xzZVfz53hNI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">拉切特</span>質問<span class="global_name_span">謝奈</span>為甚麼與<span class="global_name_span">阿爾德</span>的關係沒有更進一步？為了自己的幸福，<span class="global_name_span">謝奈</span>換上新服裝與<span class="global_name_span">阿爾德</span>約會。</p> <p>沒想到過程中，卻遇到了當初給自己下詛咒的魔法師，<span class="global_name_span">阿爾德</span>為救<span class="global_name_span">謝奈</span>反而被下了詛咒，不過在<span class="global_name_span">謝奈</span>幫助下這次給了魔法師ㄧ個沉重的教訓，<span class="global_name_span">阿爾德</span>的詛咒也解除了。</p> <div class="global_ps_text"> <p>11:38 - <span class="global_name_span">賽勒斯</span>偷看兩人約會。</p> <p>31:25 - <span class="global_name_span">謝奈</span>差一點對<span class="global_name_span">阿爾德</span>表白。</p> <p>32:00 - 魔法師不知道<span class="global_name_span">阿爾德</span>的真實身分，而對他下了詛咒，沒想到卻因此引來大量他所害怕的貓。</p> <p>40:00 - <span class="global_name_span">阿爾德</span>真是一個大木頭，這氣氛就是要給她親下去啊。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nLNSatEnzGo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">千代</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vh_wREifW80?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">千代</span>為了幫助一個被魔物劇毒傷害雙腳的小男孩，決定幫忙尋找治癒傷勢的藥材，然而糊塗的她卻把藥材的清單弄錯，但沒想到最後製造出的藥劑卻成功治好了小男孩。</p> <p><span class="global_name_span">千代</span>也在這起事件中得到了啟示，立志要好好輔佐<span class="global_name_span">謝拉</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wPMbQXsIG8M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">千代</span>幫忙學者淨化了池塘的水，自己卻迫不急待的跳入水中玩水，而學者也可以在池塘裡進行生物的研究，沒想到卻在裡面發現了古代海龜的DNA。</p> <div class="global_ps_text"> <p>02:02 - 小龍蝦的梗，是因為一開始小龍蝦的確是生活在骯髒的池水中，近年來人們發現他的美味，才開始大量養殖。</p> <p>10:45 - 這裡很明確提示了<span class="global_name_span">千代</span>其實是海龜化身的，而<span class="global_name_span">千代</span>認定的救命恩人<span class="global_name_span">謝拉</span>對海龜一族照顧有佳，估計也是在一群欺負海龜的小孩中救了<span class="global_name_span">千代</span>。至於為什麼<span class="global_name_span">千代</span>說她自己嫁出不去，這個梗我是沒看懂。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QU9FfEWY1zM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">尼姬</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zoI0PG9qR4Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿爾德</span>跟著<span class="global_name_span">尼姬</span>想要協助她完成工作，但沒想到<span class="global_name_span">尼姬</span>的職業竟然是暗殺者。</p> <p>這次暗殺對象是一個與委託人女兒私奔的男子，以死亡為威脅，了解到兩人是真心相愛後，<span class="global_name_span">尼姬</span>決定用她的方式來幫助兩人，而委託人也因為自己的愚蠢而後悔不已。</p> <div class="global_ps_text"> <p>10:05 - <span class="global_name_span">尼姬</span>幫助這對情侶的真相。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rDOp8ZYqSaM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">尼姬</span>在街上找到了懸賞自己的通緝令，調查之下發現這是一名富人的僕者為了奪取財富設下的陷阱，經過這起事件<span class="global_name_span">阿爾德</span>勸<span class="global_name_span">尼姬</span>金盆洗手，並且與大家一起以夥伴的身分生活下去，而<span class="global_name_span">尼姬</span>在解決了那名富人的僕者後，也決定照著<span class="global_name_span">阿爾德</span>的話，改變自己的生存方式。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/agFWtQkXGWI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>來到東方大陸的<span class="global_name_span">尼姬</span>遇到了ㄧ對夫妻稱呼自己為［尼姬大人］，好奇之下尾隨兩人觀察，發現竟然是一個土偶假扮自己，並以［可以復活逝去之人］之名到處蠱惑，追著土偶一路追查到幕後黑手竟然是［黃昏一族］的始祖，而<span class="global_name_span">尼姬</span>本人正是這一族的成員。</p> <p>親手打敗始祖後，<span class="global_name_span">尼姬</span>運用自己的能力將亡者送回該去的地方。</p> <div class="global_ps_text"> <p>15:52 - <span class="global_name_span">尼姬</span>劍舞真正的能力還有關於她滅族的真相。</p> <p>26:45 - <span class="global_name_span">尼姬</span>所屬的［黃昏一族］大部分都是利用返魂術而復活的土偶，而一族的始祖最後並沒有被消滅，並且從他口中得知大陸上還有很多利用返魂術復活的死者，看來這是為了第二部後篇的故事作鋪程。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zIN9GgTlZTM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">伊絲卡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xrSxB8F8qXQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">伊絲卡</span>發現一名IDA的女學生正被EGPD的檢察官查問，細問之下發現原來這是一起假Git幣的經濟事件，調查後揪出了藏在後面的黑手，竟然是一名因為想要證明自己能力的IDA學生所設計的，被抓到後這名學生依然不知悔改，妄想加入IDEA組織，但<span class="global_name_span">伊絲卡</span>決不會讓這等品性的人加入。</p> <p>事後<span class="global_name_span">阿爾德</span>問起<span class="global_name_span">伊絲卡</span>為何要如此努力解決這起事件，原來<span class="global_name_span">伊絲卡</span>是為了學園的自主自由的管理風氣，不想因為這起事件開了先例，讓外部勢力有機會插手學園的事情。</p> <div class="global_ps_text"> <p>［開先例］這件事情確實是十分嚴重，玩著遊戲再看看如今現實世界，多數人的觀念仍不及<span class="global_name_span">伊絲卡</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HCTZ0VYSLVY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在古代<span class="global_name_span">伊絲卡</span>救了ㄧ名衛兵，但有敏銳偵探屬性的她卻從細微之處發現了王宮大臣的陰謀，多方查探之下總算將大臣繩之以法，而王宮的衛兵們也因此對<span class="global_name_span">伊絲卡</span>心生仰慕，想要讓其當隊長，無奈下<span class="global_name_span">伊絲卡</span>只好隨即落跑。</p> <div class="global_ps_text"> <p>16:08 - <span class="global_name_span">伊絲卡</span>觀察到大臣詭異之時。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SjcyeADuvrs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>最近有越來越多父母將小孩託付給某人的事件，這實在是相當的弔詭，四處探訪下，發現小孩似乎是被送到稱為樂園的地方，推理後發現可能是在［傑諾領域］，前往的途中<span class="global_name_span">伊絲卡</span>告知<span class="global_name_span">阿爾德</span>這起事件的始作俑者<span class="global_name_span">庫利歐</span>的過去。</p> <p>在［傑諾領域］深處，遇見了眾小孩與<span class="global_name_span">庫利歐</span>，雖然最後救出了眾小孩，但卻沒抓到<span class="global_name_span">庫利歐</span>，想必在之後的故事他還會現身吧。</p> <div class="global_ps_text"> <p><span class="global_name_span">伊絲卡</span>本身應該也有類似<span class="global_name_span">庫利歐</span>那種操縱他人的神秘力量，只是她不想使用這力量來達成自己的目標，走向跟<span class="global_name_span">庫利歐</span>不同的人生道路。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VlISm6-Vwrk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">伊絲卡</span>為了與一名重要人物會談而換上了華麗的露背禮服，在與<span class="global_name_span">穆勒</span>教授的相處過程中，教授也對這名一開始看不起的女孩刮目相看起來。</p> <div class="global_ps_text"> <p>其實這段劇情看似沒甚麼重點，但已經有暗示<span class="global_name_span">伊絲卡</span>是使用自己的神祕力量讓教授對自己改觀。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gUcUlkLMTrI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">桔梗</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/L93hWcOQUR4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">桔梗</span>為了改善故鄉的環境，ㄧ直在作著萬事通的工作，這次她負責運送ㄧ個可疑的箱子，經過掃描發現裡面是合成人類的手臂。<span class="global_name_span">桔梗</span>為了替父親復仇，心想這可能是打入KMS公司的大好機會，於是就演了ㄧ場戲，終於獲得委託人的信任。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z4QAk0lSzgw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">桔梗</span>為了故鄉的食物問題，決定聽從<span class="global_name_span">阿爾德</span>的建議，前來詢問魔獸王<span class="global_name_span">基爾德那</span>的意見，卻在魔獸村遇到了ㄧ個對人類懷有恨意的魔獸小孩，經過努力總算跟這小孩交流成功，兩人最後也以姊弟相稱。</p> <p>而<span class="global_name_span">基爾德那</span>也交給<span class="global_name_span">桔梗</span>可以自行栽種的食物種子，看來故鄉的食物危機算是獲得了解決。</p> <div class="global_ps_text"> <p>我覺得這段劇情有點把<span class="global_name_span">桔梗</span>與<span class="global_name_span">基爾德那</span>配對的跡象。</p> <p>13:55 - 魔獸妹與魔獸王的反應很好笑。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oyS79_2i8EI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">桔梗</span>獲得了來自父親<span class="global_name_span">龍膽</span>的遺物，眾人本以為是［５００光年的光之箭］甚至引來了KMS公司的<span class="global_name_span">迪拉美亞</span>前來搶奪，雙方激戰過後，<span class="global_name_span">迪拉美亞</span>取得了<span class="global_name_span">龍膽</span>的遺物，卻發現這只是<span class="global_name_span">龍膽</span>與自己女兒<span class="global_name_span">桔梗</span>充滿回憶的物品，便悻悻然離去。</p> <p>而<span class="global_name_span">桔梗</span>也明白了父親的用意，並且重新開始思考自己生活的路線。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JOJ9u9ing-M?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">娜基</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xHoIMXOadSY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［拉多路］的小孩們正在舉辦食物競賽，一聽到有好吃的東西，<span class="global_name_span">娜基</span>也忍不住想參加，最後因為身分的關係，只能擔任小孩們的監護人（保護者），最後比賽完美結束，<span class="global_name_span">娜基</span>也吃到了美味的食物。</p> <div class="global_ps_text"> <p>11:05 - <span class="global_name_span">娜基</span>語出驚人，讓小孩吃她的腳。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JVHgjh-iVzs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">娜基</span>心裡一直想知道自己的故鄉在哪？經過調查發現自己似乎是在異世界名為［來自深淵之魔物］的外來物種，在<span class="global_name_span">拉切特</span>的幫助下，<span class="global_name_span">娜基</span>成功招喚了［來自深淵之魔物］，但雙方語言不通，一言不和就打起來，擊敗魔物後<span class="global_name_span">阿爾德</span>下定決心，一定要幫<span class="global_name_span">娜基</span>找到故鄉。</p> <div class="global_ps_text"> <p>02:22 - 這邊解釋了<span class="global_name_span">娜基</span>為什麼如此貪吃的緣故，因為她本身就是來自異世界吞噬一切的暴食者。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/si8Jkccm9VE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">拉切特</span>受<span class="global_name_span">阿爾德</span>請託，一直在調查［來自深淵之魔物］，此時傳來消息［龍宮城］正受到謎之生物的攻擊，<span class="global_name_span">娜基</span>等人一回到［龍宮城］發現襲擊的生物正是［來自深淵之魔物］。</p> <p>最後［來自深淵之魔物］化為與<span class="global_name_span">娜基</span>相同的形態，雙方交流後得知<span class="global_name_span">娜基</span>確實就是來自這吞噬世界的魔物當中，但已經跟同伴建立起羈絆的<span class="global_name_span">娜基</span>即使知道自己的身分，仍決定為了保護世界與昔日的同伴戰鬥。</p> <p>擊退［來自深淵之魔物］後，<span class="global_name_span">娜基</span>拾起了掉在地上魔物的卵，並且決定將牠們培養長大，成為［龍宮城］的一份子。</p> <div class="global_ps_text"> <p>09:05 - 這邊顯示了［來自深淵之魔物］的擬態模仿能力。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xJ_ZJP1_5QI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［龍宮城］似乎受到某種不明生物的騷擾，食物極度的短缺，經過調查後似乎是一種名為［終焉漂流者］的傳說生物引起的，最後眾人成功擊敗牠後，<span class="global_name_span">娜基</span>回憶起與前任乙姬<span class="global_name_span">波塞冬</span>的的往事，似乎<span class="global_name_span">波塞冬</span>曾經跟［終焉漂流者］戰鬥過，而在那時解救了<span class="global_name_span">娜基</span>，<span class="global_name_span">娜基</span>也因為吃了原本披在<span class="global_name_span">波塞冬</span>身上的［終焉漂流者］的皮，而有了模擬牠的能力。</p> <div class="global_ps_text"> <p>這段故事從一開始我就覺得<span class="global_name_span">娜基</span>是［終焉漂流者］，可以說是遊戲製作組的刻意誤導。關於［終焉漂流者］的真實身分卻沒有詳加描述，只知道是來自未來的機器，這點可以說是一個大伏筆。</p> </div> <div class="global_ps_text"> <p>14:05 - 這段海龜誤認<span class="global_name_span">娜基</span>是［終焉漂流者］的橋段頗有趣。</p> <p>19:50 - <span class="global_name_span">娜基</span>與<span class="global_name_span">波塞冬</span>初次相遇的回憶。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/D74Soy70ZWw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">蘇賽特</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5SA6d1DdwHw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">蘇賽特</span>為了能夠繼續品嘗塔系甜點，決定幫助店長處理物資的問題，最後成功解決失控的機器人恢復了物資的正常運作，店長也承諾<span class="global_name_span">蘇賽特</span>會將甜點第一時間送給她品嘗。</p> <div class="global_ps_text"> <p>03:05 - <span class="global_name_span">蘇賽特</span>的中二病發。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uHadha84pNA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">蘇賽特</span>從考古愛好者處得知世界即將毀滅，於是承擔責任挺身而出，但雖然最後似乎解決了危機，不過當回報給考古愛好者後，發現整個過程竟然是一場鬧劇。</p> <div class="global_ps_text"> <p>01:02 - <span class="global_name_span">蘇賽特</span>的中二病發。</p> <p>04:40 - <span class="global_name_span">蘇賽特</span>的中二病發。</p> <p>09:05 - <span class="global_name_span">蘇賽特</span>的中二病發。</p> <p>13:14 - <span class="global_name_span">蘇賽特</span>死不認錯的橋段。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LH_hT2XNcns?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">蘇賽特</span>受到神秘人物的邀請前往［傑諾領域］，隨著越發探索下去，<span class="global_name_span">蘇賽特</span>意識似乎被人操控，轉而向<span class="global_name_span">阿爾德</span>等人出手，原來<span class="global_name_span">蘇賽特</span>是KMS公司的計畫產物，在危機時刻<span class="global_name_span">蘇賽特</span>原本的人格因為與同伴之間的羈絆而搶回了身體主導權，一切總算是落幕了。</p> <div class="global_ps_text"> <p>00:02 - <span class="global_name_span">蘇賽特</span>中二日常發揮。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IzwsJHQ9xL8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">蘇賽特</span>換上了東方的服飾，被正在苦惱女主角消失的導演看中，邀請參與電影的拍攝，雖然一開始有點擔心自己的能力，但在恢復中二的表現後，竟有了超乎想像的表現。</p> <p>不過當一切告一段落後，竟發現自己演的是反派，而這也刺激的導演的靈感，想把電影拍成描述［蝶火女］這個反派英雄的故事。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SHliROnT-OU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">林麗</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0X3K4zqw1CY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">林麗</span>正在尋找自己父親的下落，偶然間遇到了熟人，並且得到了一個厲害情報商的下落，眾人前往［臨迪］成功找到情報商，但最後卻仍然得不到父親的消息，但情報商也承諾會竭盡所能幫忙<span class="global_name_span">林麗</span>找到父親。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YHYh15FZwEU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>情報商遲遲未捎來消息，此時<span class="global_name_span">林麗</span>決定趁隙修補一下父親送給自己的布偶貓，修補過程中發現藏在裡面的訊息，於是前往尋找<span class="global_name_span">拉克西斯</span>，雖然他也沒有父親的消息，但成功的從他手中拿到了招式的祕傳書。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DZ8D1nF5L3A?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">小町</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DUCyll53yVw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">小町</span>為了看一眼花店女子口中的夢幻之花，便照著女人所言前往［卡雷克濕原］，最後雖然找到了，但發現被魔物所破壞，擊敗魔物後在被破壞的現場發現了來自<span class="global_name_span">小町</span>故鄉的花，<span class="global_name_span">小町</span>看到後也不自覺產生了鄉愁並且立志要在這異地大陸像花一樣綻放。</p> <div class="global_ps_text"> <p>04:20 - <span class="global_name_span">小町</span>的新娘修行，以目標來看有點詭異。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2_ZXzhZ_bLo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">小町</span>接受了討伐貿易路線魔物的請求，最後在魔獸手中救回了商人，<span class="global_name_span">小町</span>發現商人竟然有屬於故鄉的東方織品，回到村落後遇見了商人領袖，沒想到竟然是故人，短暫交談過後，<span class="global_name_span">阿爾德</span>發現<span class="global_name_span">小町</span>竟然有未婚夫，也得知<span class="global_name_span">小町</span>之所以離家出來旅行的原因就是想找一個自己真正喜歡的人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/r_CCF_fHo3o?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_w");
+  var footSelect = document.getElementById("foot_select_w");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+  
+</script>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
