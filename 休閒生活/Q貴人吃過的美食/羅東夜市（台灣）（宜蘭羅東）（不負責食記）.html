@@ -1,0 +1,624 @@
+<style type="text/css">.egg_item .global_divtd {
+color: white;
+font-size: 16px;
+background: #666633;
+text-align: center;
+font-weight: bold;
+}
+
+.b_title {
+  position: relative;
+  background: #333333;
+  padding: 10px;
+  padding-left: 50px;
+  color: #99CCCC;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px 20px 0px 0px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-shadow: 1px 0px 1px #666699, 
+    0px -1px 1px #666699,
+    1px 0px 1px #666699,
+    -1px 0px 1px #666699
+}
+  .b_title::before {
+    content: url('data:image/svg+xml,\<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="50" height="33" viewBox="0 0 40.577 40.577">\
+      <path fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" d="M36.124,18.043c4.467-4.465,5.795-10.381,2.967-13.213c-2.829-2.826-8.747-1.5-13.213,2.967    c-3.837,3.838-5.354,8.74-3.916,11.842l-0.598,0.6l-4.465-4.465c2.629-2.627,2.155-4.316,2.155-4.316L9.706,2.113L0,11.816    l9.35,9.35c0,0,1.854,0.301,4.312-2.156l4.467,4.463l-0.957,0.959l-0.998-0.996L5.458,34.148l4.311,4.316l10.718-10.715l-1-0.998    l0.962-0.957l1.841,1.84l-0.628,0.627l9.908,9.91l4.492-4.494l-9.909-9.908L25.526,24.4l-1.845-1.842l0.604-0.6    C27.383,23.398,32.287,21.883,36.124,18.043z M38.191,11.125l-9.347,9.346l-1.081-1.078l9.351-9.348L38.191,11.125z M36.034,8.965    l-9.349,9.35l-1.078-1.082l9.351-9.342L36.034,8.965z M32.799,5.73l1.077,1.078l-9.346,9.35l-1.08-1.082L32.799,5.73z"/></svg>');
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    -webkit-filter: drop-shadow(0px 0px 2px #99CC00);
+    filter: drop-shadow(0px 0px 2px #99CC00);
+  }
+
+.no_food_title {
+  width: 95%;
+  border-radius: 0.2em 1em;
+ background:
+	radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0.5) 12%, rgba(54,78,39,0.5)) 50px 0,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 50px 0,
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 50px,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 50px,
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%),
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%),
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%) 50px 50px,
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%) 50px 50px;
+background-color:#63773F;
+background-size:100px 100px;
+  box-shadow: 2px 2px 10px gray;
+  text-shadow: 
+    1px 0px 1px lightblue, 
+    0px 1px 1px lightblue,
+    -1px 0px 1px lightblue,
+    0px -1px 1px lightblue;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+</style>
+<hr />
+<div class="global_no_duty">&nbsp;</div>
+
+<div class="about_link">
+<p>阿灶伯：<a href="http://qupyqupy.pixnet.net/blog/post/226052042-%E9%98%BF%E7%81%B6%E4%BC%AF%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/226052042</a></p>
+
+<p>羊鋪子：<a href="http://qupyqupy.pixnet.net/blog/post/226048055-%E7%BE%8A%E9%8B%AA%E5%AD%90%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/226048055</a></p>
+
+<p>爆漿玉子燒：<a href="http://qupyqupy.pixnet.net/blog/post/226049759-%E7%88%86%E6%BC%BF%E7%8E%89%E5%AD%90%E7%87%92%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/226049759</a></p>
+
+<p>罵子蛋 獨家創意炸物：<a href="http://qupyqupy.pixnet.net/blog/post/225770717-%E7%BD%B5%E5%AD%90%E8%9B%8B%20%E7%8D%A8%E5%AE%B6%E5%89%B5%E6%84%8F%E7%82%B8%E7%89%A9%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/225770717</a></p>
+
+<p>黃記原住民山豬肉香腸：<a href="http://qupyqupy.pixnet.net/blog/post/225770738-%E9%BB%83%E8%A8%98%E5%8E%9F%E4%BD%8F%E6%B0%91%E5%B1%B1%E8%B1%AC%E8%82%89%E9%A6%99%E8%85%B8%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/225770738</a></p>
+
+<p>禾怡御食堂：<a href="http://qupyqupy.pixnet.net/blog/post/225872708-%E7%A6%BE%E6%80%A1%E5%BE%A1%E9%A3%9F%E5%A0%82%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/225872708</a></p>
+
+<p>臭薯條：<a href="http://qupyqupy.pixnet.net/blog/post/225940775-%E8%87%AD%E8%96%AF%E6%A2%9D%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/225940775</a></p>
+
+<p>起司王：<a href="http://qupyqupy.pixnet.net/blog/post/226049744-%E8%B5%B7%E5%8F%B8%E7%8E%8B%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/226049744</a></p>
+
+<p>小春卜肉 糕渣 羊肉串 照燒皮蛋：<a href="http://qupyqupy.pixnet.net/blog/post/226041110-%E5%B0%8F%E6%98%A5%E5%8D%9C%E8%82%89%20%E7%B3%95%E6%B8%A3%20%E7%BE%8A%E8%82%89%E4%B8%B2%20%E7%85%A7%E7%87%92%E7%9A%AE%E8%9B%8B%EF%BC%88%E5%8F%B0%E7%81%A3%EF%BC%89%EF%BC%88%E5%AE%9C%E8%98%AD%E7%BE%85%E6%9D%B1%E5%A4%9C%E5%B8%82%EF%BC%89">http://qupyqupy.pixnet.net/blog/post/226041110</a></p>
+</div>
+
+<div class="b_title">嚐味鮮湯包</div>
+
+<p>台灣的這種小籠湯包是非常有名的，不管是大廳餐還是小攤販味道都不會差到哪去。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/241772459"><img alt="P_20180903_203511.jpg" src="https://pic.pimg.tw/qupyqupy/1538268429-3607970963_n.jpg" title="P_20180903_203511.jpg" /></a></p>
+
+<p>這是品項價格。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/241772462"><img alt="P_20180903_203849.jpg" src="https://pic.pimg.tw/qupyqupy/1538268434-1079928737_n.jpg" title="P_20180903_203849.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/241772471"><img alt="P_20180903_203612.jpg" src="https://pic.pimg.tw/qupyqupy/1538268437-1788065517_n.jpg" title="P_20180903_203612.jpg" /></a></div>
+</div>
+</div>
+
+<p>這攤位有內用的座位，不用買了還得邊走邊吃。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/241772465"><img alt="P_20180903_203634.jpg" src="https://pic.pimg.tw/qupyqupy/1538268435-975372334_n.jpg" title="P_20180903_203634.jpg" /></a></p>
+
+<div class="foodItem" data-name="三星蔥爆將湯包" data-pay=" 70 元。">， 2018 / 09 / 03 吃的，</div>
+
+<p>原本以為這湯包裡面會包著三星蔥，沒想到是原味湯包上面灑了一堆三星蔥花。</p>
+
+<p>因為沒有經過熱氣，蔥香沒有很明顯，搭配湯包吃時的生蔥味很重，雖然增加了不少脆脆的口感，但是跟湯包的味合不起來，也許把蔥包進湯包裡會好點。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/241772468"><img alt="P_20180903_204013.jpg" src="https://pic.pimg.tw/qupyqupy/1538268437-2805234673_n.jpg" title="P_20180903_204013.jpg" /></a></p>
+
+<div class="b_title">三星蔥餅</div>
+
+<p>這家每次經過都是排了老長的隊伍，畢竟三星蔥是宜蘭名產，外地人來到宜蘭找吃的都會以這為指標。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/241208066"><img alt="P_20180827_211516.jpg" src="https://pic.pimg.tw/qupyqupy/1536222354-1739849165_n.jpg?v=1536222469" title="P_20180827_211516.jpg" /></a></p>
+
+<p>這是售價。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/241208069"><img alt="P_20180827_211611.jpg" src="https://pic.pimg.tw/qupyqupy/1536222354-1866149313_n.jpg?v=1536222469" title="P_20180827_211611.jpg" /></a></p>
+
+<p>攤位前有擺著樣品，可以看到蔥真的是塞到尖出來，用料非常大方。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/241208072"><img alt="P_20180827_211616.jpg" src="https://pic.pimg.tw/qupyqupy/1536222361-1498826801_n.jpg?v=1536222469" title="P_20180827_211616.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/241208078"><img alt="P_20180827_211712.jpg" src="https://pic.pimg.tw/qupyqupy/1536222363-3138037902_n.jpg?v=1536222469" title="P_20180827_211712.jpg" /></a></div>
+</div>
+</div>
+
+<p>雖然看到料理的方式，感覺是挺油膩膩的，不過因為皮薄的關係，並不會吸收太多油水，口感上不會有油膩感。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/241208075"><img alt="P_20180827_211717.jpg" src="https://pic.pimg.tw/qupyqupy/1536222361-2156060472_n.jpg?v=1536222469" title="P_20180827_211717.jpg" /></a></p>
+
+<p>店家裝袋的方式會在塑膠袋外再套上一層紙袋，一來可以防湯汁外露，又可以讓客人拿的時候不會覺得太燙手，這點算是貼心。</p>
+
+<p>雖然外觀與夜市另一家蔥多餅看起來差不多，不過味道的部分還是有些微的差異，因為沒有添加醬汁，所以蔥的香味更加明顯，而且口感上真的能吃到蔥的脆，我是覺得兩家各有優勝，建議都吃吃看。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/241208081"><img alt="P_20180827_212158.jpg" src="https://pic.pimg.tw/qupyqupy/1536222368-2353145025_n.jpg?v=1536222469" title="P_20180827_212158.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/241208084"><img alt="P_20180827_212424.jpg" src="https://pic.pimg.tw/qupyqupy/1536222369-750443216_n.jpg?v=1536222469" title="P_20180827_212424.jpg" /></a></div>
+</div>
+</div>
+
+<div class="b_title">台灣冠軍水果粉圓</div>
+
+<p>這家的標題真的取得很聳動［台灣冠軍、風靡全球］。名號之大跟攤位大小不成正比啊。</p>
+
+<p>價目表.......真的是非常不便宜。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050213"><img alt="P_20180804_173304_1.jpg" src="https://pic.pimg.tw/qupyqupy/1533464740-3844990741_n.jpg?v=1533464829" title="P_20180804_173304_1.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050216"><img alt="P_20180804_173315.jpg" src="https://pic.pimg.tw/qupyqupy/1533464748-3677312212_n.jpg?v=1533464829" title="P_20180804_173315.jpg" /></a></div>
+</div>
+</div>
+
+<p>巧妃系列有擺示意圖在攤位前面，不過實際成品不會像這圖顯示的這麼澎派。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240050225"><img alt="P_20180804_173322_1.jpg" src="https://pic.pimg.tw/qupyqupy/1533464771-1983787595_n.jpg?v=1533464829" title="P_20180804_173322_1.jpg" /></a></p>
+
+<p>雖然是路邊的小攤位，但裡面算是非常乾淨的。水果粉圓的部分會從冰櫃裡拿出做好的一份份小袋子再隔水加熱。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240050228"><img alt="P_20180804_173538.jpg" src="https://pic.pimg.tw/qupyqupy/1533464783-4124509842_n.jpg?v=1533464829" title="P_20180804_173538.jpg" /></a></p>
+
+<div class="foodItem" data-name="芒果巧妃愛玉拿鐵" data-pay=" 80 元。">， 2018 / 08 / 04 吃的，</div>
+
+<p>這杯芒果顏色非常重喔，外觀看起來也挺漂亮的，杯裡的料挺多的，上層浮的應該是愛玉之類的，珍珠就都沉在下面了。</p>
+
+<p>愛玉本身沒啥味道，有點像吃寒天果凍的感覺，珍珠口感就沒啥特別的，不過味道上有些酸酸的，整體是好喝的，因為料多是屬於比較有飽足感的飲品。</p>
+
+<p>題外話，這杯比較小杯加上料多，水的部分就偏少了，逛夜市汗水一直流，個人還是比較喜歡喝比較多水的飲品。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050234"><img alt="P_20180804_174258.jpg" src="https://pic.pimg.tw/qupyqupy/1533464807-313109791_n.jpg?v=1533464829" title="P_20180804_174258.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050231"><img alt="P_20180804_174305.jpg" src="https://pic.pimg.tw/qupyqupy/1533464796-583071088_n.jpg?v=1533464829" title="P_20180804_174305.jpg" /></a></div>
+</div>
+</div>
+
+<div class="b_title">包餡雞蛋燒</div>
+
+<p>這其實就是雞蛋糕，但是有了包餡的加持，口感跟味道就與普通雞蛋糕有很大的不同。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240050159"><img alt="P_20180802_205628.jpg" src="https://pic.pimg.tw/qupyqupy/1533464633-2457406133_n.jpg?v=1533464828" title="P_20180802_205628.jpg" /></a></p>
+
+<p>每天大概都會有五、六種口味，這部分是會變動的，每天來都不一樣。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240050168"><img alt="P_20180802_205651.jpg" src="https://pic.pimg.tw/qupyqupy/1533464634-176539239_n.jpg?v=1533464828" title="P_20180802_205651.jpg" /></a></p>
+
+<p>價目表，包餡的平均一個10元，雖然感覺頗貴，但貴在新奇。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240161825"><img alt="P_20180808_205320.jpg" src="https://pic.pimg.tw/qupyqupy/1533827034-3464959333_n.jpg?v=1533827166" title="P_20180808_205320.jpg" /></a></p>
+
+<p>造型是浪漫的心型，看起來圓滾肥嘟，根本是少女的食物。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050162"><img alt="P_20180802_205738.jpg" src="https://pic.pimg.tw/qupyqupy/1533464633-3941029534_n.jpg?v=1533464828" title="P_20180802_205738.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050156"><img alt="P_20180802_210007.jpg" src="https://pic.pimg.tw/qupyqupy/1533464632-2409591418_n.jpg?v=1533464828" title="P_20180802_210007.jpg" /></a></div>
+</div>
+</div>
+
+<p>包餡的種類非常多，包餡的優點除了改善雞蛋糕本身比較乾的缺點以外，還可以享受一口吃餡料在嘴裡爆漿的感覺。</p>
+
+<p>大部分的餡料味道都是可以想像的，唯獨QQ口味我覺得很特別，它其實就是把麻糬放進雞蛋糕裡，吃起來有咬斷的Q彈勁道，也帶一點麻糬的甜味，咬著咬著是挺有趣的。</p>
+
+<div class="global_divtable">
+<div class="global_divtr egg_item">
+<div class="global_divtd">地瓜</div>
+
+<div class="global_divtd">蜂蜜</div>
+
+<div class="global_divtd">草莓</div>
+</div>
+
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050165"><img alt="P_20180802_210150.jpg" src="https://pic.pimg.tw/qupyqupy/1533464634-2541651492_n.jpg?v=1533464828" title="P_20180802_210150.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050171"><img alt="P_20180802_210254.jpg" src="https://pic.pimg.tw/qupyqupy/1533464642-2885568812_n.jpg?v=1533464829" title="P_20180802_210254.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240050174"><img alt="P_20180802_210339.jpg" src="https://pic.pimg.tw/qupyqupy/1533464650-2399753796_n.jpg?v=1533464829" title="P_20180802_210339.jpg" /></a></div>
+</div>
+
+<div class="global_divtr egg_item">
+<div class="global_divtd">奶油</div>
+
+<div class="global_divtd">巧克力</div>
+
+<div class="global_divtd">QQ</div>
+</div>
+
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240161840"><img alt="P_20180805_201616.jpg" src="https://pic.pimg.tw/qupyqupy/1533827051-3918149174_n.jpg?v=1533827166" title="P_20180805_201616.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240161864"><img alt="P_20180805_201711.jpg" src="https://pic.pimg.tw/qupyqupy/1533827109-904823977_n.jpg?v=1533827167" title="P_20180805_201711.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240161867"><img alt="P_20180805_201818.jpg" src="https://pic.pimg.tw/qupyqupy/1533827109-548941311_n.jpg?v=1533827167" title="P_20180805_201818.jpg" /></a></div>
+</div>
+</div>
+
+<div class="b_title">QQ蛋</div>
+
+<p>羅東夜市大概有兩三家在賣類似的食物，不過這家我覺得算是相對比較大份的。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240376973"><img alt="P_20180815_204112.jpg" src="https://pic.pimg.tw/qupyqupy/1534643366-3234110677_n.jpg?v=1534643408" title="P_20180815_204112.jpg" /></a></p>
+
+<p>小份30元，大份50元，因為份量有點多，個人覺得除非有很多同行友人可以分著吃，不然點小份就好了。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240376970"><img alt="P_20180815_204301.jpg" src="https://pic.pimg.tw/qupyqupy/1534643367-3161974741_n.jpg?v=1534643408" title="P_20180815_204301.jpg" /></a></p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240376982"><img alt="P_20180815_204308_1.jpg" src="https://pic.pimg.tw/qupyqupy/1534643377-1193964415_n.jpg?v=1534643408" title="P_20180815_204308_1.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240376964"><img alt="P_20180815_204313.jpg" src="https://pic.pimg.tw/qupyqupy/1534643366-3464209114_n.jpg?v=1534643408" title="P_20180815_204313.jpg" /></a></div>
+</div>
+</div>
+
+<p>每一顆看起來都是渾圓飽滿，外觀十分可愛。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240376976"><img alt="P_20180815_204522.jpg" src="https://pic.pimg.tw/qupyqupy/1534643371-2195594056_n.jpg?v=1534643408" title="P_20180815_204522.jpg" /></a></p>
+
+<p>咬開後可以看到裡面有地瓜餡料，在嘴裡雖然口感QQ的，但是不會黏牙。</p>
+
+<p>另一種吃法是在嘴裡先把它壓扁後再咬，倒不是這樣會有啥口感、味道的變化，而是小時候都是這樣玩食物的，充滿童年回憶。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240376988"><img alt="P_20180815_204653_1.jpg" src="https://pic.pimg.tw/qupyqupy/1534643383-3652630001_n.jpg?v=1534643408" title="P_20180815_204653_1.jpg" /></a></p>
+
+<div class="b_title">吳記排骨酥</div>
+
+<p>這家在小春攤子旁邊，可能是因為附近油炸的攤位太多，那一整個區域的油蒿味超重的。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240050138"><img alt="P_20180801_210738.jpg" src="https://pic.pimg.tw/qupyqupy/1533464612-220058722_n.jpg?v=1533464828" title="P_20180801_210738.jpg" /></a></p>
+
+<p>價格方面小份60元、中份100元、大份150元、特大份200元，這價格真的頗貴。</p>
+
+<p>而且可以看到他是先炸好放在攤子前的，炸物這東西還是現炸吃比較好吃。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240050147"><img alt="P_20180802_205026.jpg" src="https://pic.pimg.tw/qupyqupy/1533464615-2756666374_n.jpg?v=1533464828" title="P_20180802_205026.jpg" /></a></p>
+
+<p>我這天是買小份的，就味道而言，就算冷了還是能吃出脆香，帶骨的部分其實不多，有幾塊還全是肉的部分，排骨的口感也很扎實可以咬很久。</p>
+
+<p>但不得不說份量好少，這包60元裡面竟然只有6塊肉，平均一塊10元，對我而言CP值實在不高。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240050180"><img alt="P_20180803_230319.jpg" src="https://pic.pimg.tw/qupyqupy/1533464662-3401349857_n.jpg?v=1533464829" title="P_20180803_230319.jpg" /></a></p>
+
+<div class="b_title">日式岩燒 三星蔥雞腿串</div>
+
+<p>攤位不大，不過攤前有擺著衛生紙、袋子等方便客人食用的東西，這些是可以自己拿取的，這點我覺得貼心。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239916659"><img alt="P_20180730_203413.jpg" src="https://pic.pimg.tw/qupyqupy/1532992691-3940610973_n.jpg?v=1532993103" title="P_20180730_203413.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239971955"><img alt="P_20180801_201027.jpg" src="https://pic.pimg.tw/qupyqupy/1533162368-464007931_n.jpg?v=1533162477" title="P_20180801_201027.jpg" /></a></div>
+</div>
+</div>
+
+<div class="foodItem" data-name="日式芥末" data-pay=" 40 元。">， 2018 / 07 / 30 吃的，</div>
+
+<p>這攤的雞腿串吃起來是會脆的那種，肉質軟嫩、雞味濃厚，不過吃不出有芥末的味道，另外不確定是不是嘴巴有沾到之前吃過食物的醬汁，這雞腿串竟然吃起來有點甜味。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239916665"><img alt="P_20180730_203545.jpg" src="https://pic.pimg.tw/qupyqupy/1532992698-788065186_n.jpg?v=1532993103" title="P_20180730_203545.jpg" /></a></p>
+
+<div class="foodItem" data-name="日式七味唐辛子" data-pay=" 40 元。">， 2018 / 08 / 01 吃的，</div>
+
+<p>看著表面紅通通的，感覺就是很辣，不過吃的時候沒啥感覺。</p>
+
+<p>我覺得這攤的調味粉對味道沒啥大影響，怎麼吃都是雞肉的味道很濃厚。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239971946"><img alt="P_20180801_201200.jpg" src="https://pic.pimg.tw/qupyqupy/1533162360-2279170635_n.jpg?v=1533162477" title="P_20180801_201200.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239971961"><img alt="P_20180801_201217.jpg" src="https://pic.pimg.tw/qupyqupy/1533162383-3056533057_n.jpg?v=1533162477" title="P_20180801_201217.jpg" /></a></div>
+</div>
+</div>
+
+<div class="b_title">三星蔥多餅</div>
+
+<p>這家剛好在夜市ㄇ字型的正中間頂端，所以照著一般夜市動線走會很難到達，建議是直接走中山公園穿到ㄇ字型的頂端，這樣會走得比較順。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239208095"><img alt="P_20180701_181507.jpg" src="https://pic.pimg.tw/qupyqupy/1530489297-4158858109_n.jpg" title="P_20180701_181507.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239208101"><img alt="P_20180701_181906.jpg" src="https://pic.pimg.tw/qupyqupy/1530489308-1611011927_n.jpg" title="P_20180701_181906.jpg" /></a></div>
+</div>
+</div>
+
+<p>價格方面一顆是35元，三顆賣100元。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239208104"><img alt="P_20180701_182253.jpg" src="https://pic.pimg.tw/qupyqupy/1530489305-3505092954_n.jpg" title="P_20180701_182253.jpg" /></a></p>
+
+<p>在攤位裡面擺著一盒盒大量的蔥花，老闆在作的時候也是拼命把蔥塞進麵皮裡，排隊的時候就可以看到用料真的實在。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239208107"><img alt="P_20180701_182132.jpg" src="https://pic.pimg.tw/qupyqupy/1530489310-3496398040_n.jpg" title="P_20180701_182132.jpg" /></a></p>
+
+<p>餅起鍋後，老闆會問要不要辣，並且幫客人撒上胡椒鹽，還會貼心告知有醬汁，要加醬汁進去吃比較好吃。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239208098"><img alt="P_20180701_182749.jpg" src="https://pic.pimg.tw/qupyqupy/1530489307-3257701740_n.jpg" title="P_20180701_182749.jpg" /></a></p>
+
+<div class="foodItem" data-name="蔥多餅" data-pay=" 35 元。">， 2018 / 07 / 01 吃的，</div>
+
+<p>一份的內容物，醬汁是一開始就附在袋子裡的，享用前要小心把餅皮咬破一個小洞，再把醬汁倒進去。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239208110"><img alt="P_20180701_183058.jpg" src="https://pic.pimg.tw/qupyqupy/1530489322-2426691610_n.jpg" title="P_20180701_183058.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239208116"><img alt="P_20180701_183250.jpg" src="https://pic.pimg.tw/qupyqupy/1530489334-2117916698_n.jpg" title="P_20180701_183250.jpg" /></a></div>
+</div>
+</div>
+
+<p>這餅咬起來真的很香，外皮其實是很薄一層，裡面包了滿滿的蔥花跟碎肉，皮上的胡椒鹽味道頗重，跟蔥花的香氣非常搭。</p>
+
+<p>原本以為料那麼多，湯汁應該會不少，不過吃到結束都沒有啥噴汁的現象。另外這餅剛起鍋時真的很燙口，就算擺涼幾分鐘後內裡還是熱氣十足，吃的時候要小心燙傷。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239208122"><img alt="P_20180701_183459.jpg" src="https://pic.pimg.tw/qupyqupy/1530489336-1603132309_n.jpg" title="P_20180701_183459.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239208113"><img alt="P_20180701_183654.jpg" src="https://pic.pimg.tw/qupyqupy/1530489333-1588252834_n.jpg" title="P_20180701_183654.jpg" /></a></div>
+</div>
+</div>
+
+<div class="b_title">章魚小丸子</div>
+
+<p>地點是ㄇ字型頂端那條街。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239432387"><img alt="P_20180710_161047.jpg" src="https://pic.pimg.tw/qupyqupy/1531295394-3072628558_n.jpg" title="P_20180710_161047.jpg" /></a></p>
+
+<p>店內有掛著自主衛生管理的獎狀，雖然對這種我都不太信，但確實能讓一些遊客買的時候會安心點。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239432390"><img alt="P_20180710_161601.jpg" src="https://pic.pimg.tw/qupyqupy/1531295401-3528262836_n.jpg" title="P_20180710_161601.jpg" /></a></p>
+
+<p>售價是一份七顆40元，我覺得算相當便宜了。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239432393"><img alt="P_20180710_161203.jpg" src="https://pic.pimg.tw/qupyqupy/1531295404-4012885442_n.jpg" title="P_20180710_161203.jpg" /></a></p>
+
+<p>看章魚丸子的製作真的很療癒，老闆會將麵糊一步步煎成小丸子狀，最後還會把成型的小丸子換到另一個煎盤上在煎一陣子，這裡面大概有甚麼秘訣吧。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239432384"><img alt="P_20180710_161123.jpg" src="https://pic.pimg.tw/qupyqupy/1531295390-4168781703_n.jpg" title="P_20180710_161123.jpg" /></a></p>
+
+<p>拿到時老闆會問要不要加芥末醬，我是覺得這家的芥末醬味道沒有很嗆，就是顏色看了有點綠的太鮮豔。</p>
+
+<p>外皮有點焦香味，咬進去會有股熱氣沖出來，我個人還是比較喜歡放涼之後再一口咬的口感。一口放進嘴裡，醬香、柴魚香、芥末香混雜在一起，咬到中間章魚肉的部分會有些嚼勁，咀嚼的同時之前咬爛的柴魚片還會散發些微香氣，口感是相當多層次的。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239432396"><img alt="P_20180710_162023.jpg" src="https://pic.pimg.tw/qupyqupy/1531295416-3515428178_n.jpg" title="P_20180710_162023.jpg" /></a></p>
+
+<p>煎小丸子實況。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3u1EN9-vxNE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<div class="b_title">阿雪　花生捲＋冰淇淋</div>
+
+<p>這家是我覺得夜市裡賣花生捲冰淇淋ＣＰ值最高的，一份只賣４０元，但是份量超級大。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239552438"><img alt="P_20180716_212215.jpg" src="https://pic.pimg.tw/qupyqupy/1531785564-1562386549_n.jpg?v=1531841340" title="P_20180716_212215.jpg" /></a></p>
+
+<p>攤位在阿灶伯的那條路順著走到十字路口處，店面很小不太起眼，攤位看起來十分乾淨。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239552441"><img alt="P_20180716_212219.jpg" src="https://pic.pimg.tw/qupyqupy/1531785567-4061013003_n.jpg?v=1531841340" title="P_20180716_212219.jpg" /></a></p>
+
+<p>花生粉真的是灑得非常豪邁，點的時候可以任選三個冰淇淋口味，我個人是比較推百香果口味。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239552447"><img alt="P_20180716_212237.jpg" src="https://pic.pimg.tw/qupyqupy/1531785574-2575672562_n.jpg?v=1531841340" title="P_20180716_212237.jpg" /></a></p>
+
+<p>實際拿到就是那麼大一把，我看老闆努力把花生粉捲進春捲皮的樣子真的非常感恩，不過似乎花生粉還是加太多，春捲皮根本包不住。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239552444"><img alt="P_20180716_212427.jpg" src="https://pic.pimg.tw/qupyqupy/1531785574-1364319561_n.jpg?v=1531841340" title="P_20180716_212427.jpg" /></a></p>
+
+<div class="b_title">波波食堂 x 雞蛋仔專賣店</div>
+
+<p>這家的店面在夜市裡相當顯眼，比起其他攤位看起來更有質感，而且從櫃檯看進去一切都十分整齊乾淨。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239552417"><img alt="P_20180715_181551.jpg" src="https://pic.pimg.tw/qupyqupy/1531785539-3032178321_n.jpg?v=1531841340" title="P_20180715_181551.jpg" /></a></p>
+
+<p>這是菜單，我點的時候店員還問我要不要加醬、加料，當我回過神看菜單時才意識到這些都是要加錢的，如果加醬加料的話一份可能都逼近一百元，我個人是覺得有些小貴。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239552426"><img alt="P_20180715_181658.jpg" src="https://pic.pimg.tw/qupyqupy/1531785552-4232839697_n.jpg?v=1531841340" title="P_20180715_181658.jpg" /></a></p>
+
+<div class="foodItem" data-name="原味＋蜂蜜" data-pay=" 70 元。">， 2018 / 07 / 15 吃的，</div>
+
+<p>雞蛋仔做好時，還會用吹風機吹一下，這動作大概是為了把它表面吹乾，這樣吃起來會比較脆吧。</p>
+
+<p>今天點的是原味＋蜂蜜的組合，蜂蜜真的是加的很豪邁，個人覺得完全對得起15元的加價。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239552423"><img alt="P_20180715_182237.jpg" src="https://pic.pimg.tw/qupyqupy/1531785543-4278668130_n.jpg?v=1531841340" title="P_20180715_182237.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239552414"><img alt="P_20180715_182244.jpg" src="https://pic.pimg.tw/qupyqupy/1531785538-1001320016_n.jpg?v=1531841340" title="P_20180715_182244.jpg" /></a></div>
+</div>
+</div>
+
+<p>內部一球一球的非常好咬開，本來預想試跟雞蛋糕差不多的味道，結果外皮更加酥脆，內裡竟然還有些彈性。</p>
+
+<p>裝在杯子裡走著吃也很方便，不過因為只加蜂蜜，吃到最後有點膩，看來裡面還是得加些料來配比較適合。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239552429"><img alt="P_20180715_182250.jpg" src="https://pic.pimg.tw/qupyqupy/1531785548-1322784503_n.jpg?v=1531841340" title="P_20180715_182250.jpg" /></a></p>
+
+<p>吃到最後才看到流到杯底的蜂蜜竟然還剩那麼多，加醬真的是加的非常實在。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239552435"><img alt="P_20180715_183004_1.jpg" src="https://pic.pimg.tw/qupyqupy/1531785558-2384805119_n.jpg?v=1531841340" title="P_20180715_183004_1.jpg" /></a></p>
+
+<div class="b_title">三星蔥肉串</div>
+
+<p>羅東夜市裡賣蔥肉串的不少，這家在一個十字路口旁，攤位正後面還有夜市牛排。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239432381"><img alt="P_20180706_215544.jpg" src="https://pic.pimg.tw/qupyqupy/1531295377-3239958318_n.jpg" title="P_20180706_215544.jpg" /></a></p>
+
+<p>一串有三塊，現點現做大概要等個五分鐘左右。售價一串35元，三串100元，同行的人多的話選三串是比較划算的，一個人可能吃完第二串就會開始膩，畢竟是重口味。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239432375"><img alt="P_20180706_220015.jpg" src="https://pic.pimg.tw/qupyqupy/1531295372-2480188428_n.jpg" title="P_20180706_220015.jpg" /></a></p>
+
+<p>味道相當香，除了灑在上面的芝麻外還有包在裡面比肉還多的蔥，咬下去蔥香四溢，相當脆口。</p>
+
+<p>不過因為肉串重量有點重，竹籤沒辦法穩穩的串著，所以吃的時候要小心，不然肉串一滑醬汁沾滿臉上，沒帶衛生紙的話還真的很難清。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239432369"><img alt="P_20180706_220815.jpg" src="https://pic.pimg.tw/qupyqupy/1531295360-893563212_n.jpg" title="P_20180706_220815.jpg" /></a></p>
+
+<p>烤肉串實況。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YXzyVeKz4Xo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<div class="b_title">蚵蛋包</div>
+
+<p>這家不太需要排隊，但我覺得是真的好味。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239587355"><img alt="P_20180717_210544.jpg" src="https://pic.pimg.tw/qupyqupy/1531841295-3772280132_n.jpg?v=1531841341" title="P_20180717_210544.jpg" /></a></p>
+
+<p>所有製作食材都攤在攤位前給客人看，而且還現場包好下油鍋炸，可以確實看到每份裡面都包了一顆完整的雞蛋，用料實在。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239587403"><img alt="P_20180717_211130.jpg" src="https://pic.pimg.tw/qupyqupy/1531841321-2385477680_n.jpg?v=1531841341" title="P_20180717_211130.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239587427"><img alt="P_20180717_211231.jpg" src="https://pic.pimg.tw/qupyqupy/1531841330-3620685052_n.jpg?v=1531841341" title="P_20180717_211231.jpg" /></a></div>
+</div>
+</div>
+
+<p>點餐時老闆會問要不要辣，其實就灑辣粉在外皮。醬汁老闆會直接幫客人擠到包裡，免去客人的麻煩，酥脆的外皮上還會灑上胡椒鹽增加香味。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239587409"><img alt="P_20180717_211338_1.jpg" src="https://pic.pimg.tw/qupyqupy/1531841324-1519001410_n.jpg?v=1531841342" title="P_20180717_211338_1.jpg" /></a></p>
+
+<p>吃第一口有點像是吃韭菜包子，再往裡面咬就可以嚐到蛋香、醬香。包裡面還有放冬粉，可以把食材的原汁保留下來，順帶著增加彈牙的口感，我個人覺得一份40元的價格，以CP值來講是相當高的。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239587421"><img alt="P_20180717_211603.jpg" src="https://pic.pimg.tw/qupyqupy/1531841329-997485602_n.jpg?v=1531841342" title="P_20180717_211603.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239587424"><img alt="P_20180717_211650.jpg" src="https://pic.pimg.tw/qupyqupy/1531841330-2924177228_n.jpg?v=1531841342" title="P_20180717_211650.jpg" /></a></div>
+</div>
+</div>
+
+<div class="b_title">金馬尚夯 日式岩燒 三星蔥雞腿串</div>
+
+<p>攤位在蔥多餅附近，因為店家會看著人潮來煎，所以基本上一直都會有成品在架上，不用等太久。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239748824"><img alt="P_20180722_191919.jpg" src="https://pic.pimg.tw/qupyqupy/1532359682-2834673222_n.jpg?v=1532359716" title="P_20180722_191919.jpg" /></a></p>
+
+<p>雞腿串煎的香味非常吸引人，我也是聞到香味才停下來買的。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239748818"><img alt="P_20180722_191944.jpg" src="https://pic.pimg.tw/qupyqupy/1532359675-4282056879_n.jpg?v=1532359716" title="P_20180722_191944.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239748845"><img alt="P_20180722_191957.jpg" src="https://pic.pimg.tw/qupyqupy/1532359693-1957503095_n.jpg?v=1532359716" title="P_20180722_191957.jpg" /></a></div>
+</div>
+</div>
+
+<p>一串40元有三塊肉，吃起來的味道沒有聞起來香，夾在肉中間的蔥雖然有香氣，但沒有增加口感的作用，整體而言算普通。</p>
+
+<p>另外吃完後，口裡有股揮之不去的雞騷味，結果這天我就急忙去買個沙士來漱口。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239748830"><img alt="P_20180722_192422.jpg" src="https://pic.pimg.tw/qupyqupy/1532359686-2732875156_n.jpg?v=1532359716" title="P_20180722_192422.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239748839"><img alt="P_20180722_192439.jpg" src="https://pic.pimg.tw/qupyqupy/1532359691-1133133974_n.jpg?v=1532359716" title="P_20180722_192439.jpg" /></a></div>
+</div>
+</div>
+
+<div class="b_title">三星櫻桃鴨捲餅</div>
+
+<p>鮮美味道的櫻桃鴨我是吃很多，弄成捲餅的味道是還沒試過。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239971982"><img alt="P_20180801_210427.jpg" src="https://pic.pimg.tw/qupyqupy/1533162426-917440168_n.jpg?v=1533162477" title="P_20180801_210427.jpg" /></a></p>
+
+<p>透明的攤窗把食材都放在客人能看到的地方，對於沒有現場經過明火料理的餐點而言，整個製作過程能看得清清楚楚，吃也比較放心。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239971988"><img alt="P_20180801_210439.jpg" src="https://pic.pimg.tw/qupyqupy/1533162439-4056905590_n.jpg?v=1533162477" title="P_20180801_210439.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239971994"><img alt="P_20180801_210445.jpg" src="https://pic.pimg.tw/qupyqupy/1533162444-154210957_n.jpg?v=1533162477" title="P_20180801_210445.jpg" /></a></div>
+</div>
+</div>
+
+<p>一份60元，拿到的餐盒沒一個手掌大，份量著實挺少的。</p>
+
+<p>櫻桃鴨的部分是挺鮮美的，但對個人而言總覺得餅皮、鴨肉、生菜之間的比例並沒有很好，肉的量太少反而會被生菜、餅皮稀釋很多味道。另外吃捲皮時會漏汁的，最好接著盒子吃比叫不會弄髒衣服。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239971991"><img alt="P_20180801_210851.jpg" src="https://pic.pimg.tw/qupyqupy/1533162444-3935616469_n.jpg?v=1533162477" title="P_20180801_210851.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239971997"><img alt="P_20180801_210856.jpg" src="https://pic.pimg.tw/qupyqupy/1533162447-2769000755_n.jpg?v=1533162477" title="P_20180801_210856.jpg" /></a></div>
+</div>
+</div>
+
+<div class="b_title">大阪燒</div>
+
+<p>這家在夜市比外圍的地方，比較不需要排隊，攤位也有位置可以坐著吃。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240161852"><img alt="P_20180809_205638.jpg" src="https://pic.pimg.tw/qupyqupy/1533827093-3573236333_n.jpg?v=1533827166" title="P_20180809_205638.jpg" /></a></p>
+
+<p>價目表，點餐方式是先選料再選醬，這樣的口味組合就有20幾種，算是相當豐富的。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/240161855"><img alt="P_20180809_204802.jpg" src="https://pic.pimg.tw/qupyqupy/1533827101-1240047815_n.jpg?v=1533827166" title="P_20180809_204802.jpg" /></a></p>
+
+<div class="foodItem" data-name="燻雞鳳梨＋日式和風" data-pay=" 60 元。">， 2018 / 08 / 09 吃的，</div>
+
+<p>因為攤位已經有先煎好幾塊在鐵板上保熱，所以上菜的速度很快。</p>
+
+<p>柴魚片的香味很濃厚，剛上桌時的熱氣讓柴魚片在上面像是跳舞一樣，味道部分跟一般大阪燒差不多，但是鳳梨真的是點睛之效。本來整份都是濃濃的和風味道，但不時咬到鳳梨爆出的酸甜果香很新奇。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240161858"><img alt="P_20180809_204754.jpg" src="https://pic.pimg.tw/qupyqupy/1533827103-1302600002_n.jpg?v=1533827166" title="P_20180809_204754.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/240161861"><img alt="P_20180809_205044.jpg" src="https://pic.pimg.tw/qupyqupy/1533827107-3309487184_n.jpg?v=1533827166" title="P_20180809_205044.jpg" /></a></div>
+</div>
+</div>
+
+<div class="no_food_title">木雕森林</div>
+
+<p>這家店處於夜市ㄇ字型頂端的那條路，攤位很小，但是裡面擺了許多看起來非常質感的東西。</p>
+
+<div class="global_divtable">
+<div class="global_divtr">
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239208140"><img alt="P_20180701_205825.jpg" src="https://pic.pimg.tw/qupyqupy/1530489363-2399184838_n.jpg" title="P_20180701_205825.jpg" /></a></div>
+
+<div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/239263742"><img alt="P_20180703_220012_LL.jpg" src="https://pic.pimg.tw/qupyqupy/1530682146-368749476_n.jpg?v=1530682166" title="P_20180703_220012_LL.jpg" /></a></div>
+</div>
+</div>
+
+<p>各種的天然精油在店內陳列，讓店裡充滿了濃濃的香氣，不過每個都頗貴。</p>
+
+<p>建議是買補充瓶回家自己灌精油會比較划算，另外我這天買的時候店裡有買五送一的活動，總共花了3000多塊，帶回家六瓶補充瓶。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239208149"><img alt="P_20180622_212819.jpg" src="https://pic.pimg.tw/qupyqupy/1530489427-1028671608_n.jpg" title="P_20180622_212819.jpg" /></a></p>
+
+<p>手機殼的部分因為沒有寫型號，所以要一個一個拿下來跟自己手機試，這點讓我覺得有點不好意思，所以就沒有買了。</p>
+
+<p><a href="http://qupyqupy.pixnet.net/album/photo/239208152"><img alt="P_20180622_212851.jpg" src="https://pic.pimg.tw/qupyqupy/1530489426-3299504147_n.jpg" title="P_20180622_212851.jpg" /></a></p>
+
+<div class="no_food_title">Coming True火舞團</div>
+
+<p>Coming True火舞團會在每周周末時，在阿灶伯攤位的後方小廣場表演，我這天來的時候已經表演到一半。</p>
+
+<p>這個立方體的表演很特別，我後來上網查了一下，這表演應該叫做火立方，表演者是在火點著立方體的情況下表演的，但應該是這天場地太小所以沒點。</p>
+
+<p>音樂帶有很濃厚的民族色彩，表演者在甩弄立方體時很有氣勢，現場看是非常享受的，在視覺上還有種搞不清楚表演者是在立方體內還是外的視覺欺騙。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/d_KmZNT5UUs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<p>入陣曲的火舞表演不僅是台上火熱，坐在場邊都能感受到熱浪。</p>
+
+<p>手機比較拍不出現場的精采程度，建議親自周末到羅東夜市看看，另外也記得覺得表演精彩的話，在結束後給這火舞團打個賞，少少的一百元也是對他們的支持鼓勵。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XAXU0lHB5OY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<hr />
