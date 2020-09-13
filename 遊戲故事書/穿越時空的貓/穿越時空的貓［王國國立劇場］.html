@@ -1,0 +1,170 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">米格蘭斯城之戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">米格蘭斯城之戰</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">米格蘭斯城之戰</div> <p>米格蘭斯王：</p> <ul> <li>上［茲爾巴、夏濃］</li> <li>中［賽勒斯］</li> <li>下［乙葉、米悠、桔梗］</li> </ul> <p>魔獸王：</p> <ul> <li>上［基爾德那］</li> <li>中［丹尼］</li> <li>下［蘇賽特、木啾啾、莉卡］</li> </ul> <p>流浪劍客：</p> <ul> <li>上［安娜貝爾］</li> <li>中［阿爾德］</li> <li>下［尼姬、諾諾德］</li> </ul> <p>騎士：</p> <ul> <li>上［諾馬爾］</li> <li>中［艾米］</li> <li>下［布里諾、蘇依萊、耶月］</li> </ul> <p>Disappointing：</p> <p><span class="global_name_span">蘇賽特</span>是裏面的亮點，不但把角色名字改成［魔獸公主］，還有各種中二的台詞，甚至該退場的時候還不退場。</p> <p><span class="global_name_span">米悠</span>也很搞笑，因為飾演的是自己父親，所以很多台詞不習慣，在演員與現實之間搞得很模糊，看著就有點滑稽。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u1WFKqsq0NE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>Good：</p> <p><span class="global_name_span">蘇依萊</span>在一旁很明顯一直想著趕快領便當。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gRX2g9JKo4w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>Great：</p> <p><span class="global_name_span">莉卡</span>演的魔獸王真的很出戲，一堆的未來用語對上<span class="global_name_span">茲爾巴</span>那正經的臉，看著真有違和感。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5atQThRREBI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>Excellent：</p> <p><span class="global_name_span">賽勒斯</span>演的［米格蘭斯王］竟然會［圓空自在流］。</p> <p><span class="global_name_span">阿爾德</span>演的劍客其實就是演自己。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KKSsF5uVOmM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>Excellent奇蹟：</p> <p>［魔獸王］這角色還是要由<span class="global_name_span">基爾德那</span>自己來演才合適，只是台下的觀眾都沒認出來這個演員是曾經燒毀［米格蘭斯城］的罪魁禍首嗎？</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WJ80ww2PFTI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  
+
+  
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
