@@ -1,0 +1,164 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">尋覓逝去的時光</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">尋覓逝去的時光</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">尋覓逝去的時光</div> <p>打倒魔王後，世界恢復了和平，<span class="global_name_span">小呆</span>一行人這天為了追念在大戰中逝去的<span class="global_name_span">薇若妮卡</span>齊聚聖地［拉姆達］。接著眾人便巡視著戰後各地復原的狀況，過程中發現了一處墜毀的神民建築，在裏面調查到能讓逝去的人再度復活的線索，為了能再度見到<span class="global_name_span">薇若妮卡</span>，眾人便前往了［遺忘之塔］。</p> <p>在［遺忘之塔］眾人見到了［時光看守者］，然而得知要讓<span class="global_name_span">薇若妮卡</span>復活的方法竟然是回到過去的時光，而且能保有記憶的人只有<span class="global_name_span">小呆</span>一人，不過為了能讓在大樹墜毀後犧牲的人獲救，<span class="global_name_span">小呆</span>毅然決然的回到過去。</p> <div class="global_ps_text"> <p>06:20 - 戰後的［最後堡壘］劇情。</p> <p>10:00 - 戰後的［索爾提科鎮］劇情，其實我覺得<span class="global_name_span">迪耶歌</span>本來就這種偏女性向的個性，要不然兒子也不會是這樣，正所謂虎父無犬子。</p> <p>16:55 - 戰後<span class="global_name_span">羅</span>帶著<span class="global_name_span">小呆</span>悼念逝去的<span class="global_name_span">亞溫</span>夫妻。</p> <p>19:55 - 戰後<span class="global_name_span">瑪雅</span>正在追悔自己成為魔物時做的壞事而心情低落，但在<span class="global_name_span">卡繆</span>的鼓勵下，又重新振作起來。</p> <p>24:05 - 發現墜落的神民建築。</p> <p>32:30 - 此時尾隨眾人進入［遺忘之塔］的，正是邪神的分身，因為在這時代牠已經復活無望，所以只能寄望回到過去的時光。</p> </div> <div class="global_ps_text"> <p>04:50 ~ 06:18 - 走路戰鬥解支線。</p> <p>12:24 ~ 16:55 - 走路戰鬥解支線。</p> <p>32:40 ~ 37:30 - 走路戰鬥解支線。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RxGMW6V91qI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>回到過去的<span class="global_name_span">小呆</span>成功用［魔王之劍］擊敗了<span class="global_name_span">荷梅洛斯</span>，而一旁被<span class="global_name_span">兀爾諾加</span>附身的<span class="global_name_span">狄爾卡達王</span>眼見情勢不好，便順勢將<span class="global_name_span">荷梅洛斯</span>滅口，然而知曉整件事情真相的<span class="global_name_span">小呆</span>是不會被蒙騙的，正伺機準備拆穿<span class="global_name_span">狄爾卡達王</span>的真面目。</p> <div class="global_ps_text"> <p>03:30 ~ 09:10 - 走路戰鬥解支線。</p> <p>13:35 ~ 16:40 - 走路戰鬥解支線。</p> <p>28:50 ~ 36:10 - 走路戰鬥解支線。</p> <p>38:05 ~ 48:34 - 走路戰鬥解支線。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/O0KwlaqLwpI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>拆穿<span class="global_name_span">狄爾卡達王</span>真面目的<span class="global_name_span">小呆</span>，成功擊敗露出真身的<span class="global_name_span">兀爾諾加</span>，但宿敵消逝的邪神分身此時正召喚［勇者星］降臨，終於比<span class="global_name_span">兀爾諾加</span>更恐怖的敵人邪神降臨。</p> <div class="global_ps_text"> <p>03:45 - 這裡阻止<span class="global_name_span">狄爾卡達王</span>的正是邪神的分身，可謂仇人見面分外眼紅，在本來的時間線就是<span class="global_name_span">兀爾諾加</span>毀了邪神的肉身才導致牠無法復活。</p> <p>12:47 - <span class="global_name_span">兀爾諾加</span>此時也發現了邪神分身的存在。</p> </div> <div class="global_ps_text"> <p>00:00 ~ 03:20 - 走路戰鬥解支線。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qJ_1BxBXYdY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
