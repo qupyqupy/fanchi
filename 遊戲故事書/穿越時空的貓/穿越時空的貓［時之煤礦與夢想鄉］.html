@@ -1,0 +1,174 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">受迷路的貓邀請</option>
+  <option value="2">父親的遺願 復興霍萊之路</option>
+  <option value="3">再訪向真相邁進</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">受迷路的貓邀請</option>
+  <option value="2">父親的遺願 復興霍萊之路</option>
+  <option value="3">再訪向真相邁進</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">受迷路的貓邀請</div> <p>在<span class="global_name_span">合成鬼龍</span>鑑內，發現了一隻擅自闖進來的貓，牠似乎想領著眾人去到某個地方，於是在與<span class="global_name_span">合成鬼龍</span>討論過後，大家來到［AD300］的一處荒廢村莊。</p> <p>結果在這遇到一個被魔物圍攻的男人，救下他後，得知其名字叫做<span class="global_name_span">馬洛</span>而此地原本是一個繁榮的煤礦村，他原本也是住在這村落的，如今決定要復興這裡才再度回來。</p> <div class="global_ps_text"> <p>08:05 ~ 13:45 - 努力的採礦。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/e-fui8aqcbs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">父親的遺願 復興霍萊之路</div> <p>為了幫助<span class="global_name_span">馬洛</span>復興［霍萊村］，<span class="global_name_span">阿爾德</span>開始幫忙尋找願意搬來這地方的人。</p> <p>首先找到的是一個帶有熱血屬性的青年<span class="global_name_span">泰利</span>，他會一些木工，看著這村內屋子荒廢的景象，決定先從修繕屋子開始做起，<span class="global_name_span">阿爾德</span>便開始幫他收集木材，沒想到<span class="global_name_span">泰利</span>確實有一手，不但幫自己蓋了一棟新房子，還幫<span class="global_name_span">馬洛</span>修繕地煥然一新。</p> <p>接著來到［霍萊村］的，是一名吟遊詩人名叫<span class="global_name_span">亨利</span>，為了探索隱藏在礦坑中的龐然大物來到此地，而這一訊息正與<span class="global_name_span">馬洛</span>父親的日記中記載的一樣，既然有心要留在村子，<span class="global_name_span">阿爾德</span>等人便開始幫忙<span class="global_name_span">亨利</span>建造屬於他的房子。</p> <p>安置好<span class="global_name_span">亨利</span>後，在村子附近的森林裡遇到了一名老婦人<span class="global_name_span">麗貝卡</span>，她是一個鑄造工匠，因為無家可歸想要一起在村子裡生活，於是<span class="global_name_span">阿爾德</span>又開始收集材料請<span class="global_name_span">泰利</span>幫忙蓋房子。</p> <p>安頓好<span class="global_name_span">麗貝卡</span>後，<span class="global_name_span">阿爾德</span>開始覺得無聊，看著<span class="global_name_span">馬洛</span>整天忙進忙出的，於是好奇跟著他看看都在做些甚麼？（<span class="global_name_span">阿爾德</span>這行為就是尾行）結果<span class="global_name_span">馬洛</span>想幫村民的忙，獨自一人在野外採集，結果遇上了魔物的襲擊，還好尾行<span class="global_name_span">阿爾德</span>及時出現救了他，回到村子後，<span class="global_name_span">阿爾德</span>招集了眾人，討論著<span class="global_name_span">馬洛</span>這些日子為村子做出的努力，於是大家一致決定推舉<span class="global_name_span">馬洛</span>成為村長。</p> <p>隨著村民的增加，村子也慢慢上了軌道，這天一名少女倒在了村的入口處，不僅昏迷不醒、還發著高燒，幸好在村人的努力下，少女恢復了健康，並且暫時與<span class="global_name_span">麗貝卡</span>住在一起。</p> <div class="global_ps_text"> <p>04:10 ~ 06:20 - 努力的砍木頭。</p> <p>07:55 ~ 10:18 - 努力的挖礦。</p> <p>14:50 ~ 19:40 - 努力的挖礦。</p> <p>23:00 ~ 34:55 - 努力的挖礦。</p> <p>45:00 ~ 59:12 - 努力的挖礦。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-VH_vOiUPMI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了開拓第二個礦坑，需要炸彈炸開擋在入口的巨石，<span class="global_name_span">阿爾德</span>透過<span class="global_name_span">亨利</span>的介紹，找到了在［臨迪］的<span class="global_name_span">希爾達</span>加入村子的行列，她的專長就是製造各種威力強大的炸彈。</p> <div class="global_ps_text"> <p>04:25 ~ 01:01:00 - 努力的採集資源。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/L9HWvi_QwaA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>安頓好<span class="global_name_span">希爾達</span>後，<span class="global_name_span">阿爾德</span>看到之前救下的少女<span class="global_name_span">西爾維婭</span>為了報答村人正在村內種花，希望能將村子點綴得更美麗些，不過擔心她身體狀況的<span class="global_name_span">麗貝卡</span>卻趕來要她趕緊回家休息，原來<span class="global_name_span">西爾維婭</span>本來身體就差，<span class="global_name_span">亨利</span>更叮囑要她好好靜養。</p> <p>隨著<span class="global_name_span">西爾維婭</span>的努力，村子擁有越來越多的花田，看著也覺得賞心悅目，不過莽撞的<span class="global_name_span">泰利</span>因為急著找<span class="global_name_span">阿爾德</span>竟然直接踩進了花田，這讓<span class="global_name_span">西爾維婭</span>有些傷心。</p> <p>又過了一陣子<span class="global_name_span">西爾維婭</span>忽然神色緊張地站在村口，原來是<span class="global_name_span">泰利</span>外出許久未歸，<span class="global_name_span">阿爾德</span>趕緊帶著<span class="global_name_span">西爾維婭</span>進森林探索，所幸<span class="global_name_span">泰利</span>只是受了輕傷，<span class="global_name_span">西爾維婭</span>連忙幫他治療，<span class="global_name_span">泰利</span>也藉此機會為自己之前踩壞花田的事情向<span class="global_name_span">西爾維婭</span>道歉，<span class="global_name_span">阿爾德</span>在一旁看著覺得兩人應該會有不錯的結果。</p> <p>又過了沒多久，沒想到<span class="global_name_span">泰利</span>與<span class="global_name_span">西爾維婭</span>竟然開始交往了，雖然消息有點震驚，但看著兩人幸福的笑顏，也是衷心祝福他們。</p> <p>接著遇到了缺乏靈感寫詩句的<span class="global_name_span">亨利</span>，在<span class="global_name_span">艾米</span>的引導下，最後藉由<span class="global_name_span">西爾維婭</span>的花田，而爆發出泉湧般的靈感，由此看來<span class="global_name_span">西爾維婭</span>對村子的貢獻還是不少的。</p> <p>在一次返回［霍萊村］的時刻，<span class="global_name_span">阿爾德</span>竟得到<span class="global_name_span">泰利</span>與<span class="global_name_span">西爾維婭</span>要結婚的消息，畢竟是村內第一對結婚的戀人，眾人卯足了全力想要給兩人最好的祝福，最後這天夜裡，在村人的祝福與<span class="global_name_span">希爾達</span>特製的煙火中，兩人訂下了永不離棄的誓言。</p> <div class="global_ps_text"> <p><span class="global_name_span">泰利</span>與<span class="global_name_span">西爾維婭</span>從交往到結婚的速度實在是快的出奇，但這其實是因為［霍萊村］的時間流動速度比起其他地方快了許多，而<span class="global_name_span">阿爾德</span>在村外冒險的短短時間，村中可能已經過了幾個月了。</p> </div> <div class="global_ps_text"> <p>02:00 ~ 12:50 - 努力的採礦。</p> <p>13:55 ~ 21:00 - 努力的採礦。</p> <p>24:20 ~ 29:40 - 努力的採礦。</p> <p>40:27 ~ 48:39 - 努力的採礦。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4KmQLuKFURk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">希爾達</span>從結婚製作的煙火得到靈感，造出了更加強力的新型炸彈，<span class="global_name_span">阿爾德</span>因此可以探索更廣大的礦坑區域。</p> <div class="global_ps_text"> <p>00:55 ~ 40:55 - 努力的採礦。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v65KRD5P38I?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在礦坑深處<span class="global_name_span">阿爾德</span>發現了<span class="global_name_span">馬洛</span>父親的記事本，為了能開墾記事本中的第三煤礦，<span class="global_name_span">阿爾德</span>幫忙找到了專業的木工<span class="global_name_span">哥頓</span>來修復村中已經毀壞的大橋，<span class="global_name_span">泰利</span>也因為崇拜他的木工技術，成為了他的徒弟。</p> <p>為了修復毀壞的大橋，可能要花數年的時間，<span class="global_name_span">阿爾德</span>為了不影響村民的工作，在依依不捨的道別後，繼續自己的旅程。</p> <div class="global_ps_text"> <p>06:50 ~ 31:45 - 努力的採礦。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qtn-qFnqzCI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">再訪向真相邁進</div> <p>才與村人告別沒幾日，<span class="global_name_span">阿爾德</span>竟然收到<span class="global_name_span">馬洛</span>的來信，告知大橋已經修復好了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1XIbz42GwEM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雖然滿懷疑惑，但<span class="global_name_span">阿爾德</span>還是前往［霍萊村］，沒想到再次見到<span class="global_name_span">馬洛</span>竟然已經是一副熟男的樣貌，連<span class="global_name_span">泰利</span>與<span class="global_name_span">西爾維婭</span>生下的女兒<span class="global_name_span">莫娜</span>都能到處蹦蹦跳跳的，這確實已經超乎了想像。</p> <p>不過故人相聚，<span class="global_name_span">阿爾德</span>將這種種不合理先拋諸腦後，跟著<span class="global_name_span">馬洛</span>參觀已經完成的大橋，隨後<span class="global_name_span">泰利</span>夫婦也來了，眾人邊聊著這些年的趣事邊往橋的另一邊走去，正開心時，一名老太太緩步走了過來，把眾人罵回了［霍萊村］。</p> <p>不過大橋已經修復完成，<span class="global_name_span">阿爾德</span>終於可以幫忙探索第三煤礦了，並在裡面找到了幾頁手記。</p> <div class="global_ps_text"> <p>10:46 - 手記內容。</p> <p>11:35 - 手記內容。</p> <p>19:12 - 手記內容。</p> <p>20:40 - 手記內容。</p> </div> <div class="global_ps_text"> <p>06:15 ~ 24:12 - 努力的採礦。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/a66be6Wff34?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿爾德</span>一直探索到一處巨大堅硬的巨石處，看來連<span class="global_name_span">希爾達</span>的炸彈都炸不開，於是決定先回村給<span class="global_name_span">馬洛</span>看看收集到的手記。<span class="global_name_span">馬洛</span>看了手記之後，也拿出自己發現的父親手記，原來第三礦坑沉睡的，竟然是稜晶礦脈，而當年的村民因為這巨大的利益起了爭執，當中有個不知名的怪物因為村民的貪念不斷成長，最終毀滅了整個村莊。</p> <p>為了繼續深入礦坑，調查這不知名的怪物，<span class="global_name_span">阿爾德</span>求助於<span class="global_name_span">希爾達</span>，但她對於發明更強大的炸彈還沒有甚麼靈感，於是就跑去橋對面的老婆婆家求助，老婆婆<span class="global_name_span">格雷斯</span>還是一如往常的不親人，不過在<span class="global_name_span">希爾達</span>擅自幫她修好懷錶後，兩人的關係慢慢好轉。</p> <p><span class="global_name_span">阿爾德</span>在的這期間，原本身體就已經不好的<span class="global_name_span">西爾維婭</span>突然病倒了，在<span class="global_name_span">亨利</span>診治下，發現<span class="global_name_span">西爾維婭</span>已經病入膏肓了，最終在眾人的守護下，安然地逝去。</p> <div class="global_ps_text"> <p>12:55 - 這段劇情很明顯<span class="global_name_span">格雷斯</span>就是<span class="global_name_span">希爾達</span>的母親，但是因為當年發生災難時沒能逃出村子，加上村內的時間流速異常快速，所以外表看起來跟<span class="global_name_span">希爾達</span>完全不像母女。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ecqRzN5GnUU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">希爾達</span>在<span class="global_name_span">格雷斯</span>的幫助下開發出了［魔法炸彈］，<span class="global_name_span">阿爾德</span>藉此深入到礦坑最底層，看到了怪物的真面目，竟然是古代遇到的［幻視胎］，而［霍萊村］就是建在當年［時之塔］的遺址上。</p> <p>由於［幻視胎］失去了［時之塔］的輔助，失控地不斷將人們醜陋的夢具象化，因此化為巨大醜陋的怪物，而［霍萊村］的時間流速異常快速，也是因為［幻視胎］的緣故，為了消除這潛在的危機，<span class="global_name_span">阿爾德</span>利用稜晶原石的力量，收集了此時村內眾人心中的夢想，造出了純淨的［夢幻虹石］。</p> <p>終於透過［夢幻虹石］接收到眾人美夢的［幻視胎］，在<span class="global_name_span">阿爾德</span>的幫助下，從千百年間的惡夢中解脫了。而<span class="global_name_span">馬洛</span>等人為了不讓曾經的悲劇再度發生，決定放棄稜晶礦脈，［霍萊村］將在眾人的努力下，發展出不同以往的樣貌吧。</p> <div class="global_ps_text"> <p>03:50 ~ 05:30 - 走路戰鬥。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v1JkaLJf8d8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">格雷斯</span>親口承認自己是<span class="global_name_span">希爾達</span>的母親。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IoSHcimSKW4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
