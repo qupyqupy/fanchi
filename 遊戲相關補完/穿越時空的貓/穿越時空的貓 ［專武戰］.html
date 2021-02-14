@@ -1,4 +1,5 @@
-<style type="text/css">.title_text {
+<style type="text/css">
+.title_text {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -11,59 +12,59 @@
 
   
   background:
-	radial-gradient(
-		circle at bottom left,
-		transparent 0,
-		transparent 2em,
-		beige 2em,
-		beige 4em,
-		transparent 4em,
-		transparent 6em,
-		khaki 6em,
-		khaki 8em,
-		transparent 8em,
-		transparent 10em
-	),
-	radial-gradient(
-		circle at top right,
-		transparent 0,
-		transparent 2em,
-		beige 2em,
-		beige 4em,
-		transparent 4em,
-		transparent 6em,
-		khaki 6em,
-		khaki 8em,
-		transparent 8em,
-		transparent 10em
-	),
-	radial-gradient(
-		circle at top left,
-		transparent 0,
-		transparent 2em,
-		navajowhite 2em,
-		navajowhite 4em,
-		transparent 4em,
-		transparent 6em,
-		peachpuff 6em,
-		peachpuff 8em,
-		transparent 8em,
-		transparent 10em
-	),
-	radial-gradient(
-		circle at bottom right,
-		transparent 0,
-		transparent 2em,
-		palegoldenrod 2em,
-		palegoldenrod 4em,
-		transparent 4em,
-		transparent 6em,
-		peachpuff 6em,
-		peachpuff 8em,
-		transparent 8em,
-		transparent 10em
-	), blanchedalmond;
-	
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
 background-blend-mode: multiply;
 background-size: 10em 10em;
 background-position: 0 0, 0 0, 5em 5em, 5em 5em;
@@ -72,113 +73,95 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   width: 50%;
 }
 </style>
+
 <hr />
 <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0WC_o68KMq4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
 <hr />
-<p><label>選擇分類：</label> 
-<select id="head_select" style="width: 40%;">
-<option value="1">伽琉</option>
-<option value="2">尤因</option>
-<option value="3">娜基</option>
-<option value="4">思琳</option>
-<option value="5">洛基德</option>
-<option value="6">繆露絲</option>
-<option value="7">蘇賽特</option>
-<option value="8">麥提</option>
-<option value="9">伊絲卡</option>
-<option value="10">謝奈</option>
-<option value="11">阿佐美</option>
-<option value="12">安娜貝爾</option>
-<option value="13">蒂亞朵拉</option>
-<option value="14">拉克萊兒</option>
-<option value="15">由奈</option>
-<option value="16">杜伊</option>
-<option value="17">謝堤</option>
-<option value="18">蘇賽特AS</option>
-<option value="19">玫莉娜</option>
-<option value="20">瑪莉艾爾</option>
-<option value="21">月華</option>
-<option value="22">雷莉</option>
-<option value="23">麥提AS</option>
-</select></p>
+<p><label>免費角色：</label> 
+<select id="head_select_o" style="width: 20%;">
+  <option value="1">伽琉</option>
+  <option value="2">思琳</option>
+  <option value="3">阿佐美</option>
+  <option value="4">蒂亞朵拉</option>
+ </select>
+ <label>夢見男角色：</label> 
+<select id="head_select_m" style="width: 20%;">
+  <option value="1">尤因</option>
+  <option value="2">洛基德</option>
+  <option value="3">麥提</option>
+  <option value="4">杜伊</option>
+  <option value="5">謝堤</option>
+ </select>
+ <label>夢見女角色：</label> 
+ <select id="head_select_w" style="width: 20%;">
+  <option value="1">娜基</option>
+  <option value="2">繆露絲</option>
+  <option value="3">蘇賽特</option>
+  <option value="4">伊絲卡</option>
+  <option value="5">謝奈</option>
+  <option value="6">安娜貝爾</option>
+  <option value="7">拉克萊兒</option>
+  <option value="8">由奈</option>
+  <option value="9">玫莉娜</option>
+  <option value="10">瑪莉艾爾</option>
+  <option value="11">月華</option>
+  <option value="12">雷莉</option>
+ </select>
+ </p>
 
 <hr />
-<div id="ch">&nbsp;</div>
+<div id="ch"></div>
 
-<p><label>選擇分類：</label> 
-<select id="foot_select" style="width: 40%;">
-<option value="1">伽琉</option>
-<option value="2">尤因</option>
-<option value="3">娜基</option>
-<option value="4">思琳</option>
-<option value="5">洛基德</option>
-<option value="6">繆露絲</option>
-<option value="7">蘇賽特</option>
-<option value="8">麥提</option>
-<option value="9">伊絲卡</option>
-<option value="10">謝奈</option>
-<option value="11">阿佐美</option>
-<option value="12">安娜貝爾</option>
-<option value="13">蒂亞朵拉</option>
-<option value="14">拉克萊兒</option>
-<option value="15">由奈</option>
-<option value="16">杜伊</option>
-<option value="17">謝堤</option>
-<option value="18">蘇賽特AS</option>
-<option value="19">玫莉娜</option>
-<option value="20">瑪莉艾爾</option>
-<option value="21">月華</option>
-<option value="22">雷莉</option>
-<option value="23">麥提AS</option>
-</select></p>
+<p><label>免費角色：</label> 
+<select id="foot_select_o" style="width: 20%;">
+  <option value="1">伽琉</option>
+  <option value="2">思琳</option>
+  <option value="3">阿佐美</option>
+  <option value="4">蒂亞朵拉</option>
+ </select>
+ <label>夢見男角色：</label> 
+<select id="foot_select_m" style="width: 20%;">
+  <option value="1">尤因</option>
+  <option value="2">洛基德</option>
+  <option value="3">麥提</option>
+  <option value="4">杜伊</option>
+  <option value="5">謝堤</option>
+ </select>
+ <label>夢見女角色：</label> 
+ <select id="foot_select_w" style="width: 20%;">
+  <option value="1">娜基</option>
+  <option value="2">繆露絲</option>
+  <option value="3">蘇賽特</option>
+  <option value="4">伊絲卡</option>
+  <option value="5">謝奈</option>
+  <option value="6">安娜貝爾</option>
+  <option value="7">拉克萊兒</option>
+  <option value="8">由奈</option>
+  <option value="9">玫莉娜</option>
+  <option value="10">瑪莉艾爾</option>
+  <option value="11">月華</option>
+  <option value="12">雷莉</option>
+ </select>
+ </p>
 
-<p><button class="foot_btn" id="prev">上一個</button><button class="foot_btn" id="next">下一個</button></p>
 
-<hr /><script>
-  var contentArr = [] ;
-  contentArr.push('');
+
+<hr />
+
+<script>
+  (function(){
+    var contentArr = [] ;
+    contentArr.push('');
   contentArr.push('<div class="title_text">伽琉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vPRe-8Tz95Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fDryS1sa4ro?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">尤因</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UMTDz7Bqso8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/j8SjACJN0r0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">娜基</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_4Win7jsldM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/H8LLmNt__yQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">思琳</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2uwI_xHZcTs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9T8Igfk1zvI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">洛基德</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TuMG45gTuDE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4yHoeWEdZrU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">繆露絲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ABGrS1In-nI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4ADkzdx-bEs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">蘇賽特</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vv5EQ2w-O0c?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uyCblBcWeeA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">麥提</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cm3_W6e8UiA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wiK7Ej1dePI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">伊絲卡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vqtOyQKTX5o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Tnxw_HNUyQ8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">謝奈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HPzwuAZXlgA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YQV6mqWgudU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">阿佐美</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ONges_yDoVY?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0Uo9wrfjpsM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">安娜貝爾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WLt1ONEZ2Pg?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rCrWTDZyW6U?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">蒂亞朵拉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TVWo0bv3q_o?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/buKF2A1y2uY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">拉克萊兒</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OpZdeVV9uAI?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/l-ppR7jQgYo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">由奈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/A8W4NmMfx-c?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Bn457Ch6rDc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">杜伊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/C42xvcg31QQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KOvZkPwsvvA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">謝堤</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VXLN5nPMsLA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pjWlXJtI5lY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">蘇賽特AS</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bqTOJE4KNdo?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2EOH-tIhLNc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">玫莉娜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5gJ7U7Wic_M?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fBoykYDMq6g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-   contentArr.push('<div class="title_text">瑪莉艾爾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PjxNS9Hc2zQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sI-Ij9QGSq4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-   contentArr.push('<div class="title_text">月華</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Fe7jb7RQWtg?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pzdU72xOb68?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-   contentArr.push('<div class="title_text">雷莉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sPeCrtZwSlY?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1sUckNjELdg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-   contentArr.push('<div class="title_text">麥提AS</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/iVXcJ3d7FKE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SXW5BsfKuJE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  
-
   var firstEnter = 0 ; 
   var nowPage = 1;
   var maxCount = contentArr.length - 1;
-  var prevBtn = document.getElementById("prev");
-  var nextBtn = document.getElementById("next");
-  var headSelect = document.getElementById("head_select");
-  var footSelect = document.getElementById("foot_select");
+  var headSelect = document.getElementById("head_select_o");
+  var footSelect = document.getElementById("foot_select_o");
   
-  prevBtn.onclick = function () {
-    nowPage --;
-    initPage(nowPage);
-  }
-
-  nextBtn.onclick = function () {
-    nowPage ++;
-    initPage(nowPage);
-  }
 
   headSelect.onchange = function () {
     initPage(headSelect.value);
@@ -193,19 +176,6 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     nowPage = value;
     document.getElementById("ch").innerHTML = contentArr[value];
 
-    if (value == 1) {
-      prevBtn.disabled = true ;
-    }
-    else {
-      prevBtn.disabled = false;
-    }
-
-    if (value == maxCount) {
-      nextBtn.disabled = true ;
-    }
-    else {
-      nextBtn.disabled = false;
-    }
     
     if (firstEnter == 0) {
       firstEnter = 1 ; 
@@ -218,8 +188,103 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   }
   
   initPage(1);
+
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">尤因</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UMTDz7Bqso8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/j8SjACJN0r0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">洛基德</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TuMG45gTuDE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4yHoeWEdZrU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">麥提</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cm3_W6e8UiA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wiK7Ej1dePI?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">麥提AS</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/iVXcJ3d7FKE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SXW5BsfKuJE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">杜伊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/C42xvcg31QQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KOvZkPwsvvA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">謝堤</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VXLN5nPMsLA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pjWlXJtI5lY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">娜基</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_4Win7jsldM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/H8LLmNt__yQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">繆露絲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ABGrS1In-nI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4ADkzdx-bEs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">蘇賽特</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vv5EQ2w-O0c?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uyCblBcWeeA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">蘇賽特AS</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bqTOJE4KNdo?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2EOH-tIhLNc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">伊絲卡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vqtOyQKTX5o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Tnxw_HNUyQ8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">謝奈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HPzwuAZXlgA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YQV6mqWgudU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">安娜貝爾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WLt1ONEZ2Pg?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rCrWTDZyW6U?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">拉克萊兒</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OpZdeVV9uAI?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/l-ppR7jQgYo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">由奈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/A8W4NmMfx-c?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Bn457Ch6rDc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">玫莉娜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5gJ7U7Wic_M?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fBoykYDMq6g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">瑪莉艾爾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PjxNS9Hc2zQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sI-Ij9QGSq4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">月華</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Fe7jb7RQWtg?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pzdU72xOb68?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">雷莉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sPeCrtZwSlY?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1sUckNjELdg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_w");
+  var footSelect = document.getElementById("foot_select_w");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+  
 </script>
 <p>&nbsp;</p>
-
-
 
