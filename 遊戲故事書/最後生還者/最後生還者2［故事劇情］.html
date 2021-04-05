@@ -1,0 +1,170 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">1. 不知名的敵人</option>
+  <option value="2">2. 再見了！喬爾！</option>
+  <option value="3">3. 西雅圖</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">1. 不知名的敵人</option>
+  <option value="2">2. 再見了！喬爾！</option>
+  <option value="3">3. 西雅圖</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">1. 不知名的敵人</div> <p><span class="global_name_span">喬爾</span>、<span class="global_name_span">湯米</span>兩人正執行日常的哨兵任務，在一處封閉的屋子內，<span class="global_name_span">喬爾</span>一邊擦拭著在這末世得來不易的吉他樂器，一邊敘述著藏在他心裡未曾吐露過的秘密。</p> <p>數年前，為了製造出拯救全人類的疫苗，<span class="global_name_span">喬爾</span>帶著<span class="global_name_span">艾莉</span>穿越大半美國，抵達了［火螢］的大本營，但研發疫苗的代價卻是要犧牲<span class="global_name_span">艾莉</span>的生命。</p> <p>［不能接受、絕對不能接受］，不管人類存亡的大義，<span class="global_name_span">喬爾</span>遵從本心在［火螢］大本營展開一場殺戮，但救出<span class="global_name_span">艾莉</span>的瞬間也將製造人類疫苗的唯一希望給扼殺了，獨自承受這沉重的秘密，<span class="global_name_span">喬爾</span>甚至對<span class="global_name_span">艾莉</span>說了謊，以便打消她製作疫苗的念頭。</p> <p><span class="global_name_span">湯米</span>看著眼前的兄弟，也不知道該說甚麼安慰他，看看時間也不早了，該動身回去了。打開房屋的鐵門，兩人在夕陽的餘暉下策馬奔騰，穿過了荒廢的小鎮，地上還有適才與之戰鬥的感染者遺骸，這就是末世倖存者的日常。隨著離家越來越近，夜色逐漸降臨，回到據點後，<span class="global_name_span">湯米</span>感同身受地安慰<span class="global_name_span">喬爾</span>，並且表示會死守這個秘密，這就是男人之間的友情，無須多言，大家彼此早已心領神會。</p> <p>當晚<span class="global_name_span">喬爾</span>帶著找到的吉他興奮地來找<span class="global_name_span">艾莉</span>，此時的她已經是個青少女模樣，右手綁著繃帶隱藏感染者的咬痕，一開始還對<span class="global_name_span">喬爾</span>的到來顯得不耐煩，但當療癒的旋律一響起配上渾厚的男人嗓音，她也漸漸聽得入迷，原來<span class="global_name_span">喬爾</span>是為了遵守自己［要教妳彈吉他］的諾言，特意送來吉他。</p> <p>四年後，這天<span class="global_name_span">傑西</span>來找<span class="global_name_span">艾莉</span>準備出外執行任務，一路上兩人聊著關於昨晚的事情，由於<span class="global_name_span">傑西</span>的前女友<span class="global_name_span">狄娜</span>在舞會上吻了<span class="global_name_span">艾莉</span>，因此看不慣同性愛情的<span class="global_name_span">賽斯</span>當場就與兩人產生衝突，甚至<span class="global_name_span">喬爾</span>為了保護<span class="global_name_span">艾莉</span>也攙和其中，但出乎意外的是<span class="global_name_span">艾莉</span>竟然對站在自己這邊的<span class="global_name_span">喬爾</span>破口大罵，這點讓<span class="global_name_span">傑西</span>十分不解。</p> <p>兩人一邊聊一邊走到一處餐館，入內後看到了社區的領袖<span class="global_name_span">瑪麗亞</span>，原來知道昨晚舞會紛爭的<span class="global_name_span">瑪麗亞</span>想要化解<span class="global_name_span">艾莉</span>、<span class="global_name_span">賽斯</span>兩人之間的芥蒂，畢竟在這末世的倖存者社區，即便是小小的紛爭也可能造成巨大的災難，雖然<span class="global_name_span">艾莉</span>滿臉不願意，但還是勉強收下<span class="global_name_span">賽斯</span>當作賠禮的三明治。</p> <p>離開餐館後，<span class="global_name_span">瑪麗亞</span>單獨找了<span class="global_name_span">艾莉</span>談一談關於她與<span class="global_name_span">喬爾</span>最近的關係，但<span class="global_name_span">艾莉</span>並不想談論這件事。</p> <p>兩人簡單道別後，<span class="global_name_span">艾莉</span>找到了<span class="global_name_span">狄娜</span>準備一起出外執行任務，雖然糟心事一堆，但看見愛人的喜悅還是能短暫掃光一切煩惱，甚至可以忘卻末世的殘酷，快樂地與社區內的小孩打一場雪仗，誰都料想不到在這平常不過的日子，眾人即將迎來最殘忍的傷害.....</p> <p>此時在附近的山中小屋內，一夥不知道來自何處的倖存者正在休整，當中一名身材魁武的女性<span class="global_name_span">艾比</span>與有些英俊的男子<span class="global_name_span">歐文</span>結伴出外調查，四周環境都被白雪覆蓋，溫度極低，兩人走了一段路來到一處懸崖，在遠方竟有一座武裝精良、人口眾多的城市，這正是<span class="global_name_span">喬爾</span>等人居住的地方。</p> <p>兩人看到這景象，對於是否要出手攻擊產生了分歧，<span class="global_name_span">歐文</span>並不想招惹這強大的社區而有了退意，但<span class="global_name_span">艾比</span>強大的執念讓他沒有解釋的機會，兩人最後鬧的不歡而散。</p> <p>眼見不能依靠自己的夥伴，<span class="global_name_span">艾比</span>決定自己一個人搞定一切，朝著遠方的監視站前進，準備抓一個人回來拷問，沿途雖然遭到感染者的攻擊，但身手不凡的她一次次化險為夷，在大雪紛飛的山中，她找到了巡邏隊留下的馬蹄印。</p> <p>另一邊，<span class="global_name_span">艾莉</span>與<span class="global_name_span">狄娜</span>這對情侶騎著馬來到了城外的哨站。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GhbN1yssrp4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">2. 再見了！喬爾！</div> <p>對於剛剛熱戀的情侶，即便是在執行任務，也忍不住爭點空閒欣賞附近美景，聊聊彼此之間的心事，途經一座荒廢的小鎮，<span class="global_name_span">艾莉</span>說著今晚想邀請<span class="global_name_span">喬爾</span>看一部名為［柯蒂斯和毒蛇2］的電影，那是一部老套的八零年代動作片，看來<span class="global_name_span">艾莉</span>已經沒有在生<span class="global_name_span">喬爾</span>的氣了。</p> <p>繼續前進，在被白雪覆蓋的地上，忽然出現大片的紅色血跡，兩人看到一具被啃光肉的麋鹿倒臥在車旁，看來附近有大批的感染者，而這正是她們外出巡邏的目的，解決了超市的感染者群後，風雪越來越大，兩人騎著馬前往下個目的地。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AtRLxwuzpxI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>漫天的大雪，降低了四周的能見度，兩人有驚無險地到達<span class="global_name_span">狄娜</span>之前搭檔<span class="global_name_span">尤金</span>的密室，這種滿大麻的房間位於極為隱密的地下室，雖然因為年久無人照顧，大麻都已經枯萎，但四處探索下還是找到一瓶製作完成的大麻煙，於是兩人一邊享受著大麻帶來的刺激，一邊互述衷情，四周曖昧的氣氛催化著兩位少女悸動的心靈，在這老舊的沙發，兩人放飛了自我。</p> <p>這時追蹤馬蹄印的<span class="global_name_span">艾比</span>遭到大批感染者追擊，眼見情況不妙只能三十六計走為上策，就在其命懸一線之際，總算命不該絕，遇上了在外巡邏的<span class="global_name_span">喬爾</span>、<span class="global_name_span">湯米</span>兩人。</p> <p>三人齊心合力甩開大批感染者，逃到<span class="global_name_span">艾比</span>同伴所在的木屋。另一邊尚在溫存的<span class="global_name_span">艾莉</span>兩人被突然闖入的<span class="global_name_span">傑西</span>撞破好事，本來惱羞的<span class="global_name_span">艾莉</span>聽聞<span class="global_name_span">喬爾</span>失蹤的消息後，連忙拿起裝備出外搜尋，一股不安的感覺湧上心頭。</p> <p>逃到木屋的<span class="global_name_span">喬爾</span>等人，正在彼此介紹自己，就當<span class="global_name_span">喬爾</span>自報姓名時，瞬間四周氣氛變得極為壓抑，造化弄人，原來自己就是<span class="global_name_span">艾比</span>等人要復仇的對象，錯愕間右腳膝蓋已被<span class="global_name_span">艾比</span>用槍轟爛。為了生存做過不少壞事的<span class="global_name_span">喬爾</span>知道自己命不久矣，只想迅速結束這一切，但<span class="global_name_span">艾比</span>似乎不打算讓他好過，拿起一旁的高爾夫球桿開始了不忍直視的血腥虐殺。</p> <p>當<span class="global_name_span">艾莉</span>來到木屋，一切都已經回天乏術了，只能眼睜睜看著面目全非的<span class="global_name_span">喬爾</span>遭到<span class="global_name_span">艾比</span>毒手，自己也被擊暈過去。</p> <p>醒來後，誓要報仇的<span class="global_name_span">艾莉</span>想要在離開前，拿些放在<span class="global_name_span">喬爾</span>家的東西，此時<span class="global_name_span">喬爾</span>的住所前放著村民前來弔念用的鮮花，屋子內一籃未清洗的衣物還殘留著主人的味道，桌上擺著未完成的木雕，窗台前的兩張照片，一個是<span class="global_name_span">喬爾</span>已經死去的女兒<span class="global_name_span">莎拉</span>，另一個就是自己了，想到<span class="global_name_span">喬爾</span>已經將自己視為女兒，<span class="global_name_span">艾莉</span>忍不住又抹了下眼角的淚水。</p> <p>還在緬懷的時候，<span class="global_name_span">瑪麗亞</span>來到這座屋子，原來<span class="global_name_span">湯米</span>已經自己前去復仇，並且囑咐妻子必須阻攔<span class="global_name_span">艾莉</span>，這其實是因為他想保住兄弟<span class="global_name_span">喬爾</span>珍惜的人，但<span class="global_name_span">瑪麗亞</span>知道阻止<span class="global_name_span">艾莉</span>實屬徒勞，直接提供兩人馬匹、彈藥，並且希望兩人能安全帶回老公<span class="global_name_span">湯米</span>，從這點來看<span class="global_name_span">瑪麗亞</span>其實也有些許的私心。</p> <p>復仇的對象是［WLF］，全名為［華盛頓解放陣線］俗稱狼幫，<span class="global_name_span">艾莉</span>與<span class="global_name_span">狄娜</span>共乘一匹馬到達該組織的根據地［西雅圖］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NFgcGztdeBs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">3. 西雅圖</div> <p>成功進入的城市後，四周是一片荒廢的景象，兩人只能四處探索尋找關於［WLF］的線索，途經一個樂器行，<span class="global_name_span">艾莉</span>在裡面找到一把吉他，彈起了<span class="global_name_span">喬爾</span>教她的那首曲子，這也是她如今能緬懷<span class="global_name_span">喬爾</span>的方式，但也許是怕在愛人面前展現懦弱的一面，被<span class="global_name_span">狄娜</span>發現後，急忙改彈情歌，暫時壓住自己即將潰堤的淚水。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XVtqN5ZVj58?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>調查的期間找到了當初［WLF］的傳單，標語寫著［他們以為我們是綿羊，露出你們的獠牙吧］，這句話也是他們被稱為［狼幫］的由來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5-U5rRNjLhE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>諾大的都市裡，除了感染者以外，兩人再沒發現其他活人的蹤跡，打開通往酒店大門後，發現這裡竟然有剛戰鬥過的痕跡，酒店內部道路並不複雜，兩人順著樓梯往上走，發現有幾具被槍殺的［WLF］士兵屍體，在一個房間內更看到了被嚴刑拷問而死亡的［WLF］士兵，其中一個正是當時殺死<span class="global_name_span">喬爾</span>的其中一人，看到這熟悉的手法，<span class="global_name_span">艾莉</span>相信這一定是<span class="global_name_span">湯米</span>的傑作。</p> <p>依照血跡乾涸的程度，<span class="global_name_span">湯米</span>應該還沒走遠，兩人隨即決定跟上去，但在路上卻不慎中了［WLF］設下的陷阱，<span class="global_name_span">艾莉</span>失手被逮，<span class="global_name_span">狄娜</span>則因爆炸的衝擊而僥倖逃脫。</p> <p><span class="global_name_span">艾莉</span>醒來後，發現自己被綁在一個鐵條上任人魚肉，眼前的是另一個殺死<span class="global_name_span">喬爾</span>的人<span class="global_name_span">喬丹</span>，但他與他的同伴對於如何處理<span class="global_name_span">艾莉</span>產生分歧，<span class="global_name_span">狄娜</span>趁著兩人爭吵之際，出手擊斃<span class="global_name_span">喬丹</span>同伴，自己卻失足掉落，眼見<span class="global_name_span">喬丹</span>要對心愛之人下殺手，<span class="global_name_span">艾莉</span>奮力解開束縛，拿起一旁的小刀就衝上去結果<span class="global_name_span">喬丹</span>的性命，在他的身上找到了其他復仇目標的線索。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UaGicRCCYxI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
