@@ -1,0 +1,170 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">第一話 - 聆聽無法言語之人的聲音</option>
+  <option value="2">第二話 - 引導之詩</option>
+  <option value="3">第三話 - 背負翅膀之人</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">第一話 - 聆聽無法言語之人的聲音</option>
+  <option value="2">第二話 - 引導之詩</option>
+  <option value="3">第三話 - 背負翅膀之人</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">第一話 - 聆聽無法言語之人的聲音</div> <p>經過一整天的戰鬥，本來大夥正準備回去好好享受放鬆一下，<span class="global_name_span">阿爾德</span>卻若有所思地想暫時離隊，可疑的舉動、態度讓<span class="global_name_span">莉卡</span>一度以為這木頭人是想去偷偷跟女孩子幽會。</p> <p>原來<span class="global_name_span">阿爾德</span>只是想去［科林達平原］放鬆下心情，這裡四處飄散著四大精靈的碎片，與<span class="global_name_span">伊甸</span>體內的東西十分相似，雖然旅途中一直被拯救其他人的任務給耽擱，但只要每次來到這裡都能直視自己的內心，想起［拯救<span class="global_name_span">伊甸</span>］的旅途初衷。</p> <p>看著<span class="global_name_span">阿爾德</span>獨自在平原上的孤獨身影，<span class="global_name_span">謝奈</span>忍不住上前搭訕，難得遇到了可以傾聽的人，<span class="global_name_span">阿爾德</span>開始說起關於<span class="global_name_span">伊甸</span>的故事。</p> <p>此時畫面一轉，時間回到數天前的西方之地，一名面色蒼白的白髮男子正從高處以頭下腳上的姿勢向下墜落，在即將觸地的那一刻，男子身體散發出耀眼的金色光芒，替他緩衝了大部分的下墜力量，人就落在了救世主雕像之上。石像頓時應聲破碎，一旁正在禱告的<span class="global_name_span">玫莉娜</span>見狀立馬上前關心，交談中得知男子名為<span class="global_name_span">古拉爾迪</span>，而且似乎很早以前就已經認識<span class="global_name_span">玫莉娜</span>。</p> <p>墜落的巨大聲響也引起其他教會成員的注意，首先抵達現場的是<span class="global_name_span">普萊</span>、<span class="global_name_span">蘿潔塔</span>，但<span class="global_name_span">古拉爾迪</span>對他們的提問並沒有理會，隨著腦中呼喚的聲音來到了［結晶塔］的大門前，這座塔是西方大陸上目前唯一可以收取神明恩惠的地方，掌管這座塔的是被稱為［守塔人］的一族，若沒有［守塔人］的許可是無法解開大門上的術式。</p> <p><span class="global_name_span">古拉爾迪</span>此時只是默默上前，雙手向外一揚，大門立即開啟，由於神的恩惠日漸減少，<span class="global_name_span">蘿潔塔</span>一行人決定跟著<span class="global_name_span">古拉爾迪</span>進入，監視的同時順便調查［結晶塔］內的真相，但塔頂的景象卻讓眾人震驚了，原本該是接受恩惠的神聖場所，竟然布滿了鎖鏈，據<span class="global_name_span">古拉爾迪</span>所言，正中間被束縛的晶體物件，就是教會口中的神，看樣子是被人拘束在塔頂強迫吸取力量。</p> <p>一時間教會的三人難以接受這樣的事實，<span class="global_name_span">古拉爾迪</span>也不管他們信不信，當下決定先解放這被束縛的晶體，但［守塔人］<span class="global_name_span">約翰</span>於此時趕到，一條從虛空中冒出來的鎖鏈［艾爾之鎖］正中<span class="global_name_span">古拉爾迪</span>阻止他的行動，而面對<span class="global_name_span">玫莉娜</span>等人的質問，<span class="global_name_span">約翰</span>也坦承不諱，隨即用壓倒性的力量結果了在場眾人。</p> <p><span class="global_name_span">古拉爾迪</span>見狀運起了神秘的力量，將時空回到入塔前的那一刻，為了不將<span class="global_name_span">玫莉娜</span>等人捲入這場紛爭而犧牲，<span class="global_name_span">古拉爾迪</span>不斷倒退時空、用盡辦法、嘗試了各種可能，最後成功甩開大家獨自進塔，在塔頂與［守塔人］<span class="global_name_span">約翰</span>的對決中敗下陣來，失足跌落塔下，半空中那神秘的金色光芒再度亮起.....</p> <p>此時位於中央大陸的<span class="global_name_span">阿爾德</span>，剛好說完關於<span class="global_name_span">伊甸</span>的故事，並與<span class="global_name_span">謝奈</span>約定再次見面，沒想到<span class="global_name_span">莉卡</span>一語成讖，最後真的變成<span class="global_name_span">阿爾德</span>背著眾人偷偷幽會。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qOXrbaRQO4I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
