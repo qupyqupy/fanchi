@@ -1,0 +1,171 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">故事劇情</option>
+  <option value="2">全部結局分支</option>
+  <option value="3">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">故事劇情</option>
+  <option value="2">全部結局分支</option>
+  <option value="3">挑戰</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">故事劇情</div> <p>這次的新年活動，<span class="global_name_span">傑利奧魯</span>夫妻倆準備舉辦一個全民都可以參與的活動，主要是由各陣營的英雄拿出可以喚起大家美好回憶的物品，經由全民票選來決定勝利冠軍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SZh5zJm3C2s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>光輝陣營由<span class="global_name_span">雷丁</span>為<span class="global_name_span">克麗絲</span>準備了浪漫燦爛的花火，與其說是為了參賽準備，不如說只是為了單純放閃而已。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XO7Hi4hmyyc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>戰略陣營則想到以一場表演的方式來喚醒人們美好的回憶，經過一段又一段臭長的台詞，<span class="global_name_span">海恩</span>將眾人的聲音都錄了下來，準備製作成一場東方皮影戲來參賽。</p> <p>而最後忽然闖入的流星陣營角色似乎引起戰略陣營的不滿，Buff上滿後，以<span class="global_name_span">亞魯特繆拉</span>為首，開始對<span class="global_name_span">迪哈爾特</span>展開追擊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XQv-9kHg7ps?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>帝國陣營似乎對參賽興趣缺缺，不過在主辦方的努力下，<span class="global_name_span">巴恩哈特</span>最後也拿出幹勁，製作了新年特製版的洋菓子參戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WqAxAW7E-H8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>本來算是公主陣營的<span class="global_name_span">拉娜</span>這次被逼加入黑暗陣營與一群魔族一起準備參賽物品，這些人的想法與常不同，本來想以新年集會的方式來製造過年的熱鬧氣氛，但魔族眾人兩三句就沒好話，看來是不適合服務業。</p> <p>正覺得一切都沒希望時，才睡個覺醒來<span class="global_name_span">波贊魯</span>等人像是吃錯藥一樣，整個會場變得井然有條，最後以［賀歲年貨］參戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vhy3z_TyS8c?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>被戰略陣營追殺後幾天，流星陣營苦惱著想不到該用甚麼參戰，在<span class="global_name_span">迪哈爾特</span>的無意提醒下，<span class="global_name_span">古巨拉</span>提議製作一道［年年有餘］的菜品參戰，但獲得食材的手段卻不太光明。</p> <p><span class="global_name_span">迪哈爾特</span>為了拿到黃金海的魚，用武力擊暈了黑貓<span class="global_name_span">傑克</span>，這也為之後活動埋下了隱患。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zC-MDEwkZ88?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>公主聯盟有<span class="global_name_span">雪莉</span>在，自然是各陣營中最容易出問題的那個，為了拿取［祝福年賀狀］，將扮成金幣獸的師傅<span class="global_name_span">阿倫</span>打傷。</p> <p>原來<span class="global_name_span">阿倫</span>是想要給大家寄送卡片才準備了金幣獸這麼一齣裝扮，現在這一切都被<span class="global_name_span">雪莉</span>搞砸了，但她是個心地善良的女孩，很快就反思己過，最後以充滿回憶與反省的［祝福年賀狀］參戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4qdVjMYhCsg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>終於到了投票那日，但主辦方的<span class="global_name_span">艾梅達</span>卻在過程中被人綁架，而對方指名要用英雄們的比賽方案來贖人。</p> <p>但眾英雄身經百戰，怎麼會如此輕易妥協，各大陣營最後合力揪出幕後黑手黑貓<span class="global_name_span">傑克</span>，為了紀念這次的拯救行動，主辦方決定讓所有陣營都並列第一，大家也在歡樂中度過了這難忘的活動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UPuA9Qj3LuU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">全部結局分支</div> <p><span class="global_name_span">利昂</span>拿的［皮影戲門票］因為不能吃，所以黑貓<span class="global_name_span">傑克</span>完全不感興趣，但是因為可以換錢的關係，還是勉強接受了。</p> <p>而<span class="global_name_span">利昂</span>由於門票、道具都被搶走，為了比賽能順利進行，臨時決定讓戰略陣營為大家帶來真人演出，這令人激賞的想法馬上衝高了戰略的得票率，意外地拿到了此次比賽的冠軍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/29WPOgTDmzA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">拉娜</span>拿著物品來贖人，卻意外見到了魔族一夥，原來<span class="global_name_span">波贊魯</span>等人決定用魔族的方法來解決這起事件，要比惡誰能比魔族更惡，黑貓<span class="global_name_span">傑克</span>自然被制伏得服服貼貼。</p> <p>最後<span class="global_name_span">艾梅達</span>被施展禁錮魔法，<span class="global_name_span">拉娜</span>被迷暈，冠軍獎品也因此落到了魔族手中。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Txq3Kvx5XJg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>黑貓<span class="global_name_span">傑克</span>的仇人<span class="global_name_span">迪哈爾特</span>拿著［年年有餘］來贖人，但物品交出去後，卻忘記問人在哪？還好其他英雄及時提醒，於是拯救行動的番外篇即將展開。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DXJHe_sLC8c?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>收到［煙火］的<span class="global_name_span">傑克</span>很乾脆地交代了與<span class="global_name_span">迪哈爾特</span>的恩怨情仇後，便釋放了<span class="global_name_span">艾梅達</span>，而<span class="global_name_span">雷丁</span>則因為這次的奉獻行為，直接成為了冠軍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/l8b9fIC_CY8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>黑貓<span class="global_name_span">傑克</span>為了拿很多的金幣，跟著<span class="global_name_span">雪莉</span>前去尋找哥布林，因此把<span class="global_name_span">艾梅達</span>隨便放著就離開了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eDBYiD4YyXc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>禁不住<span class="global_name_span">巴恩哈特</span>帝王的威勢，<span class="global_name_span">傑克</span>拿了洋菓子就迅速離開現場，而帝國陣營也因為這帥氣的威逼，迅速提升了票數，成為冠軍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1vUAZKS093I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">挑戰</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aAf8R4e1Ntc?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mPYqqs0wAFI?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_lrsKFcik1s?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/a0yuzYXIies?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-64SXU1lPXg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
