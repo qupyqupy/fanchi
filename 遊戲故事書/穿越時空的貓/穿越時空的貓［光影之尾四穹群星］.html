@@ -75,7 +75,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 </style>
 
 <hr />
-<p><label>選擇：</label> 
+<p><label>劇情：</label> 
 <select id="head_select" style="width: 40%;">
   <option value="1">序章</option>
   <option value="2">第一話 - 數個交織的故事</option>
@@ -84,12 +84,18 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   <option value="5">支線任務</option>
   <option value="6">料理任務</option>
  </select>
+ <label>小劇場：</label> 
+ <select id="head_select_m" style="width: 40%;">
+  <option value="1">劇場 01_10</option>
+  <option value="2">劇場 11_20</option>
+ </select>
  </p>
 
 <hr />
 <div id="ch"></div>
 
-<p><label>選擇：</label> 
+<hr />
+<p><label>劇情：</label> 
 <select id="foot_select" style="width: 40%;">
   <option value="1">序章</option>
   <option value="2">第一話 - 數個交織的故事</option>
@@ -98,14 +104,19 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   <option value="5">支線任務</option>
   <option value="6">料理任務</option>
  </select>
+ <label>小劇場：</label> 
+ <select id="foot_select_m" style="width: 40%;">
+  <option value="1">劇場 01_10</option>
+  <option value="2">劇場 11_20</option>
+ </select>
  </p>
 
-<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
 
 
 <hr />
 
 <script>
+   (function(){
   var contentArr = [] ;
   contentArr.push('');
   contentArr.push('<div class="title_text">序章</div> <p>在一個漆黑的空間裡，一隻全身發出金黃光芒、型態若有似無的貓，正引導著<span class="global_name_span">克雷斯</span>前進，通過時空隧道後，眼前是一片綠意盎然的平原，眺望遠處還可以看到一個造型特異的城堡，此處正是［瑙亞路平原］。</p> <p>而<span class="global_name_span">克雷斯</span>的同伴<span class="global_name_span">敏特</span>、<span class="global_name_span">亞雀</span>也被發光的貓引來這個時空，三人在［月影之森］救了一個男孩子後，得知這小孩是為了讓性情大變的父母恢復原樣，才來到這危險之地，眾人還沒消化這些信息，小孩的父母竟然追到這裡，並且把小孩當場帶走，<span class="global_name_span">克雷斯</span>等人礙於身分也不便阻止。</p> <p>眼前千頭萬緒，這時<span class="global_name_span">亞雀</span>看到遠方有個村落，眾人決定先前往打探情報，再決定下一步該如何走。</p> <div class="global_ps_text"> <p>02:21 - OP。</p> </div> <div class="global_ps_text"> <p>遊戲取向真的太明顯了，<span class="global_name_span">克雷斯</span>竟然只有女性同伴跟著來，<span class="global_name_span">柴斯達</span>、<span class="global_name_span">庫拉斯</span>被完全忘掉了。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WI0Ohr6skv0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在未來<span class="global_name_span">考古學愛好者</span>正在欣賞古物之際，房內忽然開啟了時空隧道，一名黑髮女子<span class="global_name_span">薇爾貝特</span>一臉茫然的出現在眼前，看她的裝扮還以為是 cosplay 的特殊愛好者。</p> <p>在<span class="global_name_span">考古學愛好者</span>建議下，<span class="global_name_span">薇爾貝特</span>決定先四處逛逛，碰巧遇到大街上因為入侵民宅，正被［EGPD］包圍的<span class="global_name_span">瑪琪露</span>，當場被拖下水的<span class="global_name_span">薇爾貝特</span>擊敗了［EGPD］後，被一名紅眼白髮的男子以奇術表演團的藉口解了圍。</p> <p>男子簡單向兩人介紹自己，並且建議先取得［市民編號］以便在城市內自由行動後，瀟灑地走出門口。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aS1lM_-3eiE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>追著發光的貓來到古代的<span class="global_name_span">蜜樂</span>與同樣來到這個時空的<span class="global_name_span">羅嚴</span>依照現有的情報推斷出這裡屬於異世界。</p> <p><span class="global_name_span">蜜樂</span>想要透過與精靈的溝通獲得更多的情報，但這世界的精靈似乎因為某種原因失去了本性，擊敗牠們後，<span class="global_name_span">蜜樂</span>施法讓眾精靈解除了洗腦的控制。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/D5ciLa7_OZQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>來到這時空的<span class="global_name_span">由利</span>才剛踏出時空隧道，便跌進了陰暗潮濕的枯井之中，邊抱怨邊爬出井口後，眼前是一副氣派繁榮的景象，這裡便是現代的王城［悠尼岡］，夥伴<span class="global_name_span">拉彼特</span>同樣也來到此地。</p> <p>兩人在街道上逛著，解決了貴族欺凌村民的事件，並且遇到了之前<span class="global_name_span">克雷斯</span>解救的小男孩，以此為契機與<span class="global_name_span">克雷斯</span>相遇了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ua2ae4193iY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
@@ -118,20 +129,9 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   var firstEnter = 0 ; 
   var nowPage = 1;
   var maxCount = contentArr.length - 1;
-  var prevBtn = document.getElementById("prev");
-  var nextBtn = document.getElementById("next");
   var headSelect = document.getElementById("head_select");
   var footSelect = document.getElementById("foot_select");
   
-  prevBtn.onclick = function () {
-    nowPage --;
-    initPage(nowPage);
-  }
-
-  nextBtn.onclick = function () {
-    nowPage ++;
-    initPage(nowPage);
-  }
 
   headSelect.onchange = function () {
     initPage(headSelect.value);
@@ -146,19 +146,6 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     nowPage = value;
     document.getElementById("ch").innerHTML = contentArr[value];
 
-    if (value == 1) {
-      prevBtn.disabled = true ;
-    }
-    else {
-      prevBtn.disabled = false;
-    }
-
-    if (value == maxCount) {
-      nextBtn.disabled = true ;
-    }
-    else {
-      nextBtn.disabled = false;
-    }
     
     if (firstEnter == 0) {
       firstEnter = 1 ; 
@@ -171,6 +158,44 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   }
   
   initPage(1);
+  })();
+
+  (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">這裡到底是？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VdfSDbUlLek?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不明所以的地方</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z-SvzeUDP7s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">精靈的感覺</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KdOeNpUtq3s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">相通的心靈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7VqlxZIi8BI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">克雷斯的夥伴</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8oTc-hKDbfk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">小心那個遲鈍的傢伙</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xEEjR14wPbo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">刀劍兄弟團</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/J_o1j6HkII4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">總是在著急的時候</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lgxMUkdN4-U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">復仇的盡頭</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PJVxuwth9CM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">獵頭行動開始</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JgwgRr1_qpc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  })();
 </script>
 <p>&nbsp;</p>
 
