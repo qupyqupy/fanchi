@@ -1,0 +1,169 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">01.德魯恩的遺產</option>
+  <option value="2">02.陌生人</option>
+  <option value="3">03.報應</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">01.德魯恩的遺產</option>
+  <option value="2">02.陌生人</option>
+  <option value="3">03.報應</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">01.德魯恩的遺產</div> <p>在一個陽光美好的早晨，<span class="global_name_span">艾蜜西亞</span>與父親在森林中練習投石索，此時家中飼養的獵犬似乎察覺到甚麼？失控地往森林深處跑去，原來是一頭碩大的野豬正在草叢中遊走，這身形足以讓一家人飽餐一頓。</p> <p>不過<span class="global_name_span">艾蜜西亞</span>畢竟經驗不足，一個閃神就讓野豬逃跑了，循著獵犬的聲音往前追蹤，沿途四周的氣氛越發詭異黑暗，蟲鳴鳥叫也漸漸消失，眼前出現的是一個不滿黑色不知名物體的地洞，而家中獵犬正氣若游絲的倒在洞邊，<span class="global_name_span">艾蜜西亞</span>正想上前施救時，一陣地動襲來，似乎有甚麼可怕的東西將獵犬拖入洞中，<span class="global_name_span">艾蜜西亞</span>的父親見狀連忙帶著女兒離開此地。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FlWO7EklbDQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>還沉浸在失去獵犬悲傷中的<span class="global_name_span">艾蜜西亞</span>回到了家園，但迎接他的將是更殘酷的事情，<span class="global_name_span">尼古拉斯</span>為了找到<span class="global_name_span">艾蜜西亞</span>的弟弟<span class="global_name_span">雨果</span>，帶領［宗教裁判所］士兵血洗了家園，<span class="global_name_span">艾蜜西亞</span>的父親也在這場浩劫中喪失了生命。</p> <p>兩姊弟在母親<span class="global_name_span">碧翠絲</span>的幫助下逃離了這危險的地方，但為了阻擋<span class="global_name_span">尼古拉斯</span>的追擊，<span class="global_name_span">碧翠絲</span>自願犧牲留下來斷後，並且指示<span class="global_name_span">艾蜜西亞</span>去尋找醫生<span class="global_name_span">勞倫提斯</span>治療<span class="global_name_span">雨果</span>身上的疾病，此時<span class="global_name_span">艾蜜西亞</span>並不知道弟弟身上的病就是這場悲劇的源頭。</p> <p>逃跑過程中，四周不斷有［宗教裁判所］的士兵襲來，此時地面突然發出詭異的震動，不知名的力量似乎在幫助兩姊弟，朝著［宗教裁判所］的士兵攻擊，終於兩人逃出生天。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bXmfqRy23K8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">02.陌生人</div> <p>適逢巨變的姊弟兩人途經一座村落，本想著可以在這獲得一些幫助，但這的村人卻視他倆為毒蛇猛獸，沒人肯伸出援手，大量老鼠帶來的疾病已經將人心啃噬殆盡，染疫者被綁在木樁上活活燒死，<span class="global_name_span">艾蜜西亞</span>姊弟更被當作災難的源頭遭到村人追殺。</p> <p>就當姊弟倆逃入一個死胡同，即將被捉住時，一名老太太<span class="global_name_span">克萊薇</span>及時開門拯救了他們。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yW15kWKQRjk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>經過一番修整<span class="global_name_span">艾蜜西亞</span>決定前往附近的教堂尋找線索，但此時村民又開始搜尋兩姊弟的下落，<span class="global_name_span">雨果</span>顯然不知道事情的嚴重性，還在房內肆意的發出聲響，一直吵著要見媽媽。</p> <p><span class="global_name_span">艾蜜西亞</span>逼於無奈只能說出父母犧牲的事實，<span class="global_name_span">雨果</span>一時間接受不了便獨自一人往屋外奔去，這下剛好與追擊的村民撞個正著。</p> <p>為了拯救弟弟，<span class="global_name_span">艾蜜西亞</span>只好拿起投石索結束了村人的性命，沒想到當初學的打獵技巧，如今竟然是運用在這裡。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VsKTNAXsjMg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
