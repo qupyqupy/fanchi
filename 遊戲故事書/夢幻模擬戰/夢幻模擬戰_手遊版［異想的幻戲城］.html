@@ -1,0 +1,168 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">故事劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">故事劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">故事劇情</div> <p>［魔導研究室］中，神秘人刻意引開<span class="global_name_span">安潔莉卡</span>，使用了［時空機器］召喚來自異世界的力量。</p> <p>另一方面<span class="global_name_span">馬修</span>等人收到了來自<span class="global_name_span">懷特茜茜</span>的委託信，似乎［浮空城］發生了不得了的事情，四周的居民都變得異常暴躁，眾人在附近遇到了村民正被盜賊襲擊，而兩名身著奇特鎧甲的男子正伸出援手。</p> <p>擊退盜賊後，村人中竟然有人懷疑兩名鎧甲男子可能是盜賊的內應，眼看著道理是講不通的，大夥只好直接離開。眼前的兩名男子叫做<span class="global_name_span">真田遼</span>、<span class="global_name_span">羽柴當麻</span>，據他倆所言［幻戲城］似乎就是引起村民暴燥的主因。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qywQG87SLKw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>同時［法魯贊利亞］也不平靜，異世界的邪惡魔王<span class="global_name_span">阿羅格</span>透過<span class="global_name_span">艾瓦爾</span>控制了四魔將掌握了魔之地的統治權，<span class="global_name_span">波贊魯</span>雖然身為魔族之王，但始終寡不敵眾。</p> <p>危急時刻，神祕女子<span class="global_name_span">迦游羅</span>現身救走了<span class="global_name_span">波贊魯</span>，她似乎是失去了記憶，在<span class="global_name_span">波贊魯</span>的嘴遁下，誤將他當作自己的主人［妖邪之王］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jlbx5t1CfBM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了尋找<span class="global_name_span">迦游羅</span>口中那個能增加力量的鎧甲，<span class="global_name_span">波贊魯</span>來到了［浮空城］附近，沒想到卻與<span class="global_name_span">馬修</span>等人撞個正著。</p> <p>一番打鬥過後，眾人得知<span class="global_name_span">波贊魯</span>如今的現況，既然有著共同的敵人<span class="global_name_span">阿羅格</span>，雙方決定暫時放下成見合作。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sdmcmXFQBy8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［浮空城］內亂象叢生，非但居民被［幻戲城］影響，心中的惡意被無限放大，連各個英靈也淪陷其中，與［雙子公主］會合後，眾人闖進了［幻戲城］。</p> <p>雖然變裝後的［雙子公主］成功打開了入城的機關，但沒想到獲得妖邪之力的帝王<span class="global_name_span">巴恩哈特</span>竟從門後冒出，他強大的力量讓眾人一時間無法闖過，此時身為魔族之王的<span class="global_name_span">波贊魯</span>決定犧牲自己牽制住<span class="global_name_span">巴恩哈特</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5PAwupaDpj4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>先行的<span class="global_name_span">迦游羅</span>等人遇上了城中被迷惑的英雄們，雖然最後成功喚醒了他們的意識，但<span class="global_name_span">艾瓦爾</span>卻在一旁趁隙偷襲，<span class="global_name_span">迦游羅</span>被［光砂］影響，竟被迷惑成為了<span class="global_name_span">阿羅格</span>的手下。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Vo7xqGOpjCE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>另一邊<span class="global_name_span">馬修</span>等人進到了［決鬥之間］挑戰，擊敗了在這被迷惑的英雄後，<span class="global_name_span">艾瓦爾</span>帶著<span class="global_name_span">迦游羅</span>現身此地，要一舉殲滅入侵的眾人。</p> <p>不過意外的是帝王<span class="global_name_span">巴恩哈特</span>的突然倒戈，讓<span class="global_name_span">艾瓦爾</span>促不及防連忙逃跑，原來雖然受到［妖邪之力］的影響，但<span class="global_name_span">巴恩哈特</span>硬是用強大的意志力擺脫了<span class="global_name_span">阿羅格</span>的操控，這也讓<span class="global_name_span">真田遼</span>由衷的佩服。</p> <p><span class="global_name_span">迦游羅</span>也在<span class="global_name_span">真田遼</span>的力量下恢復了神智，眾人準備向萬惡的禍首<span class="global_name_span">阿羅格</span>發起決戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cj4DFcApDDI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿羅格</span>的力量超乎想像，吸收［四魔將］後更使得眾人完全無法匹敵，危急時刻<span class="global_name_span">迦游羅</span>借用了聖劍之力，呼喚遠在異世界的鎧甲武士，穿越時空的羈絆使得［輝煌帝］降臨。</p> <p>在<span class="global_name_span">真田遼</span>的攻擊下，終於擊敗了<span class="global_name_span">阿羅格</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZHjTHVv_eoE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">挑戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/osVPJ0B0CXs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/r8a-lm8yA-Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JUePywJ_8YU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b9JXdqwRbsg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hGSL7uQIfXc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
