@@ -1,0 +1,188 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+
+<hr />
+
+<p><span class="global_name_span">小賽巴斯</span>突然急著找<span class="global_name_span">阿爾德</span>一行人，但到了她家後，一名合成人類突然出現挾持了<span class="global_name_span">小賽巴斯</span>。</p> 
+
+<p>迫於無奈，眾人只好跟著合成人類來到此處的一個密室中，這裡有著一台怪異的巨大機器，<span class="global_name_span">阿爾德</span>一直藉機尋找空隙，終於給予合成人類致命的一擊，但沒想到這只是<span class="global_name_span">小賽巴斯</span>自導自演的一齣戲。</p> 
+
+<p>原來眼前的機器是一個戰鬥模擬裝置，<span class="global_name_span">小賽巴斯</span>的目的就是利用這台機器收集<span class="global_name_span">阿爾德</span>他們的戰鬥數據，雖然有些懷疑，但能利用裝置進行戰鬥訓練也不是個壞事......</p> 
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_IXbcn5Y5SQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<hr />
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">照亮時空黑暗之人的試煉</option>
+  <option value="2">照亮時空黑暗之人的試煉EX</option>
+  <option value="3">過去的事件紀錄</option>
+ </select>
+ </p>
+
+<hr />
+
+
+<div id="ch"></div>
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">照亮時空黑暗之人的試煉</option>
+  <option value="2">照亮時空黑暗之人的試煉EX</option>
+  <option value="3">過去的事件紀錄</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">照亮時空黑暗之人的試煉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DnusuHZXXvA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KrW8Q9zjOBg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uJaO4QuKFsk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-jqiZmvGke4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/10l3w8GZ1Ok?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xwp9Kt_rcgI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jTfK2Bbfhys?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">照亮時空黑暗之人的試煉EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pc6B_eHuiIc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YCS57ybcCZ4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6ip5vm7KPNU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">觸發對話</div> <p><span class="global_name_span">阿爾德</span>似乎是把模擬戰鬥裝置用壞了，經過<span class="global_name_span">小賽巴斯</span>調查後發現［戰鬥脈動］所造成的現象，讓模擬裝置內產生的敵人激似於一種生命體，以此為基礎便可以收集到曾經戰鬥過敵人的記憶。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tqMTDX_uris?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">兩個嘉里德</div> <p><span class="global_name_span">嘉里德</span>在與<span class="global_name_span">阿爾德</span>戰鬥之前，曾經與假冒他的合成士兵戰鬥過，身為特殊機型的他輕而易舉就贏過了對方，不過<span class="global_name_span">嘉里德</span>並沒有痛下殺手，反而放假冒者離去......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/P-lODfb-33I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
