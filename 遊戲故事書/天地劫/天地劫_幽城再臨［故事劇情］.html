@@ -1,0 +1,187 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">序幕 時輪之劫</option>
+ </select>
+ <label>支線劇情：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  <option value="1"></option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">序幕 時輪之劫</option>
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+  <option value="1"></option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">序幕 時輪之劫</div> <p>故事發生在［神魔至尊傳］百年後，正值南宋時間，各地兵荒馬亂不斷，而就是在這亂世之中，一種不知從何處而來的災難［蝕災］於各地禍害人間。</p> <p>一處大雪山中，守護人間千年的［時輪宮］坐落此地，一名白髮少年<span class="global_name_span">尉遲良</span>悠閒地坐在屋頂吹奏著一曲蕭瑟，［時輪宮］女弟子<span class="global_name_span">虞兮</span>循著樂聲找到了他，兩人一如既往聊著關於這曲子的來歷，但畢竟是夢境，真要查個真相卻是半點也沒線索。</p> <p>話完家常，<span class="global_name_span">虞兮</span>便遵從師命帶著<span class="global_name_span">尉遲良</span>前往禁地，眼前所見是一個巨大的金色機巧［時輪儀軌］，這便是<span class="global_name_span">觀幻尊者</span>交給<span class="global_name_span">尉遲良</span>維修的任務。</p> <p>但這天一名蒙面黑衣女子突然入侵［時輪宮］，意欲奪取當中的重要零件［星晷刻盤］，眼見就要得手之際，<span class="global_name_span">尉遲良</span>奮力將其打碎，黑衣女子見狀怒不可遏，要下殺手之際，從［時輪儀軌］中走出兩人，正是<span class="global_name_span">夏侯儀</span>與<span class="global_name_span">殷劍平</span>。</p> <p>在兩位英靈的幫助下，黑衣女子自知不敵，急忙撤退。然而經此一役<span class="global_name_span">觀幻尊者</span>天命已至，交代兩人前往［三岩］面見<span class="global_name_span">不動尊者</span>後，便化為光點飛往天際。</p> <p>是夜，兩人在野外生火扎營，突然見到一名金眸少女遭到［玄冥教］追趕，為首的是一個頭戴獸骨的魁武男子<span class="global_name_span">白首</span>，從他口中得知［時輪宮］為了抵禦外敵，啟動了某種法陣與敵人同歸於盡，當下似乎已經沒見半個活口了，既已敵我分明，兩人便連同金眸少女<span class="global_name_span">鹿昭依</span>與其一戰，但<span class="global_name_span">白首</span>身手了得，三人最後只能趁隙施法逃跑。</p> <p>正當<span class="global_name_span">白首</span>準備前去追趕時，之前襲擊［時輪宮］的黑衣女子突然現身，聽<span class="global_name_span">白首</span>尊敬地叫她［聖女］，這人在［玄冥教］中的地位應該頗高，聽聞金眸少女一事，女子心中立即盤算，思慮再三後決定支走<span class="global_name_span">白首</span>，似乎教中有另一股勢力與其相對，彼此間有著錯綜複雜的利害關係。</p> <p>另一邊逃走的<span class="global_name_span">尉遲良</span>三人，經過彼此介紹後，得知<span class="global_name_span">鹿昭依</span>來到［時輪宮］是為了學［除蝕之法］［明清心法］，但這可是［時輪宮］的不外傳祕法，<span class="global_name_span">鹿昭依</span>知道自己學不到以後也只能心裡暗自嘴罵。</p> <div class="global_ps_text"> <p>所謂［蝕災］可以把它想象成是一種空氣汙染，災區初期會漸漸被［蝕霧］壟罩，隨著汙染加劇，會出現有實體的怪物［蝕怪］，此時若有人利用法陣力量凝結［蝕氣］，則會產生巨大的怪物［煞］。</p> </div> <div class="global_ps_text"> <p>［星晷刻盤］出自［幽城幻劍錄］，乃是<span class="global_name_span">霍雍</span>製造用來控制［九渾天動儀］的裝置，在原作最後時輪三尊者想利用天動儀徹底關閉整個幽界，卻遭到<span class="global_name_span">羅喉神</span>的神力反撲，［九渾天動儀］瞬間崩壞，而當中的［星晷刻盤］便被［時輪宮］保管起來。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_YK_3Pk8vzM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>前往［三岩］的路上因為雪崩，三人只好繞道一處洞窟，沒想到這裡竟是［夜魑］的巢穴，牠們的狀況十分怪異，寧願戰死也不逃跑，將［夜魑］消滅殆盡後，總算發現了原因，一堆乾草上躺著三隻［夜魑］幼崽，眼下大錯已成，<span class="global_name_span">鹿昭依</span>於心不忍最終收養了這群幼崽。</p> <div class="global_ps_text"> <p>此處劇情是致敬［神魔至尊傳］的第一關。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Hl3CD0gDK40?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼續前進來到［貢嘎村］，此處已遭［蝕災］甚至已經到產生出［蝕怪］的嚴重程度，一名［獵蝕人］正在村內獨自戰鬥，三人見狀連忙出手相助。</p> <p>消滅了周圍［蝕怪］後，為了能讓村人繼續過著正常生活，不至於流離失所，<span class="global_name_span">虞兮</span>施展［明清心法］淨化此處的［蝕］，但術後自己卻突然喀血顯得十分虛弱，看來［明清心法］乃是傷己助人的法術，原理是以自身為容器吸進附近的［蝕］才得以淨化。此時<span class="global_name_span">不動尊者</span>因感受到時輪祕法的施術波動，千里傳音喚三人上［三岩］相見。</p> <p>另一邊［玄冥教］處，聖女與一名神秘的男子<span class="global_name_span">幽篁先生</span>討論關於［星晷刻盤］的事情，得知［星晷刻盤］碎落四處，<span class="global_name_span">幽篁先生</span>卻仍氣定神閒，將搜尋碎片一事交託給聖女去完成，自己則與一名［未名魂魄］講著這前後百年自己籌畫的陰謀。</p> <div class="global_ps_text"> <p>07:56 - 此處<span class="global_name_span">幽篁先生</span>語道［星晷刻盤］又碎，從這語氣不難發現，這人的真實身分不是<span class="global_name_span">夏侯儀</span>就是<span class="global_name_span">皇甫申</span>，因為［星晷刻盤］在［幽城幻劍錄］時期就曾經碎過一次。</p> <p>08:39 - 此處的［未名魂魄］，看衣著我猜應該是百年前的時輪尊者，至於是天動儀毀時喪命的時輪三尊者，還是後來倖存的<span class="global_name_span">彌蘭納巴</span>就不得而知了。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KXc79guMsTM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［三岩］這［蝕災］也十分嚴重，就連［煞］都被凝聚出來，<span class="global_name_span">不動尊者</span>喚來三人，並教<span class="global_name_span">尉遲良</span>使用［時之印］招喚出英靈助戰。</p> <p>收拾了［煞］以後，<span class="global_name_span">不動尊者</span>大概也猜到［時輪宮］應劫一事，於是將尋回［星晷刻盤］的任務交託給<span class="global_name_span">尉遲良</span>，並囑咐<span class="global_name_span">虞兮</span>教其［明清心法］後便獨自離去。</p> <div class="global_ps_text"> <p>11:35 - <span class="global_name_span">李盈鳳</span>與<span class="global_name_span">青蘿</span>聊著關於生前的事情。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rmvKyL2eykU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+  (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  })();
+</script>
+<p>&nbsp;</p>
+
+
+
+
