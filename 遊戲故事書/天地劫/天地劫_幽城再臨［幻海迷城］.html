@@ -1,0 +1,162 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p>這個活動的文言文真是B格突破天際，雖然造成一定的理解障礙，但這才是天地劫系列該有的傳統，想當初會入［漢堂］的坑，就是因為［天外劍聖錄］那豐富的文學用語。</p>
+
+<p>OP 動畫配上文字可以簡單理解成周安王十九年（大約是春秋戰國時代），羅睺創造的祭劍雙使來到了［明界］準備實行羅睺神的計畫，而這一整個活動其實也是交代了<span class="global_name_span">霍雍</span>、<span class="global_name_span">冰璃</span>來到［明界］後的故事。</p>
+
+<div class="global_ps_text">
+<p>世界上曾有一座迷城，關於它的事情，沒有被歷史所記載。不過自古天地運行，任何事情皆會留下痕跡，善用者便可從中進行探查。（這邊我理解為觀天象）</p>
+<p>周安王十九年，天現熒惑守心的大凶之象，各地諸侯並起，天下大亂。</p>
+</div>
+
+<div class="global_ps_text">
+<p>OP 的旁白，我覺得倒數第二句可能是錯的，［授殷天下］應該改成［授周天下］，因為周安王是戰國開始的第一個天子，殷商早就給周滅了，這時候冒出來殷商有點不對。</p>
+</div>
+
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2p00gfryPWo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">劇情</div> <p>活動的劇情並沒有照時間順序依次開啟，可以把各幕當成獨立的小故事。</p> <p>就在<span class="global_name_span">霍雍</span>、<span class="global_name_span">冰璃</span>即將完成［羅睺］交代的任務時，一個神祕的聲音企圖引導著<span class="global_name_span">冰璃</span>直面自己的內心。</p> <p>循著聲音來到一處村莊，竟在此地碰上了首代的祭劍雙使<span class="global_name_span">陽寰</span>、<span class="global_name_span">陰歙</span>，兩人隱約察覺到<span class="global_name_span">冰璃</span>逐漸改變的內心，直言要抓她回［幽界］向［羅睺］請罪。</p> <p>擊敗<span class="global_name_span">陽寰</span>、<span class="global_name_span">陰歙</span>後，一名神秘女子現身，看來這一切都是這女人創造出來的幻覺，而她的目的就是想為［明界］免去一場災難。</p> <div class="global_ps_text"> <p>原作中<span class="global_name_span">陽寰</span>、<span class="global_name_span">陰歙</span>因為是以［羅睺］的審美觀創造出來的，所以沒辦法承擔進入［明界］的任務，因此［羅睺］才又創造了<span class="global_name_span">霍雍</span>、<span class="global_name_span">冰璃</span>。</p> </div> <div class="global_ps_text"> <p>神祕女子是蒙古古神<span class="global_name_span">白鹿</span>，主線中有介紹其為［夢境之主］，可想而知，經由夢境她一定也察覺到<span class="global_name_span">霍雍</span>、<span class="global_name_span">冰璃</span>內心的真正想法，因此才現身引導。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZZwb1_Q_izM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［元朔五年］<span class="global_name_span">霍雍</span>進漢宮尋找降下［幽城］的方法，然而在這卻遇上了女媧神識繼魂轉世的<span class="global_name_span">李夫人</span>，雖然雙方是敵對陣營，但<span class="global_name_span">李夫人</span>並沒有要立即與<span class="global_name_span">霍雍</span>為敵的意思，也許是女媧神識看到了屬於祭劍雙使之後的命運，就讓一切順著原有的天道宿命發展吧。</p> <p>待<span class="global_name_span">霍雍</span>離去後，神將<span class="global_name_span">相胤</span>來找<span class="global_name_span">李夫人</span>想要取其魂魄創立［神闕宮］，只因經過不斷轉世，女媧神性已經越漸淡薄，日後繼承女媧神識的人，經過幾世沾染塵世間的雜念，不見得會以天下蒼生為己任，甚至可能成為萬惡的起源，為了防止這樣的情況發生，決定更進一步以雙魂融一軀的方式，讓每代［齋女］繼承女媧神識時，有了調整其性格的機會。</p> <p>而早前離開的<span class="global_name_span">霍雍</span>既然在漢地找不到想要的東西，便決定把目標鎖定在西域。</p> <div class="global_ps_text"> <p>［元朔］是西漢的年號。</p> </div> <div class="global_ps_text"> <p><span class="global_name_span">相胤</span>說［神闕宮］以後不會帶有記憶的活人，這句話可能是指之後［神闕宮］內有的是以創命之法創造的人偶，或者是每代［齋女］接替之時，會以某種祕法刪除宮人記憶。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mg4hYMhYYXU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">白鹿</span>與<span class="global_name_span">欒</span>正在［莫高窟－千佛洞］敘舊，卻突然發現有人企圖闖入。</p> <p>來者竟是<span class="global_name_span">霍雍</span>，由於此地靈脈充盈，正好適合構築［九渾天動儀］，但<span class="global_name_span">白鹿</span>身為蒙古古神，怎會任由祭劍雙使在此處建造降下［幽城］的裝置，於是雙方便打了起來。</p> <p>這場戰鬥異常激烈，但所見全是<span class="global_name_span">白鹿</span>藉由兩人執念化作的幻象，戰鬥之中，<span class="global_name_span">白鹿</span>隱約感覺到<span class="global_name_span">霍雍</span>其實只是慣性執行著［羅睺］交與他的任務，其內心並不知道自己真正想要甚麼？這似乎是日後一個可做轉圜的地方。</p> <div class="global_ps_text"> <p>這<span class="global_name_span">欒</span>應該就是經常在<span class="global_name_span">鹿昭依</span>口中聽到的人，看其外表還有壽命之長，推測應該是［地界］的大人物。</p> </div> <div class="global_ps_text"> <p>［九渾天動儀］出自［幽城幻劍錄］，不過這段劇情的語音卻念錯成［九天渾動儀］。</p> </div> <div class="global_ps_text"> <p>雖然原著<span class="global_name_span">霍雍</span>似乎對降下［幽城］有著極大的執念，但是從<span class="global_name_span">夏侯儀</span>的誕生，還有其之後與［羅睺］的對抗，對<span class="global_name_span">冰璃</span>千年不變的依戀，都可以變相推測出<span class="global_name_span">霍雍</span>真正的內心。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LpmYjoQ_Keo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>藉著［于闐國］國主的指點，<span class="global_name_span">霍雍</span>在茫茫大漠黃沙中，尋找到了［樓蘭國］，此處乃［地脈節點］所在，對於建造［九渾天動儀］是再適合不過的地方了。</p> <p>這時的［樓蘭王］沉迷於［墨家］的機巧之術，<span class="global_name_span">霍雍</span>於是投其所好，成為其臣下，目的就是要以此掩人耳目，暗地裡完成［羅睺］交代的使命。</p> <p>［造九渾天動儀、打通幽明兩界］。</p> <div class="global_ps_text"> <p>這段劇情是補完［幽城幻劍錄］中，<span class="global_name_span">霍雍</span>進［樓蘭］之前的事情，以及埋下［墨家］是<span class="global_name_span">霍雍</span>所創的伏筆。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v05Q7LdV3Ek?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［于闐國］國主<span class="global_name_span">尉遲</span>修書一封與<span class="global_name_span">霍雍</span>，旨意為你我兩人皆在尋找天地運轉之規律，無論起初目的為何？我（尉遲）都想幫你完成這目標。信中流露著想與<span class="global_name_span">霍雍</span>結交之意，並且指明可到［賀蘭山］尋找線索。</p> <p><span class="global_name_span">霍雍</span>兩人到了此處，見此地地脈映射出天上星曜，諸般節點中凝出了［星之晶］，這景象竟與［羅睺城］中的某處相似，此時<span class="global_name_span">召祐</span>出現，言談中可知<span class="global_name_span">霍雍</span>曾為了尋找［星曜之力］前往［齊國］，只不過地脈流轉，當時的<span class="global_name_span">霍雍</span>並沒有找到。</p> <p>然而此處的［星之晶］絕非簡單，因［地脈］與［黃泉］連接著，［星之晶］又吸取了［地脈］的靈氣，因此會現出日後因<span class="global_name_span">霍雍</span>而死之人的身影，當清除了這些化出的影子後，地上的法陣突然啟動，此時<span class="global_name_span">霍雍</span>領悟到了要驅動［九渾天動儀］除了需要［星曜之力］還需［宿曜之陣］來引導這些力量，這恐怕才是<span class="global_name_span">尉遲</span>要他來此探查的原因。</p> <div class="global_ps_text"> <p>這裡對於［幻海黃泉］與［星曜之力］的解釋，還有<span class="global_name_span">夏侯儀</span>等人的身影為何會出現一事，我認為遊戲的世界觀並沒有［過去、現在、未來］之分，所有一切都能透過神識同步進行，這在主線劇情第五幕<span class="global_name_span">葛雲衣</span>讓<span class="global_name_span">尉遲良</span>前往［迦夏之窟］的橋段就可以看出端倪。</p> <p>這倒不是所謂的平行時空，而是一種［命定論］，因為知道了未來的發展，所以當下自己的選擇就要符合發展的方向，同時也能引導未來的人走在正確道路上，不管怎樣，命運的走向只有一條始終不變。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eZhC5opfocg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>戰國初年，田氏篡奪姜姓成為齊國諸侯，［齊桓公］創立［稷下學宮］，諸子百家皆可在此自由講學、著書論辯，而［康平］［墨矩］兩派也在此時以劍論道。</p> <p>［康平］以<span class="global_name_span">召祐</span>為首，而<span class="global_name_span">霍雍</span>則是［墨子］身分，最後［墨矩］勝出，<span class="global_name_span">霍雍</span>取代了<span class="global_name_span">召祐</span>［祭酒］的位置，真正的目的就是［齊國］境內的［泰山］，據傳此山乃是［地脈］［忘川］之源，或許可以從中查探出天地運轉之規律。</p> <div class="global_ps_text"> <p>原本姜齊為<span class="global_name_span">姜子牙</span>開創，但因後人沉溺於酒色，不理朝政，終被田氏取代，史稱［田氏代齊］。</p> </div> <div class="global_ps_text"> <p>這段劇情文言文不可直接翻譯，只可意會。但就劇情上來說，只是簡單交代［康平司］為<span class="global_name_span">召祐</span>所創，［墨矩］為<span class="global_name_span">霍雍</span>所創，至於這會在主線劇情中有怎樣的發展就蠻值得期待的。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mtmV25GLQ1w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>就在<span class="global_name_span">霍雍</span>即將降下［幽城］的前一刻，想起與<span class="global_name_span">尉遲</span>約定［千年後不得進入宿曜之陣］，但如今幽明兩界即將打通，這約定又有何意義？</p> <p>然而人算不如天算，［漢軍］於此時殺入［樓蘭］城內，最後<span class="global_name_span">霍雍</span>也被神將<span class="global_name_span">相胤</span>以［血龍璧］暗算身亡，留下千年後必會重臨的誓言。</p> <div class="global_ps_text"> <p><span class="global_name_span">尉遲</span>應該也是個能看透時間律法的人物，他早知<span class="global_name_span">霍雍</span>無法成功完成［降曜之儀］，才會與他做了千年約定。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LMp7KbOy1d0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>天地運行自成規律，［天幕］每六十年開啟一次，以此釋放累積在世間的怨念，但羅睺［祭劍雙使］已經掌握了當中規律，為免［羅睺眷族］趁機降下［幽城］，所以<span class="global_name_span">相胤</span>決定強行干涉天地之律，並以［時輪儀軌］禁錮世間怨念，而［時輪宮］便承擔起此一重擔。</p> <p>然而違反天地律法必將引起大禍，［天幕］緊閉而［時輪儀軌］還未建成，天地怨念不得疏通，其已凝聚為巨大的［幽煞］，［時輪尊者］見此大禍，決定犧牲自己施展［明清心法］盡納怨念於體內。</p> <div class="global_ps_text"> <p>這劇情解釋了［蝕災］出現的原因，而［煞］就是天地怨念所化，其對世間的傷害不亞於［幽城］降臨，可以說為了對抗［羅睺］，世間正道選擇了一條極端的道路，或可保一時太平，然後終有一日將面臨反撲。</p> </div> <div class="global_ps_text"> <p>此時的<span class="global_name_span">春蘭</span>不知道是化為［幽煞］還是召喚［幽煞］，但從對談中可以知道她屬於［諦聽］這個組織，本為渡怨而生，立場與如今的［時輪宮］可說是對立的，所以千年後<span class="global_name_span">春蘭</span>纏上<span class="global_name_span">殷無邪</span>，極有可能是［天玄門］掌握了甚麼可以渡化怨念的法門？</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-c6wKRrczqo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">挑戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3j5HDXQWYxo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZSPIo8JMU2M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/h37RhnDmNAU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/B2XUReeGcU4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/O3p6MCnMcN0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xhFVH58MW-o?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
