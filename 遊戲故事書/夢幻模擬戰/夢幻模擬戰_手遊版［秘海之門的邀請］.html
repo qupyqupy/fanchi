@@ -1,0 +1,168 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">故事劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">故事劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">故事劇情</div> <p><span class="global_name_span">希爾達</span>與<span class="global_name_span">海倫娜</span>來到［海上伊甸園］參加一個特別的真人遊戲，在經歷了<span class="global_name_span">艾梅達</span>舉辦的測試環節後，獲得了［巡查官］的角色，還有各自一套性感的泳裝。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KbNJDvLbgYo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">希爾達</span>兩人前往參加［音浪派對］，不過主演的［蝶影歌姬］卻意外收到另一個搖滾團體的挑戰書，身為［巡查官］首要就是維護遊戲的秩序，擊敗了以<span class="global_name_span">雷丁</span>為首的搖滾樂團後，同為音樂人的［蝶影歌姬］也感受到對方那炙熱的搖滾熱情，兩方最終化敵為友，共同為觀眾帶來特別難忘的演出。</p> <p>而<span class="global_name_span">希爾達</span>兩人收到了一個怪異的謝禮［應援擴音器］，與此同時兩人察覺到來參加真人遊戲的同伴似乎十分沉浸在各自的角色中，彷彿完全不認識自己一般。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ds9qFXi6qGc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼續前進來到一處大型的表演場，兩位魔術師正在爭奪［水晶玫瑰］而各自展現奇技，但因為會場的照明設備忽然暗了下來，<span class="global_name_span">蕾蒂西亞</span>在看不清的情況下，不慎將［水晶玫瑰］撞個破碎，本來是個無心之過，卻被在場魔術師當作［魔盜團］來盜寶而大打出手。</p> <p>眼見對方不講道理，<span class="global_name_span">希爾達</span>兩人隨即出手相助，然而對方人多勢眾，最終三人只得束手就擒，但實際上原本爭奪［水晶玫瑰］的那兩位魔術師才是［魔盜團］成員，驚覺抓錯人的<span class="global_name_span">沃爾納</span>連忙轉頭追人。</p> <p>而<span class="global_name_span">希爾達</span>三人則被化身［幽藍假面］的<span class="global_name_span">波贊魯</span>救出牢房，這個扮演反派快三年的可憐人物，終於也在這次活動帥了一次。</p> <p>看著眼前的<span class="global_name_span">波贊魯</span>，<span class="global_name_span">希爾達</span>意識到這遊戲並不簡單，每個參加的人似乎都忘記自己真正的身分，如果再這樣下去，夥伴們都將沉迷在遊戲世界，必須找到能讓眾人清醒的方法，而<span class="global_name_span">波贊魯</span>離開前，留下了［清醒藥劑］給眾人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PuR5w3tGIMY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">希爾達</span>三人來到一處莊園，希望能在此找到讓眾人清醒的辦法，剛好這邊在舉行餐會，於是便使計進入廚房，想在飯菜裡加入［清醒藥劑］讓大家恢復。</p> <p>然而人算不如天算，這一切違反遊戲規則的行為都被<span class="global_name_span">艾梅達</span>看在眼裡，突然現身在三人面前，並且施以懲罰將三人傳送到海邊沙灘，看來這次的大魔王肯定就是<span class="global_name_span">艾梅達</span>了。</p> <p>另外<span class="global_name_span">蕾蒂西亞</span>在被傳送前，手胡亂一抓，拿到了<span class="global_name_span">格尼爾</span>的［特製料理］，看那詭異的外觀，當屬黑暗料理的等級。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GcXXMLeb7so?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼續前進來到［迷霧之島］，這裡有個酒館充滿了來自不同時空的人物，在那必定能獲取一些有用的情報。</p> <p>果然酒館內遇到了偵探<span class="global_name_span">維拉</span>，他早就意識到這世界的不尋常，並且早在眾人前就開始調查，將自己的調查結果告知眾人後，<span class="global_name_span">艾梅達</span>查覺到了異樣，並現身將<span class="global_name_span">維拉</span>從這個世界抹去，接著警告眾人不要在違反遊戲規則後離去。</p> <div class="global_ps_text"> <p>不同時空的人聚集的酒館，我有理由懷疑這橋段有抄襲穿越時空的貓中的時空小站嫌疑。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1Er7V8Tnqiw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了不讓<span class="global_name_span">維拉</span>白白犧牲，眾人準備前往這世界的中心尋找破解之法，在航行的大海上卻遇上了<span class="global_name_span">艾梅達</span>佈下的伏兵，還好在正義夥伴的聯手下，成功擊敗了這群被控制記憶的英靈。</p> <p>而遭受到重創的英靈們，也紛紛恢復了記憶，接下來就是要面對最終大魔王<span class="global_name_span">艾梅達</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xXOS31DpSi4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>集齊之前旅程中獲得的道具，<span class="global_name_span">艾梅達</span>最終只能贏來落敗的下場，不過這一切真的就只是遊戲，純粹就是<span class="global_name_span">艾梅達</span>個人的惡趣味，當一切結束後，眾英靈反而有點想念在遊戲中扮演角色的幸福感。</p> <p>而背後搭建這舞台的另有其人，正是<span class="global_name_span">奧托克拉托四世</span>與<span class="global_name_span">盧克蕾蒂婭</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/t4qsnDm0eS8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">挑戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7u66uh2Zz7k?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fBUywMJSPGc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LaFNfOQl0Pk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ot4SpxFVyho?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/i7410FASBSE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
