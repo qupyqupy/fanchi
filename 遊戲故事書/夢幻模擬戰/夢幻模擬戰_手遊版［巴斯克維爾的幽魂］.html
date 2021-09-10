@@ -1,0 +1,171 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">故事劇情</option>
+  <option value="2">寶藏故事</option>
+  <option value="3">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">故事劇情</option>
+  <option value="2">寶藏故事</option>
+  <option value="3">挑戰</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">故事劇情</div> <p>三個小孩子在一家小酒館討論著最近的失蹤孩童事件，為首的［勇者］小弟弟正義之心大熾，便提議展開偵探遊戲調查。</p> <p>將目標鎖定在小鎮傳說的［巴斯克維爾的幽魂］，為了獲取關於這傳說的更多消息，於是三人來到了圖書館，但如果就這樣輕鬆獲取線索也未免太無聊了，所以［勇者］便幻想出與惡魔交戰的情節，這讓隨行的兩人有些哭笑不得。</p> <p>與［勇者］一起演完這齣大戲後，獲得線索的三人準備前往最近失蹤孩童的家裡調查，這時一個魔法師打扮的神祕女孩出現在三人面前.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rcuuz-gQky8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>從神祕女孩［魔法使］的口中得知，村子附近的沼澤地似乎有神秘的事件，這可讓［勇者］樂壞了，急忙拉著眾人前往調查，不過到了目的地依慣例還是得陪［勇者］玩一會兒［假想敵］的遊戲。</p> <p>演完大戲後，竟然真在山壁中找到一個隱藏入口，不過這似乎是［魔法使］刻意引導眾人的，入內後果然發現有人生活在此的跡象，更發現一本載有［獻祭］等邪惡字樣的書籍，隨後一個巨大的獵犬突然襲來，眾人自知不敵急忙烙跑。</p> <div class="global_ps_text"> <p>這巨大的獵犬，來自克蘇魯神話中的［廷達羅斯的獵犬］，一旦聞到有人穿越時空便會不死不休的追擊，這邊其實已經埋下了伏筆，說明［魔法使］就是不斷穿越時空遭到追擊的人。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/svb13yonNvs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>逃回村莊後，眾人皆餘悸猶存，只有［勇者］因為遇到真正的神秘事件而感到高興，從山洞中獲得的書籍記載得知，將有三份祭品，這或許跟失蹤的三個小孩有關。</p> <p>從記載的獻技日期還有些時間，眾人決定照原計畫去失蹤小孩家調查，調查其中一戶人家時，發現小孩似乎是為了買貴重的玩具，偷了家裡的錢而離家出走，這事情的發展似乎與想像中不太一樣。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_QX1ZtBmUZY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>畫面一轉，已經調查完第二個失蹤小孩的家後，眾人為了追查［燃燒獵犬］的線索，再度來到了沼澤地，卻被一群突然出現的［燃燒獵犬］追擊。</p> <p>好不容易擺脫了大批的［燃燒獵犬］，［廷達羅斯的獵犬］又如附骨之蛆追來，情況緊急［勇者］只好把手上所有的煙花全丟了出去，趁著［廷達羅斯的獵犬］的注意力被煙花吸引，眾人隨即趁機逃離。</p> <div class="global_ps_text"> <p>這［燃燒獵犬］就是出自［柯南道爾］的［巴斯克維爾的獵犬］，真身是被人為塗滿鱗粉的野狗。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WQEsvHZQdQA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>看來只有搞清楚真相，才能完全解決目前所遇到的這些怪事，眾人繼續調查最後一個失蹤小孩的家，但是結束調查後卻反而更茫然，對於三個失蹤小孩在哪還是毫無頭緒，這時候［魔法使］卻語出驚人地說，或與整起事件都與鎮上的教堂有關，幕後黑手也許就是被［勇者］三人視為母親的修女..........</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XM3tEaBBwI0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這樣的推測，讓［勇者］三人對［魔法使］充滿敵意，不過還沒來得及仔細討論，［廷達羅斯的獵犬］又追了過來，在眾人協力下，總算又成功擺脫追擊。</p> <p>經此一役，［勇者］三人也決定要調查清楚真相，眾人討論後便朝著教堂前去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xhsPbmaD44M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>故事在這邊分為兩個結局。</p> <p>［勇者］決定相信［修女］，但其實［修女］才是那幕後黑手，她的目的就是要藉著招喚惡魔讓小鎮的人們產生恐懼，因此重拾對教堂的信仰，而［魔法使］一直以來就是她理想中的祭品，不過因為［魔法使］不斷穿越時空，遭到［廷達羅斯的獵犬］的追擊，所以在即將被獻祭時，反而藉著這股力量逃離了束縛，再度穿越時空，希望這次能夠獲得［勇者］們的認同，一起阻止［修女］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/09QH7wLq40g?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［勇者］決定相信［魔法使］，最後眾人成功擊敗了［修女］，但沒想到她卻想以自身當祭品招喚惡魔，危急時刻，一個神祕的偵探身影突然出現，拯救了整個小鎮。</p> <div class="global_ps_text"> <p>在上一個活動的劇情，偵探犧牲自己阻止了教授，這次則受到［勇者］自我犧牲的精神感招，現身再度阻止邪惡的獻祭儀式，主要是闡述善良無私的奉獻才是長存人們心中的信仰，同時也是驅逐黑暗的聖靈。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4kEAcCGT48I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">寶藏故事</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YpGwOGxI7yc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lFRmTTFC92U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hLnmv2F8f3A?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/er1TOKhQz2k?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gemPsI6GYSw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zqNOhHbxV9I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">挑戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9ZPwey5kSJk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UVoXG06Wrxk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Xo55xBWTg0U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PiwKPCycK70?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bn8WfRM-oTs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
