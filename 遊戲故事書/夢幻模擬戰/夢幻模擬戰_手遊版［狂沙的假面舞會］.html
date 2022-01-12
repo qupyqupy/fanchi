@@ -1,0 +1,195 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+
+<hr />
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">荒野上的不速之客</div> <p>一名［商人］在破產之後，想試圖扭轉頹勢，重新登上首富地位，所幸未雨綢繆的她留有後手，之前為了逃避稅金，將所有非法交易的錢財都藏在荒嶺上的驛站．身邊不離不棄的［僕從］聽到這消息，為了轉移這些財產，高興地離開準備運輸工具。</p> <p>但沒想到，在等待的時間，忽然一堆人誤以為這裡是真正的驛站，一個接一個地準備待下來休息，這群人分別是：</p> <ul> <li>帥氣的［治安官］以及他正在押解中，看起來人畜無害，空靈動人的女孩．卻背負著12條人命的［嫌犯］。</li> <li>冷豔美麗、身材姣好的［落魄貴族］，似乎脾氣不怎麼好。</li> <li>渾身肌肉的［賞金獵人］。</li> <li>看似隨意卻有點深沉的［牛仔］。</li> </ul> <p>這些人的來到，顯然會對［商人］轉移不法所得造成阻礙，因此［商人］靈機一動，編織了一段匪徒即將襲擊驛站的謊言，可惜最後只嚇跑［牛仔］一個人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/x2VMi7pEzl8?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">被風沙掩埋的過去</div> <p>留下的眾人開始閒聊了起來，言談間［賞金獵人］想起自己曾經身為匪徒的回憶，並且暗自猜想著［難道即將前來的匪徒是自己曾經的同夥嗎？］，不過細想之下，卻又覺得匪徒來襲這件事情應該是［商人］的謊言，雖然現在猜不出來她有甚麼目的？但這一切其實對自己來說並不重要。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Aljr1Q-HD_k?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">一個嫌犯的獨白</div> <p>這時候［賞金獵人］把目標轉移到身負12條人命的［嫌犯］身上，據［嫌犯］所言，她是為了幫助一對私奔的情侶，而放火燒了一塊院子，才造成這些人命的消亡。</p> <p>但實情卻是，［嫌犯］與［治安官］就是她口中那對私奔的情侶。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_2yfLVRO98g?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">流金之宴的假面</div> <p>一旁的［落魄貴族］看出了在場眾人似乎都隱瞞著甚麼？而她自己其實也是個到處撞騙的假貴族，一邊回憶著自己的過去，一邊盤算著該如何發現眾人的祕密，而從中獲取利益。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cA6yipqJj48?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">危險的賭注</div> <p>［嫌犯］與［治安官］這對私奔的情侶正在討論現下的情勢，［治安官］無視［嫌犯］的擔心，只是虛偽的安撫著。</p> <p>原來［治安官］原本是個賭徒，因為欠下龐大的債務，才會答應與［嫌犯］私奔，實際上卻是想勒索她家族的財產，當然關於這些事實，［嫌犯］本人是不知道的。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HUJQ6G7ef-0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">讓虛妄的子彈飛舞</div> <p>眼下驛站內各股勢力都有自己的盤算，不過城府最深的還要屬［商人］，現在她趁著大家都睡著時，演了一齣匪徒已經要入侵驛站的戲碼，希望能藉此製造恐慌，讓其他人逃離驛站。</p> <p>卻沒想到驛站大廳竟真傳來幾聲槍響，眾人聞聲紛紛前往察看。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/438WuoZQfXQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">罪惡之地的終端</div> <p>大廳中，［商人］原先的［僕從］帶著一夥盜匪前來，原來［商人］之所以破產，就是因為［僕從］向警察告的密，這外表看似忠誠的［僕從］，設計了這一連串的陰謀，就是為了此刻聯同盜匪謀奪［商人］的財產。</p> <p>不過早前被嚇跑的［牛仔］及時趕到，原來他是真正的［警長］，原本以為是救星來到，但眾人早就被列在他的逮捕名單內，最終這一夥牛鬼蛇神全部被移送法辦，真是個歡樂的大團圓結局。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EYt2lFHA2aw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">異端的樂園</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yu4NGULB6lY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">虛偽的寶藏</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dtGBxdwGjKc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">瘋狂的史萊姆</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/i5BoxImTZds?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">大變人馬 牛仔的終極考核</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-UuZT2GRQdo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">黑暗化身 狂沙下的迷霧</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3vZt-934hNE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
