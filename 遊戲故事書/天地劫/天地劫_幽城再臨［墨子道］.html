@@ -1,0 +1,152 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">劇情（上）</option>
+  <option value="2">劇情（下）</option>
+  <option value="3">外傳</option>
+  <option value="4">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">劇情（上）</option>
+  <option value="2">劇情（下）</option>
+  <option value="3">外傳</option>
+  <option value="4">挑戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">部件節肢</div> <p><span class="global_name_span">尉遲良</span>受到［墨矩］的邀請，來到一處礦道，目的是修復一個機關蜘蛛。</p> <p><span class="global_name_span">阿秋</span>一看到這工具人前來，立馬給他換上一套［墨矩］的衣飾，現在的首要任務便是四處收集蜘蛛的特殊部件。</p> <p><span class="global_name_span">尉遲良</span>順著指引來到一處雪山，清除位於此地的妖魔後，取得了［節肢］部件，回程中還遇上了<span class="global_name_span">紫楓</span>的英靈，兩人便一起結伴而行。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OI6oZbg4JtM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試壹</div> <p>回到［墨矩機關屋］，竟看到<span class="global_name_span">陰歙</span>正在此大鬧，<span class="global_name_span">阿秋</span>見狀連忙以言語安撫，隨即動手修復機關蜘蛛，誰知道蜘蛛暴走，開始不分敵我攻擊。</p> <p>還好最後被眾人合力制伏，不過蜘蛛也涼涼了.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tutHMpMsahM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件牙</div> <p>為了修復好蜘蛛，大夥又在一處妖魔聚集處，尋得了［牙］部件。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v1vIouN7QXI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試貳</div> <p>回到［墨矩機關屋］把［牙］給蜘蛛裝上後，它隨即啟動，但<span class="global_name_span">陰歙</span>、<span class="global_name_span">紫楓</span>兩人看蜘蛛沒甚麼動作，竟想透過施法攻擊來試試。</p> <p>結果蜘蛛又被拆了，不過當中出現的［星曜之力］卻將<span class="global_name_span">陰歙</span>化為一陣光團，這當中定有古怪，<span class="global_name_span">尉遲良</span>連忙詢問<span class="global_name_span">阿秋</span>。</p> <p>原來這些迷失在此的英靈，經過改變能量結構就可以光團的形式暫時封存起來，為了能順利將他們送回星曜中，還得繼續找蜘蛛部件完成修復的任務。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Jo2e5C44Xiw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件背甲</div> <p>繼續搜尋，在［荒蟄］［夜魑］兩個種族的夾攻下，取得了［背甲］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jL_1xlOiLmc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件心臟</div> <p>接著在<span class="global_name_span">希維亞</span>的幫助下，找著了部件［心臟］，而她本人也因為找到自己追尋的東西，像<span class="global_name_span">陰歙</span>一樣化為一陣光團。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ua54GVtlnTg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件蛛網</div> <p>繼續前進，在一處部滿法陣的地方找到了［蛛網］，同時也察覺到<span class="global_name_span">封玲笙</span>的蹤跡。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fx8EeGwwU5g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">部件反射核心</div> <p>走著走著在一處［火山］遇到了<span class="global_name_span">秦惟剛</span>，這迷戀<span class="global_name_span">封玲笙</span>的［天瑤派］大師兄在此，果然是為了師妹想要奪取這［反射核心］。</p> <p>取得部件的<span class="global_name_span">秦惟剛</span>，為了復活<span class="global_name_span">封玲笙</span>，急忙施咒返回［墨矩機關屋］，大夥隨即追了上去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BGITs-7C-TA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試參</div> <p>眾人才剛趕到，蜘蛛果然又重新啟動，當中竟散發出不同尋常的生之力，為了調查當中古怪，眾人便準備聯手開始拆蜘蛛，不過<span class="global_name_span">秦惟剛</span>看到早前化為光團的<span class="global_name_span">陰歙</span>，頓感有些不妙，直接施咒遁走。</p> <p>還好戰鬥中<span class="global_name_span">陰歙</span>重新凝聚成型，有這初代羅睺劍使的幫助，這回又順利讓蜘蛛涼涼.....。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3-9LK2zZLWE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件毒腺</div> <p>這回走著走著來到<span class="global_name_span">高老丈</span>的家中，果然墨矩這隧道相當詭異，天南地北的啥地方都能通，從<span class="global_name_span">高老丈</span>那得知附近有［化蛇］出沒，大夥清除這批魔物後，取得了［毒腺］。</p> <p>回到［墨矩機關屋］，<span class="global_name_span">秦惟剛</span>正苦惱著復活師妹的方法，<span class="global_name_span">紫楓</span>見機不可失，連忙嘴遁說服大師兄入夥。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lXYZnO6iCuU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件眼睛</div> <p>繼續探索，路上遇到了<span class="global_name_span">古倫德</span>，此時他身後正跟著一雙詭異眼睛，隨後一大批妖邪襲來，眾人聯手擊敗敵人後，部件［眼睛］入手。</p> <p>但<span class="global_name_span">古倫德</span>覺得這東西與聖槍有關，又聽聞機關蜘蛛的事情，想來聖槍線索或許就在其中，便與眾人結伴而行。</p> <p>回到［墨矩機關屋］，一個無名墨矩正在此處，劈頭就說<span class="global_name_span">尉遲良</span>偷了他的機關圖紙，看來<span class="global_name_span">阿秋</span>還有些是瞞著咱們......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0mF3iwJ1HEc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件關節</div> <p>為了搶回圖紙，無名墨矩招來一堆機關獸，恰巧眾人要尋的部件［關節］就裝在這些敵人身上，所幸收拾了對方，順便奪取［關節］。</p> <p>戰後，<span class="global_name_span">秦惟剛</span>一聽大夥要回去機關蜘蛛那，心中有所盤算，隨即告別眾人，但仍小心跟蹤其後，想看<span class="global_name_span">尉遲良</span>到底搞甚麼鬼！？看來他仍未完全信任大夥。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-jNOgN_0-RA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試肆</div> <p>回到［墨矩機關屋］，卻到處也找不到<span class="global_name_span">阿秋</span>，大夥索性就自己修理起蜘蛛，說好聽是修理，其實就是拆拆拆。</p> <p>這回蜘蛛涼涼以後，<span class="global_name_span">古倫德</span>的老師<span class="global_name_span">葛梅爾</span>現身，兩人攜手準備尋找聖槍，便一同消失在光團之中。</p> <p>另一邊，暗中跟隨的<span class="global_name_span">秦惟剛</span>發現<span class="global_name_span">阿秋</span>便是一切行動的開頭.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Fg0UXgLDkUY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試終</div> <p><span class="global_name_span">尉遲良</span>察覺到修復蜘蛛的關鍵，帶著<span class="global_name_span">紫楓</span>重回之前尋找部件的各地處，蒐集各個有著強烈執念的物品，這便是讓機關蜘蛛真正恢復，真正有魂的關鍵。</p> <p>然而回到［墨矩機關屋］時，<span class="global_name_span">秦惟剛</span>已經快要把［鍛試場］給炸了，一番鬧騰後，機關蜘蛛終於修復完成，眾英靈也都成功送回星曜之中。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DQqFWn5aOSI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">邏輯中的橋</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZWGmYqI8dPM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">誰在說謊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BouUq52rzWw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第一次打機關蜘蛛</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cR1rnRvbauA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">無毒無害</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cFZhbn9akeM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">無眼無珠</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/s_jZJRPWnfw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">無口無牙</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_SzyCwrzUIk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
