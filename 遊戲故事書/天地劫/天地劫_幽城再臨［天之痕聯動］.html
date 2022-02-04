@@ -1,0 +1,168 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p>關於這活動，本來以為陸服罵得厲害是因為跟仙劍聯動太靠近，在玩過台版的仙劍聯動後，總算知道炎上的原因.......</p> 
+
+<p>天之痕的活動是以爬塔為主的玩法，其實玩個兩三遍就膩了，但為了搬完獎勵卻要強迫重複數十次，而且與仙劍完整的聯動劇情相比，天之痕只是以零散的故事穿插其中，甚至彼此間很難有連貫，也難怪台服天之痕會比仙劍早出，至少玩家這樣不會有太大的失落感。</p> 
+
+<p>真的是十分可惜，瞧前導［故跡殘痕］劇情已經鋪成了很好的神祕感，真不知道是甚麼原因導致整個聯動實體殘破不堪。</p> 
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aHXsuClgby4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">人物對話</option>
+  <option value="2">故跡殘痕</option>
+  <option value="3">爬塔戰鬥－首領戰</option>
+  <option value="4">爬塔戰鬥－普通戰</option>
+  <option value="5">爬塔戰鬥－結局</option>
+  <option value="6">補遺</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">人物對話</option>
+  <option value="2">故跡殘痕</option>
+  <option value="3">爬塔戰鬥－首領戰</option>
+  <option value="4">爬塔戰鬥－普通戰</option>
+  <option value="5">爬塔戰鬥－結局</option>
+  <option value="6">補遺</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">于小雪</div> <p><span class="global_name_span">尉遲良</span>在路邊撿到<span class="global_name_span">于小雪</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rd7ujHXpcVw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">宇文拓</div> <p>來到這世界的<span class="global_name_span">宇文拓</span>竟然斷臂重生，所以照這話來看，他穿越的時間點，應該是在阻止赤貫星降世之後。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HcnVF34mZAQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">繁城人煙一夜盡　斷璧影頹垣憧憧</div> <p><span class="global_name_span">尉遲良</span>一行人來到一座荒廢四十年的古城，原來是接了［萬花樓］老闆娘的信，來查這的客棧。</p> <p>仔細調查下發現這地方竟有一古怪蟲繭，似乎在吸收周遭妖物的生命，就連<span class="global_name_span">春蘭</span>也不慎遭到控制，就在眾人解除眼前危機後，一個神祕女子<span class="global_name_span">承影</span>突然現身，看來她就是設置蟲繭的人，沒講兩句話，另一個身揹大刀的獨眼男子<span class="global_name_span">刀八</span>也隨後現身，兩人看似一夥，一副莫測高深的樣子。</p> <p>只要兩人自顧自地離開，絲毫沒有把在場眾人當回事，這般對待可讓<span class="global_name_span">鹿昭依</span>氣壞了，掌握兩人行蹤後，便火急火燎的追了上去。</p> <div class="global_ps_text"> <p>劇情交代<span class="global_name_span">承影</span>死過一次，但不知怎麼又活了過來，也許是這樣，所以只有在晝夜交替時能看見她。</p> </div> <div class="global_ps_text"> <p><span class="global_name_span">刀八</span>是隱居［賀蘭山］的機巧師，他如今的身體是自己用機關術造的。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZZ9cTnNtVcg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">賀蘭山缺了無痕 誤入歧途人成妖</div> <p>追著<span class="global_name_span">刀八</span>來到一處怪地方，<span class="global_name_span">鹿昭依</span>、<span class="global_name_span">尉遲良</span>兩人誤觸機關，竟變成了妖物的模樣。</p> <p>一番折騰，總算是破了此處的陣法，此時<span class="global_name_span">刀八</span>現身，為了離開此處，竟然想了結了<span class="global_name_span">尉遲良</span>兩人性命，還好有其他妖物協助，最終平安離開法陣。</p> <p>只見<span class="global_name_span">刀八</span>似乎有急事要辦，話也沒說兩句就直接離開，留下隻古怪的魚斷後，這魚被<span class="global_name_span">鹿昭依</span>這貪吃貨給嚇得，最後溜之大吉。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JOntB_uZ5jE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">日暮夕照塵沙裡 命緣伊始天之痕</div> <p>順著線索來到［吊命灘］，只見<span class="global_name_span">承影</span>、<span class="global_name_span">刀八</span>站在崖邊看著遠處，一條紅色的裂隙劃開了天際，這便是［天之痕］。</p> <div class="global_ps_text"> <p><span class="global_name_span">刀八</span>設定應該是在時序混亂處能看到其他時空的接口，而<span class="global_name_span">承影</span>似乎能藉著跟其它時空連結，延緩消散。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1A330ruKN_k?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">爬塔戰鬥－首領戰</div> <p>這劇情含量幾乎沒有，就直接貼影片連結了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-QOP0w71kJE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Kfao7awKhcY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qIPABPqpYig?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Mogwljuaa-0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2IuUXZHr9Cg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">爬塔戰鬥－普通戰</div> <p>這劇情含量幾乎沒有，就直接貼影片連結了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YFfoMvq7j-0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1Zfw4SS3Buc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/87wExfNBcOU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cIQ2l7v2J1I?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-CEkJ8ddRy8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bT7pQ__0D9w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RKccYObuctE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RMdTnL3a0Y4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u5osnF9nNbs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">爬塔戰鬥－結局</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/skMy5BDR5Zw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QC03-5SCS50?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zsKZFgDh0z4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">補遺</div> <p><a href="https://qupyqupy.pixnet.net/album/photo/260336464"><img alt="諦聽情報［酒鬼］.jpg" src="https://pic.pimg.tw/qupyqupy/1643996461-3647637644-g_n.jpg" title="諦聽情報［酒鬼］.jpg" /></a></p> <p><a href="https://qupyqupy.pixnet.net/album/photo/260336468"><img alt="諦聽情報［諦聽鈴］.jpg" src="https://pic.pimg.tw/qupyqupy/1643996461-159367262-g_n.jpg" title="諦聽情報［諦聽鈴］.jpg" /></a></p>');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
