@@ -1,0 +1,224 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pdiFke98xtU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">CH01 - CH05</option>
+  <option value="2">CH06 - CH10</option>
+ </select>
+ <label>支線劇情：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  <option value="1">斷章故事</option>
+  <option value="2">支線劇情</option>
+  <option value="3">冰雪保衛戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+   <option value="1">CH01 - CH05</option>
+   <option value="2">CH06 - CH10</option>
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+  <option value="1">斷章故事</option>
+  <option value="2">支線劇情</option>
+  <option value="3">冰雪保衛戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">CH01 遠行與迷霧</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/o5o-rD2YgSo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>前往［蓋爾帕伊斯］大陸的［鑄劍軍］一行人，在海上就遭到了襲擊，眼下狀況濃霧密布，四周不斷有海妖、海怪靠近船身，擊敗了首波敵人後，幕後的黑手終於現身，竟然是<span class="global_name_span">邪神庫魯加</span>，他非但沒有被<span class="global_name_span">伊普西龍</span>解決，如今更似獲得了更強大的力量。</p> <p>正在<span class="global_name_span">邪神庫魯加</span>沉浸在自己即將成為新大陸的主宰幻想時，<span class="global_name_span">紅月之王</span>與<span class="global_name_span">文森特</span>結伴到來，這昔日的［翠晶翼兵團團長］為了復仇也追到了新大陸，這股執念讓<span class="global_name_span">邪神庫魯加</span>感到忌憚，就在雙方糾纏僵持之際，<span class="global_name_span">紅月之王</span>趁機將眾人帶離了戰場。</p> <p>此時［蓋爾帕伊斯］大陸上，處於中立的［星艦之城］已經注意到來自東邊海域的動盪.......</p> <div class="global_ps_text"> <p>開頭的暗影，似乎暗示了<span class="global_name_span">馬修</span>一行人前往［蓋爾帕伊斯］大陸的行動，是在遙遠的過去就被黑暗勢力設計好的，當中那［通聯千萬世界］的未來，感覺上應該是說這次的冒險關乎所有平行世界。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SMHjoztVXvI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">CH02 破霧的滅光</div> <p>透過［傳意鏡］<span class="global_name_span">馬修</span>一行人收到了來自［星艦之城］的警告，<span class="global_name_span">馬庫雷</span>立即意識到在［傳意鏡］另一邊的勢力，應該就是<span class="global_name_span">維拉玖</span>所領導的。</p> <p>但卻沒料到這昔日的戰友，如今正驅使著［星艦之城］的軌道砲朝著眾人所在區域攻擊，強大的光束驅散了海上的迷霧，同時也中斷了<span class="global_name_span">邪神庫魯加</span>與<span class="global_name_span">文森特</span>的戰鬥，眼見同伴陷入危險，從經墮落入黑暗的<span class="global_name_span">文森特</span>決定先行救援。</p> <p>眼見四周靠近的魔物越來越多，<span class="global_name_span">格尼爾</span>決定留下為眾人斷後，此舉雖為大家爭取到了逃離的時間，但自己卻因此身陷魔物群中，最終力竭跌入大海。不過總算是福大命大，隨著海流漂到了一處海岸，睜開眼睛便看到一名來自［法拉］的神秘女子<span class="global_name_span">麗莎</span>，而腳下的這座島嶼正是［星艦之城］。</p> <div class="global_ps_text"> <p>［蓋爾帕伊斯］大陸是由四個國度組成。</p> <ul> <li>東方：禪修之國［鶴野］。</li> <li>北方：在巨大沙海居住的［法拉］部族。</li> <li>西方：座落在巨大樹海中的［蘭契］帝國。</li> <li>南方：雪峰上的宗教［諾倫］。</li> </ul> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XnXeorX-nY8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">CH03 奇嶼的異鄉人</div> <p>［星艦之城］是利用［瑪娜科技］所建造的，城中有一高聳入雲的高塔，從外看來特別醒目，即便是曾經見過［月民］科技的<span class="global_name_span">格尼爾</span>也驚嘆不己。</p> <p>為了報答<span class="global_name_span">麗莎</span>的救命之恩，同時自己也想進入［星艦之城］，於是<span class="global_name_span">格尼爾</span>便喬裝成<span class="global_name_span">麗莎</span>的僕從，想要趁［星艦之城］近日對外開放，準備舉辦大型活動的時機，偽裝成各國的使節團矇混過關。</p> <p>卻正巧在這碰上有著同樣打算的<span class="global_name_span">馬修</span>等人，眼見眾人身分當場遭到揭穿，［星艦之城］的守衛呼叫來大批援軍，準備展開一場大戰，幸好在進一步擴大爭鬥時，來自［諾倫］的使節團從中調節，大夥才能以使節團的身分入城。</p> <p>至於這個來自［諾倫］的使節為何要幫助大夥兒？雖然他嘴裡說著是［祖靈］的預示，但感覺事情絕無此簡單，如今既然都已進城，使節與<span class="global_name_span">麗莎</span>也有自己的目的，便與眾人分開行動。</p> <div class="global_ps_text"> <p>這［諾倫］人信奉的是［德洛伊特教］，屬於［露希莉絲神話］的變種之一，崇尚萬物有靈。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sPpDkf4j_oU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+  (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('<div class="title_text">人偶奇弈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cYa5U7250r0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">對力量的渴望</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-sAz0FTHhQg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">塑像羅網</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZmYWyOY_VKQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">焚焰試煉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YL4F7cc3CL0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">魂靈試煉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LWzmOhJrT8M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">舊城迷局</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4WWZfe3Shwo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">冰雪保衛戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mNbSiyXKIWU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/C1v70jomF_U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/B_S5kDDbCY0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_7AW8ZEf4Qw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  })();
+</script>
+<p>&nbsp;</p>
+
+
+
+
