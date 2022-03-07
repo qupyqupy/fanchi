@@ -1,0 +1,218 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>個性1：</label> 
+<select id="mold1" style="width: 30%;">
+ </select>
+ <label>個性2：</label> 
+<select id="mold2" style="width: 30%;">
+ </select>
+ </p>
+
+<hr />
+<div id="avtar"></div>
+
+<hr />
+<script>
+  (function(){
+   
+  var mold1 = document.getElementById("mold1");
+  var mold2 = document.getElementById("mold2");
+  var avtar = document.getElementById("avtar");
+
+  var moldList = {
+    "1": "主角",
+    "2": "天之指引",
+    "3": "採集",
+    "4": "劍",
+    "5": "龍",
+    "6": "巴路奧其",
+    "7": "眼鏡",
+    "8": "IDA學園",
+    "9": "拳",
+    "10": "杖",
+    "11": "午睡",
+    "12": "東方",
+    "13": "刀",
+    "14": "詛咒",
+    "15": "鐵匠鋪",
+    "16": "料理",
+    "17": "靈媒體質",
+    "18": "復仇者",
+    "19": "科學家",
+    "20": "喜愛閱讀",
+    "21": "COA",
+    "22": "失落實驗室",
+    "23": "錘",
+    "24": "戀愛煩惱",
+    "25": "封印",
+    "26": "KMS公司",
+    "27": "喜歡甜點",
+    "28": "槍",
+    "29": "美食",
+    "30": "米格蘭斯王宮",
+    "31": "午睡"
+  };
+
+  var moldData = {
+    "阿爾德": [1,2,3,4,5,6],
+    "思琳": [7,8,9],
+    "麥提": [8,10,11],
+    "賽勒斯": [12,2,13,14],
+    "艾米": [15,16,9,17,18],
+    "波姆": [19,3,10],
+    "艾莉娜": [10, 17],
+    "伊絲卡": [8,13,20,21,22],
+    "伊絲卡ES": [8,4,20,21,22],
+    "茜": [12,13],
+    "霧華": [12,23,24,25],
+    "克利霍": [7,19,3,10,26],
+    "蘇賽特": [27,28,29,22],
+    "蘇依萊": [30,28,31]
+  };
+
+  var avtarData = {
+    "阿爾德": '<img alt="阿爾德.png" src="https://pic.pimg.tw/qupyqupy/1646675462-2831381273-g.png" title="阿爾德.png" />',
+    "思琳": '<img alt="思琳.png" src="https://pic.pimg.tw/qupyqupy/1646675461-2449442718-g.png" title="思琳.png" />',
+    "麥提": '<img alt="麥提.png" src="https://pic.pimg.tw/qupyqupy/1646675462-2223816871-g.png" title="麥提.png" />',
+    "賽勒斯": '<img alt="賽勒斯.png" src="https://pic.pimg.tw/qupyqupy/1646675462-3886164287-g.png" title="賽勒斯.png" />',
+    "艾米": '<img alt="艾米.png" src="https://pic.pimg.tw/qupyqupy/1646675460-559116202-g.png" title="艾米.png" />',
+    "波姆": '<img alt="波姆.png" src="https://pic.pimg.tw/qupyqupy/1646675460-3006175115-g.png" title="波姆.png" />',
+    "艾莉娜": '<img alt="艾莉娜.png" src="https://pic.pimg.tw/qupyqupy/1646675460-402070515-g.png" title="艾莉娜.png" />',
+    "伊絲卡": '<img alt="伊絲卡.png" src="https://pic.pimg.tw/qupyqupy/1646675460-1682836554-g.png" title="伊絲卡.png" />',
+    "伊絲卡ES": '<img alt="伊絲卡ES.png" src="https://pic.pimg.tw/qupyqupy/1646675460-3923696039-g.png" title="伊絲卡ES.png" />',
+    "茜": '<img alt="茜.png" src="https://pic.pimg.tw/qupyqupy/1646675462-2963405678-g.png" title="茜.png" />',
+    "霧華": '<img alt="霧華.png" src="https://pic.pimg.tw/qupyqupy/1646675462-474890880-g.png" title="霧華.png" />',
+    "克利霍": '<img alt="克利霍.png" src="https://pic.pimg.tw/qupyqupy/1646675460-521897088-g.png" title="克利霍.png" />',
+    "蘇賽特": '<img alt="蘇賽特.png" src="https://pic.pimg.tw/qupyqupy/1646675462-433426117-g.png" title="蘇賽特.png" />',
+    "蘇依萊": '<img alt="蘇依萊.png" src="https://pic.pimg.tw/qupyqupy/1646675462-1445098666-g.png" title="蘇依萊.png" />',
+  }
+
+  var index1 = 0;
+  var index2 = 0;
+
+
+
+  for (var n in moldList) {
+    mold1.add(new Option(moldList[n], n));
+    mold2.add(new Option(moldList[n], n));
+  }
+  
+
+  mold1.onchange = function () {
+    index1 = mold1.value;
+
+    showAvtar();
+  } 
+  
+  mold2.onchange = function () {
+    index2 = mold2.value;
+
+    showAvtar();
+  } 
+
+
+  function showAvtar() {
+    var result = "";
+    for (var n in moldData) {
+
+      if (index1 != 0) {
+        for (var i = 0; i < moldData[n].length; i++) {
+          if (index1 == moldData[n][i]) {
+            if (index2 != 0) {
+              for (var j = 0; j < moldData[n].length; j++) {
+                if (index2 == moldData[n][j]) {
+                  result += avtarData[n];
+                }
+              }
+
+            } else {
+              result += avtarData[n];
+            }
+          }
+        }
+      }
+    }
+
+    avtar.innerHTML = result;
+  }
+
+  })();
+
+</script>
+<p>&nbsp;</p>
+
