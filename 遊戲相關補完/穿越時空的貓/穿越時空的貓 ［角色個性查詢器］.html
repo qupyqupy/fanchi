@@ -125,7 +125,22 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     "28": "槍",
     "29": "美食",
     "30": "米格蘭斯王宮",
-    "31": "午睡"
+    "31": "午睡",
+    "32": "喜歡貓咪",
+    "33": "神職人員",
+    "34": "騎乘",
+    "35": "盾",
+    "36": "採礦",
+    "37": "裝備",
+    "38": "動物對話",
+    "39": "矮人",
+    "40": "稻草人",
+    "41": "魔獸",
+    "42": "吟遊詩人",
+    "43": "弓",
+    "44": "精靈對話",
+    "45": "斧",
+    "46": "喜歡黑尾鷗"
   };
 
   var moldData = {
@@ -142,7 +157,17 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     "霧華": [12,23,24,25],
     "克利霍": [7,19,3,10,26],
     "蘇賽特": [27,28,29,22],
-    "蘇依萊": [30,28,31]
+    "蘇依萊": [30,28,31],
+    "瑪莉艾爾": [32,33,10],
+    "安娜貝爾": [30,27,4,34,35],
+    "諾馬爾": [36,28,37,6],
+    "蕾蕾": [32,10,38],
+    "薩摩拉": [16,36,23,29,39],
+    "拉布莉": [16,9,39],
+    "草人小子": [12,40,9],
+    "洛基德": [41,9,18],
+    "羅維娜": [42,43,44],
+    "丹尼": [45,46]
   };
 
   var avtarData = {
@@ -160,6 +185,16 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     "克利霍": '<img alt="克利霍.png" src="https://pic.pimg.tw/qupyqupy/1646675460-521897088-g.png" title="克利霍.png" />',
     "蘇賽特": '<img alt="蘇賽特.png" src="https://pic.pimg.tw/qupyqupy/1646675462-433426117-g.png" title="蘇賽特.png" />',
     "蘇依萊": '<img alt="蘇依萊.png" src="https://pic.pimg.tw/qupyqupy/1646675462-1445098666-g.png" title="蘇依萊.png" />',
+    "瑪莉艾爾": '<img alt="瑪莉艾爾.png" src="https://pic.pimg.tw/qupyqupy/1646678351-1244656176-g.png" title="瑪莉艾爾.png" />',
+    "安娜貝爾": '<img alt="安娜貝爾.png" src="https://pic.pimg.tw/qupyqupy/1646678351-2452017183-g.png" title="安娜貝爾.png" />',
+    "諾馬爾": '<img alt="諾馬爾.png" src="https://pic.pimg.tw/qupyqupy/1646678352-2531445577-g.png" title="諾馬爾.png" />',
+    "蕾蕾": '<img alt="蕾蕾.png" src="https://pic.pimg.tw/qupyqupy/1646678352-2517376837-g.png" title="蕾蕾.png" />',
+    "薩摩拉": '<img alt="薩摩拉.png" src="https://pic.pimg.tw/qupyqupy/1646678352-3461873292-g.png" title="薩摩拉.png" />',
+    "拉布莉": '<img alt="拉布莉.png" src="https://pic.pimg.tw/qupyqupy/1646678351-2901627336-g.png" title="拉布莉.png" />',
+    "草人小子": '<img alt="草人小子.png" src="https://pic.pimg.tw/qupyqupy/1646678351-264656768-g.png" title="草人小子.png" />',
+    "洛基德": '<img alt="洛基德.png" src="https://pic.pimg.tw/qupyqupy/1646678351-2801201581-g.png" title="洛基德.png" />',
+    "羅維娜": '<img alt="羅維娜.png" src="https://pic.pimg.tw/qupyqupy/1646678352-1025728651-g.png" title="羅維娜.png" />',
+    "丹尼": '<img alt="丹尼.png" src="https://pic.pimg.tw/qupyqupy/1646678351-2750676502-g.png" title="丹尼.png" />',
   }
 
   var index1 = 0;
@@ -170,6 +205,10 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   for (var n in moldList) {
     mold1.add(new Option(moldList[n], n));
     mold2.add(new Option(moldList[n], n));
+  }
+
+  for (var n in avtarData) {
+    avtar.innerHTML = avtar.innerHTML + avtarData[n];
   }
   
 
@@ -183,7 +222,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     index2 = mold2.value;
 
     showAvtar();
-  } 
+  }
 
 
   function showAvtar() {
