@@ -1,7 +1,16 @@
 <style type="text/css">
-#avtar img {
-  margin: 3px;
+
+
+.head_frame {
+    text-align: center;
+    display: inline-block;
+    font-size: larger;
+    font-weight: bold;
+    background-color: #888888;
+    color: #ffffff;
+    margin: 3px;
 }
+
 .title_text {
   text-align: center;
   margin-top: 10px;
@@ -606,7 +615,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
 
   for (var n in avtarData) {
-    avtar.innerHTML = avtar.innerHTML + avtarData[n];
+    avtar.innerHTML = avtar.innerHTML + createFrame(avtarData, n);
   }
   
 
@@ -622,6 +631,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     showAvtar();
   }
 
+  function createFrame(obj, index) {
+    var result = '<div class="head_frame"><div>' + index + '</div><div>' + obj[index] +'</div></div>';
+    return result;
+  }
+
 
   function showAvtar() {
     var result = "";
@@ -633,12 +647,12 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
             if (index2 != 0) {
               for (var j = 0; j < moldData[n].length; j++) {
                 if (index2 == moldData[n][j]) {
-                  result += avtarData[n];
+                  result += createFrame(avtarData, n);
                 }
               }
 
             } else {
-              result += avtarData[n];
+              result += createFrame(avtarData, n);
             }
           }
         }
