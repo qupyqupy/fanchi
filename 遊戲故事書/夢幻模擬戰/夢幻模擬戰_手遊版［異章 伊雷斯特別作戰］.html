@@ -1,0 +1,201 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+</style>
+<hr />
+
+<p>終於還是迎來了這一刻，劍 VS 坦克，這失序的世界。</p> 
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Clh_xp5auT4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+
+<hr />
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">天降的女武神</div> <p><span class="global_name_span">亞莉希雅</span>穿越到了［伊雷斯］大陸，正巧碰上了一群［聯合軍］叛軍，對方見眼前這村姑看似全身有著精良的武器，便想以人數優勢將其捉住當戰利品。</p> <p>不過刀劍冷兵器又怎麼能對抗機槍、榴彈的威力，縱然人數多了好幾倍，還是無意外地被慘虐，這時<span class="global_name_span">謎之騎士</span>趕到戰場，面對來自其他時空人物早就習以為常的他，與<span class="global_name_span">亞莉希雅</span>的同伴<span class="global_name_span">伊莎拉</span>早就碰面，理解了事情的原委後，決定帶著兩人前去尋找這時空唯一能將他們送回原世界的人.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xPmiGLCSgsA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
