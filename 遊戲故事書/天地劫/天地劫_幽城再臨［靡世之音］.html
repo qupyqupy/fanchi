@@ -1,0 +1,153 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p>這次的活動講述了許多人物的前傳，雖然與主線劇情並沒有多少的補完，但隱約間似乎有著埋線伏筆的感覺，照著時序錯亂的主線設定，也許這些不同時代的故事，日後都能在主線遊一遍。</p>
+
+<p>另外這譜寫［靡世之音］的樂師，些許也是超脫時序之外的存在，否則這曲又怎麼帶出不同朝代的記憶。</p>
+
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KeWGRwDqeg8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">帳外白衣</div> <p>自［神闕宮］創立，除［齋女］外，宮內皆是被注入殘魂的人偶，<span class="global_name_span">白菀</span>便是其中之一，當［靡世之音］響起，她那遠在［秦末］的記憶開始慢慢甦醒。</p> <p>烽火城外，楚漢大戰，楚將［張某人］來到戰場，便是依王之令前來帶回<span class="global_name_span">白菀</span>，而這王指的便是西楚霸王<span class="global_name_span">項羽</span>。</p> <p>根據［張某人］所說，<span class="global_name_span">白菀</span>本是［九江王］<span class="global_name_span">英布</span>的人，為向<span class="global_name_span">項羽</span>表達忠誠而送來作質，如今［九江王］叛楚，<span class="global_name_span">項羽</span>便急著要見身為人質的<span class="global_name_span">白菀</span>。</p> <p>然而漢軍勢大，［張某人］帶著<span class="global_name_span">白菀</span>突圍之後，也力竭而亡，本可趁此機會一走了之的<span class="global_name_span">白菀</span>，為了查清楚［九江王］是否背叛的真相，決定完成［張某人］的遺願，獨自踏上面見霸王的道路。</p> <p>然而當<span class="global_name_span">白菀</span>抵達［垓下］，卻見到與自己情同姊妹的<span class="global_name_span">虞姬</span>自刎帳內。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WaSL5r_hPdY?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">又逢君</div> <p>天下大局又怎是<span class="global_name_span">白菀</span>這樣的女子能理解的，但她仍有想要弄清楚的事，闖入［九江王］的營帳後，她不在乎［九江王］為何叛楚降漢，她在意的是眼前這男人可曾愛過自己、可曾想過自己的安危。</p> <p><span class="global_name_span">英布</span>雖有千般理由，最後也只能徒歎奈何，而此時他也知道，自己終將被<span class="global_name_span">劉邦</span>所弒。</p> <p>終究<span class="global_name_span">白菀</span>理解眼前的男人對自己並非至情，傷心離開，<span class="global_name_span">英布</span>於臨別時贈［靡世之音］。</p> <p>當<span class="global_name_span">白菀</span>與<span class="global_name_span">尉遲良</span>合奏此曲，卻意外引來了魔將<span class="global_name_span">白首</span>。</p> <p>［風蕭蕭兮易水寒，壯士去兮不復返....］</p> <p><span class="global_name_span">白首</span>口中，此曲為［易水歌］，聽著聽著，那塵封在腦海中的回憶也慢慢浮現。</p> <div class="global_ps_text"> <p>我覺得<span class="global_name_span">英布</span>的語音、語調跟<span class="global_name_span">幽篁先生</span>極為相似，就不知道這是否是個伏筆？</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Dpojk2H7Drw?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">山河表裡</div> <p><span class="global_name_span">白首</span>當年盜取［九州山河圖］時，那夜聽見的曲兒便是這［易水歌］。</p> <p>［九州山河圖］乃是燕國門客刺秦的關鍵，<span class="global_name_span">白首</span>為了取得此圖不惜大開殺戒，不料最後竟跑出一盲女，為了替其友燕國門客［阿田］報仇，以自己性命逼<span class="global_name_span">白首</span>破戒，而這盲女便是日後的<span class="global_name_span">九陰</span>。</p> <div class="global_ps_text"> <p><span class="global_name_span">白首</span>一生有兩戒，一不殺啞巴、二不殺盲人。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/k-0U-EJluaM?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">九陰白首</div> <p><span class="global_name_span">白首</span>本奉<span class="global_name_span">羅睺神</span>之命協助<span class="global_name_span">霍雍</span>，然而世事無常，<span class="global_name_span">霍雍</span>逝去後，<span class="global_name_span">幽篁先生</span>惜才，便想將之收服。</p> <p>不過<span class="global_name_span">白首</span>氣傲，兩世三界只聽<span class="global_name_span">羅睺神</span>號令，當場就拒絕了。</p> <p>數十年後，<span class="global_name_span">白首</span>知<span class="global_name_span">幽篁先生</span>有造人偶之能，便起了入［玄冥教］的念頭，全因當年為奪［九州山河圖］時誤殺的盲女，如今盲女藉人偶之身成為<span class="global_name_span">九陰</span>，只要確保<span class="global_name_span">九陰</span>安全，自己當年便是從未破戒，<span class="global_name_span">白首</span>心裡這樣想著。</p> <p>百年刀客、立戒於世，因自己的制約而束縛半生，<span class="global_name_span">白首</span>念及於此頹然坐下，他與<span class="global_name_span">九陰</span>的這段緣份終究消逝在時間長河中。</p> <p><span class="global_name_span">尉遲良</span>與<span class="global_name_span">白菀</span>感嘆之餘，便以此間體悟注曲合奏，卻引來了一身揹大刀的魁武大漢，這人渾身充滿血腥氣息，正是血鎖人屠<span class="global_name_span">鮮于超</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZS_Cxv04seE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">妖亂長安</div> <p>相同的曲兒，不同的演奏方式，聽來便是兩種味道，當年<span class="global_name_span">鮮于超</span>聞此曲時，曲調無比快哉，再聽<span class="global_name_span">白菀</span>兩人合奏，這曲調卻多了許多感傷。</p> <p>相傳長安城內有妖邪作祟，這一切似乎是節度使<span class="global_name_span">安祿山</span>所為，詩仙劍客<span class="global_name_span">李白</span>此時正在城內，獲<span class="global_name_span">鮮于超</span>、<span class="global_name_span">康平司．長史</span>之助，離城。</p> <p>阻斷了追擊的妖魔後，<span class="global_name_span">鮮于超</span>驚覺與自己並肩作戰的<span class="global_name_span">康平司．長史</span>似乎曾在朝中見過，交談後才知對方曾經事於將軍<span class="global_name_span">封常清</span>麾下，由此可見［康平司］於唐朝便已有勢力於朝廷。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Zb9GiRefE9E?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">西關望</div> <p>想起將軍<span class="global_name_span">封常清</span>蒙難之時，彼時身為都尉的<span class="global_name_span">鮮于超</span>與<span class="global_name_span">李白</span>合作，闖法場、救將軍。</p> <p>但朝中奸佞當道，<span class="global_name_span">封常清</span>、<span class="global_name_span">高仙芝</span>等唐朝名將因［安史之亂］敗戰事實，最終魂斷法場，此冤上天降大雪，<span class="global_name_span">鮮于超</span>因義憤化為血鎖人屠。</p> <p><span class="global_name_span">鮮于超</span>故事說完，感嘆自己因恨生邪，半生殺戮，然而也引來有著類似遭遇的<span class="global_name_span">古倫德</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AEmMfnMfrxM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">失落的聖名</div> <p><span class="global_name_span">古倫德</span>狀似瘋魔，這一切都源於他口中的魔鬼<span class="global_name_span">阿瑪菲特</span>。</p> <p>結束與<span class="global_name_span">夏侯儀</span>冒險的<span class="global_name_span">古倫德</span>最終取回聖槍回到西方，但為了掌握國家的統治權，與<span class="global_name_span">阿瑪菲特</span>做了交易，自古以來此舉雖能得一時目的，終將被魔鬼反噬。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JrDyMdND6W0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">王者的冠冕</div> <p><span class="global_name_span">古倫德</span>為了奪回失去的一切，帶著聖槍前來決戰<span class="global_name_span">阿瑪菲特</span>，但遭慾望污染的聖槍已無法再穿透<span class="global_name_span">阿瑪菲特</span>的胸膛，最終<span class="global_name_span">古倫德</span>倒地，灰之王再生。</p> <p>這一個曲調、一個故事，曲能長存、人卻不在，與其執著世間事，不如合奏一曲［天地一逆旅，同悲萬古塵］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8bMdvoi-hLI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">帳外白衣</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/i94JIWRhivw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">又逢君</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/id-Ky4RuJFI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">山河表裡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7QBbUJa4fQg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">妖亂長安</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ov9XdzqnK-U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">西關望</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/N5Vhjmaobaw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">王者的冠冕</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0JdvjoFuQFs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
