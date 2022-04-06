@@ -1,0 +1,196 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">洛維奈爾大帝</option>
+  <option value="2">方舟聖女</option>
+  <option value="3">鐵血總帥</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+
+<hr />
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">洛維奈爾大帝</option>
+  <option value="2">方舟聖女</option>
+  <option value="3">鐵血總帥</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="ch">洛維奈爾大帝</div> <p>［伊利西恩計畫］執行至今，每次的躍遷都無法找到適合的生存世界，加上無法從犧牲夥伴的罪惡感中走出來，<span class="global_name_span">洛維奈爾大帝</span>慢慢也變得頹廢，所幸方舟之上還有<span class="global_name_span">弗洛朗蒂婭</span>、<span class="global_name_span">希爾達</span>兩人主持大局。</p> <p>想到自己還未擔任大帝重擔時，曾經為了自以為的正義消滅了壓榨村民的領主軍隊，結果沒有領主軍隊保護的村民，後來被肆虐的魔族屠戮殆盡。</p> <p>［為什麼....我從來都不能阻止甚麼.....都不能改變甚麼......］</p> <p><span class="global_name_span">洛維奈爾大帝</span>就在這夢魘之中，繼續的自責、墮落。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Q-DqoMOz-zc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>思念<span class="global_name_span">梅雅</span>的<span class="global_name_span">洛維奈爾大帝</span>在王座上持續酗酒，甚至對於關乎方舟存亡的命令也不管不顧，<span class="global_name_span">弗洛朗蒂婭</span>逼不得已，只好代為發號施令。</p> <p>想到在大洪水來臨前，王座上總有<span class="global_name_span">梅雅</span>替自己安排好一切，但這萬能女僕卻代替自己留在原本的世界，如今只能在酒精催生的世界中再度看到她。</p> <p><span class="global_name_span">希爾達</span>實在看不下去這個已經成為酒鬼的大帝，直接衝入王座之間就是一頓胖揍，最後更是將<span class="global_name_span">洛維奈爾大帝</span>丟出窗外。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/W7nHkDrJB98?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>離開王座之間，這對<span class="global_name_span">洛維奈爾大帝</span>來說也許是個好機會，深入民間住宅區的他，遇見了<span class="global_name_span">沃爾納</span>與<span class="global_name_span">羅莎莉雅</span>的女兒<span class="global_name_span">卡洛莉安</span>。</p> <p>在這座屋子，老者講起他不願意想起的那段過往，當大洪水來臨時，很快淹沒了半個世界，<span class="global_name_span">洛維奈爾大帝</span>只能緊急啟動［伊利西恩計畫］，但打開門扉後，卻湧出數之不盡的怪物，為了能順利讓方舟啟航，必須有人留下阻擋魔物的進攻，這當然違反了<span class="global_name_span">洛維奈爾大帝</span>自己的意願，所以<span class="global_name_span">梅雅</span>串通<span class="global_name_span">弗洛朗蒂婭</span>施展了詭計，騙了大帝登上方舟，自己則代替大帝領導留在原本世界的人民，這當中也包含了<span class="global_name_span">沃爾納</span>、<span class="global_name_span">克里斯蒂安妮</span>、<span class="global_name_span">瑪麗埃爾</span>等幾位曾經生死與共的同伴。</p> <p>坐上王位本就會面對許多困難的抉擇，然而<span class="global_name_span">洛維奈爾大帝</span>總是太過理想，突然面對那麼多的犧牲，人就這樣消沉了下來，老者雖不知道大帝真實身分，但看他這頹廢的模樣，決定幫他找份軍隊的工作來轉移注意力。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LyeTz1BjaPk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這次方舟躍遷的世界遍布烈焰，魔物的襲擊自然也少不了，<span class="global_name_span">托娃</span>認出了站在新兵隊伍裡的<span class="global_name_span">洛維奈爾大帝</span>，也許是為了讓他振作起來，立即把他編入了出擊隊伍裡面。</p> <p>在這場阻截魔物攻擊的戰鬥中，<span class="global_name_span">托娃</span>以性命為代價，讓<span class="global_name_span">洛維奈爾大帝</span>重新振作起來，了解身為皇者的責任，自己則獨自面對大批魔物，最後貫徹［己之道］犧牲了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z4Kq9-6MCS4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>躍遷了無數個險惡的世界，度過了無數的難關，然而隨著戰力不斷耗損，這次魔物終於突破防線，直接攻上了方舟，但只要有<span class="global_name_span">洛維奈爾大帝</span>站在陣前，全體士兵就充滿勇氣，相信眼前的王者，必定能將他們帶往應許之地。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yFSv_FdgDoI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
