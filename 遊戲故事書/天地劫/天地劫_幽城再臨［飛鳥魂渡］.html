@@ -1,0 +1,150 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p>這次活動補充了<span class="global_name_span">赤煉</span>這角色的故事，開頭動畫中的那句［我不認］真是太有氣勢了。</p> 
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/J-SgXftva2I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">劇情</div> <p>自古［地界幽姬］每隔一甲子就必須自盡於［赤煉淵］，換取新一任的［幽姬］誕生。</p> <p>這日魔將<span class="global_name_span">白首</span>率眾追趕一少女<span class="global_name_span">殷九</span>，幸得<span class="global_name_span">赤煉</span>與三輔使相助，<span class="global_name_span">殷九</span>總算逃過一劫，自此就跟在<span class="global_name_span">赤煉</span>身邊為奴僕。</p> <p>但其實這一切只是一場戲，<span class="global_name_span">殷九</span>真實身分正是<span class="global_name_span">九陰</span>，他弱小的外貌正好適合設局潛伏在［幽姬］身邊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7LQ6ul4IdkM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一年過去了，<span class="global_name_span">九陰</span>這期間侍奉在<span class="global_name_span">赤煉</span>身邊，早已被她的人格魅力折服，如今竟然假戲真做，真心想幫助她。</p> <p>如今［幽姬］命中注定的甲子之期已到，<span class="global_name_span">九陰</span>深知<span class="global_name_span">赤煉</span>無法接受這怪誕的自盡命運，因此暗中聯合［玄冥教］勢力，想要破壞這幽姬繼承儀式，最終一息尚存的<span class="global_name_span">赤煉</span>被［玄冥教］一夥人帶走。</p> <p>然而令人驚訝的事，在此時發生，新任［幽姬］竟在前任［幽姬］未死的情況下誕生了，而且肚子很餓。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mUCLJYw1mTs?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>知道事情的嚴重性，<span class="global_name_span">欒</span>馬上帶著九黎族追擊而至，以他的實力，截下［玄冥教］眾人自是不在話下。但<span class="global_name_span">欒</span>最終被<span class="global_name_span">赤煉</span>追求自由的堅定意志感動，揮手設下七道藍焰關卡，只要<span class="global_name_span">赤煉</span>能踏過去，便能得到她希望已久的自由。</p> <p>隨著一道道烈焰焚燒，<span class="global_name_span">赤煉</span>與地界的羈絆也一一化為飛灰，這當中還包含了與輔使<span class="global_name_span">曜璃</span>的回憶，那位為自己編織自由飛鳥夢想的敬重之人。</p> <p>當走到第七道藍焰，<span class="global_name_span">赤煉</span>卻再也支持不住，就在［玄冥教］眾人想著如何救人時，祖龍<span class="global_name_span">召祐</span>現身，<span class="global_name_span">欒</span>似乎早已預見了這結果，口裡依舊是那兩字［無趣］。</p> <p>只見<span class="global_name_span">召祐</span>一鈍釜，隨著一道金光，一魂一魄進入<span class="global_name_span">赤煉</span>體內，隨即<span class="global_name_span">赤煉</span>再生，見目的達成，<span class="global_name_span">召祐</span>瀟灑離去，而<span class="global_name_span">赤煉</span>則向九黎一族正式宣戰，誓要摧毀這毫無意義捆縛［幽姬］的枷鎖。</p> <div class="global_ps_text"> <p>對於<span class="global_name_span">赤煉</span>從［幽姬］身分，到加入［玄冥教］的故事在此就結束了，活動採取倒敘的手法，之後的劇情則是解釋為何<span class="global_name_span">召祐</span>會手中會有<span class="global_name_span">赤煉</span>的一魂一魄。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DxEpiuBMv8s?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>時間回到羅喉雙使建造［九渾天動儀］之時，<span class="global_name_span">于闐國主</span>來信，雖暫時不知目的，但<span class="global_name_span">霍雍</span>先遣門下<span class="global_name_span">練紅鷂</span>、<span class="global_name_span">南星</span>至［七曜之門］等待。</p> <p>片刻後，<span class="global_name_span">霍雍</span>便交付兩人計困［康平司］門人的任務，臨行前囑咐兩人服下［冰蟾砂］以便抵擋地界瘴氣，但<span class="global_name_span">南星</span>卻若有所思。</p> <div class="global_ps_text"> <p>這<span class="global_name_span">練紅鷂</span>看立繪大致就可以猜到是<span class="global_name_span">赤煉</span>的前世。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yvwE1iHFUuM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>出任務前，<span class="global_name_span">練紅鷂</span>還在為<span class="global_name_span">冰璃</span>梳髮，閒聊之際還談及男女之情，可以兩人雖名為主僕，實際上更像姊妹閨蜜。</p> <p>之後在<span class="global_name_span">練紅鷂</span>、<span class="global_name_span">南星</span>兩人合演的禽獸汙辱良家婦女的大戲下，［康平司］門下被早前布置好的咒術所困。</p> <p>雖說是演戲，但<span class="global_name_span">南星</span>早就對<span class="global_name_span">練紅鷂</span>有了非分之想，只不過一次次被拒絕。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MJlVwz9UwQ0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著為了更進一步阻擋［康平司］，以免妨礙［降曜之儀］，<span class="global_name_span">南星</span>、<span class="global_name_span">練紅鷂</span>聽令假扮羅喉雙使去阻擋祖龍<span class="global_name_span">召祐</span>。</p> <p><span class="global_name_span">南星</span>一看到巨龍真身，便嚇得頭有不回的逃跑，只剩<span class="global_name_span">練紅鷂</span>無懼地與<span class="global_name_span">召祐</span>單挑，但實力相差懸殊，所幸情同姊妹的<span class="global_name_span">冰璃</span>不願意看到<span class="global_name_span">練紅鷂</span>犧牲，連忙趕來。</p> <p><span class="global_name_span">霍雍</span>雖有不滿，但也不願見<span class="global_name_span">冰璃</span>涉險，就在羅喉雙使即將與祖龍大戰之時，有人利用［蝕］讓<span class="global_name_span">召祐</span>失控，這一切都是<span class="global_name_span">于闐國主</span>在背後算計，終其目的是將身帶［幽垠］的<span class="global_name_span">霍雍</span>送入輪迴，以此擾亂三皇創世制定的規則。</p> <p>而<span class="global_name_span">南星</span>就是<span class="global_name_span">于闐國主</span>安排在<span class="global_name_span">霍雍</span>身邊的棋子，然而<span class="global_name_span">霍雍</span>早有察覺，之前囑咐<span class="global_name_span">南星</span>吞下的［冰蟾砂］便是後著，解決<span class="global_name_span">南星</span>後，忽然一詭異幽魂現身，其身體四處以金屬部件覆蓋，瞧面貌卻有幾分神似<span class="global_name_span">霍雍</span>。</p> <div class="global_ps_text"> <p>數百年後，<span class="global_name_span">召祐</span>歸還<span class="global_name_span">赤煉</span>一魂一魄，其實也是還了此時的恩情。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rTmcnKvyQx0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這幽魂有著羅喉氣息，但又卻充滿敵意，一個瞬間便奪去<span class="global_name_span">練紅鷂</span>的身體，為了保護<span class="global_name_span">冰璃</span>，<span class="global_name_span">練紅鷂</span>不惜使用魂靈力量，破了幽魂的勁力，同時也讓在場三人恢復了之前激戰所失去的力量。</p> <p>眼見部下犧牲，<span class="global_name_span">霍雍</span>立即展開戰鬥姿態，誓要為其報仇，幽魂便在羅喉雙使與祖龍聯手下落敗，透過<span class="global_name_span">召祐</span>的能力得知，此幽魂與<span class="global_name_span">霍雍</span>有關，說是千年後的<span class="global_name_span">霍雍</span>也不為過，<span class="global_name_span">冰璃</span>聞言便想問問是否能看到<span class="global_name_span">練紅鷂</span>的未來。</p> <p>不過<span class="global_name_span">召祐</span>只能看到果，卻不能看到因，留下幾句意味深長的話後，便直接離去，至於數百年後，<span class="global_name_span">召祐</span>現身救助<span class="global_name_span">赤煉</span>還得一魂一魄，便是在此時得到的。</p> <div class="global_ps_text"> <p>這幽魂如果沒猜錯，便是<span class="global_name_span">幽篁先生</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gR7yAGCByTc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">挑戰1</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6L8104xkgfI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰2</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zsUG_PlqnZU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰3</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E_oILSbdTiw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰4</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rIvxbDshYvg?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰5</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/M1w9iH9PVBo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰6</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5jidEo8v_eU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰7</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zQfDBiVHTyU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
