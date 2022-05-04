@@ -1,0 +1,162 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p>［玄海謠］是至目前為止所有活動，做的最精簡的一個，沒有語音，模式照抄［墨子道］，連新角色<span class="global_name_span">露葵</span>都沒辦法操縱，故事內容極短，而且缺乏與主線的呼應，希望之後活動能多出些像［幻海迷城］、［飛鳥魂渡］之類的，再不然像是［月令狸歌］這樣輕鬆笑笑的也不錯。</p>
+
+
+<p>［玄海謠］故事內容是講<span class="global_name_span">燕明蓉</span>前去［地界］找<span class="global_name_span">露葵</span>，然後被拐去打［石鐵蟲］，之後還把劍聖<span class="global_name_span">武英仲</span>牽扯進來，算是側面跟沒玩過［天外劍聖錄］的玩家，交代了兩人的交情匪淺。</p>
+
+
+<p>至於劇情中說［石鐵蟲］與劍邪有關，推測應該是以［神魔至尊傳］中<span class="global_name_span">高戚</span>與<span class="global_name_span">朱慎</span>合體後的怪物為藍本創造出來的新設定。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6UHDg1mxMFY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">劇情1</option>
+  <option value="2">劇情2</option>
+  <option value="3">劇情3</option>
+  <option value="4">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">劇情1</option>
+  <option value="2">劇情2</option>
+  <option value="3">劇情3</option>
+  <option value="4">挑戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">山谷來客</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/irTQ4dYsMRQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">形影不離</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SvyAPQBNK5U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不懷好心</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qkrvmQm1Z-Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">打抱不平</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/is_o9QHq0OE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">假龍真蟲壹</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Cw1vFp-LK6U?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">當仁不讓</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VVK95lsolr0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不做不休</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-LONwx2mPaY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不厭其煩</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0jzdxQCxBDc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">假龍真蟲貳</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eAk7lR3J758?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">自救不暇</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/a3ycPOkQDYk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">終始不渝</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OnsIzzi2YFo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">按捺不住</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5vSfe9kbl_s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">假龍真蟲參</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dTSMNVPuCBw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">假龍真蟲肆</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/upvVjb6B4SI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">首次通關</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TDUFf23-8e4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">力取石蟲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xI1G1uhAQew?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">巧取石蟲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FGp5xqpKqiI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">智取石蟲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-PfZZ6n_ayk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
