@@ -1,0 +1,175 @@
+<style type="text/css">
+
+
+.head_frame {
+    text-align: center;
+    display: inline-block;
+    font-size: larger;
+    font-weight: bold;
+    background-color: #888888;
+    color: #ffffff;
+    margin: 3px;
+}
+
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+<p><label>選擇1：</label> 
+<select id="mold1" style="width: 30%;">
+ </select>
+ <label>選擇2：</label> 
+<select id="mold2" style="width: 30%;">
+ </select>
+ </p>
+
+<hr />
+<div id="food"></div>
+
+<hr />
+<script>
+  (function(){
+   
+  var mold1 = document.getElementById("mold1");
+  var mold2 = document.getElementById("mold2");
+  var food = document.getElementById("food");
+
+
+  var moldList = {
+    "0": "-----",
+    "1": "美味堂",
+  };
+
+  var moldData = {
+    "美味堂": ["-----", '蜂蜜醬燒炸雞']
+  };
+
+  var info = {
+    "美味堂" : {
+        "蜂蜜醬燒炸雞": '<div class="ch">蜂蜜醬燒炸雞，119元，2022/05/14</div> <p>這炸雞原價169元，不是很親民，而且感覺買的人也不多，今天就看到一排特價即期品擺在架上，本著不浪費食物，勉強買了一個嚐嚐鮮。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/261548060"><img alt="MVIMG_20220514_212900.jpg" src="https://pic.pimg.tw/qupyqupy/1652537791-3353886074-g_n.jpg" title="MVIMG_20220514_212900.jpg" /></a></p> <p>打開後的內容物有一包炸雞、蜂蜜醬燒汁、白芝麻、醃蘿蔔。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/261548068"><img alt="MVIMG_20220514_212938.jpg" src="https://pic.pimg.tw/qupyqupy/1652537804-2066485664-g_n.jpg" title="MVIMG_20220514_212938.jpg" /></a></p> <p>炸雞份量相當少，一個人吃可能還有些不夠。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/261548056"><img alt="MVIMG_20220514_212942.jpg" src="https://pic.pimg.tw/qupyqupy/1652537768-2505602613-g_n.jpg" title="MVIMG_20220514_212942.jpg" /></a></p> <p>醬汁看起來給的夠足，蘿蔔有看到柚子渣，這種醃漬物有些果香都是不錯的。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/261548064"><img alt="MVIMG_20220514_212946.jpg" src="https://pic.pimg.tw/qupyqupy/1652537792-3962281127-g_n.jpg" title="MVIMG_20220514_212946.jpg" /></a></p> <p>食用說明是建議使用氣炸鍋180度8分鐘，但是我用鍋寶的氣炸烤箱烤出來皮實在沒有酥脆感，所以後面又用200度復炸1分鐘，炸完後的味道沒有香氣，有一股雞特有的腥味。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/261548076"><img alt="MVIMG_20220514_213230.jpg" src="https://pic.pimg.tw/qupyqupy/1652537840-2009646110-g_n.jpg" title="MVIMG_20220514_213230.jpg" /></a></p> <p>炸好之後合體的樣子，我覺得如果不怕麻煩，可以把醬汁、芝麻、炸雞再用鍋子炒會更好吃，但是我怕麻煩。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/261548088"><img alt="MVIMG_20220514_214910.jpg" src="https://pic.pimg.tw/qupyqupy/1652537863-3372011456-g_n.jpg" title="MVIMG_20220514_214910.jpg" /></a></p> <p>手殘把芝麻都放在同一塊上面，不過沒差，因為芝麻香氣幾乎沒有。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/261548080"><img alt="MVIMG_20220514_214916.jpg" src="https://pic.pimg.tw/qupyqupy/1652537846-277477075-g_n.jpg" title="MVIMG_20220514_214916.jpg" /></a></p> <p>來個成品影片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XJ3kAvy4pG0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>實際吃起來味道有些酸甜，雞肉不知道是不是即期品的關係，雖然嫩但是沒有汁，主體完全是依靠醬汁撐起來，芝麻香氣完全被醬汁蓋住，搭配醃漬物吃有清爽的感覺，我蠻喜歡醃蘿蔔的味道，淡淡的柚香。</p> <p>為了證實我的想法，我吃完後，把底汁留著，再從冰箱拿出卜蜂的鹹酥雞氣炸，搭配醬汁竟然覺得更好吃了，我想也許能自己做出醬汁，再買冷凍炸雞回來自己弄，應該更划算些。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/261548084"><img alt="MVIMG_20220514_215052.jpg" src="https://pic.pimg.tw/qupyqupy/1652537860-125140319-g_n.jpg" title="MVIMG_20220514_215052.jpg" /></a></p>',
+    }
+  }
+
+
+  for (var n in moldList) {
+    mold1.add(new Option(moldList[n]));
+  }
+
+
+
+  var tItem;
+
+  mold1.onchange = function () {
+    tItem = moldData[mold1.value];
+    mold2.options.length = 0;
+    for (var i = 0; i < tItem.length; i++) {
+      mold2.add(new Option(tItem[i]));
+    }
+  } 
+  
+  mold2.onchange = function () {
+    food.innerHTML = info[mold1.value][mold2.value]
+  }
+
+
+  })();
+
+</script>
+<p>&nbsp;</p>
+
