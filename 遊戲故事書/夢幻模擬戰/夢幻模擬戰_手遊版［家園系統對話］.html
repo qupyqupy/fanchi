@@ -12,59 +12,59 @@
 
   
   background:
-  radial-gradient(
-    circle at bottom left,
-    transparent 0,
-    transparent 2em,
-    beige 2em,
-    beige 4em,
-    transparent 4em,
-    transparent 6em,
-    khaki 6em,
-    khaki 8em,
-    transparent 8em,
-    transparent 10em
-  ),
-  radial-gradient(
-    circle at top right,
-    transparent 0,
-    transparent 2em,
-    beige 2em,
-    beige 4em,
-    transparent 4em,
-    transparent 6em,
-    khaki 6em,
-    khaki 8em,
-    transparent 8em,
-    transparent 10em
-  ),
-  radial-gradient(
-    circle at top left,
-    transparent 0,
-    transparent 2em,
-    navajowhite 2em,
-    navajowhite 4em,
-    transparent 4em,
-    transparent 6em,
-    peachpuff 6em,
-    peachpuff 8em,
-    transparent 8em,
-    transparent 10em
-  ),
-  radial-gradient(
-    circle at bottom right,
-    transparent 0,
-    transparent 2em,
-    palegoldenrod 2em,
-    palegoldenrod 4em,
-    transparent 4em,
-    transparent 6em,
-    peachpuff 6em,
-    peachpuff 8em,
-    transparent 8em,
-    transparent 10em
-  ), blanchedalmond;
-  
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
 background-blend-mode: multiply;
 background-size: 10em 10em;
 background-position: 0 0, 0 0, 5em 5em, 5em 5em;
@@ -72,103 +72,107 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 .foot_btn {
   width: 50%;
 }
-.ch {
-  position: relative;
-  width: calc(95% - 2.5em);
-  border-radius: 0.2em;
-  background: #996666;
-  background: linear-gradient(-45deg, transparent 15px, #996666 0);
-  -webkit-filter: drop-shadow(2px 2px 4px gray);
-  filter: drop-shadow(2px 2px 4px gray);
-  font-size: 1.4em;
-  font-weight: bold;
-  color: white;
-  padding: 0.7em 0.7em 0.7em 2.5em;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
-
-
-.ch::after {
-  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
-  position: absolute;
-  -webkit-filter: drop-shadow(1px 1px 1px black);
-  filter: drop-shadow(1px 1px px black);
-  left: 0.3em;
-  top: 0.6em;
-}
 </style>
 
 <hr />
-<p><label>選擇：</label> 
-<select id="head_select" style="width: 40%;">
-  <option value="1">原創角對話</option>
-  <option value="2">一代角對話</option>
-  <option value="3">二代角對話</option>
-  <option value="4">三代角對話</option>
-  <option value="5">四代角對話</option>
-  <option value="6">五代角對話</option>
-  <option value="7">轉生角對話</option>
-  <option value="8">混合對話</option>
-  <option value="9">與自己對話</option>
+<p><label>免費角色：</label> 
+<select id="head_select_o" style="width: 20%;">
+  <option value="1">POP醬</option>
+  <option value="2">馬修</option>
+  <option value="3">格尼爾</option>
+  <option value="4">艾梅達</option>
+  <option value="5">安潔莉卡</option>
+ </select>
+ <label>男角色：</label> 
+<select id="head_select_m" style="width: 20%;">
+  <option value="1">波贊魯</option>
+  <option value="2">基札洛夫</option>
+  <option value="3">艾爾文</option>
+  <option value="4">迪哈爾特</option>
+  <option value="5">伊普西龍</option>
+  <option value="6">利昂</option>
+  <option value="7">蘭迪烏斯</option>
+  <option value="8">蘭芳特</option>
+  <option value="9">雷因法魯斯</option>
+  <option value="10">雷丁</option>
+  <option value="11">樹之賢者</option>
+ </select>
+ <label>女角色：</label> 
+ <select id="head_select_w" style="width: 20%;">
+  <option value="1">阿卡婭</option>
+  <option value="2">艾米莉亞</option>
+  <option value="3">尤莉婭</option>
+  <option value="4">麗可麗絲</option>
+  <option value="5">澤瑞達</option>
+  <option value="6">羅澤希爾</option>
+  <option value="7">懷特茜茜</option>
+  <option value="8">蒂亞莉絲</option>
+  <option value="9">雪露法妮爾</option>
+  <option value="10">雪莉</option>
+  <option value="11">莉亞娜</option>
  </select>
  </p>
 
 <hr />
 <div id="ch"></div>
-
-
 <hr />
-
-<p><label>選擇：</label> 
-<select id="foot_select" style="width: 40%;">
-  <option value="1">原創角對話</option>
-  <option value="2">一代角對話</option>
-  <option value="3">二代角對話</option>
-  <option value="4">三代角對話</option>
-  <option value="5">四代角對話</option>
-  <option value="6">五代角對話</option>
-  <option value="7">轉生角對話</option>
-  <option value="8">混合對話</option>
-  <option value="9">與自己對話</option>
+<p><label>免費角色：</label> 
+<select id="foot_select_o" style="width: 20%;">
+  <option value="1">POP醬</option>
+  <option value="2">馬修</option>
+  <option value="3">格尼爾</option>
+  <option value="4">艾梅達</option>
+  <option value="5">安潔莉卡</option>
+ </select>
+ <label>夢見男角色：</label> 
+<select id="foot_select_m" style="width: 20%;">
+  <option value="1">波贊魯</option>
+  <option value="2">基札洛夫</option>
+  <option value="3">艾爾文</option>
+  <option value="4">迪哈爾特</option>
+  <option value="5">伊普西龍</option>
+  <option value="6">利昂</option>
+  <option value="7">蘭迪烏斯</option>
+  <option value="8">蘭芳特</option>
+  <option value="9">雷因法魯斯</option>
+  <option value="10">雷丁</option>
+  <option value="11">樹之賢者</option>
+ </select>
+ <label>夢見女角色：</label> 
+ <select id="foot_select_w" style="width: 20%;">
+  <option value="1">阿卡婭</option>
+  <option value="2">艾米莉亞</option>
+  <option value="3">尤莉婭</option>
+  <option value="4">麗可麗絲</option>
+  <option value="5">澤瑞達</option>
+  <option value="6">羅澤希爾</option>
+  <option value="7">懷特茜茜</option>
+  <option value="8">蒂亞莉絲</option>
+  <option value="9">雪露法妮爾</option>
+  <option value="10">雪莉</option>
+  <option value="11">莉亞娜</option>
  </select>
  </p>
 
-<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
 
 
 <hr />
 
 <script>
-  var contentArr = [] ;
-  contentArr.push('');
-  contentArr.push('<div class="title_text">女主劇本被搶走</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Y8_DhcPp5FI?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">未來人會怎麼評價我們</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oS57Kn2UcDc?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">安醬夢境收割機</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0X9a4C-Ui1E?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">我承認你是最強的 伊普西龍先生</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TmFg5HrSLpg?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">找陳釀三百年的酒</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YAphClOTy4k?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">妳也是魔族的朋友嗎</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LVTS96604e8?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">格尼爾 今天該你打掃吧</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BeNCBA1kmzM?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">放下仇恨吧 希琳卡</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uN5p6phVxtg?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">格尼爾你總算來了</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tsIGqH-GGUU?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">財閥長的魚跟鴿子不見了</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qPQRVNQQIYw?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">馬修！快把肩膀借我下</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RCJeM4hUIlo?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">馬修的心靈之友</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bsUb1z_das4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">澤瑞達要玩捉迷藏</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Y8lC97kMqdA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('');
-  contentArr.push('<div class="title_text">雪莉總是那麼有活力</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5uM-6_e3OwM?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">要是當初我被帝國抓了</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4Cfaka2SqVI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('');
-  contentArr.push('');
-  contentArr.push('<div class="title_text">我以為你消失了基札洛夫</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CWPohb4Bfg8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('');
-  contentArr.push('<div class="title_text">不許你迫害麗可麗絲</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/G4M6ZXuhpBA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">守護夥伴是我們的使命</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/73tmwAJWHs0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">有沒有考慮加入本王子麾下</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TCHg4upA3Ow?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">有調皮的哥哥真頭疼</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pxvnsOw5mX0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">你是蘭迪烏斯吧</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_19o3TVmz1Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">我為什麼沒有長大</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4skHIgTErHQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">雪露法妮爾 我想訂新的料理機</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IuWij0BOaN0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">最正常的格尼爾</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7Ff5HkHfDZI?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">傳說中的女主光環</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z9Q-bkQjmdA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">羅澤希爾 好久不見</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TdufmzLBa40?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">雷因法魯斯 你是我嗎</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/70QszuK6OHQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">蘭迪烏斯 未來的我</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JBKjPbP8SI0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-
+  (function(){
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('<div class="title_text">pipi美pipi美，這棟樓一直在瞪我！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nk7hjlmC3HQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">Poping！破壞好快樂ZOI！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OpLXMXEPPWk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">唔呼～服務開始－－－</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TqfxLUKxMf8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">哎哎、生氣了嗎？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ACIB5hVusuY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">以上即短劇［你房塌了］，感謝觀看～</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9Q-xPTh6vXo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">下～次～再～</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/noEchYMRe4Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">pop醬，為什麼要光顧這兒呢？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2YJHQBhlcrQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蘭－古－利－薩－波－！！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MngyuuEV_OQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">遲到了個盧克蕾蒂婭！！！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ifE5BxSuJpM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">就是現在！pipipipi！！！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bTCgKDcDBjA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">荒蕪的田地～永遠不夠用的金幣～</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cgU-XLcITlQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('<div class="title_text">現在，任何人都無法分開我們了，澤瑞達</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zGsWdkgFUqQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">波贊魯，浮空城有一場慶典想要邀請你</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eg7Ww1-771o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">身為主角難道真要比其他人辛苦很多</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VbJpZXmtE1c?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">你今天是不是忘了什麼事情，格尼爾？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nX5nqSO97Jk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">這裡就是我們的新營地了，艾梅</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0F4UzlwBZbk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('<div class="title_text">誒誒誒誒誒，還．．．還是撞見了嗎？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VNAnGhCUi-0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">誒．．．誒！？怎麼是你啊艾梅！？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mEddnapYRPw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('<div class="title_text">難得碰見你一次啊，澤瑞達小姐？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FR-g9fq56i8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">你最近有有些悶悶不樂的呢，蒂亞莉絲小姐</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PelRYm848t4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">尤莉婭小姐有為自己的選擇後悔過嗎</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kGcrbZ0xDxk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('<div class="title_text">嘛．．．你總算來了，格尼爾！等你好久了！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hYggk28YM0A?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   var firstEnter = 0 ; 
   var nowPage = 1;
   var maxCount = contentArr.length - 1;
-  var prevBtn = document.getElementById("prev");
-  var nextBtn = document.getElementById("next");
-  var headSelect = document.getElementById("head_select");
-  var footSelect = document.getElementById("foot_select");
+  var headSelect = document.getElementById("head_select_o");
+  var footSelect = document.getElementById("foot_select_o");
   
-  prevBtn.onclick = function () {
-    nowPage --;
-    initPage(nowPage);
-  }
-
-  nextBtn.onclick = function () {
-    nowPage ++;
-    initPage(nowPage);
-  }
 
   headSelect.onchange = function () {
     initPage(headSelect.value);
@@ -183,19 +187,6 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     nowPage = value;
     document.getElementById("ch").innerHTML = contentArr[value];
 
-    if (value == 1) {
-      prevBtn.disabled = true ;
-    }
-    else {
-      prevBtn.disabled = false;
-    }
-
-    if (value == maxCount) {
-      nextBtn.disabled = true ;
-    }
-    else {
-      nextBtn.disabled = false;
-    }
     
     if (firstEnter == 0) {
       firstEnter = 1 ; 
@@ -208,8 +199,116 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   }
   
   initPage(1);
+
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">哼哼，可憐的蘭古利薩喲．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7KdvSdLSui0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">三個小鬼裡面，就屬你這傢伙最正常了</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sQOVQZ4UdhI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">你就是完成了超越的老夫．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SGT3NL74y9s?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">喲馬修，你的故事裡有［劇情分支］嗎？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/55LVuk03fNM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">我經常會想起我們曾經一起的冒險</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5Sj067yl_qE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">聽說你這傢伙還曾經倒戈過波贊魯！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yztIQX6P3ho?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">見證［最強］的力量吧，小子．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9SOn1abKzEI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">我聽說你造出過魔劍的仿製品，卻失敗了</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ohBX08rI1YA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">真是英姿颯爽啊，艾米莉亞</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fJjiX7W1OKg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">原來．．．未來的我就是這副模樣．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Nrr8iaRLuR0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">想不到在這裡還能遇見你，基札洛夫</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KhUPS-wTnro?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">那副姿態，你．．．是我嗎？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GQO-THjno2o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">我以為你已經永遠消失了，基札洛夫</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DsEBw9OyRIE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">茜茜小姐，不知你這裡是否有寶石售賣</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KNXSXoVGKus?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">和我一起踏上新的冒險征程吧，克麗絲！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/haWeIRNk-xA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">我始終在思考一個問題，羅澤希爾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ya4CyDbb8Zs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">是．．．馬修夢中的．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/iaW-JmJU--4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">雪莉小姐！你在這裡啊！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/29AH4k0U3Oo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">艾爾文！來一場騎士對決吧！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KlEscKwOTvg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">父親他在軍隊中，是怎樣的呢</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DIxDQJT9jp8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">這一次．．．我不會再被你蠱惑了，黑暗王子</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Yvz2oxmR8bE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">你好像在尋找什麼東西呢，安潔莉卡小姐</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rm5FYOV5EQU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">哦－－是光輝軍團最嚴肅的大哥哥</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3YRWg7WnlLM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">咦？那位小姐，是魔族朋友的氣息！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CnceResX2HY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">你是，馬修身邊的．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_X7BFAmFIBw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">尤莉婭，要來一起捉迷藏嗎</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-hZcOAW_cFY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">你的身影看起來還是那麼的孤獨，希琳卡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/R0yTmk999R0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">安潔莉卡，我定制的東西弄好了嗎</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/S9RHmMp4mJ4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">今天能雇傭我了嗎，懷特．茜茜？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/geeBWbkKzfo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">唔，你就是潔西卡說過的雷丁．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/X9S10d__hmM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">梅露帕妮小姐．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/54WAUpsQrPU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">基札洛夫．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3GxSgghjmX8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">茜茜小姐，我想向您訂購新的料理機．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/T9LZVBS0AYk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">你是．．．蘭迪烏斯吧？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DqQmFPhIWVc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">好久不見，羅澤希爾小姐</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_N9zZ_k9U2M?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">莉亞娜，一起去哪裡玩玩吧～</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gqvGp__WCtc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">來一較高下吧，利昂！</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EKD8rWvF5p4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">你好像永遠都這麼充滿活力，財閥長小姐</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xYY2k0boaME?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">又見面了，潔西卡大師．．．</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vp5miFiiL1g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_w");
+  var footSelect = document.getElementById("foot_select_w");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+  
 </script>
 <p>&nbsp;</p>
+
+
+
+
 
 
 
