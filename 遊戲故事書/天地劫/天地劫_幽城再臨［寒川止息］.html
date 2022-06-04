@@ -1,0 +1,153 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p>片頭有股淡淡的哀戚，寒林中的兩朵同莖的花，似乎就是<span class="global_name_span">玄羽</span>、<span class="global_name_span">雲襄</span>的化身。</p> 
+
+<p>另外不得不說，天地劫的劇情策畫似乎已經放飛自我，自從主角等人入地界開始，所有劇情都相當零散且難以自洽，包含了活動、支線，唯一讓人覺得用心的就只有［飛鳥魂渡］，那我也放飛自我，感覺啥就寫啥吧，劇情嚴謹已經跟這遊戲沒半毛錢關係。</p> 
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NSI_5U3pE8o?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+<hr />
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">劇情</option>
+  <option value="2">挑戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">連理枝</div> <p>劇情一開始，一個神秘的人物正對<span class="global_name_span">玄羽</span>、<span class="global_name_span">雲襄</span>兩姊妹訓教，從對話中來看，可以知道兩姊妹已經輪迴千年，終其目的是為了領悟跳脫輪迴之道。</p> <p><span class="global_name_span">玄羽</span>很認真看待這件事情，但終究不得悟，反而<span class="global_name_span">雲襄</span>一副灑脫樣子，悟不得便悟不得唄，只要能一直陪在姐姐身邊就好，從此處來看，兩姊妹的個性當真相差的遠。</p> <p>再來畫面一轉，便是輪迴再開，這段劇情重點是敘述<span class="global_name_span">玄羽</span>、<span class="global_name_span">雲襄</span>原身為共生之花，而<span class="global_name_span">刀八</span>的身分為［定序者］，似乎因為<span class="global_name_span">玄羽</span>失憶導致錯序，才讓他現身，於是<span class="global_name_span">雲襄</span>承諾幫姊姊找回記憶後便回［寒林］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/V8hXvEYX7S8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">啟明慧</div> <p>第二段劇情沒啥重點，似乎只是為了引出新人物<span class="global_name_span">無相．弭服</span>，以及一開始對<span class="global_name_span">玄羽</span>姊妹訓教的神秘人，應該是生活在鏡子裡的［輪迴之主］，這鏡子應當不是一般的鏡子。</p> <p>另外［諦聽］組織也因為兩姊妹而行動起來，這邊透過對話得知<span class="global_name_span">春蘭</span>有著［窺夢］的能力。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hfgPv_kXCNg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">秘</div> <p>一名看似身著華服的女性在一面大鏡裡，這應該就是［輪迴之主］，我猜嘛，這人應該是［九如塔］長老，如今的她並無形體，所以利用<span class="global_name_span">雲襄</span>的愛姊心理，想要得到肉身，至於是奪舍，還是身為［寒林之主］的姊妹倆有其他大能，就看後續發展了。</p> <p>而此時［諦聽］也來到了［寒林］尋找姊妹，這裡也引出［諦聽］新角色<span class="global_name_span">檀香</span>，我覺得這敘事手法相當不好，接連兩個劇情冒出新角色，卻沒有好的鋪程，其實是讓玩家很容易不耐煩按下［Skip］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AEKC8PLLTTk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">消業火</div> <p><span class="global_name_span">雲襄</span>兩姊妹想前往［明界］去體驗陽光的溫暖，途經一處城寨，與迷信的寨民打了起來，這沒啥重點劇情。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DF6DZmkNivA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">兩分釵</div> <p>兩姊妹被之前的城寨之民一路追趕，從對話中可知此寨為［黎輔寨］。</p> <p>另外透過<span class="global_name_span">雲襄</span>我們得知，多次的輪迴，似乎只有<span class="global_name_span">雲襄</span>保留住所有的記憶，而這次輪迴為了改變<span class="global_name_span">玄羽</span>的命運，她便與<span class="global_name_span">無相．弭服</span>演了一場戲，故意氣走<span class="global_name_span">玄羽</span>，這樣也許可以改變每次輪迴<span class="global_name_span">玄羽</span>都為了保護自己而死的命運吧，<span class="global_name_span">雲襄</span>心裡這麼想著。</p> <p>還有個從對話中可能透露的設定，<span class="global_name_span">玄羽</span>、<span class="global_name_span">雲襄</span>這對雙生花，似乎是其中一人身死只要另一人活著，就可以無限輪迴再生，就不知道這是我誤會還是設定如此。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/x_BxdTpAZXQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">靜思雪</div> <p>來到［明界］的<span class="global_name_span">玄羽</span>因為<span class="global_name_span">雲襄</span>的關係而心情低落，獨自在大雪中望著眼前的河流，這情景被一獵戶人家看到，便把與狼群戰至重傷的<span class="global_name_span">玄羽</span>帶回家。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7WduN7xN_FI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">乍還身</div> <p>因為<span class="global_name_span">玄羽</span>的關係，引來了妖物，導致這一家人慘遭滅頂之災，這段劇情引出了<span class="global_name_span">任斷離</span>這個新角色，還有<span class="global_name_span">玄羽</span>身為［閻君］身分時戴著的那面具的由來。</p> <p>替獵戶一家報仇後，<span class="global_name_span">玄羽</span>似乎恢復記憶，取回所有力量，準備回去找<span class="global_name_span">雲襄</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kBDNTsXVhts?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">彼岸香</div> <p><span class="global_name_span">雲襄</span>早料到有此，便在［地界］入口等著<span class="global_name_span">玄羽</span>，只不過這時候的<span class="global_name_span">玄羽</span>卻因為<span class="global_name_span">雲襄</span>的這番操作，而異常氣憤。</p> <p>不過這對姊妹的愛恨情仇太複雜了，一時間也很難理的清。</p> <p>還記得<span class="global_name_span">雲襄</span>與<span class="global_name_span">刀八</span>的約定嗎，這時<span class="global_name_span">玄羽</span>記憶恢復，但兩姊妹卻不願回［寒林］，這引來了<span class="global_name_span">刀八</span>現身。</p> <p>至於為啥<span class="global_name_span">刀八</span>執意讓兩姊妹回去，估計是［寒林之主］有著自己的使命，需要在［寒林］待著，至於是啥使命，我看不懂，反正就是跟天地之序有關的，於是雙方開始大戰，中途還有［諦聽］亂入，只不過終究無法阻止兩姊妹突破重圍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SMyOBBmvrwE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">重鏡圓</div> <p>最終<span class="global_name_span">刀八</span>無法阻止兩姊妹再入輪迴，這邊估計是指此次輪迴因為<span class="global_name_span">玄羽</span>取回記憶的緣故，可能會有所不同。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EIUoN0OltXQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">連理枝</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yoBjC_ydrCg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">啟明慧</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zFVg7VtFWjY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">消業火</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gA6XDz7u2pc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">兩分釵</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fP9cIaMEJMI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">靜思雪</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2Pb8H8wohig?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">乍還身</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LB-kKwPUyeA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">彼岸香</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nqn5jiCnjNc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
