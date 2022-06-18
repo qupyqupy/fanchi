@@ -1,0 +1,188 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">CH01-發動列車（日配）</option>
+  <option value="2">CH02-尋找巴德（日配）</option>
+  <option value="3">CH03-疫苗（日配）</option>
+  <option value="4">CH04-決戰（日配）</option>
+  <option value="5">CH01-發動列車（中配）</option>
+  <option value="6">CH02-尋找巴德（中配）</option>
+  <option value="7">CH03-疫苗（中配）</option>
+  <option value="8">CH04-決戰（中配）</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+
+<hr />
+
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">CH01-發動列車（日配）</option>
+  <option value="2">CH02-尋找巴德（日配）</option>
+  <option value="3">CH03-疫苗（日配）</option>
+  <option value="4">CH04-決戰（日配）</option>
+  <option value="5">CH01-發動列車（中配）</option>
+  <option value="6">CH02-尋找巴德（中配）</option>
+  <option value="7">CH03-疫苗（中配）</option>
+  <option value="8">CH04-決戰（中配）</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">CH01-發動列車（日配）</div> <p>［拉昆市］如今處在極度混亂的狀況，警笛聲四起，四處都是暴動造成火光，而罪魁禍首［保護傘公司］卻仍透過媒體碩造自己光明的形象，暗地裡卻已經在實驗室做出新一代的生化兵器，代號［NEMESIS］復仇女神，並直接投放到［拉昆市］進行戰鬥實驗。</p> <p>此時經歷過上一次生化危機的<span class="global_name_span">吉兒</span>正在市內家中，似乎是有所感應、又或是前次造成的陰影太重，夢中竟然看到身染病毒即將變成喪屍的自己。</p> <p>隨著<span class="global_name_span">布萊德</span>緊急來電警告，［NEMESIS］已經前來追殺<span class="global_name_span">吉兒</span>，這怪物身形巨大、行動迅速，手掌中還會長出極具殺傷力的觸手，僥倖逃過一命的<span class="global_name_span">吉兒</span>與<span class="global_name_span">布萊德</span>會合，這才知道怪物的目的就是［S.T.A.R.S］隊員，加上目前市內到處都是遭到感染的喪屍，當務之急是找方法離開這煉獄般的地方。</p> <p>在這險惡的環境下，人真實的個性嶄露無遺。</p> <ul> <li><span class="global_name_span">布萊德</span>不慎遭到感染，決定犧牲自己留下斷後。</li> <li>一名油膩老年大叔<span class="global_name_span">達里奧</span>，為了自己活命不惜驅趕<span class="global_name_span">吉兒</span>保全藏身地。是說我假如遇到這情況，也會選擇跟<span class="global_name_span">達里奧</span>一樣找個地方躲起來，但我絕對不會像他這樣趕人。</li> </ul> <p>闖過重重危機，就在<span class="global_name_span">吉兒</span>即將搭上救援直升機的那一刻，［NEMESIS］再度來襲，直升機也因為攻擊爆炸墜落，眼下四周並沒有重武器傍身，<span class="global_name_span">吉兒</span>只能啟動一旁的汽車，藉由撞擊產生的衝擊力，暫時阻止［NEMESIS］的行動。</p> <p>這時傭兵<span class="global_name_span">卡洛斯</span>如神兵天將般，幾發火箭炮把［NEMESIS］轟倒在地，順勢救了<span class="global_name_span">吉兒</span>一命。</p> <p>來到他們位於地鐵的避難所，一番討論後得知這傭兵隊［U.B.C.S］隸屬［保護傘公司］，如今他們的目的是儘量拯救市民，並且離開這都市，不過目前小隊戰損嚴重，只能請求<span class="global_name_span">吉兒</span>幫忙啟動列車。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pACs_eialgw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雖然對［保護傘公司］沒啥好感，但雙方想離開都市的目的相同，<span class="global_name_span">吉兒</span>還是決定擔下了這個重擔，前往［變電所］的途中，遇上了另一個［U.B.C.S］的成員<span class="global_name_span">尼可拉</span>，他可是個狠人，一出場就崩掉自己"可能"遭到感染的隊員，並且嘲笑著<span class="global_name_span">吉兒</span>的軟弱。</p> <p>繼續前進來到［變電所］，這裡似乎已經成為某種生物的巢穴，牆壁上充滿了肉狀物的組織，埋伏其中的人形生物，還會以口對口的方式寄生噁心的東西到人體內，<span class="global_name_span">吉兒</span>一個女孩子自然受不了，趕緊重啟電力，離開這噁心的鬼地方。</p> <div class="global_ps_text"> <p>這噁心的怪物叫做［Drain Deimos］，原型是節肢動物。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z-VVlk0Src0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>恢復供電之後，接下來就是要搞定地鐵的交通控制系統，但之前被火箭砲轟的［NEMESIS］又陰魂不散地前來追擊，並且沿路透過寄生方式改造感染的喪屍，在這樣不利的情況下，<span class="global_name_span">吉兒</span>還是搞定了控制系統，並且回到了地鐵站。</p> <p>這時<span class="global_name_span">尼可拉</span>也回到這裡，兩人互看不對盤，一種尷尬的氣息在空氣中蔓延開來，不過［NEMESIS］的到來打破這氛圍，知道自己是這怪物的目標，為了替大夥爭取時間，<span class="global_name_span">吉兒</span>立即決定自己當誘餌引開［NEMESIS］。</p> <p>逃到下水道後，<span class="global_name_span">吉兒</span>心想雖然這裡氣味恐怖，但總算能鬆一口氣，卻沒想到這也充斥著受感染的怪物，當中尤其以［獵殺者γ］這會從水道忽然跑出來的敵人最為恐怖，不僅身形巨大，那血盆大口更似要將人一口吞了。</p> <p>千辛萬苦才剛離開下水道，［NEMESIS］又追了過來，身上還背著重型武器，這簡直逆天了，不僅身體素質比不上，現在連火力也輸這怪物，如今也只能三十六計走為上策。</p> <div class="global_ps_text"> <p>［獵殺者γ］開發代碼是［MA-124］，是［保護傘公司］開發的兩棲類生化兵器，會出現在下水道的原因，估計是城市大亂，這些生化兵器趁機逃出來的關係。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/G_jSONeJZv0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>逃跑過程中還遇上［重製版二代］的槍店老闆<span class="global_name_span">肯多</span>，兩人是舊識了，<span class="global_name_span">吉兒</span>隨即將能搭地鐵離開的消息告訴他，不過<span class="global_name_span">肯多</span>這時卻神色怪異的望向內門，隨即拒絕了好意。</p> <p>因為玩過［重製版二代］，所以我們知道<span class="global_name_span">肯多</span>是因為自己遭到感染的女兒，才決定留下來。</p> <p>離開槍店沒多久，［NEMESIS］又帶著火箭發射器殺到，還好城市街道狹窄，能利用建築物的掩護、之後又逃過巨型人偶的斷頭攻擊，<span class="global_name_span">吉兒</span>總算回到地鐵站與<span class="global_name_span">卡洛斯</span>會合。</p> <p>就在準備搭列車離開時，<span class="global_name_span">卡洛斯</span>與其夥伴<span class="global_name_span">泰瑞爾</span>接到了尋找<span class="global_name_span">巴德</span>醫生的任務，表面上是救人，實際上是他握有病毒疫苗，要拯救整個都市又或者以疫苗來證明［保護傘公司］的罪行，他都是個關鍵人物。</p> <p>於是雙方在此時分別，就在<span class="global_name_span">吉兒</span>以為可以就此脫離惡夢，［NEMESIS］又追殺到了列車上，［U.B.C.S］隊長<span class="global_name_span">米海爾</span>壯烈犧牲，而<span class="global_name_span">尼可拉</span>知道怪物的目標是<span class="global_name_span">吉兒</span>，直接將唯一出路反鎖，自己獨自逃生去。</p> <p>最終列車在爆炸的衝擊下出軌...........</p> <p>另一邊<span class="global_name_span">卡洛斯</span>兩人來到了警局尋找<span class="global_name_span">巴德</span>醫生。</p> <div class="global_ps_text"> <p><span class="global_name_span">肯多</span>跟<span class="global_name_span">貝瑞</span>是好朋友，所以<span class="global_name_span">吉兒</span>才認識他。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CKslfpOQpxI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH02-尋找巴德（日配）</div> <p>在警局門口，看到已經變成喪屍的<span class="global_name_span">布萊德</span>咬傷了一個黑人警察，這警察就是［二代重製版］中的<span class="global_name_span">馬文</span>。</p> <p><span class="global_name_span">卡洛斯</span>兩人擊斃<span class="global_name_span">布萊德</span>後，便進入警局尋找<span class="global_name_span">巴德</span>醫生，這段過程順便解釋了［二代重製版］中，警局各處細節的由來，例如：</p> <ul> <li>證物室一些已經開啟的櫃子，原來是<span class="global_name_span">卡洛斯</span>從裡面拿走東西。</li> <li>親眼看到走道上的警員喪命的那刻情景。</li> <li>淋浴室被炸開的牆壁，原來是<span class="global_name_span">卡洛斯</span>所為。</li> </ul> <p>在［S.T.A.R.S］的辦公室中，總算與<span class="global_name_span">巴德</span>取得聯繫，但沒一會兒通訊就中斷了，這時<span class="global_name_span">卡洛斯</span>接到<span class="global_name_span">吉兒</span>傳來的通訊，知道列車出軌以及隊長喪生的消息，<span class="global_name_span">卡洛斯</span>急忙前去尋找<span class="global_name_span">吉兒</span>，而原本的任務就先交給<span class="global_name_span">泰瑞爾</span>來搞定。</p> <p>這時畫面轉到數分鐘前<span class="global_name_span">吉兒</span>這邊，列車出軌後，有主角光環的她僥倖逃過一劫。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Yy7ugMDUTE8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過再度變異的［NEMESIS］卻如死神般追趕而至，以一人之力暫時擊敗［NEMESIS］的<span class="global_name_span">吉兒</span>這次則沒那麼好運，遭到了致命的攻擊而感染病毒。</p> <p>這時<span class="global_name_span">尼可拉</span>突然出現，並陰著臉看著在地上掙扎的<span class="global_name_span">吉兒</span>。</p> <p>過了大半天<span class="global_name_span">卡洛斯</span>總算找到不省人事的<span class="global_name_span">吉兒</span>，此時應該倒在附近的［NEMESIS］已經不見蹤影，為了治療<span class="global_name_span">吉兒</span>，如今似乎只能去找手握疫苗的<span class="global_name_span">巴德</span>試試了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EwW1MP45cVQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH03-疫苗（日配）</div> <p>抵達醫院後，暫時將<span class="global_name_span">吉兒</span>安頓好，<span class="global_name_span">卡洛斯</span>便開始朝深處尋找，此時醫院已經被怪物佔領，四處危機四伏，這當中以［獵殺者β］最為難纏。</p> <p>當找到<span class="global_name_span">巴德</span>時，他已經遭到人槍殺，這顯然是遭到［保護傘公司］滅口，還好最後順利找到疫苗樣本，<span class="global_name_span">吉兒</span>也因此躲過了變成喪屍的命運。</p> <p>過了一段時間，<span class="global_name_span">泰瑞爾</span>傷痕累累的趕到，並帶來了［拉昆市］即將遭到飛彈轟炸的消息，還容不得時間細想，大批喪屍開始進攻醫院，多虧<span class="global_name_span">卡洛斯</span>以一擋百解決了眼前的危機。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/f5rOh_I3gNs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH04-決戰（日配）</div> <p>當<span class="global_name_span">吉兒</span>醒來時，離［拉昆市］毀滅只剩下數小時的時間，<span class="global_name_span">泰瑞爾</span>說<span class="global_name_span">卡洛斯</span>跑到了地下室去尋找殘存的疫苗，已經過了很久都沒消息，當下自然是趕緊找到他的下落。</p> <p>結果冤家路窄，在地下室又遇到了<span class="global_name_span">尼可拉</span>，從他通訊的電子郵件中來看，<span class="global_name_span">尼可拉</span>應該是暗中替某組織收集這次生化危機的各種數據。</p> <p>這時<span class="global_name_span">泰瑞爾</span>帶來好消息，政府願意取消轟炸計畫，但前提必須是將疫苗交給他們，這下找到疫苗變成當務之急，但過程中［NEMESIS］又殺到，<span class="global_name_span">泰瑞爾</span>不幸犧牲。</p> <p>暫時逃離的<span class="global_name_span">吉兒</span>壓下心中的哀傷，開始在地下室尋找疫苗，這裡設備精良、裝置齊全，顯然是［保護傘公司］藏在醫院地下的巨大研究中心，培養皿中還能看到［暴君］、［獵殺者］等等的生化兵器，利用這裡的設備合成出疫苗後，<span class="global_name_span">吉兒</span>正準備離開此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PrftteAlZ9U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到［NEMESIS］又來了，一直身藏暗處的<span class="global_name_span">尼可拉</span>則趁機奪去疫苗，在與［NEMESIS］激戰中，一直沒消息的<span class="global_name_span">卡洛斯</span>終於出現，兩人合力終於將［NEMESIS］淹沒在酸性腐蝕液體中。</p> <p>但這生化兵器確實不簡單，竟然因此再度變異，體型變得簡直比恐龍還大，但是主角光環終究是很犯規的，剛好附近就有台威力巨大的電磁砲，也不知道［保護傘公司］在研究中心擺這武器是要幹啥？大概除了生化兵器，他們也在研究超科技兵器吧。</p> <p>有這強大武器，<span class="global_name_span">吉兒</span>決定獨自面對強敵，讓<span class="global_name_span">卡洛斯</span>去追趕逃跑的<span class="global_name_span">尼可拉</span>，最終［NEMESIS］就這樣被轟成肉泥。</p> <p>但先行一步的<span class="global_name_span">卡洛斯</span>卻被<span class="global_name_span">尼可拉</span>擊倒，經過一番纏鬥後，<span class="global_name_span">尼可拉</span>畢竟雙拳難敵四掌，只能無奈地看著兩人搭著直升機離去，自己則留下等待著與［拉昆市］一起毀滅。</p> <p>直昇機上，看著被毀損的疫苗，<span class="global_name_span">吉兒</span>下定決心，要向［保護傘公司］這邪惡的機構，發出反擊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gzlhHlWsGYQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH01-發動列車（中配）</div> <p>［拉昆市］如今處在極度混亂的狀況，警笛聲四起，四處都是暴動造成火光，而罪魁禍首［保護傘公司］卻仍透過媒體碩造自己光明的形象，暗地裡卻已經在實驗室做出新一代的生化兵器，代號［NEMESIS］復仇女神，並直接投放到［拉昆市］進行戰鬥實驗。</p> <p>此時經歷過上一次生化危機的<span class="global_name_span">吉兒</span>正在市內家中，似乎是有所感應、又或是前次造成的陰影太重，夢中竟然看到身染病毒即將變成喪屍的自己。</p> <p>隨著<span class="global_name_span">布萊德</span>緊急來電警告，［NEMESIS］已經前來追殺<span class="global_name_span">吉兒</span>，這怪物身形巨大、行動迅速，手掌中還會長出極具殺傷力的觸手，僥倖逃過一命的<span class="global_name_span">吉兒</span>與<span class="global_name_span">布萊德</span>會合，這才知道怪物的目的就是［S.T.A.R.S］隊員，加上目前市內到處都是遭到感染的喪屍，當務之急是找方法離開這煉獄般的地方。</p> <p>在這險惡的環境下，人真實的個性嶄露無遺。</p> <ul> <li><span class="global_name_span">布萊德</span>不慎遭到感染，決定犧牲自己留下斷後。</li> <li>一名油膩老年大叔<span class="global_name_span">達里奧</span>，為了自己活命不惜驅趕<span class="global_name_span">吉兒</span>保全藏身地。是說我假如遇到這情況，也會選擇跟<span class="global_name_span">達里奧</span>一樣找個地方躲起來，但我絕對不會像他這樣趕人。</li> </ul> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LP5JBtPmHOQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>闖過重重危機，就在<span class="global_name_span">吉兒</span>即將搭上救援直升機的那一刻，［NEMESIS］再度來襲，直升機也因為攻擊爆炸墜落，眼下四周並沒有重武器傍身，<span class="global_name_span">吉兒</span>只能啟動一旁的汽車，藉由撞擊產生的衝擊力，暫時阻止［NEMESIS］的行動。</p> <p>這時傭兵<span class="global_name_span">卡洛斯</span>如神兵天將般，幾發火箭炮把［NEMESIS］轟倒在地，順勢救了<span class="global_name_span">吉兒</span>一命。</p> <p>來到他們位於地鐵的避難所，一番討論後得知這傭兵隊［U.B.C.S］隸屬［保護傘公司］，如今他們的目的是儘量拯救市民，並且離開這都市，不過目前小隊戰損嚴重，只能請求<span class="global_name_span">吉兒</span>幫忙啟動列車。</p>  <p>雖然對［保護傘公司］沒啥好感，但雙方想離開都市的目的相同，<span class="global_name_span">吉兒</span>還是決定擔下了這個重擔。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3dpuzaGsV9g?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>前往［變電所］的途中，遇上了另一個［U.B.C.S］的成員<span class="global_name_span">尼可拉</span>，他可是個狠人，一出場就崩掉自己"可能"遭到感染的隊員，並且嘲笑著<span class="global_name_span">吉兒</span>的軟弱。</p> <p>繼續前進來到［變電所］，這裡似乎已經成為某種生物的巢穴，牆壁上充滿了肉狀物的組織，埋伏其中的人形生物，還會以口對口的方式寄生噁心的東西到人體內，<span class="global_name_span">吉兒</span>一個女孩子自然受不了，趕緊重啟電力，離開這噁心的鬼地方。</p> <div class="global_ps_text"> <p>這噁心的怪物叫做［Drain Deimos］，原型是節肢動物。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cu1mBJse4Ic?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>恢復供電之後，接下來就是要搞定地鐵的交通控制系統，但之前被火箭砲轟的［NEMESIS］又陰魂不散地前來追擊，並且沿路透過寄生方式改造感染的喪屍，在這樣不利的情況下，<span class="global_name_span">吉兒</span>還是搞定了控制系統，並且回到了地鐵站。</p> <p>這時<span class="global_name_span">尼可拉</span>也回到這裡，兩人互看不對盤，一種尷尬的氣息在空氣中蔓延開來，不過［NEMESIS］的到來打破這氛圍，知道自己是這怪物的目標，為了替大夥爭取時間，<span class="global_name_span">吉兒</span>立即決定自己當誘餌引開［NEMESIS］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Hs8yCNrYAjE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>逃到下水道後，<span class="global_name_span">吉兒</span>心想雖然這裡氣味恐怖，但總算能鬆一口氣，卻沒想到這也充斥著受感染的怪物，當中尤其以［獵殺者γ］這會從水道忽然跑出來的敵人最為恐怖，不僅身形巨大，那血盆大口更似要將人一口吞了。</p> <p>千辛萬苦才剛離開下水道，［NEMESIS］又追了過來，身上還背著重型武器，這簡直逆天了，不僅身體素質比不上，現在連火力也輸這怪物，如今也只能三十六計走為上策。</p> <div class="global_ps_text"> <p>［獵殺者γ］開發代碼是［MA-124］，是［保護傘公司］開發的兩棲類生化兵器，會出現在下水道的原因，估計是城市大亂，這些生化兵器趁機逃出來的關係。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0AiW3guXd18?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>逃跑過程中還遇上［重製版二代］的槍店老闆<span class="global_name_span">肯多</span>，兩人是舊識了，<span class="global_name_span">吉兒</span>隨即將能搭地鐵離開的消息告訴他，不過<span class="global_name_span">肯多</span>這時卻神色怪異的望向內門，隨即拒絕了好意。</p> <p>因為玩過［重製版二代］，所以我們知道<span class="global_name_span">肯多</span>是因為自己遭到感染的女兒，才決定留下來。</p> <p>離開槍店沒多久，［NEMESIS］又帶著火箭發射器殺到，還好城市街道狹窄，能利用建築物的掩護、之後又逃過巨型人偶的斷頭攻擊，<span class="global_name_span">吉兒</span>總算回到地鐵站與<span class="global_name_span">卡洛斯</span>會合。</p> <p>就在準備搭列車離開時，<span class="global_name_span">卡洛斯</span>與其夥伴<span class="global_name_span">泰瑞爾</span>接到了尋找<span class="global_name_span">巴德</span>醫生的任務，表面上是救人，實際上是他握有病毒疫苗，要拯救整個都市又或者以疫苗來證明［保護傘公司］的罪行，他都是個關鍵人物。</p> <p>於是雙方在此時分別，就在<span class="global_name_span">吉兒</span>以為可以就此脫離惡夢，［NEMESIS］又追殺到了列車上，［U.B.C.S］隊長<span class="global_name_span">米海爾</span>壯烈犧牲，而<span class="global_name_span">尼可拉</span>知道怪物的目標是<span class="global_name_span">吉兒</span>，直接將唯一出路反鎖，自己獨自逃生去。</p> <p>最終列車在爆炸的衝擊下出軌...........</p> <p>另一邊<span class="global_name_span">卡洛斯</span>兩人來到了警局尋找<span class="global_name_span">巴德</span>醫生。</p> <div class="global_ps_text"> <p><span class="global_name_span">肯多</span>跟<span class="global_name_span">貝瑞</span>是好朋友，所以<span class="global_name_span">吉兒</span>才認識他。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qHNlrQ0QK0s?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH02-尋找巴德（中配）</div> <p>在警局門口，看到已經變成喪屍的<span class="global_name_span">布萊德</span>咬傷了一個黑人警察，這警察就是［二代重製版］中的<span class="global_name_span">馬文</span>。</p> <p><span class="global_name_span">卡洛斯</span>兩人擊斃<span class="global_name_span">布萊德</span>後，便進入警局尋找<span class="global_name_span">巴德</span>醫生，這段過程順便解釋了［二代重製版］中，警局各處細節的由來，例如：</p> <ul> <li>證物室一些已經開啟的櫃子，原來是<span class="global_name_span">卡洛斯</span>從裡面拿走東西。</li> <li>親眼看到走道上的警員喪命的那刻情景。</li> <li>淋浴室被炸開的牆壁，原來是<span class="global_name_span">卡洛斯</span>所為。</li> </ul> <p>在［S.T.A.R.S］的辦公室中，總算與<span class="global_name_span">巴德</span>取得聯繫，但沒一會兒通訊就中斷了，這時<span class="global_name_span">卡洛斯</span>接到<span class="global_name_span">吉兒</span>傳來的通訊，知道列車出軌以及隊長喪生的消息，<span class="global_name_span">卡洛斯</span>急忙前去尋找<span class="global_name_span">吉兒</span>，而原本的任務就先交給<span class="global_name_span">泰瑞爾</span>來搞定。</p> <p>這時畫面轉到數分鐘前<span class="global_name_span">吉兒</span>這邊，列車出軌後，有主角光環的她僥倖逃過一劫。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qrIUcJpqlfc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過再度變異的［NEMESIS］卻如死神般追趕而至，以一人之力暫時擊敗［NEMESIS］的<span class="global_name_span">吉兒</span>這次則沒那麼好運，遭到了致命的攻擊而感染病毒。</p> <p>這時<span class="global_name_span">尼可拉</span>突然出現，並陰著臉看著在地上掙扎的<span class="global_name_span">吉兒</span>。</p> <p>過了大半天<span class="global_name_span">卡洛斯</span>總算找到不省人事的<span class="global_name_span">吉兒</span>，此時應該倒在附近的［NEMESIS］已經不見蹤影，為了治療<span class="global_name_span">吉兒</span>，如今似乎只能去找手握疫苗的<span class="global_name_span">巴德</span>試試了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/40unp72wWYk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH03-疫苗（中配）</div> <p>抵達醫院後，暫時將<span class="global_name_span">吉兒</span>安頓好，<span class="global_name_span">卡洛斯</span>便開始朝深處尋找，此時醫院已經被怪物佔領，四處危機四伏，這當中以［獵殺者β］最為難纏。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qHHJQ4l0m5Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>當找到<span class="global_name_span">巴德</span>時，他已經遭到人槍殺，這顯然是遭到［保護傘公司］滅口，還好最後順利找到疫苗樣本，<span class="global_name_span">吉兒</span>也因此躲過了變成喪屍的命運。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BNXTneaNH74?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>過了一段時間，<span class="global_name_span">泰瑞爾</span>傷痕累累的趕到，並帶來了［拉昆市］即將遭到飛彈轟炸的消息，還容不得時間細想，大批喪屍開始進攻醫院，多虧<span class="global_name_span">卡洛斯</span>以一擋百解決了眼前的危機。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KP_faeyxR7s?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH04-決戰（中配）</div> <p>當<span class="global_name_span">吉兒</span>醒來時，離［拉昆市］毀滅只剩下數小時的時間，<span class="global_name_span">泰瑞爾</span>說<span class="global_name_span">卡洛斯</span>跑到了地下室去尋找殘存的疫苗，已經過了很久都沒消息，當下自然是趕緊找到他的下落。</p> <p>結果冤家路窄，在地下室又遇到了<span class="global_name_span">尼可拉</span>，從他通訊的電子郵件中來看，<span class="global_name_span">尼可拉</span>應該是暗中替某組織收集這次生化危機的各種數據。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_qqNcroALXA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>這時<span class="global_name_span">泰瑞爾</span>帶來好消息，政府願意取消轟炸計畫，但前提必須是將疫苗交給他們，這下找到疫苗變成當務之急，但過程中［NEMESIS］又殺到，<span class="global_name_span">泰瑞爾</span>不幸犧牲。</p> <p>暫時逃離的<span class="global_name_span">吉兒</span>壓下心中的哀傷，開始在地下室尋找疫苗，這裡設備精良、裝置齊全，顯然是［保護傘公司］藏在醫院地下的巨大研究中心，培養皿中還能看到［暴君］、［獵殺者］等等的生化兵器，利用這裡的設備合成出疫苗後，<span class="global_name_span">吉兒</span>正準備離開此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dgP3Q7GBIVI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到［NEMESIS］又來了，一直身藏暗處的<span class="global_name_span">尼可拉</span>則趁機奪去疫苗，在與［NEMESIS］激戰中，一直沒消息的<span class="global_name_span">卡洛斯</span>終於出現，兩人合力終於將［NEMESIS］淹沒在酸性腐蝕液體中。</p> <p>但這生化兵器確實不簡單，竟然因此再度變異，體型變得簡直比恐龍還大，但是主角光環終究是很犯規的，剛好附近就有台威力巨大的電磁砲，也不知道［保護傘公司］在研究中心擺這武器是要幹啥？大概除了生化兵器，他們也在研究超科技兵器吧。</p> <p>有這強大武器，<span class="global_name_span">吉兒</span>決定獨自面對強敵，讓<span class="global_name_span">卡洛斯</span>去追趕逃跑的<span class="global_name_span">尼可拉</span>，最終［NEMESIS］就這樣被轟成肉泥。</p> <p>但先行一步的<span class="global_name_span">卡洛斯</span>卻被<span class="global_name_span">尼可拉</span>擊倒，經過一番纏鬥後，<span class="global_name_span">尼可拉</span>畢竟雙拳難敵四掌，只能無奈地看著兩人搭著直升機離去，自己則留下等待著與［拉昆市］一起毀滅。</p> <p>直昇機上，看著被毀損的疫苗，<span class="global_name_span">吉兒</span>下定決心，要向［保護傘公司］這邪惡的機構，發出反擊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/V5OAmvz60Bk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
