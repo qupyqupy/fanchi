@@ -1,0 +1,255 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>主線劇情：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">壹號魔晄爐破壞行動</option>
+  <option value="2">賽菲羅斯的幻象</option>
+ </select>
+ <label>支線劇情：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  <option value="1">支線劇情</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+   <option value="1">壹號魔晄爐破壞行動</option>
+   <option value="2">賽菲羅斯的幻象</option>
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+  <option value="1">支線劇情</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">壹號魔晄爐破壞行動</div> <p>跟隨著一隻飛鳥的視角，在一片荒蕪的大地中，一座充滿鋼鐵建築的城市屹立其中，當中的繁榮全靠抽取星球的［生命之流］加工後成為［魔晄］的能源運作。</p> <p>一名賣花女<span class="global_name_span">艾莉絲</span>蹲跪在運送［魔晄］的管線前，隨著洩漏的點點綠光，她猛然睜開眼睛，似乎是想起甚麼事，猛地離開小巷，慌亂中不慎撞到行人，籃中的花散落一地，拾起被踩爛的花朵，她望向了天空........</p> <p>這時在一行駛的列車上，一名身揹顯眼大刀的少年<span class="global_name_span">克勞德</span>正蹲伏在上，當列車停下，他便與一幫以<span class="global_name_span">巴雷特</span>為首的反神羅組織［雪崩］一起清除駐守在這的神羅士兵。</p> <p>當中一名女成員<span class="global_name_span">潔西</span>還在疑惑，就算是以高薪為代價，為什麼這個前神羅戰士會加入組織？不過其他成員倒不在乎這些，反正有強大的人當夥伴是件好事。</p> <div class="global_ps_text"> <p>FFVII的世界裡，生命死後，精神或者理解成靈魂，會進入［生命之流］，隨著星球環繞流動，進而形成新的生命，所以抽取［生命之流］無異於殘害星球生命。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FOBUvBMQZkQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這一路上危險不少，<span class="global_name_span">潔西</span>身為女孩子，天性忍不住八卦起<span class="global_name_span">克勞德</span>與<span class="global_name_span">蒂法</span>之間到底是啥關係？這時<span class="global_name_span">克勞德</span>的回憶中浮現了小時候的影像，但並沒有持續太久。</p> <p>同時間［神羅］的高層已經發現了［雪崩］的入侵行動，<span class="global_name_span">巴雷特</span>卻還毫無警覺，在電梯裡開始大談自己對於抽取［魔晄］這行為的不滿，妥妥的星球環保人士。</p> <p>不過卻沒得到太多迴響，冷面的<span class="global_name_span">克勞德</span>建議他還是先專心對付眼前的敵人，眾人就這樣一路拌嘴一路前進，終於來到魔晄爐的中心。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XQiV1M4gpJw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>就在<span class="global_name_span">克勞德</span>準備裝上炸彈時，突然一陣頭疼，眼前竟然出現一黑色羽毛掉落的幻象，不過稍縱即逝，當下還是先破壞魔晄爐要緊。</p> <p>擊敗守衛的機械獸後，破壞行動可以說成功了一半，接著便是趁著爆炸前脫離此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_uvnxJ1Dz9w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過［雪崩］組織的炸彈實在不給力，竟然重要關頭臨時故障，［神羅］高層透過監視器看到，便決定幫他們一把，下令守護魔晄爐的機械進行自毀式的攻擊，隨著壹號魔晄爐的爆炸，四周的居民也遭到了慘痛的波及。</p> <p>看來這就是［神羅］高層的目的，在平民中塑造［雪崩］是恐怖組織的印象，這時的<span class="global_name_span">克勞德</span>等人並沒有意識到這點，正想辦法撤回自己的根據地，途中［雪崩］成員見到大街上被爆炸波及的慘況，心中難免有些動搖，還好有<span class="global_name_span">巴雷特</span>這個大老粗的精神喊話，穩定了軍心。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ECb1cBA_T5g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">賽菲羅斯的幻象</div> <p>看著大街上四處燃燒的大火，<span class="global_name_span">克勞德</span>腦中又浮現了影象，那是一個站在大火之中，手持長刀的白髮男子，沒想到一轉眼，這男子<span class="global_name_span">賽菲羅斯</span>竟然真的出現在面前。</p> <p><span class="global_name_span">賽菲羅斯</span>似乎知道些甚麼，不斷蠱惑著<span class="global_name_span">克勞德</span>，受不了這些的<span class="global_name_span">克勞德</span>一個大刀砍下去，這才發現一切都是幻覺，但究竟是太靠近［魔晄］所致，還是有其他原因，就不得而知了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5MiKVz9uQ-4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>大街上<span class="global_name_span">艾莉絲</span>似乎在驅趕些甚麼，這時<span class="global_name_span">賽菲羅斯</span>的幻象又出現在旁邊，<span class="global_name_span">克勞德</span>看著眼前這男子，不由得後退了幾步。</p> <p>還好<span class="global_name_span">艾莉絲</span>的呼喚，將他從幻像中拉了出來，但與<span class="global_name_span">艾莉絲</span>接觸後，四周竟然出現了類似穿著斗篷的怪物，同時間追捕［雪崩］的神羅士兵也來到，他們似乎看不到這些怪物。</p> <p><span class="global_name_span">艾莉絲</span>見狀連忙與<span class="global_name_span">克勞德</span>道別，那些穿著斗篷的怪物也隨她而去，眼下要面對的，還是不斷逼近的神羅士兵。最後<span class="global_name_span">克勞德</span>成功突圍與［雪崩］成員會合。</p> <div class="global_ps_text"> <p>這些斗篷怪物，就是一直纏著<span class="global_name_span">艾莉絲</span>的隱形怪，只有在接觸<span class="global_name_span">艾莉絲</span>時，才能看到。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7RQYd8Yfqwk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+  (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  })();
+</script>
+<p>&nbsp;</p>
+
+
+
+
