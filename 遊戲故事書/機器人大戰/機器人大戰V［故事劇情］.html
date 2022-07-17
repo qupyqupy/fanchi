@@ -1,0 +1,267 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p>機器人大戰不需要劇情，熱血就足夠了。</p> 
+
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HNYgqRRbrCM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<hr />
+
+<p><label>主線劇情：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">CH01-CH05（女主角）</option>
+  <option value="2">CH06-CH10（女主角）</option>
+ </select>
+ <label>支線劇情：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  <option value="1">獎勵劇情（女主角）</option>
+  <option value="2">獎勵劇情（男主角）</option>
+  <option value="3">工廠對話</option>
+  <option value="4">退出遊戲對話</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">CH01-CH05（女主角）</option>
+  <option value="2">CH06-CH10（女主角）</option>
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+  <option value="1">獎勵劇情（女主角）</option>
+  <option value="2">獎勵劇情（男主角）</option>
+  <option value="3">工廠對話</option>
+  <option value="4">退出遊戲對話</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">第01話［從絕望出航］</div> <p>故事開始在［地球聯邦］與［加米拉斯］展開的［冥號作戰］。</p> <p>［霧島號］在這場戰役中成為唯一倖存，帶著在火星回收的通訊囊回到地球，只可惜在發現通訊囊所在的逃生艙中，乘坐者<span class="global_name_span">莎夏</span>已經沒了生命跡象。</p> <p>接著［加米拉斯］趁勝追擊，從［冥王星］發射的遊星炸彈毀滅了太空殖民地與地球上的都市，地上的環境遭到嚴重的破壞，如此下去人類滅亡不過只剩一年時間，但獲得［伊斯坎達爾］技術幫助的［地球聯邦］仍有一絲希望，為了獲得能使行星重生的系統，載著人類最後希望的［大和號］準備根據<span class="global_name_span">絲塔夏</span>指示前往［伊斯坎達爾］。</p> <p>但［加米拉斯］可不會給［大和號］機會，出航之際已有攻擊襲來，還好有<span class="global_name_span">千歲</span>駕駛［梵格雷］解除了危機，［大和號］終於順利啟航。</p> <div class="global_ps_text"> <p>00:45 - <span class="global_name_span">沖田</span>豪氣干雲的做死回答。</p> <p>19:50 - ［大和號］啟動。</p> </div> <div class="global_ps_text"> <p><span class="global_name_span">絲塔夏</span>是<span class="global_name_span">莎夏</span>的姐姐，她們還有一個姊妹<span class="global_name_span">尤莉夏</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Gebz63NFYsY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">第02話［火星海盜］</div> <p>這段航行是人類從所未有的星際遠程移動，途中在火星補給時遇到了［木星帝國］的襲擊，這時<span class="global_name_span">托比亞</span>駕駛的［海盜鋼彈］現身幫助，擊退敵人後便加入一起行動。</p> <p>從<span class="global_name_span">托比亞</span>口中得知，就算如今地球已經瀕臨毀滅，但［木星帝國］的總統<span class="global_name_span">格拉克斯．德卡契</span>仍因為私人的復仇原因，想要毀滅地球。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CE0MqwOoBik?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">第03話［流星的記憶］</div> <p>眼前這［木星帝國］的威脅要先處理，於是［大和號］簡單在火星弔念了<span class="global_name_span">莎夏</span>後，便朝著［木星］航行，成功進行［空間跳躍］來到了［木星］附近，接著便是進行偵查行動。</p> <p>這次行動意外得知［木星帝國］的王牌<span class="global_name_span">阿姆羅．雷</span>，這可是一百年前，在［一年戰爭］中的最強新人類王牌駕駛員，是個曾經拯救過地球的英雄，如今怎麼會跟［木星帝國］扯上關係？</p> <p>帶著心中的疑惑，<span class="global_name_span">千歲</span>繼續著行動，來到［木星帝國］的基地後，果然遇上了<span class="global_name_span">阿姆羅．雷</span>，但如今這只是［木星帝國］利用戰鬥數據做出來的生化腦，依照數據戰鬥總不如本人能臨場應變，雖然難纏但還是有所破綻，隨後［大和號］與駕駛［F91］的<span class="global_name_span">金凱度</span>的到來，更是大大增加了戰場上的優勢，最終［木星帝國］的基地就此毀滅。</p> <p>不過在基地毀滅前，以<span class="global_name_span">阿姆羅．雷</span>為藍本的［生化腦］竟然向<span class="global_name_span">托比亞</span>伸出援手，也許［生化腦］並非單純的戰爭產品，或多或少也繼承了些<span class="global_name_span">阿姆羅．雷</span>性格吧。</p> <div class="global_ps_text"> <p>03:15 - ［大和號］首次空間跳躍。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tHcZC1Bbi54?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">第04話［木星戰線有異狀］</div> <p>隨著基地毀滅，［木星帝國］也不願意糾纏在［地球聯邦］與［加米拉斯］激戰的太陽系中，便決定朝著外太空出發，與［木星帝國］的戰爭算是告一段落了。</p> <p>此時［加米拉斯］查覺到［大和號］具有空間跳躍的航行能力，並準備對其展開攻擊，而另一邊失去［木星帝國］庇護的木星殖民地勢必會成為這場戰爭中的犧牲者，於是［大和號］決定進攻［加米拉斯］在木星的［浮游大陸］，替這邊的人民解決眼前的威脅。</p> <p>沒想到［浮游大陸］隱藏的戰力驚人，［大和號］只能勉強動用新武器［波動砲］，但卻意外將整個大陸轟個灰飛煙滅，這等破壞力讓艦上眾人也感到吃驚，但總算是有與［加米拉斯］一決雌雄的實力。</p> <div class="global_ps_text"> <p>11:22 - ［梵格雷］帥氣大招，打爆戰艦。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mkWx_ABeLHE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">第05話［重逢在冰原］</div> <p>離開［木星］後，［大和號］馬上收到求救信號，因此朝著［土衛二］前進，在這卻意外遇上來自平行宇宙的<span class="global_name_span">龍馬</span>、<span class="global_name_span">鐵也</span>。</p> <p>面對這樣的情形，眾人第一次遇到也不知道如何處理，便先收留了［蓋特機器人］與［金剛大魔神］，而原本發出求救信號的戰艦［雪風］已經確認沒有生還者......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/W7RtvMmkyuI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+  (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  })();
+</script>
+<p>&nbsp;</p>
+
+
+
+
