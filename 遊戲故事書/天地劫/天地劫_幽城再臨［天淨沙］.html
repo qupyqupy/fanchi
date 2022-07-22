@@ -1,0 +1,155 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+<p>這次活動顯然是為了推銷新角色而設的，內容劇情缺乏，更加可惜的是沒有語音，沒辦法聽到<span class="global_name_span">春蘭</span>的［嚶嚶嚶］。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/A6nvBwDOm9c?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">劇情（上）</option>
+  <option value="2">劇情（下）</option>
+  <option value="3">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">劇情（上）</option>
+  <option value="2">劇情（下）</option>
+  <option value="3">挑戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">忽如遠行客</div> <p>［四象門］與金賊勾結，行那煉鬼試驗，被少主<span class="global_name_span">奚歌</span>偶然聽見，便相邀<span class="global_name_span">春蘭</span>去阻止這些歹人尋得煉鬼［強魂］。</p> <p>另一邊［天玄門］也派出<span class="global_name_span">殷無邪</span>前去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YpHIGGO8qyQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">歡喜地</div> <p><span class="global_name_span">奚歌</span>兩人在戈壁沙漠找到了強魂<span class="global_name_span">黑羌</span>的線索，如今他似乎以靈魂憑體，化為巨大王蠍存於此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/15UuHwsigYM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">離垢地</div> <p>繼續探索著關於王蠍的部件，這些個物品會引來<span class="global_name_span">黑羌</span>的亡靈大軍，因此每找一件，就必須打一仗。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_Qd21CtBR_s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">發光地</div> <p>找到兩個部件後，<span class="global_name_span">殷無邪</span>也帶著同門女弟子來到這，真是桃花運盛，到哪都有一堆妹子陪著。</p> <p>這一見面不免要互相貧嘴一番，接著大家合力擊敗了襲來的亡靈大軍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/N0-keH5etJw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">聲聞乘．戰蠍地</div> <p>打了這幾場戰鬥，正主王蠍也應該登場了，這巨大的蠍子身體裡似乎憑依了幾代<span class="global_name_span">黑羌</span>家族的後代靈魂，魂力十分的混亂，藉此暫時擊退了它。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uGsbtRTLfG8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">焰慧地</div> <p>發現了目標自然不能讓王蠍這樣逃跑，眾人隨即追了上去，又遇到一股亡靈大軍，於是再次展開戰鬥，擊敗敵人後，又獲得一部件。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pL2S4awUgAo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">難勝地</div> <p>繼續打亡靈拿部件。</p> <p>在眾人拌嘴的同時，順便知道了<span class="global_name_span">春蘭</span>踏破三界，為的是尋找某人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OpDKSjgiuI4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">現前地</div> <p>眾人歇斯底里地互相抱怨，突然發現是這附近瀰漫的黑瘴氣所致，推測應該是那王蠍的怨念所致，看來王蠍離這不遠矣。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/f5XzLlqRHRk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">緣覺乘．戰蠍地</div> <p>王蠍果然再次現身，眾人再次擊敗牠。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/O0LMEBzooww?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">遠行地</div> <p>沒想到這王蠍，體內的蠍靈每打掉一個，竟會變得更強，如此打下去，如果只剩一隻蠍靈，倒真是前所未有的強魂了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BwmXcpq7vcI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不動地</div> <p>大夥一路擊敗亡靈大軍，竟在不知不覺中越走越高，似乎就快可脫離這戈壁沙漠的洞穴。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DffKL9BfzpE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">善慧地</div> <p>繼續前進，來到一處放滿寶箱的主殿。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MHGceUdZOEg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">菩薩乘．戰蠍地</div> <p>擊敗主殿的亡靈後，再次與王蠍對戰，不過正當要下殺手之際，<span class="global_name_span">春蘭</span>卻挺身阻止。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bOFY-1ekP40?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">法雲地</div> <p>原來<span class="global_name_span">春蘭</span>是想從王蠍口中探知［於闐國主］的下落，不過也只是問問。</p> <p>最後王蠍被<span class="global_name_span">奚歌</span>親手葬送，也算是阻止了自己父親的野心吧。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fL5mbB3MPN0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">斬取蠍頭</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MpBsHUBSvcg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">斷劈蠍尾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JqSj_Y3HI68?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">破剖蠍殼</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jvt3oOm_gKo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
