@@ -1,0 +1,160 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+<p>又是一個為了推銷新角色的活動，當中<span class="global_name_span">九陰</span>的敘事線算是較完整補完主線沒有多加描述的這角色，<span class="global_name_span">高皇君</span>、<span class="global_name_span">霍雍</span>這兩線就有點隨便，甚至連<span class="global_name_span">夏侯儀</span>是<span class="global_name_span">霍雍</span>的［盈魂］轉世這設定都變成［訊魂］，有些不太考究。</p>
+
+<p>當中雖然有個黑影神秘人物，卻沒明說他的身分，因為沒有太多證據，也不太好猜，希望不是遊戲製作的隨意埋下的一個用不到伏筆吧。</p>
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_HD2nxesUpc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+  <option value="1">劇情（高皇君）</option>
+  <option value="2">劇情（九陰）</option>
+  <option value="3">劇情（霍雍）</option>
+  <option value="4">挑戰</option>
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+  <option value="1">劇情（高皇君）</option>
+  <option value="2">劇情（九陰）</option>
+  <option value="3">劇情（霍雍）</option>
+  <option value="4">挑戰</option>
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">劇情（高皇君）</div> <p><span class="global_name_span">高皇君</span>本已不在人世，但意識卻追著一隻黑貓，莫名其妙地回到過去的時空，這時的［天玄門］還沒發生<span class="global_name_span">殷千煬</span>夫婦的慘案。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Eio6O5fzETQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>抓著黑貓才知，有人刻意以［燃香］的某種機制，將<span class="global_name_span">高皇君</span>引回過去，這是為了讓她了卻這一生中存在的遺憾。</p> <p>於是<span class="global_name_span">高皇君</span>便想以一己之力想要阻擋中原各派圍剿二師兄<span class="global_name_span">殷千煬</span>夫婦。</p> <p>當下要做的就是突破<span class="global_name_span">應奉仁</span>、<span class="global_name_span">周崇</span>、<span class="global_name_span">朱浩</span>三人的圍困。</p> <p>此時一個神秘男子正與黑貓暗中觀察著<span class="global_name_span">高皇君</span>的行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/I7tuZ8XPrtU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>快轉時空後，神秘男子與黑貓來到了［神闕宮］，原來<span class="global_name_span">高皇君</span>經過<span class="global_name_span">夏侯儀</span>的推薦來到此處，此時<span class="global_name_span">朧夜</span>已經殞命，<span class="global_name_span">殷千煬</span>因為悲憤化為［魔人］，無法坐視昔日正氣的二師哥變成毀滅世間的惡徒，<span class="global_name_span">高皇君</span>決定前往［化荒］。</p> <p>藉著［神闕宮四俾］的協助以及<span class="global_name_span">召祐</span>的認可，<span class="global_name_span">高皇君</span>如願開啟通往［化荒］的道路，但要抵達目的地，還需通過滿布敵人的［無間獄］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MjFpUCpmgFM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>闖過［無間獄］終於見到了二師兄<span class="global_name_span">殷千煬</span>，但終究雙方實力相差太大，<span class="global_name_span">高皇君</span>冒著必死的決心，施法送走了［神闕宮四俾］，獨自面對已成魔人的二師兄。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xEFpYPqAIuU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">劇情（九陰）</div> <p><span class="global_name_span">阿九</span>與其守護靈來到大漠。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Y3HYh7pQtwU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">幽篁</span>的殘魂正等著可以解放他的人到來。</p> <p>而曾為<span class="global_name_span">九陰</span>的<span class="global_name_span">阿九</span>便是這個人，聽完殘魂的請求後，毫不猶豫就將他消滅。</p> <p>另一邊之前暗中觀察<span class="global_name_span">高皇君</span>的神秘人，如今將對象轉向<span class="global_name_span">阿九</span>與其守護靈<span class="global_name_span">白首</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u-vqXh_zR10?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿九</span>一女娃正被賊人<span class="global_name_span">一點紅</span>追捕，這自然要出手相救。</p> <p>沒想到這<span class="global_name_span">一點紅</span>竟然喚出［幽煞］，在看到自己兄弟紛紛被吞噬，<span class="global_name_span">一點紅</span>使出了［明清心法］淨化此處的［蝕］，但自己也因此犧牲。</p> <p>而那女娃似乎非凡人，為了報恩提出幫助<span class="global_name_span">阿九</span>知曉未來或是回憶過去的回報，只不過<span class="global_name_span">阿九</span>並沒有這方面的慾望。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3f_dmMQKEjA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">白首</span>、<span class="global_name_span">九陰</span>這兩人恩怨糾纏到這一世，終於放下以往的桎梏，從今爾後便只有<span class="global_name_span">阿九</span>與其守護靈<span class="global_name_span">白首</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/54VrqpV1fLE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">劇情（霍雍）</div> <p><span class="global_name_span">霍雍</span>與<span class="global_name_span">欒</span>載入輪迴前的［瞬］進行對弈，但<span class="global_name_span">欒</span>能預示一切，此棋局自然能得勝。</p> <p><span class="global_name_span">霍雍</span>知有這般全知的生靈，數個問題只得到［一念而生］，黑貓此時［燃香］將<span class="global_name_span">霍雍</span>送往過去時空，讓他帶著記憶親自體會［一念而生］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Y_pGxs8x8ig?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［天瑤派］的<span class="global_name_span">皇甫申</span>為了尋得小師妹<span class="global_name_span">封玲笙</span>的行蹤而與大師兄<span class="global_name_span">秦惟剛</span>大打出手，得<span class="global_name_span">霍雍</span>協助，<span class="global_name_span">皇甫申</span>勢不可擋，最後從<span class="global_name_span">常逸風</span>口中得到了想要的消息。</p> <p>另一邊<span class="global_name_span">霍雍</span>也在過程中觀察這個自己［荒魂］轉世的男人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/no6Q1tYj2IA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著<span class="global_name_span">霍雍</span>幫助已與正道決裂的<span class="global_name_span">夏侯儀</span>取得［聖杯］，如此<span class="global_name_span">夏侯儀</span>便可得到無限的生命，擁有時間去拯救帶回<span class="global_name_span">冰璃</span>。</p> <p><span class="global_name_span">霍雍</span>在這最後一［瞬］，得以見到緣出自己兩魂的兩人一生，終也無悔入輪迴。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Tm-O3U2eEhk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">欒</span>尋找著打破輪迴的契機，而如今他歸納出關鍵就在人心，為此他決定融入輪迴，找尋那些對抗命運的魂靈。</p> <div class="global_ps_text"> <p><span class="global_name_span">欒</span>這最後的入輪迴，有點像北歐神話中面對諸神黃昏到處收集英靈的味道。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/q-NPcpuyT_Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">挑戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TwEynZVM0Qk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/81E40ZoG-Pg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dicvOC0Rz7g?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SciQ6J7UuvY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YVT1P45SA6M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vMGy2N6TOs0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
