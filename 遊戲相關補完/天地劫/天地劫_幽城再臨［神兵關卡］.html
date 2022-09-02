@@ -91,6 +91,13 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   <option value="4">虞兮</option>
   <option value="5">封鈴笙</option>
   <option value="6">陰歙</option>
+  <option value="7">鹿昭依</option>
+ </select>
+ <label>聯動角色：</label> 
+ <select id="head_select_o" style="width: 20%;">
+  <option value="1">李逍遙</option>
+  <option value="2">林月如</option>
+  <option value="3">趙靈兒</option>
  </select>
  </p>
 
@@ -113,6 +120,13 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   <option value="4">虞兮</option>
   <option value="5">封鈴笙</option>
   <option value="6">陰歙</option>
+  <option value="7">鹿昭依</option>
+ </select>
+ <label>聯動角色：</label> 
+ <select id="foot_select_o" style="width: 20%;">
+  <option value="1">李逍遙</option>
+  <option value="2">林月如</option>
+  <option value="3">趙靈兒</option>
  </select>
  </p>
 
@@ -175,7 +189,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('<div class="title_text">虞兮</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/07n9HGHRIG0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">封鈴笙</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/r3rnu2_OlaU?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tlJ2xgg87KI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">陰歙</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7sfBu3GuHrc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('');
+  contentArr.push('<div class="title_text">鹿昭依</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yCZS6PhsRWU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('');
   contentArr.push('');
   contentArr.push('');
@@ -215,9 +229,54 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
       scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
     }
   }
-  
-  initPage(1);
 
+  })();
+
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">李逍遙</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/X-nF1uE9ASo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">林月如</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EBlhdXV7tVw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">趙靈兒</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3zSd5YRPGtI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_o");
+  var footSelect = document.getElementById("foot_select_o");
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
   })();
   
 </script>
