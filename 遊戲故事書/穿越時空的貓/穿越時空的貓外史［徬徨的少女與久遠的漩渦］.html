@@ -76,15 +76,9 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 <p><label>主線劇情：</label> 
 <select id="head_select" style="width: 35%;">
-  <option value="1">序章</option>
-  <option value="2">徘徊的命運與雷之軌跡</option>
-  <option value="3">壞結局</option>
-  <option value="4">真結局</option>
  </select>
  <label>支線劇情：</label> 
  <select id="head_select_m" style="width: 35%;">
-  <option value="1">劇情補遺</option>
-  <option value="2">莫比烏斯</option>
  </select>
  </p>
 
@@ -94,15 +88,9 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 <p><label>主線劇情：</label> 
 <select id="foot_select" style="width: 35%;">
-  <option value="1">序章</option>
-  <option value="2">徘徊的命運與雷之軌跡</option>
-  <option value="3">壞結局</option>
-  <option value="4">真結局</option>
  </select>
  <label>支線劇情：</label> 
  <select id="foot_select_m" style="width: 35%;">
-  <option value="1">劇情補遺</option>
-  <option value="2">莫比烏斯</option>
  </select>
  </p>
 
@@ -114,7 +102,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
    (function(){
   var contentArr = [] ;
   contentArr.push('');
-  contentArr.push('');
+  contentArr.push('<div class="title_text">序章</div> <p>穿得像小紅帽的<span class="global_name_span">諾娜</span>，孤獨地在異空間走著，彷彿在等待著某人的到來。</p> <p>接著畫面轉到<span class="global_name_span">阿爾德</span>這邊，按照慣例被人叫醒，今天他要去參加［巴路奧其］警衛隊的訓練，睡過頭的他急忙跑去與同伴會合，由於村子附近有魔物出現，大家決定先去［月影之森］解決這隱藏威脅後再進行訓練。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8NnHfRK79no?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>順利忙完後，這天就這樣結束了，然而此時神秘的力量啟動，<span class="global_name_span">阿爾德</span>隔天醒來，發現自己竟然進入時間循環中，昨天經歷的種種事情又再發生一次，經過許多次時間旅行，<span class="global_name_span">阿爾德</span>對這種事情異常敏銳，加上［巨魔怨念］從旁提醒，他找到了一個神祕的裂縫。</p> <p>裂縫的另一邊是巨大的力量漩渦，受它影響<span class="global_name_span">阿爾德</span>才會不斷重複過著同一天，既然知道問題所在，只需要斬斷漩渦與世界的連結就可以解決眼前的問題，然而當裂縫被切開後，從斷面傳出了女孩子的呼救，身為爛好人的<span class="global_name_span">阿爾德</span>自然是想也不想直接跳進去救人。</p> <p>接著便是與神祕女孩<span class="global_name_span">諾娜</span>的第一次相遇。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yBLDbDJVcms?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了幫<span class="global_name_span">諾娜</span>找到回家的路，兩人開始在這巨大的漩渦內側探索，由於跟各時代連結，這到處都是漂流過來的稀奇物品。</p> <p>繼續四處查探，遇到了同樣迷失在此的<span class="global_name_span">諾克西斯</span>，當初他是連人帶村一起被傳送到漩渦內側，因此與村人一起在這建立了據點［阿拉拉特］，雖然暫時找不到回去的方法，但各時代漂流過來的東西倒也能支撐生活，比較特別的是這個據點竟然都是男人。</p> <p>雙方接著交換了所知的情報，得知這附近有個被稱為［迷宮］的地方，同時<span class="global_name_span">諾克西斯</span>也提醒<span class="global_name_span">阿爾德</span>不要讓村子其他人知道［巨魔怨念］有切開時空的能力，講話間神色盡顯怪異。</p> <p>此時村人跑來告知，村子附近出現了奇怪的光柱.......，<span class="global_name_span">阿爾德</span>猜想這或許是<span class="global_name_span">諾娜</span>找尋回家道路的一個契機。</p> <div class="global_ps_text"> <p>02:22 - <span class="global_name_span">諾娜</span>想看海，這是她腦中殘存的記憶，一條在遠方閃閃發光的水平線。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qNpPaJhoa_8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('');
   contentArr.push('');
   contentArr.push('');
@@ -123,11 +111,26 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('');
   contentArr.push('');
 
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('序章');
+  pArr.push('');
+  pArr.push('');
+  pArr.push('');
+
+
   var firstEnter = 0 ; 
   var nowPage = 1;
   var maxCount = contentArr.length - 1;
   var headSelect = document.getElementById("head_select");
   var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
   
 
   headSelect.onchange = function () {
@@ -168,11 +171,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('');
   contentArr.push('');
 
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('');
+  pArr.push('');
+
   var firstEnter = 0 ; 
   var nowPage = 1;
   var maxCount = contentArr.length - 1;
   var headSelect = document.getElementById("head_select_m");
   var footSelect = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
   
 
   headSelect.onchange = function () {
