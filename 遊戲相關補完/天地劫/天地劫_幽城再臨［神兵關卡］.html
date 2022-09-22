@@ -78,26 +78,15 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <p>
  <label>男角色：</label> 
 <select id="head_select_m" style="width: 20%;">
-  <option value="1">殷劍平</option>
-  <option value="2">尉遲良</option>
-  <option value="3">夏侯儀</option>
-  <option value="4">劍邪</option>
+  
  </select>
  <label>女角色：</label> 
  <select id="head_select_w" style="width: 20%;">
-  <option value="1">封寒月</option>
-  <option value="2">李盈鳳</option>
-  <option value="3">冰璃</option>
-  <option value="4">虞兮</option>
-  <option value="5">封鈴笙</option>
-  <option value="6">陰歙</option>
-  <option value="7">鹿昭依</option>
+  
  </select>
  <label>聯動角色：</label> 
  <select id="head_select_o" style="width: 20%;">
-  <option value="1">李逍遙</option>
-  <option value="2">林月如</option>
-  <option value="3">趙靈兒</option>
+  
  </select>
  </p>
 
@@ -107,26 +96,12 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <p>
  <label>男角色：</label> 
 <select id="foot_select_m" style="width: 20%;">
-  <option value="1">殷劍平</option>
-  <option value="2">尉遲良</option>
-  <option value="3">夏侯儀</option>
-  <option value="4">劍邪</option>
  </select>
  <label>女角色：</label> 
  <select id="foot_select_w" style="width: 20%;">
-  <option value="1">封寒月</option>
-  <option value="2">李盈鳳</option>
-  <option value="3">冰璃</option>
-  <option value="4">虞兮</option>
-  <option value="5">封鈴笙</option>
-  <option value="6">陰歙</option>
-  <option value="7">鹿昭依</option>
  </select>
  <label>聯動角色：</label> 
  <select id="foot_select_o" style="width: 20%;">
-  <option value="1">李逍遙</option>
-  <option value="2">林月如</option>
-  <option value="3">趙靈兒</option>
  </select>
  </p>
 
@@ -143,6 +118,16 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('<div class="title_text">尉遲良</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mJd69t4Gz8g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">夏侯儀</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oS7fYHlnJJU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/T--gL9QAkhc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pOcCn33l7YE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">劍邪</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YtxplIFOciA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nI6uKO6XdL8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0Amgma3ALyg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">皇甫申</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/M50-CpqebtI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rTdIkhfX73U?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('殷劍平');
+  pArr.push('尉遲良');
+  pArr.push('夏侯儀');
+  pArr.push('劍邪');
+  pArr.push('皇甫申');
 
 
   var firstEnter = 0 ; 
@@ -150,6 +135,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   var maxCount = contentArr.length - 1;
   var headSelect = document.getElementById("head_select_m");
   var footSelect = document.getElementById("foot_select_m");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
   
 
   headSelect.onchange = function () {
@@ -199,11 +189,27 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('');
 
 
+  var pArr = [];
+  pArr.push('');
+  pArr.push('封寒月');
+  pArr.push('李盈鳳');
+  pArr.push('冰璃');
+  pArr.push('虞兮');
+  pArr.push('封鈴笙');
+  pArr.push('陰歙');
+  pArr.push('鹿昭依');
+
+
   var firstEnter = 0 ; 
   var nowPage = 1;
   var maxCount = contentArr.length - 1;
   var headSelect = document.getElementById("head_select_w");
   var footSelect = document.getElementById("foot_select_w");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
   
 
   headSelect.onchange = function () {
@@ -246,11 +252,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('');
 
 
+  var pArr = [];
+  pArr.push('');
+  pArr.push('李逍遙');
+  pArr.push('林月如');
+  pArr.push('趙靈兒');
+
+
   var firstEnter = 0 ; 
   var nowPage = 1;
   var maxCount = contentArr.length - 1;
   var headSelect = document.getElementById("head_select_o");
   var footSelect = document.getElementById("foot_select_o");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
   
 
   headSelect.onchange = function () {
