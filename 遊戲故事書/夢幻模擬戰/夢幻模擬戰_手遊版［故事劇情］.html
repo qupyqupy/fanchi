@@ -118,6 +118,19 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
 <hr />
 
+
+<div class="ch">第一部故事劇情</div>
+<p><label>主線劇情：</label> 
+<select id="head_select_first" style="width: 35%;">
+   
+ </select>
+ <label>支線劇情：</label> 
+ <select id="head_select_m_first" style="width: 35%;">
+ 
+ </select>
+ </p>
+
+
 <div class="ch">第二部故事劇情</div>
 <p><label>主線劇情：</label> 
 <select id="head_select_sec" style="width: 35%;">
@@ -140,6 +153,20 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <div id="ch"></div>
 
 <hr />
+
+
+<div class="ch">第一部故事劇情</div>
+<p><label>主線劇情：</label> 
+<select id="foot_select_first" style="width: 35%;">
+   
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m_first" style="width: 35%;">
+ 
+ </select>
+ </p>
+
+
 <div class="ch">第二部故事劇情</div>
 <p><label>主線劇情：</label> 
 <select id="foot_select_sec" style="width: 35%;">
@@ -163,6 +190,101 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 
 <script>
+	(function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">序章</div> <p>我們的主角<span class="global_name_span">馬修</span>在夢中遇到了女神與混沌之神的代行者，雙方似乎是為了搶奪這少年，分別竭盡全力各顯神通。</p> <p><span class="global_name_span">潔西卡</span>雖然有聖劍英靈<span class="global_name_span">艾爾文</span>、<span class="global_name_span">利昂</span>的幫助，但是仍不敵<span class="global_name_span">波贊魯</span>召喚出的魔龍。</p> <p><span class="global_name_span">潔西卡</span>自知不敵，拚盡全力施展法術將<span class="global_name_span">馬修</span>送離戰場，不過夢中就算能逃過一劫，現實中<span class="global_name_span">波贊魯</span>的魔掌也已逐漸逼近。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tqtZb0dnKzM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">CH01-序幕</div> <p>回到現實，<span class="global_name_span">馬修</span>與好友正準備迎接成年後的第一天，從今開始就要負擔起［村莊衛隊］的責任。</p> <p>黃色頭髮手拿著一桿槍的叫做<span class="global_name_span">格尼爾</span>，年紀大<span class="global_name_span">馬修</span>一歲，展現出來就是一個老大哥的樣子，身分是村長的兒子。</p> <p>粉色頭髮的女孩子叫做<span class="global_name_span">艾梅達</span>，聽聲音就覺得相當難纏，時不時就來句吐槽。</p> <p>三人來到村莊門口，立刻就看到帝國的士兵來者不善，為首的是一個叫做<span class="global_name_span">甘比諾</span>的大主教，但看外表明明就是黑暗王子<span class="global_name_span">波贊魯</span>，看來帝國內部早被黑暗勢力入侵，他此行的目的是為了抓捕<span class="global_name_span">艾梅達</span>，理由倒也簡單，全因<span class="global_name_span">艾梅達</span>身負光之女神的力量。</p> <p>敵人畢竟是帝國的正規軍，三人激戰後仍然不敵，就在危急時刻<span class="global_name_span">艾梅達</span>突然全身散發白光，隱隱透出女神的氣質，隨即施法逃離戰場，同時間召喚了昔日的聖劍英靈幫忙斷後。</p> <p>憤怒的<span class="global_name_span">波贊魯</span>一招大地震消滅英靈後，竟還想將怒火發洩在無辜的村民身上，還好帝國之中也有值得敬佩的將軍，<span class="global_name_span">波達米修斯</span>冒著頂撞大主教的風險，堅持要接管村莊。</p> <p><span class="global_name_span">波贊魯</span>索性就賣個人情給他，不過這其實是想借用軍方的力量去追擊<span class="global_name_span">馬修</span>等人而作的妥協。</p> <p><span class="global_name_span">波達米修斯</span>不愧是帝國知名的將軍，很快就追上<span class="global_name_span">馬修</span>一行，但他其實也知道這次的事件有諸多怪異之處，騎士的精神讓他無法完全遵從大主教的命令，這次前來只是確認大夥並非邪惡之徒，同時留下會代替<span class="global_name_span">馬修</span>等人保護村莊的諾言。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3pN51TwwTBo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('CH01 - CH05');
+  pArr.push('CH06 - CH10');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_first");
+  var footSelect = document.getElementById("foot_select_first");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  })();
+
+  (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('劇情補遺');
+  pArr.push('一般支線劇情');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m_first");
+  var footSelect = document.getElementById("foot_select_m_first");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  })();
    (function(){
     var contentArr = [] ;
   contentArr.push('');
