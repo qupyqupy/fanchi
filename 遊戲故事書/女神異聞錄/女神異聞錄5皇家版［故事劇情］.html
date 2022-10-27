@@ -1,0 +1,269 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<p><a href="https://qupyqupy.pixnet.net/album/photo/263302575"><img alt="cover.jpg" src="https://pic.pimg.tw/qupyqupy/1666845248-252844404-g_n.jpg" title="cover.jpg" /></a></p>
+
+<hr />
+
+<p>有學妹就是正義。</p> 
+
+
+
+<p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/125ZLWrIY38?wmode=transparent" title="YouTube video player" width="560"></iframe></p>
+
+
+<hr />
+
+<p><label>主線劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>支線劇情：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">序章</div> <p>故事開始在一處燈紅酒綠的都市，隨著直升機的背後視角，我們來到一處賭場，此時內部警鈴大作，人們臉上都流露出不安的神色，一名戴著面具的少年，手拿銀色金屬手提箱，正躲避著來自一群黑衣人的追捕。</p> <p>他名字叫做<span class="global_name_span">JOKER</span>，透過通訊設備可以得知其背後有一整團的夥伴與他並肩作戰，就在他即將逃離賭場時，大批的黑衣人圍了過來，他們似乎並非普通人，紛紛變成怪物的樣子，但少年並沒有因此恐懼，反而駕輕就熟地逐步解決敵人。</p> <p>但敵人數量實在太多，這時被圍困的<span class="global_name_span">JOKER</span>眼前出現另一名戴著面具的少女，她稱<span class="global_name_span">JOKER</span>為學長，兩人應該是互相認識，彼此合作消滅了眼前的全部敵人。</p> <p>看到學長安然無事，神祕少女遂瀟灑地離開，但在隨後的逃亡過程中，<span class="global_name_span">JOKER</span>還是失手被捕，從敵人口中得知，似乎是伙伴中有人出賣了自己。</p> <p>落入敵人手中後，<span class="global_name_span">JOKER</span>遭到了非人對待，不斷受到毒打，這些人屬於［國安局］的刑警，雖然不友善，但做事仍有一定的章法。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1Qlp6voZ_Ys?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>此時一名自稱<span class="global_name_span">新島冴</span>的女士想要單獨審問<span class="global_name_span">JOKER</span>，他倆似乎早就認識。</p> <p>這時<span class="global_name_span">JOKER</span>心中浮現一個神祕的聲音，帶著他回到半年前的記憶.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/N4XXDLKgnmw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">04/09(六)-04/10(日)</div> <p>帶著眼鏡的<span class="global_name_span">JOKER</span>在列車上驚醒，聽著廣播他回想起不久之前的事情。</p> <p>［社會上的規章，向來都是保護有權勢的人］。</p> <p>那天晚上，還是學生的<span class="global_name_span">JOKER</span>推開了一名試圖侵犯女子的惡男，但被帶上警車的卻是自己，自此留下了前科，甚至被迫轉校到一個陌生的地方。</p> <p>就在<span class="global_name_span">JOKER</span>準備展開新生活時，手機螢幕突然出現一個奇異的圖標，周遭的事物也在這瞬間靜止下來，遠方的火焰凝聚成一個猙獰的臉孔，當回過神後，一切又都恢復如常。</p> <p>［也許只是幻覺吧］。</p> <p>把奇異的圖標刪除後，<span class="global_name_span">JOKER</span>準備前往寄宿的地方，不過目前家裡似乎沒人在，按了電鈴也沒回應。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Gy6GU4eEDn4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>聽到附近宅配的人員碎碎念，<span class="global_name_span">JOKER</span>便到屋主工作的地方去碰碰運氣，那是家咖啡店，老闆<span class="global_name_span">佐倉惣治郎</span>是個戴眼鏡的中年大叔，一眼就猜出<span class="global_name_span">JOKER</span>是要來寄宿的學生，很快就在店裡安排房間給他。</p> <p>雖然只是個類似倉庫的閣樓，但空間夠大，也不是直接睡地板，以學生來講足夠了，接下來就是要在這度過一年的［保護觀察］期間，由於明天就要去［秀盡學園高中］報到，還是先把房間打掃打掃，整理好心情。</p> <p>但躺在床上休息時，腦中還是不斷浮現那晚救下女孩的情景，自己不過是路見不平，竟然就此留下案底，懊惱的時候，手機突然發出震動，螢幕上竟又是早上出現的奇異圖標。</p> <p>［到底甚麼時候裝了這個APP的，該不會是手機中毒了吧］。</p> <p>突然襲來的睡意，將<span class="global_name_span">JOKER</span>帶到一處奇異的空間，自己身著囚犯的衣服與鐐銬，鐵欄外站著貌似雙胞胎的一對女孩，在往遠看，一個長鼻、長耳的老頭正坐在大廳的辦公桌前。</p> <p>這地方叫做［天鵝絨房間］，那老頭就是這房間的主人，名叫<span class="global_name_span">伊格爾</span>，<span class="global_name_span">JOKER</span>之所以出現在這，就是他的手筆，雖然是講了一些不著邊際的話，但肯定的是，<span class="global_name_span">JOKER</span>的命運自此將迎來巨大的變動。</p> <p>醒來後，<span class="global_name_span">JOKER</span>只當是一場惡夢，並沒有太在意，緊接著跟<span class="global_name_span">佐倉惣治郎</span>到學校報到，順便見了新校長與班導<span class="global_name_span">川上貞代</span>，校長是個臃腫的禿頭胖子，班導則是一名捲短髮的女性，兩人嘴上沒有半點關懷，只是例行公事交代完事情就解散了。</p> <p>畢竟<span class="global_name_span">JOKER</span>是個有前科的少年，在這社會上無論到哪都會被既定印象當作麻煩人物，<span class="global_name_span">佐倉惣治郎</span>一邊叮囑著不要惹麻煩，一邊聽著廣播，不禁感嘆最近的意外事故特別多，而當晚一輛電車就發生了出軌意外。</p> <p>維持治安的機構也透過新聞整理的事故，發現這奇怪的現象，當中的一人便是序章出現過的<span class="global_name_span">新島冴</span>。</p> <p>再看<span class="global_name_span">JOKER</span>這邊，由於路上塞車的關係，回到房間已經是晚上，<span class="global_name_span">佐倉惣治郎</span>扔給他一本日記本，要他每日紀錄自己的生活，方便自己報告，之後就直接離開了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Edce87e6SXM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('序章');
+  pArr.push('04/09(六)-04/10(日)');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+  })();
+
+  (function(){
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  })();
+</script>
+<p>&nbsp;</p>
+
+
+
+
