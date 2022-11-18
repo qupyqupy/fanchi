@@ -1,0 +1,324 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>聯動選擇：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /> <p>宣傳ＰＶ的<span class="global_name_span">李逍遙</span>ＶＳ<span class="global_name_span">冰璃</span>異常精彩，華語動畫的［面癱］短版，在這場決鬥反而成為優點，除了十分符合<span class="global_name_span">冰璃</span>的人設外，<span class="global_name_span">李逍遙</span>更顯一派宗師的沉著風範。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5_JOHzAF0-g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p>關於這活動，本來以為陸服罵得厲害是因為跟仙劍聯動太靠近，在玩過台版的仙劍聯動後，總算知道炎上的原因.......</p> <p>天之痕的活動是以爬塔為主的玩法，其實玩個兩三遍就膩了，但為了搬完獎勵卻要強迫重複數十次，而且與仙劍完整的聯動劇情相比，天之痕只是以零散的故事穿插其中，甚至彼此間很難有連貫，也難怪台服天之痕會比仙劍早出，至少玩家這樣不會有太大的失落感。</p> <p>真的是十分可惜，瞧前導［故跡殘痕］劇情已經鋪成了很好的神祕感，真不知道是甚麼原因導致整個聯動實體殘破不堪。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aHXsuClgby4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/261881428"><img alt="定風流.png" src="https://pic.pimg.tw/qupyqupy/1655607770-1215114038-g_n.png" title="定風流.png" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/261881424"><img alt="雙絲網.png" src="https://pic.pimg.tw/qupyqupy/1655607770-408631268-g_n.png" title="雙絲網.png" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/261881416"><img alt="笑聚散.png" src="https://pic.pimg.tw/qupyqupy/1655607769-3672430684-g_n.png" title="笑聚散.png" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/261881404"><img alt="詭搖紅.png" src="https://pic.pimg.tw/qupyqupy/1655607763-1323283000-g_n.png" title="詭搖紅.png" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/261881412"><img alt="水龍吟.png" src="https://pic.pimg.tw/qupyqupy/1655607767-3708979665-g_n.png" title="水龍吟.png" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/261881420"><img alt="鎖倩魂.png" src="https://pic.pimg.tw/qupyqupy/1655607769-3590979659-g_n.png" title="鎖倩魂.png" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/261881408"><img alt="外傳.png" src="https://pic.pimg.tw/qupyqupy/1655607765-2825995728-g_n.png" title="外傳.png" /></a></div> </div> </div> <hr /> <p>這次與［倩女幽魂］的跨界聯動，真是滿滿的懷舊感，劇情各個細節都可以看到９０年代港片的影子，配音、配樂、情節、場景都是有用心製作，真希望日常的活動也能用同樣的規格。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oENRPEtjmk0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('仙劍奇俠傳');
+  paArr.push('軒轅劍－天之痕');
+  paArr.push('國風聯動－聶小倩篇');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+  function getAct4(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+    return result;
+  }
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('人物對話');
+      resultIdx.push('定風流');
+      resultIdx.push('雙絲網');
+      resultIdx.push('詭搖紅');
+      resultIdx.push('水龍吟');
+      resultIdx.push('鎖倩魂');
+      resultIdx.push('笑聚散');
+      resultIdx.push('外傳');
+      resultIdx.push('戲夢人生');
+      resultIdx.push('蘭若試煉');
+      resultIdx.push('首領挑戰');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">聶小倩</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yT6gPPfk2z4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">寧采臣</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/skd_YV_Exao?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">燕赤霞</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/G8HF6WiA2B0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">定風流</div> <p>［赤鬼魔族］正準備為<span class="global_name_span">赤魔鬼王</span>舉辦壽辰慶祝，這勢頭就連<span class="global_name_span">隱月鬼王</span>都差<span class="global_name_span">聶小倩</span>、<span class="global_name_span">韓無砂</span>前來祝賀。</p> <p>卻沒想到這<span class="global_name_span">赤魔鬼王</span>早就垂涎<span class="global_name_span">聶小倩</span>的美色，話沒說兩句就出手輕薄，一旁誤入慶典的<span class="global_name_span">寧采臣</span>實在看不下去，［喵喵喵］幾聲就想引開<span class="global_name_span">赤魔鬼王</span>，還自稱是啥［巨貓真君］，手裡丟出路旁買的符咒，竟然真能定住<span class="global_name_span">赤魔鬼王</span>。</p> <p>此時<span class="global_name_span">聶小倩</span>身上［命魂珠］竟對<span class="global_name_span">寧采臣</span>產生反應，這代表著眼前書呆子就是［姥姥］要找的人，眼下也顧不得與［赤鬼魔族］動手，兩女決定先護著書呆子衝出去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jyS_S9htjAM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>突圍後，<span class="global_name_span">聶小倩</span>開始了老本行，想色誘<span class="global_name_span">寧采臣</span>讓其肉更加美味，這樣［姥姥］吃了才歡喜，但眼前書呆子實在君子，竟能坐懷不亂，<span class="global_name_span">韓無砂</span>見狀，連忙現身圓場，讓<span class="global_name_span">寧采臣</span>以為這是個考驗。</p> <p>反正色誘是不成了，乾脆就直接邀請<span class="global_name_span">寧采臣</span>前往［蘭若寺］，這可是羊入虎口啊。暗藏別處的道士<span class="global_name_span">燕赤霞</span>忍不住出言提醒，面對這突來的強敵，<span class="global_name_span">韓無砂</span>自願留下斷後，再加上後來的<span class="global_name_span">秋叔</span>、<span class="global_name_span">幻境朧妖</span>助陣，算是將眼前這道士暫時封住。</p> <p>最後<span class="global_name_span">幻境朧妖</span>留下牽制住<span class="global_name_span">燕赤霞</span>，似乎她還頗享受這苦活，對著<span class="global_name_span">燕赤霞</span>就是一陣機哩瓜啦的講不停，不過<span class="global_name_span">燕赤霞</span>卻只想著與<span class="global_name_span">隱月鬼王</span>的血海深仇，更對適才以［燕式絕學］封印自己的<span class="global_name_span">秋叔</span>感到好奇。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WuhLIML-I8Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">寧采臣</span>兩人此時正被<span class="global_name_span">燕赤霞</span>的寵物雷鳥<span class="global_name_span">小蘭</span>追趕，在<span class="global_name_span">寧采臣</span>的足智多謀下，最終成功擊退牠。</p> <p>過程中，免不了要有些俗套的男女主角間不經意的肌膚之親，<span class="global_name_span">聶小倩</span>因為怕光，所以就給<span class="global_name_span">寧采臣</span>壓著，藉著他的身體擋住陽光，這可是照搬電影的情節，滿滿地懷舊味。</p> <p>兩人就這樣維持著尷尬的姿勢直到<span class="global_name_span">韓無砂</span>到來，藉由一把桃花傘將<span class="global_name_span">聶小倩</span>暫時安置在內，接著便準備前往［蘭若寺］了。經過剛才的相處，<span class="global_name_span">聶小倩</span>不願意傷害眼前這好心的書呆子，但就算是出言提醒，還是被一旁的<span class="global_name_span">秋叔</span>以言語威脅，一切皆是徒勞。</p> <p>另一邊<span class="global_name_span">幻境朧妖</span>與<span class="global_name_span">燕赤霞</span>兩人似乎聊著聊著成朋友了，竟然結伴同行，這時傷重的<span class="global_name_span">小蘭</span>剛好回來，知道是被<span class="global_name_span">寧采臣</span>以詭計傷的，<span class="global_name_span">燕赤霞</span>突然間覺得，似乎不太需要擔心這書呆子的安危了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Nj-TxxWaDvo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">雙絲網</div> <p><span class="global_name_span">寧采臣</span>被拐到［蘭若寺］後，對寺內外的景象差異頗為訝異，店內的一顆紅葉小樹，似乎與自己有著某種感應，一靠近便是心跳加速，這時候一對調皮的雙胞胎妖怪突然發起攻擊，與其說帶有敵意，更像是嬉鬧。</p> <p>這時［姥姥］<span class="global_name_span">夜無燼</span>現身制住牠兩，本以為<span class="global_name_span">寧采臣</span>馬上就要遭到毒手，但<span class="global_name_span">夜無燼</span>竟然對這書呆子奉為上賓，還囑咐隨身隨身僕人<span class="global_name_span">馮媽</span>多加照料，不過言語間還是能感受到口不對心的詭異。</p> <p>眼下沒立即危險，<span class="global_name_span">寧采臣</span>與<span class="global_name_span">聶小倩</span>又開始談情說愛，只見<span class="global_name_span">聶小倩</span>對著一束未開的花［鬼仔花］撫琴，表面看雖然雅致，但似乎是另有深意。</p> <div class="global_ps_text"> <p>這裡出現的妖怪雙胞胎，倒是讓我想起1987年上映的［新桃太郎］裡面的兩個小矮子。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JSrMHDNqI9o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一個多月後，<span class="global_name_span">寧采臣</span>與<span class="global_name_span">聶小倩</span>感情日深，這天［鬼仔花］突然盛開，這本是件值得高興的事情，但<span class="global_name_span">聶小倩</span>卻是一臉傷心地逃開。</p> <p>這時<span class="global_name_span">夜無燼</span>擋在<span class="global_name_span">寧采臣</span>面前，就由施展幻術，讓<span class="global_name_span">寧采臣</span>瞧見了一對情侶經歷的生死離別，一名俠客<span class="global_name_span">陳星彩</span>為了護住一身染魔氣，神似<span class="global_name_span">聶小倩</span>的銀髮女子，不惜與正派人士死鬥。</p> <p>這<span class="global_name_span">陳星彩</span>就是<span class="global_name_span">寧采臣</span>的前世，<span class="global_name_span">夜無燼</span>說道那銀髮女子便是<span class="global_name_span">聶小倩</span>，被<span class="global_name_span">陳星彩</span>吸盡魔氣後便恢復黑髮，而<span class="global_name_span">陳星彩</span>則身死入輪迴。</p> <p><span class="global_name_span">夜無燼</span>繼續說，當遇到<span class="global_name_span">寧采臣</span>時，自己是一心想要幫他倆再續前緣，只可惜目前有個惡霸<span class="global_name_span">烏山煞</span>要強娶<span class="global_name_span">聶小倩</span>，這部分也是照搬電影情節，只不過電影裡說的是［黑山老妖］。</p> <p>另一邊<span class="global_name_span">聶小倩</span>與<span class="global_name_span">韓無砂</span>正在聊著眼下的問題，原來嫁給<span class="global_name_span">烏山煞</span>竟是<span class="global_name_span">夜無燼</span>下的命令，這下可明白了，這［姥姥］肯定有甚麼驚天陰謀正在醞釀。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/il6dl07klNI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">詭搖紅</div> <p>一直受制於<span class="global_name_span">夜無燼</span>的<span class="global_name_span">韓無砂</span>早就不爽很久了，如今為了<span class="global_name_span">聶小倩</span>也決定豁出去，私下聯合<span class="global_name_span">寧采臣</span>開始拯救計畫。</p> <p>這<span class="global_name_span">烏山煞</span>粗魯霸道，稍不如意便對<span class="global_name_span">聶小倩</span>拳打腳踢，活脫脫是個家暴男，但這景象<span class="global_name_span">寧采臣</span>怎麼能忍，馬上就利用讀書人的腦袋部下殺局，就等大婚之日一舉取了<span class="global_name_span">烏山煞</span>的性命。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0koBPe-rfLU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過<span class="global_name_span">烏山煞</span>並非易與啊，竟然識破有詐，<span class="global_name_span">寧采臣</span>逼於無奈只能犧牲自己拉著他入夢。</p> <p>餘下的妖怪因為中了毒，輕鬆就被<span class="global_name_span">韓無砂</span>兩人以及後到的<span class="global_name_span">燕赤霞</span>解決，但眼下要如何救<span class="global_name_span">寧采臣</span>出夢卻是個難題。</p> <p>就在眾人苦惱之際，沒想到在夢中<span class="global_name_span">烏山煞</span>竟被<span class="global_name_span">寧采臣</span>以嘴遁擊敗，回到現實後馬上自我了結生命，這讀書人的力量可不容小覷。</p> <p>可危機卻沒就此解除，<span class="global_name_span">夜無燼</span>現身奪了［烏山令］就此便可統領［烏山一族］，更命<span class="global_name_span">秋叔</span>對同是燕門一脈的<span class="global_name_span">燕赤霞</span>下手，原來他原名是<span class="global_name_span">燕橫秋</span>，雖不知為何變為如今妖怪的樣子，但確實曾是燕門一族的高手。</p> <p><span class="global_name_span">夜無燼</span>帶走所有人，獨留傷重的<span class="global_name_span">寧采臣</span>在原處自生自滅，幸好［神闕宮］<span class="global_name_span">紫蘊</span>即時來救，原來他就是一開始賣符給<span class="global_name_span">寧采臣</span>的高人相士。</p> <p>此時［金華城］壟罩在黑霧之中，這都是<span class="global_name_span">隱月鬼王</span>與<span class="global_name_span">夜無燼</span>造成的禍端，早預料到有此一劫的［神闕宮］宮主，預言<span class="global_name_span">寧采臣</span>是破劫的關鍵，所以早早安排<span class="global_name_span">紫蘊</span>在一旁監看照料。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lSf4dlplPQc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">水龍吟</div> <p>有<span class="global_name_span">紫蘊</span>相助，<span class="global_name_span">寧采臣</span>潛入敵方，準備救出失陷的大家，然而此時的<span class="global_name_span">燕赤霞</span>神智盡失，正當思尋解決之法時，<span class="global_name_span">秋叔</span>率眾現身。</p> <p>本以為他是來將大夥一網打盡的，但其實他之前所為皆是為了保住<span class="global_name_span">燕赤霞</span>一命，如今便邀<span class="global_name_span">寧采臣</span>一起入<span class="global_name_span">燕赤霞</span>心魔之境，救他恢復心智。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BH9tZobwnfk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在<span class="global_name_span">燕赤霞</span>心魔之境總算知道事情真相，<span class="global_name_span">秋叔</span>身子半殘與妖怪合體充當臥底，實際上是為了尋找<span class="global_name_span">陳星彩</span>的轉世，真正的敵人乃是<span class="global_name_span">夜無燼</span>與<span class="global_name_span">隱月鬼王</span>。</p> <p><span class="global_name_span">燕赤霞之父</span>說完便要傳授眾人自己領悟的殺招［上天入地，兄弟同心］，這招式名字讓我想起很久以前的一個頁遊［千軍破］，裡面主將的絕招便是［兄弟齊心］。</p> <p>這殺招名字聽了就很有氣勢，但在<span class="global_name_span">寧采臣</span>這讀書人面前，卻忍不住吐槽幾句，總覺得招式名字應該是更有意境詩意才對，結果萬萬沒想到，這名字竟然是自己前世<span class="global_name_span">陳星彩</span>取的，所以說雖有前世、今生，但根本是完全不同的兩個人。</p> <p>最後眾人便用這殺招除去了心魔惡獸，<span class="global_name_span">燕赤霞</span>也解開了自己一直以來的心結。</p> <p>回到現世後，<span class="global_name_span">秋叔</span>說起當年往事，自己與<span class="global_name_span">燕赤霞之父</span>、<span class="global_name_span">陳星彩</span>三人合力戰<span class="global_name_span">夜無燼</span>、<span class="global_name_span">隱月鬼王</span>兩敗俱傷，<span class="global_name_span">夜無燼</span>便想用豢養的一對雙胞胎姊妹中的姊姊修復自己身軀。</p> <p>這對雙胞胎便是<span class="global_name_span">聶小倩</span>姊妹，銀髮姐姐不想讓<span class="global_name_span">夜無燼</span>得逞，便毀去自己身軀，無奈之下，<span class="global_name_span">夜無燼</span>只能以<span class="global_name_span">聶小倩</span>身軀鎖住姊姊靈體，所以如今怕光的<span class="global_name_span">聶小倩</span>其實是失去身體的靈體狀態，她的身體便在當初［蘭若寺］大殿中瞧見的樹中。</p> <p>而<span class="global_name_span">夜無燼</span>真正所圖，就是要利用<span class="global_name_span">寧采臣</span>之死，助<span class="global_name_span">聶小倩</span>成魔，這樣就可以修復自己的身體了，這邏輯反正我是看不懂，都是<span class="global_name_span">秋叔</span>講的。</p> <p>既然知道<span class="global_name_span">夜無燼</span>的目的，<span class="global_name_span">寧采臣</span>又開始轉動他的鬼腦筋，一場大戰即將展開。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nziU-orQhOU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">鎖倩魂</div> <p><span class="global_name_span">寧采臣</span>與大夥說了自己的計謀後，就準備出發決戰，臨走前<span class="global_name_span">寧采臣</span>還不忘吐槽［神闕宮］法寶的名字，是說［烈陽劍雨］、［霹靂大金剛法符］這兩名字我覺得挺好的啊。</p> <p>之後大夥借助［烈陽劍雨］布局，與［神闕宮］裡應外合，終於破了壟罩［金華城］的黑霧。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0ZkaIqY9eqw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>大殿之上<span class="global_name_span">馮媽</span>留下對付眾人，從其言語間不難發現，妖怪之間也有如人般的情感，<span class="global_name_span">寧采臣</span>能為<span class="global_name_span">聶小倩</span>拼命，<span class="global_name_span">馮媽</span>也為了她口中的［小姐］<span class="global_name_span">夜無燼</span>而忘身。</p> <p>然而畢竟衰老，<span class="global_name_span">馮媽</span>最終落敗，臨終前用盡法力將大夥傳入［魘魔族］製造的［靈境］之中。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/g4wjtWEDz1U?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">笑聚散</div> <p>有了<span class="global_name_span">燕赤霞</span>、<span class="global_name_span">烏山煞</span>兩個前車之鑑，<span class="global_name_span">夜無燼</span>卻偏不信邪，硬要鬥鬥<span class="global_name_span">寧采臣</span>看他能生出啥鬼點子擊敗自己。</p> <p>反派總是這樣做死，<span class="global_name_span">寧采臣</span>以假死引得<span class="global_name_span">夜無燼</span>鬆懈，加之<span class="global_name_span">聶小倩</span>的銀髮姊姊自我犧牲，<span class="global_name_span">夜無燼</span>終以慘敗收場，<span class="global_name_span">聶小倩</span>也拿回了自己的身體。</p> <p>然而縱然即將身死，<span class="global_name_span">夜無燼</span>還是忍不住吐槽<span class="global_name_span">寧采臣</span>那文謅謅的用字遣詞，照我說，這已經比主線高深莫測的文言文好多了，要不聽聽<span class="global_name_span">玄羽</span>的話，那才是平常讀書人的日常。</p> <p>就在<span class="global_name_span">夜無燼</span>臨終前展現了深情的一面，她喜歡自己的名字，這個由<span class="global_name_span">隱月鬼王</span>幫她取的名字，隨著這女魔頭的消逝，更強的敵人即將來襲。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yp9iD-v0ij4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>講起<span class="global_name_span">隱月鬼王</span>，他本是［蘭若寺］的僧人，某日救下了當時身為［魘魔族］少主的<span class="global_name_span">夜無燼</span>，大概是日久生情吧，兩人就在一起了，後來也不知道發生啥事，竟惹得他倆屠盡［蘭若寺］上下，這當中發生的事情大概也如中原各派對<span class="global_name_span">劍邪</span>、［時輪宮］對<span class="global_name_span">夏侯儀</span>一般。</p> <p>如今<span class="global_name_span">夜無燼</span>逝去後，<span class="global_name_span">隱月鬼王</span>隨即現身，不料各式逐暗破邪之法皆難傷其分毫，這原因倒也簡單，雖然他名號鬼王，但卻是真實活著的［人］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/31DJRs4ZHS8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>但自古邪不勝正，大夥還有一殺招［上天入地，兄弟同心］，如今集在場眾人之力一同施展，雖然名字中二，威力卻足以將鬼王灰飛湮滅，經過一陣儀式感滿滿的連擊，鬼王落敗，世界又恢復了和平，男女主角有情人終成眷屬。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_QHi3ABjoME?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">外傳</div> <p><span class="global_name_span">韓無砂</span>勾引有婦之夫，正宮現場捉姦，<span class="global_name_span">幻境朧妖</span>趁機偷酒。</p> <p>［妖聞夕報］現［白蛇］，莫非下個國風聯動便是［白蛇傳］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Xn5UuQ4ydkw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">夜無燼</span>與<span class="global_name_span">隱月鬼王</span>兩人當年在［蘭若寺］發生的屠寺經過，原來是高僧想利用<span class="global_name_span">夜無燼</span>修練惹的禍端。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/L1v5AKhIV2c?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">驚夢</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dnS9PVqBHJE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">交鋒</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6Tqy5dGEdYE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">五雷</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qDIzeb_jZLc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">意亂</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jXFpGmFeqmw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">星霜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jU0iH8-wwYA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">絕招</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dGqjpSqyTqw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">銀絲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0a4ecHlQZJY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">謝幕</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QzUNNJCoYlA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">隱藏對話</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mdmZL5Hr7ec?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">蘭若試煉1</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0RcAtadN4nU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蘭若試煉2</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_VfZJuKZMOY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蘭若試煉3</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YsQIG8xzeOw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蘭若試煉4</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eMB3aFE0ZbI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蘭若試煉5</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xe6kKcKrEFE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蘭若試煉6</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/r4T0qzuL4as?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蘭若試煉7</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mhCztCWAldI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">蘭若倩影</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aTs1D6uPEms?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">長夜無盡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XFn72-ZSADo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">隱月鬼王</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cf060mJw7iY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+    return result;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('人物對話');
+      resultIdx.push('故跡殘痕');
+      resultIdx.push('爬塔戰鬥－首領戰');
+      resultIdx.push('爬塔戰鬥－普通戰');
+      resultIdx.push('爬塔戰鬥－結局');
+      resultIdx.push('補遺');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">于小雪</div> <p><span class="global_name_span">尉遲良</span>在路邊撿到<span class="global_name_span">于小雪</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rd7ujHXpcVw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">宇文拓</div> <p>來到這世界的<span class="global_name_span">宇文拓</span>竟然斷臂重生，所以照這話來看，他穿越的時間點，應該是在阻止赤貫星降世之後。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HcnVF34mZAQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">繁城人煙一夜盡　斷璧影頹垣憧憧</div> <p><span class="global_name_span">尉遲良</span>一行人來到一座荒廢四十年的古城，原來是接了［萬花樓］老闆娘的信，來查這的客棧。</p> <p>仔細調查下發現這地方竟有一古怪蟲繭，似乎在吸收周遭妖物的生命，就連<span class="global_name_span">春蘭</span>也不慎遭到控制，就在眾人解除眼前危機後，一個神祕女子<span class="global_name_span">承影</span>突然現身，看來她就是設置蟲繭的人，沒講兩句話，另一個身揹大刀的獨眼男子<span class="global_name_span">刀八</span>也隨後現身，兩人看似一夥，一副莫測高深的樣子。</p> <p>只要兩人自顧自地離開，絲毫沒有把在場眾人當回事，這般對待可讓<span class="global_name_span">鹿昭依</span>氣壞了，掌握兩人行蹤後，便火急火燎的追了上去。</p> <div class="global_ps_text"> <p>劇情交代<span class="global_name_span">承影</span>死過一次，但不知怎麼又活了過來，也許是這樣，所以只有在晝夜交替時能看見她。</p> </div> <div class="global_ps_text"> <p><span class="global_name_span">刀八</span>是隱居［賀蘭山］的機巧師，他如今的身體是自己用機關術造的。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZZ9cTnNtVcg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">賀蘭山缺了無痕 誤入歧途人成妖</div> <p>追著<span class="global_name_span">刀八</span>來到一處怪地方，<span class="global_name_span">鹿昭依</span>、<span class="global_name_span">尉遲良</span>兩人誤觸機關，竟變成了妖物的模樣。</p> <p>一番折騰，總算是破了此處的陣法，此時<span class="global_name_span">刀八</span>現身，為了離開此處，竟然想了結了<span class="global_name_span">尉遲良</span>兩人性命，還好有其他妖物協助，最終平安離開法陣。</p> <p>只見<span class="global_name_span">刀八</span>似乎有急事要辦，話也沒說兩句就直接離開，留下隻古怪的魚斷後，這魚被<span class="global_name_span">鹿昭依</span>這貪吃貨給嚇得，最後溜之大吉。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JOntB_uZ5jE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">日暮夕照塵沙裡 命緣伊始天之痕</div> <p>順著線索來到［吊命灘］，只見<span class="global_name_span">承影</span>、<span class="global_name_span">刀八</span>站在崖邊看著遠處，一條紅色的裂隙劃開了天際，這便是［天之痕］。</p> <div class="global_ps_text"> <p><span class="global_name_span">刀八</span>設定應該是在時序混亂處能看到其他時空的接口，而<span class="global_name_span">承影</span>似乎能藉著跟其它時空連結，延緩消散。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1A330ruKN_k?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">爬塔戰鬥－首領戰</div> <p>這劇情含量幾乎沒有，就直接貼影片連結了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-QOP0w71kJE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Kfao7awKhcY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qIPABPqpYig?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Mogwljuaa-0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2IuUXZHr9Cg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">爬塔戰鬥－普通戰</div> <p>這劇情含量幾乎沒有，就直接貼影片連結了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YFfoMvq7j-0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1Zfw4SS3Buc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/87wExfNBcOU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cIQ2l7v2J1I?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-CEkJ8ddRy8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bT7pQ__0D9w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RKccYObuctE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RMdTnL3a0Y4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u5osnF9nNbs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">爬塔戰鬥－結局</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/skMy5BDR5Zw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QC03-5SCS50?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zsKZFgDh0z4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">補遺</div> <p><a href="https://qupyqupy.pixnet.net/album/photo/260336464"><img alt="諦聽情報［酒鬼］.jpg" src="https://pic.pimg.tw/qupyqupy/1643996461-3647637644-g_n.jpg" title="諦聽情報［酒鬼］.jpg" /></a></p> <p><a href="https://qupyqupy.pixnet.net/album/photo/260336468"><img alt="諦聽情報［諦聽鈴］.jpg" src="https://pic.pimg.tw/qupyqupy/1643996461-159367262-g_n.jpg" title="諦聽情報［諦聽鈴］.jpg" /></a></p>');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('人物對話');
+      resultIdx.push('一夕歌月（上）');
+      resultIdx.push('一夕歌月（下）');
+      resultIdx.push('問靈犀（上）');
+      resultIdx.push('問靈犀（下）');
+      resultIdx.push('終');
+      resultIdx.push('沉溪漁鄉');
+      resultIdx.push('無回龍淵');
+      resultIdx.push('劍塚');
+      resultIdx.push('十里坡劍神');
+      resultIdx.push('首領戰挑戰');
+      resultIdx.push('聯動宣傳劇情');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">李逍遙</div> <p><span class="global_name_span">李逍遙</span>說著夢話，說著說著就流眼淚了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LlfM6VhRqTI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">林月如</div> <p><span class="global_name_span">林月如</span>正找著<span class="global_name_span">李逍遙</span>、<span class="global_name_span">趙靈兒</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zXpKORVWd38?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">趙靈兒</div> <p><span class="global_name_span">趙靈兒</span>施展［回魂仙夢］似乎出了差錯，這裡並不是她記憶中熟悉的世界。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GcBoOO5KRhA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">一夕歌月（上）</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Hr3K9ZOxpyM?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><span class="global_name_span">李逍遙</span>正受到［蝕怪］的攻擊，孤掌難鳴之際，<span class="global_name_span">尉遲良</span>與<span class="global_name_span">林月如</span>連袂趕到助陣。</p> <p>不過此時<span class="global_name_span">李逍遙</span>似乎對<span class="global_name_span">林月如</span>不甚有印象，甚至連自己為何身負劍招絕學也想不起來，<span class="global_name_span">尉遲良</span>只當其是個隱隱於市的高手，想來這附近該無大礙，便與<span class="global_name_span">奚歌</span>先行離去，留下<span class="global_name_span">林月如</span>在此間住下，暫作休息。</p> <p>不料這<span class="global_name_span">尉遲良</span>前腳剛走，中原門派的弟子就直衝衝的闖入客棧，當中一名喚作<span class="global_name_span">丁霜</span>的人，直言此處客棧乃是上月憑空出現，懷疑眼前的<span class="global_name_span">李逍遙</span>正以妖術害人，偏偏此時<span class="global_name_span">李逍遙</span>記憶不全，連番提問竟一句也答不上來。</p> <p>還好<span class="global_name_span">趙靈兒</span>出現解圍，由於在對抗［蝕災］的過程中，不少中原弟子受到了她的治療，便依她所言，暫時放過嫌疑重大的<span class="global_name_span">李逍遙</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oX4Ygfsow_k?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了洗清自己的嫌疑，<span class="global_name_span">李逍遙</span>決心要找到幕後的黑手，這時在地上撿到一封信。</p> <p>［仍需至附近村落尋三十九名活人，通過蝕之祕法吸取其精血。］</p> <p>一旁的<span class="global_name_span">趙靈兒</span>一聽到［吸取其精血］，立刻想到這一切可能與<span class="global_name_span">拜月教主</span>有關，這分明是餵養［水魔獸］採取的行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/X4qOgTZjjJo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了阻止<span class="global_name_span">拜月教主</span>得立即動身探查附近的村落，路上正好遇到［四象門］門人求助，抵抗附近意圖綁走村民的妖怪。</p> <p>與<span class="global_name_span">奚歌</span>聯手擊退意圖不軌的妖人後，當中一名［四象門］弟子<span class="global_name_span">阿姜</span>看著眾人的身手，不由得希望自己也能獲取強大實力，這樣就可以保護愛人<span class="global_name_span">蔓菁</span>了。</p> <p>在逼問妖人幕後黑手的下落時，<span class="global_name_span">李逍遙</span>不慎遭到暗算，危在旦夕，<span class="global_name_span">趙靈兒</span>也顧不得自己靈力尚未完全恢復，強行施法治癒了<span class="global_name_span">李逍遙</span>，自己卻不支倒下了。</p> <p>戰場暗處，一名獨眼刀客正冷眼看著一切，原來他竟與<span class="global_name_span">拜月教主</span>勾結，此人名喚<span class="global_name_span">刀八</span>，根據他與<span class="global_name_span">拜月教主</span>談話得知，此時的<span class="global_name_span">林月如</span>似乎是強力的執念所化，並非真正的生人，而自己之所以與<span class="global_name_span">拜月教主</span>合作，全是為了借助［水魔獸］的力量，穩定自己妻子<span class="global_name_span">承影</span>的狀況。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vu5DHCYMB0E?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>回到客棧稍事休息的眾人，隨即得知失蹤的村民如今都在［風吼窟］處，眼下救人要緊，大夥顧不得體力尚未恢復，立即準備出門救人。</p> <div class="global_ps_text"> <p>00:06 - 藥瓶簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RpK94xODG98?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒料到［風吼窟］這邊已經屍橫遍野，<span class="global_name_span">拜月教主</span>等人運用［地脈之力］傳輸鮮血餵養［水魔獸］，此時不知道有多少處已如［風吼窟］一般慘況。</p> <p>此地殘存［蝕］在眾人到來之際凝聚成［煞］，<span class="global_name_span">趙靈兒</span>在激戰過後現出了女媧傳人的原型，卻因此被中原各派誤認為蛇妖，當中<span class="global_name_span">丁霜</span>對妖怪尤其深惡痛絕，立即追了上去。</p> <p>被嚇傻的<span class="global_name_span">義肝膽</span>則想到請<span class="global_name_span">悲葉禪師</span>出山來降伏蛇妖。</p> <p>在場只有<span class="global_name_span">李逍遙</span>為了替<span class="global_name_span">趙靈兒</span>洗刷罪名，跟<span class="global_name_span">殷無邪</span>討論後，決定去附近廢墟尋找線索。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wy7wkUup7Rg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［四象門］<span class="global_name_span">奚歌</span>與大夥一起行動，在一處洞窟發現了身負［蝕］力量的半人妖，<span class="global_name_span">李逍遙</span>只當<span class="global_name_span">趙靈兒</span>些許如眼前這些犧牲者一樣，是受到某人的咒術所害，心情越發著急。</p> <p>此時一名叫<span class="global_name_span">蔓菁</span>的女子也找到此處，只不過一入洞內就被眼前景象嚇昏過去，眾人也只能先將她帶回客棧休息。</p> <p><span class="global_name_span">蔓菁</span>醒來後，說著自己的未婚夫<span class="global_name_span">阿姜</span>為了修法得到，才去那洞窟尋高人相助，但就目前的情況來看，眾人皆覺得這是妖人設下的陷阱，<span class="global_name_span">阿姜</span>可能早已遭到不測。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lxvNDFHZ8Js?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這時<span class="global_name_span">趙靈兒</span>突然來信，並在其中附上了地圖，<span class="global_name_span">李逍遙</span>想都沒想便照著圖上標記找到了位置。</p> <p>此處有著已被化為［鬼魄屍王］的<span class="global_name_span">阿姜</span>、［康平司］門人、還有恢復人形的<span class="global_name_span">趙靈兒</span>，聽聞<span class="global_name_span">蔓菁</span>已經準備與別人成婚，<span class="global_name_span">阿姜</span>想著自己如今的樣子，雖然心有不甘，卻也頓生放棄這段感情的念頭。</p> <div class="global_ps_text"> <p>01:39 - 給台服特別版一個讚，這聲［夭壽］明顯是特別加的。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mVzouUiEHnQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">一夕歌月（下）</div> <p>不過真實情況是<span class="global_name_span">蔓菁</span>一直等著<span class="global_name_span">阿姜</span>，眼下這婚禮只是用來逼<span class="global_name_span">阿姜</span>現身的，只不過最終仍沒等到<span class="global_name_span">阿姜</span>親自前來。</p> <p>知道事情原委的<span class="global_name_span">李逍遙</span>，便想回去勸說<span class="global_name_span">阿姜</span>。</p> <p>另一邊<span class="global_name_span">義肝膽</span>前來請<span class="global_name_span">悲葉禪師</span>出山。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4wUTXEN2AT4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>就當<span class="global_name_span">李逍遙</span>等人努力開導<span class="global_name_span">阿姜</span>時，<span class="global_name_span">悲葉禪師</span>帶著中原各派人士前來除妖。</p> <p>已成［鬼魄屍王］的<span class="global_name_span">阿姜</span>實力絕非泛泛，與眾人聯手輕鬆就收拾了敵人，正當<span class="global_name_span">李逍遙</span>想要趁勢追擊時，<span class="global_name_span">林月如</span>竟然出手阻止，<span class="global_name_span">趙靈兒</span>馬上瞧出其是遭人控制。</p> <p>這時幕後隱藏的<span class="global_name_span">刀八</span>現身帶走了<span class="global_name_span">林月如</span>，留下句［想救她就來泣魂嶺］就直接離開了。</p> <p>這眼下情況危急，大夥決定兵分兩路，<span class="global_name_span">李逍遙</span>去救<span class="global_name_span">林月如</span>，<span class="global_name_span">趙靈兒</span>則前去追趕<span class="global_name_span">悲葉禪師</span>。</p> <p>臨行前，<span class="global_name_span">阿姜</span>也不再堅持，決定去找<span class="global_name_span">蔓菁</span>面對這感情。</p> <div class="global_ps_text"> <p>09:52 - 蔓菁的笛子簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bpzmVm0_-3o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">李逍遙</span>這邊，大概是因為有<span class="global_name_span">殷無邪</span>隨行，半路上竟遇到<span class="global_name_span">春蘭</span>，她正被一群妖怪圍攻，受不了她那嗲聲嗲氣的求救聲，大夥趕緊抄上手中劍將這群妖怪收拾了。</p> <p>另一邊，神秘的<span class="global_name_span">承影</span>終於現身，她似乎想在<span class="global_name_span">林月如</span>身上獲得些甚麼？</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NPJYDUCALHo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>路上消滅了一股妖怪後，<span class="global_name_span">林月如</span>現身在眾人面前，只說了句［李大哥，救我］，便轉身離去。</p> <p>另一邊<span class="global_name_span">拜月教主</span>正向<span class="global_name_span">承影</span>問著<span class="global_name_span">林月如</span>的事情，似乎影響<span class="global_name_span">林月如</span>能否存於世的關鍵，就是<span class="global_name_span">李逍遙</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/07V1FmpNaTY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人來到［泣魂嶺］，只見<span class="global_name_span">林月如</span>渾身散發奇異氣場，雙眼泛紅似乎是被人控制地向<span class="global_name_span">李逍遙</span>襲來。</p> <p>擊敗<span class="global_name_span">林月如</span>後，隨著她真情的剖白，<span class="global_name_span">李逍遙</span>也逐漸恢復了關於她的記憶，直面自己內心的<span class="global_name_span">李逍遙</span>感動了控制<span class="global_name_span">林月如</span>的蝴蝶，<span class="global_name_span">承影</span>設下的咒術解除了。</p> <p>不過重逢不過片刻，卻聽聞<span class="global_name_span">趙靈兒</span>被<span class="global_name_span">悲葉禪師</span>騙走了，眼下只能等［四象門］弟子打聽出其下落再做打算。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mrPDNwm8BDo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">問靈犀（上）</div> <p>眾人得知<span class="global_name_span">趙靈兒</span>如今正在［鬼鳴谷］，立即組隊前往救援，但此時中原各派都站在了<span class="global_name_span">悲葉禪師</span>這邊，<span class="global_name_span">義肝膽</span>等三人更是率眾阻擋在大夥面前。</p> <p>但<span class="global_name_span">李逍遙</span>救人心切，這點阻礙無法停止他的腳步，戰鬥結束後，敵人方的<span class="global_name_span">丁霜</span>忽然散發著妖氣，似瘋似顛地跑開了。</p> <p>另一邊<span class="global_name_span">悲葉禪師</span>正給<span class="global_name_span">趙靈兒</span>灌迷湯，但<span class="global_name_span">趙靈兒</span>早就看出眼前這老和尚定是<span class="global_name_span">拜月教主</span>。</p> <div class="global_ps_text"> <p>08:15 - 義肝膽的信簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TEyZPBcpJNU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼續朝著［鬼鳴谷］前進，之前跑走的<span class="global_name_span">丁霜</span>如今正化作妖怪向眾人襲來，原來他本是半妖，但他痛恨這身分，想成為人的執著讓他格外痛恨妖怪。</p> <p>如今這秘密攤在陽光底下，本以為自己將失去一切，但<span class="global_name_span">甲無問</span>即使知道真相，仍將<span class="global_name_span">丁霜</span>當作朋友看待。</p> <p>本來嘛！情感這東西就是超越種族的，以此與他人做出隔閡，那都是世人的頑固不化的偏執思想。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/P-cQoS6pWyY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沿路妖怪除之不盡，<span class="global_name_span">殷無邪</span>見狀自願斷後，這才讓眾人獲得空間，終於見到了被禁錮的<span class="global_name_span">趙靈兒</span>。</p> <p>此情此景<span class="global_name_span">李逍遙</span>終於恢復了所有的記憶，但<span class="global_name_span">悲葉禪師</span>正等著這刻，［七星盤龍柱］憑空出現在四周，這正是當年在［鎖妖塔］底層的場景，<span class="global_name_span">鎮獄明王</span>自然也現身其中。</p> <p>眼前所見，讓<span class="global_name_span">李逍遙</span>擔心起悲劇重演，但<span class="global_name_span">林月如</span>卻絲毫不懼，反而激勵了<span class="global_name_span">李逍遙</span>，最後三人合作擊敗了<span class="global_name_span">鎮獄明王</span>，這次大家都活了下來。</p> <p>就當大夥準備離開時，<span class="global_name_span">義肝膽</span>又找上眾人，不過這回是來求救的，原來<span class="global_name_span">悲葉禪師</span>終於不演了，將中原門派囚禁在一起，大肆屠殺，<span class="global_name_span">李逍遙</span>忍不住當場吐槽，但持劍衛道還是正經事，思量下還是先救出受困的中原門派。</p> <div class="global_ps_text"> <p>10:49 - 無名斷手簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ir3KDZzPwfg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">義肝膽</span>三人自知錯誤，也隨著眾人加入救援行列，眼下幕後黑手<span class="global_name_span">拜月教主</span>就在［翳月祭壇］。</p> <p>但<span class="global_name_span">李逍遙</span>一想到要與<span class="global_name_span">拜月教主</span>戰鬥，害怕再一次面對<span class="global_name_span">趙靈兒</span>去世的場景，竟然因此裹足不前，相反的<span class="global_name_span">趙靈兒</span>、<span class="global_name_span">林月如</span>卻無所畏懼，甩下他直接朝著［翳月祭壇］前去。</p> <p>最後在<span class="global_name_span">殷無邪</span>的開導下，<span class="global_name_span">李逍遙</span>決定放下心中顧慮，追上眾人，全力與<span class="global_name_span">拜月教主</span>一戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1fXbgu3kH_Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">問靈犀（下）</div> <p>先行的<span class="global_name_span">趙靈兒</span>兩人此刻已與<span class="global_name_span">拜月教主</span>對上，言談中得知<span class="global_name_span">拜月教主</span>之所以能來到這個世界，全是利用了<span class="global_name_span">趙靈兒</span>施展的［回魂仙夢］，當［水魔獸］與［蝕］產生共鳴時，眾人也因此出現在這世界。</p> <p>這下<span class="global_name_span">趙靈兒</span>總算知道為何施展［回魂仙夢］卻不是來到自己記憶中熟悉地方的原因，眼前的<span class="global_name_span">拜月教主</span>這次不但利用了［蝕］的力量，更胡亂研究人妖合體的邪術，誓要將<span class="global_name_span">趙靈兒</span>、<span class="global_name_span">李逍遙</span>獻祭，完成自己與［水魔獸］的完美合體。</p> <p>一番戰鬥過後，眾人雖然暫時阻止<span class="global_name_span">拜月教主</span>的野心，但他似乎還有隱藏的後招，只見<span class="global_name_span">拜月教主</span>向<span class="global_name_span">刀八</span>、<span class="global_name_span">承影</span>提出交易..........</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mBoGftZ2Ah0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>大戰過後，還沒等休息片刻，［蝕災］又開始四處氾濫，照情況看來［水魔獸］可能已經復活，為了維持魔力才繼續造成殺戮吸取更多鮮血。</p> <p>事關世人安定存亡，<span class="global_name_span">李逍遙</span>縱然有私心，想就此與<span class="global_name_span">趙靈兒</span>、<span class="global_name_span">林月如</span>隱居在客棧內，卻也無法忍受<span class="global_name_span">拜月教主</span>的濫殺之舉。</p> <p>就在此刻，中原群豪皆圍了過來，以<span class="global_name_span">殷無邪</span>為首，決定先清除眼下［蝕災］，阻斷［水魔獸］吸血，為<span class="global_name_span">李逍遙</span>三人爭取擊敗<span class="global_name_span">拜月教主</span>的時間。</p> <div class="global_ps_text"> <p>09:56 - 玉珮簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/a9ZA00NPRpE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在中原群豪的努力下，終於淨化被［蝕災］污染的地脈，［水魔獸］也因此失去了源源不斷的鮮血來源，最終<span class="global_name_span">李逍遙</span>等人成功擊敗與［水魔獸］合體的<span class="global_name_span">拜月教主</span>。</p> <p>但回歸原本世界的<span class="global_name_span">拜月教主</span>終要有人回去收拾.........</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DVi6V-y2WYI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">終</div> <p>離別的時刻終將到來，［回魂仙夢］也有夢醒的一日，就算有千萬不捨<span class="global_name_span">李逍遙</span>還是忍住傷痛與夢中的<span class="global_name_span">趙靈兒</span>、執念化身的<span class="global_name_span">林月如</span>道別。</p> <p>這是個<span class="global_name_span">李逍遙</span>未曾道出的秘密，也是這兩位紅顏知己為他做的最後一件事情，解開心結的<span class="global_name_span">李逍遙</span>最終成為了［蜀山派］掌門..........</p> <div class="global_ps_text"> <p>兩位妹子最終陪著我在天地劫世界行俠仗義。</p> </div> <div class="global_ps_text"> <p>03:06 - 女媧石像簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rzvJ5AZ2pgE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">沉溪漁鄉</div> <div class="global_ps_text"> <p>01:55 - 魚腸劍簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QUsyFpAvpJs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="global_ps_text"> <p>02:02 - 酒葫蘆簡介。</p> <p>02:20 - 殺手的斗笠簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uBFr_8toPYQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="global_ps_text"> <p>01:52 - 持花的石像對話。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5Y5Ok1IAqTs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">無回龍淵</div> <div class="global_ps_text"> <p>01:35 - 頭盔簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pPRLxxAMf8g?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="global_ps_text"> <p>03:16 - 妖面人偶簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/g3MLCRQGxb4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="global_ps_text"> <p>05:09 - 八卦鏡簡介。</p> <p>05:32 - 無主的斗笠簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-NcRK740qRE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="global_ps_text"> <p>09:51 - 龍骨掛龍戒對話。</p> <p>10:18 - 龍戒簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ODUUszXkD3w?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">劍塚</div> <div class="global_ps_text"> <p>02:04 - 殘劍簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PQinW6koGB0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="global_ps_text"> <p>04:49 - 銹蝕之劍簡介。</p> <p>05:12 - 劍癡的斗笠簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kZMqRwGyknQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="global_ps_text"> <p>02:47 - 魔劍簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ekjPfpOLhq4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="global_ps_text"> <p>04:32 - 妖劍對話。</p> <p>04:58 - 妖劍簡介。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kBAhd6tLy7s?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">十里坡劍神</div> <p>十里坡劍神是一個流傳在網路的傳說，在上世紀那個資訊網路還不發達的年代，角色扮演遊戲並沒有像現在有著諸多提示劇情進程的功能，有一位大大因為不知道要怎麼觸發新劇情，誤以為這遊戲就是單純打怪的類格鬥遊戲，於是在遊戲開頭的地圖［十里坡］就把<span class="global_name_span">李逍遙</span>硬是練到了７１等級，我記得我破關的時候也才６０幾等，雖然無法驗證真偽，但這傳說卻是在仙劍迷中流傳甚廣。</p> <p>看到這小遊戲，就能明白紫龍是真有誠意，所謂懷舊就是要這樣賣的，各個細節都是滿滿回憶。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/m4afgv-SFFs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wKI3-RxOyEI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">拜月教主</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BzY6CRfHiZg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ECuZOrVPU4E?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">鎮獄明王</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZXExVjbope0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/75B4FgLe84k?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">聯動宣傳劇情</div> <p>三位頂尖的劍士<span class="global_name_span">冰璃</span>、<span class="global_name_span">李逍遙</span>、<span class="global_name_span">宇文拓</span>在客棧為接一壺水，各顯神通，此時天色變暗，［水魔獸］出現異動、<span class="global_name_span">寧珂</span>也來到這世界......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7eo2SAsXLFo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">李逍遙</span>與<span class="global_name_span">尉遲良</span>兩股人馬，共同迎戰來自<span class="global_name_span">拜月教主</span>的襲擊......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/X8vKen3f-lM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
