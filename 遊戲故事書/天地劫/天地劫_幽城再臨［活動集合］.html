@@ -1,0 +1,477 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>活動選擇：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /> <p>這個活動的文言文真是B格突破天際，雖然造成一定的理解障礙，但這才是天地劫系列該有的傳統，想當初會入［漢堂］的坑，就是因為［天外劍聖錄］那豐富的文學用語。</p> <p>OP 動畫配上文字可以簡單理解成周安王十九年（大約是春秋戰國時代），羅睺創造的祭劍雙使來到了［明界］準備實行羅睺神的計畫，而這一整個活動其實也是交代了<span class="global_name_span">霍雍</span>、<span class="global_name_span">冰璃</span>來到［明界］後的故事。</p> <div class="global_ps_text"> <p>世界上曾有一座迷城，關於它的事情，沒有被歷史所記載。不過自古天地運行，任何事情皆會留下痕跡，善用者便可從中進行探查。（這邊我理解為觀天象）</p> <p>周安王十九年，天現熒惑守心的大凶之象，各地諸侯並起，天下大亂。</p> </div> <div class="global_ps_text"> <p>OP 的旁白，我覺得倒數第二句可能是錯的，［授殷天下］應該改成［授周天下］，因為周安王是戰國開始的第一個天子，殷商早就給周滅了，這時候冒出來殷商有點不對。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2p00gfryPWo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p>這個活動頗有夢戰的輕鬆逗趣風格，基本與［幻海迷城］不同，算是跟主線相關不大的劇情。</p> <p><span class="global_name_span">皇甫申</span>與<span class="global_name_span">鹿昭依</span>被<span class="global_name_span">嬉戲狸</span>轉入一個莫名的時空，同是天涯淪落人，兩人只好組隊尋找離開的方法。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_8vEciEbGFI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('');
+  activityArr.push('<hr /> <p>這次的活動講述了許多人物的前傳，雖然與主線劇情並沒有多少的補完，但隱約間似乎有著埋線伏筆的感覺，照著時序錯亂的主線設定，也許這些不同時代的故事，日後都能在主線遊一遍。</p> <p>另外這譜寫［靡世之音］的樂師，些許也是超脫時序之外的存在，否則這曲又怎麼帶出不同朝代的記憶。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KeWGRwDqeg8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p>繼上次［天之痕］聯動後，又一個碎片式的敘事活動，本來這種手法能加深玩家探索遊戲世界的樂趣，但是戰棋類的遊戲卻不適合。</p> <p>例如［艾爾登法環］透過收集文件以及各場景中的細節，就足以建構出龐大且延伸極長的故事，但這些都是仰賴高端的遊戲技術，戰棋類通常只透過文字敘述、人物對話，對這部分就難以表現完美，希望之後的活動能少些這種吧。</p> <p>劇情方面大致可以認為是［幽城幻劍錄］結束，［神魔至尊傳］承接其後，所以故事中都有些繼承交代的意味在，中間還有些似伏筆的地方，如［長明燈］、女媧憑體李夫人的出現、<span class="global_name_span">白復歸</span>等，還有［幽城幻劍錄］中的<span class="global_name_span">阿玲</span><span class="global_name_span">阿吉</span>兩人的結局，但敘事實在太碎，延伸探討劇情的部分就會變得太過空想，這邊就只上影片了。</p>');
+  activityArr.push('<hr /> <p>這次活動補充了<span class="global_name_span">赤煉</span>這角色的故事，開頭動畫中的那句［我不認］真是太有氣勢了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/J-SgXftva2I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p>［玄海謠］是至目前為止所有活動，做的最精簡的一個，沒有語音，模式照抄［墨子道］，連新角色<span class="global_name_span">露葵</span>都沒辦法操縱，故事內容極短，而且缺乏與主線的呼應，希望之後活動能多出些像［幻海迷城］、［飛鳥魂渡］之類的，再不然像是［月令狸歌］這樣輕鬆笑笑的也不錯。</p> <p>［玄海謠］故事內容是講<span class="global_name_span">燕明蓉</span>前去［地界］找<span class="global_name_span">露葵</span>，然後被拐去打［石鐵蟲］，之後還把劍聖<span class="global_name_span">武英仲</span>牽扯進來，算是側面跟沒玩過［天外劍聖錄］的玩家，交代了兩人的交情匪淺。</p> <p>至於劇情中說［石鐵蟲］與劍邪有關，推測應該是以［神魔至尊傳］中<span class="global_name_span">高戚</span>與<span class="global_name_span">朱慎</span>合體後的怪物為藍本創造出來的新設定。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6UHDg1mxMFY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p>片頭有股淡淡的哀戚，寒林中的兩朵同莖的花，似乎就是<span class="global_name_span">玄羽</span>、<span class="global_name_span">雲襄</span>的化身。</p> <p>另外不得不說，天地劫的劇情策畫似乎已經放飛自我，自從主角等人入地界開始，所有劇情都相當零散且難以自洽，包含了活動、支線，唯一讓人覺得用心的就只有［飛鳥魂渡］，那我也放飛自我，感覺啥就寫啥吧，劇情嚴謹已經跟這遊戲沒半毛錢關係。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NSI_5U3pE8o?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p>這次活動顯然是為了推銷新角色而設的，內容劇情缺乏，更加可惜的是沒有語音，沒辦法聽到<span class="global_name_span">春蘭</span>的［嚶嚶嚶］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/A6nvBwDOm9c?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p>又是一個為了推銷新角色的活動，當中<span class="global_name_span">九陰</span>的敘事線算是較完整補完主線沒有多加描述的這角色，<span class="global_name_span">高皇君</span>、<span class="global_name_span">霍雍</span>這兩線就有點隨便，甚至連<span class="global_name_span">夏侯儀</span>是<span class="global_name_span">霍雍</span>的［盈魂］轉世這設定都變成［訊魂］，有些不太考究。</p> <p>當中雖然有個黑影神秘人物，卻沒明說他的身分，因為沒有太多證據，也不太好猜，希望不是遊戲製作的隨意埋下的一個用不到伏筆吧。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_HD2nxesUpc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YwyDMth3Kto?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('幻海迷城');
+  paArr.push('月令狸歌');
+  paArr.push('墨子道');
+  paArr.push('靡世之音');
+  paArr.push('三途烽燧');
+  paArr.push('飛鳥魂渡');
+  paArr.push('玄海謠');
+  paArr.push('寒川止息');
+  paArr.push('天淨沙');
+  paArr.push('時輪變');
+  paArr.push('鼩及其友');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
+  contentArr.push(getAct4(1));
+  contentArr.push(getAct5(1));
+  contentArr.push(getAct6(1));
+  contentArr.push(getAct7(1));
+  contentArr.push(getAct8(1));
+  contentArr.push(getAct9(1));
+  contentArr.push(getAct10(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
+  pArr.push(getAct4(2));
+  pArr.push(getAct5(2));
+  pArr.push(getAct6(2));
+  pArr.push(getAct7(2));
+  pArr.push(getAct8(2));
+  pArr.push(getAct9(2));
+  pArr.push(getAct10(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+  function getAct12(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('');
+
+	  return result;
+  }
+
+
+  function getAct11(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情(上)');
+        resultIdx.push('劇情(下)');
+        resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">妙手點秋香</div> <p><span class="global_name_span">靈鼩</span>拖著醉醺醺的身體來找好朋友<span class="global_name_span">食夢貘</span>，卻意外在獵蝕人手中救下四個魔物，因此成為了他們的老大。</p> <p>從交談中發現，他們四個被追殺的原因，似乎是因為搶了一個叫做<span class="global_name_span">豆豆</span>的人類小孩，不過他們四個卻是不承認的。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AkydvIL4gXw?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">山中無大王</div> <p>這四個魔物原本的大王就是<span class="global_name_span">食夢貘</span>，現在牠因為吸取太多惡夢，早已不認得<span class="global_name_span">靈鼩</span>，一見面就打了起來。</p> <p><span class="global_name_span">靈鼩</span>五兄弟僥倖逃出生天，看著昔日好友因為陷入噩夢而胡作非為，<span class="global_name_span">靈鼩</span>決心要救牠出苦海。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vVhNDBumM0c?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">千里送錦囊</div> <p>不過<span class="global_name_span">靈鼩</span>啥方法都試了一遍，楞是沒啥作用，這時遇到了<span class="global_name_span">雲衣宮主</span>與<span class="global_name_span">彌蘭納巴</span>，看這兩人本事應該不小，正好引去對付<span class="global_name_span">食夢貘</span>。</p> <p>戰鬥中，<span class="global_name_span">靈鼩</span>看他兩使用的［入夢符］甚是神奇，於是直接偷走。有了這個寶貝就可以到處收集美夢，之後再拿來淨化<span class="global_name_span">食夢貘</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Gh9AuBo2np8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">似是故人夢</div> <p>首先進入四魔物之一的<span class="global_name_span">大山</span>夢境中，沒想到他曾經是［冥皇］手下，還一度攻擊<span class="global_name_span">伊絲朵</span>，夢中盡是負面能量。</p> <p><span class="global_name_span">靈鼩</span>只好先淨化這夢境，<span class="global_name_span">大山</span>在擊敗夢中罪惡的自己後，心靈上也得到了救贖。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/79liWjnAuvc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">錯計入空城</div> <p><span class="global_name_span">靈鼩</span>忽然發現眼前這四個結拜魔物似乎都不是善類，話繞了幾彎四魔物也承認之前的確有綁走一名人類小孩<span class="global_name_span">豆豆</span>。</p> <p>看著<span class="global_name_span">大山</span>獲得救贖的樣子，眾人也躍躍欲試，進入<span class="global_name_span">豆豆</span>夢境後，照著對付<span class="global_name_span">大山</span>噩夢的方法，直接擊敗汙染夢境的根源，但奇怪的是，夢境淨化之後，大夥並沒有回到現實世界。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zeUv9yMUKjI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蠻勸解冗情</div> <p>接著劇情走向［盜夢空間］模式，為了從潛意識徹底拯救夥伴，<span class="global_name_span">靈鼩</span>於夢中再施［入夢符］，進入了更深一層的夢境。</p> <p>解決了<span class="global_name_span">豆豆</span>潛意識的夢魘，這次算是真正淨化了夢境。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3YU11htJPNQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">夢醒三千相</div> <p>然而就在四魔物認為自己可以做個好人的時候，隨著惡夢的結束，四魔物也化作光點消散，原來他們本就是<span class="global_name_span">食夢貘</span>的噩夢所化，隨著噩夢消失，這也是宿命。</p> <p><span class="global_name_span">雲衣宮主</span>與<span class="global_name_span">彌蘭納巴</span>就在此時出現，安慰了心情低落的<span class="global_name_span">靈鼩</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/T-ptNkqG3Ak?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">五彩照玄冥</div> <p>剩下就是將<span class="global_name_span">食夢貘</span>真正從惡夢中救出來，曾經一起行動的四魔物雖然已經消逝，但他們的精神力量與昔日大哥同在，在戰場化做各種支援，最終與<span class="global_name_span">靈鼩</span>一起拯救了<span class="global_name_span">食夢貘</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TZRbdu6Qr8Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">符中天 其一</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3OqYprF1fpM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">符中天 其二</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/p-nSck_P_ZM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">符中天 其三</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IOfNwgBTKhU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">符中天 其四</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FEuEtxBAldU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">符中天 其五</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9TqBBcsLj4o?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+
+  function getAct10(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情（高皇君）');
+  		resultIdx.push('劇情（九陰）');
+  		resultIdx.push('劇情（霍雍）');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">劇情（高皇君）</div> <p><span class="global_name_span">高皇君</span>本已不在人世，但意識卻追著一隻黑貓，莫名其妙地回到過去的時空，這時的［天玄門］還沒發生<span class="global_name_span">殷千煬</span>夫婦的慘案。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Eio6O5fzETQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>抓著黑貓才知，有人刻意以［燃香］的某種機制，將<span class="global_name_span">高皇君</span>引回過去，這是為了讓她了卻這一生中存在的遺憾。</p> <p>於是<span class="global_name_span">高皇君</span>便想以一己之力想要阻擋中原各派圍剿二師兄<span class="global_name_span">殷千煬</span>夫婦。</p> <p>當下要做的就是突破<span class="global_name_span">應奉仁</span>、<span class="global_name_span">周崇</span>、<span class="global_name_span">朱浩</span>三人的圍困。</p> <p>此時一個神秘男子正與黑貓暗中觀察著<span class="global_name_span">高皇君</span>的行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/I7tuZ8XPrtU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>快轉時空後，神秘男子與黑貓來到了［神闕宮］，原來<span class="global_name_span">高皇君</span>經過<span class="global_name_span">夏侯儀</span>的推薦來到此處，此時<span class="global_name_span">朧夜</span>已經殞命，<span class="global_name_span">殷千煬</span>因為悲憤化為［魔人］，無法坐視昔日正氣的二師哥變成毀滅世間的惡徒，<span class="global_name_span">高皇君</span>決定前往［化荒］。</p> <p>藉著［神闕宮四俾］的協助以及<span class="global_name_span">召祐</span>的認可，<span class="global_name_span">高皇君</span>如願開啟通往［化荒］的道路，但要抵達目的地，還需通過滿布敵人的［無間獄］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MjFpUCpmgFM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>闖過［無間獄］終於見到了二師兄<span class="global_name_span">殷千煬</span>，但終究雙方實力相差太大，<span class="global_name_span">高皇君</span>冒著必死的決心，施法送走了［神闕宮四俾］，獨自面對已成魔人的二師兄。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xEFpYPqAIuU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">劇情（九陰）</div> <p><span class="global_name_span">阿九</span>與其守護靈來到大漠。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Y3HYh7pQtwU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">幽篁</span>的殘魂正等著可以解放他的人到來。</p> <p>而曾為<span class="global_name_span">九陰</span>的<span class="global_name_span">阿九</span>便是這個人，聽完殘魂的請求後，毫不猶豫就將他消滅。</p> <p>另一邊之前暗中觀察<span class="global_name_span">高皇君</span>的神秘人，如今將對象轉向<span class="global_name_span">阿九</span>與其守護靈<span class="global_name_span">白首</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u-vqXh_zR10?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿九</span>一女娃正被賊人<span class="global_name_span">一點紅</span>追捕，這自然要出手相救。</p> <p>沒想到這<span class="global_name_span">一點紅</span>竟然喚出［幽煞］，在看到自己兄弟紛紛被吞噬，<span class="global_name_span">一點紅</span>使出了［明清心法］淨化此處的［蝕］，但自己也因此犧牲。</p> <p>而那女娃似乎非凡人，為了報恩提出幫助<span class="global_name_span">阿九</span>知曉未來或是回憶過去的回報，只不過<span class="global_name_span">阿九</span>並沒有這方面的慾望。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3f_dmMQKEjA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">白首</span>、<span class="global_name_span">九陰</span>這兩人恩怨糾纏到這一世，終於放下以往的桎梏，從今爾後便只有<span class="global_name_span">阿九</span>與其守護靈<span class="global_name_span">白首</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/54VrqpV1fLE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">劇情（霍雍）</div> <p><span class="global_name_span">霍雍</span>與<span class="global_name_span">欒</span>載入輪迴前的［瞬］進行對弈，但<span class="global_name_span">欒</span>能預示一切，此棋局自然能得勝。</p> <p><span class="global_name_span">霍雍</span>知有這般全知的生靈，數個問題只得到［一念而生］，黑貓此時［燃香］將<span class="global_name_span">霍雍</span>送往過去時空，讓他帶著記憶親自體會［一念而生］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Y_pGxs8x8ig?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［天瑤派］的<span class="global_name_span">皇甫申</span>為了尋得小師妹<span class="global_name_span">封玲笙</span>的行蹤而與大師兄<span class="global_name_span">秦惟剛</span>大打出手，得<span class="global_name_span">霍雍</span>協助，<span class="global_name_span">皇甫申</span>勢不可擋，最後從<span class="global_name_span">常逸風</span>口中得到了想要的消息。</p> <p>另一邊<span class="global_name_span">霍雍</span>也在過程中觀察這個自己［荒魂］轉世的男人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/no6Q1tYj2IA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著<span class="global_name_span">霍雍</span>幫助已與正道決裂的<span class="global_name_span">夏侯儀</span>取得［聖杯］，如此<span class="global_name_span">夏侯儀</span>便可得到無限的生命，擁有時間去拯救帶回<span class="global_name_span">冰璃</span>。</p> <p><span class="global_name_span">霍雍</span>在這最後一［瞬］，得以見到緣出自己兩魂的兩人一生，終也無悔入輪迴。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Tm-O3U2eEhk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">欒</span>尋找著打破輪迴的契機，而如今他歸納出關鍵就在人心，為此他決定融入輪迴，找尋那些對抗命運的魂靈。</p> <div class="global_ps_text"> <p><span class="global_name_span">欒</span>這最後的入輪迴，有點像北歐神話中面對諸神黃昏到處收集英靈的味道。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/q-NPcpuyT_Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">挑戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TwEynZVM0Qk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/81E40ZoG-Pg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dicvOC0Rz7g?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SciQ6J7UuvY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YVT1P45SA6M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vMGy2N6TOs0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+	  return result;
+  }
+
+
+  function getAct9(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情（上）');
+  		resultIdx.push('劇情（下）');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">忽如遠行客</div> <p>［四象門］與金賊勾結，行那煉鬼試驗，被少主<span class="global_name_span">奚歌</span>偶然聽見，便相邀<span class="global_name_span">春蘭</span>去阻止這些歹人尋得煉鬼［強魂］。</p> <p>另一邊［天玄門］也派出<span class="global_name_span">殷無邪</span>前去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YpHIGGO8qyQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">歡喜地</div> <p><span class="global_name_span">奚歌</span>兩人在戈壁沙漠找到了強魂<span class="global_name_span">黑羌</span>的線索，如今他似乎以靈魂憑體，化為巨大王蠍存於此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/15UuHwsigYM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">離垢地</div> <p>繼續探索著關於王蠍的部件，這些個物品會引來<span class="global_name_span">黑羌</span>的亡靈大軍，因此每找一件，就必須打一仗。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_Qd21CtBR_s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">發光地</div> <p>找到兩個部件後，<span class="global_name_span">殷無邪</span>也帶著同門女弟子來到這，真是桃花運盛，到哪都有一堆妹子陪著。</p> <p>這一見面不免要互相貧嘴一番，接著大家合力擊敗了襲來的亡靈大軍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/N0-keH5etJw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">聲聞乘．戰蠍地</div> <p>打了這幾場戰鬥，正主王蠍也應該登場了，這巨大的蠍子身體裡似乎憑依了幾代<span class="global_name_span">黑羌</span>家族的後代靈魂，魂力十分的混亂，藉此暫時擊退了它。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uGsbtRTLfG8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">焰慧地</div> <p>發現了目標自然不能讓王蠍這樣逃跑，眾人隨即追了上去，又遇到一股亡靈大軍，於是再次展開戰鬥，擊敗敵人後，又獲得一部件。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pL2S4awUgAo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">難勝地</div> <p>繼續打亡靈拿部件。</p> <p>在眾人拌嘴的同時，順便知道了<span class="global_name_span">春蘭</span>踏破三界，為的是尋找某人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OpDKSjgiuI4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">現前地</div> <p>眾人歇斯底里地互相抱怨，突然發現是這附近瀰漫的黑瘴氣所致，推測應該是那王蠍的怨念所致，看來王蠍離這不遠矣。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/f5XzLlqRHRk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">緣覺乘．戰蠍地</div> <p>王蠍果然再次現身，眾人再次擊敗牠。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/O0LMEBzooww?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">遠行地</div> <p>沒想到這王蠍，體內的蠍靈每打掉一個，竟會變得更強，如此打下去，如果只剩一隻蠍靈，倒真是前所未有的強魂了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BwmXcpq7vcI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不動地</div> <p>大夥一路擊敗亡靈大軍，竟在不知不覺中越走越高，似乎就快可脫離這戈壁沙漠的洞穴。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DffKL9BfzpE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">善慧地</div> <p>繼續前進，來到一處放滿寶箱的主殿。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MHGceUdZOEg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">菩薩乘．戰蠍地</div> <p>擊敗主殿的亡靈後，再次與王蠍對戰，不過正當要下殺手之際，<span class="global_name_span">春蘭</span>卻挺身阻止。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bOFY-1ekP40?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">法雲地</div> <p>原來<span class="global_name_span">春蘭</span>是想從王蠍口中探知［於闐國主］的下落，不過也只是問問。</p> <p>最後王蠍被<span class="global_name_span">奚歌</span>親手葬送，也算是阻止了自己父親的野心吧。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fL5mbB3MPN0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">斬取蠍頭</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MpBsHUBSvcg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">斷劈蠍尾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JqSj_Y3HI68?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">破剖蠍殼</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jvt3oOm_gKo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+
+  function getAct8(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">連理枝</div> <p>劇情一開始，一個神秘的人物正對<span class="global_name_span">玄羽</span>、<span class="global_name_span">雲襄</span>兩姊妹訓教，從對話中來看，可以知道兩姊妹已經輪迴千年，終其目的是為了領悟跳脫輪迴之道。</p> <p><span class="global_name_span">玄羽</span>很認真看待這件事情，但終究不得悟，反而<span class="global_name_span">雲襄</span>一副灑脫樣子，悟不得便悟不得唄，只要能一直陪在姐姐身邊就好，從此處來看，兩姊妹的個性當真相差的遠。</p> <p>再來畫面一轉，便是輪迴再開，這段劇情重點是敘述<span class="global_name_span">玄羽</span>、<span class="global_name_span">雲襄</span>原身為共生之花，而<span class="global_name_span">刀八</span>的身分為［定序者］，似乎因為<span class="global_name_span">玄羽</span>失憶導致錯序，才讓他現身，於是<span class="global_name_span">雲襄</span>承諾幫姊姊找回記憶後便回［寒林］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/V8hXvEYX7S8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">啟明慧</div> <p>第二段劇情沒啥重點，似乎只是為了引出新人物<span class="global_name_span">無相．弭服</span>，以及一開始對<span class="global_name_span">玄羽</span>姊妹訓教的神秘人，應該是生活在鏡子裡的［輪迴之主］，這鏡子應當不是一般的鏡子。</p> <p>另外［諦聽］組織也因為兩姊妹而行動起來，這邊透過對話得知<span class="global_name_span">春蘭</span>有著［窺夢］的能力。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hfgPv_kXCNg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">秘</div> <p>一名看似身著華服的女性在一面大鏡裡，這應該就是［輪迴之主］，我猜嘛，這人應該是［九如塔］長老，如今的她並無形體，所以利用<span class="global_name_span">雲襄</span>的愛姊心理，想要得到肉身，至於是奪舍，還是身為［寒林之主］的姊妹倆有其他大能，就看後續發展了。</p> <p>而此時［諦聽］也來到了［寒林］尋找姊妹，這裡也引出［諦聽］新角色<span class="global_name_span">檀香</span>，我覺得這敘事手法相當不好，接連兩個劇情冒出新角色，卻沒有好的鋪程，其實是讓玩家很容易不耐煩按下［Skip］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AEKC8PLLTTk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">消業火</div> <p><span class="global_name_span">雲襄</span>兩姊妹想前往［明界］去體驗陽光的溫暖，途經一處城寨，與迷信的寨民打了起來，這沒啥重點劇情。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DF6DZmkNivA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">兩分釵</div> <p>兩姊妹被之前的城寨之民一路追趕，從對話中可知此寨為［黎輔寨］。</p> <p>另外透過<span class="global_name_span">雲襄</span>我們得知，多次的輪迴，似乎只有<span class="global_name_span">雲襄</span>保留住所有的記憶，而這次輪迴為了改變<span class="global_name_span">玄羽</span>的命運，她便與<span class="global_name_span">無相．弭服</span>演了一場戲，故意氣走<span class="global_name_span">玄羽</span>，這樣也許可以改變每次輪迴<span class="global_name_span">玄羽</span>都為了保護自己而死的命運吧，<span class="global_name_span">雲襄</span>心裡這麼想著。</p> <p>還有個從對話中可能透露的設定，<span class="global_name_span">玄羽</span>、<span class="global_name_span">雲襄</span>這對雙生花，似乎是其中一人身死只要另一人活著，就可以無限輪迴再生，就不知道這是我誤會還是設定如此。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/x_BxdTpAZXQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">靜思雪</div> <p>來到［明界］的<span class="global_name_span">玄羽</span>因為<span class="global_name_span">雲襄</span>的關係而心情低落，獨自在大雪中望著眼前的河流，這情景被一獵戶人家看到，便把與狼群戰至重傷的<span class="global_name_span">玄羽</span>帶回家。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7WduN7xN_FI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">乍還身</div> <p>因為<span class="global_name_span">玄羽</span>的關係，引來了妖物，導致這一家人慘遭滅頂之災，這段劇情引出了<span class="global_name_span">任斷離</span>這個新角色，還有<span class="global_name_span">玄羽</span>身為［閻君］身分時戴著的那面具的由來。</p> <p>替獵戶一家報仇後，<span class="global_name_span">玄羽</span>似乎恢復記憶，取回所有力量，準備回去找<span class="global_name_span">雲襄</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kBDNTsXVhts?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">彼岸香</div> <p><span class="global_name_span">雲襄</span>早料到有此，便在［地界］入口等著<span class="global_name_span">玄羽</span>，只不過這時候的<span class="global_name_span">玄羽</span>卻因為<span class="global_name_span">雲襄</span>的這番操作，而異常氣憤。</p> <p>不過這對姊妹的愛恨情仇太複雜了，一時間也很難理的清。</p> <p>還記得<span class="global_name_span">雲襄</span>與<span class="global_name_span">刀八</span>的約定嗎，這時<span class="global_name_span">玄羽</span>記憶恢復，但兩姊妹卻不願回［寒林］，這引來了<span class="global_name_span">刀八</span>現身。</p> <p>至於為啥<span class="global_name_span">刀八</span>執意讓兩姊妹回去，估計是［寒林之主］有著自己的使命，需要在［寒林］待著，至於是啥使命，我看不懂，反正就是跟天地之序有關的，於是雙方開始大戰，中途還有［諦聽］亂入，只不過終究無法阻止兩姊妹突破重圍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SMyOBBmvrwE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">重鏡圓</div> <p>最終<span class="global_name_span">刀八</span>無法阻止兩姊妹再入輪迴，這邊估計是指此次輪迴因為<span class="global_name_span">玄羽</span>取回記憶的緣故，可能會有所不同。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EIUoN0OltXQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">連理枝</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yoBjC_ydrCg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">啟明慧</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zFVg7VtFWjY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">消業火</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gA6XDz7u2pc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">兩分釵</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fP9cIaMEJMI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">靜思雪</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2Pb8H8wohig?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">乍還身</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LB-kKwPUyeA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">彼岸香</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nqn5jiCnjNc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+  function getAct7(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情1');
+  		resultIdx.push('劇情2');
+  		resultIdx.push('劇情3');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">山谷來客</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/irTQ4dYsMRQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">形影不離</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SvyAPQBNK5U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不懷好心</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qkrvmQm1Z-Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">打抱不平</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/is_o9QHq0OE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">假龍真蟲壹</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Cw1vFp-LK6U?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">當仁不讓</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VVK95lsolr0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不做不休</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-LONwx2mPaY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不厭其煩</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0jzdxQCxBDc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">假龍真蟲貳</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eAk7lR3J758?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">自救不暇</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/a3ycPOkQDYk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">終始不渝</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OnsIzzi2YFo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">按捺不住</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5vSfe9kbl_s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">假龍真蟲參</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dTSMNVPuCBw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">假龍真蟲肆</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/upvVjb6B4SI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">首次通關</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TDUFf23-8e4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">力取石蟲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xI1G1uhAQew?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">巧取石蟲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FGp5xqpKqiI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">智取石蟲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-PfZZ6n_ayk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+	  return result;
+  }
+
+  function getAct6(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">劇情</div> <p>自古［地界幽姬］每隔一甲子就必須自盡於［赤煉淵］，換取新一任的［幽姬］誕生。</p> <p>這日魔將<span class="global_name_span">白首</span>率眾追趕一少女<span class="global_name_span">殷九</span>，幸得<span class="global_name_span">赤煉</span>與三輔使相助，<span class="global_name_span">殷九</span>總算逃過一劫，自此就跟在<span class="global_name_span">赤煉</span>身邊為奴僕。</p> <p>但其實這一切只是一場戲，<span class="global_name_span">殷九</span>真實身分正是<span class="global_name_span">九陰</span>，他弱小的外貌正好適合設局潛伏在［幽姬］身邊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7LQ6ul4IdkM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一年過去了，<span class="global_name_span">九陰</span>這期間侍奉在<span class="global_name_span">赤煉</span>身邊，早已被她的人格魅力折服，如今竟然假戲真做，真心想幫助她。</p> <p>如今［幽姬］命中注定的甲子之期已到，<span class="global_name_span">九陰</span>深知<span class="global_name_span">赤煉</span>無法接受這怪誕的自盡命運，因此暗中聯合［玄冥教］勢力，想要破壞這幽姬繼承儀式，最終一息尚存的<span class="global_name_span">赤煉</span>被［玄冥教］一夥人帶走。</p> <p>然而令人驚訝的事，在此時發生，新任［幽姬］竟在前任［幽姬］未死的情況下誕生了，而且肚子很餓。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mUCLJYw1mTs?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>知道事情的嚴重性，<span class="global_name_span">欒</span>馬上帶著九黎族追擊而至，以他的實力，截下［玄冥教］眾人自是不在話下。但<span class="global_name_span">欒</span>最終被<span class="global_name_span">赤煉</span>追求自由的堅定意志感動，揮手設下七道藍焰關卡，只要<span class="global_name_span">赤煉</span>能踏過去，便能得到她希望已久的自由。</p> <p>隨著一道道烈焰焚燒，<span class="global_name_span">赤煉</span>與地界的羈絆也一一化為飛灰，這當中還包含了與輔使<span class="global_name_span">曜璃</span>的回憶，那位為自己編織自由飛鳥夢想的敬重之人。</p> <p>當走到第七道藍焰，<span class="global_name_span">赤煉</span>卻再也支持不住，就在［玄冥教］眾人想著如何救人時，祖龍<span class="global_name_span">召祐</span>現身，<span class="global_name_span">欒</span>似乎早已預見了這結果，口裡依舊是那兩字［無趣］。</p> <p>只見<span class="global_name_span">召祐</span>一鈍釜，隨著一道金光，一魂一魄進入<span class="global_name_span">赤煉</span>體內，隨即<span class="global_name_span">赤煉</span>再生，見目的達成，<span class="global_name_span">召祐</span>瀟灑離去，而<span class="global_name_span">赤煉</span>則向九黎一族正式宣戰，誓要摧毀這毫無意義捆縛［幽姬］的枷鎖。</p> <div class="global_ps_text"> <p>對於<span class="global_name_span">赤煉</span>從［幽姬］身分，到加入［玄冥教］的故事在此就結束了，活動採取倒敘的手法，之後的劇情則是解釋為何<span class="global_name_span">召祐</span>會手中會有<span class="global_name_span">赤煉</span>的一魂一魄。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DxEpiuBMv8s?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>時間回到羅喉雙使建造［九渾天動儀］之時，<span class="global_name_span">于闐國主</span>來信，雖暫時不知目的，但<span class="global_name_span">霍雍</span>先遣門下<span class="global_name_span">練紅鷂</span>、<span class="global_name_span">南星</span>至［七曜之門］等待。</p> <p>片刻後，<span class="global_name_span">霍雍</span>便交付兩人計困［康平司］門人的任務，臨行前囑咐兩人服下［冰蟾砂］以便抵擋地界瘴氣，但<span class="global_name_span">南星</span>卻若有所思。</p> <div class="global_ps_text"> <p>這<span class="global_name_span">練紅鷂</span>看立繪大致就可以猜到是<span class="global_name_span">赤煉</span>的前世。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yvwE1iHFUuM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>出任務前，<span class="global_name_span">練紅鷂</span>還在為<span class="global_name_span">冰璃</span>梳髮，閒聊之際還談及男女之情，可以兩人雖名為主僕，實際上更像姊妹閨蜜。</p> <p>之後在<span class="global_name_span">練紅鷂</span>、<span class="global_name_span">南星</span>兩人合演的禽獸汙辱良家婦女的大戲下，［康平司］門下被早前布置好的咒術所困。</p> <p>雖說是演戲，但<span class="global_name_span">南星</span>早就對<span class="global_name_span">練紅鷂</span>有了非分之想，只不過一次次被拒絕。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MJlVwz9UwQ0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著為了更進一步阻擋［康平司］，以免妨礙［降曜之儀］，<span class="global_name_span">南星</span>、<span class="global_name_span">練紅鷂</span>聽令假扮羅喉雙使去阻擋祖龍<span class="global_name_span">召祐</span>。</p> <p><span class="global_name_span">南星</span>一看到巨龍真身，便嚇得頭有不回的逃跑，只剩<span class="global_name_span">練紅鷂</span>無懼地與<span class="global_name_span">召祐</span>單挑，但實力相差懸殊，所幸情同姊妹的<span class="global_name_span">冰璃</span>不願意看到<span class="global_name_span">練紅鷂</span>犧牲，連忙趕來。</p> <p><span class="global_name_span">霍雍</span>雖有不滿，但也不願見<span class="global_name_span">冰璃</span>涉險，就在羅喉雙使即將與祖龍大戰之時，有人利用［蝕］讓<span class="global_name_span">召祐</span>失控，這一切都是<span class="global_name_span">于闐國主</span>在背後算計，終其目的是將身帶［幽垠］的<span class="global_name_span">霍雍</span>送入輪迴，以此擾亂三皇創世制定的規則。</p> <p>而<span class="global_name_span">南星</span>就是<span class="global_name_span">于闐國主</span>安排在<span class="global_name_span">霍雍</span>身邊的棋子，然而<span class="global_name_span">霍雍</span>早有察覺，之前囑咐<span class="global_name_span">南星</span>吞下的［冰蟾砂］便是後著，解決<span class="global_name_span">南星</span>後，忽然一詭異幽魂現身，其身體四處以金屬部件覆蓋，瞧面貌卻有幾分神似<span class="global_name_span">霍雍</span>。</p> <div class="global_ps_text"> <p>數百年後，<span class="global_name_span">召祐</span>歸還<span class="global_name_span">赤煉</span>一魂一魄，其實也是還了此時的恩情。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rTmcnKvyQx0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這幽魂有著羅喉氣息，但又卻充滿敵意，一個瞬間便奪去<span class="global_name_span">練紅鷂</span>的身體，為了保護<span class="global_name_span">冰璃</span>，<span class="global_name_span">練紅鷂</span>不惜使用魂靈力量，破了幽魂的勁力，同時也讓在場三人恢復了之前激戰所失去的力量。</p> <p>眼見部下犧牲，<span class="global_name_span">霍雍</span>立即展開戰鬥姿態，誓要為其報仇，幽魂便在羅喉雙使與祖龍聯手下落敗，透過<span class="global_name_span">召祐</span>的能力得知，此幽魂與<span class="global_name_span">霍雍</span>有關，說是千年後的<span class="global_name_span">霍雍</span>也不為過，<span class="global_name_span">冰璃</span>聞言便想問問是否能看到<span class="global_name_span">練紅鷂</span>的未來。</p> <p>不過<span class="global_name_span">召祐</span>只能看到果，卻不能看到因，留下幾句意味深長的話後，便直接離去，至於數百年後，<span class="global_name_span">召祐</span>現身救助<span class="global_name_span">赤煉</span>還得一魂一魄，便是在此時得到的。</p> <div class="global_ps_text"> <p>這幽魂如果沒猜錯，便是<span class="global_name_span">幽篁先生</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gR7yAGCByTc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">挑戰1</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6L8104xkgfI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰2</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zsUG_PlqnZU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰3</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E_oILSbdTiw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰4</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rIvxbDshYvg?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰5</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/M1w9iH9PVBo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰6</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5jidEo8v_eU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">挑戰7</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zQfDBiVHTyU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+  function getAct5(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('羅睺殘影');
+  		resultIdx.push('方芸');
+  		resultIdx.push('九儀天尊劍');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">亡軀</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mMmoNKhSXW8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">西域舊聞</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/y7eJYBiMA1A?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">羅睺殘影</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SC-FzVzb-KA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">羈旅客</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sjmoYx6GK2o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">怨偶</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uqK9WzB05qI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">方芸</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gAEPdCdVbZI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">佛首</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/c3eTaFcL_ZE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">殷劍平與白復歸</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0EpF1SL64MU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">九儀天尊劍</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FEG_d87ruFM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">破蒼穹</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3R_bXCRzGp8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">執天劍</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pqLuuWWjwao?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">斬眷絲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fdqHsmkb_z8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+  function getAct4(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">帳外白衣</div> <p>自［神闕宮］創立，除［齋女］外，宮內皆是被注入殘魂的人偶，<span class="global_name_span">白菀</span>便是其中之一，當［靡世之音］響起，她那遠在［秦末］的記憶開始慢慢甦醒。</p> <p>烽火城外，楚漢大戰，楚將［張某人］來到戰場，便是依王之令前來帶回<span class="global_name_span">白菀</span>，而這王指的便是西楚霸王<span class="global_name_span">項羽</span>。</p> <p>根據［張某人］所說，<span class="global_name_span">白菀</span>本是［九江王］<span class="global_name_span">英布</span>的人，為向<span class="global_name_span">項羽</span>表達忠誠而送來作質，如今［九江王］叛楚，<span class="global_name_span">項羽</span>便急著要見身為人質的<span class="global_name_span">白菀</span>。</p> <p>然而漢軍勢大，［張某人］帶著<span class="global_name_span">白菀</span>突圍之後，也力竭而亡，本可趁此機會一走了之的<span class="global_name_span">白菀</span>，為了查清楚［九江王］是否背叛的真相，決定完成［張某人］的遺願，獨自踏上面見霸王的道路。</p> <p>然而當<span class="global_name_span">白菀</span>抵達［垓下］，卻見到與自己情同姊妹的<span class="global_name_span">虞姬</span>自刎帳內。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WaSL5r_hPdY?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">又逢君</div> <p>天下大局又怎是<span class="global_name_span">白菀</span>這樣的女子能理解的，但她仍有想要弄清楚的事，闖入［九江王］的營帳後，她不在乎［九江王］為何叛楚降漢，她在意的是眼前這男人可曾愛過自己、可曾想過自己的安危。</p> <p><span class="global_name_span">英布</span>雖有千般理由，最後也只能徒歎奈何，而此時他也知道，自己終將被<span class="global_name_span">劉邦</span>所弒。</p> <p>終究<span class="global_name_span">白菀</span>理解眼前的男人對自己並非至情，傷心離開，<span class="global_name_span">英布</span>於臨別時贈［靡世之音］。</p> <p>當<span class="global_name_span">白菀</span>與<span class="global_name_span">尉遲良</span>合奏此曲，卻意外引來了魔將<span class="global_name_span">白首</span>。</p> <p>［風蕭蕭兮易水寒，壯士去兮不復返....］</p> <p><span class="global_name_span">白首</span>口中，此曲為［易水歌］，聽著聽著，那塵封在腦海中的回憶也慢慢浮現。</p> <div class="global_ps_text"> <p>我覺得<span class="global_name_span">英布</span>的語音、語調跟<span class="global_name_span">幽篁先生</span>極為相似，就不知道這是否是個伏筆？</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Dpojk2H7Drw?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">山河表裡</div> <p><span class="global_name_span">白首</span>當年盜取［九州山河圖］時，那夜聽見的曲兒便是這［易水歌］。</p> <p>［九州山河圖］乃是燕國門客刺秦的關鍵，<span class="global_name_span">白首</span>為了取得此圖不惜大開殺戒，不料最後竟跑出一盲女，為了替其友燕國門客［阿田］報仇，以自己性命逼<span class="global_name_span">白首</span>破戒，而這盲女便是日後的<span class="global_name_span">九陰</span>。</p> <div class="global_ps_text"> <p><span class="global_name_span">白首</span>一生有兩戒，一不殺啞巴、二不殺盲人。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/k-0U-EJluaM?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">九陰白首</div> <p><span class="global_name_span">白首</span>本奉<span class="global_name_span">羅睺神</span>之命協助<span class="global_name_span">霍雍</span>，然而世事無常，<span class="global_name_span">霍雍</span>逝去後，<span class="global_name_span">幽篁先生</span>惜才，便想將之收服。</p> <p>不過<span class="global_name_span">白首</span>氣傲，兩世三界只聽<span class="global_name_span">羅睺神</span>號令，當場就拒絕了。</p> <p>數十年後，<span class="global_name_span">白首</span>知<span class="global_name_span">幽篁先生</span>有造人偶之能，便起了入［玄冥教］的念頭，全因當年為奪［九州山河圖］時誤殺的盲女，如今盲女藉人偶之身成為<span class="global_name_span">九陰</span>，只要確保<span class="global_name_span">九陰</span>安全，自己當年便是從未破戒，<span class="global_name_span">白首</span>心裡這樣想著。</p> <p>百年刀客、立戒於世，因自己的制約而束縛半生，<span class="global_name_span">白首</span>念及於此頹然坐下，他與<span class="global_name_span">九陰</span>的這段緣份終究消逝在時間長河中。</p> <p><span class="global_name_span">尉遲良</span>與<span class="global_name_span">白菀</span>感嘆之餘，便以此間體悟注曲合奏，卻引來了一身揹大刀的魁武大漢，這人渾身充滿血腥氣息，正是血鎖人屠<span class="global_name_span">鮮于超</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZS_Cxv04seE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">妖亂長安</div> <p>相同的曲兒，不同的演奏方式，聽來便是兩種味道，當年<span class="global_name_span">鮮于超</span>聞此曲時，曲調無比快哉，再聽<span class="global_name_span">白菀</span>兩人合奏，這曲調卻多了許多感傷。</p> <p>相傳長安城內有妖邪作祟，這一切似乎是節度使<span class="global_name_span">安祿山</span>所為，詩仙劍客<span class="global_name_span">李白</span>此時正在城內，獲<span class="global_name_span">鮮于超</span>、<span class="global_name_span">康平司．長史</span>之助，離城。</p> <p>阻斷了追擊的妖魔後，<span class="global_name_span">鮮于超</span>驚覺與自己並肩作戰的<span class="global_name_span">康平司．長史</span>似乎曾在朝中見過，交談後才知對方曾經事於將軍<span class="global_name_span">封常清</span>麾下，由此可見［康平司］於唐朝便已有勢力於朝廷。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Zb9GiRefE9E?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">西關望</div> <p>想起將軍<span class="global_name_span">封常清</span>蒙難之時，彼時身為都尉的<span class="global_name_span">鮮于超</span>與<span class="global_name_span">李白</span>合作，闖法場、救將軍。</p> <p>但朝中奸佞當道，<span class="global_name_span">封常清</span>、<span class="global_name_span">高仙芝</span>等唐朝名將因［安史之亂］敗戰事實，最終魂斷法場，此冤上天降大雪，<span class="global_name_span">鮮于超</span>因義憤化為血鎖人屠。</p> <p><span class="global_name_span">鮮于超</span>故事說完，感嘆自己因恨生邪，半生殺戮，然而也引來有著類似遭遇的<span class="global_name_span">古倫德</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AEmMfnMfrxM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">失落的聖名</div> <p><span class="global_name_span">古倫德</span>狀似瘋魔，這一切都源於他口中的魔鬼<span class="global_name_span">阿瑪菲特</span>。</p> <p>結束與<span class="global_name_span">夏侯儀</span>冒險的<span class="global_name_span">古倫德</span>最終取回聖槍回到西方，但為了掌握國家的統治權，與<span class="global_name_span">阿瑪菲特</span>做了交易，自古以來此舉雖能得一時目的，終將被魔鬼反噬。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JrDyMdND6W0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">王者的冠冕</div> <p><span class="global_name_span">古倫德</span>為了奪回失去的一切，帶著聖槍前來決戰<span class="global_name_span">阿瑪菲特</span>，但遭慾望污染的聖槍已無法再穿透<span class="global_name_span">阿瑪菲特</span>的胸膛，最終<span class="global_name_span">古倫德</span>倒地，灰之王再生。</p> <p>這一個曲調、一個故事，曲能長存、人卻不在，與其執著世間事，不如合奏一曲［天地一逆旅，同悲萬古塵］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8bMdvoi-hLI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">帳外白衣</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/i94JIWRhivw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">又逢君</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/id-Ky4RuJFI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">山河表裡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7QBbUJa4fQg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">妖亂長安</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ov9XdzqnK-U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">西關望</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/N5Vhjmaobaw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">王者的冠冕</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0JdvjoFuQFs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+  function getAct3(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情（上）');
+  		resultIdx.push('劇情（下）');
+  		resultIdx.push('外傳');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">部件節肢</div> <p><span class="global_name_span">尉遲良</span>受到［墨矩］的邀請，來到一處礦道，目的是修復一個機關蜘蛛。</p> <p><span class="global_name_span">阿秋</span>一看到這工具人前來，立馬給他換上一套［墨矩］的衣飾，現在的首要任務便是四處收集蜘蛛的特殊部件。</p> <p><span class="global_name_span">尉遲良</span>順著指引來到一處雪山，清除位於此地的妖魔後，取得了［節肢］部件，回程中還遇上了<span class="global_name_span">紫楓</span>的英靈，兩人便一起結伴而行。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OI6oZbg4JtM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試壹</div> <p>回到［墨矩機關屋］，竟看到<span class="global_name_span">陰歙</span>正在此大鬧，<span class="global_name_span">阿秋</span>見狀連忙以言語安撫，隨即動手修復機關蜘蛛，誰知道蜘蛛暴走，開始不分敵我攻擊。</p> <p>還好最後被眾人合力制伏，不過蜘蛛也涼涼了.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tutHMpMsahM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件牙</div> <p>為了修復好蜘蛛，大夥又在一處妖魔聚集處，尋得了［牙］部件。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v1vIouN7QXI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試貳</div> <p>回到［墨矩機關屋］把［牙］給蜘蛛裝上後，它隨即啟動，但<span class="global_name_span">陰歙</span>、<span class="global_name_span">紫楓</span>兩人看蜘蛛沒甚麼動作，竟想透過施法攻擊來試試。</p> <p>結果蜘蛛又被拆了，不過當中出現的［星曜之力］卻將<span class="global_name_span">陰歙</span>化為一陣光團，這當中定有古怪，<span class="global_name_span">尉遲良</span>連忙詢問<span class="global_name_span">阿秋</span>。</p> <p>原來這些迷失在此的英靈，經過改變能量結構就可以光團的形式暫時封存起來，為了能順利將他們送回星曜中，還得繼續找蜘蛛部件完成修復的任務。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Jo2e5C44Xiw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件背甲</div> <p>繼續搜尋，在［荒蟄］［夜魑］兩個種族的夾攻下，取得了［背甲］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jL_1xlOiLmc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件心臟</div> <p>接著在<span class="global_name_span">希維亞</span>的幫助下，找著了部件［心臟］，而她本人也因為找到自己追尋的東西，像<span class="global_name_span">陰歙</span>一樣化為一陣光團。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ua54GVtlnTg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件蛛網</div> <p>繼續前進，在一處部滿法陣的地方找到了［蛛網］，同時也察覺到<span class="global_name_span">封玲笙</span>的蹤跡。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fx8EeGwwU5g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">部件反射核心</div> <p>走著走著在一處［火山］遇到了<span class="global_name_span">秦惟剛</span>，這迷戀<span class="global_name_span">封玲笙</span>的［天瑤派］大師兄在此，果然是為了師妹想要奪取這［反射核心］。</p> <p>取得部件的<span class="global_name_span">秦惟剛</span>，為了復活<span class="global_name_span">封玲笙</span>，急忙施咒返回［墨矩機關屋］，大夥隨即追了上去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BGITs-7C-TA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試參</div> <p>眾人才剛趕到，蜘蛛果然又重新啟動，當中竟散發出不同尋常的生之力，為了調查當中古怪，眾人便準備聯手開始拆蜘蛛，不過<span class="global_name_span">秦惟剛</span>看到早前化為光團的<span class="global_name_span">陰歙</span>，頓感有些不妙，直接施咒遁走。</p> <p>還好戰鬥中<span class="global_name_span">陰歙</span>重新凝聚成型，有這初代羅睺劍使的幫助，這回又順利讓蜘蛛涼涼.....。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3-9LK2zZLWE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件毒腺</div> <p>這回走著走著來到<span class="global_name_span">高老丈</span>的家中，果然墨矩這隧道相當詭異，天南地北的啥地方都能通，從<span class="global_name_span">高老丈</span>那得知附近有［化蛇］出沒，大夥清除這批魔物後，取得了［毒腺］。</p> <p>回到［墨矩機關屋］，<span class="global_name_span">秦惟剛</span>正苦惱著復活師妹的方法，<span class="global_name_span">紫楓</span>見機不可失，連忙嘴遁說服大師兄入夥。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lXYZnO6iCuU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件眼睛</div> <p>繼續探索，路上遇到了<span class="global_name_span">古倫德</span>，此時他身後正跟著一雙詭異眼睛，隨後一大批妖邪襲來，眾人聯手擊敗敵人後，部件［眼睛］入手。</p> <p>但<span class="global_name_span">古倫德</span>覺得這東西與聖槍有關，又聽聞機關蜘蛛的事情，想來聖槍線索或許就在其中，便與眾人結伴而行。</p> <p>回到［墨矩機關屋］，一個無名墨矩正在此處，劈頭就說<span class="global_name_span">尉遲良</span>偷了他的機關圖紙，看來<span class="global_name_span">阿秋</span>還有些是瞞著咱們......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0mF3iwJ1HEc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">部件關節</div> <p>為了搶回圖紙，無名墨矩招來一堆機關獸，恰巧眾人要尋的部件［關節］就裝在這些敵人身上，所幸收拾了對方，順便奪取［關節］。</p> <p>戰後，<span class="global_name_span">秦惟剛</span>一聽大夥要回去機關蜘蛛那，心中有所盤算，隨即告別眾人，但仍小心跟蹤其後，想看<span class="global_name_span">尉遲良</span>到底搞甚麼鬼！？看來他仍未完全信任大夥。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-jNOgN_0-RA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試肆</div> <p>回到［墨矩機關屋］，卻到處也找不到<span class="global_name_span">阿秋</span>，大夥索性就自己修理起蜘蛛，說好聽是修理，其實就是拆拆拆。</p> <p>這回蜘蛛涼涼以後，<span class="global_name_span">古倫德</span>的老師<span class="global_name_span">葛梅爾</span>現身，兩人攜手準備尋找聖槍，便一同消失在光團之中。</p> <p>另一邊，暗中跟隨的<span class="global_name_span">秦惟剛</span>發現<span class="global_name_span">阿秋</span>便是一切行動的開頭.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Fg0UXgLDkUY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關蜘蛛鍛試終</div> <p><span class="global_name_span">尉遲良</span>察覺到修復蜘蛛的關鍵，帶著<span class="global_name_span">紫楓</span>重回之前尋找部件的各地處，蒐集各個有著強烈執念的物品，這便是讓機關蜘蛛真正恢復，真正有魂的關鍵。</p> <p>然而回到［墨矩機關屋］時，<span class="global_name_span">秦惟剛</span>已經快要把［鍛試場］給炸了，一番鬧騰後，機關蜘蛛終於修復完成，眾英靈也都成功送回星曜之中。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DQqFWn5aOSI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">邏輯中的橋</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZWGmYqI8dPM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">誰在說謊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BouUq52rzWw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">第一次打機關蜘蛛</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cR1rnRvbauA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">無毒無害</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cFZhbn9akeM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">無眼無珠</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/s_jZJRPWnfw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">無口無牙</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_SzyCwrzUIk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+
+  function getAct2(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('骨頭湯、骨頭香、一天一碗硬梆梆');
+  		resultIdx.push('韓無砂 VS 幻鏡朧妖');
+  		resultIdx.push('被韓無砂拒絕的男妖');
+  		resultIdx.push('癡情的冥獨');
+  		resultIdx.push('渴望溫暖的靈俑');
+  		resultIdx.push('愛吃火銅的豬');
+  		resultIdx.push('真相大白');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">骨頭湯、骨頭香、一天一碗硬梆梆</div> <p>第一天咱們就遇到了這次活動的另一個夥伴<span class="global_name_span">韓無砂</span>，她似乎有<span class="global_name_span">嬉戲狸</span>的消息，沒想到跟著她走，眼前竟然是一條巨龍，自稱［堪神山之主］<span class="global_name_span">有余</span>。</p> <p>這<span class="global_name_span">有余</span>心思狡詐，交談之後便將眾人送往可得到<span class="global_name_span">嬉戲狸</span>消息的［神龕］處，其實是想藉此取代<span class="global_name_span">嬉戲狸</span>成為［堪神山之主］。</p> <p>［神龕］指示找到<span class="global_name_span">嬉戲狸</span>的線索就隱藏在這［堪神山］的六條隱藏道路，之後每一天能透過［神龕］給予的錦囊開啟一條道路。</p> <p>今天就隨意選了一條道路開啟，這遠方就傳來［骨頭湯、骨頭香、一天一碗硬梆梆］的打油詩聲，只見一名咒石怪似乎被下了咒，大家看它可憐而且它也擋著了路，便順手解救了它，在咒石怪的帶領下，大夥來到一處充滿屍味的詭異場所。</p> <p>只見屍兵排排站，輪流地跳下滾燙的油鍋內，原來這是<span class="global_name_span">嬉戲狸</span>傳授給它們的儀式，只要能熬上七七四十九日，便可超凡脫世、重獲肉體，但這跟咱們有啥關係？直接開打讓這屍鬼吐露<span class="global_name_span">嬉戲狸</span>的線索才是緊要。</p> <p>最後得到了<span class="global_name_span">嬉戲狸</span>的行蹤線索，就在［燃燒的燭台附近］。</p> <div class="global_ps_text"> <p>00:09 - <span class="global_name_span">韓無砂</span>聞笛聲會跳舞。</p> <p>00:36 - <span class="global_name_span">鹿昭依</span>順口溜表演。</p> <p>08:25 - <span class="global_name_span">鹿昭依</span>這對吃的執著，以及<span class="global_name_span">皇甫申</span>對食材的不拘束，總覺得這骨頭該是［兩腳羊］。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vRQw2a2P-Bk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">韓無砂 VS 幻鏡朧妖</div> <p>第二天，我們在原本的岔路上解鎖另一個機關，路上遇到了一個神態瘋魔的［喪神者］，<span class="global_name_span">韓無砂</span>根據他的瘋言亂語推測<span class="global_name_span">幻鏡朧妖</span>應該就是罪魁禍首。</p> <p>繼續前進果然就遇到<span class="global_name_span">幻鏡朧妖</span>，因為<span class="global_name_span">嬉戲狸</span>將她的鏡子化作萬花筒，放進去一個男人瞬間就會變成千萬個一模一樣的，這讓她很是氣惱，看她這樣子也是於心不忍，幫她修復好幻境後，<span class="global_name_span">幻鏡朧妖</span>也一起加入對抗<span class="global_name_span">嬉戲狸</span>的行列。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-YnKkSdW38Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>終於是找到<span class="global_name_span">嬉戲狸</span>的蹤跡，但眼前之人怎是冥皇<span class="global_name_span">鄲陰</span>？一番大戰後，越發覺得不對勁，冥皇只符合［羊杖繃纏、冠角之形］的特徵，看來還得找找。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nj91l_cyaVo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">被韓無砂拒絕的男妖</div> <p>第三天，遇到了曾經被<span class="global_name_span">韓無砂</span>拒絕地界雙男妖，因為懷恨在心，招出了［煞］阻止眾人前進的步伐，但一切終究只是徒勞。</p> <p>掃除障礙後，在道路盡頭找到了<span class="global_name_span">嬉戲狸</span>就在神樹附近的線索。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kQyw0Fc-oHI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">癡情的冥獨</div> <p>第四天，一個妄想用一只木箱收服<span class="global_name_span">嬉戲狸</span>的［化荒咒師］誤將眾人當作<span class="global_name_span">嬉戲狸</span>，一場大戰後得知這木箱竟是個寶物，想著也許之後與<span class="global_name_span">嬉戲狸</span>對陣會派上用場，<span class="global_name_span">韓無砂</span>便理所當然地順走這寶物。</p> <p>再往前走，遇上一個專門收集少女笑聲的［獸半仙］，這設定明顯是針對<span class="global_name_span">鹿昭依</span>而來，最後成功擊敗他，得知他的主人是一個黑色的豹子，該不會是<span class="global_name_span">嬉戲狸</span>吧？繼續前進到道路盡頭，將之前順來的木箱放置此處，看看能不能捕到<span class="global_name_span">嬉戲狸</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UVgg5FiWpM4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到來的竟然是暗獸［冥獨］，擊敗牠後，才發現［冥獨］收集笑聲只為了再見到日思夜想的那個她，但經過眾人這麼一鬧，卻是再也沒機會了，更慘的是［冥獨］只符合［唇生利齒、通體黑毛］的特徵，看來也不是<span class="global_name_span">嬉戲狸</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mc9XY_v7Tlg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">渴望溫暖的靈俑</div> <p>第五天，遇上幾隻遊魂鬼火被急需火焰溫暖心靈的靈俑覬覦，擊敗這群靈俑後，發現是疑似<span class="global_name_span">嬉戲狸</span>的［封烯］將它們丟來這冰天雪地，<span class="global_name_span">鹿昭依</span>推測附近有挪移法陣才能將這大批靈俑傳送過來，若是能對法陣動手腳，也許就可以趁機逮到<span class="global_name_span">嬉戲狸</span>。</p> <div class="global_ps_text"> <p>04:52 - 鬼火是純天然綠能。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cah3QOnA5_E?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">愛吃火銅的豬</div> <p>第六天，總算遇上人族了，不過這群馬賊打劫竟然還遇上妖怪，據他們所言，一處洞窟內充滿了［火銅］，這事情倒有些奇怪，值得前去一探，果然見到一個胖呼呼的焰靈不知道在搗股甚麼，不過他竟然自稱<span class="global_name_span">嬉戲狸</span>，又試圖吹笛子引<span class="global_name_span">韓無砂</span>跳舞，種種的白目行為終究惹火了<span class="global_name_span">韓無砂</span>。</p> <p>大戰過後，從他口中獲得了<span class="global_name_span">嬉戲狸</span>的消息，看來可以用［火銅］吸引這魔頭前來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0B3rFrSZohM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過引來的卻是火獸［封狶］，牠也只符合［唇生利齒、白日凶煞］的特徵，整個［堪神山］都快要找遍了，究竟真正的<span class="global_name_span">嬉戲狸</span>在哪？</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eF58HbSnkus?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  result.push('<div class="title_text">真相大白</div> <p>找了六天，哪條路都不對，看來我們是給［神龕］給耍了！大夥怒氣沖沖地來找［神龕］算帳，這會兒牠總算在各種威逼脅迫下，吐露了<span class="global_name_span">嬉戲狸</span>就是龍的消息，雖然瞧著牠一臉狡獪的樣子有些怪異，不過那條龍<span class="global_name_span">有余</span>肯定也不是啥好東西。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uK-WTmClSRI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>擊敗<span class="global_name_span">有余</span>後，事情總算告一段落，但真正的<span class="global_name_span">嬉戲狸</span>卻是另有其人.........</p> <p>［神龕］在牠還是［鎮墓獸］時，就守著一個個寂寞的故事與一個個不捨，直到有天牠發現在每年此月令至時，牠能將人們帶入....，總有人能在其中，重獲所愛......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DDe21eaepPI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('劇情');
+  		resultIdx.push('挑戰');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">劇情</div> <p>活動的劇情並沒有照時間順序依次開啟，可以把各幕當成獨立的小故事。</p> <p>就在<span class="global_name_span">霍雍</span>、<span class="global_name_span">冰璃</span>即將完成［羅睺］交代的任務時，一個神祕的聲音企圖引導著<span class="global_name_span">冰璃</span>直面自己的內心。</p> <p>循著聲音來到一處村莊，竟在此地碰上了首代的祭劍雙使<span class="global_name_span">陽寰</span>、<span class="global_name_span">陰歙</span>，兩人隱約察覺到<span class="global_name_span">冰璃</span>逐漸改變的內心，直言要抓她回［幽界］向［羅睺］請罪。</p> <p>擊敗<span class="global_name_span">陽寰</span>、<span class="global_name_span">陰歙</span>後，一名神秘女子現身，看來這一切都是這女人創造出來的幻覺，而她的目的就是想為［明界］免去一場災難。</p> <div class="global_ps_text"> <p>原作中<span class="global_name_span">陽寰</span>、<span class="global_name_span">陰歙</span>因為是以［羅睺］的審美觀創造出來的，所以沒辦法承擔進入［明界］的任務，因此［羅睺］才又創造了<span class="global_name_span">霍雍</span>、<span class="global_name_span">冰璃</span>。</p> </div> <div class="global_ps_text"> <p>神祕女子是蒙古古神<span class="global_name_span">白鹿</span>，主線中有介紹其為［夢境之主］，可想而知，經由夢境她一定也察覺到<span class="global_name_span">霍雍</span>、<span class="global_name_span">冰璃</span>內心的真正想法，因此才現身引導。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZZwb1_Q_izM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［元朔五年］<span class="global_name_span">霍雍</span>進漢宮尋找降下［幽城］的方法，然而在這卻遇上了女媧神識繼魂轉世的<span class="global_name_span">李夫人</span>，雖然雙方是敵對陣營，但<span class="global_name_span">李夫人</span>並沒有要立即與<span class="global_name_span">霍雍</span>為敵的意思，也許是女媧神識看到了屬於祭劍雙使之後的命運，就讓一切順著原有的天道宿命發展吧。</p> <p>待<span class="global_name_span">霍雍</span>離去後，神將<span class="global_name_span">相胤</span>來找<span class="global_name_span">李夫人</span>想要取其魂魄創立［神闕宮］，只因經過不斷轉世，女媧神性已經越漸淡薄，日後繼承女媧神識的人，經過幾世沾染塵世間的雜念，不見得會以天下蒼生為己任，甚至可能成為萬惡的起源，為了防止這樣的情況發生，決定更進一步以雙魂融一軀的方式，讓每代［齋女］繼承女媧神識時，有了調整其性格的機會。</p> <p>而早前離開的<span class="global_name_span">霍雍</span>既然在漢地找不到想要的東西，便決定把目標鎖定在西域。</p> <div class="global_ps_text"> <p>［元朔］是西漢的年號。</p> </div> <div class="global_ps_text"> <p><span class="global_name_span">相胤</span>說［神闕宮］以後不會帶有記憶的活人，這句話可能是指之後［神闕宮］內有的是以創命之法創造的人偶，或者是每代［齋女］接替之時，會以某種祕法刪除宮人記憶。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mg4hYMhYYXU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">白鹿</span>與<span class="global_name_span">欒</span>正在［莫高窟－千佛洞］敘舊，卻突然發現有人企圖闖入。</p> <p>來者竟是<span class="global_name_span">霍雍</span>，由於此地靈脈充盈，正好適合構築［九渾天動儀］，但<span class="global_name_span">白鹿</span>身為蒙古古神，怎會任由祭劍雙使在此處建造降下［幽城］的裝置，於是雙方便打了起來。</p> <p>這場戰鬥異常激烈，但所見全是<span class="global_name_span">白鹿</span>藉由兩人執念化作的幻象，戰鬥之中，<span class="global_name_span">白鹿</span>隱約感覺到<span class="global_name_span">霍雍</span>其實只是慣性執行著［羅睺］交與他的任務，其內心並不知道自己真正想要甚麼？這似乎是日後一個可做轉圜的地方。</p> <div class="global_ps_text"> <p>這<span class="global_name_span">欒</span>應該就是經常在<span class="global_name_span">鹿昭依</span>口中聽到的人，看其外表還有壽命之長，推測應該是［地界］的大人物。</p> </div> <div class="global_ps_text"> <p>［九渾天動儀］出自［幽城幻劍錄］，不過這段劇情的語音卻念錯成［九天渾動儀］。</p> </div> <div class="global_ps_text"> <p>雖然原著<span class="global_name_span">霍雍</span>似乎對降下［幽城］有著極大的執念，但是從<span class="global_name_span">夏侯儀</span>的誕生，還有其之後與［羅睺］的對抗，對<span class="global_name_span">冰璃</span>千年不變的依戀，都可以變相推測出<span class="global_name_span">霍雍</span>真正的內心。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LpmYjoQ_Keo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>藉著［于闐國］國主的指點，<span class="global_name_span">霍雍</span>在茫茫大漠黃沙中，尋找到了［樓蘭國］，此處乃［地脈節點］所在，對於建造［九渾天動儀］是再適合不過的地方了。</p> <p>這時的［樓蘭王］沉迷於［墨家］的機巧之術，<span class="global_name_span">霍雍</span>於是投其所好，成為其臣下，目的就是要以此掩人耳目，暗地裡完成［羅睺］交代的使命。</p> <p>［造九渾天動儀、打通幽明兩界］。</p> <div class="global_ps_text"> <p>這段劇情是補完［幽城幻劍錄］中，<span class="global_name_span">霍雍</span>進［樓蘭］之前的事情，以及埋下［墨家］是<span class="global_name_span">霍雍</span>所創的伏筆。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v05Q7LdV3Ek?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［于闐國］國主<span class="global_name_span">尉遲</span>修書一封與<span class="global_name_span">霍雍</span>，旨意為你我兩人皆在尋找天地運轉之規律，無論起初目的為何？我（尉遲）都想幫你完成這目標。信中流露著想與<span class="global_name_span">霍雍</span>結交之意，並且指明可到［賀蘭山］尋找線索。</p> <p><span class="global_name_span">霍雍</span>兩人到了此處，見此地地脈映射出天上星曜，諸般節點中凝出了［星之晶］，這景象竟與［羅睺城］中的某處相似，此時<span class="global_name_span">召祐</span>出現，言談中可知<span class="global_name_span">霍雍</span>曾為了尋找［星曜之力］前往［齊國］，只不過地脈流轉，當時的<span class="global_name_span">霍雍</span>並沒有找到。</p> <p>然而此處的［星之晶］絕非簡單，因［地脈］與［黃泉］連接著，［星之晶］又吸取了［地脈］的靈氣，因此會現出日後因<span class="global_name_span">霍雍</span>而死之人的身影，當清除了這些化出的影子後，地上的法陣突然啟動，此時<span class="global_name_span">霍雍</span>領悟到了要驅動［九渾天動儀］除了需要［星曜之力］還需［宿曜之陣］來引導這些力量，這恐怕才是<span class="global_name_span">尉遲</span>要他來此探查的原因。</p> <div class="global_ps_text"> <p>這裡對於［幻海黃泉］與［星曜之力］的解釋，還有<span class="global_name_span">夏侯儀</span>等人的身影為何會出現一事，我認為遊戲的世界觀並沒有［過去、現在、未來］之分，所有一切都能透過神識同步進行，這在主線劇情第五幕<span class="global_name_span">葛雲衣</span>讓<span class="global_name_span">尉遲良</span>前往［迦夏之窟］的橋段就可以看出端倪。</p> <p>這倒不是所謂的平行時空，而是一種［命定論］，因為知道了未來的發展，所以當下自己的選擇就要符合發展的方向，同時也能引導未來的人走在正確道路上，不管怎樣，命運的走向只有一條始終不變。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eZhC5opfocg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>戰國初年，田氏篡奪姜姓成為齊國諸侯，［齊桓公］創立［稷下學宮］，諸子百家皆可在此自由講學、著書論辯，而［康平］［墨矩］兩派也在此時以劍論道。</p> <p>［康平］以<span class="global_name_span">召祐</span>為首，而<span class="global_name_span">霍雍</span>則是［墨子］身分，最後［墨矩］勝出，<span class="global_name_span">霍雍</span>取代了<span class="global_name_span">召祐</span>［祭酒］的位置，真正的目的就是［齊國］境內的［泰山］，據傳此山乃是［地脈］［忘川］之源，或許可以從中查探出天地運轉之規律。</p> <div class="global_ps_text"> <p>原本姜齊為<span class="global_name_span">姜子牙</span>開創，但因後人沉溺於酒色，不理朝政，終被田氏取代，史稱［田氏代齊］。</p> </div> <div class="global_ps_text"> <p>這段劇情文言文不可直接翻譯，只可意會。但就劇情上來說，只是簡單交代［康平司］為<span class="global_name_span">召祐</span>所創，［墨矩］為<span class="global_name_span">霍雍</span>所創，至於這會在主線劇情中有怎樣的發展就蠻值得期待的。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mtmV25GLQ1w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>就在<span class="global_name_span">霍雍</span>即將降下［幽城］的前一刻，想起與<span class="global_name_span">尉遲</span>約定［千年後不得進入宿曜之陣］，但如今幽明兩界即將打通，這約定又有何意義？</p> <p>然而人算不如天算，［漢軍］於此時殺入［樓蘭］城內，最後<span class="global_name_span">霍雍</span>也被神將<span class="global_name_span">相胤</span>以［血龍璧］暗算身亡，留下千年後必會重臨的誓言。</p> <div class="global_ps_text"> <p><span class="global_name_span">尉遲</span>應該也是個能看透時間律法的人物，他早知<span class="global_name_span">霍雍</span>無法成功完成［降曜之儀］，才會與他做了千年約定。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LMp7KbOy1d0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>天地運行自成規律，［天幕］每六十年開啟一次，以此釋放累積在世間的怨念，但羅睺［祭劍雙使］已經掌握了當中規律，為免［羅睺眷族］趁機降下［幽城］，所以<span class="global_name_span">相胤</span>決定強行干涉天地之律，並以［時輪儀軌］禁錮世間怨念，而［時輪宮］便承擔起此一重擔。</p> <p>然而違反天地律法必將引起大禍，［天幕］緊閉而［時輪儀軌］還未建成，天地怨念不得疏通，其已凝聚為巨大的［幽煞］，［時輪尊者］見此大禍，決定犧牲自己施展［明清心法］盡納怨念於體內。</p> <div class="global_ps_text"> <p>這劇情解釋了［蝕災］出現的原因，而［煞］就是天地怨念所化，其對世間的傷害不亞於［幽城］降臨，可以說為了對抗［羅睺］，世間正道選擇了一條極端的道路，或可保一時太平，然後終有一日將面臨反撲。</p> </div> <div class="global_ps_text"> <p>此時的<span class="global_name_span">春蘭</span>不知道是化為［幽煞］還是召喚［幽煞］，但從對談中可以知道她屬於［諦聽］這個組織，本為渡怨而生，立場與如今的［時輪宮］可說是對立的，所以千年後<span class="global_name_span">春蘭</span>纏上<span class="global_name_span">殷無邪</span>，極有可能是［天玄門］掌握了甚麼可以渡化怨念的法門？</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-c6wKRrczqo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+	  result.push('<div class="title_text">挑戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3j5HDXQWYxo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZSPIo8JMU2M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/h37RhnDmNAU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/B2XUReeGcU4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/O3p6MCnMcN0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xhFVH58MW-o?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
