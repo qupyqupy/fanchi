@@ -1,80 +1,313 @@
+<style type="text/css">
+
+#ccontent img {
+    width: 310px;
+    height: 120px;
+}
+.head_frame {
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #888888;
+    color: #ffffff;
+    margin: 3px;
+    width: 12%;
+}
+
+.head_frame img {
+    max-width: 100%;
+}
+
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+<div class="title_text">陣形內容</div> 
+
+<div id="ccontent"></div>
+<hr />
+
+<div class="title_text">絕角陣眼</div> 
+<div id="avtar1"></div>
+
+<div class="title_text">極角陣眼</div> 
+<div id="avtar2"></div>
 
 <hr />
 
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079559"><img alt="陣015.png" src="https://pic.pimg.tw/qupyqupy/1664938467-3965028743-g_n.png" title="陣015.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079555"><img alt="陣016.png" src="https://pic.pimg.tw/qupyqupy/1664938466-3102204251-g_n.png" title="陣016.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079563"><img alt="陣017.png" src="https://pic.pimg.tw/qupyqupy/1664938467-1240706322-g_n.png" title="陣017.png" /></a></div>
-</div>
-</div>
 
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079551"><img alt="陣018.png" src="https://pic.pimg.tw/qupyqupy/1664938467-638542660-g_n.png" title="陣018.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079567"><img alt="陣019.png" src="https://pic.pimg.tw/qupyqupy/1664938469-3082659195-g_n.png" title="陣019.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079575"><img alt="陣020.png" src="https://pic.pimg.tw/qupyqupy/1664938470-1506070659-g_n.png" title="陣020.png" /></a></div>
-</div>
-</div>
+<script>
+  (function(){
+    var avtar1 = document.getElementById("avtar1");
+    var avtar2 = document.getElementById("avtar2");
+    var content = document.getElementById("ccontent");
 
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079571"><img alt="陣021.png" src="https://pic.pimg.tw/qupyqupy/1664938470-439839000-g_n.png" title="陣021.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079587"><img alt="陣022.png" src="https://pic.pimg.tw/qupyqupy/1664938470-3908106087-g_n.png" title="陣022.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079583"><img alt="陣023.png" src="https://pic.pimg.tw/qupyqupy/1664938470-273402346-g_n.png" title="陣023.png" /></a></div>
-</div>
-</div>
+    var dData1 = {
+        "魔化夏侯儀": {
+            "avtar": '<img alt="魔化夏侯儀.png" src="https://pic.pimg.tw/qupyqupy/1669404793-2574779789-g.png" title="魔化夏侯儀.png" />',
+            "c": '<img alt="陣009.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3310405998-g_n.png" title="陣009.png" />',
+        },
+        "古倫德": {
+            "avtar": '<img alt="古倫德.png" src="https://pic.pimg.tw/qupyqupy/1669404773-959988957-g.png" title="古倫德.png" />',
+            "c": '<img alt="陣026.png" src="https://pic.pimg.tw/qupyqupy/1664938472-1612099370-g_n.png" title="陣026.png" />',
+        },
+        "李逍遙": {
+            "avtar": '<img alt="李逍遙.png" src="https://pic.pimg.tw/qupyqupy/1669404777-3487201883-g.png" title="李逍遙.png" />',
+            "c": '<img alt="陣001.png" src="https://pic.pimg.tw/qupyqupy/1664938459-4255850267-g_n.png" title="陣001.png" />',
+        },
+        "尉遲良": {
+            "avtar": '<img alt="尉遲良.png" src="https://pic.pimg.tw/qupyqupy/1669404783-1156848071-g.png" title="尉遲良.png" />',
+            "c": '<img alt="陣002.png" src="https://pic.pimg.tw/qupyqupy/1664938459-3129635752-g_n.png" title="陣002.png" />',
+        },
+        "封寒月": {
+            "avtar": '<img alt="封寒月.png" src="https://pic.pimg.tw/qupyqupy/1669404779-2688995795-g.png" title="封寒月.png" />',
+            "c": '<img alt="陣003.png" src="https://pic.pimg.tw/qupyqupy/1664938459-330386355-g_n.png" title="陣003.png" />',
+        },
+        "殷無邪": {
+            "avtar": '<img alt="殷無邪.png" src="https://pic.pimg.tw/qupyqupy/1669404782-920167896-g.png" title="殷無邪.png" />',
+            "c": '<img alt="陣004.png" src="https://pic.pimg.tw/qupyqupy/1664938459-4039513620-g_n.png" title="陣004.png" />',
+        },
+        "武英仲": {
+            "avtar": '<img alt="武英仲.png" src="https://pic.pimg.tw/qupyqupy/1669404778-1290916943-g.png" title="武英仲.png" />',
+            "c": '<img alt="陣005.png" src="https://pic.pimg.tw/qupyqupy/1664938459-3994876787-g_n.png" title="陣005.png" />',
+        },
+        "于小雪": {
+            "avtar": '<img alt="于小雪.png" src="https://pic.pimg.tw/qupyqupy/1669404774-3311757535-g.png" title="于小雪.png" />',
+            "c": '<img alt="陣006.png" src="https://pic.pimg.tw/qupyqupy/1664938460-1053162942-g_n.png" title="陣006.png" />',
+        },
+        "黎幽": {
+            "avtar": '<img alt="黎幽.png" src="https://pic.pimg.tw/qupyqupy/1669404788-4203644854-g.png" title="黎幽.png" />',
+            "c": '<img alt="陣007.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3910153325-g_n.png" title="陣007.png" />',
+        },
+        "燕赤霞": {
+            "avtar": '<img alt="燕赤霞.png" src="https://pic.pimg.tw/qupyqupy/1669404789-551056332-g.png" title="燕赤霞.png" />',
+            "c": '<img alt="陣008.png" src="https://pic.pimg.tw/qupyqupy/1664938463-1897114410-g_n.png" title="陣008.png" />',
+        },
+        "劍邪": {
+            "avtar": '<img alt="劍邪.png" src="https://pic.pimg.tw/qupyqupy/1669404785-2425336594-g.png" title="劍邪.png" />',
+            "c": '<img alt="陣010.png" src="https://pic.pimg.tw/qupyqupy/1664938463-2857529092-g_n.png" title="陣010.png" />',
+        },
+        "夏侯儀": {
+            "avtar": '<img alt="夏侯儀.png" src="https://pic.pimg.tw/qupyqupy/1669404779-2198045786-g.png" title="夏侯儀.png" />',
+            "c": '<img alt="陣011.png" src="https://pic.pimg.tw/qupyqupy/1664938463-4093189218-g_n.png" title="陣011.png" />',
+        },
+        "紫楓": {
+            "avtar": '<img alt="紫楓.png" src="https://pic.pimg.tw/qupyqupy/1669404784-2273053474-g.png" title="紫楓.png" />',
+            "c": '<img alt="陣012.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3785821738-g_n.png" title="陣012.png" />',
+        },
+        "殷劍平": {
+            "avtar": '<img alt="殷劍平.png" src="https://pic.pimg.tw/qupyqupy/1669404783-2201655606-g.png" title="殷劍平.png" />',
+            "c": '<img alt="陣013.png" src="https://pic.pimg.tw/qupyqupy/1664938466-937497510-g_n.png" title="陣013.png" />',
+        },
+        "霍雍": {
+            "avtar": '<img alt="霍雍.png" src="https://pic.pimg.tw/qupyqupy/1669404790-2909497385-g.png" title="霍雍.png" />',
+            "c": '<img alt="陣014.png" src="https://pic.pimg.tw/qupyqupy/1664938466-2013155944-g_n.png" title="陣014.png" />',
+        },
+        "九陰": {
+            "avtar": '<img alt="九陰.png" src="https://pic.pimg.tw/qupyqupy/1669404773-3270472879-g.png" title="九陰.png" />',
+            "c": '<img alt="陣015.png" src="https://pic.pimg.tw/qupyqupy/1664938467-3965028743-g_n.png" title="陣015.png" />',
+        },
+        "雲衣宮主": {
+            "avtar": '<img alt="雲衣宮主.png" src="https://pic.pimg.tw/qupyqupy/1669404785-1190453365-g.png" title="雲衣宮主.png" />',
+            "c": '<img alt="陣016.png" src="https://pic.pimg.tw/qupyqupy/1664938466-3102204251-g_n.png" title="陣016.png" />',
+        },
+        "韓千秀": {
+            "avtar": '<img alt="韓千秀.png" src="https://pic.pimg.tw/qupyqupy/1669404790-4144199875-g.png" title="韓千秀.png" />',
+            "c": '<img alt="陣017.png" src="https://pic.pimg.tw/qupyqupy/1664938467-1240706322-g_n.png" title="陣017.png" />',
+        },
+        "召祐": {
+            "avtar": '<img alt="召祐.png" src="https://pic.pimg.tw/qupyqupy/1669404774-1193384245-g.png" title="召祐.png" />',
+            "c": '<img alt="陣018.png" src="https://pic.pimg.tw/qupyqupy/1664938467-638542660-g_n.png" title="陣018.png" />',
+        },
+        "慕容璇璣": {
+            "avtar": '<img alt="慕容璇璣.png" src="https://pic.pimg.tw/qupyqupy/1669404786-2407502638-g.png" title="慕容璇璣.png" />',
+            "c": '<img alt="陣019.png" src="https://pic.pimg.tw/qupyqupy/1664938469-3082659195-g_n.png" title="陣019.png" />',
+        },
+        "奚歌": {
+            "avtar": '<img alt="奚歌.png" src="https://pic.pimg.tw/qupyqupy/1669404780-1711470503-g.png" title="奚歌.png" />',
+            "c": '<img alt="陣020.png" src="https://pic.pimg.tw/qupyqupy/1664938470-1506070659-g_n.png" title="陣020.png" />',
+        },
+        "憛香": {
+            "avtar": '<img alt="憛香.png" src="https://pic.pimg.tw/qupyqupy/1669404787-833660786-g.png" title="憛香.png" />',
+            "c": '<img alt="陣027.png" src="https://pic.pimg.tw/qupyqupy/1669402609-1892198841-g_n.png" title="陣027.png" />',
+        },
+        "白復歸": {
+            "avtar": '<img alt="白復歸.png" src="https://pic.pimg.tw/qupyqupy/1669404775-3634055055-g.png" title="白復歸.png" />',
+            "c": '<img alt="陣028.png" src="https://pic.pimg.tw/qupyqupy/1669402609-492604790-g_n.png" title="陣028.png" />',
+        },
+        "鮮于超": {
+            "avtar": '<img alt="鮮于超.png" src="https://pic.pimg.tw/qupyqupy/1669404792-2066986742-g.png" title="鮮于超.png" />',
+            "c": '<img alt="陣029.png" src="https://pic.pimg.tw/qupyqupy/1669404783-466596928-g_n.png" title="陣029.png" />',
+        }
+    };
+
+    var dData2 = {
+        "韓無砂": {
+            "avtar": '<img alt="韓無砂.png" src="https://pic.pimg.tw/qupyqupy/1669404791-1920420061-g.png" title="韓無砂.png" />',
+            "c": '<img alt="陣021.png" src="https://pic.pimg.tw/qupyqupy/1664938470-439839000-g_n.png" title="陣021.png" />',
+        },
+        "紫蘊": {
+            "avtar": '<img alt="紫蘊.png" src="https://pic.pimg.tw/qupyqupy/1669404785-1413958991-g.png" title="紫蘊.png" />',
+            "c": '<img alt="陣022.png" src="https://pic.pimg.tw/qupyqupy/1664938470-3908106087-g_n.png" title="陣022.png" />',
+        },
+        "白苑": {
+            "avtar": '<img alt="白苑.png" src="https://pic.pimg.tw/qupyqupy/1669404774-4231809998-g.png" title="白苑.png" />',
+            "c": '<img alt="陣023.png" src="https://pic.pimg.tw/qupyqupy/1664938470-273402346-g_n.png" title="陣023.png" />',
+        },
+        "幻境朧妖": {
+            "avtar": '<img alt="幻境朧妖.png" src="https://pic.pimg.tw/qupyqupy/1669404773-999664470-g.png" title="幻境朧妖.png" />',
+            "c": '<img alt="陣024.png" src="https://pic.pimg.tw/qupyqupy/1664938470-590726887-g_n.png" title="陣024.png" />',
+        },
+        "慕容箏": {
+            "avtar": '<img alt="慕容箏.png" src="https://pic.pimg.tw/qupyqupy/1669404785-69373762-g.png" title="慕容箏.png" />',
+            "c": '<img alt="陣025.png" src="https://pic.pimg.tw/qupyqupy/1664938471-3379847690-g_n.png" title="陣025.png" />',
+        }
+    };
+
+    function createFrame(name, avtar, c) {
+        var result = '<div class="head_frame" data-c=' + name + '><div>' + name + '</div><div>' + avtar +'</div></div>';
+        return result;
+    }
+
+    function showAvtar() {
+        let result = '';
+        for (var n in dData1) {
+            result += createFrame(n, dData1[n].avtar);
+        }
+
+        avtar1.innerHTML = result;
+
+        result = '';
+
+        for (var n in dData2) {
+            result += createFrame(n, dData2[n].avtar);
+        }
+
+        avtar2.innerHTML = result;
+    }
+
+    function addEvent() {
+        var ds = document.getElementsByClassName("head_frame");
+
+        for (var i = 0; i < ds.length; i++) {
+            ds[i].style.opacity = 0.5;
+            ds[i].onclick = function() {
+                var isShow = this.style.opacity == 1;
+                if (isShow) {
+                    this.style.opacity = 0.5;
+                } else {
+                    this.style.opacity = 1;
+                }
+
+                if (!isShow) {
+                    showC();
+                }
+            }.bind(ds[i]);
+        }
+    }
+
+    function showC() {
+        var result = '';
+        var ds = document.getElementsByClassName("head_frame");
+
+        for (var i = 0; i < ds.length; i++) {
+            var isShow = ds[i].style.opacity == 1;
+
+            if (isShow) {
+                var c = dData1[ds[i].dataset.c] && dData1[ds[i].dataset.c].c
+                var r = dData2[ds[i].dataset.c] && dData2[ds[i].dataset.c].c
+
+                if (c) {
+                    result += c;
+                } else {
+                    result += r;
+                }
+            }
+        }
+
+        content.innerHTML = result;
+    }
+
+    
 
 
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079595"><img alt="陣026.png" src="https://pic.pimg.tw/qupyqupy/1664938472-1612099370-g_n.png" title="陣026.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079495"><img alt="陣001.png" src="https://pic.pimg.tw/qupyqupy/1664938459-4255850267-g_n.png" title="陣001.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079499"><img alt="陣002.png" src="https://pic.pimg.tw/qupyqupy/1664938459-3129635752-g_n.png" title="陣002.png" /></a></div>
-</div>
-</div>
+    showAvtar();
+    addEvent();
 
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079507"><img alt="陣003.png" src="https://pic.pimg.tw/qupyqupy/1664938459-330386355-g_n.png" title="陣003.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079511"><img alt="陣004.png" src="https://pic.pimg.tw/qupyqupy/1664938459-4039513620-g_n.png" title="陣004.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079503"><img alt="陣005.png" src="https://pic.pimg.tw/qupyqupy/1664938459-3994876787-g_n.png" title="陣005.png" /></a></div>
-</div>
-</div>
+  })();
 
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079515"><img alt="陣006.png" src="https://pic.pimg.tw/qupyqupy/1664938460-1053162942-g_n.png" title="陣006.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079523"><img alt="陣007.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3910153325-g_n.png" title="陣007.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079531"><img alt="陣008.png" src="https://pic.pimg.tw/qupyqupy/1664938463-1897114410-g_n.png" title="陣008.png" /></a></div>
-</div>
-</div>
+</script>
+<p>&nbsp;</p>
 
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079527"><img alt="陣009.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3310405998-g_n.png" title="陣009.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079539"><img alt="陣010.png" src="https://pic.pimg.tw/qupyqupy/1664938463-2857529092-g_n.png" title="陣010.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079519"><img alt="陣011.png" src="https://pic.pimg.tw/qupyqupy/1664938463-4093189218-g_n.png" title="陣011.png" /></a></div>
-</div>
-</div>
-
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079535"><img alt="陣012.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3785821738-g_n.png" title="陣012.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079543"><img alt="陣013.png" src="https://pic.pimg.tw/qupyqupy/1664938466-937497510-g_n.png" title="陣013.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079547"><img alt="陣014.png" src="https://pic.pimg.tw/qupyqupy/1664938466-2013155944-g_n.png" title="陣014.png" /></a></div>
-</div>
-</div>
-
-
-<div class="global_divtable">
-<div class="global_divtr">
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079579"><img alt="陣024.png" src="https://pic.pimg.tw/qupyqupy/1664938470-590726887-g_n.png" title="陣024.png" /></a></div>
-<div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/263079591"><img alt="陣025.png" src="https://pic.pimg.tw/qupyqupy/1664938471-3379847690-g_n.png" title="陣025.png" /></a></div>
-<div class="global_divtd"></div>
-</div>
-</div>
-
-
-
-<hr />
