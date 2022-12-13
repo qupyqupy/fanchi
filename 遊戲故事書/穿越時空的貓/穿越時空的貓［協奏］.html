@@ -1,0 +1,402 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+
+<p><label>選擇協奏：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>主要劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>其他：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /> <p>這個連動活動是我玩過所有手遊裡面，對原作還原最高而且跟本作結合最巧妙的，<span class="global_name_span">Joker</span>在遊戲裡各種耍帥的動作、操作介面時不時會有人物的對話跑出來、殿堂的場景氣氛、連踩在迷宮走路腳下泛起漣漪這個細節都很精準的還原。</p>');
+  activityArr.push('');
+  activityArr.push('<hr /> <p>這次協奏在未公布前，論壇上都是比較希望是［超時空之鑰］的，結果竟然是［次元之旅］，但細想不難發現，雖然［穿越時空的貓］當初是以［超時空之鑰］的精神續作為宣傳，骨子裡的遊戲方式其實與［次元之旅］比較相像，由眾多可加入夥伴的個人故事組織起龐大的世界觀，這點在當初［PS］上因為容量限制的關係並沒有辦法實現，甚至遊戲上市之後還刪減了大量的內容。到現在這設計竟然意外適合手遊這種可持續更新的商業模式，想到這裡也就不太意外了。</p> <p>遊戲的開頭，［幻視胎］們似乎在運算著甚麼？當所有畫面合為為一時，［次元之旅］的片頭開始播放，滿滿的懷舊味道。</p> <p>［月影之森］中，<span class="global_name_span">奇洛斯</span>四處的遊蕩，遇上了一名酷似<span class="global_name_span">伊甸</span>的小男孩，這時<span class="global_name_span">山貓</span>透過時空隧道出現在其面前，只見他喃喃自語說著自己被誰的夢境引導至此，一場跨越平行世界的冒險由此展開。</p> <p>另一邊<span class="global_name_span">月讀</span>在不知名的空間遇到了小時候的<span class="global_name_span">阿露緹娜</span>.......</p> <p><span class="global_name_span">琪德</span>則遇見了酷似<span class="global_name_span">露卡</span>的<span class="global_name_span">阿蘇提雅</span>。</p> <div class="global_ps_text"> <p>開頭發生的故事，都可以視為是在平行世界發生的，大概有幾個重點。</p> <ul> <li><span class="global_name_span">山貓</span>與<span class="global_name_span">奇洛斯</span>的靈魂產生共鳴，代表他們兩個有相似之處。</li> <li><span class="global_name_span">月讀</span>與<span class="global_name_span">阿露緹娜</span>的相遇，暗示了兩人有著相同的能力。</li> <li>在原作故事中<span class="global_name_span">露卡</span>就是［超時空之鑰］那個發明時光機的科學家，<span class="global_name_span">琪德</span>則是魔法王國<span class="global_name_span">莎拉</span>公主的複製人，還在嬰兒的時期就被<span class="global_name_span">露卡</span>撿到收養。關於這裡兩人的相遇，我自己的解讀是遊戲組試圖告訴玩家<span class="global_name_span">露卡</span>就是<span class="global_name_span">阿蘇提雅</span>，兩者只是在不同世界，所以擁有不同的名字，更進一步暗示著［穿越時空的貓］這世界觀就是發生在與［超時空之鑰］、［次元之旅］不同的平行世界。</li> </ul> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SMgq8MucgzY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('雙魂的羈絆與虛無的魁儡師');
+  paArr.push('光影之尾四穹群星');
+  paArr.push('COMPLEX DREAM');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
+
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
+  contentArrB.push(getActB3(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
+  pArrB.push(getActB3(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+  function getActB3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('沒啥劇情的支線');
+  pArr.push('支線劇情');
+  pArr.push('小遊戲');
+  pArr.push('劇情補遺');
+  pArr.push('星之子加入任務');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">回憶裡的湯</div> <p>幫平行世界的人類僕從買來她記憶中味道的湯。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/50JuCF1XjEY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">次元夾縫的武器工匠</div> <p>次元裂縫那遇到一個鐵匠，幫他找到［虹裝備］的設計圖。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lUpQ-8oX9BU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">米格蘭斯城之戰</div> <p>救助在［米格蘭斯城之戰］中受傷的士兵。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/V3uHYkSAb4E?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">受傷的新兵</div> <p>幫重傷的士兵治療。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ucWYJwMaPFQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">特製營養飲料</div> <p>幫［巴路奧其］的大叔找作飲料的材料。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HgUxCP5osWk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">逃出地下監牢</div> <p>幫囚禁在魔獸城的大叔逃脫牢籠。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rNJPgVM-6ms?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">不變的心意</div> <p>幫<span class="global_name_span">阿蘇提雅</span>尋找前往［悠尼加路那］探查的失聯人員，結果是被魔獸纏住，幫他打跑就完事了。</p> <p>這劇情順便表達下<span class="global_name_span">琪德</span>對<span class="global_name_span">阿蘇提雅</span>的敬重。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sOqox5V9Nws?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">吹著讓人懷念的風</div> <p>因為平行世界的<span class="global_name_span">阿爾德</span>一直處於失蹤狀態，<span class="global_name_span">阿爾德</span>就想回來村子看一看有沒有甚麼狀況？</p> <p>結果還真得到<span class="global_name_span">阿爾德</span>的消息，可惜這只是魔獸們為了從<span class="global_name_span">玫</span>那搶奪武器的計謀，幫忙打跑魔獸就完事了。</p> <p>看著<span class="global_name_span">玫</span>跟<span class="global_name_span">阿爾德</span>的互動，<span class="global_name_span">賽爾傑</span>忍不住想起自己的玩伴<span class="global_name_span">莉娜</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/810eV1OjGxw?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">英雄的背影</div> <p><span class="global_name_span">賽勒斯</span>與<span class="global_name_span">葛籣</span>正準備進行一場公平的對決，為此還特別找了<span class="global_name_span">阿爾德</span>來當裁判，決鬥才剛結束就看到遠方有一個女孩遭到怪物襲擊。</p> <p>大夥當然是直接衝上去打倒怪物，<span class="global_name_span">葛籣</span>跟著大家戰鬥，不免得想起在［龍騎士團］的生活。</p> <div class="global_ps_text"> <p>這段劇情是說<span class="global_name_span">賽勒斯</span>就是［超時空之鑰］裡面的青蛙勇者<span class="global_name_span">葛籣</span>，是因為平行世界所以有了不同發展，但是一樣是受詛咒變身成青蛙外型。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aZn040uKozE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">無法言喻的願望</div> <p>聽到魔獸士兵正在咒罵<span class="global_name_span">山貓</span>，身為曾經同伴的<span class="global_name_span">月讀</span>可不能當作沒聽見，馬上就出言教訓了這些魔獸。</p> <p>不過<span class="global_name_span">月讀</span>之所以曾追隨<span class="global_name_span">山貓</span>，也只是為了完成自己的願望，如果有天為了願望必須離開<span class="global_name_span">阿爾德</span>，她也會這麼做的，對<span class="global_name_span">月讀</span>而言沒甚麼比自己的願望重要。</p> <p>至於這願望是甚麼？可以從<span class="global_name_span">月讀</span>對女傭的對話稍微了解，身為［月龍］的她，天生就有太多宿命，能擺脫這些自由自在地活著，才是她最想要的。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/g7KOIRWIRDU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">盜賊的本願</div> <p>身為盜賊的<span class="global_name_span">琪德</span>這回遇上同行了，但這個小女孩是為了買回親人的遺物才開始幹這髒手的活，知道事情緣由後，<span class="global_name_span">琪德</span>乾脆地幫小女孩偷回遺物，還順便教訓了將遺物佔為己的魔獸。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PYQJbzAW2_A?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">漁民與星之子</div> <p><span class="global_name_span">星之子</span>看到一個老爺爺正在搜尋遺失的護身符，誤以為那是自己尋找的［星之碎片］，馬上就跳下海尋找，並且順利幫老爺爺找回護身符，只可惜這東西雖然一樣亮晶晶的，卻不是［星之碎片］。</p> <div class="global_ps_text"> <p>［星之碎片］是<span class="global_name_span">星之子</span>太空船的碎片。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NpWZXO9Gopw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">緊握的記憶</div> <p><span class="global_name_span">賽爾傑</span>幫忙失憶男子找回家人的故事。</p> <p>過程中，讓<span class="global_name_span">賽爾傑</span>想起自己曾與<span class="global_name_span">山貓</span>互換身體的事情。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WC9WPq3Wjlg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">龍膽花的往事</div> <p><span class="global_name_span">葛籣</span>因為看到類似［龍膽花］的花，想起了家鄉的事情，尤其是跟自己大哥關係匪淺的<span class="global_name_span">莉迪爾</span>小姐。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hRhbget35ho?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">星之子衝鋒</div> <p>聽說開省電模式可以降低難度，不過我感覺差別不大。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9tPcjOSrex8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NDXHvmxmJZ0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">虹之材料</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/inwJLUDrbz8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vHpiqAvzg1w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">阿露緹娜對話</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GRJEpETwcx8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">琪德繞路</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/chfZ4iuSa_Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">葛籣對話</div> <p><span class="global_name_span">葛籣</span>這邊說的傳說中的勇者，就是［超時空之鑰］的青蛙勇者。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-oiRY07hIjs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sU6pkMHik5E?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">吞噬星球者</div> <p><span class="global_name_span">星之子</span>來自遙遠的地外文明，雖然他現在與大家是夥伴的關係，但他原本前來這星球的目的，其實是改造星球，毀滅目前地上的文明。</p> <p>這天一架未知的機械體從天而降，落在［瑟雷那海岸］附近，這就是<span class="global_name_span">星之子</span>文明帶來的武器［傑拉加蘭α］，在未來［邊緣之島］大夥遇上了<span class="global_name_span">星之子</span>的長官，由於<span class="global_name_span">星之子</span>一直處於失蹤狀態，惹得高層親臨，這也宣告地外文明對星球的侵略展開。</p> <p>雙方就這樣在［邊緣之島］展開戰鬥，雖然暫時擊退了長官，但眼下還需先解決［傑拉加蘭α］這個滅世武器。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Eyjyzu8r0GI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到擊敗［傑拉加蘭α］後，<span class="global_name_span">星之子</span>的長官馬上又召喚了［傑拉加蘭β］，同時趁大夥不注意，將<span class="global_name_span">星之子</span>綁回基地。</p> <p>眾人想著<span class="global_name_span">星之子</span>應該暫時沒有危險，還是先前往［卡雷克濕原］擊敗［傑拉加蘭β］，但沒想到被帶回的<span class="global_name_span">星之子</span>竟然遭到洗腦，成為眾人的敵人，當著昔日同伴的面召喚了［傑拉加蘭γ］。</p> <p>當擊敗所有的［傑拉加蘭］後，沒想到<span class="global_name_span">星之子</span>竟啟動了合體程序，終極武器［加蘭札拉奇］現身，並且由<span class="global_name_span">星之子</span>駕駛著，目的是立即毀滅整個星球。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YDTn-a5bt20?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>面對這樣的險境，愛與友誼、同伴、羈絆，終將取得最後的勝利，最後［加蘭札拉奇］被毀，<span class="global_name_span">星之子</span>也在同伴的呼喚中甦醒，恢復了記憶，隨著［加蘭札拉奇］消失在點點光環中。</p> <p>看到了這樣的奇蹟，<span class="global_name_span">星之子</span>長官也改變了想法，甚至利用地外文明科技復活了<span class="global_name_span">星之子</span>，事情總算有了好的結局。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vUeAjjysHPs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('第一話 - 冥奏 世界的兩個面貌（月讀線）');
+  pArr.push('第二話 - 被擊敗的王與無人知曉的要塞（月讀線）');
+  pArr.push('第三話 - 異夢時之塔做夢之人的心願（月讀線）');
+  pArr.push('第一話 - 冥奏 世界的兩個面貌（琪德線）');
+  pArr.push('第二話 - 被擊敗的王與無人知曉的要塞（琪德線）');
+  pArr.push('第三話 - 異夢時之塔做夢之人的心願（琪德線）');
+  pArr.push('第一話 - 冥奏 世界的兩個面貌（賽爾傑線）');
+  pArr.push('第二話 - 被擊敗的王與無人知曉的要塞（賽爾傑線）');
+  pArr.push('第三話 - 異夢時之塔做夢之人的心願（賽爾傑線）');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">冥奏 世界的兩個面貌（月讀線）</div> <p>另一個平行世界，<span class="global_name_span">阿爾德</span>兄妹在與魔獸王的戰爭中犧牲了，這場景被主線世界的<span class="global_name_span">阿爾德</span>接收到，這可讓他坐立難安，於是決定前往［米格蘭斯城］調查看看。</p> <p>到達露台，這裡經過上次與魔獸王的大戰，四周早已殘破不勘，就在此時一個神祕光圈將眾人拉往另一個世界的［米格蘭斯城］，還沒搞清楚狀況，一名小丑打扮的女孩從另一處時空隧道跳出，她名叫<span class="global_name_span">月讀</span>，是來自與<span class="global_name_span">阿爾德</span>所處世界完全不同的時空。</p> <p>驚訝之餘另一名少女<span class="global_name_span">琪德</span>也同樣穿越來這，這兩人顯然勢成水火，一見面就是不留情面的互懟，本來是想大家一起探索這未知世界，這下只能從中選一個人一起行動了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pm8ID3wO8zg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿爾德</span>誰也不想得罪，於是閉著眼睛選了<span class="global_name_span">月讀</span>。</p> <p>大夥調查後發現這個世界的［米格蘭斯城］已經被魔獸佔據，更名為［真魔獸城］，原來在當初與魔獸的大戰中，魔獸取得勝利，世界走向不同於主線世界的道路，而以人類之姿突然出現在城內的眾人，瞬間就被守衛轟了出來。</p> <p>為了再次進入城內掌握更多情報，<span class="global_name_span">阿爾德</span>決定充當便當外送員，藉機潛入城堡，沒想到正要開始到處亂逛時，一個時空隧道突然打開，將眾人傳送回魔獸、人類大戰的那一刻。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZEdxzmpmvXo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在被烈火熊熊燃燒的［米格蘭斯城］<span class="global_name_span">阿爾德</span>一行人遇到了<span class="global_name_span">賽爾傑</span>，他來自跟<span class="global_name_span">月讀</span>一樣的世界，是［次元之旅］的主角，此時正獨自面對魔獸的攻擊。</p> <p>幫他解圍後，<span class="global_name_span">賽爾傑</span>便決定加入一起行動，眾人一路突圍到了露台，魔獸王正準備對這世界的<span class="global_name_span">阿爾德</span>兄妹進行最後一擊，畢竟是鞭長莫及，<span class="global_name_span">阿爾德</span>只能看著這世界的自己跌下高空，這一幕正是自己之前夢到的情景。</p> <p>而造成這一連串歷史改變的關鍵人物，也在此時現身，這人就是<span class="global_name_span">月讀</span>口中的<span class="global_name_span">山貓</span>大人。</p> <p>親眼看到整起事件真相的眾人，再度被傳送回原處，這似乎是有股神秘力量刻意的引導，雖然對這裡<span class="global_name_span">阿爾德</span>兄妹的結局感到有點哀傷，但現在還是得先找到回到原來世界的方法，關於這點<span class="global_name_span">賽爾傑</span>可說是有著豐富的經驗，在他原本的時空，他就常常穿越在［HOME］與［ANOTHER］兩個世界間，關鍵場所名為［天使迷途之地］，也就是造成歷史分歧的場所，現在看來這地方就是［米格蘭斯城］的露台。</p> <p>罪魁禍首<span class="global_name_span">山貓</span>也來到此地，意識到眾人會成為他的阻礙，雙方便在此處展開戰鬥，短暫的交手，<span class="global_name_span">山貓</span>了解眾人力量後便烙下狠話離去，<span class="global_name_span">阿爾德</span>則決定要繼續在平行世界的冒險。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HMHvjzmksyw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">被擊敗的王與無人知曉的要塞（月讀線）</div> <p>因為魔獸王與<span class="global_name_span">山貓</span>的合作關係，如果要探查更多的情報，也許可以從<span class="global_name_span">阿露緹娜</span>這邊下手，她是魔獸王的妹妹，而且與<span class="global_name_span">菲妮</span>是好朋友，從那次在露台上她的神情看來，<span class="global_name_span">阿露緹娜</span>心裡也不贊同如今哥哥的作為。</p> <p>從王城的魔獸的口中得知，<span class="global_name_span">阿露緹娜</span>最近常常不帶護衛前往［月影之森］，看來那是絕佳的接觸場所。接著幫助城裡的貨物業者完成餵食魔物的小任務，得到了出城的許可證，眾人便準備前往［月影之森］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WWcH76IyqyA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>途經［巴路奧其］，這裡還沒受到戰火的摧殘，<span class="global_name_span">阿爾德</span>在這遇到了爺爺，雖然爺爺覺得<span class="global_name_span">阿爾德</span>的神色有些奇怪，但想到他總是被捲入奇怪的冒險中，也就沒有太在意，壓根沒想到眼前人是從另一個平行世界來的。</p> <p>與<span class="global_name_span">阿露緹娜</span>接觸後，費了一番唇舌加上她小時候曾經見過<span class="global_name_span">月讀</span>，這才讓她相信眾人是來自另一個世界。交談下得知<span class="global_name_span">山貓</span>的計畫是利用［冰凍之炎］創造出新的［命運之神］來改變世界。</p> <p>這邊解釋下，所謂的［冰凍之炎］是［超時空之鑰］的大魔王［拉沃斯］的精華，擁有無限的魔力，能實現人的願望，而［命運之神］應該就是指［次元之旅］中的超級電腦［命運］，是由［理之賢者］創造，設定上可以說是人類的守護神，能夠操控所有人的思想與行為，但是日系RPG總是要抵抗神獲得自由，因此也可視為［次元之旅］的魔王，而<span class="global_name_span">山貓</span>的真實身分就是<span class="global_name_span">賽爾傑</span>的父親，但此時他已經完全被［命運］掌控，只可視為［命運］的化身。</p> <p>目前看來［冰凍之炎］就是關鍵，為了獲得更多的助力，<span class="global_name_span">阿爾德</span>開始尋找這世界的<span class="global_name_span">米格蘭斯王</span>，受到主線世界<span class="global_name_span">米格蘭斯王</span>的幫助，總算在［瑟雷那海岸］找到了王國騎士團的秘密基地，但<span class="global_name_span">山貓</span>與魔獸王早就尾隨眾人埋伏在後，一舉便將大夥抓住。</p> <p>接著魔獸大軍便開始進攻秘密基地，眾人正懊悔著因為自己的失誤，造成王國騎士團陷入險境，<span class="global_name_span">阿露緹娜</span>突然出面支開了看守的魔獸，獲得自由的眾人隨即闖入基地支援。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3JMAZqM6YIM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>途中<span class="global_name_span">月讀</span>遇上了<span class="global_name_span">星之子</span>，他在原作中是來自遙遠的外星球，為了修復自己受損的飛船，跟主角們打了一架，無奈實力不夠、硬打不過，只能加入大家一起冒險，這時候的他正跟魔獸士兵玩捉迷藏，沒講幾句話又離開躲了起來。</p> <p>眾人繼續往基地深處走去，［冰凍之炎］赫然出現在面前，就在它即將暴走時，［巨魔怨念］用它的力量壓制了［冰凍之炎］，不過這番動靜也引來了<span class="global_name_span">山貓</span>，就在大夥面前奪走了［冰凍之炎］。</p> <p>當眾人追上時，魔獸王與<span class="global_name_span">米格蘭斯王</span>已經準備一決勝負，兩邊勢力在此展開戰鬥，<span class="global_name_span">山貓</span>利用［冰凍之炎］與<span class="global_name_span">阿露緹娜</span>的力量招喚出了［龍神］，在原作中<span class="global_name_span">月讀</span>就是［月龍］，與［龍神］合體便能發揮真正威力，不過由於<span class="global_name_span">星之子</span>的阻止，<span class="global_name_span">月讀</span>拒絕了合體的要求，<span class="global_name_span">山貓</span>於是就將能統合［星之力］的<span class="global_name_span">阿露緹娜</span>當成代替品。</p> <p>擊敗［龍神］後，<span class="global_name_span">阿露緹娜</span>恢復了正常，魔獸王也看穿了<span class="global_name_span">山貓</span>的狼子野心，雙方結束了合作的關係，但這卻沒對<span class="global_name_span">山貓</span>造成太大打擊，［龍神］統合的［星之力］已經送往［時之塔］，［命運］的甦醒已經是不可避免的事情。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tqShsdKKpkI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">異夢時之塔做夢之人的心願（月讀線）</div> <p>面對眼前的危機，魔獸王與<span class="global_name_span">米格蘭斯王</span>暫時罷戰言和，在王國騎士團的調查下，發現了［時之塔］的具體位置，隨著時間流逝，［時之塔］的樣貌有了極大的變化，就連塔中的道路也明顯不同。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rGp0cmLngrA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人在塔頂擊敗了［幻視胎］與<span class="global_name_span">山貓</span>化成的［命運］後，事情貌似就這樣告一段落，然而冒險尚未結束，異世界的<span class="global_name_span">阿爾德</span>兄妹仍需拯救。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u4NwF9Vw94Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第一話 - 冥奏 世界的兩個面貌（琪德線）</div> <p>第二輪開始劇情大同小異，這邊選了<span class="global_name_span">琪德</span>加入後，<span class="global_name_span">月讀</span>無奈只能回去找<span class="global_name_span">山貓</span>。</p> <p>然後一樣是被守衛發現趕出城外，再次去找準備便當的奶奶，這次卻被<span class="global_name_span">琪德</span>以擔心老奶奶的安危，而拒絕運送便當的任務，這下就不能趁機潛入城堡了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hkvyPLNsQsY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>但<span class="global_name_span">琪德</span>不愧是盜賊團出生，馬上就找到一個可以溜進城內小路，不過眾人卻轉眼就被魔獸士兵發現，全體被抓囚禁在牢房。</p> <p>這時候<span class="global_name_span">琪德</span>又發揮她的盜賊專業［開鎖］，可是事情進行得並不順利，惱羞之餘直接用蠻力破壞牢門，這個性可以說是中二<span class="global_name_span">蘇賽特</span>與暴力<span class="global_name_span">茜</span>的綜合體。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RCF7HhLJicc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在逃亡的過程中，如［月讀線］回到了過去，親眼目睹<span class="global_name_span">阿爾德</span>兄妹跌落王城露台的那一刻，為了拯救他們決定繼續平行世界的冒險。</p> <p><span class="global_name_span">琪德</span>在這對<span class="global_name_span">山貓</span>說的［姐姐］是［超時空之鑰］的<span class="global_name_span">露卡</span>，在原作中她最後是在<span class="global_name_span">山貓</span>手中喪生的，當時身為<span class="global_name_span">山貓</span>手下的<span class="global_name_span">月讀</span>也在現場，所以<span class="global_name_span">琪德</span>對她格外不友善。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Wn0FOPOxgZM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第二話 - 被擊敗的王與無人知曉的要塞（琪德線）</div> <p>與［月讀線］一樣，眾人打算從<span class="global_name_span">阿露緹娜</span>那獲得更多情報。</p> <p>這次途經［巴路奧其］，黑貓<span class="global_name_span">法路奧</span>會引導著大夥進入次元裂縫中，在這裡可以挑戰隱王、做武器、接支線。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rNX6MOtmXY0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>從<span class="global_name_span">阿露緹娜</span>口中得知<span class="global_name_span">山貓</span>意圖後，接著就是尋找王國騎士團的秘密基地。</p> <p>找到基地後，眾人一樣會被埋伏囚禁，但這次出現解救的是<span class="global_name_span">阿蘇提雅</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SkH6ExbZXOc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著如［月讀線］一樣的發展，最終［龍神］被擊敗，人類、魔獸暫時休兵，劇情不同的地方大概就是<span class="global_name_span">星之子</span>沒有出現阻止<span class="global_name_span">月讀</span>與［龍神］合體，反而是<span class="global_name_span">阿露緹娜</span>自願犧牲。</p> <p>這邊還會出現一個原作人物<span class="global_name_span">葛籣</span>，是［龍騎士團］的成員。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2yqFzJQI8Pk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第三話 - 異夢時之塔做夢之人的心願（琪德線）</div> <p>人類與魔獸雙方休戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v0_OojDAi2o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">琪德</span>找<span class="global_name_span">阿蘇提雅</span>聊天後，王國騎士團找到了［時之塔］具體位置，大夥開始準備最終決戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Uk4sn_cSU98?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［時之塔］頂，<span class="global_name_span">山貓</span>被眾人擊敗，但拯救這世界<span class="global_name_span">阿爾德</span>兄妹的目標仍未結束。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z3LdElHWMoA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">冥奏 世界的兩個面貌（賽爾傑線）</div> <p>當面臨選擇<span class="global_name_span">月讀</span>或是<span class="global_name_span">琪德</span>當同伴時，兩個都不要，則進入<span class="global_name_span">賽爾傑</span>線的劇情，大致劇情都跟其他兩線差不多。</p> <p>眾人被發現趕出城堡，之後借助［躲貓獸王］的幫助潛入城堡，穿越到過去遇見<span class="global_name_span">賽爾傑</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wP72HTKrzxo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著看到了平行世界<span class="global_name_span">阿爾德</span>兄妹的末路，與<span class="global_name_span">山貓</span>一戰後，決定繼續在平行世界的冒險。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/g870xd3w7bc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">被擊敗的王與無人知曉的要塞（賽爾傑線）</div> <p>大夥打算從<span class="global_name_span">阿露緹娜</span>那邊獲得更多的情報。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b-FmCFA77hk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>得知<span class="global_name_span">山貓</span>的計畫後，開始尋找王國騎士團的基地。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/66j_YxrS4x0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>大夥在基地前被<span class="global_name_span">山貓</span>等伏擊被擒，這次出手拯救眾人的是<span class="global_name_span">琪德</span>與<span class="global_name_span">月讀</span>，最後大夥擊敗了［龍神］，人類、魔獸休戰，並準備與<span class="global_name_span">山貓</span>的決戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/18aKzhwxI_s?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">異夢時之塔做夢之人的心願（賽爾傑線）</div> <p>決戰前夕<span class="global_name_span">月讀</span>與<span class="global_name_span">琪德</span>算是和好了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DBr4HpyXxEQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">菲妮</span>找上<span class="global_name_span">賽爾傑</span>說了小時候在［月影之森］與<span class="global_name_span">奇洛斯</span>的事情，這裡其實是暗示了整件事情的起源就在［月影之森］。</p> <p>［次元之旅］的故事，起源是<span class="global_name_span">賽爾傑</span>小時候被黑色的豹鬼咬傷中毒，<span class="global_name_span">賽爾傑</span>的父親為了拯救兒子誤入了［神之庭］，在這［超時空之鑰］中的魔法王國<span class="global_name_span">莎拉</span>因為聽到了<span class="global_name_span">賽爾傑</span>的哭聲，長年存在虛空中的孤獨，讓她格外在意這個嬰兒，其力量最後導致［命運］死機，<span class="global_name_span">賽爾傑</span>獲得治癒。</p> <p>而<span class="global_name_span">賽爾傑</span>父親也因此被［命運］侵蝕，最終化為了<span class="global_name_span">山貓</span>，再之後<span class="global_name_span">山貓</span>親手淹死自己的孩子，從此誕生了一個平行世界，當中差別就是<span class="global_name_span">賽爾傑</span>存活與否。</p> <p>所以在目前的世界，<span class="global_name_span">阿爾德</span>兄妹的逝去，也是當初在［月影之森］遇見<span class="global_name_span">山貓</span>的那一刻起發生變化。</p> <p>知道［時之塔］具體位置後，眾人隨即前往，在進塔前<span class="global_name_span">阿爾德</span>想起小時候曾經見過<span class="global_name_span">山貓</span>的事情，總覺得與他有著不知名的感應。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uCGiczxSM3Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在［塔頂］眾人擊敗了<span class="global_name_span">山貓</span>與［幻視胎］，<span class="global_name_span">阿蘇提雅</span>與<span class="global_name_span">阿露緹娜</span>就在此時出現，準備使用［時空之鑰］回到<span class="global_name_span">阿爾德</span>兄妹逝去的分歧點拯救他們，這裡已經相當明顯告訴玩家<span class="global_name_span">阿蘇提雅</span>就是<span class="global_name_span">露卡</span>，這把［時空之鑰］的造型跟［超時空之鑰］裡的一模一樣。</p> <p>至於為什麼會那麼突然展開拯救？劇情給的交代是<span class="global_name_span">阿蘇提雅</span>是受到這平行世界未來的<span class="global_name_span">阿爾德</span>委託，穿越時空回來拯救自己，此時的<span class="global_name_span">賽爾傑</span>經歷了玩家多次輪迴的遊玩，已經想起了當初的記憶，在原作他親身經歷自己生死一瞬間的分歧點，甚至重新誕生，因此做為找出關鍵分歧點，必須仰賴他的經驗。</p> <p>在大夥分工合作下，成功救回了這世界的<span class="global_name_span">阿爾德</span>兄妹，人類與魔獸也締結了和平契約，世界慢慢回歸正軌，而<span class="global_name_span">賽爾傑</span>三人因為暫時還回不去自己的世界，決定跟大家一起冒險。</p> <p>但究竟是誰將<span class="global_name_span">賽爾傑</span>等人召喚來的？他的目的又是甚麼？這個要從［次元之旅］的世界觀來猜想，任何時間點的過去遭到改變，都會抹殺掉原本該有的未來，如果這個未來是有意識或者在這未來誕生的人知道了這件事情，勢必會回到過去試圖糾正，所以便形成了不存在的未來與理應發生的未來之間的戰鬥，片尾的<span class="global_name_span">庫羅諾斯</span>時間帝國與［時之女神］之間的戰爭，也許就是說明了這點，回想第一部的劇情，<span class="global_name_span">庫羅諾斯</span>博士確實有說過想要抹殺出現［傑諾稜晶］的未來，由此改變因為［傑諾稜晶］終將產生的巨大時震。</p> <p>至於這雙方戰爭的部分，明顯是<span class="global_name_span">伊甸</span>而造成的另一個世界，從這裡試想，［次元之旅］的［HOME］、［ANOTHER］兩個世界是因為<span class="global_name_span">賽爾傑</span>的生死而分歧，如今［時空貓］的世界，也許也有另一個<span class="global_name_span">伊甸</span>沒跌入［時空黯漠］的未來，且不論是星球本身或是<span class="global_name_span">伊甸</span>將<span class="global_name_span">賽爾傑</span>等人召喚來，總歸是這被抹殺的未來，為了糾正歷史而做的行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qIdeTPGy3Yc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇場 01_10');
+      resultIdx.push('劇場 11_20');
+      resultIdx.push('劇場 21_30');
+      resultIdx.push('劇場 31_41');
+
+      return resultIdx;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('<div class="title_text">這裡到底是？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VdfSDbUlLek?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不明所以的地方</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z-SvzeUDP7s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">精靈的感覺</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KdOeNpUtq3s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">相通的心靈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7VqlxZIi8BI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">克雷斯的夥伴</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8oTc-hKDbfk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">小心那個遲鈍的傢伙</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xEEjR14wPbo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">刀劍兄弟團</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/J_o1j6HkII4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">總是在著急的時候</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lgxMUkdN4-U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">復仇的盡頭</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PJVxuwth9CM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">獵頭行動開始</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JgwgRr1_qpc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">穿越時空的貓</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xLeV_fWIi6E?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">精靈的庇佑</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LdJrG-q6Jzs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">無法忽視的落差</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PsjKb3h6_3I?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">塔中嬰兒</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/r4BSoCj2SUo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">火之洗禮</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_Fjkc4kC0ik?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">水之款待</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/En3I15-dUIA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">鑽石堅不可摧？</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/s12R8zp-chA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">扭曲的樓閣</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Roj3Ilwm-JA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">能互相理解的搭檔</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/K--x9MhsPgo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">元素的恩惠</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/iu6gjWEBupA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">夥伴意識</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/agCs2LBfmbc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">克雷斯和由利的戰鬥方法</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nr_nkKpCCxo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不喜歡貓</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0-14MDfk4iU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">平時的那個</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hFY0zrJ3rzM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蜜樂和薇爾貝特的戰鬥方法</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/k58tETM1iTg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">隊伍的智囊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MYvVrDna8zo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">比大小</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/axu-ZF4Y9sw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">知曉S型之人</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/12vhtHY6rCc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">烹飪的秘訣</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9LZ3ZUKlODE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">出來了</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fGWhbmQOVXo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">甜點師會互相吸引</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ac--i3R8gio?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">就算世界不同</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4s8b2bvTMsw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">淋在白飯上吃很美味</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OS868c846mo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">冷製和熱煮之間</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/39jULm7bLLc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">看上去有點噁心</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DWJKaaLIMPI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">燃燒殆盡的肉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pugo7l4uisM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">剎那的歡聚</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LA1xyHO8RQU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">冥空斬翔劍</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZSjNlVVGDCI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">漸毅狼影陣</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gE9PSmJn81o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">極致元素</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ayKN4vYhoM8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">致命劇害</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2XmT28xJAlU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('序章');
+  pArr.push('第一話 - 數個交織的故事');
+  pArr.push('第二話 - 光陰之尾');
+  pArr.push('第三話 - 四穹群星');
+  pArr.push('支線任務');
+  pArr.push('料理任務');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">序章</div> <p>在一個漆黑的空間裡，一隻全身發出金黃光芒、型態若有似無的貓，正引導著<span class="global_name_span">克雷斯</span>前進，通過時空隧道後，眼前是一片綠意盎然的平原，眺望遠處還可以看到一個造型特異的城堡，此處正是［瑙亞路平原］。</p> <p>而<span class="global_name_span">克雷斯</span>的同伴<span class="global_name_span">敏特</span>、<span class="global_name_span">亞雀</span>也被發光的貓引來這個時空，三人在［月影之森］救了一個男孩子後，得知這小孩是為了讓性情大變的父母恢復原樣，才來到這危險之地，眾人還沒消化這些信息，小孩的父母竟然追到這裡，並且把小孩當場帶走，<span class="global_name_span">克雷斯</span>等人礙於身分也不便阻止。</p> <p>眼前千頭萬緒，這時<span class="global_name_span">亞雀</span>看到遠方有個村落，眾人決定先前往打探情報，再決定下一步該如何走。</p> <div class="global_ps_text"> <p>02:21 - OP。</p> </div> <div class="global_ps_text"> <p>遊戲取向真的太明顯了，<span class="global_name_span">克雷斯</span>竟然只有女性同伴跟著來，<span class="global_name_span">柴斯達</span>、<span class="global_name_span">庫拉斯</span>被完全忘掉了。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WI0Ohr6skv0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在未來<span class="global_name_span">考古學愛好者</span>正在欣賞古物之際，房內忽然開啟了時空隧道，一名黑髮女子<span class="global_name_span">薇爾貝特</span>一臉茫然的出現在眼前，看她的裝扮還以為是 cosplay 的特殊愛好者。</p> <p>在<span class="global_name_span">考古學愛好者</span>建議下，<span class="global_name_span">薇爾貝特</span>決定先四處逛逛，碰巧遇到大街上因為入侵民宅，正被［EGPD］包圍的<span class="global_name_span">瑪琪露</span>，當場被拖下水的<span class="global_name_span">薇爾貝特</span>擊敗了［EGPD］後，被一名紅眼白髮的男子以奇術表演團的藉口解了圍。</p> <p>男子簡單向兩人介紹自己，並且建議先取得［市民編號］以便在城市內自由行動後，瀟灑地走出門口。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aS1lM_-3eiE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>追著發光的貓來到古代的<span class="global_name_span">蜜樂</span>與同樣來到這個時空的<span class="global_name_span">羅嚴</span>依照現有的情報推斷出這裡屬於異世界。</p> <p><span class="global_name_span">蜜樂</span>想要透過與精靈的溝通獲得更多的情報，但這世界的精靈似乎因為某種原因失去了本性，擊敗牠們後，<span class="global_name_span">蜜樂</span>施法讓眾精靈解除了洗腦的控制。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/D5ciLa7_OZQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>來到這時空的<span class="global_name_span">由利</span>才剛踏出時空隧道，便跌進了陰暗潮濕的枯井之中，邊抱怨邊爬出井口後，眼前是一副氣派繁榮的景象，這裡便是現代的王城［悠尼岡］，夥伴<span class="global_name_span">拉彼特</span>同樣也來到此地。</p> <p>兩人在街道上逛著，解決了貴族欺凌村民的事件，並且遇到了之前<span class="global_name_span">克雷斯</span>解救的小男孩，以此為契機與<span class="global_name_span">克雷斯</span>相遇了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ua2ae4193iY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第一話 - 數個交織的故事</div> <p><span class="global_name_span">阿爾德</span>一行人剛吃飽飯出餐館，<span class="global_name_span">賽勒斯</span>便因為青蛙的外型，被一名少年誤認為妖怪，隨後趕來的<span class="global_name_span">克雷斯</span>與眾人化解了誤會後，便一起行動。</p> <p>前往［臨迪］與<span class="global_name_span">克雷斯</span>的夥伴會合後，得知他們都是因為追著發光的貓來到這個時空，雖然對目前狀況有點困惑，但大家都決定先放下自己的事情，幫助小男孩父母恢復原狀。</p> <p><span class="global_name_span">阿爾德</span>一行人與<span class="global_name_span">米格蘭斯王</span>談及此事，發現原來王也已經暗中調查，但是目前苦無線索。透過小男孩的回憶，也許在［瑟雷海岸］那可以查到些甚麼？眾人馬上決定起身前往。</p> <div class="global_ps_text"> <p>01:11 - <span class="global_name_span">克雷斯</span>當場打臉自己。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ir4B6ThQwuc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在［瑟雷海岸］眾人遇到了魔獸的襲擊，與此同時也發現小男孩的父母真身竟然是魔獸假扮，並且將小男孩在眾人面前綁走，但透過<span class="global_name_span">亞雀</span>的能力，大夥迅速鎖定了敵人所在地，趁魔獸放鬆警備時救出了小男孩，魔獸們在消逝之前說出了一個名字<span class="global_name_span">謝雷米斯</span>。</p> <p>向<span class="global_name_span">米格蘭斯王</span>報告完事情的始末後，發現有一股暗處的勢力，似乎有計謀的逐步破壞人類國家。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yAHbWwTY7mM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第二話 - 光陰之尾</div> <p>大家接受<span class="global_name_span">米格蘭斯王</span>的好意，在旅館休息，沒想到半夜時，發光的貓再度出現，並且引導<span class="global_name_span">阿爾德</span>穿越時空來到未來，才剛到就看到<span class="global_name_span">賽勒斯</span>、<span class="global_name_span">艾米</span>也被引導到這。</p> <p>本想去［伊莎堂］暫時歇息，但<span class="global_name_span">阿爾德</span>的［市民編號］竟然失效，這也引來了<span class="global_name_span">薇爾貝特</span>兩人的注意，沒有［市民編號］的三人於是遭到［EPGD］組織的追捕，還好在<span class="global_name_span">小賽巴斯</span>的幫忙下，三人解除了危機，並且從她那得到消息，之前幫助過<span class="global_name_span">薇爾貝特</span>的紅眼白髮男子是褫奪<span class="global_name_span">阿爾德</span>［市民編號的人］，這下可得找這男人問清楚目的。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YShXnVqe1XU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>前往［伊莎堂］與<span class="global_name_span">艾米</span>兩人會合後，順著<span class="global_name_span">小賽巴斯</span>提供的線索來到［廢棄公路99］，在這找到了紅眼白髮男子，並且得知他的真實身分就是<span class="global_name_span">謝雷米斯</span>，一個為了繼承魔獸王意志的男人。</p> <p>告訴眾人自己的目的就是改變魔獸被擊敗的歷史後，<span class="global_name_span">謝雷米斯</span>化身為黑貓打開時空隧道後離去，這時發光的貓再度出現，引導著在場眾人前往古代，在這遇到了<span class="global_name_span">蜜樂</span>兩人，並且簡單交換了情報，為了調查更有效率的進行，<span class="global_name_span">薇爾貝特</span>兩人離開了隊伍。</p> <div class="global_ps_text"> <p>06:45 - 這段其實有點諷刺如今人類社會快速發展的文明導致地球遭到嚴重的環境汙染，並且藉由<span class="global_name_span">謝雷米斯</span>的口說出與大地共存共榮才是現在人類該努力的目標，而非各種科技的快速發展。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ut3bQ_i2wq0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>根據<span class="global_name_span">蜜樂</span>的線索，眾人追到［時之塔］附近，果然看到了<span class="global_name_span">謝雷米斯</span>，而且發現他就是之前<span class="global_name_span">蜜樂</span>一直在追尋將精靈洗腦的人，透過洗腦精靈的幫忙，<span class="global_name_span">謝雷米斯</span>成功創造出與［時之塔］有著同樣功能的［時之樓閣］，如今<span class="global_name_span">謝雷米斯</span>就要利用這個改變星球的歷史。</p> <p><span class="global_name_span">阿爾德</span>雖然想阻止，卻無法進入［時之樓閣］所在的亞空間，甚至連［巨魔怨念］都無法劈開這結界。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_zx-_0RvHFs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第三話 - 四穹群星</div> <p>正當大家對眼前情況一籌莫展時，發光的貓再度出現，引導大夥前往次元夾縫的［時間遺忘小站］，在這裡遇到了同樣被引導過來的<span class="global_name_span">克雷斯</span>等人。</p> <p>因為星球的危機越發不可收拾，發光的貓也因此被賦予了說話的力量，彼此交換情報後，眾人得出了結論。將一切希望放在鍛造<span class="global_name_span">克雷斯</span>口中那把具有操控時間力量的魔劍［永恆之劍］。</p> <div class="global_ps_text"> <p>05:55 - 貓在這世界可以自由穿越時空的傳說。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rJbDD_QsuaI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>鍛造［永恆之劍］需要的素材有［火之劍］、［水之劍］，大夥首先在火之村［拉多路］打探到火劍［雷瓦汀］的消息，並且通過火精靈的試煉得到了這把劍。</p> <div class="global_ps_text"> <p>04:20 - 騎恐龍。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E-Q4o8p-fN4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著在水都［艾古圖］打探到水劍［丟卡利翁］的消息，並且通過水精靈的試煉得到了這把劍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DH7J63lYBVg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>獲得兩把劍後，接著就是透過精靈之力將其合二為一，還好<span class="global_name_span">蜜樂</span>是精靈之主，透過她的力量，加上<span class="global_name_span">亞雀</span>、<span class="global_name_span">敏特</span>、<span class="global_name_span">羅嚴</span>的魔法加持，［永恆之劍］終於誕生，<span class="global_name_span">克雷斯</span>手握魔劍誓要斬開亞空間。</p> <p>就當大家開心之時，<span class="global_name_span">由利</span>卻因為自己由始至終沒幫上忙，而暗自思考自己被召喚來的原因？但眼下情況緊急不容細想，隨即眾人前往［時之樓閣］所在處，用［永恆之劍］斬開結界順利進入［時之樓閣］。不愧是複製於［時之塔］的設計，樓閣內的到處彷彿有生命波動般，透露著詭異的氛圍。</p> <div class="global_ps_text"> <p>02:13 - 鍛造［永恆之劍］。</p> <p>07:52 - 斬開亞空間。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Wyb1isVWT20?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>抵達樓閣深處的眾人，順利擊敗<span class="global_name_span">謝雷米斯</span>，但此時他竟然留有後手，直接啟動樓閣改變歷史的功能，不過由閣樓所展示被魔獸統治的未來，卻沒有預想中欣欣向榮的景象，反而是一片蕭條、殘破不勘。</p> <p>就當<span class="global_name_span">謝雷米斯</span>不認輸的想要第二次改變歷史，一旁的<span class="global_name_span">由利</span>正在等著這個機會，以武力取得了［幻視胎］的控制權，並且馬上修正了被改變的歷史。</p> <p>眼見情況失去控制，<span class="global_name_span">謝雷米斯</span>化身魔獸想要在此將眾人消滅後，再度化身為黑貓穿越時空實現自己的夢想，但<span class="global_name_span">克雷斯</span>等人豈能讓其如願，發光的貓將［天之指引］賦予在［永恆之劍］上，劍身化為［巨魔怨念］的外貌，與<span class="global_name_span">阿爾德</span>一起將<span class="global_name_span">謝雷米斯</span>葬送在閣樓之上，達成使命的［永恆之劍］則當場變為碎片。</p> <div class="global_ps_text"> <p>01:08 - 很有懷念感的時空幻境小遊戲。</p> <p>03:21 - <span class="global_name_span">由利</span>與小狗狗的默契搭配，難道他被召喚來的原因就是為了解開這小遊戲？</p> <p>09:10 - <span class="global_name_span">由利</span>帥氣奪取［幻視胎］控制權。</p> <p>11:44 - 眾主角的帥氣合擊。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/U9qH7OFjK7g?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在［時間遺忘小站］眾人迎來了最後的別離，在這段不算短的冒險中，彼此都建立了深厚的情誼，不過大家卻有個預感，相信在不久的將來必定還會再相遇。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_f1x3EG0ZT4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">狩劍之人漆黑之翼</div> <p>自稱［漆黑之翼］的三人組，盯上了<span class="global_name_span">阿爾德</span>身上的那把［巨魔怨念］，然而三人對劍的認知各不相同，完全無法齊心合力，甚至被捲入時空隧道還需要<span class="global_name_span">阿爾德</span>穿越各時代前去拯救。</p> <p>最後三人良心發現，決定改過自新，而這時大夥注意到［漆黑之翼］之所以可以穿越時空，似乎是因為他們所養的貓［小黑］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nP9xrCOD3gc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">精靈的考驗</div> <p>［時之樓閣］內，解放四穹群星力量的試煉正開啟著。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WM_uXtTA8Yc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8dvfzGI1tiY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QJC-RdE1vZo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uxu3LtLuHaQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5bIKkzSYuwQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">王城最快！音速跑腿比賽！</div> <p>王城內正舉辦音速跑腿比賽，這小遊戲在［時空幻境］裡是相當經典的。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1Y52xTZwi2A?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hfKcdurfFpc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">料理任務</div> <p>在［艾古圖］街上，<span class="global_name_span">阿爾德</span>被［食之傳道師］看中料理潛力，於是開始被傳授料理相關的知識。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QdHkwMzTf9o?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('沒整理');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var pArr = [];
+  pArr.push('');
+  pArr.push('雙魂的羈絆與虛無的魁儡師');
+  pArr.push('雙魂的羈絆與虛無的魁儡師PVR');
+
+  		return pArr;
+  	}
+  	var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<p><span class="global_name_span">Joker</span>一行人一如既往的完成任務後，忽然聽到一個女人的求救聲，眾人順著聲音發現了時空隧道，並且進入了<span class="global_name_span">阿爾德</span>所在的時代。</p> <div class="global_ps_text"> <p>11:13 - ［Joker］耍帥放大招。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FRtnjwKRdjE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿爾德</span>因為爺爺有事找，所以回到了村子，但眾人正在酒吧放鬆時，村民緊急衝入告之有盜賊在村子，需要協助處理。追捕盜賊的過程中，剛好碰到<span class="global_name_span">Joker</span>一行人，因為文化差異的關係，雙方人馬差點因為誤會打了起來，所幸盜賊神救援地出現，解開眾人的誤會。</p> <p>處理完盜賊的事件後，<span class="global_name_span">阿爾德</span>決定幫助<span class="global_name_span">Joker</span>等人回到自己原本的地方，透過<span class="global_name_span">Joker</span>提供的［索拉尼亞］這個線索，眾人來到了［拉克尼巴］收成村落，本來想找此地村長尋求幫助，然而卻發現村長對村民的態度十分惡劣，暗自調查後發現了村長的母親正是<span class="global_name_span">Joker</span>一行人聽到求救聲音的主人。</p> <p>為了拯救村長<span class="global_name_span">史蒂卡</span>，讓他變回原本溫柔的性格，<span class="global_name_span">Joker</span>決定拿出看家本領，進入<span class="global_name_span">史蒂卡</span>的心靈進行［悔改］，在<span class="global_name_span">巨魔怨念</span>的幫助下，總算打開通往心靈的入口。</p> <div class="global_ps_text"> <p>［索拉尼亞］這花應該確實有實現人們願望的能力，［史蒂卡］的媽媽應該是透過這花才能把內心的聲音傳到處於異世界的［Joker］一行人。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/izM2FZkpbtQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人成功消除<span class="global_name_span">史蒂卡</span>心中的陰影，但與此同時<span class="global_name_span">莉卡</span>卻發現有其他反應的存在。</p> <p>回到現實世界中，<span class="global_name_span">史蒂卡</span>果然已經改過自新，並且透過［索拉尼亞花］的許願幫<span class="global_name_span">Joker</span>等人開啟了回去的道路，然而正當一切看似要有個完美的結束時，造成一切的幕後黑手現身了，沒想到<span class="global_name_span">幻影</span>為了進入印象空間，竟然利用了<span class="global_name_span">史蒂卡</span>，於是眾人為了解決禍根決定突入印象空間。</p> <div class="global_ps_text"> <p>02:40 ~ 07:15 - 走迷宮。</p> <p>10:30 ~ 49:00 - 走迷宮。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pUoGpDMxsqA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人在印象空間擊敗了<span class="global_name_span">幻影</span>，但卻被幻影利用操縱時空的力量打散到各個時代，眼見眾人無法再次聚集在一起，但身為貓的<span class="global_name_span">MONA</span>因為世界設定的關係，可以自由的穿梭時空，於是變成車子到各個時代將夥伴重新聚集在一起。</p> <p>最後眾人擊敗了<span class="global_name_span">幻影</span>，<span class="global_name_span">Joker</span>等人也回到他們的時空，然而所有人似乎都忘了這段旅程，除了藉由身上［索拉尼亞花］而想起一切的<span class="global_name_span">Joker</span>，但曾經的經歷仍然對眾人產生了些許的羈絆。</p> <div class="global_ps_text"> <p>01:26 ~ 09:35 - 走迷宮。</p> <p>21:26 ~ 35:20 - 走迷宮。</p> </div> <div class="global_ps_text"> <p>18:30 - 這段劇情設定太巧妙了，很棒的利用［MONA］是貓的特點跟［穿越時空的貓］作了一個熱血的連結。如果已經破過第一部劇情的玩家應該知道其實［阿爾德］也是一隻貓，但是不同的是［MONA］可以變成車，眾人坐在車內可以隨著他穿越時空，［阿爾德］只能自己穿越。</p> <p>40:00 - ［阿爾德］［Joker］兩個主角的帥氣合擊，把這個連動活動作了一個完美的Ending。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RGvNtdcYIc8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">Joker</span>專武，在<span class="global_name_span">史蒂卡</span>的殿堂內可以找到各村民需要的物品，回到村子後可以一個一個交給村民，之後到村子左上角的屋子，就可以拿到專武了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tewzmPOohts?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<p>自從上次與［怪盜團］一夥人離別後又過了許久，［拉克尼巴村］寄來了一封信，原來村裡要舉辦婚禮，因此需要［巴路奧其］產的特殊礦石來修復婚禮場地的一把古老庇佑之劍，再加上<span class="global_name_span">史蒂卡</span>也很想念<span class="global_name_span">阿爾德</span>一行人，於是眾人便帶著礦石前往［拉克尼巴村］。</p> <p>另一邊［怪盜團］一夥人又增加了不少夥伴，並且持續地進行原本的工作，然而這次在［印象空間］中，眾人遇到一個新娘裝扮的陰影，不過只交戰一會就消失了，陰影留下的［索拉尼亞花］勾起了<span class="global_name_span">Joker</span>的回憶，隨即一旁的時空隧道再度開啟，一股熟悉的感覺席捲眾人，<span class="global_name_span">Joker</span>當下決定穿越隧道，就像上次與<span class="global_name_span">阿爾德</span>一起冒險時一樣。</p> <p>回到<span class="global_name_span">阿爾德</span>這邊，抵達［拉克尼巴村］後，與<span class="global_name_span">史蒂卡</span>簡單話過家常，決定幫忙擔任村中新娘<span class="global_name_span">特蕾莎</span>的護衛，碰巧在村中行走時遇到了來此的［怪盜團］，雖然對於再度見面大家都感到十分開心，但在得知［怪盜團］這次的目標很可能是新娘<span class="global_name_span">特蕾莎</span>時，一股不安的氛圍在彼此間蔓延開來。</p> <p>經過一番曲折離奇的調查後，發現原來<span class="global_name_span">特蕾莎</span>喜歡的對象，是自己青梅竹馬的護衛<span class="global_name_span">朗尼</span>，但他早已病痛纏身命不久矣，一直以來都依靠著貴族<span class="global_name_span">傑爾曼</span>提供的藥維持身體狀態，而<span class="global_name_span">傑爾曼</span>本人其實也知道<span class="global_name_span">朗尼</span>是<span class="global_name_span">特蕾莎</span>的意中人，即便如此只要能讓<span class="global_name_span">特蕾莎</span>高興，他也願意愛屋及烏。</p> <p>因為有了這層恩情與現實的考量，<span class="global_name_span">朗尼</span>認為將<span class="global_name_span">特蕾莎</span>託付給<span class="global_name_span">傑爾曼</span>會是最好的選擇，但也因為這樣<span class="global_name_span">特蕾莎</span>被壓抑的本心產生了陰影，為了能讓三人真正面對自己的內心，［怪盜團］再次施展了［悔改］的技能。</p> <p>擊敗<span class="global_name_span">特蕾莎</span>扭曲的慾望後，眾人再度與［怪盜團］道別，回到現實後，<span class="global_name_span">特蕾莎</span>真實面對自己的內心，在婚禮現場拒絕了<span class="global_name_span">傑爾曼</span>，決定與<span class="global_name_span">朗尼</span>廝守終生，<span class="global_name_span">傑爾曼</span>也很有風度請大家一起獻上祝福，這才是屬於三人不完美但美好的結局。</p> <div class="global_ps_text"> <p>02:40 - 學妹帥氣登場。</p> <p>01:01:06 - 那麼浩浩蕩蕩的一群人躲在石柱附近，竟然沒被發現的場景，有著些許喜感。</p> <p>01:22:17 - 學妹帥氣合擊。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zTqlvJ_IRIs?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>與迷之魔物<span class="global_name_span">麻糬</span>的對話。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GftABCPJONI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return contentArr;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
