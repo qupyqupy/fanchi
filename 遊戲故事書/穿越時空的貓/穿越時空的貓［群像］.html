@@ -1,0 +1,344 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+</style>
+<hr />
+
+
+<p><label>選擇群像：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>主要劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>其他：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/263892655"><img alt="cover1.png" src="https://pic.pimg.tw/qupyqupy/1671596984-3952622617-g_n.png" title="cover1.png" /></a></p>');
+  activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/263892659"><img alt="cover2.jfif" src="https://pic.pimg.tw/qupyqupy/1671596982-3192698372-g_n.jpg" title="cover2.jfif" /></a></p>');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('昔日的英雄與誓約之銘文');
+  paArr.push('輪迴巨鐮與無實之紅蓮');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('沒整理');
+
+      return resultIdx;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('第1話-輪迴巨鐮與無實之紅蓮');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">第1話-輪迴巨鐮與無實之紅蓮</div> <p>因為最近靈魂收割的效率太差，迫於高層壓力<span class="global_name_span">雛菊</span>特別招集［鐮刀使用者］們，各自加重不同的靈魂收割量，姍姍來遲的<span class="global_name_span">伊露露</span>一看到自己的任務頓時嚇傻了，足足是以往的20倍之多。</p> <p><span class="global_name_span">阿爾德</span>知道後，為了幫助<span class="global_name_span">伊露露</span>度過難關，決定跟她一起去找她口中的<span class="global_name_span">小維</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5J6wQcLRHLc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>通過［煉獄之門］這個類似時空裂縫的存在，<span class="global_name_span">伊露露</span>來到現代的［瑙亞路平原］與<span class="global_name_span">阿爾德</span>會合，之後靠著敏銳的靈魂嗅覺順利找到<span class="global_name_span">小維</span>，沒想到竟然是熟人<span class="global_name_span">塞維羅</span>，之前幫<span class="global_name_span">杜拿利斯</span>的時候曾經見過他。</p> <p>但他這人挺勢利的，一聽<span class="global_name_span">伊露露</span>要請教收集大量靈魂的方法，轉頭就消失不見，但<span class="global_name_span">伊露露</span>可不是這麼容易放棄的人，憑著氣味，找到與<span class="global_name_span">塞維羅</span>締結契約的<span class="global_name_span">杜拿利斯</span>，三人討論過後，就朝［煉獄界］前進。</p> <p>不過一番折騰下，人沒找著，反而遇見急沖沖跑過來的<span class="global_name_span">雛菊</span>，她驚訝於<span class="global_name_span">杜拿利斯</span>竟拿著［煉獄鐮刀］，原來這正是<span class="global_name_span">塞維羅</span>想到收集大量靈魂的方法，與締結過契約的<span class="global_name_span">杜拿利斯</span>交替使用［煉獄鐮刀］來收集靈魂，這樣不但自己可以正常休息，收集的效率也會增加兩倍。</p> <p>在一旁得知這方法的<span class="global_name_span">伊露露</span>急著要把［煉獄鐮刀］交給<span class="global_name_span">阿爾德</span>，但其實這是很危險的事情，<span class="global_name_span">雛菊</span>決定好好解釋給眾人聽，於是打開了前往［蓮華堂］的傳送門。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ecy3ofzpQO0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>由於<span class="global_name_span">雛菊</span>說的太彎彎繞繞了，一旁同為領袖的<span class="global_name_span">木蓮</span>直接跳出來解釋。</p> <p>原來［煉獄鐮刀］才是［鐮刀使用者］的本體，原本飄忽不定的靈魂將［幻界樹］的樹枝當作憑依物，如此才得以穩定，靈魂一旦離開［煉獄鐮刀］就會慢慢消散，所以將鐮刀交給<span class="global_name_span">杜拿利斯</span>的<span class="global_name_span">塞維羅</span>，此時應該凶多吉少。</p> <p>本來大夥想立即動身去［幻界樹］將<span class="global_name_span">塞維羅</span>喚醒，但<span class="global_name_span">木蓮</span>隨後說出更震撼的消息，原來靈魂收割量的突然暴增，是上層為了製造清除［鐮刀使用者］的理由，所頒布的政策，他們老早就想淘汰這個機制，而<span class="global_name_span">木蓮</span>整理出的新機制將完全取代。</p> <p>這後果相當嚴重，除了目前所有［鐮刀使用者］都會消失，連機制創始者<span class="global_name_span">雛菊</span>、新機制創始人<span class="global_name_span">木蓮</span>也都會一起被淘汰，眼下情況危急，眾人決定先喚醒腦袋不錯的<span class="global_name_span">塞維羅</span>一起想想對策。</p> <p>但就在<span class="global_name_span">雛菊</span>施法途中，<span class="global_name_span">伊露露</span>好奇不安分地到處聞，使得儀式受到干擾，竟喚來異時層的<span class="global_name_span">塞維羅</span>，不過他也同樣聰明，而且還與<span class="global_name_span">阿爾德</span>熟識，得知前因後果的他，馬上改良了這時層<span class="global_name_span">塞維羅</span>原本的方法，利用［幻界樹］的樹枝再製造多把出借給締結契約人使用的［煉獄鐮刀］，方法可以說極為簡單，而且效率比起原本增加兩倍不止。</p> <p>雖然<span class="global_name_span">雛菊</span>提出［黃泉灶食］理論，只要生者觸碰到［煉獄界］的事物，就會馬上屬於［煉獄界］，但這只需分開隔離使用者靈魂即可，只有一小部份用來接觸［煉獄鐮刀］，其餘大部分還可以正常活在生者世界，要達成這目的需要一種特殊的花朵［吸魂華］。</p> <div class="global_ps_text"> <p>06:20 - 答應迷失的女孩，要完成她想看蓮花盛開的心願。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1-T78RmEtI0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>就在大家準備執行計畫時，<span class="global_name_span">木蓮</span>煽動其餘［鐮刀使用者］進行反抗，甚至將他們當作新機制的犧牲品，原來所謂的新機制，就是透過拼湊各種靈魂的［煉獄獸］簡單暴力進行回收工作，這種方式雖然可以讓輪迴更加迅速，但是不成熟的靈魂將因受不了輪迴的端流而消散。</p> <p>相比原本［煉獄鐮刀］的機制，會等靈魂成熟後再投入輪迴，這方法實在太過殘忍，<span class="global_name_span">雛菊</span>無法接受這樣的結果，直接喚出自己的［看門犬］進行戰鬥，但［煉獄獸］實在太強大，在場眾人皆不支倒地。</p> <p>在無盡的黑暗中，大夥直面自己靈魂真實的映射，透過夥伴的引導，<span class="global_name_span">雛菊</span>遇見了這個時層的<span class="global_name_span">塞維羅</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ECXRZe7PNrI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>最終大家成功脫離了黑暗空間，異時層的<span class="global_name_span">塞維羅</span>也將任務交還給這時層的自己，大夥立即準備對付［煉獄獸］，阻止一場靈魂浩劫。</p> <p>在［幻界樹］下，<span class="global_name_span">伊露露</span>展現了新的形態，成功削弱［煉獄獸］的戰力，而最後一擊就交給身為［穿越時空的貓］化身的<span class="global_name_span">阿爾德</span>，一切終於結束了。</p> <p><span class="global_name_span">木蓮</span>在了解<span class="global_name_span">雛菊</span>的理念想法後，也放下自己的執念，回歸輪迴。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9UeWRhBShlw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>回到［蓮華堂］，<span class="global_name_span">雛菊</span>頒布了這次事件中，由<span class="global_name_span">塞維羅</span>想到的新機制，所有［鐮刀使用者］都可以找尋與自己締結契約的人，而之前不合理的靈魂增量政策，自此宣告不算數。</p> <p><span class="global_name_span">伊露露</span>開心之餘，竟然不小心揮動鐮刀砍中<span class="global_name_span">杜拿利斯</span>..........</p> <div class="global_ps_text"> <p>02:55 - 完成女孩看蓮花盛開的心願。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ww-XmsnvIYo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('沒整理');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var pArr = [];
+  pArr.push('');
+  pArr.push('第1話-昔日的英雄與誓約之銘文');
+
+  		return pArr;
+  	}
+  	var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="ch">第1話-昔日的英雄與誓約之銘文</div> <p>這天<span class="global_name_span">阿爾德</span>因為［巴路奧其警衛隊］同伴的請求，回到了故鄉準備幫忙，與<span class="global_name_span">菲妮</span>聊著的同時，被一旁上鎖房子散發的怪異氣息吸引。</p> <p>這房子可說是<span class="global_name_span">阿爾德</span>與警衛隊同伴的童年回憶，當時<span class="global_name_span">玫</span>因為看到從裡面散發的藍光，所以堅持要進去抓幽靈，結果一眾小孩就這樣結伴進去冒險，在<span class="global_name_span">阿爾德</span>的回憶中，裡面有著廣大的空間，這由小孩組成的隊伍甚至還遇到凶狠的大怪物並且被追趕著，當村人再度發現他們時，小隊成員已經滿身是傷。</p> <p>還在回憶時，<span class="global_name_span">達爾尼思</span>、<span class="global_name_span">諾馬爾</span>兩人來到，原來最近魔物們忽然狂暴化，兩人觀察情況認為是因為魔物恐懼著某種事物才會有這異常的行為，最後猜想這源頭應該就藏在眼前的上鎖屋子裡。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jPt1KK0x_YI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了調查真相，大夥前往鐵匠屋找<span class="global_name_span">玫</span>拿鑰匙，順便也想起了小時候的冒險，這時<span class="global_name_span">玫</span>表現得很不願意前往屋子，<span class="global_name_span">阿爾德</span>以為是那段冒險中，自己弄丟了<span class="global_name_span">玫</span>親自鍛造的短劍才會讓她有了難過的回憶，但她本人卻是否認的。</p> <p>從<span class="global_name_span">玫</span>的態度看起來，似乎蠻高興<span class="global_name_span">阿爾德</span>還記得這事情，之後在眾人一番嘴遁下，終於答應前往調查屋子。</p> <p>屋子裡到處擺著來自各地的藝術品、武器，這肯定是一個屬於冒險者的家，聽<span class="global_name_span">玫</span>說著，這屋主是自己奶奶的老相識，左右看找不到啥怪異之處，大夥就地便想起了小時候遇到的那怪物，那是個奔跑時會發出金屬碰撞聲的大傢伙，這時<span class="global_name_span">玫</span>的鎚子因為某股力量的拉扯而不停的顫抖，屋子內瞬間散發出刺眼藍光，一個時空隧道出現在眾人面前。</p> <p>看來異變的原因就在隧道的另一頭，如今大家都長大，有了足夠的能力，於是毫不猶豫地跳了進去，再出來時已經來到一處陰森墓園，遠方傳來巨大物體移動的聲音，難道就是小時候遇到的怪物嗎？</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uQC5wzIBKyY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼續前進的途中，<span class="global_name_span">菲妮</span>發現了［月之碎片］，這是<span class="global_name_span">玫</span>他們小時候來到這發現的礦石，當初就是為了收集這種閃亮的石頭才持續深入的。</p> <p>看著［月之碎片］，眾人不禁想起當時<span class="global_name_span">阿爾德</span>揮舞著<span class="global_name_span">玫</span>送給自己的短劍，率領大家前進探險的模樣，緬懷之際，遠方傳來巨大的戰鬥聲響，那是一名少女與巨大鎧甲怪物的交戰，這怪物正是<span class="global_name_span">阿爾德</span>他們小時候遇到的那隻。</p> <p>眼下救人要緊，大家連忙衝了上去，但鎧甲怪物散發出妖異的光芒，各種攻擊都無法造成傷害，大夥只有帶著少女先行撤退到一處荒廢的小屋，交談下驚訝的發現，這少女竟然是<span class="global_name_span">玫</span>的奶奶<span class="global_name_span">玫姬</span>，沒想到穿越時空竟能看到奶奶年輕的樣子，據<span class="global_name_span">玫姬</span>敘述，這魔物叫做［碎槍魔鎧］，號稱任何刀刃都砍不動的鎧甲，這可侵犯到自己身為鐵匠的自尊，所以才來到這墓園挑戰它。</p> <p>雖然初次交手落個慘敗收場，但<span class="global_name_span">達爾尼思</span>想到若是以［碎槍魔鎧］的碎片製造武器，或許就能靠<span class="global_name_span">玫姬</span>的鍛造技術來取勝，接下來的任務便是收集碎片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IoeEI2S6GII?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>收集碎片過程並不容易，除了要躲開［碎槍魔鎧］的追擊外，眾人還碰上了鬧鬼事件，從這可以看出大夥並不講義氣，留下落單的<span class="global_name_span">諾馬爾</span>就直接逃跑。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8FArZFG-q5U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雖然是這樣，<span class="global_name_span">諾馬爾</span>還是將大家當作家人般的存在，回憶起童年大家一起玩樂的日子，甚至好幾次直接將<span class="global_name_span">阿爾德</span>、<span class="global_name_span">達爾尼思</span>喊成哥哥。</p> <p>而<span class="global_name_span">達爾尼思</span>從小到大也的確是群體中大哥般的存在，甚至曾經為了幫<span class="global_name_span">玫</span>找回緞帶而違反了家族［獵人的教誨］，因此跟自己的父親有過爭執。</p> <p>大夥就這樣一邊懷念童年，一邊繼續收集碎片的任務，而<span class="global_name_span">阿爾德</span>心想，既然已經回到過去，也許可以在這找到童年丟失的那柄短劍，<span class="global_name_span">玫</span>知道後，心裡感動的小鹿都要衝出來，由此可知<span class="global_name_span">玫</span>肯定心裡喜歡著眼前的渣喵。</p> <div class="global_ps_text"> <p>03:31 - 長眠在此墓園的三位騎士之名。</p> <p>08:29 - <span class="global_name_span">阿爾德</span>是色狼。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WSK94GsPobM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>此時附近突然傳來［碎槍魔鎧］的聲音，循著聲音趕過去後，大家看到了小時候的自己，如今正被魔鎧追趕著，雖然大夥心急如焚，但冷靜的<span class="global_name_span">達爾尼思</span>為了不改變歷史，決定繼續在一旁觀察。</p> <p><span class="global_name_span">小阿爾德</span>為了掩護同伴逃離，拿著手中短劍就衝上去與［碎槍魔鎧］拼鬥，但力量懸殊，短劍在一次碰撞後掉落，他只能以自己為誘餌引開魔鎧，最後成功靠著天賦［躲貓貓］逃過了魔鎧的追擊，而<span class="global_name_span">阿爾德</span>一行人正好就地回收<span class="global_name_span">小阿爾德</span>遺下的短劍。</p> <p>這時<span class="global_name_span">玫</span>想起自己小時候逃回村莊後大哭的原因，原來是因為自己鑄造的劍無法保護好<span class="global_name_span">阿爾德</span>而內疚，這也是長大後，<span class="global_name_span">玫</span>之所以一直不想靠近那上鎖屋子的主要原因。</p> <p>收集完碎片之後，<span class="global_name_span">玫</span>與奶奶<span class="global_name_span">玫姬</span>便準備開始鑄造武器，但碎片量有限，最多只能用來鍍一層表面，正好剛才回收的短劍非常適合當作武器的芯，於是<span class="global_name_span">玫</span>送給<span class="global_name_span">阿爾德</span>的這把短劍，藉由此方式重生了，這把［羈絆之劍］表層閃耀著炫麗的彩色，這可是把足以將［碎槍魔鎧］切成兩半的神兵啊。</p> <p>［碎槍魔鎧］似乎也感應到宿敵的誕生，主動前來找到眾人，一場大戰即將展開。</p> <div class="global_ps_text"> <p>08:50 - <span class="global_name_span">玫</span>被奶奶看出自己的心意。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/csWBaSAlwE4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>面對這童年的惡夢，眾人紛紛展現自己磨練的技能，<span class="global_name_span">諾馬爾</span>運使長槍成為大夥的盾、<span class="global_name_span">達爾尼思</span>使用弓箭限制住［碎槍魔鎧］的行動，<span class="global_name_span">阿爾德</span>與<span class="global_name_span">玫</span>進行主攻，［碎槍魔鎧］就在眾人協力下化為碎片。</p> <p>而［碎槍魔鎧］的核心，則被<span class="global_name_span">玫姬</span>拿回去做了一把鎚子，再數十年之後<span class="global_name_span">玫</span>則會從奶奶手中繼承這把槌子。</p> <p>為了感謝大家幫助自己完成夢想，<span class="global_name_span">玫姬</span>還特別幫<span class="global_name_span">玫</span>把手上的鎚子做了補強，這把槌子可說是經歷了奶奶、孫女的鑄造，經過穿越時空再被奶奶加強的奇蹟之鎚。</p> <p>就這樣，這場延續著童年的大冒險結束了，但這屋子的主人是誰？終究還是留下了謎團。</p> <div class="global_ps_text"> <p>這邊劇透屋子的主人就是［不老直覺冒險王］<span class="global_name_span">維克多</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wO3oNVmqTOE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return contentArr;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
