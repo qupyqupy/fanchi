@@ -120,6 +120,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('仙劍奇俠傳');
   paArr.push('軒轅劍－天之痕');
   paArr.push('國風聯動－聶小倩篇');
+  paArr.push('國風聯動－三俠五義篇');
 
 
   var contentArr = [];
@@ -127,12 +128,14 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct1(1));
   contentArr.push(getAct2(1));
   contentArr.push(getAct3(1));
+  contentArr.push(getAct4(1));
 
   var pArr = [];
   pArr.push([]);
   pArr.push(getAct1(2));
   pArr.push(getAct2(2));
   pArr.push(getAct3(2));
+  pArr.push(getAct4(2));
 
 
   var firstEnter = 0 ; 
@@ -200,13 +203,16 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
-      resultIdx.push('');
+      resultIdx.push('人物對話');
+      resultIdx.push('首領挑戰');
 
       return resultIdx;
     }
     var result = [] ;
     result.push('');
-    result.push('');
+    result.push('<div class="title_text">人物對話</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/okQegN8JgOY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Px5rUwpQNmM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('<div class="title_text">貓鼠遊戲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6HJSqou717w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">火蠍燎原</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/D6Hv8SElaz8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">決戰寶霖寺</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/39EGscuK61k?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
 
     return result;
   }
