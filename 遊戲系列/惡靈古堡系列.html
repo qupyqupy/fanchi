@@ -1,0 +1,390 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>主要劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>其他：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /> <p><a href="https://qupyqupy.pixnet.net/album/photo/262588651"><img alt="cover.jpg" src="https://pic.pimg.tw/qupyqupy/1661062525-3492720445-g_n.jpg" title="cover.jpg" /></a></p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588647"><img alt="Resident Evil 0_20210811162351.jpg" src="https://pic.pimg.tw/qupyqupy/1661062524-2933775900-g_n.jpg" title="Resident Evil 0_20210811162351.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588659"><img alt="Resident Evil 0_20210811162357.jpg" src="https://pic.pimg.tw/qupyqupy/1661062525-705379198-g_n.jpg" title="Resident Evil 0_20210811162357.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588655"><img alt="Resident Evil 0_20210811162403.jpg" src="https://pic.pimg.tw/qupyqupy/1661062525-1206737403-g_n.jpg" title="Resident Evil 0_20210811162403.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588667"><img alt="Resident Evil 0_20210811162409.jpg" src="https://pic.pimg.tw/qupyqupy/1661062526-3277640327-g_n.jpg" title="Resident Evil 0_20210811162409.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588663"><img alt="Resident Evil 0_20210811162630.jpg" src="https://pic.pimg.tw/qupyqupy/1661062525-4113670590-g_n.jpg" title="Resident Evil 0_20210811162630.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588671"><img alt="Resident Evil 0_20210811162636.jpg" src="https://pic.pimg.tw/qupyqupy/1661062527-798163953-g_n.jpg" title="Resident Evil 0_20210811162636.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588679"><img alt="Resident Evil 0_20210811162641.jpg" src="https://pic.pimg.tw/qupyqupy/1661062529-4149975641-g_n.jpg" title="Resident Evil 0_20210811162641.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588675"><img alt="Resident Evil 0_20210811162647.jpg" src="https://pic.pimg.tw/qupyqupy/1661062529-3857552915-g_n.jpg" title="Resident Evil 0_20210811162647.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588683"><img alt="Resident Evil 0_20210811162653.jpg" src="https://pic.pimg.tw/qupyqupy/1661062530-2971981954-g_n.jpg" title="Resident Evil 0_20210811162653.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588687"><img alt="Resident Evil 0_20210811162658.jpg" src="https://pic.pimg.tw/qupyqupy/1661062530-757805890-g_n.jpg" title="Resident Evil 0_20210811162658.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588691"><img alt="Resident Evil 0_20210811162704.jpg" src="https://pic.pimg.tw/qupyqupy/1661062531-2723506359-g_n.jpg" title="Resident Evil 0_20210811162704.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588695"><img alt="Resident Evil 0_20210811162710.jpg" src="https://pic.pimg.tw/qupyqupy/1661062531-626047510-g_n.jpg" title="Resident Evil 0_20210811162710.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262588699"><img alt="Resident Evil 0_20210811162716.jpg" src="https://pic.pimg.tw/qupyqupy/1661062532-80151497-g_n.jpg" title="Resident Evil 0_20210811162716.jpg" /></a></div> </div> </div> <hr /> <p>片頭動畫。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/W4xy7GfuUr0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('惡靈古堡0');
+  paArr.push('惡靈古堡2重製版');
+  paArr.push('惡靈古堡3重製版');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
+
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
+  contentArrB.push(getActB3(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
+  pArrB.push(getActB3(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+  function getActB3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('沒整理');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('CH01-發動列車(日配)');
+  pArr.push('CH02-尋找巴德(日配)');
+  pArr.push('CH03-疫苗(日配)');
+  pArr.push('CH04-決戰(日配)');
+  pArr.push('CH01-發動列車(中配)');
+  pArr.push('CH02-尋找巴德(中配)');
+  pArr.push('CH03-疫苗(中配)');
+  pArr.push('CH04-決戰(中配)');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">CH01-發動列車（日配）</div> <p>［拉昆市］如今處在極度混亂的狀況，警笛聲四起，四處都是暴動造成火光，而罪魁禍首［保護傘公司］卻仍透過媒體碩造自己光明的形象，暗地裡卻已經在實驗室做出新一代的生化兵器，代號［NEMESIS］復仇女神，並直接投放到［拉昆市］進行戰鬥實驗。</p> <p>此時經歷過上一次生化危機的<span class="global_name_span">吉兒</span>正在市內家中，似乎是有所感應、又或是前次造成的陰影太重，夢中竟然看到身染病毒即將變成喪屍的自己。</p> <p>隨著<span class="global_name_span">布萊德</span>緊急來電警告，［NEMESIS］已經前來追殺<span class="global_name_span">吉兒</span>，這怪物身形巨大、行動迅速，手掌中還會長出極具殺傷力的觸手，僥倖逃過一命的<span class="global_name_span">吉兒</span>與<span class="global_name_span">布萊德</span>會合，這才知道怪物的目的就是［S.T.A.R.S］隊員，加上目前市內到處都是遭到感染的喪屍，當務之急是找方法離開這煉獄般的地方。</p> <p>在這險惡的環境下，人真實的個性嶄露無遺。</p> <ul> <li><span class="global_name_span">布萊德</span>不慎遭到感染，決定犧牲自己留下斷後。</li> <li>一名油膩老年大叔<span class="global_name_span">達里奧</span>，為了自己活命不惜驅趕<span class="global_name_span">吉兒</span>保全藏身地。是說我假如遇到這情況，也會選擇跟<span class="global_name_span">達里奧</span>一樣找個地方躲起來，但我絕對不會像他這樣趕人。</li> </ul> <p>闖過重重危機，就在<span class="global_name_span">吉兒</span>即將搭上救援直升機的那一刻，［NEMESIS］再度來襲，直升機也因為攻擊爆炸墜落，眼下四周並沒有重武器傍身，<span class="global_name_span">吉兒</span>只能啟動一旁的汽車，藉由撞擊產生的衝擊力，暫時阻止［NEMESIS］的行動。</p> <p>這時傭兵<span class="global_name_span">卡洛斯</span>如神兵天將般，幾發火箭炮把［NEMESIS］轟倒在地，順勢救了<span class="global_name_span">吉兒</span>一命。</p> <p>來到他們位於地鐵的避難所，一番討論後得知這傭兵隊［U.B.C.S］隸屬［保護傘公司］，如今他們的目的是儘量拯救市民，並且離開這都市，不過目前小隊戰損嚴重，只能請求<span class="global_name_span">吉兒</span>幫忙啟動列車。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pACs_eialgw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雖然對［保護傘公司］沒啥好感，但雙方想離開都市的目的相同，<span class="global_name_span">吉兒</span>還是決定擔下了這個重擔，前往［變電所］的途中，遇上了另一個［U.B.C.S］的成員<span class="global_name_span">尼可拉</span>，他可是個狠人，一出場就崩掉自己"可能"遭到感染的隊員，並且嘲笑著<span class="global_name_span">吉兒</span>的軟弱。</p> <p>繼續前進來到［變電所］，這裡似乎已經成為某種生物的巢穴，牆壁上充滿了肉狀物的組織，埋伏其中的人形生物，還會以口對口的方式寄生噁心的東西到人體內，<span class="global_name_span">吉兒</span>一個女孩子自然受不了，趕緊重啟電力，離開這噁心的鬼地方。</p> <div class="global_ps_text"> <p>這噁心的怪物叫做［Drain Deimos］，原型是節肢動物。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z-VVlk0Src0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>恢復供電之後，接下來就是要搞定地鐵的交通控制系統，但之前被火箭砲轟的［NEMESIS］又陰魂不散地前來追擊，並且沿路透過寄生方式改造感染的喪屍，在這樣不利的情況下，<span class="global_name_span">吉兒</span>還是搞定了控制系統，並且回到了地鐵站。</p> <p>這時<span class="global_name_span">尼可拉</span>也回到這裡，兩人互看不對盤，一種尷尬的氣息在空氣中蔓延開來，不過［NEMESIS］的到來打破這氛圍，知道自己是這怪物的目標，為了替大夥爭取時間，<span class="global_name_span">吉兒</span>立即決定自己當誘餌引開［NEMESIS］。</p> <p>逃到下水道後，<span class="global_name_span">吉兒</span>心想雖然這裡氣味恐怖，但總算能鬆一口氣，卻沒想到這也充斥著受感染的怪物，當中尤其以［獵殺者γ］這會從水道忽然跑出來的敵人最為恐怖，不僅身形巨大，那血盆大口更似要將人一口吞了。</p> <p>千辛萬苦才剛離開下水道，［NEMESIS］又追了過來，身上還背著重型武器，這簡直逆天了，不僅身體素質比不上，現在連火力也輸這怪物，如今也只能三十六計走為上策。</p> <div class="global_ps_text"> <p>［獵殺者γ］開發代碼是［MA-124］，是［保護傘公司］開發的兩棲類生化兵器，會出現在下水道的原因，估計是城市大亂，這些生化兵器趁機逃出來的關係。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/G_jSONeJZv0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>逃跑過程中還遇上［重製版二代］的槍店老闆<span class="global_name_span">肯多</span>，兩人是舊識了，<span class="global_name_span">吉兒</span>隨即將能搭地鐵離開的消息告訴他，不過<span class="global_name_span">肯多</span>這時卻神色怪異的望向內門，隨即拒絕了好意。</p> <p>因為玩過［重製版二代］，所以我們知道<span class="global_name_span">肯多</span>是因為自己遭到感染的女兒，才決定留下來。</p> <p>離開槍店沒多久，［NEMESIS］又帶著火箭發射器殺到，還好城市街道狹窄，能利用建築物的掩護、之後又逃過巨型人偶的斷頭攻擊，<span class="global_name_span">吉兒</span>總算回到地鐵站與<span class="global_name_span">卡洛斯</span>會合。</p> <p>就在準備搭列車離開時，<span class="global_name_span">卡洛斯</span>與其夥伴<span class="global_name_span">泰瑞爾</span>接到了尋找<span class="global_name_span">巴德</span>醫生的任務，表面上是救人，實際上是他握有病毒疫苗，要拯救整個都市又或者以疫苗來證明［保護傘公司］的罪行，他都是個關鍵人物。</p> <p>於是雙方在此時分別，就在<span class="global_name_span">吉兒</span>以為可以就此脫離惡夢，［NEMESIS］又追殺到了列車上，［U.B.C.S］隊長<span class="global_name_span">米海爾</span>壯烈犧牲，而<span class="global_name_span">尼可拉</span>知道怪物的目標是<span class="global_name_span">吉兒</span>，直接將唯一出路反鎖，自己獨自逃生去。</p> <p>最終列車在爆炸的衝擊下出軌...........</p> <p>另一邊<span class="global_name_span">卡洛斯</span>兩人來到了警局尋找<span class="global_name_span">巴德</span>醫生。</p> <div class="global_ps_text"> <p><span class="global_name_span">肯多</span>跟<span class="global_name_span">貝瑞</span>是好朋友，所以<span class="global_name_span">吉兒</span>才認識他。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CKslfpOQpxI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH02-尋找巴德（日配）</div> <p>在警局門口，看到已經變成喪屍的<span class="global_name_span">布萊德</span>咬傷了一個黑人警察，這警察就是［二代重製版］中的<span class="global_name_span">馬文</span>。</p> <p><span class="global_name_span">卡洛斯</span>兩人擊斃<span class="global_name_span">布萊德</span>後，便進入警局尋找<span class="global_name_span">巴德</span>醫生，這段過程順便解釋了［二代重製版］中，警局各處細節的由來，例如：</p> <ul> <li>證物室一些已經開啟的櫃子，原來是<span class="global_name_span">卡洛斯</span>從裡面拿走東西。</li> <li>親眼看到走道上的警員喪命的那刻情景。</li> <li>淋浴室被炸開的牆壁，原來是<span class="global_name_span">卡洛斯</span>所為。</li> </ul> <p>在［S.T.A.R.S］的辦公室中，總算與<span class="global_name_span">巴德</span>取得聯繫，但沒一會兒通訊就中斷了，這時<span class="global_name_span">卡洛斯</span>接到<span class="global_name_span">吉兒</span>傳來的通訊，知道列車出軌以及隊長喪生的消息，<span class="global_name_span">卡洛斯</span>急忙前去尋找<span class="global_name_span">吉兒</span>，而原本的任務就先交給<span class="global_name_span">泰瑞爾</span>來搞定。</p> <p>這時畫面轉到數分鐘前<span class="global_name_span">吉兒</span>這邊，列車出軌後，有主角光環的她僥倖逃過一劫。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Yy7ugMDUTE8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過再度變異的［NEMESIS］卻如死神般追趕而至，以一人之力暫時擊敗［NEMESIS］的<span class="global_name_span">吉兒</span>這次則沒那麼好運，遭到了致命的攻擊而感染病毒。</p> <p>這時<span class="global_name_span">尼可拉</span>突然出現，並陰著臉看著在地上掙扎的<span class="global_name_span">吉兒</span>。</p> <p>過了大半天<span class="global_name_span">卡洛斯</span>總算找到不省人事的<span class="global_name_span">吉兒</span>，此時應該倒在附近的［NEMESIS］已經不見蹤影，為了治療<span class="global_name_span">吉兒</span>，如今似乎只能去找手握疫苗的<span class="global_name_span">巴德</span>試試了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EwW1MP45cVQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH03-疫苗（日配）</div> <p>抵達醫院後，暫時將<span class="global_name_span">吉兒</span>安頓好，<span class="global_name_span">卡洛斯</span>便開始朝深處尋找，此時醫院已經被怪物佔領，四處危機四伏，這當中以［獵殺者β］最為難纏。</p> <p>當找到<span class="global_name_span">巴德</span>時，他已經遭到人槍殺，這顯然是遭到［保護傘公司］滅口，還好最後順利找到疫苗樣本，<span class="global_name_span">吉兒</span>也因此躲過了變成喪屍的命運。</p> <p>過了一段時間，<span class="global_name_span">泰瑞爾</span>傷痕累累的趕到，並帶來了［拉昆市］即將遭到飛彈轟炸的消息，還容不得時間細想，大批喪屍開始進攻醫院，多虧<span class="global_name_span">卡洛斯</span>以一擋百解決了眼前的危機。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/f5rOh_I3gNs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH04-決戰（日配）</div> <p>當<span class="global_name_span">吉兒</span>醒來時，離［拉昆市］毀滅只剩下數小時的時間，<span class="global_name_span">泰瑞爾</span>說<span class="global_name_span">卡洛斯</span>跑到了地下室去尋找殘存的疫苗，已經過了很久都沒消息，當下自然是趕緊找到他的下落。</p> <p>結果冤家路窄，在地下室又遇到了<span class="global_name_span">尼可拉</span>，從他通訊的電子郵件中來看，<span class="global_name_span">尼可拉</span>應該是暗中替某組織收集這次生化危機的各種數據。</p> <p>這時<span class="global_name_span">泰瑞爾</span>帶來好消息，政府願意取消轟炸計畫，但前提必須是將疫苗交給他們，這下找到疫苗變成當務之急，但過程中［NEMESIS］又殺到，<span class="global_name_span">泰瑞爾</span>不幸犧牲。</p> <p>暫時逃離的<span class="global_name_span">吉兒</span>壓下心中的哀傷，開始在地下室尋找疫苗，這裡設備精良、裝置齊全，顯然是［保護傘公司］藏在醫院地下的巨大研究中心，培養皿中還能看到［暴君］、［獵殺者］等等的生化兵器，利用這裡的設備合成出疫苗後，<span class="global_name_span">吉兒</span>正準備離開此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PrftteAlZ9U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到［NEMESIS］又來了，一直身藏暗處的<span class="global_name_span">尼可拉</span>則趁機奪去疫苗，在與［NEMESIS］激戰中，一直沒消息的<span class="global_name_span">卡洛斯</span>終於出現，兩人合力終於將［NEMESIS］淹沒在酸性腐蝕液體中。</p> <p>但這生化兵器確實不簡單，竟然因此再度變異，體型變得簡直比恐龍還大，但是主角光環終究是很犯規的，剛好附近就有台威力巨大的電磁砲，也不知道［保護傘公司］在研究中心擺這武器是要幹啥？大概除了生化兵器，他們也在研究超科技兵器吧。</p> <p>有這強大武器，<span class="global_name_span">吉兒</span>決定獨自面對強敵，讓<span class="global_name_span">卡洛斯</span>去追趕逃跑的<span class="global_name_span">尼可拉</span>，最終［NEMESIS］就這樣被轟成肉泥。</p> <p>但先行一步的<span class="global_name_span">卡洛斯</span>卻被<span class="global_name_span">尼可拉</span>擊倒，經過一番纏鬥後，<span class="global_name_span">尼可拉</span>畢竟雙拳難敵四掌，只能無奈地看著兩人搭著直升機離去，自己則留下等待著與［拉昆市］一起毀滅。</p> <p>直昇機上，看著被毀損的疫苗，<span class="global_name_span">吉兒</span>下定決心，要向［保護傘公司］這邪惡的機構，發出反擊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gzlhHlWsGYQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH01-發動列車（中配）</div> <p>［拉昆市］如今處在極度混亂的狀況，警笛聲四起，四處都是暴動造成火光，而罪魁禍首［保護傘公司］卻仍透過媒體碩造自己光明的形象，暗地裡卻已經在實驗室做出新一代的生化兵器，代號［NEMESIS］復仇女神，並直接投放到［拉昆市］進行戰鬥實驗。</p> <p>此時經歷過上一次生化危機的<span class="global_name_span">吉兒</span>正在市內家中，似乎是有所感應、又或是前次造成的陰影太重，夢中竟然看到身染病毒即將變成喪屍的自己。</p> <p>隨著<span class="global_name_span">布萊德</span>緊急來電警告，［NEMESIS］已經前來追殺<span class="global_name_span">吉兒</span>，這怪物身形巨大、行動迅速，手掌中還會長出極具殺傷力的觸手，僥倖逃過一命的<span class="global_name_span">吉兒</span>與<span class="global_name_span">布萊德</span>會合，這才知道怪物的目的就是［S.T.A.R.S］隊員，加上目前市內到處都是遭到感染的喪屍，當務之急是找方法離開這煉獄般的地方。</p> <p>在這險惡的環境下，人真實的個性嶄露無遺。</p> <ul> <li><span class="global_name_span">布萊德</span>不慎遭到感染，決定犧牲自己留下斷後。</li> <li>一名油膩老年大叔<span class="global_name_span">達里奧</span>，為了自己活命不惜驅趕<span class="global_name_span">吉兒</span>保全藏身地。是說我假如遇到這情況，也會選擇跟<span class="global_name_span">達里奧</span>一樣找個地方躲起來，但我絕對不會像他這樣趕人。</li> </ul> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LP5JBtPmHOQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>闖過重重危機，就在<span class="global_name_span">吉兒</span>即將搭上救援直升機的那一刻，［NEMESIS］再度來襲，直升機也因為攻擊爆炸墜落，眼下四周並沒有重武器傍身，<span class="global_name_span">吉兒</span>只能啟動一旁的汽車，藉由撞擊產生的衝擊力，暫時阻止［NEMESIS］的行動。</p> <p>這時傭兵<span class="global_name_span">卡洛斯</span>如神兵天將般，幾發火箭炮把［NEMESIS］轟倒在地，順勢救了<span class="global_name_span">吉兒</span>一命。</p> <p>來到他們位於地鐵的避難所，一番討論後得知這傭兵隊［U.B.C.S］隸屬［保護傘公司］，如今他們的目的是儘量拯救市民，並且離開這都市，不過目前小隊戰損嚴重，只能請求<span class="global_name_span">吉兒</span>幫忙啟動列車。</p>  <p>雖然對［保護傘公司］沒啥好感，但雙方想離開都市的目的相同，<span class="global_name_span">吉兒</span>還是決定擔下了這個重擔。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3dpuzaGsV9g?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>前往［變電所］的途中，遇上了另一個［U.B.C.S］的成員<span class="global_name_span">尼可拉</span>，他可是個狠人，一出場就崩掉自己"可能"遭到感染的隊員，並且嘲笑著<span class="global_name_span">吉兒</span>的軟弱。</p> <p>繼續前進來到［變電所］，這裡似乎已經成為某種生物的巢穴，牆壁上充滿了肉狀物的組織，埋伏其中的人形生物，還會以口對口的方式寄生噁心的東西到人體內，<span class="global_name_span">吉兒</span>一個女孩子自然受不了，趕緊重啟電力，離開這噁心的鬼地方。</p> <div class="global_ps_text"> <p>這噁心的怪物叫做［Drain Deimos］，原型是節肢動物。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cu1mBJse4Ic?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>恢復供電之後，接下來就是要搞定地鐵的交通控制系統，但之前被火箭砲轟的［NEMESIS］又陰魂不散地前來追擊，並且沿路透過寄生方式改造感染的喪屍，在這樣不利的情況下，<span class="global_name_span">吉兒</span>還是搞定了控制系統，並且回到了地鐵站。</p> <p>這時<span class="global_name_span">尼可拉</span>也回到這裡，兩人互看不對盤，一種尷尬的氣息在空氣中蔓延開來，不過［NEMESIS］的到來打破這氛圍，知道自己是這怪物的目標，為了替大夥爭取時間，<span class="global_name_span">吉兒</span>立即決定自己當誘餌引開［NEMESIS］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Hs8yCNrYAjE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>逃到下水道後，<span class="global_name_span">吉兒</span>心想雖然這裡氣味恐怖，但總算能鬆一口氣，卻沒想到這也充斥著受感染的怪物，當中尤其以［獵殺者γ］這會從水道忽然跑出來的敵人最為恐怖，不僅身形巨大，那血盆大口更似要將人一口吞了。</p> <p>千辛萬苦才剛離開下水道，［NEMESIS］又追了過來，身上還背著重型武器，這簡直逆天了，不僅身體素質比不上，現在連火力也輸這怪物，如今也只能三十六計走為上策。</p> <div class="global_ps_text"> <p>［獵殺者γ］開發代碼是［MA-124］，是［保護傘公司］開發的兩棲類生化兵器，會出現在下水道的原因，估計是城市大亂，這些生化兵器趁機逃出來的關係。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0AiW3guXd18?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>逃跑過程中還遇上［重製版二代］的槍店老闆<span class="global_name_span">肯多</span>，兩人是舊識了，<span class="global_name_span">吉兒</span>隨即將能搭地鐵離開的消息告訴他，不過<span class="global_name_span">肯多</span>這時卻神色怪異的望向內門，隨即拒絕了好意。</p> <p>因為玩過［重製版二代］，所以我們知道<span class="global_name_span">肯多</span>是因為自己遭到感染的女兒，才決定留下來。</p> <p>離開槍店沒多久，［NEMESIS］又帶著火箭發射器殺到，還好城市街道狹窄，能利用建築物的掩護、之後又逃過巨型人偶的斷頭攻擊，<span class="global_name_span">吉兒</span>總算回到地鐵站與<span class="global_name_span">卡洛斯</span>會合。</p> <p>就在準備搭列車離開時，<span class="global_name_span">卡洛斯</span>與其夥伴<span class="global_name_span">泰瑞爾</span>接到了尋找<span class="global_name_span">巴德</span>醫生的任務，表面上是救人，實際上是他握有病毒疫苗，要拯救整個都市又或者以疫苗來證明［保護傘公司］的罪行，他都是個關鍵人物。</p> <p>於是雙方在此時分別，就在<span class="global_name_span">吉兒</span>以為可以就此脫離惡夢，［NEMESIS］又追殺到了列車上，［U.B.C.S］隊長<span class="global_name_span">米海爾</span>壯烈犧牲，而<span class="global_name_span">尼可拉</span>知道怪物的目標是<span class="global_name_span">吉兒</span>，直接將唯一出路反鎖，自己獨自逃生去。</p> <p>最終列車在爆炸的衝擊下出軌...........</p> <p>另一邊<span class="global_name_span">卡洛斯</span>兩人來到了警局尋找<span class="global_name_span">巴德</span>醫生。</p> <div class="global_ps_text"> <p><span class="global_name_span">肯多</span>跟<span class="global_name_span">貝瑞</span>是好朋友，所以<span class="global_name_span">吉兒</span>才認識他。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qHNlrQ0QK0s?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH02-尋找巴德（中配）</div> <p>在警局門口，看到已經變成喪屍的<span class="global_name_span">布萊德</span>咬傷了一個黑人警察，這警察就是［二代重製版］中的<span class="global_name_span">馬文</span>。</p> <p><span class="global_name_span">卡洛斯</span>兩人擊斃<span class="global_name_span">布萊德</span>後，便進入警局尋找<span class="global_name_span">巴德</span>醫生，這段過程順便解釋了［二代重製版］中，警局各處細節的由來，例如：</p> <ul> <li>證物室一些已經開啟的櫃子，原來是<span class="global_name_span">卡洛斯</span>從裡面拿走東西。</li> <li>親眼看到走道上的警員喪命的那刻情景。</li> <li>淋浴室被炸開的牆壁，原來是<span class="global_name_span">卡洛斯</span>所為。</li> </ul> <p>在［S.T.A.R.S］的辦公室中，總算與<span class="global_name_span">巴德</span>取得聯繫，但沒一會兒通訊就中斷了，這時<span class="global_name_span">卡洛斯</span>接到<span class="global_name_span">吉兒</span>傳來的通訊，知道列車出軌以及隊長喪生的消息，<span class="global_name_span">卡洛斯</span>急忙前去尋找<span class="global_name_span">吉兒</span>，而原本的任務就先交給<span class="global_name_span">泰瑞爾</span>來搞定。</p> <p>這時畫面轉到數分鐘前<span class="global_name_span">吉兒</span>這邊，列車出軌後，有主角光環的她僥倖逃過一劫。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qrIUcJpqlfc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過再度變異的［NEMESIS］卻如死神般追趕而至，以一人之力暫時擊敗［NEMESIS］的<span class="global_name_span">吉兒</span>這次則沒那麼好運，遭到了致命的攻擊而感染病毒。</p> <p>這時<span class="global_name_span">尼可拉</span>突然出現，並陰著臉看著在地上掙扎的<span class="global_name_span">吉兒</span>。</p> <p>過了大半天<span class="global_name_span">卡洛斯</span>總算找到不省人事的<span class="global_name_span">吉兒</span>，此時應該倒在附近的［NEMESIS］已經不見蹤影，為了治療<span class="global_name_span">吉兒</span>，如今似乎只能去找手握疫苗的<span class="global_name_span">巴德</span>試試了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/40unp72wWYk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH03-疫苗（中配）</div> <p>抵達醫院後，暫時將<span class="global_name_span">吉兒</span>安頓好，<span class="global_name_span">卡洛斯</span>便開始朝深處尋找，此時醫院已經被怪物佔領，四處危機四伏，這當中以［獵殺者β］最為難纏。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qHHJQ4l0m5Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>當找到<span class="global_name_span">巴德</span>時，他已經遭到人槍殺，這顯然是遭到［保護傘公司］滅口，還好最後順利找到疫苗樣本，<span class="global_name_span">吉兒</span>也因此躲過了變成喪屍的命運。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BNXTneaNH74?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>過了一段時間，<span class="global_name_span">泰瑞爾</span>傷痕累累的趕到，並帶來了［拉昆市］即將遭到飛彈轟炸的消息，還容不得時間細想，大批喪屍開始進攻醫院，多虧<span class="global_name_span">卡洛斯</span>以一擋百解決了眼前的危機。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KP_faeyxR7s?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH04-決戰（中配）</div> <p>當<span class="global_name_span">吉兒</span>醒來時，離［拉昆市］毀滅只剩下數小時的時間，<span class="global_name_span">泰瑞爾</span>說<span class="global_name_span">卡洛斯</span>跑到了地下室去尋找殘存的疫苗，已經過了很久都沒消息，當下自然是趕緊找到他的下落。</p> <p>結果冤家路窄，在地下室又遇到了<span class="global_name_span">尼可拉</span>，從他通訊的電子郵件中來看，<span class="global_name_span">尼可拉</span>應該是暗中替某組織收集這次生化危機的各種數據。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_qqNcroALXA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>這時<span class="global_name_span">泰瑞爾</span>帶來好消息，政府願意取消轟炸計畫，但前提必須是將疫苗交給他們，這下找到疫苗變成當務之急，但過程中［NEMESIS］又殺到，<span class="global_name_span">泰瑞爾</span>不幸犧牲。</p> <p>暫時逃離的<span class="global_name_span">吉兒</span>壓下心中的哀傷，開始在地下室尋找疫苗，這裡設備精良、裝置齊全，顯然是［保護傘公司］藏在醫院地下的巨大研究中心，培養皿中還能看到［暴君］、［獵殺者］等等的生化兵器，利用這裡的設備合成出疫苗後，<span class="global_name_span">吉兒</span>正準備離開此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dgP3Q7GBIVI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到［NEMESIS］又來了，一直身藏暗處的<span class="global_name_span">尼可拉</span>則趁機奪去疫苗，在與［NEMESIS］激戰中，一直沒消息的<span class="global_name_span">卡洛斯</span>終於出現，兩人合力終於將［NEMESIS］淹沒在酸性腐蝕液體中。</p> <p>但這生化兵器確實不簡單，竟然因此再度變異，體型變得簡直比恐龍還大，但是主角光環終究是很犯規的，剛好附近就有台威力巨大的電磁砲，也不知道［保護傘公司］在研究中心擺這武器是要幹啥？大概除了生化兵器，他們也在研究超科技兵器吧。</p> <p>有這強大武器，<span class="global_name_span">吉兒</span>決定獨自面對強敵，讓<span class="global_name_span">卡洛斯</span>去追趕逃跑的<span class="global_name_span">尼可拉</span>，最終［NEMESIS］就這樣被轟成肉泥。</p> <p>但先行一步的<span class="global_name_span">卡洛斯</span>卻被<span class="global_name_span">尼可拉</span>擊倒，經過一番纏鬥後，<span class="global_name_span">尼可拉</span>畢竟雙拳難敵四掌，只能無奈地看著兩人搭著直升機離去，自己則留下等待著與［拉昆市］一起毀滅。</p> <p>直昇機上，看著被毀損的疫苗，<span class="global_name_span">吉兒</span>下定決心，要向［保護傘公司］這邪惡的機構，發出反擊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/V5OAmvz60Bk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('沒整理');
+
+      return resultIdx;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('里昂表關(中配)');
+  pArr.push('克蕾兒表關(日配)');
+  pArr.push('克蕾兒裡關(中配)');
+  pArr.push('里昂裡關(日配)');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">里昂表關（中配）</div> <p>一個雨夜，卡車司機邊聽廣播邊享受著美味的漢堡，突然在車的行進路線中冒出一個人影，事發突然，司機反應不及直直地撞了上去，看著車頭不斷滴下的血水，他明白自己闖禍了，正想著該如何解決時，背後被撞的女人緩緩地站了起來。</p> <p>畫面一轉，一個警察菜鳥駕駛著他的吉普前往新的工作地點，中途想加個油卻發現加油站地上布滿了血漬，懷著忐忑不安的心情入內調查，只見一名脖子受傷的傷者與警察．還來不及交換情報，被警察壓制的男子猛地反擊，並且咬掉警察的一大塊肉，菜鳥警察無奈下只好舉槍自衛，然而眼前的男子身中數槍竟然還奮勇向前，而且腐爛的面容猶如地獄中爬回人世的殭屍般。</p> <p>這時候屋外越來越多殭屍靠近，菜鳥警察用盡全力逃出加油站，同時救助了一名少女，兩人便結伴而行。在車上兩人互相介紹了彼此，菜鳥警察名叫<span class="global_name_span">里昂</span>，這天是他來警局報到的第一天，少女名叫<span class="global_name_span">克蕾兒</span>，來此的目的是為了尋找哥哥。</p> <p>兩人開車一路到達了［拉昆市］，聽著這裡的廣播，<span class="global_name_span">里昂</span>決定前往警察局避難，但卻不幸遭到一台卡車的追撞，撞擊產生的爆炸將兩人隔開，<span class="global_name_span">里昂</span>與<span class="global_name_span">克蕾兒</span>約定在警察局集合後，便一人找尋前往警局的路。</p> <p>一路上烈火、殭屍交織出彷如地獄的景象令人心驚，<span class="global_name_span">里昂</span>壓著心中的恐懼，順利到達警局大廳後，看到電腦螢幕中出現的警員正受到殭屍的襲擊，便依著監視器顯示的位置前往營救，然而還是來晚了一步，警員被殭屍扯掉了下半身，<span class="global_name_span">里昂</span>只能無奈接過他手上的筆記本，並開始逃離殭屍的追殺。在千鈞一髮之際<span class="global_name_span">里昂</span>受到<span class="global_name_span">馬文</span>的幫助，並且開始尋找離開警局的通道。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Dg0IudJYthg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這時透過監控器發現<span class="global_name_span">克蕾兒</span>也來到警局門外，無奈兩人並沒有鑰匙可以開門，而且一台直升機撞向警局產生的爆炸引來了大量的殭屍，兩人只好再次分開。之後集齊三枚徽章的<span class="global_name_span">里昂</span>成功打開了通道，這時重傷的<span class="global_name_span">馬文</span>為了不拖累<span class="global_name_span">里昂</span>決定繼續待在警局。</p> <p>通道內，<span class="global_name_span">里昂</span>遇見了因為G病毒變異的<span class="global_name_span">威廉</span>博士，擊退<span class="global_name_span">威廉</span>後，發現似乎有人在暗地監視著這一切，繼續前進來到了警局的地下停車場，這裡充滿了受到病毒感染的警犬，牠們動作迅速且攻擊力極強，危急時刻一名自稱聯邦調查員的神祕女子出現解圍，正準備跟女子交換更多情報，她卻自顧自地離開，<span class="global_name_span">里昂</span>只好緊追上去，卻遇到一名被關押在監牢的男子。</p> <p>男子表示自己被局長關在這裡，全因為要局長怕自己揭發他所做的醜事，並且以可以離開停車場的電子卡為代價，要<span class="global_name_span">里昂</span>放了自己，這時候遠方傳來不知名的聲響，男子似乎懼怕著某種事物，歇斯底里地要<span class="global_name_span">里昂</span>趕緊放了他，但還沒說幾句話，牆壁中伸出一隻巨手將男子結果。</p> <p>這時聯邦調查員才踩著高跟鞋緩緩走來，她自稱自己叫做<span class="global_name_span">艾達</span>，看著眼前的慘況，<span class="global_name_span">艾達</span>只說被關的男子是她的線人後轉頭離去，<span class="global_name_span">里昂</span>為了取得男子身上的電子卡，便開始尋找可以打開牢房物品。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6IpE-zF7ShA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>回到警局卻發現<span class="global_name_span">馬文</span>已經變異，而且局內還有一個身著風衣的巨大怪物［暴君］到處追擊自己，趕緊收集了必要物品後，終於取得離開停車場的電子卡。</p> <p>要離開之際［暴君］突然出現，所幸<span class="global_name_span">艾達</span>及時相救，在逃離的路上，兩人遇見了一家槍械店的老闆，這人為了保護自己已經受到感染的女兒，而對兩人有著極大的敵意，看到平民百姓因為這場災難而受盡折磨，<span class="global_name_span">里昂</span>下定決心要找出真相，<span class="global_name_span">艾達</span>表示自己的任務就是瓦解［保護傘公司］，當務之急是找出造成病毒外洩的研究員<span class="global_name_span">雅妮</span>。</p> <div class="global_ps_text"> <p>28:52 - 關於地下實驗室的錄音情報。</p> <p>39:12 - 這裡的畫面很明顯是致敬美版的酷斯拉電影。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bdcMpcRvjIU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>兩人透過下水道準備前往［保護傘公司］的地下實驗室，在解決了變異的巨型鱷魚後，兩人繼續前進，卻正巧碰上<span class="global_name_span">雅妮</span>，聽到<span class="global_name_span">艾達</span>向自己索要［Ｇ病毒］，<span class="global_name_span">雅妮</span>馬上舉槍反擊，<span class="global_name_span">里昂</span>見狀趕緊撲上前去代替<span class="global_name_span">艾達</span>挨了這一槍。</p> <p>簡單安置因槍傷而昏迷的<span class="global_name_span">里昂</span>後，<span class="global_name_span">艾達</span>繼續追著<span class="global_name_span">雅妮</span>，卻不慎遭到陷阱而受了重傷，大腿被一個尖銳的金屬片插入而無法行動。另一邊甦醒的<span class="global_name_span">里昂</span>開始尋找<span class="global_name_span">艾達</span>的下落。</p> <div class="global_ps_text"> <p>27:46 - 病毒之所以擴散的真相，根據錄影帶顯示應該是老鼠散播的。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sw_qJ5QBjes?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>途中<span class="global_name_span">里昂</span>再次擊退更加進化的<span class="global_name_span">威廉</span>博士後，總算找到<span class="global_name_span">艾達</span>，為了取得［Ｇ病毒］兩人搭著纜車前往［NEST］，但這時候<span class="global_name_span">艾達</span>因為受傷行動不便，必須倚重<span class="global_name_span">里昂</span>才能完成任務。</p> <p>簡單而深情的一吻，讓<span class="global_name_span">里昂</span>無法拒絕眼前女人的要求，在［NEST］探索期間，竟然發現［暴君］也追到了此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HmWvlfmo_jI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>順利取得［Ｇ病毒］的<span class="global_name_span">里昂</span>，與<span class="global_name_span">雅妮</span>合作擊敗再次變異的<span class="global_name_span">威廉</span>博士後，發現<span class="global_name_span">艾達</span>並不是聯邦調查員，而是一個雇傭兵，之所以想要取得［Ｇ病毒］只是想要高價出售。</p> <p>與<span class="global_name_span">艾達</span>對質後，發現<span class="global_name_span">雅妮</span>所言非虛，攤牌後兩人持槍對峙，但似乎是一起冒險所產生的感情，雙方都無法扣下板機，最後只剩下一口氣的<span class="global_name_span">雅妮</span>開槍擊傷了<span class="global_name_span">艾達</span>，伴隨著［NEST］的崩壞，傷重的<span class="global_name_span">艾達</span>也掉下了深淵。</p> <p><span class="global_name_span">里昂</span>雖然感到悲痛，但［NEST］毀滅在即，他必須馬上尋找離開的方法，恰巧這時與同樣來到此地的<span class="global_name_span">克蕾兒</span>取得聯繫，得知了一條逃脫路線，途中卻遭到了［暴君］的襲擊，順利擊敗［暴君］後，<span class="global_name_span">里昂</span>搭上了啟動的列車，懷著對<span class="global_name_span">艾達</span>的思念，離開這座惡夢般的城市。</p> <div class="global_ps_text"> <p>01:30 - <span class="global_name_span">威廉</span>博士之所以會變異的經過。</p> <p>19:50 - 這時送火箭筒的人是<span class="global_name_span">艾達</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6J19EDvXCXs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">克蕾兒表關（日配）</div> <p>一個雨夜，卡車司機邊聽廣播邊享受著美味的漢堡，突然在車的行進路線中冒出一個人影，事發突然，司機反應不及直直地撞了上去，看著車頭不斷滴下的血水，他明白自己闖禍了，正想著該如何解決時，背後被撞的女人緩緩地站了起來。</p> <p>畫面一轉，少女騎著重機前往［拉昆市］尋找她哥哥，卻在一處加油聽到異樣的聲響，懷著忐忑不安的心情入內調查，只見一名脖子受傷的傷者與警察．還來不及交換情報，被警察壓制的男子猛地反擊，並且咬掉警察的一大塊肉，少女無奈下只好舉槍自衛，然而眼前的男子身中數槍竟然還奮勇向前，而且腐爛的面容猶如地獄中爬回人世的殭屍般。</p> <p>這時候屋外越來越多殭屍靠近，少女用盡全力逃出加油站，同時獲得一個菜鳥警察的幫助，兩人便結伴而行。在車上兩人互相介紹了彼此，菜鳥警察名叫<span class="global_name_span">里昂</span>，這天是他來警局報到的第一天，少女名叫<span class="global_name_span">克蕾兒</span>，來此的目的是為了尋找哥哥。</p> <p>兩人開車一路到達了［拉昆市］，聽著這裡的廣播，<span class="global_name_span">里昂</span>決定前往警察局避難，但卻不幸遭到一台卡車的追撞，撞擊產生的爆炸將兩人隔開，<span class="global_name_span">克蕾兒</span>與<span class="global_name_span">里昂</span>約定在警察局集合後，便一人找尋前往警局的路。</p> <p>一路上烈火、殭屍交織出彷如地獄的景象令人心驚，<span class="global_name_span">克蕾兒</span>壓著心中的恐懼，順利到達警局大廳後，看到電腦螢幕中出現的警員正受到殭屍的襲擊，便依著監視器顯示的位置前往營救，然而還是來晚了一步，警員被殭屍扯掉了下半身，<span class="global_name_span">克蕾兒</span>只能無奈接過他手上的筆記本，並開始逃離殭屍的追殺。在千鈞一髮之際<span class="global_name_span">克蕾兒</span>受到<span class="global_name_span">馬文</span>的幫助，得知哥哥似乎是跑到歐洲度假去了，暗自慶幸之餘開始尋找離開警局的通道。</p> <p>這時透過監控器發現<span class="global_name_span">里昂</span>也來到警局門外，無奈兩人並沒有鑰匙可以開門，而且一台直升機撞向警局產生的爆炸引來了大量的殭屍，兩人只好再次分開。之後集齊三枚徽章的<span class="global_name_span">克蕾兒</span>成功打開了通道，這時重傷的<span class="global_name_span">馬文</span>為了不拖累<span class="global_name_span">克蕾兒</span>決定繼續待在警局。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UgMVw9hhaqI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>通道內，<span class="global_name_span">克蕾兒</span>從已經變成怪物的<span class="global_name_span">威廉</span>博士手中救出了一個女孩<span class="global_name_span">雪莉</span>，並且決定帶著她去尋找媽媽，然而在停車場中兩人遇見了警局局長<span class="global_name_span">艾倫斯</span>，他拿著槍制伏了<span class="global_name_span">克蕾兒</span>並且綁走了<span class="global_name_span">雪莉</span>。</p> <p><span class="global_name_span">克蕾兒</span>為了救出<span class="global_name_span">雪莉</span>開始尋找離開停車場的辦法，回到警局蒐集道具卻發現局內出現一個身著風衣的巨大怪物［暴君］追擊自己，之後在局長辦公室，<span class="global_name_span">艾倫斯</span>透過監視器打電話給<span class="global_name_span">克蕾兒</span>，指示她拿著<span class="global_name_span">雪莉</span>遺落的吊飾前往孤兒院。</p> <p>另一方面<span class="global_name_span">雪莉</span>在<span class="global_name_span">艾倫斯</span>威脅下，開始了逃離孤兒院的行動，危急時刻<span class="global_name_span">威廉</span>博士忽然出現，並且將［G病毒］的幼蟲寄生到<span class="global_name_span">艾倫斯</span>的體內。</p> <p>畫面一轉，<span class="global_name_span">克蕾兒</span>前往孤兒院，親眼見到了<span class="global_name_span">艾倫斯</span>因為［G病毒］幼蟲破胸而死亡的情景，之後在隱藏的通道找到<span class="global_name_span">雪莉</span>，卻被隨後趕來的［暴君］追擊，就在兩人躲入電梯退無可退時，<span class="global_name_span">威廉</span>博士出現結果了［暴君］，但電梯也因為巨大的衝擊而跌落。</p> <p><span class="global_name_span">克蕾兒</span>醒來後，遇見了<span class="global_name_span">雪莉</span>的媽媽<span class="global_name_span">雅妮</span>，不過此時的她似乎並不關心<span class="global_name_span">雪莉</span>的下落，專注研究著<span class="global_name_span">威廉</span>異變後的數據，<span class="global_name_span">克蕾兒</span>只好自行尋找<span class="global_name_span">雪莉</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yiZId21K0iw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>途中<span class="global_name_span">克蕾兒</span>再次擊退更加進化的<span class="global_name_span">威廉</span>博士後，總算找到救出<span class="global_name_span">雪莉</span>，但這時候的<span class="global_name_span">雪莉</span>因為已經被［Ｇ病毒］感染而危在旦夕，現今只有在［NEST］的<span class="global_name_span">雅妮</span>可以拯救她，兩人便搭著纜車到達目的地。</p> <p><span class="global_name_span">克蕾兒</span>在［NEST］內，取得了［Ｇ病毒］的疫苗，但卻遇上了再次變異的<span class="global_name_span">威廉</span>博士，為了拯救<span class="global_name_span">雪莉</span>，<span class="global_name_span">克蕾兒</span>保護重傷的<span class="global_name_span">雅妮</span>獨自面對<span class="global_name_span">威廉</span>博士。</p> <p>擊敗<span class="global_name_span">威廉</span>博士，<span class="global_name_span">克蕾兒</span>急忙趕去探望<span class="global_name_span">雪莉</span>，這時候的<span class="global_name_span">雪莉</span>在<span class="global_name_span">雅妮</span>的幫助下，已經解除了［Ｇ病毒］的感染，但<span class="global_name_span">雅妮</span>卻因為重傷而犧牲了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lT8EaNz79-M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>此時的［NEST］已經啟動自毀程序，<span class="global_name_span">克蕾兒</span>找到了一條逃脫的道路並且與同樣來到此地的<span class="global_name_span">里昂</span>取得聯繫，在擊敗了再次變異的<span class="global_name_span">威廉</span>博士後，終於搭上列車離開這座惡夢般的城市。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hjGvbvumw48?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">克蕾兒裡關（中配）</div> <p>少女騎著重機前往［拉昆市］尋找她哥哥，卻在一處加油聽到異樣的聲響，才打開門就看到一個菜鳥警察拿著槍對付四周聚過來的殭屍，兩人合作脫離險境後。在車上兩人互相介紹了彼此，菜鳥警察名叫<span class="global_name_span">里昂</span>，這天是他來警局報到的第一天，少女名叫<span class="global_name_span">克蕾兒</span>，來此的目的是為了尋找哥哥。</p> <p>兩人開車一路到達了［拉昆市］，聽著這裡的廣播，<span class="global_name_span">里昂</span>決定前往警察局避難，但卻不幸遭到一台卡車的追撞，撞擊產生的爆炸將兩人隔開，<span class="global_name_span">克蕾兒</span>與<span class="global_name_span">里昂</span>約定在警察局集合後，便一人找尋前往警局的路。</p> <p>然而好不容易到達警局遇到<span class="global_name_span">里昂</span>，卻因為一到鐵網門無法進入警局，短暫寒暄後，一台直升機的爆炸聲引來了附近的殭屍，兩人因此被迫分開，之後<span class="global_name_span">克蕾兒</span>找到鑰匙順利進入警局，透過監視器看到一名身著風衣的巨大怪物［暴君］在警局內四處遊蕩。</p> <p>在［暴君］的威脅下，<span class="global_name_span">克蕾兒</span>順利集齊三枚徽章的打開了通道，在通道內，<span class="global_name_span">克蕾兒</span>從已經變成怪物的<span class="global_name_span">威廉</span>博士手中救出了一個女孩<span class="global_name_span">雪莉</span>，並且決定帶著她去尋找媽媽。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/91bIP1lFUwg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在停車場中兩人遇見了警局局長<span class="global_name_span">艾倫斯</span>，他拿著槍制伏了<span class="global_name_span">克蕾兒</span>並且綁走了<span class="global_name_span">雪莉</span>。</p> <p><span class="global_name_span">克蕾兒</span>為了救出<span class="global_name_span">雪莉</span>開始尋找離開停車場的辦法，之後在局長辦公室，<span class="global_name_span">艾倫斯</span>透過監視器打電話給<span class="global_name_span">克蕾兒</span>，指示她拿著<span class="global_name_span">雪莉</span>遺落的吊飾前往孤兒院。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MqVRYOkFQVo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>另一方面<span class="global_name_span">雪莉</span>在<span class="global_name_span">艾倫斯</span>威脅下，開始了逃離孤兒院的行動，危急時刻<span class="global_name_span">威廉</span>博士忽然出現，並且將［G病毒］的幼蟲寄生到<span class="global_name_span">艾倫斯</span>的體內。</p> <p>畫面一轉，<span class="global_name_span">克蕾兒</span>前往孤兒院，親眼見到了<span class="global_name_span">艾倫斯</span>因為［G病毒］幼蟲破胸而死亡的情景，之後在隱藏的通道找到<span class="global_name_span">雪莉</span>，卻被隨後趕來的［暴君］追擊，就在兩人躲入電梯退無可退時，<span class="global_name_span">威廉</span>博士出現結果了［暴君］，但電梯也因為巨大的衝擊而跌落。</p> <p><span class="global_name_span">克蕾兒</span>醒來後，遇見了<span class="global_name_span">雪莉</span>的媽媽<span class="global_name_span">雅妮</span>，不過此時的她似乎並不關心<span class="global_name_span">雪莉</span>的下落，專注研究著<span class="global_name_span">威廉</span>異變後的數據，<span class="global_name_span">克蕾兒</span>只好自行尋找<span class="global_name_span">雪莉</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tunSVfSQKVY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>途中<span class="global_name_span">克蕾兒</span>再次擊退更加進化的<span class="global_name_span">威廉</span>博士後，總算找到救出<span class="global_name_span">雪莉</span>，但這時候的<span class="global_name_span">雪莉</span>因為已經被［Ｇ病毒］感染而危在旦夕，現今只有在［NEST］的<span class="global_name_span">雅妮</span>可以拯救她，兩人便搭著纜車到達目的地。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cMFifUvGF1w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">克蕾兒</span>在［NEST］內，取得了［Ｇ病毒］的疫苗，但卻遇上了再次變異的<span class="global_name_span">威廉</span>博士，為了拯救<span class="global_name_span">雪莉</span>，<span class="global_name_span">克蕾兒</span>保護重傷的<span class="global_name_span">雅妮</span>獨自面對<span class="global_name_span">威廉</span>博士。</p> <p>擊敗<span class="global_name_span">威廉</span>博士，<span class="global_name_span">克蕾兒</span>急忙趕去探望<span class="global_name_span">雪莉</span>，這時候的<span class="global_name_span">雪莉</span>在<span class="global_name_span">雅妮</span>的幫助下，已經解除了［Ｇ病毒］的感染，但<span class="global_name_span">雅妮</span>卻因為重傷而犧牲了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fojTfrwJeQQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>此時的［NEST］已經啟動自毀程序，<span class="global_name_span">克蕾兒</span>找到了一條逃脫的道路並且與同樣來到此地的<span class="global_name_span">里昂</span>取得聯繫，在擊敗了再次變異的<span class="global_name_span">威廉</span>博士後，終於搭上列車。</p> <p>然而在車的後列車廂中，<span class="global_name_span">威廉</span>博士再度進化成一個巨大的肉泥怪物，<span class="global_name_span">克蕾兒</span>用盡全力攻擊，最後截斷了車廂甩開了這怪物，三人終於逃離了這惡夢般的都市。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KYWL157iUZU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">里昂裡關（日配）</div> <p>一個警察菜鳥駕駛著他的吉普前往新的工作地點，中途想加個油卻發現加油站地上布滿了血漬，才打開門就看到一名少女被殭屍追趕，兩人合作脫離險境後。在車上兩人互相介紹了彼此，菜鳥警察名叫<span class="global_name_span">里昂</span>，這天是他來警局報到的第一天，少女名叫<span class="global_name_span">克蕾兒</span>，來此的目的是為了尋找哥哥。</p> <p>兩人開車一路到達了［拉昆市］，聽著這裡的廣播，<span class="global_name_span">里昂</span>決定前往警察局避難，但卻不幸遭到一台卡車的追撞，撞擊產生的爆炸將兩人隔開，<span class="global_name_span">里昂</span>與<span class="global_name_span">克蕾兒</span>約定在警察局集合後，便一人找尋前往警局的路。</p> <p>然而好不容易到達警局遇到<span class="global_name_span">克蕾兒</span>，卻因為一到鐵網門無法進入警局，短暫寒暄後，一台直升機的爆炸聲引來了附近的殭屍，兩人因此被迫分開，之後<span class="global_name_span">里昂</span>找到鑰匙順利進入警局，透過監視器看到一名身著風衣的巨大怪物［暴君］在警局內四處遊蕩。</p> <p>在［暴君］的威脅下，<span class="global_name_span">里昂</span>順利集齊三枚徽章的打開了通道，在通道內<span class="global_name_span">里昂</span>遇見了因為G病毒變異的<span class="global_name_span">威廉</span>博士，擊退<span class="global_name_span">威廉</span>後，發現似乎有人在暗地監視著這一切，繼續前進來到了警局的地下停車場，這裡充滿了受到病毒感染的警犬，牠們動作迅速且攻擊力極強，危急時刻一名自稱聯邦調查員的神祕女子出現解圍，正準備跟女子交換更多情報，她卻自顧自地離開，<span class="global_name_span">里昂</span>只好緊追上去，卻遇到一名被關押在監牢的男子。</p> <p>男子表示自己被局長關在這裡，全因為要局長怕自己揭發他所做的醜事，並且以可以離開停車場的電子卡為代價，要<span class="global_name_span">里昂</span>放了自己，這時候遠方傳來不知名的聲響，男子似乎懼怕著某種事物，歇斯底里地要<span class="global_name_span">里昂</span>趕緊放了他，但還沒說幾句話，牆壁中伸出一隻巨手將男子結果。</p> <p>這時聯邦調查員才踩著高跟鞋緩緩走來，她自稱自己叫做<span class="global_name_span">艾達</span>，看著眼前的慘況，<span class="global_name_span">艾達</span>只說被關的男子是她的線人後轉頭離去，<span class="global_name_span">里昂</span>為了取得男子身上的電子卡，便開始尋找可以打開牢房物品。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/puDJniMhheE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>回到警局收集了必要物品後，終於取得離開停車場的電子卡。</p> <p>要離開之際［暴君］突然出現，所幸<span class="global_name_span">艾達</span>及時相救，在逃離的路上，兩人遇見了一家槍械店的老闆，這人為了保護自己已經受到感染的女兒，而對兩人有著極大的敵意，看到平民百姓因為這場災難而受盡折磨，<span class="global_name_span">里昂</span>下定決心要找出真相，<span class="global_name_span">艾達</span>表示自己的任務就是瓦解［保護傘公司］，當務之急是找出造成病毒外洩的研究員<span class="global_name_span">雅妮</span>。</p> <p>兩人透過下水道準備前往［保護傘公司］的地下實驗室，在解決了變異的巨型鱷魚後，兩人繼續前進，卻正巧碰上<span class="global_name_span">雅妮</span>，聽到<span class="global_name_span">艾達</span>向自己索要［Ｇ病毒］，<span class="global_name_span">雅妮</span>馬上舉槍反擊，<span class="global_name_span">里昂</span>見狀趕緊撲上前去代替<span class="global_name_span">艾達</span>挨了這一槍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yGTrlLQewk8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>簡單安置因槍傷而昏迷的<span class="global_name_span">里昂</span>後，<span class="global_name_span">艾達</span>繼續追著<span class="global_name_span">雅妮</span>，卻不慎遭到陷阱而受了重傷，大腿被一個尖銳的金屬片插入而無法行動。另一邊甦醒的<span class="global_name_span">里昂</span>開始尋找<span class="global_name_span">艾達</span>的下落。</p> <p>途中<span class="global_name_span">里昂</span>再次擊退更加進化的<span class="global_name_span">威廉</span>博士後，總算找到<span class="global_name_span">艾達</span>，為了取得［Ｇ病毒］兩人搭著纜車前往［NEST］，但這時候<span class="global_name_span">艾達</span>因為受傷行動不便，必須倚重<span class="global_name_span">里昂</span>才能完成任務。</p> <p>簡單而深情的一吻，讓<span class="global_name_span">里昂</span>無法拒絕眼前女人的要求，在［NEST］探索期間，竟然發現［暴君］也追到了此處。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kgtoOoq0Y74?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>順利取得［Ｇ病毒］的<span class="global_name_span">里昂</span>，與<span class="global_name_span">雅妮</span>合作擊敗再次變異的<span class="global_name_span">威廉</span>博士後，發現<span class="global_name_span">艾達</span>並不是聯邦調查員，而是一個雇傭兵，之所以想要取得［Ｇ病毒］只是想要高價出售。</p> <p>與<span class="global_name_span">艾達</span>對質後，發現<span class="global_name_span">雅妮</span>所言非虛，攤牌後兩人持槍對峙，但似乎是一起冒險所產生的感情，雙方都無法扣下板機，最後只剩下一口氣的<span class="global_name_span">雅妮</span>開槍擊傷了<span class="global_name_span">艾達</span>，伴隨著［NEST］的崩壞，傷重的<span class="global_name_span">艾達</span>也掉下了深淵。</p> <p><span class="global_name_span">里昂</span>雖然感到悲痛，但［NEST］毀滅在即，他必須馬上尋找離開的方法，恰巧這時與同樣來到此地的<span class="global_name_span">克蕾兒</span>取得聯繫，得知了一條逃脫路線，途中卻遭到了［暴君］的襲擊，順利擊敗［暴君］後，<span class="global_name_span">里昂</span>搭上了啟動的列車，然而在車的後列車廂中，<span class="global_name_span">威廉</span>博士再度進化成一個巨大的肉泥怪物，<span class="global_name_span">里昂</span>用盡全力攻擊，最後截斷了車廂甩開了這怪物，三人終於逃離了這惡夢般的都市。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-HG3DaQNYtI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('沒整理');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var pArr = [];
+  pArr.push('');
+  pArr.push('CH1 - 列車');
+  pArr.push('CH2 - 洋館');
+  pArr.push('CH3 - 地下設施');
+  pArr.push('CH1 - 列車(Wesker Mode)');
+  pArr.push('CH2 - 洋館(Wesker Mode)');
+  pArr.push('CH3 - 地下設施(Wesker Mode)');
+
+  		return pArr;
+  	}
+  	var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">CH1 - 列車</div> <p>這代主要是敘述整個生化危機的起源，故事開始在洋館事件發生之前，一列在森林中急駛的火車。</p> <p>伴隨著古典的旋律，站在斷崖的白衣男子招喚水蛭怪物襲擊了火車，頓時間車內哀號聲此起彼伏，良久後無一人生還。</p> <p>兩小時候............</p> <p>［拉昆市］的特別警隊［S.T.A.R.S］中的［布拉弗隊］受命調查郊區的離奇殺人案件，卻因為直升機故障而緊急迫降在這危險的山區，四處調查後發現一輛囚車，負責押送犯人的士兵早已全數身亡，兇手有極大的嫌疑是押送的犯人<span class="global_name_span">比利</span>。</p> <p>見此情況，隊長馬上下令小隊分頭搜索犯人，但情況遠比想像複雜，孤身一人調查的<span class="global_name_span">蕾貝卡</span>發現了故事開頭被襲擊的火車，車內滿是喪屍，一聞到人肉的香氣便一個接著一個撲了上來，但<span class="global_name_span">蕾貝卡</span>畢竟是特殊警隊的隊員，壓住心中的恐懼，隨即突破包圍。</p> <div class="global_ps_text"> <p>00:12 - 前言主要是敘述本代的主軸，解說整個故事的起源，這邊提到的三個場所：</p> <ul> <li>［拉昆市］- 惡靈古堡二代、三代 故事發生的地方。</li> <li>［洛克福特島］- 惡靈古堡:聖女密碼 故事發生的地方。</li> <li>［席娜島］- 惡靈古堡:生存者 故事發生的地方。</li> </ul> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TNy1FilMWlM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>正在搜索列車內部時，<span class="global_name_span">蕾貝卡</span>遇上了嫌疑犯<span class="global_name_span">比利</span>，他一身魁武、拿著手槍指著<span class="global_name_span">蕾貝卡</span>，短暫的交談後，知道眼前的人是［S.T.A.R.S］的隊員，<span class="global_name_span">比利</span>也沒有要為難的意思，直接轉身離開了。</p> <p>但眼前可是隊長命令要逮捕的人啊，<span class="global_name_span">蕾貝卡</span>想到這裡連忙追了上去，此時火車窗戶突然破裂，夥伴<span class="global_name_span">艾德華</span>拖著殘命逃入了火車，臨終前告知森林中滿布著怪物、喪屍，看來要徒步離開這裡已經是不可能的。</p> <p>還在思考下一步，此時無線電響起，夥伴<span class="global_name_span">艾利寇</span>緊急通知查到<span class="global_name_span">比利</span>手上沾有23條人命，以及曾經進過精神病院的事證，提醒<span class="global_name_span">蕾貝卡</span>必須提高警覺、小心行動。</p> <p>但再次相遇後，<span class="global_name_span">比利</span>提議兩人暫時合作離開這裡，雖然起先還老大不願意，但<span class="global_name_span">蕾貝卡</span>隨後遇上一個由水蛭凝聚而成的人型怪物，危急時刻受到了<span class="global_name_span">比利</span>幫助，這讓她對眼前的男人大大改觀，遂接受了合作的邀請。</p> <p>兩人此時也注意到，適才擊倒的水蛭怪物，正化整為零，慢慢凝聚在火車外的白衣男子身處，但不及細想，整列火車傳來震動，看來是有人在車頭控制火車行進。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RZXCeWxdUdU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>擊敗了一條突然出現的大蠍子後，兩人開始合作尋找前往車頭的道路。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vU7fL1hSb7A?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>兩人利用［勾槍］開拓了二樓的道路，在其中一個房間獲得了關鍵道具，藉此得以前往車頭，只見全副武裝的士兵自稱［Delta小隊］，並且透過無線電正在匯報火車情況。</p> <p>無線電另一頭正是日後遭到［G病毒］感染的<span class="global_name_span">威廉</span>博士，以及之後洋館事件中的幕後黑手<span class="global_name_span">威斯卡</span>，此時他們正思考著［T病毒］洩漏的原因，但無論如何，當務之急就是摧毀整輛火車，以防消息走漏。</p> <p>但此時異變突生，水蛭襲擊了［Delta小隊］，<span class="global_name_span">蕾貝卡</span>兩人為了停下急駛的火車，以手動的方式強行煞車，但火車最後還是在進入一處隧道後，徹底翻覆毀掉了，所幸兩人只受輕傷並無大礙。</p> <p>四處探查後，來到一處洋館樣的［保護傘研究中心］，大廳上掛著的人物畫像正是第一任所長<span class="global_name_span">馬可斯</span>博士，<span class="global_name_span">蕾貝卡</span>一見到畫像，頓時發現這長相與火車上遇到的水蛭怪物一模一樣。</p> <p>另一邊<span class="global_name_span">威廉</span>、<span class="global_name_span">威斯卡</span>透過監控系統，發現<span class="global_name_span">蕾貝卡</span>兩人的行蹤，正想著如何對付兩人時，神秘的白衣男子透過監控出現在<span class="global_name_span">威廉</span>等人面前，並且承認是他將［T病毒］散播出去的，之所以做這一切，都是對［保護傘］的復仇。</p> <p>10年前，<span class="global_name_span">馬可斯</span>博士遭到［保護傘］的暗殺，如今的白衣男子狀似瘋癲，先不論他是誰，兩人心裡明白，他即將帶來的重大威脅。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/N4QDnN08xy0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH2 - 洋館</div> <p>在洋館探索的<span class="global_name_span">蕾貝卡</span>兩人，發現了矗立在大廳二樓的雕像，這看來是一個機關，得先找到足以平衡雕像手中天坪的道具，才能繼續前進。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JFKXY6UPNB4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>在洋館擊敗了一隻變異的大蜈蚣後，取得了一把紅色的［培訓所鑰匙］，利用它可以探索一些原本鎖住的房間，之後利用搜尋到的［分針］解開了時鐘機關，又開啟了其他被鎖住的房間，在其中一間投影室裡，得到了解開會議室機關系統的索引。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-bowcOJ_eUw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>解開了會議室的機關，洋館內所有被騎士雕像阻擋的門，如今都可以順利通過，接著來到一處有著巨大西洋棋盤當地版的房間，照著一旁桌子上的提示，推動巨大的棋子，當位置與提示一樣時，一聲清脆的機關開啟聲傳來，兩人看到了關於［始祖病毒］的由來，同時也獲得了解開大廳天坪機關的關鍵道具。</p> <p>解開大廳的機關後，<span class="global_name_span">馬可斯</span>博士的畫像慢慢隱沒地板，從後露出的是一條嶄新的通道，這地方充滿了變異的大蜘蛛。</p> <div class="global_ps_text"> <p>05:44 - ［始祖病毒］的由來。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Xs4XauD-F1I?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼續深入探查，竟看到一堆殘酷的刑求用具，這裡似乎曾經進行著十分不人道的實驗，就在此時神秘的白衣男子放出變異的猴子襲擊了<span class="global_name_span">蕾貝卡</span>，由於事發突然，來不及防備的她不慎跌落裂開的地板，幸虧<span class="global_name_span">比利</span>及時趕到......</p> <p>就在<span class="global_name_span">蕾貝卡</span>得救之時，隊友<span class="global_name_span">艾利寇</span>透過無線電詢問搜捕<span class="global_name_span">比利</span>的情況，這女孩只是眼睛撇向一旁的救命恩人，隨後便對隊友撒了謊，看來經過幾次的生死交關，兩人已經培養出深厚的情誼。</p> <p>這時<span class="global_name_span">比利</span>也說出了自己在非洲因為不願意殺害無辜平民，而遭到部隊陷害的事實，所以實際上他只是個被冤枉的受害者，只是如今擺在他面前的只有逃亡一輩子或接受軍事審判受死，眼下爆發的生化危機，對他來說或許是唯一活命的機會。</p> <p>另一邊<span class="global_name_span">威廉</span>、<span class="global_name_span">威斯卡</span>兩人似乎查到了白衣男子的真實身分，為了維護保護傘公司，防止當年<span class="global_name_span">馬可斯</span>博士遭到［保護傘］暗殺的消息洩漏，<span class="global_name_span">威廉</span>決定引爆這研究所的自爆裝置，而<span class="global_name_span">威斯卡</span>則照著原有計畫，將［S.T.A.R.S］小隊引到附近［洋館］，來收集［T病毒］的戰鬥數據。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5118i82na7A?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>死裡逃生的<span class="global_name_span">蕾貝卡</span>兩人繼續探索著，在一處明顯是進行生化兵器戰鬥實驗的場所，找到了一把鑰匙。接著回頭來到一處充滿動物雕像的地方，依著謎題解答順序，［鹿=>狼=>馬=>豹=>蛇=>鷹］依次點燃雕像前的油燈，打開了機關鐵門，在走廊的深處找到一塊［團結石板］，這是個解開其他機關的關鍵道具。</p> <p>拿著新得到的鑰匙回到洋館，總算可以進入藍色的門內，這邊有一個透過鋼琴啟動的機關，在<span class="global_name_span">比利</span>美妙的彈奏下，取得了隱藏在牆內的電池。另外在這個區域也取得另一塊［服從石板］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vG3_MRxmcpM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著利用拿到的電池，啟動了在大門外的電梯，利用電梯上的箱子當墊腳，拿到了高處的［紀律石板］。</p> <p>集齊三塊石板後，來到一處像是巨型天文望遠鏡的地方，啟動了這裡的機關，瞬間建築物立即下沉，本來深鎖的大門隨即打開。門的另一頭是一處看似教堂的地方，但來回的翅膀扇動聲卻讓人感到十分的不適。</p> <p>果然探索一陣之後，一隻巨大的變異蝙蝠出現，牠在空中不斷飄移難以掌握位置，還好在強大火力下，最後終於擺平了牠。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DKsZ0XsmEU0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眼下四周似乎沒有其他可以前進的道路，看著教堂上方的大洞，<span class="global_name_span">蕾貝卡</span>想到也許可以利用之前在［列車］上的［勾槍］移動到上方去。</p> <p>解開了教堂後門的機關，兩人搭著電梯來到一處秘密研究設施，這裡應該已經十分接近研究設施的中心，不斷有水蛭怪物跑出來，用來解開門鎖的道具，也都是水蛭造型的雕刻。同時也發現一處不知道通往哪裡的電纜車設施，看來下一步要做的就是想辦法啟動電纜車。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BhTkMT5ALFY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到就在啟動電纜車準備離開的時候，兩人卻遭到怪物的襲擊，<span class="global_name_span">比利</span>不慎跌入設施下的暗流，<span class="global_name_span">蕾貝卡</span>只好自己搭著纜車繼續前進。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sk3RuFP-Wxw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH3 - 地下研究設施</div> <p>來到一處地下研究設施，透過這裡的監視器看到有個巨大的人形怪物正在培養皿中沉睡著，看來這裡有著生產這些生化兵器的設備。</p> <p>繼續探索遇到了同樣在此地的隊長<span class="global_name_span">恩里克</span>，這時他命令<span class="global_name_span">蕾貝卡</span>一起去調查附近的［洋館］，但目前<span class="global_name_span">比利</span>生死不明，<span class="global_name_span">蕾貝卡</span>又怎麼能輕易地離開。</p> <p><span class="global_name_span">恩里克</span>見狀並沒有強迫她，交待幾句後便離去了，這也是<span class="global_name_span">蕾貝卡</span>與他的最後一面。</p> <p>隨後<span class="global_name_span">蕾貝卡</span>擊敗突然出現的［暴君］半成品，搭著電梯來到新區域，同時發現了在激流之中昏迷的<span class="global_name_span">比利</span>，這時暗中控制一切的神秘白衣男子，決定要終結這無聊的遊戲。</p> <div class="global_ps_text"> <p><span class="global_name_span">恩里克</span>隨後在洋館事件中，因為發現了<span class="global_name_span">威斯卡</span>是［S.T.A.R.S］小隊中的叛徒，隨即遭到槍殺。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jOtjjfKz2uA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>救出<span class="global_name_span">比利</span>後，兩人發現眼前堆積成小山的人類骸骨，看起來他們都是<span class="global_name_span">馬可斯</span>博士用來研究生化武器的犧牲品.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/q0ZjCF2ztgQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>兩人繼續探索，最後得到了一張［鑰匙卡］，總算要迎來決戰了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/R4ZSDpWQwgA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在地下研究設施深處，一個充滿了水蛭的房間內，神秘的白衣男子現身，原來他的真實身分正是<span class="global_name_span">馬可斯</span>博士，十年前他遭到同是［保護傘］三大創始人之一的<span class="global_name_span">史班瑟</span>暗殺，並且遭到自己學生<span class="global_name_span">威廉</span>博士以及<span class="global_name_span">威斯卡</span>的背叛，種種怨恨在他被自己研究的水蛭女王復活後，化作了燃燒世界的火焰。</p> <p>如果不在這裡阻止他，必將有一番腥風血雨，但化作水蛭怪物的<span class="global_name_span">馬可斯</span>復原能力極強，無論造成多大的創傷總能馬上癒合，激戰之中<span class="global_name_span">蕾貝卡</span>兩人注意到其怕光的弱點，最後打開天窗擊敗了眼前的怪物。</p> <p>這時<span class="global_name_span">威廉</span>已在它處啟動了設施的自爆裝置，及時逃出的兩人互相道別後，<span class="global_name_span">蕾貝卡</span>決定前往隊長所說的［洋館］繼續調查，至於<span class="global_name_span">比利</span>....自此就再也沒出現過了........</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rc84Q2Uudzc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH1 - 列車</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wZMKY6Ii-n8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這代主要是敘述整個生化危機的起源，故事開始在洋館事件發生之前，一列在森林中急駛的火車。</p> <p>伴隨著古典的旋律，站在斷崖的白衣男子招喚水蛭怪物襲擊了火車，頓時間車內哀號聲此起彼伏，良久後無一人生還。</p> <p>兩小時候............</p> <p>［拉昆市］的特別警隊［S.T.A.R.S］中的［布拉弗隊］受命調查郊區的離奇殺人案件，卻因為直升機故障而緊急迫降在這危險的山區，四處調查後發現一輛囚車，負責押送犯人的士兵早已全數身亡，兇手有極大的嫌疑是押送的犯人<span class="global_name_span">比利</span>。</p> <p>見此情況，隊長馬上下令小隊分頭搜索犯人，但情況遠比想像複雜，孤身一人調查的<span class="global_name_span">蕾貝卡</span>發現了故事開頭被襲擊的火車，車內滿是喪屍，一聞到人肉的香氣便一個接著一個撲了上來，但<span class="global_name_span">蕾貝卡</span>畢竟是特殊警隊的隊員，壓住心中的恐懼，隨即突破包圍。</p> <div class="global_ps_text"> <p>00:12 - 前言主要是敘述本代的主軸，解說整個故事的起源，這邊提到的三個場所：</p> <ul> <li>［拉昆市］- 惡靈古堡二代、三代 故事發生的地方。</li> <li>［洛克福特島］- 惡靈古堡:聖女密碼 故事發生的地方。</li> <li>［席娜島］- 惡靈古堡:生存者 故事發生的地方。</li> </ul> </div> <p>正在搜索列車內部時，<span class="global_name_span">蕾貝卡</span>遇上了嫌疑犯<span class="global_name_span">比利</span>，他一身魁武、拿著手槍指著<span class="global_name_span">蕾貝卡</span>，短暫的交談後，知道眼前的人是［S.T.A.R.S］的隊員，<span class="global_name_span">比利</span>也沒有要為難的意思，直接轉身離開了。</p> <p>但眼前可是隊長命令要逮捕的人啊，<span class="global_name_span">蕾貝卡</span>想到這裡連忙追了上去，此時火車窗戶突然破裂，夥伴<span class="global_name_span">艾德華</span>拖著殘命逃入了火車，臨終前告知森林中滿布著怪物、喪屍，看來要徒步離開這裡已經是不可能的。</p> <p>還在思考下一步，此時無線電響起，夥伴<span class="global_name_span">艾利寇</span>緊急通知查到<span class="global_name_span">比利</span>手上沾有23條人命，以及曾經進過精神病院的事證，提醒<span class="global_name_span">蕾貝卡</span>必須提高警覺、小心行動。</p> <p>但再次相遇後，<span class="global_name_span">比利</span>提議兩人暫時合作離開這裡，雖然起先還老大不願意，但<span class="global_name_span">蕾貝卡</span>隨後遇上一個由水蛭凝聚而成的人型怪物，危急時刻受到了<span class="global_name_span">比利</span>幫助，這讓她對眼前的男人大大改觀，遂接受了合作的邀請。</p> <p>兩人此時也注意到，適才擊倒的水蛭怪物，正化整為零，慢慢凝聚在火車外的白衣男子身處，但不及細想，整列火車傳來震動，看來是有人在車頭控制火車行進。</p>  <p>擊敗了一條突然出現的大蠍子後，兩人開始合作尋找前往車頭的道路。</p>  <p>兩人利用［勾槍］開拓了二樓的道路，在其中一個房間獲得了關鍵道具，藉此得以前往車頭，只見全副武裝的士兵自稱［Delta小隊］，並且透過無線電正在匯報火車情況。</p> <p>無線電另一頭正是日後遭到［G病毒］感染的<span class="global_name_span">威廉</span>博士，以及之後洋館事件中的幕後黑手<span class="global_name_span">威斯卡</span>，此時他們正思考著［T病毒］洩漏的原因，但無論如何，當務之急就是摧毀整輛火車，以防消息走漏。</p> <p>但此時異變突生，水蛭襲擊了［Delta小隊］，<span class="global_name_span">蕾貝卡</span>兩人為了停下急駛的火車，以手動的方式強行煞車，但火車最後還是在進入一處隧道後，徹底翻覆毀掉了，所幸兩人只受輕傷並無大礙。</p> <p>四處探查後，來到一處洋館樣的［保護傘研究中心］，大廳上掛著的人物畫像正是第一任所長<span class="global_name_span">馬可斯</span>博士，<span class="global_name_span">蕾貝卡</span>一見到畫像，頓時發現這長相與火車上遇到的水蛭怪物一模一樣。</p> <p>另一邊<span class="global_name_span">威廉</span>、<span class="global_name_span">威斯卡</span>透過監控系統，發現<span class="global_name_span">蕾貝卡</span>兩人的行蹤，正想著如何對付兩人時，神秘的白衣男子透過監控出現在<span class="global_name_span">威廉</span>等人面前，並且承認是他將［T病毒］散播出去的，之所以做這一切，都是對［保護傘］的復仇。</p> <p>10年前，<span class="global_name_span">馬可斯</span>博士遭到［保護傘］的暗殺，如今的白衣男子狀似瘋癲，先不論他是誰，兩人心裡明白，他即將帶來的重大威脅。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/p6Zuyn1al6g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH2 - 洋館</div> <p>在洋館探索的<span class="global_name_span">蕾貝卡</span>兩人，發現了矗立在大廳二樓的雕像，這看來是一個機關，得先找到足以平衡雕像手中天坪的道具，才能繼續前進。</p> <p>在洋館擊敗了一隻變異的大蜈蚣後，取得了一把紅色的［培訓所鑰匙］，利用它可以探索一些原本鎖住的房間，之後利用搜尋到的［分針］解開了時鐘機關，又開啟了其他被鎖住的房間，在其中一間投影室裡，得到了解開會議室機關系統的索引。</p> <p>解開了會議室的機關，洋館內所有被騎士雕像阻擋的門，如今都可以順利通過，接著來到一處有著巨大西洋棋盤當地版的房間，照著一旁桌子上的提示，推動巨大的棋子，當位置與提示一樣時，一聲清脆的機關開啟聲傳來，兩人看到了關於［始祖病毒］的由來，同時也獲得了解開大廳天坪機關的關鍵道具。</p> <p>解開大廳的機關後，<span class="global_name_span">馬可斯</span>博士的畫像慢慢隱沒地板，從後露出的是一條嶄新的通道，這地方充滿了變異的大蜘蛛。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CjsriPthgsg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼續深入探查，竟看到一堆殘酷的刑求用具，這裡似乎曾經進行著十分不人道的實驗，就在此時神秘的白衣男子放出變異的猴子襲擊了<span class="global_name_span">蕾貝卡</span>，由於事發突然，來不及防備的她不慎跌落裂開的地板，幸虧<span class="global_name_span">比利</span>及時趕到......</p> <p>就在<span class="global_name_span">蕾貝卡</span>得救之時，隊友<span class="global_name_span">艾利寇</span>透過無線電詢問搜捕<span class="global_name_span">比利</span>的情況，這女孩只是眼睛撇向一旁的救命恩人，隨後便對隊友撒了謊，看來經過幾次的生死交關，兩人已經培養出深厚的情誼。</p> <p>這時<span class="global_name_span">比利</span>也說出了自己在非洲因為不願意殺害無辜平民，而遭到部隊陷害的事實，所以實際上他只是個被冤枉的受害者，只是如今擺在他面前的只有逃亡一輩子或接受軍事審判受死，眼下爆發的生化危機，對他來說或許是唯一活命的機會。</p> <p>另一邊<span class="global_name_span">威廉</span>、<span class="global_name_span">威斯卡</span>兩人似乎查到了白衣男子的真實身分，為了維護保護傘公司，防止當年<span class="global_name_span">馬可斯</span>博士遭到［保護傘］暗殺的消息洩漏，<span class="global_name_span">威廉</span>決定引爆這研究所的自爆裝置，而<span class="global_name_span">威斯卡</span>則照著原有計畫，將［S.T.A.R.S］小隊引到附近［洋館］，來收集［T病毒］的戰鬥數據。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-BD4mi5K9K0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>死裡逃生的<span class="global_name_span">蕾貝卡</span>兩人繼續探索著，在一處明顯是進行生化兵器戰鬥實驗的場所，找到了一把鑰匙。接著回頭來到一處充滿動物雕像的地方，依著謎題解答順序，［鹿=>狼=>馬=>豹=>蛇=>鷹］依次點燃雕像前的油燈，打開了機關鐵門，在走廊的深處找到一塊［團結石板］，這是個解開其他機關的關鍵道具。</p> <p>拿著新得到的鑰匙回到洋館，總算可以進入藍色的門內，這邊有一個透過鋼琴啟動的機關，在<span class="global_name_span">比利</span>美妙的彈奏下，取得了隱藏在牆內的電池。另外在這個區域也取得另一塊［服從石板］。</p> <p>接著利用拿到的電池，啟動了在大門外的電梯，利用電梯上的箱子當墊腳，拿到了高處的［紀律石板］。</p> <p>集齊三塊石板後，來到一處像是巨型天文望遠鏡的地方，啟動了這裡的機關，瞬間建築物立即下沉，本來深鎖的大門隨即打開。門的另一頭是一處看似教堂的地方，但來回的翅膀扇動聲卻讓人感到十分的不適。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sNQB_twsVIY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>果然探索一陣之後，一隻巨大的變異蝙蝠出現，牠在空中不斷飄移難以掌握位置，還好在強大火力下，最後終於擺平了牠。</p> <p>眼下四周似乎沒有其他可以前進的道路，看著教堂上方的大洞，<span class="global_name_span">蕾貝卡</span>想到也許可以利用之前在［列車］上的［勾槍］移動到上方去。</p> <p>解開了教堂後門的機關，兩人搭著電梯來到一處秘密研究設施，這裡應該已經十分接近研究設施的中心，不斷有水蛭怪物跑出來，用來解開門鎖的道具，也都是水蛭造型的雕刻。同時也發現一處不知道通往哪裡的電纜車設施，看來下一步要做的就是想辦法啟動電纜車。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZD7iJj21mbs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到就在啟動電纜車準備離開的時候，兩人卻遭到怪物的襲擊，<span class="global_name_span">比利</span>不慎跌入設施下的暗流，<span class="global_name_span">蕾貝卡</span>只好自己搭著纜車繼續前進。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GPkBaBCHWag?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">CH3 - 地下研究設施</div> <p>來到一處地下研究設施，透過這裡的監視器看到有個巨大的人形怪物正在培養皿中沉睡著，看來這裡有著生產這些生化兵器的設備。</p> <p>繼續探索遇到了同樣在此地的隊長<span class="global_name_span">恩里克</span>，這時他命令<span class="global_name_span">蕾貝卡</span>一起去調查附近的［洋館］，但目前<span class="global_name_span">比利</span>生死不明，<span class="global_name_span">蕾貝卡</span>又怎麼能輕易地離開。</p> <p><span class="global_name_span">恩里克</span>見狀並沒有強迫她，交待幾句後便離去了，這也是<span class="global_name_span">蕾貝卡</span>與他的最後一面。</p> <p>隨後<span class="global_name_span">蕾貝卡</span>擊敗突然出現的［暴君］半成品，搭著電梯來到新區域，同時發現了在激流之中昏迷的<span class="global_name_span">比利</span>，這時暗中控制一切的神秘白衣男子，決定要終結這無聊的遊戲。</p> <div class="global_ps_text"> <p><span class="global_name_span">恩里克</span>隨後在洋館事件中，因為發現了<span class="global_name_span">威斯卡</span>是［S.T.A.R.S］小隊中的叛徒，隨即遭到槍殺。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uuFLFMf8XOk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>救出<span class="global_name_span">比利</span>後，兩人發現眼前堆積成小山的人類骸骨，看起來他們都是<span class="global_name_span">馬可斯</span>博士用來研究生化武器的犧牲品.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hAnorRPcTqQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>兩人繼續探索，最後得到了一張［鑰匙卡］，總算要迎來決戰了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5Mlr4XGNZ1M?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在地下研究設施深處，一個充滿了水蛭的房間內，神秘的白衣男子現身，原來他的真實身分正是<span class="global_name_span">馬可斯</span>博士，十年前他遭到同是［保護傘］三大創始人之一的<span class="global_name_span">史班瑟</span>暗殺，並且遭到自己學生<span class="global_name_span">威廉</span>博士以及<span class="global_name_span">威斯卡</span>的背叛，種種怨恨在他被自己研究的水蛭女王復活後，化作了燃燒世界的火焰。</p> <p>如果不在這裡阻止他，必將有一番腥風血雨，但化作水蛭怪物的<span class="global_name_span">馬可斯</span>復原能力極強，無論造成多大的創傷總能馬上癒合，激戰之中<span class="global_name_span">蕾貝卡</span>兩人注意到其怕光的弱點，最後打開天窗擊敗了眼前的怪物。</p> <p>這時<span class="global_name_span">威廉</span>已在它處啟動了設施的自爆裝置，及時逃出的兩人互相道別後，<span class="global_name_span">蕾貝卡</span>決定前往隊長所說的［洋館］繼續調查，至於<span class="global_name_span">比利</span>....自此就再也沒出現過了........</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IoCDAHKjpCo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return contentArr;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
