@@ -470,6 +470,10 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     "瓊跟康娜": '<img alt="瓊跟康娜.png" src="https://lh3.googleusercontent.com/2TCsAn08C_-0_Xkzo980R0W1JIJNJOP4G3H9GNGbosY2G8Lz37tu86JXTIzRM_yKczbtd85_1GFby7DdUOXMA1rvKhn1I9PyDRx8csinDmephCmi7Fislh98UNFprQXqPqy4Mp9SHmuH8Pt-p_M3Kid3S0gQnHrW_j6p5l3ozLDdF-LQLU9UoVdwckKzAERVxmXDxnmo65dJfMHy0l0C1UbGLSk5LQDDuQBwBLjFXUMbk11aFmFCnzMg9dJZyhSvIzifo8btUK3QS7BAydWsCMaSlxubbhq8pYJa9hRsMfAJX1ddDiljmCLOhYNFiRzz3_VGx8VEhppCiX4BlU7TeGObEIu_mdA21JdtkbgLHrl-7voccyBsqTvC-DJeIFz0NEMvv93iBPN5zHFBB-1vax4gTCB62fFLZG9m9_5IBhuLX3WmZoitn6LxvlahRjIK4Ulc8wvLfTQkkmOCmjm2oBumtAR5UUzW1_ihhh1436LwedkGk3tquZUK-oAz8WUBwJT-8UBM5FFojQWsCJBYXEAMljUD-MxzxF-JEOSrib02Wq0WKeyLrEvOnhdhO6R8OMm1N-41NYtrXZOogW_a-T4GPCR2eF0F1pjE0z1WiDYKc0I6UQcDRZraoQ7KI9zTrWoekrhfpC14C0z_g6qycZ8gbwTXaHQw4atr7wKdm1Q0LR8xs7fjiG0OvQmjTZnF4aN5NS-cSOPuizgZdttzfdhjrMjL8AgfP0PX2jQGeDfR3tuShuq_cFGQD1Qm3W0TgzpeNBcPN-K5-NenopognOgQV4RJ7nK8dtV9uPW0zxR-YW4ZXr1K8rw-SKTM6rEWiCzdtRmqrnFNVC5risYTipxbRBbgiUY1gZZI1RFNDuiRpi_8t1_LMNB68j26zOTcjRqHNooGFhlw6dTOtKITAqw-73PTApNL46A-J0gD-t5r=s200-no?authuser=0" title="瓊跟康娜.png" />',
   }
 
+  var skillData = {
+    "埃格貝爾特": '智力 +5%，主動傷害50%機率追加1倍智力固傷',
+  }
+
   var index1 = 0;
   var index2 = 0;
 
@@ -498,7 +502,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   }
 
   function createFrame(obj, index) {
-    var result = '<div class="head_frame"><div>' + index + '</div><div>' + obj[index] +'</div></div>';
+    let skill = '鑄紋技能：' + (skillData[index] || "待輸入");
+    var result = '<div class="head_frame" onclick="alert(\'' + skill + '\')"><div>' + index + '</div><div>' + obj[index] +'</div></div>';
     return result;
   }
 
