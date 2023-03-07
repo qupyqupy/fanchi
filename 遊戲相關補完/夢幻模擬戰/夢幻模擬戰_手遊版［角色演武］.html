@@ -31,6 +31,7 @@
   left: 0.3em;
   top: 0.6em;
 }
+
 .title_text {
   text-align: center;
   margin-top: 10px;
@@ -105,30 +106,38 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   width: 50%;
 }
 </style>
+<hr />
+
+
+<p><label>角色所屬系列：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
 
 <hr />
-<p>
- <label>男角色：</label> 
-<select id="head_select_m" style="width: 30%;">
-  
+
+
+<p><label>男角色：</label> 
+<select id="head_select" style="width: 35%;">
  </select>
  <label>女角色：</label> 
- <select id="head_select_w" style="width: 30%;">
+ <select id="head_select_m" style="width: 35%;">
   
  </select>
  </p>
 
 <hr />
 <div id="ch"></div>
+
 <hr />
-<p>
- <label>男角色：</label> 
-<select id="foot_select_m" style="width: 30%;">
-  
+<p><label>男角色：</label> 
+<select id="foot_select" style="width: 35%;">
  </select>
  <label>女角色：</label> 
- <select id="foot_select_w" style="width: 30%;">
- 
+ <select id="foot_select_m" style="width: 35%;">
  </select>
  </p>
 
@@ -137,46 +146,110 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 
 <script>
-  (function(){
-    var contentArr = [] ;
-  contentArr.push('');
-  contentArr.push('<div class="title_text">馬修</div> <div class="global_ps_text"> <p>00:00 - 氣刃。</p> <p>00:13 - 破碎之刃。</p> <p>00:23 - 光之傳承。</p> <p>00:32 - 劍舞。</p> <p>00:40 - 風語。</p> <p>00:49 - 疾行。</p> <p>00:56 - 狙擊。</p> <p>01:07 - 破空墜擊。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jHwQndYf0T0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//第一部原創角
-  contentArr.push('');//第二部原創角
-  contentArr.push('<div class="title_text">維坦</div> <div class="global_ps_text"> <p>00:00 - 阿魯哈薩特之影。</p> <p>00:14 - 暗影躍遷。</p> <p>00:23 - 氣刃。</p> <p>00:36 - 雷光。</p> <p>00:46 - 魔龍的怨號。</p> <p>00:55 - 黯滅。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QUU_2hmJMuI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//第三部原創角
-  contentArr.push('<div class="title_text">波贊魯</div> <div class="global_ps_text"> <p>00:00 - 火球。</p> <p>00:17 - 暗鐮。</p> <p>00:31 - 暗之輪舞。</p> <p>00:41 - 大地震。</p> <p>00:51 - 夢魘。</p> <p>01:03 - 黑洞。</p> <p>01:14 - 凋零。</p> <p>01:27 - 召喚亡靈。</p> <p>01:35 - 混沌降臨。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AL5Od4oJZV8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//夢戰一代角色
-  contentArr.push('<div class="title_text">艾爾文</div> <div class="global_ps_text"> <p>00:00 - 光耀奔襲</p> <p>00:09 - 大喝</p> <p>00:28 - 斬陽</p> <p>00:47 - 不滅的光輝</p> <p>00:57 - 迎頭痛擊</p> <p>01:14 - 劍魂</p> <p>01:35 - 永恆的輝光</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rE09_8LyRlc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//夢戰二代角色
-  contentArr.push('');//夢戰三代角色
-  contentArr.push('');//夢戰四代角色
-  contentArr.push('');//夢戰五代角色
-  contentArr.push('');//夢戰轉生角色
-  contentArr.push('<div class="title_text">坂田銀時</div> <div class="global_ps_text"> <p>00:00 - 氣刃。</p> <p>00:11 - 糖分攝入。</p> <p>00:24 - 洞爺湖。</p> <p>00:44 - 小綿羊撞擊。</p> <p>00:55 - 守護之誓。</p> <p>01:06 - 劍魂。</p> <p>01:19 - 一閃。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WlJ2VL4HPdY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//聯動角色
-  
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
 
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('第一部原創角');
+  paArr.push('第二部原創角');
+  paArr.push('第三部原創角');
+  paArr.push('夢戰一代');
+  paArr.push('夢戰二代');
+  paArr.push('夢戰三代');
+  paArr.push('夢戰四代');
+  paArr.push('夢戰五代');
+  paArr.push('夢戰轉生');
+  paArr.push('聯動角色');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
+  contentArr.push(getAct4(1));
+  contentArr.push(getAct5(1));
+  contentArr.push(getAct6(1));
+  contentArr.push(getAct7(1));
+  contentArr.push(getAct8(1));
+  contentArr.push(getAct9(1));
+  contentArr.push(getAct10(1));
 
   var pArr = [];
-  pArr.push('');
-  pArr.push('第一部原創角');
-  pArr.push('第二部原創角');
-  pArr.push('第三部原創角');
-  pArr.push('夢戰一代角色');
-  pArr.push('夢戰二代角色');
-  pArr.push('夢戰三代角色');
-  pArr.push('夢戰四代角色');
-  pArr.push('夢戰五代角色');
-  pArr.push('夢戰轉生角色');
-  pArr.push('聯動角色');
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
+  pArr.push(getAct4(2));
+  pArr.push(getAct5(2));
+  pArr.push(getAct6(2));
+  pArr.push(getAct7(2));
+  pArr.push(getAct8(2));
+  pArr.push(getAct9(2));
+  pArr.push(getAct10(2));
+
+
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
+  contentArrB.push(getActB3(1));
+  contentArrB.push(getActB4(1));
+  contentArrB.push(getActB5(1));
+  contentArrB.push(getActB6(1));
+  contentArrB.push(getActB7(1));
+  contentArrB.push(getActB8(1));
+  contentArrB.push(getActB9(1));
+  contentArrB.push(getActB10(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
+  pArrB.push(getActB3(2));
+  pArrB.push(getActB4(2));
+  pArrB.push(getActB5(2));
+  pArrB.push(getActB6(2));
+  pArrB.push(getActB7(2));
+  pArrB.push(getActB8(2));
+  pArrB.push(getActB9(2));
+  pArrB.push(getActB10(2));
+
 
   var firstEnter = 0 ; 
-  var nowPage = 1;
+  var nowAct = 1;
   var maxCount = contentArr.length - 1;
-  var headSelect = document.getElementById("head_select_m");
-  var footSelect = document.getElementById("foot_select_m");
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
 
 
-  for (var i = 1; i < pArr.length; i++) {
-    headSelect.add(new Option(pArr[i], i));
-    footSelect.add(new Option(pArr[i], i));
-  }
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+    nowAct = activitySelect.value;
+    initAct(nowAct);
+  } 
   
 
   headSelect.onchange = function () {
@@ -186,102 +259,449 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   footSelect.onchange = function () {
     initPage(footSelect.value);
   } 
-  
-  
-  function initPage(value) {
-    nowPage = value;
-    document.getElementById("ch").innerHTML = contentArr[value];
 
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
     
     if (firstEnter == 0) {
       firstEnter = 1 ; 
     }
     else {
-      headSelect.value = value ;
-      footSelect.value = value ;    
-      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+        scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
     }
   }
-  
-  initPage(1);
 
-  })();
+  function initAct(idx) {
+    document.getElementById("ch_head").innerHTML = activityArr[idx];
 
-  (function(){
+    headSelect.innerHTML = '';
+    footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+    for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false, true);
+  }
+
+  initAct(1);
+
+
+  //聯動
+
+  function getActB10(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('雅兒貝德');
+      pArr.push('蕾恩');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('<div class="title_text">雅兒貝德</div> <div class="global_ps_text"> <p>00:00 - 漆黑之慾。</p> <p>00:09 - 盾擊。</p> <p>00:18 - 耶利哥之牆。</p> <p>00:26 - 神鎧．赫爾梅斯。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OlcK7z5kIvo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('<div class="title_text">蕾恩</div> <div class="global_ps_text"> <p>00:00 - 帕蒂爾．瑪蒂爾。</p> <p>00:14 - 暗影之矛。</p> <p>00:25 - 冰凍。</p> <p>00:35 - 災難一擲。</p> <p>00:43 - 凋零。</p> <p>00:52 - 火球。</p> <p>01:04 - 暗物質。</p> <p>01:17 - 風刃。</p> <p>01:30 - 蕾恩．殲滅。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/34GZThQrSdU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct10(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('坂田銀時');
+
+      return pArr;
+    }
     var contentArr = [] ;
   contentArr.push('');
-  contentArr.push('');//第一部原創角
-  contentArr.push('');//第二部原創角
-  contentArr.push('');//第三部原創角
-  contentArr.push('');//夢戰一代角色
-  contentArr.push('');//夢戰二代角色
-  contentArr.push('');//夢戰三代角色
-  contentArr.push('');//夢戰四代角色
-  contentArr.push('');//夢戰五代角色
-  contentArr.push('<div class="title_text">盧克蕾蒂婭</div> <div class="global_ps_text"> <p>00:00 - 不淨衝擊</p> <p>00:22 - 冰凍</p> <p>00:38 - 暗鐮</p> <p>00:51 - 精神污染</p> <p>01:04 - 混沌飛彈</p> <p>01:14 - 黑洞</p> <p>01:27 - 強化</p> <p>01:34 - 天罰</p> <p>01:46 - 淨化</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pJSsM6fi69Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">降生之光</div> <div class="global_ps_text"> <p>00:00 - 聖光。</p> <p>00:08 - 聖光之擁。</p> <p>00:18 - 傳送。</p> <p>00:24 - 火球。</p> <p>00:31 - 冰凍。</p> <p>00:40 - 聖耀。</p> <p>00:49 - 聖龍的吹息。</p> <p>00:57 - 強化。</p> <p>01:04 - 隕石。</p> <p>01:10 - 雷擊。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/92l4dwsMq0c?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//夢戰轉生角色
-  contentArr.push('<div class="title_text">雅兒貝德</div> <div class="global_ps_text"> <p>00:00 - 漆黑之慾。</p> <p>00:09 - 盾擊。</p> <p>00:18 - 耶利哥之牆。</p> <p>00:26 - 神鎧．赫爾梅斯。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OlcK7z5kIvo?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">蕾恩</div> <div class="global_ps_text"> <p>00:00 - 帕蒂爾．瑪蒂爾。</p> <p>00:14 - 暗影之矛。</p> <p>00:25 - 冰凍。</p> <p>00:35 - 災難一擲。</p> <p>00:43 - 凋零。</p> <p>00:52 - 火球。</p> <p>01:04 - 暗物質。</p> <p>01:17 - 風刃。</p> <p>01:30 - 蕾恩．殲滅。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/34GZThQrSdU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//聯動角色
-
-
-  var pArr = [];
-  pArr.push('');
-  pArr.push('第一部原創角');
-  pArr.push('第二部原創角');
-  pArr.push('第三部原創角');
-  pArr.push('夢戰一代角色');
-  pArr.push('夢戰二代角色');
-  pArr.push('夢戰三代角色');
-  pArr.push('夢戰四代角色');
-  pArr.push('夢戰五代角色');
-  pArr.push('夢戰轉生角色');
-  pArr.push('聯動角色');
-
-
-  var firstEnter = 0 ; 
-  var nowPage = 1;
-  var maxCount = contentArr.length - 1;
-  var headSelect = document.getElementById("head_select_w");
-  var footSelect = document.getElementById("foot_select_w");
-
-  for (var i = 1; i < pArr.length; i++) {
-    headSelect.add(new Option(pArr[i], i));
-    footSelect.add(new Option(pArr[i], i));
-  }
-  
-
-  headSelect.onchange = function () {
-    initPage(headSelect.value);
-  } 
-  
-  footSelect.onchange = function () {
-    initPage(footSelect.value);
-  } 
-  
-  
-  function initPage(value) {
-    nowPage = value;
-    document.getElementById("ch").innerHTML = contentArr[value];
-
+  contentArr.push('<div class="title_text">坂田銀時</div> <div class="global_ps_text"> <p>00:00 - 氣刃。</p> <p>00:11 - 糖分攝入。</p> <p>00:24 - 洞爺湖。</p> <p>00:44 - 小綿羊撞擊。</p> <p>00:55 - 守護之誓。</p> <p>01:06 - 劍魂。</p> <p>01:19 - 一閃。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WlJ2VL4HPdY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
     
-    if (firstEnter == 0) {
-      firstEnter = 1 ; 
-    }
-    else {
-      headSelect.value = value ;
-      footSelect.value = value ;    
-      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
-    }
-  }
-  
-  initPage(1);
 
-  })();
+
+    return contentArr;
+  }
+
+  //夢戰轉生
+
+  function getActB9(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('盧克蕾蒂婭');
+      pArr.push('降生之光');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('<div class="title_text">盧克蕾蒂婭</div> <div class="global_ps_text"> <p>00:00 - 不淨衝擊</p> <p>00:22 - 冰凍</p> <p>00:38 - 暗鐮</p> <p>00:51 - 精神污染</p> <p>01:04 - 混沌飛彈</p> <p>01:14 - 黑洞</p> <p>01:27 - 強化</p> <p>01:34 - 天罰</p> <p>01:46 - 淨化</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pJSsM6fi69Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('<div class="title_text">降生之光</div> <div class="global_ps_text"> <p>00:00 - 聖光。</p> <p>00:08 - 聖光之擁。</p> <p>00:18 - 傳送。</p> <p>00:24 - 火球。</p> <p>00:31 - 冰凍。</p> <p>00:40 - 聖耀。</p> <p>00:49 - 聖龍的吹息。</p> <p>00:57 - 強化。</p> <p>01:04 - 隕石。</p> <p>01:10 - 雷擊。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/92l4dwsMq0c?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct9(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰五代
+
+  function getActB8(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct8(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+   pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰四代
+
+  function getActB7(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct7(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰三代
+
+  function getActB6(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct6(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰二代
+
+  function getActB5(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct5(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('艾爾文');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">艾爾文</div> <div class="global_ps_text"> <p>00:00 - 光耀奔襲</p> <p>00:09 - 大喝</p> <p>00:28 - 斬陽</p> <p>00:47 - 不滅的光輝</p> <p>00:57 - 迎頭痛擊</p> <p>01:14 - 劍魂</p> <p>01:35 - 永恆的輝光</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rE09_8LyRlc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰一代
+
+
+  function getActB4(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct4(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('波贊魯');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">波贊魯</div> <div class="global_ps_text"> <p>00:00 - 火球。</p> <p>00:17 - 暗鐮。</p> <p>00:31 - 暗之輪舞。</p> <p>00:41 - 大地震。</p> <p>00:51 - 夢魘。</p> <p>01:03 - 黑洞。</p> <p>01:14 - 凋零。</p> <p>01:27 - 召喚亡靈。</p> <p>01:35 - 混沌降臨。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AL5Od4oJZV8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+  //原創三代
+
+
+  function getActB3(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+     contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('維坦');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+    contentArr.push('<div class="title_text">維坦</div> <div class="global_ps_text"> <p>00:00 - 阿魯哈薩特之影。</p> <p>00:14 - 暗影躍遷。</p> <p>00:23 - 氣刃。</p> <p>00:36 - 雷光。</p> <p>00:46 - 魔龍的怨號。</p> <p>00:55 - 黯滅。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QUU_2hmJMuI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+    return contentArr;
+  }
+
+  //原創二代
+
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //原創一代
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('馬修');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">馬修</div> <div class="global_ps_text"> <p>00:00 - 氣刃。</p> <p>00:13 - 破碎之刃。</p> <p>00:23 - 光之傳承。</p> <p>00:32 - 劍舞。</p> <p>00:40 - 風語。</p> <p>00:49 - 疾行。</p> <p>00:56 - 狙擊。</p> <p>01:07 - 破空墜擊。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jHwQndYf0T0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   
+
+    return contentArr;
+  }
+
+  
+  })();
+
 </script>
 <p>&nbsp;</p>
-
-
-
-
 
 
 
