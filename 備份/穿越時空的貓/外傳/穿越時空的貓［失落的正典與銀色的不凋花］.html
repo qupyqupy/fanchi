@@ -1,0 +1,195 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+
+<hr />
+
+<p><span class="global_name_span">蘇菲婭</span>一隻眼睛長出花的造型，讓我直接聯想到［誓血龍騎士三］的女主角<span class="global_name_span">零</span>。</p> 
+
+<hr />
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 40%;">
+  <option value="1">第一話-不眠城市的拍賣會</option>
+  <option value="2">第二話-寶物探索者</option>
+  <option value="3">第三話-當雙眸之花看清一切</option>
+  <option value="4">支線任務-裝備</option>
+  <option value="5">支線任務-藝術品</option>
+  <option value="6">支線任務-生物</option>
+  <option value="7">支線任務-美食</option>
+ </select>
+ </p>
+
+<hr />
+
+
+<div id="ch"></div>
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 40%;">
+  <option value="1">第一話-不眠城市的拍賣會</option>
+  <option value="2">第二話-寶物探索者</option>
+  <option value="3">第三話-當雙眸之花看清一切</option>
+  <option value="4">支線任務-裝備</option>
+  <option value="5">支線任務-藝術品</option>
+  <option value="6">支線任務-生物</option>
+  <option value="7">支線任務-美食</option>
+ </select>
+ </p>
+
+<p><button class="foot_btn" id="prev">上一頁</button><button class="foot_btn" id="next">下一頁</button></p>
+
+
+<hr />
+
+<script>
+  var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">第一話-不眠城市的拍賣會</div> <p>很久以前，一名眼睛長著藍色花朵的少女，被身披斗篷的男子封印在了一本書中，在伸手不見五指的漆黑環境裡，喪失了感知時間流動的能力，然而漫長的歲月後，終於有人解開了封印，少女為了奪回屬於自己的故事，再度回到世間。</p> <p>畫面一轉，身在［艾路茲恩］的<span class="global_name_span">阿爾德</span>被一位蒙面的男子盯上，原來是因為<span class="global_name_span">阿爾德</span>全身中世紀的打扮吸引到他，男子名叫<span class="global_name_span">茲諾</span>，簡單與<span class="global_name_span">阿爾德</span>話完家常後便匆匆離去，從他口中得知［艾路茲恩］有個［伊奧達區域］聚集了世界各地的寶物獵人，並且在那進行著寶物交易。</p> <p>由於撿到了<span class="global_name_span">茲諾</span>遺失的探索者執照，<span class="global_name_span">阿爾德</span>順利通過檢查進入了［伊奧達區域］，眼前這座不眠都市散發出極度奢華、金迷的氣息，一路探索到拍賣會場，總算找到<span class="global_name_span">茲諾</span>交還了探索者執照，在他的熱情幫助下，<span class="global_name_span">阿爾德</span>逐漸了解拍賣會的運作模式，並且取得了執照成為一個新進探索者。</p> <p>在拍賣會場，<span class="global_name_span">阿爾德</span>結識了神祕少女<span class="global_name_span">蘇菲婭</span>，她的目標是標下只有黃金探索者階級能參與的［光輝之民正典 第十八篇］拍賣，<span class="global_name_span">阿爾德</span>建議尋求<span class="global_name_span">茲諾</span>的協助，透過正當的管道來取得。</p> <p>接著兩人為了提高探索者階級，開始在各時代收集寶物，隨著對工作的逐漸上手，終於提升為［黑鐵］階級，正想著要獲取更多寶物情報，一名華衣裹身的女孩飛撲過來，與<span class="global_name_span">蘇菲婭</span>抱在一起，原來是<span class="global_name_span">申西雅</span>，看樣子似乎與<span class="global_name_span">蘇菲婭</span>相當要好。</p> <p>得知<span class="global_name_span">蘇菲婭</span>想要取得［正典］，<span class="global_name_span">申西雅</span>立馬表示可以提供幫助。</p> <div class="global_ps_text"> <p>探索者是有等級之分的，由下而上依次是［石頭］、［黑鐵］、［青銅］、［白銀］、［黃金］、［黑鑽］。</p> <p>［光輝之民正典］是從雷心王時代就流傳下來的，傳說中［第十八篇］隱藏著強大的魔力，甚至可以將書寫在內的事情化為現實。</p> </div> <div class="global_ps_text"> <p>15:13 ~ 22:05- 支線［追尋遺失的寶石....］。</p> <p>41:26 ~ 45:00- 支線［月色琥珀］。</p> <p>46:56 ~ 53:55- 支線［曲貓樹枝］。</p> <p>55:03 ~ 01:01:08- 支線［融化金屬］。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OAZdUpD_JWU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第二話-寶物探索者</div> <p>接著<span class="global_name_span">申西雅</span>介紹擅長藝術品鑑定的<span class="global_name_span">蘇珊娜</span>，從她這獲取了不少寶物的情報。</p> <p>在搜尋寶物的過程中，我們知道了［正典］蘊含的力量足以毀滅一個國家，<span class="global_name_span">申西雅</span>也曾經被封印在書中，要不是有<span class="global_name_span">蘇菲婭</span>的幫助，恐怕現在還活在那無盡的黑暗世界，如今被放上拍賣會的［正典］，很有可能被知道其價值的壞人利用，因此<span class="global_name_span">蘇菲婭</span>才會對奪回這本書有著如此重的執念。</p> <p>之後為了獲取更多的寶物信息，<span class="global_name_span">阿爾德</span>等人陸續結識了精通美食的阿姨<span class="global_name_span">莫莉</span>、生物狂熱者<span class="global_name_span">無津呂</span>，也因為收集的寶物越來越多，逐漸在這行闖出了些許名號，成功晉級成［青銅］探索者。</p> <p>但隨著階級的提升，要繼續往上爬就越發的困難，這時在這不眠都市打滾許久的<span class="global_name_span">哈迪</span>建議用［組合販賣］的方式提高賺取點數的速度，果然透過這種方式，累積的速度快了高出兩倍有餘，但這也引來了掌管拍賣會的地下組織注意，一名叫做<span class="global_name_span">哥德</span>的紅髮男子，更透過一連串的安排阻止<span class="global_name_span">阿爾德</span>等人的發展。</p> <p>不過與<span class="global_name_span">哥德</span>同樣隸屬組織的<span class="global_name_span">哈迪</span>卻沒想改變立場，並且建議<span class="global_name_span">阿爾德</span>持續提升探索者階級，以實力打破目前的困境，終於透過不斷的努力，眾人達到了［白銀］階級，寶物的拍賣也順利的進行。</p> <p>這天為了慶祝一次成功的拍賣，眾人本打算去吃一頓好的，順便去<span class="global_name_span">無津呂</span>那邊看看有沒有甚麼好的寶物消息，但途中<span class="global_name_span">蘇菲婭</span>看到<span class="global_name_span">哥德</span>鬼鬼祟祟的與一個身著斗篷的神祕男子討論著甚麼，於是便跟了上去。</p> <p>原來這些身著斗篷的人自稱［光輝之民的末裔］，他們的目標同樣是［正典］，所以買通<span class="global_name_span">哥德</span>要阻止<span class="global_name_span">阿爾德</span>等人，<span class="global_name_span">蘇菲婭</span>似乎是知道［光輝之民的末裔］這夥人的存在，為了阻止他們利用［正典］的力量作惡，所以更加堅定自己要得到［正典］的決心。</p> <div class="global_ps_text"> <p>04:30 ~ 14:00 - 支線［帶著古老之聲的角笛］。</p> <p>18:39 ~ 29:50 - 支線［美食和劣食只差一線？］。</p> <p>30:10 ~ 38:15 - 支線［走在獸道的人們］。</p> <p>44:47 ~ 49:20 - 支線［組合商品之一的畫框］。</p> <p>49:34 ~ 57:43 - 支線［組合商品之一的風景畫］。</p> <p>01:00:55 ~ 01:10:00 - 支線［第3代精製的名刀］。</p> <p>01:10:29 ~ 01:14:53 - 支線［第3代精製的鎧甲］。</p> <p>01:25:22 ~ 01:36:35 - 支線［彷如夢幻般的頭盔］，講述著一個頭盔莫名其妙被當成鍋子的故事。</p> <p>01:46:24 ~ 01:57:40 - 支線［蘇醒吧 太古的氣息啊］。</p> </div> <div class="global_ps_text"> <p>01:54:38 <span class="global_name_span">蘇菲婭</span>想要得到［正典］的真相 - 長在<span class="global_name_span">蘇菲婭</span>眼上的大樹之花，因為蘊含著太古的元素結晶，因此她得到了不死的能力，為了擺脫這永恆的詛咒，只能以花的魔力為墨水寫下故事，而那寫下<span class="global_name_span">蘇菲婭</span>故事的書就是如今的［正典］，很久以前［光輝之民］覬覦書的魔力，封印了<span class="global_name_span">蘇菲婭</span>，如今繼承［光輝之民］力量的人又再度出現。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/B6zXMWiIIKs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>但就當大夥費盡千辛萬苦，成為了［黃金］階級，拍賣會的主辦方卻宣布只允許傳說中的［黑鑽］階級能參加競拍［正典］，而且最低參與的價格為 ５００００００ ROC......，似乎這一切代表了［光輝之民的末裔］又開始他們新的行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eCSuZunyKX4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第三話-當雙眸之花看清一切</div> <p>之所以參加［正典］拍賣會門檻會突然提高，原來是<span class="global_name_span">哥德</span>幕後搞的鬼，而他正是要利用［光輝之民］與<span class="global_name_span">阿爾德</span>一行人之間的競爭，藉由拍賣［正典］獲得的資金來實現自己將［古老的天花板］打破一個洞的願望，不過這到底是指甚麼？目前還不清楚。</p> <p>另一邊為了提升到［黑鑽］等級，<span class="global_name_span">阿爾德</span>找到了傳說中的仲介<span class="global_name_span">茲瑪</span>，滿足他想喝優質力水的願望後，<span class="global_name_span">茲瑪</span>看著眼前小夥子越發順眼，於是大方簽訂了契約，接著大夥透過拍賣出500萬ROC的傳說中寶物［喵亞比斯神像］，獲得了［黑鑽］階級。</p> <p>在［正典］拍賣會場，各方人馬齊聚，就算是拍賣神像的500萬加上<span class="global_name_span">哈迪</span>贈送的200萬，還是不敵一名老人資產家，隨手一揮就把拍賣價推到999萬，就當大家因為資金見底而絕望之際，<span class="global_name_span">申西雅</span>忽然舉手把價格喊上1000萬，原來這多出來的300萬是<span class="global_name_span">申西雅</span>為了以防萬一先拍賣手上王國遺物所換來的，本來老人資產家還想出價，但看到<span class="global_name_span">申西雅</span>身上那股尊貴的王族氣息，決定就此相讓。</p> <p>不過在進行［正典］移交時，由於主辦方只允許一人前往，<span class="global_name_span">蘇菲婭</span>因此落單，在VIP房間裡遇到了千年前封印自己的男人<span class="global_name_span">尼姆洛斯</span>，他正是［光輝之民］背後的藏鏡人、［正典］中記載的聖人，如今他的眼睛上也長出了大樹之花，雖然是個仿冒品，但也擁有相當的魔力，但要能達成他心中的［方舟計畫］還是必須得到<span class="global_name_span">蘇菲婭</span>這個正版始祖少女的力量。</p> <p>由於<span class="global_name_span">蘇菲婭</span>遲遲未歸，察覺有異的一行人急忙前往VIP房間，但此時的<span class="global_name_span">哥德</span>毫不隱藏的阻止眾人，並且說出整場拍賣會的真相，其實只是［光輝之民］為了引出<span class="global_name_span">蘇菲婭</span>的陰謀，而展現出背叛組織野心的<span class="global_name_span">哥德</span>，則在<span class="global_name_span">哈迪</span>的布局下正式與組織決裂，最後敗在<span class="global_name_span">哈迪</span>手上。</p> <p>接著前往VIP房間，眼見<span class="global_name_span">蘇菲婭</span>被封印在［正典］之中，<span class="global_name_span">申西雅</span>義無反顧的跳進書裡，在她的鼓勵下<span class="global_name_span">蘇菲婭</span>振作了起來，以堅定的意志拿回［正典］的主導權，透過書寫新的篇章想要翻轉現實，在<span class="global_name_span">阿爾德</span>一字一句的將新故事唸出來後，兩名少女破除了封印重新回到現世。</p> <p>但真正的［正典］還在<span class="global_name_span">尼姆洛斯</span>手中，手一翻便將眾人吸入書中，不過在始祖少女的面前，最終<span class="global_name_span">尼姆洛斯</span>還是落敗了，而以凡人之身濫用［正典］的力量，終於也在此時遭到反噬，他的身軀化為點點光芒消逝，然而他並不後悔，即便最後失敗了，他依然度過了不平凡的一生。</p> <p>拿回［正典］的<span class="global_name_span">蘇菲婭</span>將其恢復成原本的樣子，封面上的字樣慢慢便化為［花之少女］，這才是屬於她的故事，經過這段時間的冒險，<span class="global_name_span">蘇菲婭</span>的心境發生了變化，決定跟著<span class="global_name_span">阿爾德</span>繼續冒險，書寫這未完的［花之少女］。</p> <div class="global_ps_text"> <p>49:22 - 竟然連<span class="global_name_span">里奧</span>都來參加拍賣會。</p> <p>01:05:59 - 看<span class="global_name_span">哈迪</span>耍帥。</p> <p>01:14:12 - 名場面，<span class="global_name_span">阿爾德</span>說故事。</p> </div> <div class="global_ps_text"> <p>12:20 ~ 21:14 - 支線［尋找失落的礙骨.....］。</p> <p>21:37 ~ 28:52 - 支線［惡魔的葉子］。</p> <p>33:07 ~ 45:00 - 支線［喵亞比斯神像］。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8N7b8qQT9NM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">支線任務-裝備</div> <p>王者之角。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WhqvlwcYblo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>  <p>光芒水晶。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CLW6L5EJ4So?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>災禍之斧。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xuQDspkqV_s?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>精靈頭盔。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EH6e_W8198E?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">支線任務-藝術品</div><p>亡國的石板碎片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BMi6YUrzmr4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>高貴的項鍊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/M0AzmRXapN8?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>暗色螺旋殼。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XKuRLoF4ZRw?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>漣漪的護身符。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TCwSyb0AogE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>蓋亞露珠。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MuR0HZBD2c4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>機械薔薇。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/muiUMOD_M8M?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">支線任務-生物</div> <p>三星瓢蟲。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/O1D0xnxtZIk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>少女的嘆息。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v1wQCrM5LZU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>月香麗人。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fkl0lRVrNo8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>向陽種子。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RV_2gsuvo6M?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>幽玄之卵。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ve7vP6Xs1hU?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>帶來幸運的牙齒。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OzaUVg27_LM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">支線任務-美食</div> <p>巧克力之星。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IvxzPLvSBxo?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>希望之果。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cPQ6VKa3AuI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雪花理查肉。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yjTTcuKWU7I?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>極光之鱗。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CD7V-6JHGVE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>漆黑水嫩珍珠。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9Tk7PPvJhEg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>魔法胡椒。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AYTtuFCIK1c?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+  
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  
+  prevBtn.onclick = function () {
+    nowPage --;
+    initPage(nowPage);
+  }
+
+  nextBtn.onclick = function () {
+    nowPage ++;
+    initPage(nowPage);
+  }
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    if (value == 1) {
+      prevBtn.disabled = true ;
+    }
+    else {
+      prevBtn.disabled = false;
+    }
+
+    if (value == maxCount) {
+      nextBtn.disabled = true ;
+    }
+    else {
+      nextBtn.disabled = false;
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+</script>
+<p>&nbsp;</p>
+
+
+
+
+
+
+

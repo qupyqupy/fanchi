@@ -1,0 +1,714 @@
+<style type="text/css">
+  .origin {
+  text-align: center;
+}
+
+.origin img {
+  height: 430px;
+}
+  .ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+
+<p><label>篇章：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>主線劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>其他：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>其他：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /><div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img src="https://lh3.googleusercontent.com/B4j3F-peDcxcEx0F2JHkSTwuvg-wrMPOBZGaTVoPRJqXCvZuJ3Tgsn3aQiyJR8cZMJpY6gVRI68tuS6EODU3R5dm7rNWPcNBodRCAVsWt90Cqd5eYkyJZHfLpC70711wAFpNC57i7uf_uTFgIJMKthupKoUkfwL_ibmjDTxFe3NU6BI_qCLbclRgmfG9wM0_lnqaKGBlBhfjijgJp6s4gKiViXXepdcQcqA9lKVgSLS28ZxXHHXOe5KenoE0kZKfI5wzGldbRNav_zzSQCnRuPfqkpWDdzMSLfMJkSL5i5w1h5aM7h75v2tme1e4adzrvZnwvdB_xYDj4gTosLrUC8OeESada_680HwI0M0gTzCM0ug1FniEvJE6gVaD5oPii5Ljs2BQ1bm1xZOWiO-tIYTjAEQei_A4tb6yd9a2CGGlrY-R_1iTtVl_6TlFpzTFMUk3Srk2xpqsesEREIIK0B8NeyGYRukZI7Sun3RPQBWQ65-h8dmYu4Qy0jJm_lqVzHSXtdJZusr8IeWp5qvJBOO8kO0j-7gfhUV-HUMFipj7VdlOtQoG2NaLsNkQZuqqPM0DzYiu_JxgfM4-I_EnbsBHLBBsUJU-SMwGr9GJ-yWvMVDH2p7JCDkQzLTNr8tzztdq4d5gaNjQ_4cny5QkAQzglTXSre0Ihom9zXmyDIxOxK8kYmnekiUTHR-_JSR0EFIJl2NIja-0WWfRq9nEv3DZ6V6JzRyXogpVx3nOU2s2Hok_gY_x7gTFiBVvjPptzo5tMOxvch6_6MgmDwnLE1q9noNFN9lMNBjzzlKfn0FSRMijZn79BQgmoeVj03dhJJVOQJLYnney9sctbNeRArgX2XPJaF4er-AB4_6ySOi_qFhtzYaGdoRfyaH-TJiNlyAajoySeXAqKZjpPvBLv0PLMefzKBUjrENxy8-ezx7x=w640-h400-no?authuser=0" /></div> </div> </div>');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('千年寶盒與海神神殿');
+  paArr.push('');
+  paArr.push('');
+  paArr.push('');
+  paArr.push('');
+  paArr.push('');
+  paArr.push('');
+  paArr.push('');
+  paArr.push('');
+  paArr.push('');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
+  contentArr.push(getAct4(1));
+  contentArr.push(getAct5(1));
+  contentArr.push(getAct6(1));
+  contentArr.push(getAct7(1));
+  contentArr.push(getAct8(1));
+  contentArr.push(getAct9(1));
+  contentArr.push(getAct10(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
+  pArr.push(getAct4(2));
+  pArr.push(getAct5(2));
+  pArr.push(getAct6(2));
+  pArr.push(getAct7(2));
+  pArr.push(getAct8(2));
+  pArr.push(getAct9(2));
+  pArr.push(getAct10(2));
+
+
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
+  contentArrB.push(getActB3(1));
+  contentArrB.push(getActB4(1));
+  contentArrB.push(getActB5(1));
+  contentArrB.push(getActB6(1));
+  contentArrB.push(getActB7(1));
+  contentArrB.push(getActB8(1));
+  contentArrB.push(getActB9(1));
+  contentArrB.push(getActB10(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
+  pArrB.push(getActB3(2));
+  pArrB.push(getActB4(2));
+  pArrB.push(getActB5(2));
+  pArrB.push(getActB6(2));
+  pArrB.push(getActB7(2));
+  pArrB.push(getActB8(2));
+  pArrB.push(getActB9(2));
+  pArrB.push(getActB10(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+    nowAct = activitySelect.value;
+    initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+        scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+    document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+    headSelect.innerHTML = '';
+    footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+    for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false, true);
+  }
+
+  initAct(1);
+
+
+  //聯動
+
+  function getActB10(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct10(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰轉生
+
+  function getActB9(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct9(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰五代
+
+  function getActB8(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct8(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+   pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰四代
+
+  function getActB7(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct7(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰三代
+
+  function getActB6(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct6(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰二代
+
+  function getActB5(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct5(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //夢戰一代
+
+
+  function getActB4(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct4(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //原創三代
+
+
+  function getActB3(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+
+    return contentArr;
+  }
+
+  //原創二代
+
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  //原創一代
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('---');
+  pArr.push('劇情補遺');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('<div class="title_text">釣魚仙人的對話</div> <p>與釣魚仙人的對話集。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2uMwBhxbiOo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('前往海底世界');
+  pArr.push('乙姬之謎');
+  pArr.push('奪回龍宮城');
+  pArr.push('在世界沉入海中之前');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">前往海底世界</div> <p><span class="global_name_span">阿爾德</span>受到了<span class="global_name_span">釣魚仙人</span>的邀請［奇拉海灘］，在學習釣魚的過程中，遠方傳來一陣尖叫，原來是一個海龜意圖騷擾人類女性，<span class="global_name_span">普萊</span>見狀挺身而出，卻被<span class="global_name_span">謝拉</span>當做壞人阻止，眾人冷靜下後總算釐清了事件的緣由，一切的元凶都是那位被稱為<span class="global_name_span">乙姬</span>的人物。</p> <p>眾人在海龜的幫助下，來到<span class="global_name_span">乙姬</span>的居處［龍宮城］，曾被<span class="global_name_span">乙姬</span>放逐的<span class="global_name_span">娜基</span>在這遇到了以前的夥伴，並且發生了戰鬥，戰勝後<span class="global_name_span">娜基</span>暫時離開回家拿東西。</p> <p>此時眾人遇到了一位裸著上半身的男子，並且似乎對<span class="global_name_span">謝拉</span>頗有興趣，在得知眾人是前來［龍宮城］尋找綁架女性的犯人時，男子義憤填膺的要找出這在［龍宮城］胡作非為的人，然後就消失無蹤，<span class="global_name_span">娜基</span>回來後眾人前往主城見到了被綁架的眾人類女性，沒想到她們竟然還比較想待在此處，讓<span class="global_name_span">阿爾德</span>等人有點莫可適從。</p> <div class="global_ps_text"> <p>25:29 - <span class="global_name_span">娜基</span>是個吃貨無疑。</p> <p>30:15 - <span class="global_name_span">蕾蕾</span>的爺爺看起來應該是屬於龜仙人等級的老不休。</p> </div> <div class="global_ps_text"> <p>31:04 ~ 42:56 - 走路戰鬥釣魚。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4l0X0IiNPTA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">乙姬之謎</div> <p>之前遇到的半裸男人闖入主城，並且嘆到自己的新娘後補都不見了，一番交談發現原來此人就是眾人一直尋找的<span class="global_name_span">乙姬</span>，此時<span class="global_name_span">謝拉</span>跳了出來稱自己才是真正的<span class="global_name_span">乙姬</span>。</p> <p>雙方各執一詞，鬧的眾人有點頭昏腦脹，此時男<span class="global_name_span">乙姬</span>也懶得跟眾人廢話，直接命人把<span class="global_name_span">阿爾德</span>一行人塞到木桶沉入主城前的釣魚池中，所幸眾人有驚無險的被救了起來。</p> <p>脫離險境的眾人，環顧四周竟還身在［龍宮城］，而此時的居民竟稱<span class="global_name_span">謝拉</span>為大人，眼前有太多釐不清的疑問，於是最直接的方式就是前往主城再次找半裸男問個清楚，沒想到到了主城沒看到半裸男，看到的是密謀奪取<span class="global_name_span">謝拉</span>權力的大臣，眼見事跡敗露，大臣呼叫手下要抓捕眾人，為了怕再度被塞到木桶中，眾人無奈跳下魚池逃生。</p> <p>再度浮出池面後，藉助海龜的幫助回到了［奇拉海灘］，冷靜過後眾人分析了這段時間的線索，發現原來魚池就是個時空隧道，而<span class="global_name_span">謝拉</span>是過去的<span class="global_name_span">乙姬</span>，此時忽然一陣天搖地動，<span class="global_name_span">娜基</span>推測是現代的<span class="global_name_span">乙姬</span>準備打開［玉手箱］所致，為了阻止災厄的降臨，<span class="global_name_span">阿爾德</span>準備回到［龍宮城］阻止。</p> <div class="global_ps_text"> <p>16:30 - 大臣奪取<span class="global_name_span">謝拉</span>權力的原因，看來<span class="global_name_span">謝拉</span>確實沒有做為領導者的能力。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uFQTqGrpMV0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">奪回龍宮城</div> <p>一行人前往［龍宮城］主城與男<span class="global_name_span">乙姬</span>展開戰鬥，但沒想到男<span class="global_name_span">乙姬</span>在戰鬥過程中獲取了<span class="global_name_span">謝拉</span>的血液，因此成功打開了［玉手箱］獲得了藏在裡面的力量。</p> <div class="global_ps_text"> <p>03:04 ~ 20:14 - 走路戰鬥釣魚。</p> <p>30:35 ~ 43:17 - 走路戰鬥釣魚。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RMQpppnNVQY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">在世界沉入海中之前</div> <p>為了對抗男<span class="global_name_span">乙姬</span>阻止末日的降臨，<span class="global_name_span">謝拉</span>成功完成屬於乙姬的繼承儀式，手中的槍也獲得覺醒成為金色，眾人透過槍的力量來到男<span class="global_name_span">乙姬</span>處，並也成功擊敗他拯救了世界。</p> <div class="global_ps_text"> <p>04:30 - 沒想到過去<span class="global_name_span">謝拉</span>的暴政竟然成為此時拯救世界的德政。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xXs6cEA1hpE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+    return contentArr;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
