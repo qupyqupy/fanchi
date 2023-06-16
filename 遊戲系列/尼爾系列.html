@@ -75,7 +75,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 </style>
 <hr />
 
-<p><label>聯動選擇：</label> 
+<p><label>選擇遊戲：</label> 
 <select id="activity_select" style="width: 35%;">
  </select>
  </p>
@@ -109,21 +109,25 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   var activityArr = [];
   activityArr.push('');
   activityArr.push('');
+  activityArr.push('<hr /><p><img alt="cover.jpg" src="https://pic.pimg.tw/qupyqupy/1686878930-3614183504-g_n.jpg" title="cover.jpg" /></p>');
 
 
 
   var paArr = [];
   paArr.push('');
   paArr.push('尼爾自動人形');
+  paArr.push('尼爾人工生命');
 
 
   var contentArr = [];
   contentArr.push([]);
   contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
 
   var pArr = [];
   pArr.push([]);
   pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
 
 
   var firstEnter = 0 ; 
@@ -185,6 +189,26 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   }
 
   initAct(1);
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('序章');
+      resultIdx.push('月之淚');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">序章</div> <p>被白雪覆蓋的廢墟都市中，一對白髮兄妹正躲避著黑色怪物的攻擊，妹妹叫做<span class="global_name_span">悠娜</span>，看起來身子很弱，一副病懨懨的樣子。</p> <p>哥哥叫做<span class="global_name_span">尼爾</span>，手拿破水管，勇敢地跟怪物戰鬥，一旁的地上有本書，封面上有個怪臉，稱之為［黑之書］，一直在誘惑著<span class="global_name_span">尼爾</span>接受它的力量。</p> <p>由於怪物不斷聚過來，最終<span class="global_name_span">尼爾</span>接受了［黑之書］的力量，瞬間將怪物消滅殆盡，然而<span class="global_name_span">悠娜</span>的生命似乎已經即將走到盡頭。</p> <p>無助的<span class="global_name_span">尼爾</span>只能仰天呼救，但這廢墟之中除了怪物，哪來其他的人？</p> <p>這對兄妹的下場暫時無法知曉，時間來到1412年後，另一對兄妹同樣叫做<span class="global_name_span">尼爾</span>、<span class="global_name_span">悠娜</span>，妹妹同樣身染重病，兩人生活在一處質樸的村莊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/D3NrVM9hETA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('<div class="title_text">月之淚</div> <p><span class="global_name_span">尼爾</span>為了維持家計，開始忙碌的一天，主要的工作都是從同村的<span class="global_name_span">波波菈</span>那邊接到的委託，她可是個好人，總是有意無意多給了<span class="global_name_span">尼爾</span>許多幫助。</p> <p>千年後的世界，黑色怪物依舊威脅著人們的生活，縱使是平靜的村子，每個人也都在努力的活過每一天。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/duBDtDnEAJE?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>完成委託後，<span class="global_name_span">尼爾</span>回到家向久病的妹妹講起了［月之淚］的傳說，據說只要找到這朵花，就可以變成有錢人。</p> <p>為了治好自己的病，<span class="global_name_span">悠娜</span>隔天一早趁著哥哥出外工作時，就擅自出發去尋找［月之淚］。</p> <p>而如今她最有可能去的地方，就是附近的［石之神殿］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/shtvZaCJzvk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('');
+    result.push('');
+    result.push('');
+
+    return result;
+  }
 
   function getAct1(idx) {
   	if (idx == 2){
