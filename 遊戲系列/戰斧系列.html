@@ -1,0 +1,265 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /><p>早期的橫向過關動作遊戲，基本來說遊戲模式還蠻簡單的，各項操作與一般的動作遊戲並沒有太大區別，比較特別的是，裡面操作的人物可以用跑的，這在當時橫向過關的遊戲類型中，可以說是獨創一格，讓整體遊玩的流暢性增加不少。 </p> <p>另外我喜歡這遊戲是因為他充滿了濃濃的古詩味，遊戲中也加入不少當時電影的元素在裡面，有骷髏士兵，還有奇特生物的坐騎，巨大生物的背景，龍與劍的魔法世界，有看過類似電影的玩家，絕對對戰斧是愛不釋手。 </p> <hr> <p>這是遊戲封面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005402"><img src="https://pic.pimg.tw/qupyqupy/1451706388-3006911003.jpg?v=1451706403" alt="b745e4cb044e2893010d4baf0bc5eead.JPG"></a> <br> </p> <p>這是遊戲背面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005414"><img src="https://pic.pimg.tw/qupyqupy/1451706389-2952176020.jpg?v=1451706403" alt="b89bbd4a1a49c047d5241ad623177879.JPG"></a>&nbsp; </p>');
+  activityArr.push('<hr /><p>故事敘述魔王又招換回邪惡的軍隊，因此主角三人又要展開消滅邪惡的任務了，比起一代，明顯在畫面上提升不少，包含魔法特效等等，令人印象深刻的是剛爪兵，蜥蜴人，由於造型十分特殊，叫人過目不忘。 </p> <p>另外在遊戲中同時按下跳躍＋攻擊可以使出擺脫技，這設定在一代也有，不過二代的擺脫技巧變得更加華麗，尤其是女戰士的腳刀攻擊，雖然威力比較小，但是不容易被反擊的優點還是頗為好用。 </p> <hr> <p>這是遊戲封面，我個人還是比較喜歡一代那種偏真人的感覺。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046652"><img src="https://pic.pimg.tw/qupyqupy/1451794216-1411879699.jpg?v=1451794230" alt="5480125de99c61e5cf25ea1449b4248a.JPG"></a>&nbsp; </p>');
+  activityArr.push('<hr /><p>在ＭＤ上面的戰斧３代，以更細膩的人物動作與動態場景在當時造成不小轟動，除了視覺方面外，也添加了不少新的元素，像是格鬥遊戲的搓絕招，分歧路線等，如果有兩個玩家同時遊玩的話，更可以使出威力強大的合體魔法，眾多的新元素使得遊戲更加的耐玩。 </p> <p>雖然推出的時間點，已經接近次世代主機繁榮發展的年代，不過依舊吸引不少玩家廢寢忘食的通關殺敵，就為了看光整個遊戲的全貌。 </p> <hr> <p>這是遊戲封面，比起前兩代，在人物造型方面，已經運用了不少小配飾來提升服裝的豐富度。 </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885850-2724812132.jpg?v=1451885915" alt="f8e8a8deca751701e125bf41c5befb4a.JPG">&nbsp; </p>');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('戰斧1');
+  paArr.push('戰斧2');
+  paArr.push('戰斧3');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('遊戲介紹');
+      resultIdx.push('對話翻譯');
+      resultIdx.push('打王影片');
+
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<p>這是遊戲開頭畫面。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885850-856551417_n.png?v=1451885915" alt="3297a838e9eff554f7275029d5c3e774.PNG">&nbsp; </p> <p>這是遊戲開頭畫面影片。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/gIFc65gvA5o?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>這次過場是以古老地圖的方式來表現，可以看到裡面的景物畫的十分細緻。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885850-1072607907_n.png?v=1451885915" alt="1c0d2991e94fc5add57dfe83ee740c4d.PNG">&nbsp; </p> <hr> <p>這是人物選角畫面。 </p> <p>歷代的人氣角色老頭，在三代已經光榮退休了，威力強大的斧頭改成柺杖，不過新加入兩個極具特色的角色，也讓戰斧迷新鮮感增加不少，在這次的戰役中，已經沒有前兩代那種魔法，物理攻擊誰強誰弱的設定了，取而代之的是一些搓破搖桿的格鬥指令，擅用各種招式的特性，才能克敵制勝。 </p> <p>我個人偏好使用豹人，原因在於這代的敵人很會使用防禦，而豹人有一招破防技能，每打必中，再加上其移動速度快，不容易被反擊，算是初學者比較容易上手的角色。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885850-3674139518_n.png?v=1451885915" alt="0641b850ce782ec150955729e90a5e00.PNG">&nbsp; </p> <hr> <p>招式表原出處：感謝原作者<a href="http://ref.gamer.com.tw/redir.php?url=http%3A%2F%2Fhome.gamer.com.tw%2Fdarkjoye" target="_blank">darkjoye</a>。 </p> <p>以下附上招式表。<br><br>(Ａ=攻擊　Ｂ=跳躍)<br><strong><span style="color: rgb(52, 108, 181);">防禦</span></strong>：<strong><span style="color: rgb(226, 45, 165);">←＋Ａ</span></strong><span style="color: rgb(70, 135, 26);">(可擋一次正面攻擊，須持續按住)</span><br><strong><span style="color: rgb(52, 108, 181);">下段攻擊</span></strong>：<strong><span style="color: rgb(226, 45, 165);">↓＋Ａ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">突進攻擊</span></strong>：<strong><span style="color: rgb(226, 45, 165);">→ →＋Ａ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">前後護身攻擊</span></strong>：<strong><span style="color: rgb(226, 45, 165);">Ａ＋Ｂ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">重擊</span></strong>(硬直時間長)：<strong><span style="color: rgb(226, 45, 165);">→＋Ａ＋Ｂ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">遠程攻擊</span></strong>(女戰士擲刀、豹人飛撲)：<strong><span style="color: rgb(226, 45, 165);">→ ← →Ａ＋Ｂ</span></strong>(豹人為破防技)<br><strong><span style="color: rgb(52, 108, 181);">遠程攻擊</span></strong>(男戰士掃火焰、大塊頭勾龍捲風)：<strong><span style="color: rgb(226, 45, 165);">→↑←↓→＋Ａ＋Ｂ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">空中落下技</span></strong>(男戰士、豹人)：<strong><span style="color: rgb(226, 45, 165);">Ｂ後↓＋Ａ</span></strong>&nbsp;(女戰士及大塊頭為姿勢不同的空中攻擊)<br><strong><span style="color: rgb(52, 108, 181);">飛踢</span></strong>(大塊頭)：<strong><span style="color: rgb(226, 45, 165);">Ｂ後Ａ</span></strong><span style="color: rgb(70, 135, 26);">（中間稍微間隔一下為短距離飛踢）</span><br><strong><span style="color: rgb(52, 108, 181);">空中重擊</span></strong>：<strong><span style="color: rgb(226, 45, 165);">→ →Ｂ後Ａ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">抓技</span></strong>：<strong><span style="color: rgb(226, 45, 165);">近身→＋Ａ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">抓技三連擊</span></strong>：<strong><span style="color: rgb(226, 45, 165);">抓技後ＡＡＡ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">反向投擲技</span></strong>：<strong><span style="color: rgb(226, 45, 165);">抓技後←＋Ａ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">普通連擊</span></strong>：<strong><span style="color: rgb(226, 45, 165);">ＡＡＡ</span></strong><br><strong><span style="color: rgb(52, 108, 181);">普通連擊(改)</span></strong>：<strong><span style="color: rgb(226, 45, 165);">ＡＡ↓＋Ａ（或→＋Ａ）</span></strong><br><strong><span style="color: rgb(225, 119, 4);">雙人合體技</span></strong>：兩人面對面，兩個同時點頭後，某一方攻擊<br><strong><span style="color: rgb(225, 119, 4);">雙人魔法技</span></strong>：兩人魔法瓶全滿，面對面點頭後，某一方放魔法<br> </p> <p>在此附上雙人魔法的影片。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/dMH0nmxxNik?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <hr> <p>下面是三代中四個角色的露營畫面，來偷魔法的，變回一代可愛的小偷。 </p> <p>豹人與女戰士。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885850-3652751161_n.png?v=1451885915" alt="c47fd7698d992a23211738b60a39bb93.PNG">&nbsp; </p> <p>男戰士與大塊頭。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885850-3054624232_n.png?v=1451885915" alt="4e76108edc460323af01d5c76fd9fa30.PNG">&nbsp; </p> <p>這次小偷的技巧可是進步不少，會運用各種方式來戲弄主角們，如下圖使用神仙索偷襲（有看過劍雨電影的應該都知道神仙索是什麼吧）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885853-3589530428_n.png?v=1451885915" alt="230448a4720212301dd97350f5e47106.PNG">&nbsp; </p> <p>學忍者使用遁地之術。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885853-3893636799_n.png?v=1451885915" alt="cf8aca7143409c269eba1698544cfecd.PNG">&nbsp; </p> <p>在沙漠使用遁地不怕遇到流沙嗎？<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885853-2028134867_n.png?v=1451885915" alt="9aa665b7e856cef2881cc3fc20beead2.PNG">&nbsp; </p> <p>或是把寶物丟來丟去，讓玩家左跑又跑拿不到。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885853-1363874979_n.png?v=1451885916" alt="c46de5de42ed41310ffccaf428783070.PNG">&nbsp; </p> <p>當然也有好心把寶物丟下來（是迷戀女戰士還是怕豹人追太快）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885853-3268720370_n.png?v=1451885916" alt="8067d96096dc37f91988f80eb9f83b58.PNG">&nbsp; </p> <hr> <p>座騎是我覺得這代最不成功的地方，原因在於並沒有前兩代那種優勢，直接操作角色來攻擊敵人反而靈活許多，下圖的蝸牛，會吐出舌頭攻擊敵人，不過舌頭的距離相當短，大塊頭騎在牠身上的感覺真是惡趣味，那兩隻小腳怎麼支撐的住啊。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885853-1052392050_n.png?v=1451885916" alt="e62497c29c962d7a35cd54b603b202f8.PNG">&nbsp; </p> <p>下圖是另外一種蝸牛，舌頭可以吐比較長。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885854-1731666773_n.png?v=1451885916" alt="6f980146648f1e8e8524ac002d6f0e4e.PNG">&nbsp; </p> <p>噴火龍，雖然可以做遠距離攻擊，但是火焰的速度太慢了，容易被敵人反擊。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885854-1729744636_n.png?v=1451885916" alt="b391bf22f29dc9c7fde37e84734748fd.PNG">&nbsp; </p> <p>需要近距離咬住敵人才能發揮功用，可惜每次都咬不中，就被打落馬了。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885854-3612014773_n.png?v=1451885916" alt="c0075fa97d38c0a4ec565cc06228950c.PNG">&nbsp; </p> <hr> <p>三代中在場景方面的用心，也可以從一開始就感受出來，以往都是靜態場景居多，這次運用了不少動態的場景，來增加遊戲的暢快度。<br> </p> <p>下圖是在奔跑的車上戰鬥。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885854-3346757376_n.png?v=1451885916" alt="76eed2598908681c7b319bf0af932f50.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>在飛行的巨大老鷹身上戰鬥，可以看到四周景物往後退的動態視覺感。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885854-1279738913_n.png?v=1451885916" alt="5a12bc1e0669e4eeaf3d7a1ac1464d80.PNG">&nbsp; </p> <p>在海上的船隻戰鬥，由於這次整個景深有做出來，所以前進時都能明顯感覺到較為立體的場景移動感覺。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885855-1540002523_n.png?v=1451885916" alt="33ad61a609968cd5934a1cf94f872f0c.PNG">&nbsp; </p> <p>除了背景以外，也在場景中增加了一些可以擊破的物品，像是下圖的寶箱。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885855-382647579_n.png?v=1451885916" alt="d15cc7967a5f454a062258f56e3427e3.PNG">&nbsp; </p> <p>斜坡上滾下來的橡木桶障礙物。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885855-842870856_n.png?v=1451885916" alt="75c6ee3160f025a638bc7e37bb474558.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>這次最大的突破優點就是增加分歧點，這個設定讓玩家必須玩過四次以上才能看完所有場景，也算是增加遊戲耐玩度的好方法。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885855-1332633070_n.png?v=1451885916" alt="8d7ebf883fd814b2b8e4125b229a046a.PNG">&nbsp; </p> <p>遊戲中也要解救受困的人質，累積解救到一定的人數就可以加一個生命。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885855-2851117854_n.png?v=1451885916" alt="1c79437ce7708bdd5c7f03e0b881b6f1.PNG">&nbsp; </p>');
+    result.push('<p>下面是遊戲中的一些對話翻譯，由於這代有較多對話的部分，雖然比起其他遊戲而言還算少了，但是對於戰斧迷來講，可以從遊戲中了解故事是吸引人的，總比買攻略本，然後看每家出版社都編出不同的故事情節來得好，不過遊戲中的對話，還是有很多需要玩家自行腦補的空間。<br> </p> <p>現在邪惡的詛咒已經被釋放了，你的任務就是必須戰勝黑暗的王並且把黃金斧帶回來，上吧，勇敢的戰士。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885855-4250363757_n.png?v=1451885916" alt="dfb06add36833c45f7a84d68ed643e90.PNG">&nbsp; </p> <p>謝謝你．要小心，在這裡的敵人是非常強大的。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885857-1657980324_n.png?v=1451885916" alt="a51a0d159d0da0da334aaa8b258682eb.PNG">&nbsp; </p> <p>幹的好！不過下次絕對不會讓你們那麼容易的。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885857-97251346_n.png?v=1451885916" alt="79adeff6614e16d7cd08a29c54c2fe32.PNG">&nbsp; </p> <p>非常幸運的，我甦醒了過來，以你的實力而言，我們應該能夠戰勝敵人。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885857-1297388166_n.png?v=1451885916" alt="545dfe8fd6572ef8e01bfdac5292a3b6.PNG">&nbsp; </p> <p>你終於來到這裡了，不過你無法在繼續走下去了。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885857-1101878076_n.png?v=1451885916" alt="161e41ded38865862674c4d35330ca1d.PNG">&nbsp; </p> <p>恩啊．．．．．（甦醒樣） </p> <p>我做了什麼？公主．．．．． </p> <p>我想拜託你．公主在城堡的某個地方，請幫助她。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885857-2960475884_n.png?v=1451885916" alt="66f9e079b73569117fc89ee871be17b3.PNG">&nbsp; </p> <p>和平又再次降臨在這塊土地上了，這簡直就像美夢成真一樣，感謝你。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885857-2577992810_n.png?v=1451885916" alt="2a548aac1e70a3c424f925feca041ed9.PNG">&nbsp; </p> <p>你應該明白隱藏在斧頭的力量。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885858-3188178629_n.png?v=1451885916" alt="c5a46f91f1aa841460dc58d9f53dd197.PNG">&nbsp; </p> <hr> <p>下面是幾張我隨手拍下來的圖。<br> </p> <p>女戰士被撞飛的樣子，姿勢一百分。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885858-2981924439_n.png?v=1451885916" alt="4fbe042f19efe008183ee8b8657bf5a7.PNG">&nbsp; </p> <p>倒數第二關魔王，本來看他拿著斧頭，以為他是最後魔王。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885858-101264645_n.png?v=1451885916" alt="d42631ea0033fe873d0fce00cf7e6770.PNG">&nbsp; </p> <p>結果真正的魔王出現了，跟前兩代一樣，會使用魔法，而且是毫無節制的發動。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885859-2199703488_n.png?v=1451885916" alt="e181029f88415cedc6ed235483bef754.PNG">&nbsp; </p> <p>破關畫面，拿著黃金斧回家了。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1451885859-1741995804_n.png?v=1451885916" alt="c37caa8160f75502227d0ad730df747f.PNG">&nbsp; </p>');
+    result.push('<p>下面是遊戲中的每關最後魔王的打鬥影片，我同樣把魔法使用時的特效放在影片中了。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/e91WJ2T4bms?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>這次女戰士的火龍像條蛇一樣。 </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/IqhPnW6YpVw?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/JnGc280FHQo?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>傳說中的神話怪物，巴佛滅。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/ztv67eCv600?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>跟被魔化的女戰士對打。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/XUyIZKVgwDs?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/hU2czIfAlJI?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/YOVVbhHs6MA?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>在大鷹的背上戰鬥，遊戲中我最喜歡的場景。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/v4kjRvcSA8g?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>與魔化豹人對決。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/tLYkTuh8oe8?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/X2agVltPYSQ?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe> </p> <p>最後魔王，影片中可以看到他放魔法簡直到了毫無節制的地步，通常這是我的專利．．．．．．．<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/U3fXlH4KeyA?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>結局字幕翻譯。<span class="redactor-invisible-space"></span> </p> <p>最後，勇敢的戰士戰勝邪惡的王，用邪惡魔法化成的城堡也毀滅了，勇敢的戰士取回了黃金的斧頭，世界恢復了和平，他們的戰鬥將成為傳說，永遠地流傳下去<span class="redactor-invisible-space">。<span class="redactor-invisible-space"></span></span> </p>');
+
+
+    return result;
+  }
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('遊戲介紹');
+      resultIdx.push('打王影片');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<p>這是遊戲開頭畫面，比起一代的開頭畫面明顯氣勢少了很多。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046646"><img src="https://pic.pimg.tw/qupyqupy/1451794216-3809693018_n.png?v=1451794230" alt="7b66aea7d1c82e61075fcb1931e0e3fb.PNG"></a>&nbsp; </p> <p>這是遊戲開頭畫面影片。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/1uTyNO_-Oc4?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <hr> <p>下面是選角畫面，人物也與一代設定一樣。 </p> <ul> <li>女戰士魔法強攻擊弱。</li> <li>男戰士攻擊魔法中等。</li> <li>老頭魔法弱攻擊強。</li> </ul> <p>三位角色比起一代而言，衣服都多穿了一點，不知道是不是一代太暴露。 </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046655"><img src="https://pic.pimg.tw/qupyqupy/1451794216-1266455800_n.png?v=1451794230" alt="f1054f78df47cfd73c3266a9ac33d001.PNG"></a>&nbsp; </p> <p>另外每關過關後的過場，這代以水晶球來表示，表現出與一代捲軸不同的奇幻風味。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046640"><img src="https://pic.pimg.tw/qupyqupy/1451794216-815381481_n.png?v=1451794230" alt="8cc1151ab856c6e9ebf04d2f17ea1fe4.PNG"></a>&nbsp; </p> <hr> <p>每次過關的時候會有一個露營畫面，設定也跟一代一樣。不過會來偷魔法書的小偷，變成了邪惡的魔法師。 </p> <p>女戰士。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046643"><img src="https://pic.pimg.tw/qupyqupy/1451794216-656299314_n.png?v=1451794230" alt="33abbb1eaac1a1fad71683d2dee7e704.PNG"></a>&nbsp; </p> <p>男戰士。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046658"><img src="https://pic.pimg.tw/qupyqupy/1451794217-182335405_n.png?v=1451794230" alt="1fc456c2e4888e0ccf9fcc5c412ae08f.PNG"></a>&nbsp; </p> <p>老頭。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046661"><img src="https://pic.pimg.tw/qupyqupy/1451794217-2557727492_n.png?v=1451794230" alt="844b9e0ecfa00d9107c9bc58b02b5ad9.PNG"></a>&nbsp; </p> <p>而當邪惡魔法師來襲時，通常會用不同的型態出現，有時是青蛙，有時是蝸牛，有時是蝙蝠，算是遊戲中的一點點小趣味。<br> </p> <p>下圖是以蝸牛型態來襲。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046664"><img src="https://pic.pimg.tw/qupyqupy/1451794218-273883269_n.png?v=1451794230" alt="cfae6069381d7441f3b48d661012a03c.PNG"></a>&nbsp; </p> <p>以蝙蝠型態來襲。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046667"><img src="https://pic.pimg.tw/qupyqupy/1451794218-1181506245_n.png?v=1451794230" alt="000495e197fad644618e14f578f5280a.PNG"></a>&nbsp; </p> <p>被發現後，回復成邪惡魔法師的型態。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046670"><img src="https://pic.pimg.tw/qupyqupy/1451794218-279796757_n.png?v=1451794230" alt="93f234e6721c1dc7a9ac2f85cffa1309.PNG"></a>&nbsp; </p> <p>魔法師同樣分成兩種顏色，紅色是掉魔法書，綠色是掉補血道具。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046673"><img src="https://pic.pimg.tw/qupyqupy/1451794218-3848539601_n.png?v=1451794230" alt="5a6c9cf15baa4f3ebc5b76845ca23eb3.PNG"></a>&nbsp; </p> <hr> <p>這次的座騎也分三個，但是比起一代，我覺得好用的程度大大降低，因為攻擊範圍小了很多，經常被敵人打一下就落馬，偏偏坐騎落馬幾次之後就會跑走。<br> </p> <p>下圖像鳥一樣的座騎會用尾巴掃敵人。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046676"><img src="https://pic.pimg.tw/qupyqupy/1451794218-1804910902_n.png?v=1451794230" alt="c02511e7679c7a4199c961a890a040ea.PNG"></a>&nbsp; </p> <p>下圖座騎會用腳踢敵人，腳很短，要靠近一點踢。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046679"><img src="https://pic.pimg.tw/qupyqupy/1451794219-3179040345_n.png?v=1451794230" alt="e52b167a707ec15191ac65bbf49a1102.PNG"></a>&nbsp; </p> <p>這隻紅色的蜥蜴是唯一會噴火的，很可惜不像一代有遠距離噴火，他只能在前方做攻擊的動作，因此仍然是有被反擊的危險性在。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046682"><img src="https://pic.pimg.tw/qupyqupy/1451794219-4016312668_n.png?v=1451794230" alt="9cd9d0af4866dbf60ddc04b92ab10f07.PNG"></a>&nbsp; </p> <hr> <p>下方是三個角色的魔法畫面。<br> </p> <p>女戰士的一階魔法。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046685"><img src="https://pic.pimg.tw/qupyqupy/1451794219-1813502679_n.png?v=1451794230" alt="c87f3e1bc42da01ab8d85cf238cccafd.PNG"></a>&nbsp; </p> <p>女戰士的二階魔法。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046688"><img src="https://pic.pimg.tw/qupyqupy/1451794219-2016658357_n.png?v=1451794231" alt="450d8c7fe2bda7f440ab66f8e6b7c345.PNG"></a>&nbsp; </p> <p>女戰士的三階魔法。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046691"><img src="https://pic.pimg.tw/qupyqupy/1451794220-2458432618_n.png?v=1451794231" alt="43d3bb8b3534ff0330a71a11e826068e.PNG"></a>&nbsp; </p> <p>女戰士的四階魔法，像是瀑布般的熔炎在整個畫面留下閃爍，我還記得當時的電視其實沒有現在那麼好，閃爍的時候眼睛還真的會被閃到痛。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046700"><img src="https://pic.pimg.tw/qupyqupy/1451794220-3032982272_n.png?v=1451794231" alt="a8da1d1366e1929d49d27b8863f40ca6.PNG"></a>&nbsp; </p> <p>女戰士的五階魔法，巨大的火鳥，頗具震撼力。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046694"><img src="https://pic.pimg.tw/qupyqupy/1451794220-2703217878_n.png?v=1451794231" alt="65de3a11af8b5c6032577635f9ffe9d5.PNG"></a>&nbsp; </p> <p>女戰士的六階魔法，與一代展現的方式不同，二代以正對玩家的畫面噴出火焰，確實表現出熊熊烈火的感覺。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046703"><img src="https://pic.pimg.tw/qupyqupy/1451794221-3681344212_n.png?v=1451794231" alt="8b4a11b73f0a5ca2d19c6368b43dd466.PNG"></a>&nbsp; </p> <p>老頭一代是使用雷魔法，這代使用土魔法。<br> </p> <p>老頭的一階魔法，招換小石頭掉落。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046706"><img src="https://pic.pimg.tw/qupyqupy/1451794221-1024259942_n.png?v=1451794231" alt="56f6bef0bee7a78fd42bd8c5b9b5af9a.PNG"></a>&nbsp; </p> <p>老頭的二階魔法，招換大石頭掉落。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046712"><img src="https://pic.pimg.tw/qupyqupy/1451794222-1128021401_n.png?v=1451794231" alt="8c3f845e0d30aa0fb1ef64fcd2f34213.PNG"></a>&nbsp; </p> <p>老頭的三階魔法，巨大的石塊在畫面上快速的移動，如果太注意看，眼睛非常容易花。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046709"><img src="https://pic.pimg.tw/qupyqupy/1451794222-1054054674_n.png?v=1451794231" alt="f9037e844a09875adc02766ec19763d4.PNG"></a>&nbsp; </p> <p>男戰士在這代同樣改變了魔法的屬性，改成使用風魔法，一代他是使用土魔法。<br> </p> <p>男戰士的一階魔法。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046715"><img src="https://pic.pimg.tw/qupyqupy/1451794222-927975233_n.png?v=1451794231" alt="fdc2f2fde542a8309d9b7e0d87339b1d.PNG"></a>&nbsp; </p> <p>男戰士的二階魔法，利用魔法把敵人都捲起來，然後一起丟出去。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046718"><img src="https://pic.pimg.tw/qupyqupy/1451794223-198408835_n.png?v=1451794231" alt="832f5d4eb2745c89a545d23457d1da46.PNG"></a>&nbsp; </p> <p>男戰士的三階魔法。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046721"><img src="https://pic.pimg.tw/qupyqupy/1451794224-2221640271_n.png?v=1451794231" alt="48dd558b17968ec250761d08d6e2855e.PNG"></a>&nbsp; </p> <p>男戰士的四階魔法，直接招換大旋風橫掃整個畫面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046724"><img src="https://pic.pimg.tw/qupyqupy/1451794225-4253379782_n.png?v=1451794231" alt="0dd63a9dfb80f108b4d53fc65cc3d61a.PNG"></a>&nbsp; </p> <hr> <p>下面是這代的最後大魔王，與一代一樣，他會使用所有角色的魔法，並且還會招換骷髏士兵，揮動斧頭的速度又快，也屬於大型機台最後一關魔王強到犯規的設定。 </p> <p>尤其是敵人ＡＩ經過了強化，以往在一代運用衝撞攻擊就可以輕易解決的敵人類型，在二代完全不管用，不過也產生一個新的弱點，當玩家角色在衝的時候敵人會往上或是往下稍微移動一下，這時候只要衝到敵人原本的位置，在等他乖乖的走下來就可以攻擊了。 </p> <p>不過時間要抓凖，不然可是很容易被反擊的，附帶一提，最後一關的地板設計我真的十分喜歡，那種反光的感覺，當時一看到就覺得非常的華麗。 </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046727"><img src="https://pic.pimg.tw/qupyqupy/1451794225-28935045_n.png?v=1451794231" alt="88c4a4431fc5c7b016a92d71deff3fba.PNG"></a>&nbsp; </p> <p>這是結局畫面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207046730"><img src="https://pic.pimg.tw/qupyqupy/1451794225-992294570_n.png?v=1451794231" alt="f8f798ffd4d7fcc1c3c937be1fb0853d.PNG"></a>&nbsp;<br> </p>');
+    result.push('<p>下面是每關最後打魔王的影片，我也把各角色的魔法畫面一併收錄在裡面了。<br> </p> <p>第一關就是決戰傳說中的牛頭人，比起一代，確實增加不少神話中的邪惡生物。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/HZGwQHlL3jE?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>第二關的無頭劍士，也是神話中常見的惡靈。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/j227-W5edgA?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>第三關，蜥蜴人，我記得當時也同時在玩破壞神傳說，每次看到這蜥蜴人都會想到裡面的角色－索爾。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/BgvhjiZ9Q68?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/lJbPstvmtI8?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/bQ-6Nq27xE8?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/QvnjLFR6KMI?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p>');
+    result.push('');
+    result.push('');
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('遊戲介紹');
+      resultIdx.push('打王影片');
+
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<p>這是遊戲開頭畫面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005405"><img src="https://pic.pimg.tw/qupyqupy/1451706388-483748323_n.png?v=1451706403" alt="f7f56106569c52188dc015b28d657b6a.PNG"></a>&nbsp; </p> <p>這是遊戲開頭動畫。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/broNidyJaxk?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <hr> <p>這是遊戲的選角畫面，遊戲中各有三個角色給玩家選擇。 </p> <ul> <li>男戰士擁有十分平均的能力。</li> <li>女戰士高魔力但是攻擊方面卻是最低。</li> <li>老頭魔法力低的不能再低了，但是攻擊方面卻是最好用的，也是最多人選用的角色。</li> </ul> <p>遊戲攻擊方式分物理跟魔法，魔法的使用需要累積魔法瓶。 </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005399"><img src="https://pic.pimg.tw/qupyqupy/1451706388-2085164162_n.png?v=1451706403" alt="4563f665c18f942f6be959bbbf587483.PNG"></a>&nbsp; </p> <p>魔法瓶可以從小偷身上找到。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005408"><img src="https://pic.pimg.tw/qupyqupy/1451706388-148556419_n.png?v=1451706403" alt="0c514c12410b35d68cadb0499a1f50fc.PNG"></a>&nbsp; </p> <hr> <p>遊戲中也加入當時十分稀有的座騎系統，座騎可以發揮比主角群們更有傷害力的攻擊，不過被攻擊幾次就會跑走有點可惜。 </p> <p>下圖的座騎可以用尾巴掃敵人。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005411"><img src="https://pic.pimg.tw/qupyqupy/1451706388-2011391979_n.png?v=1451706403" alt="73ac5d970f7379f17902e91221815887.PNG"></a>&nbsp; </p> <p>藍色龍可以吐出火焰燃燒前方的敵人。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005420"><img src="https://pic.pimg.tw/qupyqupy/1451706389-986828288_n.png?v=1451706403" alt="43f6b8680ac227842d66793055b24aa6.PNG"></a>&nbsp; </p> <p>紅色的龍可以吐出火球，攻擊遠方的敵人，所有座騎就屬這隻最強，重點是遠距離攻擊常常讓敵人無法反應，這代的敵人ＡＩ又笨笨的，所以有這隻等於無敵。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005417"><img src="https://pic.pimg.tw/qupyqupy/1451706389-2589952537_n.png?v=1451706403" alt="03c77bef086577bc4a79bfd6bb96c0cf.PNG"></a>&nbsp; </p> <hr> <p>每關過關之後會有一個露營的畫面，這在戰斧遊戲裡也算是一個特別的設定，每次露營時，都會有小偷來偷走玩家的魔法瓶，玩家必須在時間內把魔法瓶打出來，然後吃掉，當然也包含小偷原本帶過來的。<br> </p> <p>下圖是各角色露營的畫面。<br> </p> <p>女戰士。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005423"><img src="https://pic.pimg.tw/qupyqupy/1451706389-4081525955_n.png?v=1451706403" alt="04f8ecbbe619ab02b6edad66c4666e59.PNG"></a>&nbsp; </p> <p>男戰士。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005426"><img src="https://pic.pimg.tw/qupyqupy/1451706389-2951645597_n.png?v=1451706403" alt="6c962c114c3fdb3cba4b63dd094c4e31.PNG"></a>&nbsp; </p> <p>老頭。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005429"><img src="https://pic.pimg.tw/qupyqupy/1451706390-416460038_n.png?v=1451706403" alt="ce633a450cb3f87f63977da354e2fb31.PNG"></a>&nbsp; </p> <p>下圖的小偷有分成兩個顏色，藍色是裝著魔法瓶的小偷，綠色是裝著補血物品的小偷。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005432"><img src="https://pic.pimg.tw/qupyqupy/1451706390-1373942422_n.png?v=1451706403" alt="496cb57d5ba8b618375d7d7e8b2b6a6e.PNG"></a>&nbsp; </p> <p> </p> <hr> <p>遊戲中最吸引小孩子目光的，就是他誇張的場景，在大的跟島一樣的烏龜身上作戰，而且烏龜身上還已經蓋滿房子了。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005438"><img src="https://pic.pimg.tw/qupyqupy/1451706390-1832488935_n.png?v=1451706403" alt="9b17e5b86449712c1ef0d1d628998e3f.PNG"></a>&nbsp; </p> <p>還有一樣大的誇張的老鷹，這種奇幻的背景在當時可以說是相當創新，甚至到現在，我也覺得非常獨特，至少我現在很少看到遊戲的背景會在大烏龜或是大老鷹身上跑來跑去。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005435"><img src="https://pic.pimg.tw/qupyqupy/1451706390-3491975604_n.png?v=1451706404" alt="dd1e0795cacb2cf72802b341f2793bdf.PNG"></a>&nbsp; </p> <p>下圖是主角們的前進路線，可以看到把大烏龜跟大老鷹也畫出來，小時候還會想除了這兩隻大動物以外，還會冒出什麼大動物，真的是很令人期待。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005441"><img src="https://pic.pimg.tw/qupyqupy/1451706390-2310775834_n.png?v=1451706404" alt="a3cebe63bd4cd0e678960591b1878b0e.PNG"></a>&nbsp; </p> <hr> <p>遊戲中的魔法依照階段會有不同的威力與特效，以下是各角色的魔法畫面。<br> </p> <p>女戰士的一階魔法，無數的火焰小鳥圍繞敵人身邊給予灼傷。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005444"><img src="https://pic.pimg.tw/qupyqupy/1451706391-298567551_n.png?v=1451706404" alt="bd6c253ab4aeee5c183b405683e25e43.PNG"></a>&nbsp; </p> <p>女戰士的二階魔法，從第上冒出四個火柱攻擊敵人。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005459"><img src="https://pic.pimg.tw/qupyqupy/1451706391-2877047063_n.png?v=1451706404" alt="8d569f738fb94779dd3e10f320987a4d.PNG"></a>&nbsp; </p> <p>女戰士的三階魔法，招換惡靈般的火焰，在當時看到這惡靈挺恐怖的，導致我都不敢用這招。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005447"><img src="https://pic.pimg.tw/qupyqupy/1451706391-3663200171_n.png?v=1451706404" alt="82285226cac72abd714ad3387407c849.PNG"></a>&nbsp; </p> <p>女戰士的四階魔法，招換火焰橫掃整個畫面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005417"><img src="https://pic.pimg.tw/qupyqupy/1451706389-2589952537_n.png?v=1451706403" alt="03c77bef086577bc4a79bfd6bb96c0cf.PNG"></a> <br> </p> <p>女戰士的五階魔法，噴射出熔炎攻擊敵人。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005453"><img src="https://pic.pimg.tw/qupyqupy/1451706392-1474589217_n.png?v=1451706404" alt="e420d4ffda3ef354938126c0e2dd12be.PNG"></a>&nbsp; </p> <p>女戰士的六階魔法，招換一隻龍噴出火焰燒死敵人，威力可是很強大的，連第一關魔王也受不住一擊。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005456"><img src="https://pic.pimg.tw/qupyqupy/1451706392-3376187561_n.png?v=1451706404" alt="84c13a15844d1a320192c5d56fc789b1.PNG"></a>&nbsp; </p> <p>男戰士的一階魔法。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005462"><img src="https://pic.pimg.tw/qupyqupy/1451706392-3103575116_n.png?v=1451706404" alt="c2473af5695e90e0c1fdd2a6373d9bbf.PNG"></a>&nbsp; </p> <p>男戰士的二階魔法，爆炸的點比一階魔法多。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005465"><img src="https://pic.pimg.tw/qupyqupy/1451706393-577372768_n.png?v=1451706404" alt="5f4e0867528d4e9d6f549ac913674fd6.PNG"></a>&nbsp; </p> <p>男戰士的三階魔法，爆炸的點比較大。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005468"><img src="https://pic.pimg.tw/qupyqupy/1451706393-100334210_n.png?v=1451706404" alt="6277190beb29a3f39ce3900a7337393e.PNG"></a>&nbsp; </p> <p>男戰士的四階魔法，名副其實的火山大爆炸。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005471"><img src="https://pic.pimg.tw/qupyqupy/1451706394-736085376_n.png?v=1451706404" alt="2ac9de6cbe565e3eb6ead242833ef74d.PNG"></a>&nbsp; </p> <p>老頭的一階魔法，招換天雷在地上亂竄。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005474"><img src="https://pic.pimg.tw/qupyqupy/1451706394-2105576811_n.png?v=1451706404" alt="63b4c8c7794cbf2a32d54430ded1eaab.PNG"></a>&nbsp; </p> <p>老頭的二階魔法，招換雷電橫掃整個畫面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005483"><img src="https://pic.pimg.tw/qupyqupy/1451706394-4030975962_n.png?v=1451706404" alt="885cee36bad10dd3238a2302621e3c32.PNG"></a>&nbsp; </p> <p>老頭的三階魔法，招換雷電將敵人團團圍住。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005480"><img src="https://pic.pimg.tw/qupyqupy/1451706394-820700558_n.png?v=1451706404" alt="a19583ad55ab4cd3a5c0c6eed615bf1d.PNG"></a>&nbsp; </p> <hr> <p>戰斧一代，敵人的ＡＩ真的是低到不像樣，只要花點腦筋都可以針對ＡＩ的弱點進行擊破，像是第一關魔王，只要你不打他，他會在那邊擺著ＰＯＳＥ等你打他，如果是兩個人玩的話，先給兩個魔王一人一個寵物的尾巴攻擊，兩個人在接連放魔法，魔王就死了。 </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005486"><img src="https://pic.pimg.tw/qupyqupy/1451706395-4198391704_n.png?v=1451706404" alt="c72e26936a3a596e25116dce154e28e0.PNG"></a>&nbsp; </p> <p>另外這代敵人對於衝撞攻擊完全沒有防禦力，對於下圖這種拿劍的笨重敵人，只需要拉開距離，然後不停的撞，撞到他死了就好了。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005489"><img src="https://pic.pimg.tw/qupyqupy/1451706395-3939351520_n.png?v=1451706404" alt="6db23ea247ee77cd5ab49db9956b53a4.PNG"></a>&nbsp; </p> <p>同樣倒數第二關魔王，也是拉開距離用撞的就好了，也有另外一招，就是不停的跳砍，不過這招用老頭的時候比較有效，其餘兩個角色的攻擊範圍畢竟太小，容易被反擊。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005492"><img src="https://pic.pimg.tw/qupyqupy/1451706396-1553689513_n.png?v=1451706404" alt="b846db4f6df0d5b6a12a7b9be2345d2f.PNG"></a>&nbsp; </p> <p>普通難度下，打完倒數第二關魔王就算結局了。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005504"><img src="https://pic.pimg.tw/qupyqupy/1451706396-374222811_n.png?v=1451706404" alt="4e4c27eacde10169619438ac64746625.PNG"></a>&nbsp; </p> <p>玩大型機台模式，可以挑戰最後的魔王，難度可不是倒數第二關魔王可以比擬的。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005498"><img src="https://pic.pimg.tw/qupyqupy/1451706396-2386329979_n.png?v=1451706404" alt="6470aa1fe819f9f332528b1c0217266f.PNG"></a>&nbsp; </p> <p>下圖看到牆壁中的骷髏，還有台上的雕像，每次玩都覺得那些雕像會突然跳出來攻擊一樣，不過最後也只跳出來兩隻，看起來比較利害的兩隻並沒有跳出來。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005501"><img src="https://pic.pimg.tw/qupyqupy/1451706396-1342994236_n.png?v=1451706404" alt="5c607f9626dfe17e1534b85905a2cd26.PNG"></a>&nbsp; </p> <p>迎戰最後魔王，果然坐在王座上很有氣勢。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005507"><img src="https://pic.pimg.tw/qupyqupy/1451706397-1443050188_n.png?v=1451706404" alt="83c35f81a8fed56d2e0f26a42b845d35.PNG"></a>&nbsp; </p> <p>這魔王可以說是犯規般的存在，為什麼說他犯規呢？因為他竟然可以使用主角群三人的魔法，魔法本來是玩家專有的，現在魔王竟然可以使用，而且還是無限使用，大型機台就是靠這種誇張的頭目設計來賺錢的。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005519"><img src="https://pic.pimg.tw/qupyqupy/1451706398-917228297_n.png?v=1451706404" alt="3afd8b3de2cb63e7cb522edc1149b4d6.PNG"></a>&nbsp; </p> <p>下面是破關後畫面，地圖顯示終於走到終點了。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005513"><img src="https://pic.pimg.tw/qupyqupy/1451706398-2669775110_n.png?v=1451706404" alt="198e617f3b3670b7d3a4cbe00a5caf51.PNG"></a>&nbsp; </p> <p>主角三人排排站，做一個漂亮的ＥＮＤＩＮＧ。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/207005516"><img src="https://pic.pimg.tw/qupyqupy/1451706398-3224695224_n.png?v=1451706404" alt="6cd8d3d4047cc68bd18bb7ed0664bcf7.PNG"></a>&nbsp;<br> </p>');
+    result.push('<p>以下是打各關頭目的影片，我把三位主角使用魔法的影片也加在裡面了，最後一戰魔王影片則連著結局畫面，可以看看，裡面還可以看到敵人跟老頭以打棒球的方式介紹遊戲人員。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/KDauun8t8nM?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/pe_vNnk1Mjk?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/I39B5kpVoMc?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/7LIIC8JNP-c?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/AjF0slyoxHI?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/yD5_7YYM_w4?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p>');
+    result.push('');
+    result.push('');
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
