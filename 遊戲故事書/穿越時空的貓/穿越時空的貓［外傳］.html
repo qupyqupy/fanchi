@@ -159,6 +159,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p><span class="global_name_span">蘇菲婭</span>一隻眼睛長出花的造型，讓我直接聯想到［誓血龍騎士三］的女主角<span class="global_name_span">零</span>。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img src="https://pic.pimg.tw/qupyqupy/1683606075-132629239-g_n.jpg" /></div> </div> </div>');
   activityArr.push('<hr /><div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img src="https://pic.pimg.tw/qupyqupy/1683606062-1446872811-g_n.jpg" /></div> </div> </div>');
   activityArr.push('');
+  activityArr.push('');
 
 
 
@@ -173,7 +174,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('起始的騎士與祈禱的魔劍');
   paArr.push('失落的正典與銀色的不凋花');
   paArr.push('IDA學園篇III-引導的果實與虛像之迷途羔羊');
-  paArr.push('');
+  paArr.push('三千界寶盒與海神深淵');
+  paArr.push('徬徨的少女與白夜的綴絲');
 
 
   var contentArr = [];
@@ -188,6 +190,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct8(1));
   contentArr.push(getAct9(1));
   contentArr.push(getAct10(1));
+  contentArr.push(getAct11(1));
 
   var pArr = [];
   pArr.push([]);
@@ -201,6 +204,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct8(2));
   pArr.push(getAct9(2));
   pArr.push(getAct10(2));
+  pArr.push(getAct11(2));
 
 
 
@@ -216,6 +220,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArrB.push(getActB8(1));
   contentArrB.push(getActB9(1));
   contentArrB.push(getActB10(1));
+  contentArrB.push(getActB11(1));
 
 
   var pArrB = [];
@@ -230,6 +235,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArrB.push(getActB8(2));
   pArrB.push(getActB9(2));
   pArrB.push(getActB10(2));
+  pArrB.push(getActB11(2));
 
 
   var firstEnter = 0 ; 
@@ -319,7 +325,41 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   initAct(1);
 
 
-  //聯動
+  function getActB11(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct11(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('第一話 - 手中利箭所指之物');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">第一話 - 手中利箭所指之物</div> <p>巨狼化身的少女<span class="global_name_span">賽絲塔</span>突然化身巨狼在［阿拉拉特］行動，擔心出亂子的<span class="global_name_span">阿爾德</span>、<span class="global_name_span">諾娜</span>兩人急忙跟了上去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0UCFu3v4y9k?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
 
   function getActB10(idx) {
     if (idx == 2){
