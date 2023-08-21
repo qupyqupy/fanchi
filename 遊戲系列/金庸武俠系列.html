@@ -1,0 +1,249 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr> <p>右上角的人物看起來真像劉德華。</p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762858-1950208312_n.jpg?v=1450762890" alt="352583ae09fcc2c4bd9e7fb43d4a0f79.JPG" /></p> <p>以前的遊戲常常會搭著八點檔電視劇順勢推出，像是林志穎演的絕代雙嬌，笑傲江湖，神雕俠侶等等，而這款遊戲正是搭著馬景濤跟葉童主演的倚天屠龍記一起推出的，那時候倚天屠龍記的周邊商品特多，不光是遊戲而已，錄音帶，照片卡，真的是多不勝數。 </p> <p>題外話以前明星的照片可以賣錢的，一張照片護貝之後放在書局賣，一張２０元也超多人買的。 </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762858-1292689074_n.jpg?v=1450762890" alt="94be953102ac61912db9efa86de856e5.JPG" /></p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262724439"><img alt="cover1.jpg" src="https://pic.pimg.tw/qupyqupy/1662164938-1526180529-g_n.jpg" title="cover1.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262724435"><img alt="cover2.jpg" src="https://pic.pimg.tw/qupyqupy/1662164938-942578303-g_n.jpg" title="cover2.jpg" /></a></div> </div> </div>');
+  activityArr.push('<hr> <p>這是遊戲殼封面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765813"><img src="https://pic.pimg.tw/qupyqupy/1451265037-1023908882.jpg?v=1451265054" alt="f072180728451dee7809fecbaadc5e7c.JPG"></a>&nbsp; </p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262639083"><img alt="cover.jpg" src="https://pic.pimg.tw/qupyqupy/1661525743-401904429-g_n.jpg" title="cover.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/262639087"><img alt="cover_back.jpg" src="https://pic.pimg.tw/qupyqupy/1661525743-2085271937-g_n.jpg?v=1661525743" title="cover_back.jpg" /></a></div> </div> </div> <p>1993 年智冠推出的遊戲，說實在話，當我買回來玩了第一天，我就把這遊戲丟在一邊了，因為實在是太難了，而且玩起來有那麼一點悶，戰鬥方面很不好控制，尤其是獨孤九劍，不是預備動作很長就是不好抓施招的距離，遊戲中也很少劇情方面的敘述，對於故事其實不太了解在講什麼，不過直接在地圖上開戰而不是切換到戰鬥畫面，這點在當初算是很新鮮。<br> </p> <p>題外話，笑傲江湖算是我最喜歡的金庸小說作品，原因沒什麼特別，而是在這部小說中，我看到許多貼近社會現實的情節敘述，像是君子劍岳不群，為了爭權奪利，陷害令狐沖，盜取辟邪劍譜，甚至自宮修練辟邪劍法，到頭來什麼也沒得到。 </p> <p>林平之為了復仇，也失去了一生的摯愛，最後被關在地牢中，其它像是左冷禪，任我行，東方不敗等人物，都在在反應了現實社會中，那些爭名奪利的人，其實爭到最後，通常失去的更多，不如像令狐沖一樣，淡泊名利，退隱江湖，可惜的是，在目前的社會中，你<span style="color: rgb(255, 0, 0);">要想像令狐沖一樣，多半也會被長輩說沒志氣，沒出息</span>，道理知道很簡單，要實踐卻是很難。 </p> <p>另外笑傲江湖中，我最喜歡的人物就屬曲洋與劉正風，比起其它的人物而言，他倆很明確的知道自己想要的是什麼，追求的是什麼，其實就是音律上的切磋，演奏上的快意，雖然兩人最後因為正邪之別，而被逼走上黃泉路，然而單對音律的追求執著，確實較其他人物對虛名浮利的爭奪，來得更令人動容，省思。 </p>');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('倚天屠龍記 (DOS)');
+  paArr.push('笑傲江湖 (DOS)');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('遊戲介紹');
+      resultIdx.push('人物頭像');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<p>這是遊戲密碼輸入畫面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765804"><img src="https://pic.pimg.tw/qupyqupy/1451265038-2737301628_n.png?v=1451265054" alt="42fc74b31ea9719868a01b8e41edeb64.PNG"></a>&nbsp; </p> <p>遊戲開頭選單。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765798"><img src="https://pic.pimg.tw/qupyqupy/1451265037-3998258433_n.png?v=1451265054" alt="92dc672dfbad57fc4582ac9340cb0ddf.PNG"></a>&nbsp; </p> <hr> <hr> <p>這是遊戲中人物的狀態，雖然有体力，內力等設定，還把其數字化，看起來好像是有升級的制度在，但是遊戲中並沒有升級的事件發生，從頭到尾主角也只有２００体力，基本功夫的設定，到結局也只會獲得兩種，華山跟恆山，但是對敵通常不會用基本功夫，大多都是獨孤九劍拼命轟炸，所以也沒什麼用。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765888"><img src="https://pic.pimg.tw/qupyqupy/1451265043-1091675903_n.png?v=1451265055" alt="b5dd8ea6504284146bb41f164c5e94f4.PNG"></a>&nbsp; </p> <p>道具欄的畫面，雖然看起來很大，但是道具總類不會超過兩排，不過這也使得剛開始玩的時候會有個錯覺，覺得遊戲十分豐富，可獲得的道具很多。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765894"><img src="https://pic.pimg.tw/qupyqupy/1451265043-3779539760_n.png?v=1451265055" alt="3748f0c9f0464bd98ce5725f9f51eea9.PNG"></a>&nbsp; </p> <p>遊戲的基本系統設定畫面。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765891"><img src="https://pic.pimg.tw/qupyqupy/1451265043-3506251775_n.png?v=1451265055" alt="86cd42fc31962e1483a309ad803071b1.PNG"></a>&nbsp; </p> <hr> <p>遊戲基本操作。 </p> <p>F1 ［搜尋，交談］ </p> <p>F2 ［物品使用］ </p> <p>F8 ［丟棄物品］ </p> <p>F10［系統選單］ </p> <p>Esc［人物資料］ </p> <p>遊戲中獨孤四劍的操作。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765897"><img src="https://pic.pimg.tw/qupyqupy/1451265043-3144637489_n.png?v=1451265055" alt="1da09108db05417fea07c104f4afa7fe.PNG"></a>&nbsp; </p> <hr> <p>遊戲的畫面是以３Ｄ斜角的方式呈像，不過實際移動時，總覺得畫面卡卡的，並沒有很流暢。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765900"><img src="https://pic.pimg.tw/qupyqupy/1451265043-3867189512_n.png?v=1451265055" alt="fc4c0146e88b154ff9abd1652085a055.PNG"></a>&nbsp; </p> <p>田伯光調戲儀琳。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765903"><img src="https://pic.pimg.tw/qupyqupy/1451265043-3409482312_n.png?v=1451265055" alt="9c401fb1d193c7f2591a9e021f85181f.PNG"></a>&nbsp; </p> <p>遊戲中最令人頭痛的地方，就是送林平之回老家，林平之只會一直往前衝，不會打敵人，還害我一直跟在後面幫他擦屁股，偏偏又不能不保護他，否則他死了，遊戲也GameOver了，這地方可算是遊戲中的初級難關。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765906"><img src="https://pic.pimg.tw/qupyqupy/1451265043-1074796476_n.png?v=1451265055" alt="0f6924ab76d5161eee51a2bf3409ac77.PNG"></a>&nbsp; </p> <p>令人討厭的針山陷阱，打敵人的同時還需要提防踏上去，踏上去是秒殺，就算修改鎖住体力都沒有用。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765909"><img src="https://pic.pimg.tw/qupyqupy/1451265044-1167318643_n.png?v=1451265055" alt="c2a7ed3d8de7ffd606180e9bbe1c47d7.PNG"></a>&nbsp; </p> <p>兩人進入夢鄉，竟然就變成兩具死屍了，這地方也可以看到遊戲中粗織濫造的一面（遊戲測試員不會覺得這樣很突兀嗎）<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765912"><img src="https://pic.pimg.tw/qupyqupy/1451265044-2099774560_n.png?v=1451265055" alt="424f1fcb58779d3173443f6c2ac0e028.PNG"></a>&nbsp; </p> <p>遊戲的另一難關，就是要在這狹小的空間內，努力求生，要一直磨到劇情發生，這個小空間真是要躲也很難躲。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765915"><img src="https://pic.pimg.tw/qupyqupy/1451265044-1217452344_n.png?v=1451265055" alt="5fb84756bf699a091e0ad23f6f602e1d.PNG"></a>&nbsp; </p> <p>遊戲後期梅莊救任我行的迷宮真是一整個變態，針山滿地也就算了，一堆會遠距離攻擊的小兵在針山上走來走去，可謂是上無天，下無地，槍林彈雨，絕處無生（我個人是用修改才找到生機）<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765918"><img src="https://pic.pimg.tw/qupyqupy/1451265045-371109119_n.png?v=1451265055" alt="f78701f575d3bde7d41172ff8e3ae7b6.PNG"></a>&nbsp; </p> <p>這個針山讓我印象非常深刻，竟然要玩家使用獨孤九劍才能跳過去。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765921"><img src="https://pic.pimg.tw/qupyqupy/1451265045-4028722758_n.png?v=1451265055" alt="48cc8273262a5c48613d4308c5a5f0b5.PNG"></a>&nbsp; </p> <p>打梅莊魔王，小說裡明明是獨孤九劍比較強，結果這裡梅莊主人施展的功夫簡直比獨孤九劍還威，威力大，範圍廣，我鎖住体力，有時候還會被秒殺。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765924"><img src="https://pic.pimg.tw/qupyqupy/1451265046-4025502348_n.png?v=1451265055" alt="6118d86ef343dc53050824eeff3e765a.PNG"></a>&nbsp; </p> <p>這是我打最後兩個魔王的影片。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/DqrVGlwui6E?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>結局雖然要大家期待，然後最後也是沒出，所以這款遊戲後來也沒有被平反的機會了。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765930"><img src="https://pic.pimg.tw/qupyqupy/1451265046-2526681369_n.png?v=1451265055" alt="970deddae252edc0b070c7cdad65c77c.PNG"></a>&nbsp; </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206765927"><img src="https://pic.pimg.tw/qupyqupy/1451265046-2770137805_n.png?v=1451265055" alt="ba42b059d8db475f50fdd187c0403225.PNG"></a>&nbsp;<br> </p> <hr> <p>遊戲動畫。 </p> <p>這遊戲其實各項操作，包含劇情我個人的評價並不是很高，但是動畫在當時確實是一流的。 </p> <p>莫大先生滅費彬。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/itVqv1-G4CE?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>風清揚傳授獨孤九劍，這段整體的動作緊湊度非常的好，尤其最後風清揚對山壁的一劍，土石崩塌，然而他在下方卻是一派清閒的樣子，更顯絕世高手的雍容氣度。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/8E59d8k_Pxw?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>向問天解救令狐沖。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/cGvjqQNxE34?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>結局，吸星大法明顯跟電影一模一樣，只差沒把人吸成球。 </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/9wvNl13Tusw?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe> </p>');
+    result.push('<p>人像總集。<br> </p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765801"><img src="https://pic.pimg.tw/qupyqupy/1451265037-2811205411.png?v=1451265054" alt="d5364afcd2c20e64fda95cb10924246b.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765807"><img src="https://pic.pimg.tw/qupyqupy/1451265038-592814822.png?v=1451265054" alt="580e7b926ba89545cc5bdef82d0e80f7.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765810"><img src="https://pic.pimg.tw/qupyqupy/1451265038-3775056751.png?v=1451265054" alt="f09d5fcdfb802f48ae08e2d0046a296f.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765816"><img src="https://pic.pimg.tw/qupyqupy/1451265038-498776028.png?v=1451265054" alt="21e56648ae10f0626fd751fd4d2aa913.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765819"><img src="https://pic.pimg.tw/qupyqupy/1451265039-3224369536.png?v=1451265054" alt="950e836aef28ed8c4fdbe70fd935b3a5.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765822"><img src="https://pic.pimg.tw/qupyqupy/1451265039-1002527064.png?v=1451265054" alt="d688a9aae1665a2550be8a18cc64ad15.PNG"></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765825"><img src="https://pic.pimg.tw/qupyqupy/1451265039-3198191289.png?v=1451265054" alt="9a3af362a3bf296e55cf08ead28e4242.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765828"><img src="https://pic.pimg.tw/qupyqupy/1451265039-4176039557.png?v=1451265054" alt="ab31b855332429e667d6a3d358b5545c.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765831"><img src="https://pic.pimg.tw/qupyqupy/1451265040-2638563139.png?v=1451265054" alt="1182a0e9f61ac9e415498165a2cc8ad0.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765834"><img src="https://pic.pimg.tw/qupyqupy/1451265040-2279818376.png?v=1451265054" alt="1a32320036df6069a9118edd16c9fdb2.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765837"><img src="https://pic.pimg.tw/qupyqupy/1451265040-1545444750.png?v=1451265054" alt="6e52c59d25afedeb0706df879d8de865.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765843"><img src="https://pic.pimg.tw/qupyqupy/1451265040-2120158708.png?v=1451265054" alt="7709c231429dca43f6e0e770713c69d2.PNG"></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765840"><img src="https://pic.pimg.tw/qupyqupy/1451265040-3487408309.png?v=1451265054" alt="ae59fc6dfce5ae98e327e5604442de09.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765846"><img src="https://pic.pimg.tw/qupyqupy/1451265040-2740364586.png?v=1451265054" alt="d73f7b7b24b2e3a2a35266804373d65b.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765849"><img src="https://pic.pimg.tw/qupyqupy/1451265041-2893825223.png?v=1451265055" alt="6e37e2c612500a6276aa557519a9399c.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765855"><img src="https://pic.pimg.tw/qupyqupy/1451265041-1931078513.png?v=1451265055" alt="c18fef6c3501f170e07a9ea3129cf4e9.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765852"><img src="https://pic.pimg.tw/qupyqupy/1451265041-1932492245.png?v=1451265055" alt="04d57715917ca460c17f7412d34584c2.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765858"><img src="https://pic.pimg.tw/qupyqupy/1451265041-2627632703.png?v=1451265055" alt="ad9c8003e0f4abb4bc5ee2e4bb3ec67b.PNG"></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765861"><img src="https://pic.pimg.tw/qupyqupy/1451265042-2131221631.png?v=1451265055" alt="4ea5873f2b57107c7f59f3688da17aa0.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765867"><img src="https://pic.pimg.tw/qupyqupy/1451265042-2391117978.png?v=1451265055" alt="8f8d1c38353d298c63e396babaf8f9d4.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765864"><img src="https://pic.pimg.tw/qupyqupy/1451265042-2798157246.png?v=1451265055" alt="338efa86d6b2a63d75a9a8568e18f877.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765870"><img src="https://pic.pimg.tw/qupyqupy/1451265042-1856343280.png?v=1451265055" alt="efff28f39ea98ac3bf27aad6266588ce.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765873"><img src="https://pic.pimg.tw/qupyqupy/1451265042-1343685939.png?v=1451265055" alt="fbeaf3432ea35d7fc3aaa660daacde43.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765876"><img src="https://pic.pimg.tw/qupyqupy/1451265042-3330403744.png?v=1451265055" alt="6e65c53b44aec24d87eb75737ca84be1.PNG"></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765879"><img src="https://pic.pimg.tw/qupyqupy/1451265042-406345701.png?v=1451265055" alt="b8ba964035d50a169b447d86ff46fa4c.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765882"><img src="https://pic.pimg.tw/qupyqupy/1451265042-3041454449.png?v=1451265055" alt="e1ff1e824534cbc747c4867b0ff7378d.PNG"></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206765885"><img src="https://pic.pimg.tw/qupyqupy/1451265042-3287755700.png?v=1451265055" alt="7112ce9801adbea9d90035beb8a789ce.PNG"></a></div> <div class="global_divtd"></div> <div class="global_divtd"></div> <div class="global_divtd"></div> </div> </div>');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('遊戲介紹');
+      resultIdx.push('人物頭像');
+      resultIdx.push('遊戲過場');
+      resultIdx.push('結局影片');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<p>這是遊戲的系統選單，簡單明瞭。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762858-1844062932.png?v=1450762891" alt="03a9c9341c946f971e971f6355874a34.PNG">&nbsp; </p> <p>這是遊戲開頭動畫，能想像這是ＤＯＳ時代的動畫嗎？ </p> <p>要知道那時候可沒有什麼AVI，RMVB，MP4，硬碟容量也不像現在一樣大，所以這動畫基本上就幾ＭＢ而已，再加上有人的語音配音，如此完成度極高的動畫，可見當時我國製作遊戲的水平相當不錯，但是這遊戲也就真的是這動畫有超乎水平以上的演出，其餘內容部分只數中等程度。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/_UuUtpc8-xU?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe> </p> <hr> <p>遊戲從一開始就是扮演主角張無忌，跟電視劇一開始從張翠山敘述不同，操作視角是採取４５度角的方式進行，也因為這種視角導致左下跟右下方常常藏著許多密道，對於很多劇情感覺是用趕的方式進行，因此敘述並不完全。 </p> <p>而遊戲中插入的日月神教，魔多教，這兩個自創支線也並沒有好好發揮，甚至這兩教如何產生，誰是主導者，到底有何目的也全部沒有解釋，遊戲中取得的道具有限，戰鬥也是固定幾場，這種設計有點像是惡靈古堡一代的感覺，但是惡靈古堡可以用技巧來彌補物品不足，倚天屠龍記卻只能凹敵人失手的機率，所以整體玩起來並不暢快，有如觀看一本小說，但是總會卡在幾場比較困難的戰鬥之處，所以當時很多玩家對此遊戲的評價不高。 </p> <p>尤其是毫無提示的謎題跟誇張到不行的陷阱，在遊戲前期簡直被玩家罵翻天。<br> </p> <p>如下圖，開寶箱被雷死。<span class="redactor-invisible-space"><br></span> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762858-378076832.png?v=1450762891" alt="93db3b0cb1fe9dd2c6edcaf3952600ce.PNG">&nbsp; </p> <p>走路被地雷炸死。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762858-3175656473.png?v=1450762891" alt="3ca3bac7388d29604144988d9be97fda.PNG">&nbsp; </p> <p>呆住被小火團燒死。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762858-1110483041.png?v=1450762891" alt="447c05ca4959a497e626e6f1bb66655b.PNG">&nbsp; </p>');
+    result.push('<p>下面是人物頭像。<br> </p> <p>看得出來對頭像的設計並沒有太過精緻的雕琢，比起同期遊戲產品而言，頭像是有些簡陋，但是本來小說人物眾多，而遊戲內所有人物的戲份也都敘述的很少，有些人物甚至只講一句話，所以頭像似乎也就沒有那麼重要了，但是有一點還是要抱怨的，就是有些人說話，根本就不知道他是誰，通常都要翻說明書，才知道這位講話的人是哪個人物，真的是非常麻煩。<span class="redactor-invisible-space"><br></span> </p> <p><span class="redactor-invisible-space">主角張無忌<span class="redactor-invisible-space">。<span class="redactor-invisible-space"><br></span></span></span> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762859-764544064.png?v=1450762891" alt="5da9a0f78ff6c6ab59bd28c4abf36406.PNG" width="127" height="127" style="width: 127px; height: 127px;">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762859-1339435775.png?v=1450762891" alt="9f92445c82520a7de9288679c46de260.PNG">&nbsp; </p> <p>揚不悔。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762860-531416525.png?v=1450762891" alt="883abd031d6ca8bed6cdfc0ff691fce9.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762860-2484238373.png?v=1450762891" alt="f6efd0cb900632af56e621a3aa43525e.PNG"> </p> <p>小昭。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762860-1244111209.png?v=1450762891" alt="94291396632f1e77b199e92978d14792.PNG">&nbsp; </p> <p>周芷若。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762860-1150889079.png?v=1450762891" alt="1ad4861850cee848c3165568dfe609cf.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762860-4128475465.png?v=1450762891" alt="1f83fcb760df3065104f7b9fb4433858.PNG">&nbsp; </p> <p>趙敏。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762860-3898064181.png?v=1450762891" alt="5ef7479203710ed32887b8e821766e3c.PNG">&nbsp; </p> <p>殷離。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762860-2918165077.png?v=1450762891" alt="7d491c31e308662f20dcc193afba3131.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762860-1697391693.png?v=1450762891" alt="176a8c1f924a5c0667eb3c7034066081.PNG">&nbsp; </p> <p>武當六俠。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762860-2254450280.png?v=1450762891" alt="56fb9a642b5511881e69fd107de94277.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762861-2515506915.png?v=1450762891" alt="77f41538e5bcd574c875de5ad8ce4a57.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762861-1932061566.png?v=1450762891" alt="1dde056906d12efb9555666f05bba992.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762861-2701826039.png?v=1450762891" alt="ef56aa5e5e3a85d6bd18503a0bb75793.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762861-2989450931.png?v=1450762891" alt="17dff20f7b1299b30d634fc3cebf85d4.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762861-1034009572.png?v=1450762891" alt="c590e14d4183a6e87c39613f924dc173.PNG">&nbsp; </p> <p>宋青書。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762861-3849755514.png?v=1450762891" alt="a6d99d08a284ef786ac9019cc3df95da.PNG">&nbsp; </p> <p>武當張三豐。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762862-3585617703.png?v=1450762891" alt="b29f3c43c957d3bbe5fefee63808d65a.PNG">&nbsp; </p> <p>少林空字輩神僧。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762862-1159354270.png?v=1450762891" alt="4d39f52de5194555e705002adae79439.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762862-2596400351.png?v=1450762891" alt="48871e65f268f9de2c33264180f4b3db.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762862-526640627.png?v=1450762891" alt="55c2eebbc3280ba9cc03ad2be4dde98b.PNG">&nbsp; </p> <p>常遇春，徐達，朱元璋。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762862-431723986.png?v=1450762891" alt="2b12aca778af29f3d82d8fd5f5e0022c.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762862-3581153683.png?v=1450762891" alt="162ee89ed98efdf662411713376b9eff.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762862-620639839.png?v=1450762891" alt="b438f37c56204bca410baefbaa1266f4.PNG">&nbsp; </p> <p>波斯三使。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762862-2409950632.png?v=1450762891" alt="5d856c4836830bfc6149e27c2f62b4e4.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762862-194466458.png?v=1450762891" alt="a11fba1f805ce4f4101d0746e48b2be4.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762862-133063124.png?v=1450762892" alt="1b9bbc789cc4e894f5b086530f5b186e.PNG">&nbsp; </p> <p>光明左右使。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762862-1932644104.png?v=1450762892" alt="1276a8194b4a43e0499a7cd9e77ccad9.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762863-3186601650.png?v=1450762892" alt="9362435b6d50136340e8a9680600f4a0.PNG">&nbsp; </p> <p>明教護教四大法王。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762863-115305054.png?v=1450762892" alt="dd25df41fda876a5be6e32912fb562d7.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762863-1863057635.png?v=1450762892" alt="34549100339d415787d3cde1f90f3c95.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762863-457115378.png?v=1450762892" alt="cbf48016186d12353357d0cdea822105.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762863-4225838800.png?v=1450762892" alt="a3ab2878ebe5199f9c3be31737e4a545.PNG">&nbsp; </p> <p>五散人。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762863-2818694026.png?v=1450762892" alt="843cb13944871be53e38722bd1edebcb.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762863-785352813.png?v=1450762892" alt="ff0a756d0116ff334620dcedd5e709a9.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762863-1829219649.png?v=1450762892" alt="83a83dec7b4a210a28df4efa86220650.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762863-2043836421.png?v=1450762892" alt="319561b1227a9e7a059cf72b328b0c60.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762863-4095169751.png?v=1450762892" alt="0b79b5f0cbeb1a43f56ce53da85443f1.PNG">&nbsp; </p> <p>朱九真父女。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762864-4287560039.png?v=1450762892" alt="7855b4ebd707eee31033cdee380f6b95.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762864-2872180337.png?v=1450762892" alt="de65ed8402caadba2bf879089f5668ff.PNG"> </p> <p>成昆。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762864-3536418917.png?v=1450762892" alt="3fede2e1caad465b4e18a7fe4ad85f88.PNG">&nbsp; </p> <p>何太沖夫婦＋小妾。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762864-3212075517.png?v=1450762892" alt="57f514149f19e25284f4cb7058b2e7bf.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762864-215693216.png?v=1450762892" alt="e3afa9687fc359d475eb4f429a77898b.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762864-490396430.png?v=1450762892" alt="0709fd18da6e2d44a2fba399cd4575a1.PNG">&nbsp; </p> <p>滅絕師太。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762865-677173497.png?v=1450762892" alt="dd178088276e09bfc629c37efeed2bbf.PNG">&nbsp; </p> <p>少林三大神僧。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762865-3107369693.png?v=1450762892" alt="bfc776f4c227d79dec4993736ec43115.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762865-2247591502.png?v=1450762892" alt="fadcd9b2222703a1fd618b3499daa446.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762865-66852901.png?v=1450762892" alt="8e07d6735aca638dae026e7d9d69b8ac.PNG">&nbsp; </p> <p>丁敏君。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762865-2026733077.png?v=1450762892" alt="3723f8ea154d5d8bdf2ff90d4842e9f2.PNG">&nbsp; </p> <p>胡青牛夫婦。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762865-2738988980.png?v=1450762892" alt="0dab2f869b7d5ce8ed83e1e879fb97b9.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762865-180413713.png?v=1450762892" alt="41ace34aaa7002a6a1ca9145ba0cebcd.PNG">&nbsp; </p> <p>紀曉芙。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762865-399456794.png?v=1450762892" alt="acc932dbb7799ca3009c1339e3d1a07f.PNG">&nbsp; </p> <p>蝶谷求醫三人組。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762866-1502152624.png?v=1450762892" alt="fef4033ae20320a768bee4cfa5113e2d.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762866-4223989380.png?v=1450762892" alt="acc23b9d7d2133c9e26649513e9286ec.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762866-2013633704.png?v=1450762892" alt="efbd3b8ed36e3e26dbe3ddabb802a22e.PNG">&nbsp; </p> <p>阿大，阿二，阿三。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762866-2116049800.png?v=1450762892" alt="8c81844ac9f91cafd26f9a1640cb1f14.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762866-3998093467.png?v=1450762893" alt="bf4878ee0dc5e8c7e61475df8d895014.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762866-660617167.png?v=1450762893" alt="b502a9a8a05544b472a94cfb078986a1.PNG">&nbsp; </p> <p>玄冥二老。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762866-446711946.png?v=1450762893" alt="7fb80b97461a70eb3b5d1456b72c40bd.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762866-1523411659.png?v=1450762893" alt="886d21ce06f3ad20f4ab0223d87146a4.PNG">&nbsp; </p> <p>殷野王。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762866-2442277712.png?v=1450762893" alt="1c54d7fa424e3c3e22e5beb378741397.PNG"> <br> </p> <p>華山派。 </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762867-1448876290.png?v=1450762893" alt="0630f0cab15b95b1aa8082b94728eec5.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762867-2749146538.png?v=1450762893" alt="ededa8ad05f0924c6708633c37a64bba.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762867-1064525579.png?v=1450762893" alt="d0e4e4992d4866d39fc9e79f4304da49.PNG"> </p> <p>崆桐派。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762867-2291518129.png?v=1450762893" alt="2eb0c7c7e60c4038a2ffa2b641529242.PNG">&nbsp;<img src="https://pic.pimg.tw/qupyqupy/1450762867-3996008341.png?v=1450762893" alt="d0328079a7fffe15a7805705033cb339.PNG">&nbsp; </p> <p>嫌雜人等。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762867-1145898187.png?v=1450762893" alt="753dde6211712f35f7c261c6254e37b3.PNG">&nbsp; </p>');
+    result.push('<p>下面是遊戲的過場畫面。 </p> <p>前往蝶谷求醫，卻遇上斷橋（<span style="color: rgb(255, 0, 0);">胡青牛都不用出谷的喔，橋斷了都不知道</span>）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762867-375387764.png?v=1450762893" alt="32add0130b24dfd6acc9bdfd3caa7bdf.PNG">&nbsp; </p> <p>找到喝醉的樵夫，讓樵夫去修橋。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762867-3026641769.png?v=1450762893" alt="5e474725a9f241ce00fed8e1c5ef4b5f.PNG">&nbsp; </p> <p>樵夫修橋中（才斷那麼一小截，不用修，跳過去不就好了）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762868-296114574.png?v=1450762893" alt="c78a7ef3b752f35720ce4393e860e77b.PNG">&nbsp; </p> <p>常遇春傷重倒地，等著張無忌醫治。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762868-1230772016.png?v=1450762893" alt="46c5f4f11ec47f7a7b1c75277fa00ac0.PNG">&nbsp; </p> <p>被金花婆婆傷的武林中人，齊來蝶谷求醫。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762868-2754978818.png?v=1450762893" alt="87635a0a18a1c9acc149c1acd029682f.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>張無忌摘蜂窩（小說沒這段吧），尚未練成蓋世武功，先學養蜂人<span class="redactor-invisible-space">。<span class="redactor-invisible-space"><br></span></span> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762868-3345272188.png?v=1450762893" alt="8622e106d683532c6a595d00298789cb.PNG">&nbsp; </p> <p>偷魚叉，連小偷技能也要學。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762868-2076829506.png?v=1450762893" alt="417aa707dbfbbd50e8de88a240209792.PNG"> <span class="redactor-invisible-space"></span> </p> <p>順利偷到手，準備去捕魚。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762868-1527060513.png?v=1450762893" alt="73ab6b98695e853a15746a4875b38fbc.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>連漁夫技能也要學啊，真是可憐的萬能主角。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762869-2334284026.png?v=1450762893" alt="4a16645c8ad4bf24c2845c1b048bf5e1.PNG">&nbsp; </p> <p>給紀曉芙吃生魚，畫面上是一口就吞下去，骨頭都沒吐出來。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762869-4020112867.png?v=1450762893" alt="e81622f81fa2c09eb83610456c7d1821.PNG">&nbsp; </p> <p>初遇徐達，朱元璋。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762869-2552892898.png?v=1450762893" alt="ccf418c40e5986fcd3a717837d1e0cd7.PNG">&nbsp; </p> <p>三人齊力殺韃子。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762869-1921551315.png?v=1450762893" alt="6fb92a910986003794265ceb68fa06f9.PNG">&nbsp; </p> <p>不管是誰，死後都是畫面上那造型。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762869-4040380777.png?v=1450762893" alt="bdb3a513f2b3dcae6f262e30a996b286.PNG">&nbsp; </p> <p>胡青牛夫婦互相比試醫毒修為。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762869-1901626478.png?v=1450762894" alt="a21a049c96dded4a07bcb64fdbd268e2.PNG">&nbsp; </p> <p>紀曉芙死於滅絕師太之手，楊不悔也在此時被日月神教抓去。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762870-2725815814.png?v=1450762894" alt="70c8ecb0f4aa42adc6bbbd6ab43a3bbb.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>殺韃子三人組勇闖日月神教分壇<span class="redactor-invisible-space">。<span class="redactor-invisible-space"><br></span></span> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762869-3734498655.png?v=1450762894" alt="054b89824f36dc999a997dd67af94f8b.PNG">&nbsp; </p> <p>日月神教教徽，還好任我行沒有亂入到倚天屠龍的世界。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762870-2363685811.png?v=1450762894" alt="d57b2457d3175759542346c4f2c77a1a.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>救出楊小妹妹，也發現胡青牛夫婦死亡訊息<span class="redactor-invisible-space">。<span class="redactor-invisible-space"><br></span></span> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762870-3386820834.png?v=1450762894" alt="35a82e53e9f3c5a142dc7a4921433ee4.PNG">&nbsp; </p> <p>幫何太沖小妾醫病，抓金銀兩蛇。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762870-4194740477.png?v=1450762894" alt="f55fbec3ee7d1c254a8a55b47ee6660c.PNG">&nbsp; </p> <p>抓到蛇了。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762871-3730786132.png?v=1450762894" alt="30e2f92b25b0bc33df6034b051543732.PNG">&nbsp; </p> <p>送楊小妹妹找到楊逍之後，很衰的被石頭擋住唯一的出路。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762871-2620181048.png?v=1450762894" alt="50d91d1e1549ab1ed11f33d9edc91d8f.PNG">&nbsp; </p> <p>東方不敗超越時空亂入到倚天屠龍的世界了，而且竟然還會作善事，不簡單。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762871-3883468981.png?v=1450762894" alt="99771aa5118c42850f26e35c51152416.PNG">&nbsp; </p> <p>掉下谷底，隨處都可撿到完全無用的石塊，我<span style="color: rgb(255, 0, 0);">第一次玩的時候不知道，把全部的石塊都撿好了，結果佔了我一堆道具空間，導致我後來重玩，因為補血藥品根本不夠放</span>。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762871-663097527.png?v=1450762894" alt="77a8fb57f5ac5d87ac0cdcf21fbee30d.PNG">&nbsp; </p> <p>發現白猿生病，要開刀幫他治療（主角連外科手術都會了）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762871-3745017911.png?v=1450762894" alt="54904af7d4332d6c1fa101c8e1075ffa.PNG">&nbsp; </p> <p>吃完魚的魚骨頭。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762871-1323014658.png?v=1450762894" alt="1b830329e791ce0977a80b4b7f934104.PNG">&nbsp; </p> <p>看一看竟然能變成縫合用的針（這點我佩服設計人員的想像力）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-727800710.png?v=1450762894" alt="25ebcc58a160ddaf4145df023570caa1.PNG">&nbsp; </p> <p>用尖銳的石塊當開刀用的手術刀（假如現實生活真的這樣用，傷口鐵定好不了）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-2100790552.png?v=1450762894" alt="3f47e4efee032a1953a5384eb64bf601.PNG">&nbsp; </p> <p>可憐的白猿（被製作小組惡搞開刀小片段）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-198571535.png?v=1450762894" alt="97b05d2e687c394460ad041f13916644.PNG">&nbsp; </p> <p>下面是張無忌長大後，從谷底回到谷上的影片，可以看出九陽神功根本是抄襲龜派氣功。<br> </p> <p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/lkGAlfx0H5w?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe><br> </p> <p>傳說中白蓮神教的神功護體！！<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-1333151008.png?v=1450762894" alt="6caa8ef27887fe8e5b2d547e02968dbd.PNG">&nbsp; </p> <p>與殷離一起被關在牢房。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-2132529384.png?v=1450762894" alt="a5f2af00280e433b74e7ce7101a762c3.PNG">&nbsp; </p> <p>決鬥朱常齡，一陽指ＶＳ九陽神功。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-4015275505.png?v=1450762894" alt="4e420d7973a363d3b1cb60649c324571.PNG">&nbsp; </p> <p>韋一笑抓走殷離。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-348927164.png?v=1450762894" alt="df7043130fac9f69996330f92a56dc45.PNG">&nbsp; </p> <p>深入火蟾洞，幫韋一笑抓火蟾。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-42634172.png?v=1450762894" alt="586981438800ef668ca485c6a58c93fc.PNG">&nbsp; </p> <p>洞裡到處都是小火山，小蟾蜍，還有移動的小火團。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-1851471915.png?v=1450762894" alt="964cabc8459ec07848bd0e2573cd1a93.PNG">&nbsp; </p> <p>發現軒轅劍俠的屍骨。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762872-708098649.png?v=1450762894" alt="05bb14c451cc73bbe3664d7353d458f0.PNG">&nbsp; </p> <p>好大的火蟾。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762873-3211962575.png?v=1450762894" alt="49b215d4ce4546264d8f6416b5ef6761.PNG">&nbsp; </p> <p>用軒轅劍俠的火蟾劍法對決火蟾。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762873-4014967408.png?v=1450762894" alt="48fd6f12677b80b74b9145c456b49feb.PNG">&nbsp; </p> <p>可憐的火蟾被張無忌殺死取心。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762873-1500237476.png?v=1450762894" alt="c6e18350ec486d52db5bd38b8e64d6cc.PNG">&nbsp; </p> <p>明教各大高手，被成昆偷襲。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762873-740560054.png?v=1450762894" alt="d8231d06c073673a56d08f51c0683063.PNG">&nbsp; </p> <p>與小昭深入明教密道尋找成昆。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762873-1296298406.png?v=1450762894" alt="a26b0b40c0a9ae4106fb519a8d2c3748.PNG"> <span class="redactor-invisible-space"></span> </p> <p>誰知道那麼多板手要開哪個啊！！<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762873-453742016.png?v=1450762894" alt="0aebc694c5db4f5cea96ef080e4f83d6.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>亂開亂開之下，終於撞到陽頂天夫婦的屍骨旁。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762873-564623792.png?v=1450762894" alt="cae3916cabcb1669989f78ba914b85d1.PNG">&nbsp; </p> <p>乾坤大挪移初顯神威，移開石門。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762874-2736694801.png?v=1450762894" alt="893e913b13f9e31943ac0bcde2977931.PNG">&nbsp; </p> <p>光明頂上，明教高手節節敗退。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762874-3785807332.png?v=1450762895" alt="143368e94b3e9995d6410bb22defd942.PNG"> <span class="redactor-invisible-space"></span> </p> <p>遊戲中最讓人熱血的一段，張無忌孤身獨鬥六大派。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762874-1939579437.png?v=1450762894" alt="1e475a8218e2eb5dcdcfe9341bca5311.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>現學現賣七傷拳，大破崆峒派。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762874-4017162447.png?v=1450762895" alt="3f81ac62f48c1615237c71c387c622d6.PNG">&nbsp; </p> <p>光明頂一役後，發現被大力金鋼指所傷的殷六俠。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762874-1412562812.png?v=1450762895" alt="793b95042400d6408ab12de00cb51bdc.PNG">&nbsp; </p> <p>初遇趙敏。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762874-2352088712.png?v=1450762895" alt="cd73ab22634dcc2cc1d0b2e00681bd3c.PNG">&nbsp; </p> <p>韋一笑，小昭中毒。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762875-3217941170.png?v=1450762895" alt="55bfcb71a464f956cf179b16dc499324.PNG">&nbsp; </p> <p>解毒後，眾人來到少林寺，韋一笑可是遊戲中絕強的人物，移動的步數之多絕對是第一人，打帶跑戰術可以說是永無敵手，要是張無忌也可以移動那麼多步就好了。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762875-2452626422.png?v=1450762895" alt="9a0f9c512ccae1136ab9c9ac12cceff2.PNG">&nbsp; </p> <p>發現陷害明教的１６個大字。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762875-447906095.png?v=1450762895" alt="0cc052451fc164b6e106d74ffcf22046.PNG">&nbsp; </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762875-1745065392.png?v=1450762895" alt="ec1d213874421ac948b431495f2aa55f.PNG">&nbsp; </p> <p>前往武當，發現被偷襲的張三豐。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762875-1156743371.png?v=1450762895" alt="5e740a1bbb17d7a7d89b8288a0971159.PNG">&nbsp; </p> <p>與趙敏在武當大打出手。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762875-1994287947.png?v=1450762895" alt="bae72a944aef54b7b30423852bfb54b5.PNG">&nbsp; </p> <p>以太極劍法決鬥阿大。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762876-717238861.png?v=1450762895" alt="27abc0537240d8dfe70c4fb1bf2f3b50.PNG">&nbsp; </p> <p>張無忌大鬥玄冥二老。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762876-1246079511.png?v=1450762895" alt="cbbf8193f002fc1cbbdfa8cec04d9bdf.PNG">&nbsp; </p> <p>萬安寺遇光明右使。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762876-2715432203.png?v=1450762895" alt="f1e56f7424681ea60d99fc49b631d465.PNG">&nbsp; </p> <p>明教四大高手圍毆玄冥二老，遊戲中最暢快的地方就是萬安寺了，可以操縱光明左右使與韋蝠王。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762876-2832658784.png?v=1450762895" alt="04291c5436c931f3a30e4173debef6b0.PNG">&nbsp; </p> <p>滅絕師太自絕萬安寺。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762876-2806782400.png?v=1450762895" alt="29777911d153cc1507c0a035652d357a.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p>與趙敏來到靈蛇島<span class="redactor-invisible-space">。<span class="redactor-invisible-space"><br></span></span> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762876-3619640121.png?v=1450762895" alt="0557cc8eab19de644de6bcd7e0fe550b.PNG">&nbsp; </p> <p>決鬥波斯三使。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762877-845288211.png?v=1450762895" alt="d388839287ea1ac7e84a3d8617ce5722.PNG"> <span class="redactor-invisible-space"><br></span> </p> <p><span class="redactor-invisible-space">前面萬安寺還可以操縱光明左右使跟青翼蝠王，在這邊只能操縱比三人都弱的紫衫龍王<span class="redactor-invisible-space">。<span class="redactor-invisible-space"><br></span></span></span> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762877-718408887.png?v=1450762895" alt="a767a9f45caace3171cea3b302695a06.PNG">&nbsp; </p> <p>屠獅大會與武當三俠相遇交手。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762877-3549053297.png?v=1450762895" alt="83fe501ede0c5800241f152a12fa9435.PNG">&nbsp; </p> <p>比最後魔王還要難纏的魔多教，怪怪不得了，每個血都比我張無忌多，何時冒出那麼多高手。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762877-3284694064.png?v=1450762895" alt="4d1f568fe21c457e676733c2b365bc06.PNG">&nbsp; </p> <p>宋青書良心發現，被成昆所殺。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762877-2295611155.png?v=1450762895" alt="6620df8edcf169a56acc3ac20d63eb4f.PNG">&nbsp; </p> <p>死前交給張無忌一封信。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762877-234887593.png?v=1450762895" alt="cc37a8360b124c1178225ce31dcd5ab0.PNG">&nbsp; </p> <p>最後決鬥少林三大神僧（真的比魔多教弱很多）<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762878-805198264.png?v=1450762895" alt="94b033a9ea593b5fc0b4bfe3f7a100bd.PNG">&nbsp; </p> <p>決鬥三大神僧時，盡量不要用藥品，因為要留給謝遜作最後一戰。<br> </p> <p><img src="https://pic.pimg.tw/qupyqupy/1450762878-3884325759.png?v=1450762895" alt="1d87f13b3b392b1e43736131b72e51ba.PNG">&nbsp;<br> </p>');
+    result.push('<p> <iframe title="YouTube video player" width="560" height="315" src="https://www.youtube.com/embed/M6ipAEIDRa8?wmode=transparent" frameborder="0" allowfullscreen="" class="no-convert"> </iframe> </p>');
+    result.push('');
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
