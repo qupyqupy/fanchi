@@ -1,0 +1,406 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>主線劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>支線劇情：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /> <p>遊戲開頭畫面。</p> <p>在介紹遊戲劇情前，需要講解一下遊戲世界觀。</p> <p>這世界分為［繭］、［下界－大脈衝］，所謂［下界］就是星球的地表世界，［繭］則是利用地表資源所建立的一個浮在高空中的小星球，兩者間互相敵視而且曾經爆發一場戰鬥，激烈的程度就連［繭］的外殼都被打破一個大洞，因此生活在［繭］的人民都對［下界］抱持著恐懼與敵意。</p> <p>另外造成這種衝突的主因是名為［法爾希］的機械神，這類的神在［繭］、［下界］都有很多，講起它們的身世得從世界創造之時講起。</p> <p>一開始這世界是由萬物之母的女神<span class="global_name_span">穆因</span>管理，她被兒子<span class="global_name_span">布涅貝哲</span>擊倒後，消失在［不可視的世界］，這邊可以理解為［冥界］。</p> <p>當上世界神的<span class="global_name_span">布涅貝哲</span>至此仍不滿意，無法接受世界萬物都注定毀滅的命運，並且認為這些都是<span class="global_name_span">穆因</span>從［冥界］傳來的詛咒，為了徹底消滅<span class="global_name_span">穆因</span>而創造了三個初代機械神<span class="global_name_span">法爾希－脈衝</span>、<span class="global_name_span">法爾希－艾特羅</span>、<span class="global_name_span">法爾希－林澤</span>，來替他想進入［冥界］的辦法，自己則是變成水晶沉睡。</p> <p><span class="global_name_span">法爾希－脈衝</span>負責開闢世界，<span class="global_name_span">法爾希－林澤</span>負責守衛沉睡的<span class="global_name_span">布涅貝哲</span>，<span class="global_name_span">法爾希－艾特羅</span>因為有著與<span class="global_name_span">穆因</span>極為相似的外表，所以並沒有被<span class="global_name_span">布涅貝哲</span>賦予任何使命與能力，因此她十分的傷心，在無盡的孤寂之中扯碎自己的身體，卻因此進入［冥界］繼承了<span class="global_name_span">穆因</span>的願望與力量成為［冥界女神］，而她身體的血肉則在現世被拿來創造人類。</p> <p>至於後來出現的眾多［法爾希］，主要就是<span class="global_name_span">法爾希－脈衝</span>、<span class="global_name_span">法爾希－林澤</span>因應不同需求所創造的。</p> <p>而所謂的［路希］就是［法爾希］的僕從，身為機械神可以隨意將人類打上烙印，成為［路希］的人類會被賦予使命，達成使命就會化為水晶沉睡，不然的話就會變成駭人的怪物［屍骸］，而賦予使命的方式則是一段模糊的影像，具體是甚麼？還需要［路希］自己去尋找。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/D82BoBPsSbY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('<hr /> <p>遊戲一開始的發展看似與前代毫無關係，讓人有種一頭霧水的感覺。</p> <p>實際上在前代，眾人引發奇蹟拯救［繭］以及從水晶恢復成人，這幾件事情引發了巨大的［時空悖論］，<span class="global_name_span">雷光</span>因此被混沌拖入了女神<span class="global_name_span">艾特羅</span>宮殿所在的［英烈祠］。</p> <p>透過女神力量，<span class="global_name_span">雷光</span>看到過去、未來發生的事情，明白到如果女神死亡，世界將會被［冥界］的混沌之力吞沒，步入毀滅，所以自願留下來成為女神守護者。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wgU7fc-mylo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('太空戰士XIII');
+  paArr.push('太空戰士XIII-2');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+    
+
+
+    return result;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('劇情補遺');
+  pArr.push('路上強敵');
+  pArr.push('招喚獸');
+  pArr.push('冥碑任務01~05');//OK
+  pArr.push('冥碑任務06~10');//OK
+  pArr.push('冥碑任務11~15');//OK
+  pArr.push('冥碑任務16~20');//OK
+  pArr.push('冥碑任務21~25');//OK
+  pArr.push('冥碑任務26~30');
+  pArr.push('冥碑任務31~35');//OK
+  pArr.push('冥碑任務36~40');//OK
+  pArr.push('冥碑任務41~45');//OK
+  pArr.push('冥碑任務46~50');//OK
+  pArr.push('冥碑任務51~55');
+  pArr.push('冥碑任務56~60');//OK
+  pArr.push('冥碑任務61~64');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">霍普跟班尼拉談戀愛</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ETngDAKV53s?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">仙人掌</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gMh4mZLgZXc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">好多陸行鳥</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/llWyBBWAhlM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">一堆小精靈在的地方</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/w2sXjZDU0tw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">法爾希 泰坦</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FzvIDqM7dg0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">班尼拉拔羊毛</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rVMUytmqLtU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">修理巴克迪</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E0J85f5Mr7A?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">專制暴君</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/w4t8mnNddQA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">堅鋼古代龜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JAFpfnvf0io?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">堅鋼玳帽龜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JRWF9lkJvxM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">一堆食腐獸</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oyG32aZu08M?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">無敵戰機</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9_RC6q4mo18?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">堅鋼龜中最強存在</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HuXHhwyvaCo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">薩茲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1ywJLp6duR0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">霍普</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/iA4KNWoldbI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">雷光</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jMNF11WNX3I?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">班尼拉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eGKYby2XVE0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">冰雪</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XDgQSOdY6jA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">牙</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/T8paQxxjJtw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">旅行者的歡喜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-dGBwLuZraI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">獵人的策略</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RqwvIsIAzpA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">太過遙遠的亞峽斯山</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8KtWPBYMbQI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">自願當英雄的憂鬱</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EMKzi7WLkDM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">悲劇的重逢</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SMF3a4RLGac?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">路希的歸鄉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5w-l1gjC9pQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">六死將 王都的侵略者</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/X7S9GbNXxc0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">緊要關頭中的光明</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Dfj3yHlRQTQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">屈從的境界</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/baG43pGQ5Pk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">殘存的希望</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0jmegIVBCMc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">勇者的驕傲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QatWS9r_Nic?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">六死將 暴虐的破壞者</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XYHvLx27JVo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">永遠的誓言</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EA3zG_rZC94?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">陸行鳥的守護者 決心</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/X7L0TnJwi3M?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">不知畏懼的挑戰者</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HaOH4UkwXrE?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//11~15
+  contentArr.push('<div class="title_text">陸行鳥的守護者 代理</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hLleHNOgqpE?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">支撐未亡人的思念</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1idR905VNZo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">徬徨的戰士</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MLV7M01tX98?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">崩潰的三角關係</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BL0ppjNWAeU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">盼望傳達的話語</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eTRKWkwoLtI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//16~20
+  contentArr.push('<div class="title_text">巴的守護者 溫柔的石塊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/shDZA26p3Dk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">巴的守護者 不滅的士兵</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JercDK533Ys?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">巴的守護者 鑽地的甲冑</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/F3b09hvnlNo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">巴的鎮護者 疏遠的織布</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Gi2uSdYUESY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">巴的鎮護者 充滿詛咒的妖魔</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FZuphLLgLM4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//21~25
+  contentArr.push('<div class="title_text">巴的鎮護者 不吉的慘叫</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GLmF51Jmr5I?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">六死將 隱居的獨唱者</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v1L8h3Eslh8?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">約爾芭鄉復興計畫</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xezPaeO77TQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">對偉大意思的疑問</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GLG4HOhH96U?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">六死將 狡猾的罪魁禍首</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bp6zecH3IOA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//26~30
+  contentArr.push('<div class="title_text">確實的成就感</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DKhBmDUhM3E?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">路希一家的牽絆</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BCQ1wpYEJpM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">動搖的父母心</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PEDf9l9jcS0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">六死將 災禍的殺戮者</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u8leMm2bu_o?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">精魂流轉之始 誘往奔流之扉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lROyCVLQadM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//31~35
+  contentArr.push('<div class="title_text">精魂流轉之陰 撕裂萬物之牙</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mII1ZzxhSaw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">精魂流轉之陽 還原萬物之嘴</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KdBroHazgvo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">月光之旋律 來自底層的反攻</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vNZlAfJxLro?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">星光之旋律 來自深層的反擊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b-eM_4q_y28?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">日光之旋律 來自地獄的背棄</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u45R-px0uS4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//36~40
+  contentArr.push('<div class="title_text">土之真象 夙怨之刃</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RTJhBtCPqus?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">火之真象 金剛之拳</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qQQnrWFAqQU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">風之真相 風暴疾行</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tNBAiH7k_lc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">水之真像 混沌之波</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SxvZRoKskJ0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">緋之真如 歡喜之舞</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PaM_OUQLXR4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//41~45
+  contentArr.push('<div class="title_text">綠之真如 高潔的雙翼</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WUC9qAMs1GY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">橙之真如 真理之盾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u4Hw7wp7L8w?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">黃之真如 沉澱之監視</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JNaXoC5zAzQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">草色之真如 不穩的裁斷</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PRuggw22DLk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">櫻之真如 調和的咆嘯</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/T1zm00EX36I?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//46~50
+  contentArr.push('<div class="title_text">天藍之真如 兇刃之死將</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ovwDyPv7eps?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">飛翔的夢想</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eKUsf8g2gnA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">從恐怖中解放</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/K4gem1r5Sbw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">遊牧民族的守護隊</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qDu7axo-K6w?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">溫柔少女的反抗</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xV4gV1nDuGk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//51~55
+  contentArr.push('<div class="title_text">青之真如 結實邁出的四肢</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wl2F1g3Wlrs?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">藍之真如 清淨之飛沫</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KvxIWg8x0E8?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">堇之真如 嚴峻的毆打</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LQCwUm4rdWA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">紫之真如 對立之兩極</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zz9ubAx6pA8?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">銀之真如 開首之像</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kJiZO6ZkLAM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//56~60
+  contentArr.push('<div class="title_text">金之真如 夢幻的拂拭</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aac0Oh47JLM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">雪之真如 意志之盾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AG1TfTWBi-8?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">湧現的不協調感</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9C0rn5U4PzU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">再臨之死將 令王都新生的翅膀</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vGAUJIWlVk0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//61~64
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var pArr = [];
+  pArr.push('');
+  pArr.push('第一章');
+  pArr.push('第二章');
+  pArr.push('第三章(上)');
+  pArr.push('第三章(下)');
+  pArr.push('第四章(上)');
+  pArr.push('第四章(下)');
+  pArr.push('第五章');
+  pArr.push('第六章');
+  pArr.push('第七章(上)');
+  pArr.push('第七章(下)');
+  pArr.push('第八章');
+  pArr.push('第九章');
+  pArr.push('第十章');
+  pArr.push('第十一章(上)');
+  pArr.push('第十一章(下)');
+  pArr.push('第十二章');
+  pArr.push('第十三章');
+
+  		return pArr;
+  	}
+  	var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">第一章</div> <p>故事從一個少女的旁白開始，當她甦醒後第１３天，世界開始邁向末日。</p> <p>一輛列車載滿身穿斗篷的民眾，這是即將被流放到［下界］的班車，對他們來說這形同宣告死刑，為了活命，大家群起反抗，與［聖府］的軍隊展開了戰鬥。</p> <p>我們操控的角色<span class="global_name_span">雷光</span>、<span class="global_name_span">薩茲</span>卻有著其他目的，穿梭在這場戰鬥中。</p> <div class="global_ps_text"> <p>旁白少女就是後來的夥伴<span class="global_name_span">班尼拉</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5TvsuOxOpcs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">雷光</span>兩人清除沿路的敵人，目標是前往［下界］的機械神<span class="global_name_span">法爾希·靈魂</span>所在處，講起這機械神，因為在 13 天前突然甦醒，將許多［繭］的居民變為［路希］，［聖府］為了避免汙染蔓延，才爆發了這場名為［淨化］的戰鬥。</p> <p>另一邊<span class="global_name_span">冰雪</span>率領的反抗軍［諾拉］與［聖府］軍戰鬥正酣。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gEzRpIQ0JLU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雖然戰況不容樂觀，但<span class="global_name_span">冰雪</span>正面積極的態度感染了在場眾人，平民也紛紛拿起武器加入戰鬥，然而對手畢竟是［聖府］軍隊，不少民眾在砲火中犧牲。</p> <p><span class="global_name_span">霍普</span>的母親也因此消逝，為此他對<span class="global_name_span">冰雪</span>懷有一定的敵意、誤會，就算一旁的<span class="global_name_span">班尼拉</span>對他不斷開導，似乎也沒啥用處。</p> <p>而<span class="global_name_span">冰雪</span>本人也是粗神經，雖然答應了<span class="global_name_span">霍普</span>母親要保護她孩子，但是卻連對象是誰都不知道，索性看到的孩子通通保護起來準沒錯。</p> <p>再看到<span class="global_name_span">雷光</span>這邊，<span class="global_name_span">法爾希·靈魂</span>所在的異跡來到戰場，這引起了大夥的注意。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kV-CdbRdRa0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>戰場上的三組人<span class="global_name_span">雷光</span>、<span class="global_name_span">冰雪</span>、<span class="global_name_span">班尼拉</span>皆不約而同地懷著不同目的向異跡前進。</p> <p>異跡內部並沒有軍人在，這也難怪，畢竟一不小心就會被<span class="global_name_span">法爾希·靈魂</span>變成［路希］，同樣的理由，<span class="global_name_span">霍普</span>也擔心變成［路希］而一直抗拒朝著異跡深處前進，但是<span class="global_name_span">班尼拉</span>硬拉著他，他也沒反抗的意思。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KGi9Y7RU7ho?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第二章</div> <p>越往異跡深處走去，<span class="global_name_span">霍普</span>心裡越是不安，但是<span class="global_name_span">班尼拉</span>突然上前獻上擁抱後，似乎給了他安全感。</p> <p>此時同樣在異跡內的<span class="global_name_span">冰雪</span>，正在大吼大叫，聲音傳到了兩人所在地方.....</p> <p><span class="global_name_span">冰雪</span>之所以來到此處，為的就是找尋自己的未婚妻<span class="global_name_span">莎拉</span>，她因為跟<span class="global_name_span">法爾希·靈魂</span>接觸成為［路希］，就此變成［繭］的敵人，但<span class="global_name_span">冰雪</span>並沒有這樣的想法，只是單純想與愛人相聚。</p> <p>另一邊<span class="global_name_span">雷光</span>身為<span class="global_name_span">莎拉</span>的姊姊，來此的目的也跟<span class="global_name_span">冰雪</span>差不多，大夥就這樣在塔裡到處亂闖，最終會合在一起。</p> <p>顯然此時的<span class="global_name_span">霍普</span>還是個屁孩個性，把母親逝去的原因歸罪於<span class="global_name_span">冰雪</span>，但又不敢當面抱怨。</p> <div class="global_ps_text"> <p>02:46 - 這段很有幽默感，<span class="global_name_span">雷光</span>向妹妹道歉時，因為<span class="global_name_span">冰雪</span>剛好觸動機關的緣故，所以大門因此打開。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ru8wbiqQm_I?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>畫面來到一處寬廣的區域，<span class="global_name_span">莎拉</span>就昏迷躺在中央，本來應該是個團圓的感人景象，但<span class="global_name_span">莎拉</span>笑著請大家［保護繭］後，就因達成使命而化為水晶。</p> <p>從這裡看來，<span class="global_name_span">莎拉</span>被賦予的使命，應該就是將眾人聚集在一起。</p> <p>這樣的結局，<span class="global_name_span">雷光</span>並沒有辦法接受，但<span class="global_name_span">冰雪</span>還是充滿正能量地想辦法解救未婚妻。</p> <p>就在此時，［聖府］軍方已經對異跡展開攻擊，巨大的震動傳到了內部，通往<span class="global_name_span">法爾希·靈魂</span>所在的大門自動打開，眾人決定直接向他發起挑戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/78MCbiUmuLE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>最後在戰鬥過程中，<span class="global_name_span">法爾希·靈魂</span>將在場所有人都變為［路希］，大家不約而同都看到同一個影像，一個巨大的魔獸［諸神黃昏］。</p> <p>力量耗盡的<span class="global_name_span">法爾希·靈魂</span>，拚盡全力滅了在場的大部分［聖府］軍，隨後便跌入湖中，巨大的寒氣將湖水凝聚成冰，似乎是為<span class="global_name_span">雷光</span>等人留了一條活路。</p> <p>畫面轉到<span class="global_name_span">班尼拉</span>甦醒的第11天，<span class="global_name_span">莎拉</span>因為成為［路希］而對未來充滿絕望，然而<span class="global_name_span">冰雪</span>偏偏就在此時向她求婚。</p> <p>漫天的浪漫煙花、真摯的男人眼神，<span class="global_name_span">莎拉</span>雖然不敢想像未來，但仍想把握當下這一刻，開心的答應了求婚。</p> <p><span class="global_name_span">冰雪</span>並不是真的粗神經，他也明白［路希］的最終結局，現在能想到為愛人做的事情，就是讓她享受眼前的煙火，用笑容弭平她心中的不安。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1u9kx8IuORI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第三章(上)</div> <p><span class="global_name_span">雷光</span>等人醒來後，發現大家都擁有了魔法能力，這正是變為［路希］的證據之一。</p> <p>當中有人認命、有人抱怨、有人積極想完成使命，但唯一可以確定的是大家都成為［繭］的敵人，現在必須攜手合作逃離［聖府］軍的包圍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8qSvECZLADU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在途中，大家正對［使命］究竟是保護［繭］還是摧毀［繭］產生爭論，這時［聖府］的特殊部隊［PSICOM］已經到來，雖然大夥很輕易的就解決了，但［PSICOM］真正的精銳並沒有出動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sYvOmX_U8Y4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>再往前走，發現了已經變為水晶的<span class="global_name_span">莎拉</span>，<span class="global_name_span">雷光</span>權衡利害下，應該要趁［PSICOM］精銳還沒到來之前離開，然而<span class="global_name_span">冰雪</span>卻是死腦筋，堅持要挖開堅冰帶走未婚妻。</p> <p>就這樣<span class="global_name_span">冰雪</span>與大夥因為想法不同而分開，他重情的表現也讓<span class="global_name_span">霍普</span>逐漸對他改觀。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/d-iNMl0dM60?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>另外［聖府］派出了巨大的軍艦來搜索［淨化］的殘存者，似乎已經將該區的人類視為可能成為［路希］的存在，要全部抹滅。</p> <p>從四周的情況來看，［聖府］已經逐漸建立起包圍網，如果要逃出生天，行動得再加快。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gAkKOIzFTak?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第三章(下)</div> <p><span class="global_name_span">薩茲</span>突然好奇變成水晶到底是甚麼感覺？<span class="global_name_span">班尼拉</span>聽到後神色顯得有些怪異，理由挺簡單的，<span class="global_name_span">班尼拉</span>也曾經變為水晶過，這次算是第二次當［路希］，不過此時眾人還不知道。</p> <p>而一旁的<span class="global_name_span">雷光</span>想起妹妹，直到<span class="global_name_span">莎拉</span>變為水晶的那一刻，始終都不知道妹妹的使命到底是甚麼？愧疚的心理，讓她覺得是自己沒辦法獲得妹妹的信任。</p> <p>繼續前進，大夥來到湖上的廢棄都市，這裡受到［法爾希］的力量影響，連火焰都變成水晶的樣子，看著就像藝術燈一樣，十分好看，當然這麼明顯的地標，肯定有［PSICOM］部隊在裡面搜查。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/B8jQLO8v4KU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>越過重重守衛，卻在廢都大殿遇上強力的戰鬥兵器，這在以前或許很難對付，然而成為［路希］獲得的魔法力量也不是擺著好看，眾人合力下總算擊敗強敵。</p> <p>就在大夥開心往前走時，卻沒注意到暗處監視的鳥形物體。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Xksxqoh1mKY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>再看孤身一人的<span class="global_name_span">冰雪</span>這邊，因為實在太顯眼，終於還是被［PSICOM］發現包圍，在極限的狀態下，<span class="global_name_span">冰雪</span>覺醒了［召喚］<span class="global_name_span">濕婆神</span>的能力。</p> <p>就在<span class="global_name_span">冰雪</span>精疲力盡倒下時，一個神祕的持槍女子率領士兵接近，打昏並帶走了他，當然一旁已經變成水晶的<span class="global_name_span">莎拉</span>也一並落入女子手中。</p> <p>雖然暫時不知道這女人的身分，但在她的右手臂上有著［路希］的烙印，只是顏色較<span class="global_name_span">冰雪</span>更為淺淡。</p> <p>回看<span class="global_name_span">雷光</span>這邊，找到一台飛行器，便想利用它突破包圍網，這裡就有點［星際大戰］的飛行器大戰那味兒。</p> <p>最終暫時突破包圍網的眾人，從新聞上看到［聖府］代表<span class="global_name_span">嘉連斯.戴斯利</span>正在發表關於［淨化］的演說，當中隱藏了大屠殺的真相，所有不人道的消息都被封鎖。</p> <p>此時在空中可以看到賜予［繭］光輝的［法爾希］，連<span class="global_name_span">班尼拉</span>都驚訝於那美麗的外表，但隨後追趕來的敵機可不會給眾人喘息的機會，就這樣眾人搭載的飛行器受到攻擊而墜落。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/13Isz2X5NtM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第四章(上)</div> <p>就算是飛行器墜毀，但因為內部設計的安全裝置起了防護作用，眾人得以在爆炸中倖存，看著毀壞的飛機引起的巨大煙霧，想來不久之後追兵就會趕到。</p> <p><span class="global_name_span">雷光</span>起身就要離開，<span class="global_name_span">霍普</span>則馬上追了上去，剩下的<span class="global_name_span">薩茲</span>與<span class="global_name_span">班尼拉</span>實在跟不上<span class="global_name_span">雷光</span>的腳步，這時隊伍又再一分為二。</p> <p>此時畫面一轉，<span class="global_name_span">班尼拉</span>甦醒後第11天，她來到海濱的廣場抬頭欣賞煙火，<span class="global_name_span">雷光</span>此時也在這裡，她正與長官<span class="global_name_span">艾磨達</span>交談著，兩人聊起了跟［下界］有關的［艾烏力特峽谷事件］，不過這麼敏感的話題，在四周都是［PSICOM］部隊戒備的廣場不太適合繼續，於是兩人又聊到了關於<span class="global_name_span">雷光</span>的21歲生日。</p> <p><span class="global_name_span">艾磨達</span>送給<span class="global_name_span">雷光</span>一張［士官候補生課程］的推薦信，希望她能早日出人頭地，並且少管［下界］的事情。</p> <p>艾磨達［跟下界扯上關係，注定沒好事］。</p> <p>這讓後來的<span class="global_name_span">雷光</span>想起來，不禁感觸起來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9sEv0pwDo10?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>時間回到現在，<span class="global_name_span">雷光</span>與<span class="global_name_span">霍普</span>繼續逃亡，途中看到不少［繭］的［法爾希］從［下界］收集用來修復［繭］的材料，當中有不少奇怪的機械、奇異的文物。</p> <p>就這樣一直前進到一處陡峭的斷崖，就當<span class="global_name_span">霍普</span>正累得倒地休息時，<span class="global_name_span">雷光</span>聊起自己當初為何搭上那班通往［下界］的列車，也就是故事開頭與<span class="global_name_span">薩茲</span>乘坐的那班。</p> <p>廣場上，［PSICOM］的部隊心狠手辣，面對想要逃跑的民眾，皆毫不留情地予以射殺，本來<span class="global_name_span">雷光</span>身為［警備隊］的一員，是可以免於被［淨化］，但她為了獲得拯救妹妹的機會，還是搭上了這班車，<span class="global_name_span">薩茲</span>就是在那時看到<span class="global_name_span">雷光</span>與眾不同，才緊跟著她想尋找一線生機。</p> <p>回憶完，<span class="global_name_span">雷光</span>不管還在休息的<span class="global_name_span">霍普</span>，直接跳上了斷崖，實在跟不上的<span class="global_name_span">霍普</span>只能望崖興嘆。</p> <p>另一邊<span class="global_name_span">薩茲</span>兩人緩慢的前進著。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yMjSTe-d3mg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>通過重重障礙，<span class="global_name_span">薩茲</span>他們來到<span class="global_name_span">霍普</span>的所在地。</p> <p>這時<span class="global_name_span">霍普</span>因為對目前的情況不滿而像屁孩一樣在發脾氣，自己跟母親明明只是來［波達姆］看了一晚煙火，如今卻是母親逝去、自己也變成［路希］，回憶中<span class="global_name_span">霍普</span>即便還有一個父親，但他似乎對其相當不滿。</p> <p>不過追兵在後，三人還是得繼續逃跑。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fE5IEMGScOM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>三人合作下總算是追上<span class="global_name_span">雷光</span>。</p> <p>繼續前進的途中，大夥遇上了一台來自［下界］的巨大兵器［無畏戰機］，擊敗它後得以繼續前進。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b7Ay6sqggPs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第四章(下)</div> <p>逃亡的過程總是讓人絕望，<span class="global_name_span">薩茲</span>也忍不住抱怨了一下，就在這時候<span class="global_name_span">雷光</span>提出一個大膽的想法，既然無法完全逃離，在［繭］又沒有任何安身的地方，乾脆直接進入［聖府］中樞，憑著［路希］的力量大鬧一場，直面控制［繭］的機械神<span class="global_name_span">法爾希.伊甸</span>。</p> <p>雖然遭到夥伴的反對，但<span class="global_name_span">雷光</span>還是堅定自己的想法，要不然如此逃亡下去，最終不是被［聖府］擊潰，就是變成［屍骸］。</p> <p>就這樣四人再度分道揚鑣，<span class="global_name_span">霍普</span>則因為仇恨<span class="global_name_span">冰雪</span>所以決定跟著<span class="global_name_span">雷光</span>走，隨即兩人就遇上了［PSICOM］的抹殺部隊，但還是輕鬆解決。</p> <p>另一邊<span class="global_name_span">薩茲</span>與<span class="global_name_span">班尼拉</span>決定繼續逃亡的旅程。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DdA71od1HLo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>再看<span class="global_name_span">雷光</span>兩人，正朝著［加普拉］前進，看看能否調查到前往<span class="global_name_span">法爾希.伊甸</span>的方法，途中<span class="global_name_span">霍普</span>展現驚人的機械能力，成功驅動一個［下界］的巨大機器人，沿途有如狂風掃落葉，將追兵敵人全部打飛，不過最後因為操作技術不純熟而摔壞了。</p> <p>再往前走，<span class="global_name_span">雷光</span>突然面臨到［召喚獸-奧汀］的試煉，繼<span class="global_name_span">冰雪</span>之後，成為第二個掌握［召喚］能力的人。</p> <p>在與<span class="global_name_span">霍普</span>同行的過程中，或許是出於想彌補對妹妹的虧欠，<span class="global_name_span">雷光</span>逐漸打開心中的防衛，透露出難得的體貼、關心。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QO6W6kSU9Fs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>至於<span class="global_name_span">薩茲</span>這邊，與<span class="global_name_span">班尼拉</span>的逃亡過程挺歡樂的，他似乎對［下界］這些機械挺得心應手，不斷搞定途中遇到的難題，到最後似乎還有些小得意。</p> <p>兩人一起逃到一處平台，看這邊挺適合休息，就準備在這待一晚，<span class="global_name_span">班尼拉</span>還挺有防備心的畫了一條線，不準<span class="global_name_span">薩茲</span>超過，只不過自己深夜卻因為害怕或是怕冷，主動靠在<span class="global_name_span">薩茲</span>這大叔背後取暖。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7Y0Llab2sh8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>再看<span class="global_name_span">冰雪</span>被神秘女人<span class="global_name_span">牙</span>抓走之後，搭上了一個巨大的飛艇，見到了這部隊的負責人<span class="global_name_span">雷恩斯</span>。</p> <p>他似乎與其他［聖府］軍不同，面對<span class="global_name_span">冰雪</span>這個［路希］沒有明顯的敵意，可是明顯有著自己的目的，提供保護的同時，又似乎將［路希］當作籌碼。</p> <p>此時畫面轉到<span class="global_name_span">班尼拉</span>甦醒後第七天，<span class="global_name_span">莎拉</span>因為成為［路希］的緣故，決定與<span class="global_name_span">冰雪</span>分手，<span class="global_name_span">冰雪</span>一開始得知真相時還無法接受的倒地痛苦，但才想了一陣就直接追上離開的<span class="global_name_span">莎拉</span>。</p> <p>［我絕對會救妳，一直保護妳！］。</p> <p>［我們去找出使命，一道實現吧！］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CusMmbjbDpk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第五章</div> <p><span class="global_name_span">雷光</span>兩人來到［加普拉森林］，<span class="global_name_span">霍普</span>一直期望自己的成長，鼓起勇氣說出想擔任前鋒位置的想法，也許是被這氣勢震動，<span class="global_name_span">雷光</span>拿出一把軍用小刀給眼前的小弟弟防身。</p> <p><span class="global_name_span">雷光</span>拿出的這把小刀可說對其有著重要的意義，這邊稍微劇透下，是她妹妹<span class="global_name_span">莎拉</span>給她的生日禮物。</p> <p>兩人前進到一處大門前，<span class="global_name_span">霍普</span>意外地提起<span class="global_name_span">冰雪</span>，這時才知道<span class="global_name_span">雷光</span>對這妹婿也沒啥好感，而<span class="global_name_span">冰雪</span>領導的組織［諾拉］，這名字意指野貓，只是單純想跟所謂［走狗］做出區別才會這樣命名。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jO3HkwgbFpU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這片樹林有著許多野生動物，有些甚至比起軍隊飼養的更加兇暴。</p> <p><span class="global_name_span">雷光</span>在戰鬥中察覺到<span class="global_name_span">霍普</span>異常期望成長的心態，深聊過後才知道他對<span class="global_name_span">冰雪</span>有著極深的仇恨，雖然真正害他喪母的兇手是［聖府軍］，但他卻將責任轉投到<span class="global_name_span">冰雪</span>身上，可能是<span class="global_name_span">冰雪</span>天真的想法、直覺的行動、總將正面笑容掛在臉上的表現，讓<span class="global_name_span">霍普</span>看了格外刺眼。</p> <p>這時畫面轉到<span class="global_name_span">班尼拉</span>甦醒後第12天，<span class="global_name_span">莎拉</span>正跟<span class="global_name_span">雷光</span>坦承自己成為［路希］與答應<span class="global_name_span">冰雪</span>求婚的事情，但由於太過突然，<span class="global_name_span">雷光</span>壓根就不信，連唯一的親人都無法理解自己，<span class="global_name_span">莎拉</span>只能委屈地哭著離去，桌上留著她送給<span class="global_name_span">雷光</span>的生日禮物，正是目前<span class="global_name_span">霍普</span>手上的那把小刀。</p> <p>直到電視新聞開始報導［法爾希］的消息，<span class="global_name_span">雷光</span>才驚覺自己犯的錯誤，但此時對妹妹的傷害已經無法挽回。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kMTCrdZ2pqU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>正因為這樣的愧疚，<span class="global_name_span">雷光</span>將<span class="global_name_span">霍普</span>當作贖罪的對象，路途上不斷開導他，為了讓自己心中不再徬徨，<span class="global_name_span">霍普</span>將對<span class="global_name_span">冰雪</span>的復仇命名為［諾拉作戰］，非常諷刺的，<span class="global_name_span">諾拉</span>正是<span class="global_name_span">霍普</span>母親的名字，與<span class="global_name_span">冰雪</span>所創的組織同名。</p> <p>此時<span class="global_name_span">霍普</span>的內心顯然已經被黑暗填滿，<span class="global_name_span">雷光</span>雖然感到無奈，也只能再找機會糾正他的錯誤思想。</p> <p>兩人繼續前進，擊敗了守在森林出口的［試作騎鬱金香］，看到了遠處夕陽下的小城鎮［帕魯姆波魯姆］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bd6HQvCqMwA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">霍普</span>的父親如今就在［帕魯姆波魯姆］，就算父子倆心有芥蒂，<span class="global_name_span">雷光</span>還是建議至少回家一趟看看。</p> <p>這時身在巨大飛空艇的<span class="global_name_span">冰雪</span>，似乎已經跟這裡的人達成協議，準備與<span class="global_name_span">牙</span>一起去進行抓捕［路希］的行動。</p> <p>時間回到<span class="global_name_span">班尼拉</span>甦醒後第12天，沒辦法得到姐姐信任的<span class="global_name_span">莎拉</span>，正與<span class="global_name_span">冰雪</span>逃離［聖府］的追捕，但途中卻仍被強大火力逼到絕境，最終<span class="global_name_span">莎拉</span>不慎被吸入<span class="global_name_span">法爾希·靈魂</span>所在的異跡，<span class="global_name_span">冰雪</span>則因飛行器被擊中而跌落海灘獨自懊悔著。</p> <p>回到現在的時間點，<span class="global_name_span">薩茲</span>與<span class="global_name_span">班尼拉</span>繼續著看似歡樂的逃亡，這時突然看到許多軍對朝著［帕魯姆波魯姆］進發，心裡不由得開始為<span class="global_name_span">雷光</span>擔心起來，不過擔心歸擔心，逃跑還是要貫徹到底，既然知道軍隊的進向，就朝反方向逃準沒錯，目標［納吉拉斯］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DT_EZ_v7ae4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第六章</div> <p><span class="global_name_span">班尼拉</span>好奇問起有關<span class="global_name_span">薩茲</span>的事情，知道了眼前這位黑人大叔有個兒子<span class="global_name_span">多吉</span>，但當想更深入了解，<span class="global_name_span">薩茲</span>反而不願意說下去，彷彿是個帶有傷痛的回憶。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1Lf8TFg7_Fs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>禁不住<span class="global_name_span">班尼拉</span>關心式的提問，<span class="global_name_span">薩茲</span>終於說出那一天發生的事情。</p> <p>時間是<span class="global_name_span">班尼拉</span>甦醒後第五天，<span class="global_name_span">薩茲</span>父子去參加能源廠的參觀活動，從回憶的畫面可以看到，［聖府］的［法爾希］因為<span class="global_name_span">班尼拉</span>身為［下界］人的身分而感到威脅，所以將<span class="global_name_span">多吉</span>轉化為［路希］尋求自保。</p> <p>之後<span class="global_name_span">多吉</span>被［PSICOM］保護起來進行研究，他能感受到［下界］的力量，當初發現［異跡］裡有［法爾希］的也是他，為了替兒子達成使命，<span class="global_name_span">薩茲</span>才會在一開始搭上淨化列車前往［異跡］，但沒想到自己卻成為［下界路希］，妥妥變成兒子的敵人。</p> <p>雖然這故事聽起來挺感傷，但兩人還是要繼續逃跑的路程，眼前這區域有著天氣轉換裝置，可以隨意切換晴天、雨天，遇到的怪物種類也會隨著天氣有所不同，兩人就這樣一路切換來到出口前，卻見到兩隻沉睡中的強力魔物，就算已經有意識地想要悄悄離開，最終仍不免一戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/j7uLw_jz5aQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>好不容易打贏後，兩人又因為大雨困在了搭船的碼頭，這時候<span class="global_name_span">班尼拉</span>因為自己害到<span class="global_name_span">多吉</span>的關係，想要向<span class="global_name_span">薩茲</span>承認自己是［下界人］的身分，但話到嘴邊又停了下來，畢竟［繭］的人民早被［聖府］洗腦，仇視著［下界］，如果這時候攤牌恐怕兩人的關係會因此產生變化。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wEkTYlk8rUc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第七章(上)</div> <p>［聖府軍］開始了對［路希］的大規模圍剿，為首的是一名叫做<span class="global_name_span">羅修</span>的銀髮男人。</p> <p>面對這樣大批的部隊，<span class="global_name_span">雷光</span>與<span class="global_name_span">霍普</span>靠著對地形的熟悉，潛入了［食品培養廠］，這裡並不在軍隊的搜索範圍內，因此相對安全。</p> <p>而［繭］的其中一個［法爾希］<span class="global_name_span">卡班克爾</span>正在此處進行生產糧食的工作，看著眼前的［機械神］，兩人討論起了［繭］中［人類］與［法爾希］之間的關係。</p> <p>［在一般人的眼中，法爾希該很親切吧。一定是非常喜歡人類吧，很珍惜地.....像寵物一般.....］。</p> <p><span class="global_name_span">霍普</span>脫口而出的這句話猛然點醒了<span class="global_name_span">雷光</span>，由於自己一直被［法爾希］飼養著，當成為［下界路希］後，等同於被飼主拋棄，為了逃避現實才會選擇戰鬥，也因此將<span class="global_name_span">霍普</span>引導至錯誤的方向。</p> <p><span class="global_name_span">霍普</span>完全無法理解<span class="global_name_span">雷光</span>這樣的改變，甚至要自己放棄［諾拉作戰］，但追兵在後，不管怎樣還是得先逃出去再說。</p> <div class="global_ps_text"> <p>這邊的劇情有點生硬，但其實是為了引出人類是被［法爾希］眷養在［繭］的這個事實，文章一開頭有提到世界神<span class="global_name_span">布涅貝哲</span>創造了三個原初的機械神替他想進入［冥界］的方法，<span class="global_name_span">法爾希－林澤</span>最後想到一次性造成大量人類死亡就可以產生通往［冥界］的大門，因此［繭］才會被創造出來，用來眷養大量人口。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/78qJkg6thj8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［即便還不知道正確的前進方向，但目前盲目作戰的方式肯定是錯誤的。］</p> <p>為了讓<span class="global_name_span">霍普</span>能帶著如他名字一樣［希望（HOPE）］活下去，<span class="global_name_span">雷光</span>決定帶他回家，可是才一回到街道就遭到大批部隊包圍，這時候<span class="global_name_span">冰雪</span>與<span class="global_name_span">牙</span>突然出現伸出援手，原來當初帶走<span class="global_name_span">冰雪</span>的部隊首領<span class="global_name_span">雷恩斯</span>並不滿目前［聖府］的作風，所謂［抓捕路希］的行動，其實是一種保護。</p> <p><span class="global_name_span">冰雪</span>看眼前困境，直接召喚出<span class="global_name_span">濕婆神</span>作戰，瞬間場地凝結出許多冰柱，打亂了［PSICOM］的布局，戰鬥中<span class="global_name_span">雷光</span>將<span class="global_name_span">霍普</span>託付給<span class="global_name_span">冰雪</span>後，自己便與<span class="global_name_span">牙</span>一起對付其他敵人。</p> <div class="global_ps_text"> <p><span class="global_name_span">雷光</span>的本名叫做<span class="global_name_span">埃克萊爾·法隆</span>，之所以改名字是因為失去雙親後，為了守護妹妹而想趕快長大，這種想法跟如今的<span class="global_name_span">霍普</span>很像，也許是這層關係，才會讓她特別照顧眼前的小弟弟。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5fZCwxV5_kI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">冰雪</span>並不知道<span class="global_name_span">霍普</span>充滿仇恨，因此兩人行動期間並沒對眼前這小弟弟有所防備，說的話也常不經意刺痛<span class="global_name_span">霍普</span>心裡的痛處。</p> <p>這時<span class="global_name_span">牙</span>打電話來詢問狀況，並且約定在<span class="global_name_span">霍普</span>家會合，但當<span class="global_name_span">雷光</span>想要提醒<span class="global_name_span">冰雪</span>小心<span class="global_name_span">霍普</span>時，通訊卻突然中斷。</p> <p>在前往目的地的路上，看著<span class="global_name_span">牙</span>手臂上的奇特［路希］烙印，<span class="global_name_span">雷光</span>好奇地問起她的來歷，原來<span class="global_name_span">牙</span>跟<span class="global_name_span">班尼拉</span>一樣來自［下界］，並且是從水晶狀態恢復的［路希］，這也讓<span class="global_name_span">雷光</span>開始相信自己妹妹仍有希望。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XdMZ5ddUnCI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>另一邊在大街上，似乎因為［路希］的到來，［聖府軍隊］決定將這一代的平民都進行［淨化］，曾經經歷過這一切的<span class="global_name_span">冰雪</span>決定用自己的方法拯救這些無辜的人，但不知道真相的市民竟然拿起武器準備攻擊兩人，為了避免更大的傷亡發生，<span class="global_name_span">冰雪</span>只能選擇逃跑。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7LQstFxwxBk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>途中與一台［侵攻鎮壓騎烏休姆蓋爾］戰鬥後，<span class="global_name_span">霍普</span>終於決定攤牌了，這時<span class="global_name_span">冰雪</span>才知道眼前的男孩就是當初<span class="global_name_span">諾拉</span>託付給自己的兒子，就當<span class="global_name_span">霍普</span>要下殺手之際，［聖府軍］的飛彈炸了過來，將兩人轟下大樓，<span class="global_name_span">冰雪</span>靠著自己強壯的身軀，勉強抵銷了<span class="global_name_span">霍普</span>墜地時的衝擊力，但自己卻是身受重傷。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZgCgqNhEG1Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第七章(下)</div> <p>鏡頭回到<span class="global_name_span">雷光</span>這邊，<span class="global_name_span">牙</span>正說著自己從水晶狀態甦醒後五天的事情，當時<span class="global_name_span">牙</span>因為喪失部分記憶，所以與<span class="global_name_span">班尼拉</span>在［繭］到處流浪，為了尋找身為［路希］的使命。</p> <p>但<span class="global_name_span">班尼拉</span>卻因為害了<span class="global_name_span">薩茲</span>的兒子<span class="global_name_span">多吉</span>成為［路希］的這件事情，想要就此放棄使命，就算變成［屍骸］也沒關係，在這一點上兩人出現了重大的分歧，但［聖府軍］的追兵不斷逼近，可沒有讓兩人繼續爭執的時間，於是有點大姊氣質的<span class="global_name_span">牙</span>自願當誘餌讓<span class="global_name_span">班尼拉</span>逃跑。</p> <p>在那之後<span class="global_name_span">牙</span>就與<span class="global_name_span">班尼拉</span>失散了，尋找的過程中遇到了<span class="global_name_span">雷恩斯</span>的騎兵隊，便與他們一起行動。</p> <p>透過<span class="global_name_span">牙</span>的談話，可以知道［繭］與［下界］的人都是被［法爾希］洗腦控制，彼此仇視著對方，說到這<span class="global_name_span">牙</span>不禁埋怨起自己的記憶產生斷層，而且恰巧是最重要的部分。</p> <p>另外<span class="global_name_span">牙</span>也明確說明判斷［路希］變為［屍骸］的時間依據，只需要看［路希］的烙印，一開始是箭頭變多，再來就是中間的眼睛逐漸睜開，等到完全開啟時就會變為［屍骸］，這發生的過程時間每個人都不一樣，但可以確定的是，當受到重大刺激時，會加快這個進程。</p> <p>再看<span class="global_name_span">冰雪</span>這邊，雖然自己身負重傷，還是努力將<span class="global_name_span">霍普</span>背起，準備逃離這敵人環伺的地方，看到一旁掉落的小刀，猛然發現這不是自己跟<span class="global_name_span">莎拉</span>一起幫<span class="global_name_span">雷光</span>準備的生日禮物嗎？這時<span class="global_name_span">冰雪</span>的心情肯定是睹物思人，更加深要保護<span class="global_name_span">霍普</span>的決心，即便眼前這男孩對自己充滿敵意。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-WCE5pQlejA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>看到遠方爆炸，<span class="global_name_span">雷光</span>意識到<span class="global_name_span">冰雪</span>兩人遭到攻擊，隨即起身趕往約定會合處，途中剛好遇到被敵人襲擊的<span class="global_name_span">霍普</span>兩人。</p> <p>解決強敵後，大家便往<span class="global_name_span">霍普</span>家前進，經過這次的事情，<span class="global_name_span">霍普</span>雖然沒完全放下仇恨，但明顯對<span class="global_name_span">冰雪</span>的態度已經發生改變。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4KzGPtDNxQw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">霍普</span>的爸爸<span class="global_name_span">巴薩羅穆</span>雖然對兒子成為［路希］以及妻子去世的事情感到意外，但並沒有怪罪眾人，反而站在大夥的立場，一起幫忙想接下來的出路。</p> <p>不過［PSICOM］不會給眾人喘息的機會，屋子的電源瞬間被切斷，敵人隨即就攻了進來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LFYNA3zL3e4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>此時屋外已經聚集了驚人數量的部隊，為首的將領<span class="global_name_span">羅修</span>雖然是個正直的軍人，但是保護［繭］的人民免於［下界］威脅是他的最高信念，縱然<span class="global_name_span">冰雪</span>已經展現了善意，他也依然決定要抹殺在場的［路希］。</p> <p>危急時刻，<span class="global_name_span">雷恩斯</span>的部下<span class="global_name_span">利古迪</span>率領［騎兵隊］前來救援，<span class="global_name_span">霍普</span>為了不拖累父親，便與眾人一起上了船，卻沒想過這也許是與父親的最後一面。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LlfgB6jzR4A?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第八章</div> <p><span class="global_name_span">班尼拉</span>與<span class="global_name_span">薩茲</span>兩人搭著船來到［歡樂都市納吉拉斯］，這地方就如同名字一樣十分熱鬧，各處都有新奇不同的遊樂設施，當中最引人眼球的是［召喚獸舞蹈慶典］。</p> <p>就當兩人想好好享受這氣氛時，大螢幕上正播報<span class="global_name_span">雷光</span>等人與軍隊作戰的畫面，看到<span class="global_name_span">牙</span>也在其中，<span class="global_name_span">班尼拉</span>的擔心又多添了幾分。</p> <p>不過<span class="global_name_span">薩茲</span>倒是挺放得開，拉著<span class="global_name_span">班尼拉</span>就要到處玩樂。</p> <p>［召喚獸舞蹈慶典］的內容是敘述了［繭］與［下界］曾經發生的戰爭，立體的投影聲光效果十分真實絢麗，當中還出現了讓<span class="global_name_span">班尼拉</span>十分在意的魔獸［諸神黃昏］，看著眼前群眾歡樂的景象，<span class="global_name_span">班尼拉</span>忍不住流下淚來。</p> <p>［只要我們不在了.....繭便會和平嗎？］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KSV31YBb1Uw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>兩人與<span class="global_name_span">薩茲</span>頭上的［小陸行鳥］玩樂一陣之後，<span class="global_name_span">薩茲</span>突然有感而發，由於自己兒子<span class="global_name_span">多吉</span>現在正被軍隊保護起來，為了再見到兒子一面，他決定向軍隊投降，至少在處刑前，還能跟兒子相聚一段時間。</p> <p>此舉無異於送死，<span class="global_name_span">班尼拉</span>為了讓<span class="global_name_span">薩茲</span>改變心意，一度想要將自己是害<span class="global_name_span">多吉</span>成為［路希］的事實講出來。</p> <p>但還在猶豫期間，［PSICOM］已經發現兩人蹤跡並且展開攻擊。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-A3pOKjSAJY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>沒想到在擊倒敵人的巨大兵器［突擊砲死神］後，竟看到<span class="global_name_span">多吉</span>被軍隊帶來了此地，當<span class="global_name_span">薩茲</span>還沉浸在父子相逢的喜悅中，<span class="global_name_span">多吉</span>突然完成使命變成水晶，由此可知他的使命就是找到［下界］的［路希］。</p> <p>為首的敵人將領<span class="global_name_span">娜芭特</span>，雖然有著美貌的外表，但性格十分冷酷，看著眼前痛苦的<span class="global_name_span">薩茲</span>，她直接說出<span class="global_name_span">班尼拉</span>一直隱藏的秘密，藉此想引起兩人之間的戰鬥，這誅心手段相當殘忍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2C2OCjxkNrw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>就算知道一直保護的女孩是造成自己兒子悲慘命運的人，但<span class="global_name_span">薩茲</span>心裡也知道這一切都不是<span class="global_name_span">班尼拉</span>自願的，身為［路希］只是個被［法爾希］操控的棋子，就在此時<span class="global_name_span">薩茲</span>胸口的［路希烙印］發出光芒，召喚獸［布倫希爾德］橫空出世。</p> <p>收服［布倫希爾德］後，兩人終究還是要面對彼此之間的恩仇，然而<span class="global_name_span">薩茲</span>始終下不去手，看著自己的計謀沒得逞，<span class="global_name_span">娜芭特</span>乾脆直接下令將兩人逮捕，結束這場鬧劇。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ADLBs3AJEdE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第九章</div> <p><span class="global_name_span">薩茲</span>、<span class="global_name_span">班尼拉</span>兩人被捕的消息，很快就在［繭］內部散播開來，這很明顯是［聖府］把兩人當作餌，要引剩下的［路希］前來一網打盡。</p> <p>由於囚禁的地方是聖府的旗艦［帕拉梅其亞］，守衛之森嚴自然是不在話下，但<span class="global_name_span">雷光</span>等人明知山有虎、偏向虎山行，與<span class="global_name_span">雷恩斯</span>的騎兵隊一起帥氣地潛入［帕拉梅其亞］內部。</p> <p>當然［聖府］這邊自然不會輕視敵人，除了增加守備以外，最高領導<span class="global_name_span">戴斯利</span>更是親臨前線指揮作戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0OwoCsCxZjw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">雷光</span>一行人的行動不斷觸發各種顏色的警報，但［聖府軍］卻似乎拿他們沒轍。</p> <p>另一邊，在牢房內，知道<span class="global_name_span">班尼拉</span>曾經變成水晶，這代表<span class="global_name_span">多吉</span>也有機會恢復正常，<span class="global_name_span">薩茲</span>至此也恢復之前的態度，算是與<span class="global_name_span">班尼拉</span>和解了。</p> <p>其實<span class="global_name_span">班尼拉</span>本身對［路希］的使命是十分抗拒的，這次的甦醒更是為了不傷害［繭］的人民，而對<span class="global_name_span">牙</span>謊稱失憶。</p> <div class="global_ps_text"> <p>顏色的警報不知道是怎麼分級的，先是紅、再來是綠、<span class="global_name_span">薩茲</span>逃出牢房後又變成紫色，到最後<span class="global_name_span">娜芭特</span>還在想用黃色、藍色、還是橙色，照我說直接升到最高顏色得了。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bQUMi98jfKs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>由於<span class="global_name_span">雷光</span>等人的活躍，［聖府軍］被迫要提早移送<span class="global_name_span">班尼拉</span>兩人，然而這卻給了他們逃脫的機會。</p> <p><span class="global_name_span">薩茲</span>一直養在頭髮裡的［小陸行鳥］率先出擊，接著<span class="global_name_span">班尼拉</span>拿起地上的槍向敵人掃射，兩人終於逃出牢房，但現在情況還不算樂觀，依然得小心尋找出路。</p> <p>此時的<span class="global_name_span">娜芭特</span>已經亂了陣腳，只見<span class="global_name_span">戴斯利</span>依然沉穩，決定發布最高等級白色警報，但其嘴角卻流露一股詭異的笑意。</p> <p>這瞬間，旗艦［帕拉梅其亞］的主要反應器不知道發生甚麼事情，竟然出了故障，如果遲遲不能恢復的話，飛船墜落是遲早的事情。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Vn2ZaUua2_0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>當<span class="global_name_span">雷光</span>他們正與強敵對戰時，<span class="global_name_span">薩茲</span>兩人剛好破牆而出，終於大夥再度相聚在一起。</p> <p>這時<span class="global_name_span">牙</span>施展［大脈衝］獨有的訓龍技術，硬是控制了一頭飛龍，大夥就這樣乘坐牠闖入［帕拉梅其亞］的核心區域。</p> <p>厭倦了過著一直逃跑的生活，這次大家決定直面<span class="global_name_span">戴斯利</span>，勢要推翻［聖府］，改變命運。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/W4zqGBS-NZA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>本以為<span class="global_name_span">戴斯利</span>只是個［路希］，卻沒想到他的真身竟是［法爾希］，名為<span class="global_name_span">巴爾多安狄爾斯</span>，負責管理著［繭］這座生產人類的工廠，在他眼裡人命如同道具，甚至一直忠心耿耿的<span class="global_name_span">娜芭特</span>也遭到他的毒手。</p> <p>而<span class="global_name_span">戴斯利</span>的目的相當簡單，為了一次性造成大量人命消逝，藉此打開冥界大門，讓如今的［繭］殞落就是最直接的方法，所以在與<span class="global_name_span">雷光</span>一行人的戰鬥中，不斷提示著他們摧毀［繭］的手段，就是利用魔獸［諸神黃昏］，摧毀<span class="global_name_span">孤源</span>這個賦予<span class="global_name_span">伊甸</span>力量的［法爾希］。</p> <p>此時飛船已經瀕臨崩潰邊緣，大夥雖然對<span class="global_name_span">戴斯利</span>說的話將信將疑，但眼前還是逃命要緊，就當搶了一架飛艇逃出之際，<span class="global_name_span">羅修</span>也駕駛飛艇前來截殺，然而冥冥之中似乎有股力量在幫助大夥，最終<span class="global_name_span">雷光</span>一行人撞進一棟大樓消失的無影無蹤。</p> <div class="global_ps_text"> <p>從<span class="global_name_span">戴斯利</span>口中證實<span class="global_name_span">莎拉</span>的使命就是聚集眼前的眾人，收集所有足以破壞［繭］的要素。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9MqBm1gU27g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第十章</div> <p>大夥從巨大的衝擊回過神後，已經身在一處類似［大脈衝］的遺跡裡，對於<span class="global_name_span">戴斯利</span>之前所說的話，大家還不知道是真是假，甚麼［諸神黃昏］！甚麼毀滅［繭］的使命！到底［法爾希］的真正目的是甚麼？</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1fxAySr8MJA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>連一直以來都十分有幹勁的<span class="global_name_span">冰雪</span>，如今也開始迷惑起來，呆呆望著<span class="global_name_span">莎拉</span>留下的水滴結晶。</p> <p>當眾人更進一步往遺跡內探索，這附近的裝飾開始與大夥的［路希烙印］共鳴起來，這時<span class="global_name_span">班尼拉</span>想起［聖櫃］的傳說，當初［下界］的［法爾希］為了抵擋來自世界外的敵人攻擊，特別製作了這個設施，將武器存放在此，另外還賦予了解放［路希］能力的功能。</p> <p>而眾人能來到此處，估計是<span class="global_name_span">戴斯利</span>刻意為之，之前的戰鬥也許只是試探大夥的戰力，為了能順利毀滅［繭］，才給予大夥提升戰力的機會。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mYVa6HviinA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過來到［聖櫃］似乎觸發了內部的防衛機制，許多機械兵器紛紛出籠，逃跑途中還遇到巨大的攻擊性兵器，似乎［聖府］想利用這些力量發動戰爭。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v99CmQp2jCw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>繼續往［聖櫃］內探索，<span class="global_name_span">雷恩斯</span>意外地出現在眾人面前，原來他也是［路希］，一直聽命於<span class="global_name_span">戴斯利</span>。</p> <p>之前會出手給予眾人幫助，也是因為<span class="global_name_span">戴斯利</span>的關係，至於<span class="global_name_span">戴斯利</span>的真正目的，是想以［繭］內的數萬萬人當作祭品，將神招喚回來，但身為創造［繭］的［法爾希］並不能親手作成此事，所以他才需要<span class="global_name_span">雷光</span>等人來毀滅［繭］，於是從一開始便在旅途上監視著他們並適時給予幫助。</p> <p>但曾經為人的<span class="global_name_span">雷恩斯</span>並不想［繭］就此滅亡，在這關鍵時刻，他決定挑戰自己的使命，解放了身為［路希］的全部力量，要將能毀滅［繭］的<span class="global_name_span">雷光</span>等人狙殺於此。</p> <p>不過畢竟雙拳難敵十二掌，在<span class="global_name_span">雷光</span>等人的圍攻下，他也只能懊悔地化為水晶消逝在空氣之中。</p> <div class="global_ps_text"> <p>這裡<span class="global_name_span">雷恩斯</span>只說出事實的一部分，真實原因可以看遊戲序的說明。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/76WcZqFY9f8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>也許是想起<span class="global_name_span">莎拉</span>變為水晶前的話，也可能是被<span class="global_name_span">雷恩斯</span>挑戰使命的精神感動，<span class="global_name_span">冰雪</span>這時突然拋棄了迷惑，不管甚麼［法爾希］、［路希］的使命，守護［繭］到最後一刻，就是當前最重要的使命。</p> <p>但夥伴中，已經成為第二次［路希］的<span class="global_name_span">牙</span>卻無法認同這想法，要是不能達成使命，變成［屍骸］的話就甚麼都沒有了，為了僅存的一絲希望，即便是將槍口對向同伴也在所不惜。</p> <p>然而這時屬於<span class="global_name_span">牙</span>的招喚獸［巴哈姆特］從天而降，似乎是想給予她正確的方向，成功馴服［巴哈姆特］後，眼前出現了一條嶄新的道路，似乎可以藉此離開［聖櫃］，<span class="global_name_span">班尼拉</span>開心的說著。</p> <p>［是招喚獸的救贖嗎？］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/S2zBIodLdus?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>道路的盡頭是一台［飛空艇］與通往［下界］的傳送通道，如果繼續待在［繭］只會被<span class="global_name_span">戴斯利</span>監視著、誘導著，但寬廣的［下界］卻是他無法觸及到的地方，也許在那可以找到解除［路希］詛咒的方法。</p> <p>大家討論過後決定前去［下界］一探究竟，沒想到才剛飛出［繭］的範圍，就遇到一條龍型生物，直接飛撲過來撞毀［飛空艇］，要不是<span class="global_name_span">牙</span>剛收服的［巴哈姆特］會飛，可能大夥都要摔成了肉泥。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/s_-ReCKOzL4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第十一章(上)</div> <p>［下界］與井然有序的［繭］截然不同，到處都充滿弱肉強食的自然法則，四處都不見有人類活動的跡象，只剩下殘破的建築遺跡。</p> <p>隨著<span class="global_name_span">霍普</span>突然倒下，大家意識到成為［屍骸］的日子越來越近，每個人身上的烙印已經發生明顯的變化，如今唯一的方法就是前往<span class="global_name_span">班尼拉</span>他們的故鄉［約爾芭鄉］，或許那裡有著解除［路希］詛咒的線索。</p> <p>這時<span class="global_name_span">霍普</span>的招喚獸［亞歷山大］似乎是感應到了他的心境，從天而降給予其試煉，馴服［亞歷山大］後，大夥整理心情，開始探索這廣大的［下界］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sQd1bImeM2M?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這［下界］是真的大，大平原上一群動物彼此間追逐鬥爭，躲過這群龐然大物後，大夥來到一處隧道，這裡是由［下界法爾希］開闢的道路，內裡空間非常寬廣，原本的人們會直接利用這地方建立設施。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8QBQju3_bhI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雖然一直處於喪失記憶的狀態，但<span class="global_name_span">牙</span>心裡清楚<span class="global_name_span">班尼拉</span>一定有事瞞著自己。</p> <p>在通過隧道來到一處峽谷區域時，<span class="global_name_span">牙</span>用計套出了自己曾化身［諸神黃昏］破壞［繭］的事實，<span class="global_name_span">班尼拉</span>瞬間內心產生巨大波動，招喚獸［海克頓蓋爾］猛然現身給予試煉，馴服這股強大力量後，<span class="global_name_span">班尼拉</span>終於放下心中那層顧慮，與<span class="global_name_span">牙</span>坦誠相對。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xtiS_jbCu_Y?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>大家整理心情繼續前進，總算來到盡頭，這裡有著許多大型機械，<span class="global_name_span">霍普</span>一陣胡亂操作，竟成功利用機械擋住了負責開闢土地的［法爾希］。</p> <p>在［下界］的認知裡，［法爾希］並不是高不可攀的神，面對現在的情形，眾人乾脆就把［法爾希］當作交通工具，利用它快速前進。</p> <p>中途休息的時候，看著<span class="global_name_span">冰雪</span>想念<span class="global_name_span">莎拉</span>的樣子，<span class="global_name_span">班尼拉</span>說出以前曾遇過<span class="global_name_span">莎拉</span>的事情，並且相信<span class="global_name_span">莎拉</span>之所以變成水晶，並不是如<span class="global_name_span">戴斯利</span>所說，完成［聚集破壞繭所需眾人］的使命，而是［聚集保護繭的眾人］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/r1wsyr1kldg?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>經過漫長的路途，大家來到名為［泰津］的高塔，只要通過這裡就能到達［約爾芭鄉］，不過上空盤旋的<span class="global_name_span">法爾希．達哈卡</span>顯然不是好惹的，一進塔中又不停聽見低語聲，整個塔又有重重機關，前方的道路似乎並不好走。</p> <p>往塔高層前進時，<span class="global_name_span">法爾希．達哈卡</span>竟然直接在塔中對大夥發起攻擊，強大的爆炸直接將牆壁轟出一個大洞，從裡看到一個巨大的石雕，根據低語聲提示，必須完成石像交託的任務，前方的道路才會打開。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-4BZYIds9Q4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第十一章(下)</div> <p>幫助石像完成任務後，三個石像不僅幫忙打開前進的道路，還擊退了來襲的<span class="global_name_span">法爾希．達哈卡</span>，順便將其一節身體砍下。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/G_egzcONMLc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著繼續朝著上層前進，整座塔好似一個巨大的音樂盒，尤其電梯的機關，每次移動都會發出音符的聲音，到達第五層後，又遇見了石像，看來還是一樣套路，要幫助石像完成任務。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FNrHv98GuWc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著石像又砍下<span class="global_name_span">法爾希．達哈卡</span>一節身體，並且開啟了通往頂層的道路。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/InT0iERsioI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在塔頂眾人擊敗了已成強弩之末的<span class="global_name_span">法爾希．達哈卡</span>。</p> <p>在這已經可以眺望［約爾芭鄉］，但該處卻已經是一片雪白毫無生機，但無論如何，都已經來到這了，一定得親自前往看看。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TDMR8lJ53RM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>殘破的建築、依然轉動的風車、滿地的屍骸，［約爾芭鄉］這裡已經沒有人居住的痕跡，更不用說找到解除［路希］詛咒的方法。</p> <p>當<span class="global_name_span">雷光</span>一行人來到一座大橋盡頭，竟然看到<span class="global_name_span">莎拉</span>也在此處，不過這只是<span class="global_name_span">戴斯利</span>製造出的幻影罷了，他仍想說服眾人化身［諸神黃昏］毀滅［繭］。</p> <p>當然他也存有備案，在來到［下界］之前，<span class="global_name_span">戴斯利</span>利用<span class="global_name_span">雷恩斯</span>沒有意識的軀體成為［聖府代表］，製造［聖府］與［騎兵隊］的衝突，被領導人背叛的仇恨，可能昇華［繭］內部的鬥爭，到最後［繭］也將因為戰爭爆發而被破壞。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tedecNlpDHY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>擊敗<span class="global_name_span">戴斯利</span>後，他留下一台飛行器就離開了，一行人在附近的冥碑看到了女神的預言，內容顯示眾人最終還是會化為［諸神黃昏］毀滅［繭］。</p> <p>但在場的人都不是向命運低頭的個性，面對事情不是［做不做得到］，而是［該不該去做］，正所謂只做對錯、不論輸贏，到結局的那一刻，無愧、無悔就是。</p> <p>既然［繭］在<span class="global_name_span">戴斯利</span>的陰謀下已經瀕臨戰爭，那麼阻止即將到來的毀滅，便是現下該做的事情。</p> <div class="global_ps_text"> <p>結果大家來到［下界］沒發生甚麼事情就要回去［繭］，我敢肯定這一定是當初急著上市，所以把［下界］的劇情大幅度刪減的緣故。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/N6MDK_ZN-OY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第十二章</div> <p>回到［繭］後，大夥立即叫出各自的［招喚獸］與［聖府軍］戰鬥，此時［下界］的怪物、野獸，［聖櫃］中的機械兵器，也紛紛出現在［繭］的各處，看來都是<span class="global_name_span">戴斯利</span>的計畫。</p> <p>看著眼前［繭］的亂象，已經成為［法爾希］奴隸的<span class="global_name_span">雷恩斯</span>平靜地讓昔日屬下<span class="global_name_span">利古迪</span>結束自己的生命。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eOviszgQdug?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這時［聖府］的特殊部隊［PSICOM］為了守護［孤源］，已經展開與［騎兵隊］的戰爭，一切都如<span class="global_name_span">戴斯利</span>所計畫的一樣。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tqj35yO43_0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了守護［繭］，眾人持續向中心前進，路上不斷掃除阻礙的敵人，一直以來以消滅［路希］為使命的<span class="global_name_span">羅修</span>也被大夥兩三下打跑。</p> <p>途中<span class="global_name_span">冰雪</span>遇上了［諾拉］組織的同伴，這時為了守護［繭］，他們也拿起槍保護大街上的無辜民眾。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ps39Lo7F9iQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>當眾人抵達［議事堂］，四周卻已經漂浮著水晶的碎片，這場戰鬥似乎已經超過［孤源］能承受的限界，並開始造成［繭］的崩潰。</p> <p>為了對抗敵人，［繭］的［法爾希］甚至不惜直接將人們化作［白色屍骸］來作戰。</p> <p>一直以來都知道［繭］真相的<span class="global_name_span">羅修</span>原來以為繁榮可以藉著［法爾希］的恩賜一直延續下來，但看到如今的［繭］他也醒悟了，在生命的最後一刻，他向［聖府軍］傳達了停止逮捕［路希］的希望，並為眾人斷後，在兩隻［兇惡巨獸］的圍攻下，綻放最後的生命光彩。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/K4MmWrq49nI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">第十三章</div> <p>當大家抵達［孤源搖籃］，發現［騎兵隊］的人也都已經變成［屍骸］，這悲劇一定要在這結束。</p> <p><span class="global_name_span">牙</span>面對［騎兵隊］這些昔日同伴，雖然心中有些迷惑，但在<span class="global_name_span">班尼拉</span>的鼓勵下，馬上又振作起來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Zckj0rB6qWw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>經過重重障礙，大夥終於來到決戰地點。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cXriY2vhM5w?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>擊倒<span class="global_name_span">戴斯利</span>後，他用盡最後力量，喚醒了<span class="global_name_span">孤源</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/epQ-80NAr0w?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>雖然擊敗<span class="global_name_span">孤源</span>第一型態，但［法爾希］畢竟有著超乎想像的力量，為了誕生魔獸［諸神黃昏］，<span class="global_name_span">孤源</span>將除了<span class="global_name_span">牙</span>、<span class="global_name_span">班尼拉</span>以外的眾人變為［屍骸］。</p> <p>絕望瞬間降臨，然而眾人之間的羈絆引發了奇蹟，當夥伴靠著自己意志從［屍骸］變回人時，<span class="global_name_span">孤源</span>也展現了第二型態應敵。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qQv1hS65bpI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>最終隨著擊敗<span class="global_name_span">孤源</span>，也代表了［繭］將迎來毀滅。</p> <p>此時<span class="global_name_span">牙</span>、<span class="global_name_span">班尼拉</span>化身魔獸［諸神黃昏］，從［下界］岩漿中拉起一道炎柱並與其融為一體，在［繭］毀滅的這一刻，所有的［路希］都將因完成使命變為水晶，就這樣炎柱化為水晶支撐住下墜的［繭］。</p> <p>［使命雖然無法違抗，卻能用不同的方式實行］。</p> <p>最終［繭］的人們在這場災難中活了下來，<span class="global_name_span">班尼拉</span>兩人用了最後的力量，將夥伴都從水晶的宿命中解放，<span class="global_name_span">莎拉</span>、<span class="global_name_span">多吉</span>也恢復了人身。</p> <p>但這樣完美的結局，將在二代開頭完全毀滅。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-JBvgTXuVKE?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return contentArr;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
