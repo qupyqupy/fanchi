@@ -1,0 +1,269 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /> <p>這是遊戲封面。</p> <p><img alt="bbbba2e7d103df15fd9a21ed3328e80e.JPG" src="https://pic.pimg.tw/qupyqupy/1453940763-737415583.jpg?v=1453940785" title="bbbba2e7d103df15fd9a21ed3328e80e.JPG" /></p> <p>這是遊戲開頭畫面。</p> <p><img alt="456db75d8e55952af89567ecea7a4d84.JPG" src="https://pic.pimg.tw/qupyqupy/1453940763-3472855052.jpg?v=1453940785" title="456db75d8e55952af89567ecea7a4d84.JPG" /></p> <p>國產３Ｄ遊戲的先趨，也是少數幾個還能活到現在的國產經典遊戲。</p> <p>講起風色幻想，令我著迷的就是他的故事內容設定，人們為了反抗神賦予人固有的命運，而運用究極魔法菲利斯多對抗命運三女神，最後除了拉克西絲外其餘兩個女神都被人類封印，人類至此失去了神的保護，偏離命運的秩序。而主角就是拉克西絲的靈魂轉生成的露菲雅，這種編劇手法頗像女神戰記，但是又優於後者。</p> <p>雖然遊戲的３Ｄ真的做的並不怎麼樣，我當初玩的時候還真的玩不下去說，戰鬥角色的能力值高低也設的頗為奇特，有些招數非常強，有些非常弱，角色的能力值真的是僅供參考，若單純以故事來看是優勝，不過其他系統我卻不怎麼喜歡，譬如說遊戲中獨特的徽章轉值系統，就讓角色的獨特性大大的降低了，像是人人都可以經由徽章施展補血術，那長的像補血師的安潔妮似乎就沒有那麼必要。再加上遊戲還可以抓怪獸當作戰鬥單位，有些怪獸的能力甚至高於主角群（例如死神），如果在這些平衡度上能再多加調整會是更完美的遊戲。</p> <p>遊戲在２００３年有出一個典藏版，裡面有做了些許的修改，人物頭像也有換新，不過我沒玩過，有興趣的人可以去入手玩玩看。</p>');
+  activityArr.push('<hr /> <p>這是遊戲封面。</p> <p><img alt="4112ead2cbb2d24e1a3dd387e221e8c6.JPG" src="https://pic.pimg.tw/qupyqupy/1456637829-1631613587_n.jpg?v=1456637876" title="4112ead2cbb2d24e1a3dd387e221e8c6.JPG" /></p> <p>這是遊戲背面。</p> <p><img alt="bb503e8104707020ad4b1e503c00fb95.JPG" src="https://pic.pimg.tw/qupyqupy/1456637827-325846413.jpg?v=1456637876" title="bb503e8104707020ad4b1e503c00fb95.JPG" /></p> <p>這是遊戲開頭畫面。</p> <p><img alt="baba2bd4b9cfb502f6bc388a6c6ca82b.JPG" src="https://pic.pimg.tw/qupyqupy/1456637826-3447930943.jpg?v=1456637876" title="baba2bd4b9cfb502f6bc388a6c6ca82b.JPG" /></p> <p>風色幻想３代，對我的吸引實在不大，只因整款遊戲內容其實是為４代做鋪程，而遊戲進展速度慢的會讓人發火，多餘的戰爭又太多，跟故事扯不上邊的劇情也頗令人感到乏味，角色的培養也十分不易（角色會因應劇情不定期脫隊），在３Ｄ畫面的處理上還算ＯＫ，不過切換視角的功能不太自由（只有四個視角），如果因為玩了四代想了解斷罪之翼的故事，是可以玩玩看。</p> <p>風色幻想系列，我一直以來都認為是以故事取勝的遊戲，我想如果它能以ＡＶＧ而非ＳＬＧ的方式進行遊戲，應該會更受到歡迎，原因是它的戰鬥真的不吸引人，而故事的世界觀又過於龐大，單憑著戰鬥過後的幾場人物對話實在很難完整解釋所有事件的來龍去脈，這點在前兩代並不嚴重，但是三代以後，一瞬間就把前兩代的劇情要素全部送做堆，雖然結合的頗為合理流暢，但是玩家很難第一次玩就完全看懂，期待有沒有機會出個ＡＶＧ版本，把１～４代劇情一整個做個串聯來完整表達吧。</p>');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('風色幻想');
+  paArr.push('風色幻想3');
+  paArr.push('風色幻想4');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('加瑟多小故事');
+      resultIdx.push('燦夜與映舞');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<p>這段故事主要是以凱琳夢見的為主，講述救世主加瑟多與精靈少女依葉的故事。<br> </p> <hr> <p>這源頭要從人類最偉大的聖靈魔導士加瑟多與精靈族聖女依葉說起，在那個人類與精靈兩族不合的時代背景裡，一見鍾情的兩人，譜出一段美麗的愛情詩歌。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206906495"><img src="https://pic.pimg.tw/qupyqupy/1451487627-1493279262.jpg?v=1451487634" alt="265ae753c5efc4d69b373a6b5d51527b.JPG"></a>&nbsp; </p> <p>遺憾的是，也就在這時候，人類與精靈之間的戰爭爆發了（精靈戰爭），而因為立場的緣故，加瑟多跟依葉被迫加入了這場鬥爭當中，難得兩人的愛情並不因為這艱困的環境而有所改變，甚至決定一同盡力去阻止這無意義的戰爭，但是這兩方的陣營卻因此有了不同的解釋。 </p> <p>人類：精靈族的妖女迷惑了人類的聖者加瑟多。 </p> <p>精靈：魔人加瑟多以魔法誘拐了精靈族的聖女依葉。 </p> <p>就這樣又過了很久的時間，兩人的努力總算有了些許的成果，但就在精靈族的六大聖靈對談同時，光之聖靈發現了依葉身上只有邪神迪斯雅才擁有的印記，事發突然，加瑟多在還搞不清楚真相之前，就帶著依葉逃避六大聖靈的追殺，為了愛人的安全，這個誓言維護人類與精靈之間和平的大魔導士，殺了無數擋在他面前的精靈，終於逃回聖亞里昂王都的加瑟多，為了保護依葉，向人類撒了一個不該撒的謊。 </p> <p>加瑟多：［我的確是被精靈族的妖女迷惑，不過在我覺醒的時候，這位精靈少女保護了我，希望你們也能保護她的安全。］ </p> <p>在一旁的依葉聽了十分的傷心，這等於宣告他們兩個人至今的努力全都白費了。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206906498"><img src="https://pic.pimg.tw/qupyqupy/1451487627-2230126412.jpg?v=1451487634" alt="deaf42695e6473c3fe76c8ea11eafd54.JPG"></a>&nbsp; </p> <p>而隨後趕到的六大聖靈，對人類說出依葉乃是邪神迪斯雅轉世的真相，向來對於神話極度信仰的人類，在這時候也毫無猶豫的與精靈族共同消滅這可能毀滅世界的禍害，即便是這名迪斯雅轉世的善良少女如何的希望和平，諷刺的是，她就死在兩族的魔法箭雨下，而在一旁因力竭而無法動彈的加瑟多，從頭到尾沒有將眼睛閉上過。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206906501"><img src="https://pic.pimg.tw/qupyqupy/1451487628-2066620558.jpg?v=1451487634" alt="ac197adb0e06a1b1e0c3300c9b5c8988.JPG"></a>&nbsp; </p> <p>懷著因失去愛人而產生的憤恨，加瑟多準備展開對人類與精靈的復仇。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206906504"><img src="https://pic.pimg.tw/qupyqupy/1451487628-3873491785.jpg?v=1451487634" alt="7f7a2c66d296bc0e5473802db0f32fd5.JPG"></a>&nbsp; </p>');
+    result.push('<p>燦夜與映舞的悲劇，算是整個故事的開端，兩人也是加瑟多與依葉的靈魂最初的樣子。 </p> <hr> <p>燦夜。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206907098"><img src="https://pic.pimg.tw/qupyqupy/1451488200-2481867632.jpg?v=1451488207" alt="a2870bd83596f2e8af45624597428919.JPG"></a>&nbsp; </p> <p>映舞。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206907086"><img src="https://pic.pimg.tw/qupyqupy/1451488198-2883827904.jpg?v=1451488207" alt="553f806b8ce48cb4289365b393dc0bb2.JPG"></a>&nbsp; </p> <p>映舞的父親。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206907092"><img src="https://pic.pimg.tw/qupyqupy/1451488198-214360566.jpg?v=1451488207" alt="fd08227015b6654ee757f1ec50239f7e.JPG"></a>&nbsp; </p> <p>故事發生在一萬四千年前，熾焰的彼端，有翼人的村莊，那是一個混亂的時代，吞蝕一切普羅特原生質不斷侵略同化大地，有翼人為了生存，每一分每一秒都在與之戰鬥，運用進化的雙翼所累積的太陽之力，不停燒毀普羅特原生質。 </p> <p>而有翼人中，有一位曾經收復大量土地的傳奇女戰士　－　映舞，在一次普羅特原生質的偷襲中，失去了左翼，沒有了能聚集光輝之力的羽翼，就跟失去生存的權利沒什麼兩樣，就算曾經是萬人景仰的英雄也是一樣。 </p> <p>這時候，愛慕著映舞的有翼人燦夜，為了提供可以讓映舞痊癒的　＂活水＂，冒險加入了特戰團，填補映舞的空缺。 </p> <p><span style="color: rgb(255, 0, 0);">註：在那個時代，除非是戰士，不然不可能獲得活水。</span> </p> <p>這個舉動，深深感動了映舞，而燦夜．．．也獲得了映舞的回應，在一次偶然的星空下，兩人互吐心事，並承諾了一同在星星彼端飛翔的約定。<br> </p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206907089"><img src="https://pic.pimg.tw/qupyqupy/1451488198-693587365.jpg?v=1451488207" alt="8fa20dc58bf6d5ccd981e1087de5fd24.JPG"></a>&nbsp;<br> </p> <p>但是在與普羅特日漸激烈的戰爭中，這彷彿是永不可能實現的願望，終於隨著日影崖的失守，有翼人最後一寸生存的土地也消失了，燦夜只能舞動他僅剩的翅膀，帶著映舞飛翔於空中，等待著死亡的降臨，然而這時候在他們兩人面前出現的，是忽然從雲裡冒出來的黑色月亮　－　不沉之月。 </p> <p>而在不沉之月上的至高神耶米拉，為了可以在這星球上重建起自己想要的世界，借用了映舞的身體，並賜與七個有翼人　＂菲利斯多＂　的力量，一同消滅普羅特原生質。 </p> <p>這七個有翼人分別是：命運三女神，光輝的審判之神－蕾雅，蒼焰的武神－碧，創神－芙蕾，虛無之神－賽特（即是燦夜） </p> <p>但賽特（燦夜）心裡卻對耶米拉侵占映舞的身體感到憤恨，在獲得第七份菲利斯多的力量後，趁著世界剛被耶米拉重新創造，淨化，而其餘六大神都有任務離開之時，為了奪回映舞的身體，攻擊虛弱的耶米拉，但卻反被消滅，拖著沉重的傷勢，耶米拉藉由觀察燦夜之魂，了解整件事情的始末，同時也因為燦夜對映舞無怨無悔的愛與付出，使得耶米拉忌妒起這他無法獲得的感覺。 </p> <p>反觀自己為有翼人的付出，卻換來了背叛，耶米拉頓時失去了理智，她毫無顧忌的使用菲利斯多的力量，詛咒燦夜與映舞之魂，永遠無法相愛的悲劇宿命，並賜與映舞　＂迪斯雅＂　的姿態以及永不可能實現的　＂淨世＂　願望，生生世世折磨著他們。 </p> <p><span style="color: rgb(255, 0, 0);">註：加瑟多跟依葉的悲劇就是源於這個詛咒</span><span style="color: rgb(255, 0, 0);">。</span> </p>');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('遊戲介紹');
+      resultIdx.push('人物介紹');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<p>故事內容前段在敘述斷罪之翼封印六大原罪徽章，以阻止原罪劫的降臨。後段則是描述因原罪劫的威脅解除，原本各國相互合作的關係卻因此瀕臨崩裂， 聖燄的傑奧斯皇運用陰謀殺害了冷夜的曼菲斯特皇帝，對冷夜帝國展開全面性的侵攻。</p> <p>原本斷罪之翼的同伴面臨自相殘殺的命運，最後雖然成功阻止了兩國間的戰爭，卻也犧牲了許多人的生命，直到最後找出了幕後策劃一切的兇手［弗妮］，雖然擊敗了她卻仍然留下一堆難解謎題，然而這一切都將在四代獲得解答。</p> <hr /> <p>下面是遊戲中的事件過場圖。</p> <p>依格那的血染在原罪徽章上面，因此變身成怪物。</p> <p><img alt="43cbbfbfb545aeab2e6552c4df672955.JPG" src="https://pic.pimg.tw/qupyqupy/1456637841-1968935870.jpg?v=1456637878" title="43cbbfbfb545aeab2e6552c4df672955.JPG" /></p> <p>凱琳封印原罪徽章的畫面。</p> <p><img alt="1149f155e1d929f5e707c8c4a555476b.JPG" src="https://pic.pimg.tw/qupyqupy/1456637841-515196578.jpg?v=1456637878" title="1149f155e1d929f5e707c8c4a555476b.JPG" /></p> <p><img alt="b1b0afc7455cc9a7f196aec58b3c7523.JPG" src="https://pic.pimg.tw/qupyqupy/1456637841-2065265445.jpg?v=1456637878" title="b1b0afc7455cc9a7f196aec58b3c7523.JPG" /></p> <p>凱琳加入斷罪之翼。</p> <p><img alt="a153354f7998fcea63cb793e2e3134ca.JPG" src="https://pic.pimg.tw/qupyqupy/1456637841-2305411274.jpg?v=1456637879" title="a153354f7998fcea63cb793e2e3134ca.JPG" /></p> <p><img alt="ca4ad28c225cd8bf2348d9ac90e8d420.JPG" src="https://pic.pimg.tw/qupyqupy/1456637841-2355290999.jpg?v=1456637879" title="ca4ad28c225cd8bf2348d9ac90e8d420.JPG" /></p> <p>薩塔魯多的血染到原罪徽章後產生異變。</p> <p><img alt="5d20009e2dd12b8ca64b2b9b73043e6d.JPG" src="https://pic.pimg.tw/qupyqupy/1456637842-4216566439.jpg?v=1456637879" title="5d20009e2dd12b8ca64b2b9b73043e6d.JPG" /></p> <p>黑色新娘辛德蕾拉出現救了凱琳等人。</p> <p><img alt="71c96cb207a8edb362b3024b43ab1459.JPG" src="https://pic.pimg.tw/qupyqupy/1456637843-2231942531.jpg?v=1456637879" title="71c96cb207a8edb362b3024b43ab1459.JPG" /></p> <p>西撒父子的決鬥後，西撒與父親最後的對話。</p> <p><img alt="29ee7832d94e00074a0dcf7d7df89670.JPG" src="https://pic.pimg.tw/qupyqupy/1456637843-2003974535.jpg?v=1456637879" title="29ee7832d94e00074a0dcf7d7df89670.JPG" /></p> <p>安潔妮使用拉克西絲咒語封印聖燄的大軍。</p> <p><img alt="e2f3d5bac9207bfa022a01d9a89a4f49.JPG" src="https://pic.pimg.tw/qupyqupy/1456637844-2317397491.jpg?v=1456637879" title="e2f3d5bac9207bfa022a01d9a89a4f49.JPG" /></p> <p>凱琳用盡自己的力量，忍受藍斯災厄燄的攻擊。</p> <p><img alt="8cbad411e1f613be4bbf7b44c7882410.JPG" src="https://pic.pimg.tw/qupyqupy/1456637845-2784492282.jpg?v=1456637879" title="8cbad411e1f613be4bbf7b44c7882410.JPG" /></p> <hr /> <p>下面是結局套圖。</p> <p>帕魯瑪便與愛斯玲約定．．．．．．．．</p> <p><img alt="760bdfc79b3a98110b393705bec01b2f.JPG" src="https://pic.pimg.tw/qupyqupy/1456637846-3495340170.jpg?v=1456637879" title="760bdfc79b3a98110b393705bec01b2f.JPG" /></p> <p>西撒抱住了九音，留住了她．．．．．（啊？希洛依女王怎麼辦？）</p> <p><img alt="ac652e9ea58b3a4d4ab98203b9fe0979.JPG" src="https://pic.pimg.tw/qupyqupy/1456637847-3041519206.jpg?v=1456637879" title="ac652e9ea58b3a4d4ab98203b9fe0979.JPG" /></p> <p>凱琳與藍斯準備踏上新的旅途。</p> <p><img alt="72923a74ca75c204f9b6646d81e1528b.JPG" src="https://pic.pimg.tw/qupyqupy/1456637847-1109993165.jpg?v=1456637879" title="72923a74ca75c204f9b6646d81e1528b.JPG" /></p> <p>遊戲最後的畫面，被喚醒的第四魔王梅爾西迪斯（炎與狼的魔神）</p> <p><img alt="373df054382ba705eb0665a575cff2e1.JPG" src="https://pic.pimg.tw/qupyqupy/1456637847-3043059513.jpg?v=1456637879" title="373df054382ba705eb0665a575cff2e1.JPG" /></p> <hr /> <p>下面是遊戲的Ｑ版圖片，遊戲中充斥的大量這種逗趣的圖片與情節，所以我說如果是ＡＶＧ的話多好，至少劇情可以一直連貫不會受到戰鬥的間斷。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="0d8d7efe7347448ba07d50adcab3541e.JPG" src="https://pic.pimg.tw/qupyqupy/1456637848-4120692020.jpg?v=1456637879" title="0d8d7efe7347448ba07d50adcab3541e.JPG" /></div> <div class="global_divtd"><img alt="e81dc2e9a8a15cc5ab255151c0e51290.JPG" src="https://pic.pimg.tw/qupyqupy/1456637848-2857947354.jpg?v=1456637879" title="e81dc2e9a8a15cc5ab255151c0e51290.JPG" /></div> <div class="global_divtd"><img alt="89903523bde5ac20b51a8c18e1ab572d.JPG" src="https://pic.pimg.tw/qupyqupy/1456637849-2555498889.jpg?v=1456637879" title="89903523bde5ac20b51a8c18e1ab572d.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="b519667e4aa3ad5d2e6c254459775144.JPG" src="https://pic.pimg.tw/qupyqupy/1456637849-2341091025.jpg?v=1456637879" title="b519667e4aa3ad5d2e6c254459775144.JPG" /></div> <div class="global_divtd"><img alt="857866bb611e2a48cf3a311bd654c5c7.JPG" src="https://pic.pimg.tw/qupyqupy/1456637849-3061582876.jpg?v=1456637879" title="857866bb611e2a48cf3a311bd654c5c7.JPG" /></div> <div class="global_divtd"><img alt="1175e26157a2ceb666eb2005d527cbc1.JPG" src="https://pic.pimg.tw/qupyqupy/1456637849-1729381297.jpg?v=1456637879" title="1175e26157a2ceb666eb2005d527cbc1.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="8f37a2669e1cdb39a97e2ff4ec902fc1.JPG" src="https://pic.pimg.tw/qupyqupy/1456637850-2131125561.jpg?v=1456637879" title="8f37a2669e1cdb39a97e2ff4ec902fc1.JPG" /></div> <div class="global_divtd"><img alt="b690ee56e09cb3319bc64c596a8e1a5a.JPG" src="https://pic.pimg.tw/qupyqupy/1456637850-734855935.jpg?v=1456637879" title="b690ee56e09cb3319bc64c596a8e1a5a.JPG" /></div> <div class="global_divtd"><img alt="583441250524b65759a5cc56411407ba.JPG" src="https://pic.pimg.tw/qupyqupy/1456637850-444952219.jpg?v=1456637879" title="583441250524b65759a5cc56411407ba.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="191a8d5ed4893c5ce416ec886cac0c9a.JPG" src="https://pic.pimg.tw/qupyqupy/1456637851-1923440014.jpg?v=1456637879" title="191a8d5ed4893c5ce416ec886cac0c9a.JPG" /></div> <div class="global_divtd"><img alt="213a4aed1bceff04c9e371d938556b33.JPG" src="https://pic.pimg.tw/qupyqupy/1456637851-108061894.jpg?v=1456637879" title="213a4aed1bceff04c9e371d938556b33.JPG" /></div> <div class="global_divtd"><img alt="acfd5fb4099132222254c1f1f4df7b33.JPG" src="https://pic.pimg.tw/qupyqupy/1456637852-1117253527.jpg?v=1456637879" title="acfd5fb4099132222254c1f1f4df7b33.JPG" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="11b5f592cec199aa7cd3809c0edc6ec3.JPG" src="https://pic.pimg.tw/qupyqupy/1456637852-1421605082.jpg?v=1456637879" title="11b5f592cec199aa7cd3809c0edc6ec3.JPG" /></div> <div class="global_divtd"><img alt="95b60f497e6c059799a9d3132be4916f.JPG" src="https://pic.pimg.tw/qupyqupy/1456637852-3295492485.jpg?v=1456637879" title="95b60f497e6c059799a9d3132be4916f.JPG" /></div> </div> </div> <hr /> <p>下面是遊戲中的商店娘。</p> <p>其實商店娘的造型，有些比起主角群們更搶戲，所以在後續的風色幻想故事中，有許多商店娘已經成為新一代的主角了。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="99f905dd201d95d98c8baf918f90e03b.JPG" src="https://pic.pimg.tw/qupyqupy/1456637853-2600800033.jpg?v=1456637880" title="99f905dd201d95d98c8baf918f90e03b.JPG" /></div> <div class="global_divtd"><img alt="81bc5d33a9fd0fc4b4a4bdef8345e26a.JPG" src="https://pic.pimg.tw/qupyqupy/1456637853-829271717.jpg?v=1456637880" title="81bc5d33a9fd0fc4b4a4bdef8345e26a.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="c6a4d9c0f75398681fc45c4d92f443fd.JPG" src="https://pic.pimg.tw/qupyqupy/1456637853-1599214006.jpg?v=1456637880" title="c6a4d9c0f75398681fc45c4d92f443fd.JPG" /></div> <div class="global_divtd"><img alt="43fbac54df114172c468ee1ba3db7fe7.JPG" src="https://pic.pimg.tw/qupyqupy/1456637854-258426089.jpg?v=1456637880" title="43fbac54df114172c468ee1ba3db7fe7.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="3a0d46d587a1c54943bfd581a8e34a07.JPG" src="https://pic.pimg.tw/qupyqupy/1456637854-3114054758.jpg?v=1456637880" title="3a0d46d587a1c54943bfd581a8e34a07.JPG" /></div> <div class="global_divtd"><img alt="8829468aec416d1768f12c16b3ff317f.JPG" src="https://pic.pimg.tw/qupyqupy/1456637855-3095376321.jpg?v=1456637880" title="8829468aec416d1768f12c16b3ff317f.JPG" /></div> </div> </div>');
+    result.push('<p>下面是人物介紹。</p> <p>法姆，龍騎王國布朗西斯的禁衛隊長，劍術超群，在三代中算是個串場角色。</p> <p><img alt="d6e0318cf034190f3aa071712cd05697.JPG" src="https://pic.pimg.tw/qupyqupy/1456637826-3455734236.jpg?v=1456637876" title="d6e0318cf034190f3aa071712cd05697.JPG" /></p> <p>幽彌，原本是斷罪之翼的人員，不過為了尋找滅了自己村莊的怪物 ［巴弗滅］而離開。</p> <p>個性很容易被人激怒，身體永遠動的比頭腦快，對於錢有異常的執著，跟愛斯玲是極要好的朋友。</p> <p><img alt="4219ac13ae05b1d0f28153707135d849.JPG" src="https://pic.pimg.tw/qupyqupy/1456637826-345208146.jpg?v=1456637876" title="4219ac13ae05b1d0f28153707135d849.JPG" /></p> <p>烏德斯，斷罪之翼裡的天才武鬥家。</p> <p>不過卻在與傭兵王薩塔魯多的戰爭中被原罪徽章所傷，造成全身肌肉萎縮，不甘心的他，最後竟然借助原罪徽章的力量，甚至與以前的同伴為敵，不過最後被凱琳的真誠打動，總算是恢復以往的樣子。</p> <p><img alt="ce8a5cb7a6eda4fc874fe7528b2cd7f3.JPG" src="https://pic.pimg.tw/qupyqupy/1456637828-3467270835.jpg?v=1456637876" title="ce8a5cb7a6eda4fc874fe7528b2cd7f3.JPG" /></p> <p>雪菈，是守護夜鷲一族的護族遺孤，黑色新娘事件後與凱琳一起被尼魯的大主教費恩收養。</p> <p>在武術方面是個天才，對凱琳而言是屬於一個大姊姊般的存在。</p> <p><img alt="f7dfd847549439c269e998cd443d628d.JPG" src="https://pic.pimg.tw/qupyqupy/1456637829-3222409386.jpg?v=1456637876" title="f7dfd847549439c269e998cd443d628d.JPG" /></p> <p><img alt="7e6bec92d46b55cea8d7a0293444f30a.JPG" src="https://pic.pimg.tw/qupyqupy/1456637828-708612895.jpg?v=1456637876" title="7e6bec92d46b55cea8d7a0293444f30a.JPG" /></p> <p>凱琳，三代的主角，夢想是成為帶刀祭司，是冷夜夜鷲族的遺孤。</p> <p>心中恐懼著黑色新娘辛德蕾拉，為了讓小時後的悲劇不再發生，所以一直追求著更強大的力量，在加入斷罪之翼後，對藍斯產生了愛慕之意，遊戲的最後甚至不惜以自己的生命來阻擋藍斯的災厄之力，也要將藍斯變回原來的樣子。</p> <p><img alt="a48792fd167e96f914a47e71d66794db.JPG" src="https://pic.pimg.tw/qupyqupy/1456637829-2690428551.jpg?v=1456637876" title="a48792fd167e96f914a47e71d66794db.JPG" /></p> <p><img alt="f71d4a8ffa1ec5afa08dded4399b5ccd.JPG" src="https://pic.pimg.tw/qupyqupy/1456637830-1442750784.jpg?v=1456637876" title="f71d4a8ffa1ec5afa08dded4399b5ccd.JPG" /></p> <p>愛斯玲，自幼就被聖燄的英雄雷歐哈特收養，跟西撒算是沒有血緣關係的兄妹。</p> <p>跟幽彌是好友，不過因為幽彌的突然離去，兩人之間產生了無法消除的心結。</p> <p><img alt="d31e088e991fd432b1ca27f61a3eb228.JPG" src="https://pic.pimg.tw/qupyqupy/1456637830-2690472051.jpg?v=1456637876" title="d31e088e991fd432b1ca27f61a3eb228.JPG" /></p> <p><img alt="f426af3c2aedff4ca25b48839fde27e9.JPG" src="https://pic.pimg.tw/qupyqupy/1456637830-4257381566.jpg?v=1456637877" title="f426af3c2aedff4ca25b48839fde27e9.JPG" /></p> <p>藍斯，聖燄的皇子，繼承英雄漢彌爾血液的人（其實不是，這點在四代會有說明）</p> <p>身為斷罪之翼的領導人，有著異於常人的自尊，遊戲的最後因為輝煌焰不承認他，而使用從霸王凱科多處取來的災厄焰力量，甚至因此差點殺死了凱琳。</p> <p><img alt="bdca11e2a0a8887fb3fb8d1507a75979.JPG" src="https://pic.pimg.tw/qupyqupy/1456637831-238377426.jpg?v=1456637877" title="bdca11e2a0a8887fb3fb8d1507a75979.JPG" /></p> <p>九音，冷夜的赤蝶族領導人，個性外向對人也相當親切真誠。</p> <p>在斷罪之翼的生活中，逐漸改變了被稱為修羅將軍的西撒，甚至因此扭轉了冷夜帝國的命運（因果關係，這個在風色幻想的世界中是很重要的元素）</p> <p><img alt="c6bdfeafb9fb90632d80fa6810c4db8e.JPG" src="https://pic.pimg.tw/qupyqupy/1456637832-1338602959.jpg?v=1456637877" title="c6bdfeafb9fb90632d80fa6810c4db8e.JPG" /></p> <p><img alt="eff45fb3307146f00ac56807b5e80f51.JPG" src="https://pic.pimg.tw/qupyqupy/1456637832-1449772583.jpg?v=1456637877" title="eff45fb3307146f00ac56807b5e80f51.JPG" /></p> <p>安潔妮，一代的人物，跟大魔導師賽莉耶為了尋找露菲雅（一代主角）來到這世界，個性還是跟一代一樣傻大姊一個。</p> <p>在冷夜跟聖燄的戰爭中，為了阻止聖焰的進攻，使用拉克西絲禁咒，將自己連同聖焰軍一同封印住，而能解開這咒文的只有露菲雅（拉克西絲），因此她相信總有一天這摯友一定會來救她。</p> <p><img alt="64464c83664c2ae04c03339b2e876bcc.JPG" src="https://pic.pimg.tw/qupyqupy/1456637832-460296421.jpg?v=1456637877" title="64464c83664c2ae04c03339b2e876bcc.JPG" /></p> <p>艾爾札克，斷罪之翼中最悲劇的人物。</p> <p>為了報答傑奧斯皇的恩情，背叛最尊敬的伊格那主教，以及傷害了深愛的西絲緹娜。在傑奧斯的擺佈下，暗殺了冷夜王曼菲斯特，事後卻被傑奧斯出賣，到最後換來母親的慘死，為了報仇暗殺了傑奧斯，之後不知所蹤。</p> <p><img alt="466a3cf4165f4226460e0f429715e51f.JPG" src="https://pic.pimg.tw/qupyqupy/1456637833-2433707909.jpg?v=1456637877" title="466a3cf4165f4226460e0f429715e51f.JPG" /></p> <p>西撒，聖燄的英雄雷歐哈特的兒子，人稱修羅將軍。擁有冷靜的戰爭分析能力，跟其父親相比有過之而無不及。</p> <p>不過在聖焰與冷夜的戰爭中，為了對抗濫用原罪徽章的聖焰與其父親雷歐哈特交戰，甚至親手結束父親的生命，遵照父親的遺言終於揪出幕後的黑手，不過正確與否，四代會有詳述．．．</p> <p><img alt="36c575845c0fec8aa809f86c916fe9db.JPG" src="https://pic.pimg.tw/qupyqupy/1456637833-1928143905.jpg?v=1456637877" title="36c575845c0fec8aa809f86c916fe9db.JPG" /></p> <p><img alt="c276865faad690483f11f81cbb56377b.JPG" src="https://pic.pimg.tw/qupyqupy/1456637833-2721386208.jpg?v=1456637877" title="c276865faad690483f11f81cbb56377b.JPG" /></p> <p>死神貝莉卡，串場人物，只會加入打一場戰而已。</p> <p><img alt="7ab56c9420c5143cdb71c5e7447d3d95.JPG" src="https://pic.pimg.tw/qupyqupy/1456637833-2167391439.jpg?v=1456637877" title="7ab56c9420c5143cdb71c5e7447d3d95.JPG" /></p> <p>西絲緹娜，聖燄的皇女，藍斯的妹妹，愛慕著平民英雄艾爾札克。</p> <p>在傑奧斯死後，領導聖燄聯合，並使用原罪徽章的力量再次進攻冷夜，然而在曼菲斯特（此時是韓德假冒的）死後，她也因此覺悟到了戰爭帶來的傷害。</p> <p><img alt="9ad68a386e8d35260704924d23ed31a4.JPG" src="https://pic.pimg.tw/qupyqupy/1456637834-3443730185.jpg?v=1456637877" title="9ad68a386e8d35260704924d23ed31a4.JPG" /></p> <p>帕魯瑪，修羅將軍的副官。</p> <p>原本是騎龍王國布朗西斯的公主，卻因為父親騎龍王的緣故而離開，是羅煞將軍蕾菲娜的妹妹。</p> <p><img alt="5a98492aee46ac6c25afcdf3d93875cf.JPG" src="https://pic.pimg.tw/qupyqupy/1456637834-4170520715.jpg?v=1456637877" title="5a98492aee46ac6c25afcdf3d93875cf.JPG" /></p> <p><img alt="42ae07875f282b6b3ebb9e57496bb49b.JPG" src="https://pic.pimg.tw/qupyqupy/1456637835-1689319521.jpg?v=1456637877" title="42ae07875f282b6b3ebb9e57496bb49b.JPG" /></p> <p>死神裘卡，二代的人物，比起一代，死神在遊戲中戲份越來越重，個性也越來越鮮明。</p> <p><img alt="34516d32f486cde5bcad0c2072f6a33c.JPG" src="https://pic.pimg.tw/qupyqupy/1456637835-3502511483.jpg?v=1456637878" title="34516d32f486cde5bcad0c2072f6a33c.JPG" /></p> <p>蕾菲娜，人稱羅煞將軍，斷罪之翼的教官，帕魯瑪的姊姊。</p> <p><img alt="dc2f335c8fe0f4195e086ddfdadc5a36.JPG" src="https://pic.pimg.tw/qupyqupy/1456637835-4199594423.jpg?v=1456637878" title="dc2f335c8fe0f4195e086ddfdadc5a36.JPG" /></p> <p>雷歐哈特，聖燄的英雄，同時也是斷罪之翼的最高領導人。</p> <p><img alt="04cfeb24d64e3a11fce56027b3ea7b35.JPG" src="https://pic.pimg.tw/qupyqupy/1456637835-152635176.jpg?v=1456637878" title="04cfeb24d64e3a11fce56027b3ea7b35.JPG" /></p> <p>賽莉耶，一代的人物，與安潔妮為了追尋露菲雅，來到這世界。</p> <p>在一代的劇情中，可得知她被拉克西絲賦予了永恆的生命。</p> <p><img alt="4403ffe984fc342e2c0a1aa7cdec3ad7.JPG" src="https://pic.pimg.tw/qupyqupy/1456637836-3966764843.jpg?v=1456637878" title="4403ffe984fc342e2c0a1aa7cdec3ad7.JPG" /></p> <p>韓德，冷夜燄梟族族長，擁有過人的智謀。</p> <p>在曼菲斯特被暗殺之後，為了鞏固冷夜，毅然決然使用赤蝶族的祕術，將自己的臉與曼菲斯特互換，但最後為了結束戰爭，在希絲緹娜面前自盡，是個悲劇英雄。</p> <p><img alt="0df870261c50690fbfbe518e3e05e19d.JPG" src="https://pic.pimg.tw/qupyqupy/1456637836-148741428.jpg?v=1456637878" title="0df870261c50690fbfbe518e3e05e19d.JPG" /></p> <p>霸王凱科多，擁有災厄燄的力量，在擊敗原罪徽章使徒後，將自己與災厄封印在霸者迷宮內。</p> <p><img alt="cbf29a69ca0d6679251e7096d5e44f00.JPG" src="https://pic.pimg.tw/qupyqupy/1456637836-241658023.jpg?v=1456637878" title="cbf29a69ca0d6679251e7096d5e44f00.JPG" /></p> <p>薩塔魯多，潔拿魯的傭兵王，擁有原罪徽章的力量，是個因力量迷失自我的人物。</p> <p><img alt="f4b018a2b6697c594ca19d3290a01c83.JPG" src="https://pic.pimg.tw/qupyqupy/1456637837-1789527396.jpg?v=1456637878" title="f4b018a2b6697c594ca19d3290a01c83.JPG" /></p> <p>克萊普，香格里拉的領主，個性有點像麻辣教師裡的鬼塚英吉，經常會出現鬼塚英吉般的經典表情。</p> <p><img alt="5cbc1597792bdc2ae3ba92ab533b2779.JPG" src="https://pic.pimg.tw/qupyqupy/1456637837-3594438613.jpg?v=1456637878" title="5cbc1597792bdc2ae3ba92ab533b2779.JPG" /></p> <p>依格那，賽連反叛軍的領袖。</p> <p><img alt="23ace3e5e82fe3d70fa44b6bda78b55f.JPG" src="https://pic.pimg.tw/qupyqupy/1456637838-1633696418.jpg?v=1456637878" title="23ace3e5e82fe3d70fa44b6bda78b55f.JPG" /></p> <p>克蘿帝亞，賽連反叛軍領袖依格那的女兒。</p> <p><img alt="9832268aabda3abcc1798502e907972b.JPG" src="https://pic.pimg.tw/qupyqupy/1456637838-2827710029.jpg?v=1456637878" title="9832268aabda3abcc1798502e907972b.JPG" /></p> <p>拉法利翁，斷罪之翼的教官，對自己的訓練有相當的自信，卻也十分的頑固，這在凱琳剛加入斷罪之翼時可以看的出來，不過好玩的是凱琳等人卻發展出一套自己的戰鬥風格，比起他原本執著的團體戰術似乎不相上下。</p> <p><img alt="0fee096255494142d7b32aae9b4b2c9a.JPG" src="https://pic.pimg.tw/qupyqupy/1456637838-2260404098.jpg?v=1456637878" title="0fee096255494142d7b32aae9b4b2c9a.JPG" /></p> <p>法魯，祭風之塔的串場人物。</p> <p><img alt="4b98c0a00dc9e5581b0e95b93c97700a.JPG" src="https://pic.pimg.tw/qupyqupy/1456637838-2461450197.jpg?v=1456637878" title="4b98c0a00dc9e5581b0e95b93c97700a.JPG" /></p> <p>曼菲斯特，冷夜的帝王，冷夜四大族因為他個人的魅力而團結在一起，也因為他而結束了冷夜多年來的內戰。</p> <p><img alt="c2e56d61a3469e5cdff267b2cc1e700b.JPG" src="https://pic.pimg.tw/qupyqupy/1456637839-3535541030.jpg?v=1456637878" title="c2e56d61a3469e5cdff267b2cc1e700b.JPG" /></p> <p>傑奧斯，聖燄聯合的王，是個權慾薰心的人。</p> <p><img alt="c98be9425db88145586cd844b569ddfa.JPG" src="https://pic.pimg.tw/qupyqupy/1456637839-1872060624.jpg?v=1456637878" title="c98be9425db88145586cd844b569ddfa.JPG" /></p> <p>費恩，尼魯的大主教，預言著原罪劫的到來，其真實身分，於四代詳述．．．</p> <p><img alt="0a33711e412246e5f04709169788c793.JPG" src="https://pic.pimg.tw/qupyqupy/1456637839-1297619869.jpg?v=1456637878" title="0a33711e412246e5f04709169788c793.JPG" /></p> <p>愛西亞，斷罪之翼的教官，也是將大封印之法傳授給凱琳的人，而其真實身分就是一切事件的主謀 ［弗妮］（這地方讓我覺得很不合理）</p> <p><img alt="1f0e88eaa141a486b0c0ad8836701343.JPG" src="https://pic.pimg.tw/qupyqupy/1456637839-3753936267.jpg?v=1456637878" title="1f0e88eaa141a486b0c0ad8836701343.JPG" /></p> <p>弗妮，一切的幕後黑手，不過卻似乎是為了更重大的原因才造成這些悲劇的。</p> <p><img alt="f2e6e8fc792d9afe6c60b583001e50e7.JPG" src="https://pic.pimg.tw/qupyqupy/1456637840-644839632.jpg?v=1456637878" title="f2e6e8fc792d9afe6c60b583001e50e7.JPG" /></p> <p>希洛依，騎龍王國布朗西斯的女王，是個充滿謎團的女性，只知道她是在騎龍王之亂後登基成女王的，還有她非常支持西撒。</p> <p><img alt="44d9f18334c08d675a9dd23bf3abcad2.JPG" src="https://pic.pimg.tw/qupyqupy/1456637840-2835982891.jpg?v=1456637878" title="44d9f18334c08d675a9dd23bf3abcad2.JPG" /></p> <p>黑色新娘辛德蕾拉，謎一般的人物。</p> <p><img alt="84031c16300a85b7fb92049e8d63d673.JPG" src="https://pic.pimg.tw/qupyqupy/1456637840-541303575.jpg?v=1456637878" title="84031c16300a85b7fb92049e8d63d673.JPG" /></p>');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('遊戲介紹');
+      resultIdx.push('人物介紹');
+      resultIdx.push('絕版全身圖');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<p>下面是遊戲中重要的劇情。</p> <p>露菲雅為了幫助眾人抵抗復活的卡奧斯攻擊，而用盡力量死去。</p> <p><img alt="4fdae558e56519337bd916e01a8ebc31.JPG" src="https://pic.pimg.tw/qupyqupy/1453940775-4188666089.jpg?v=1453940786" title="4fdae558e56519337bd916e01a8ebc31.JPG" /></p> <p>為了復活露菲雅，冥王迪斯路亞，以自己的生命來向熾炎鳥證明生與死的覺悟。</p> <p><img alt="055d22188ad38044e537665c17e85a63.JPG" src="https://pic.pimg.tw/qupyqupy/1453940774-211545002.jpg?v=1453940786" title="055d22188ad38044e537665c17e85a63.JPG" /></p> <p>在這當中，冥王與露菲雅回憶起千年的往事，那時候人類夥同魔族一起向天上的諸神開戰，而迪斯路亞的族人卻在一次戰爭中，被命運女神拉克西絲給滅族了，當迪斯路亞趕到時，卻發現精疲力竭的拉克西絲，基於冥王的驕傲，他放過拉克西絲並發誓一生一世獵殺拉克西絲。</p> <p><img alt="9dfadd65433053e28eaf6808afafa3ae.JPG" src="https://pic.pimg.tw/qupyqupy/1453940775-4081667341.jpg?v=1453940786" title="9dfadd65433053e28eaf6808afafa3ae.JPG" /></p> <p>但是每次的挑戰，都以失敗落場，而拉克西絲每次都放過滿身傷痕的冥王。</p> <p><img alt="556b3ffdb7c71a9978c2fb9108105fcc.JPG" src="https://pic.pimg.tw/qupyqupy/1453940775-4233169981.jpg?v=1453940786" title="556b3ffdb7c71a9978c2fb9108105fcc.JPG" /></p> <p>到了人類用菲利斯多封印了兩位女神，導致卡奧斯復活，拉克西絲為了守護這個世界，而要前往封印卡奧斯時，冥王這才發現自己已經愛上拉克西絲，不過卻是兩人最後一面。</p> <p><img alt="2fb12c3f51a071ed4342431149358cf6.JPG" src="https://pic.pimg.tw/qupyqupy/1453940775-1658617814.jpg?v=1453940786" title="2fb12c3f51a071ed4342431149358cf6.JPG" /></p> <p>等待了千年，冥王再度見到拉克西絲，不過卻又是卡奧斯復活的時候，迪斯路亞以一劍結束兩人之間的恩怨（個人認為）並且與拉克西絲一同面對卡奧斯。</p> <p><img alt="c9ba5a36babbc500bd39aaf7bcc86947.JPG" src="https://pic.pimg.tw/qupyqupy/1453940776-774363883.jpg?v=1453940786" title="c9ba5a36babbc500bd39aaf7bcc86947.JPG" /></p> <p>命運三女神最後決定給人類一次機會，而與復活的卡奧斯對決。</p> <p><img alt="b5b58a46a2c6b2d2d393a781502f0591.JPG" src="https://pic.pimg.tw/qupyqupy/1453940776-3986273017.jpg?v=1453940786" title="b5b58a46a2c6b2d2d393a781502f0591.JPG" /></p> <hr /> <p>下面這是幻想時空裡面的情節，主要是敘述蕾依莎小時後的記憶。</p> <p>而年輕的赤龍王夏菲斯在看到這些記憶，可能是同理心影響，最後也決定放下對人類的憎恨，離開卡奧斯體內，並將菲利斯多的力量從卡奧斯體中抽了出來。</p> <p><img alt="634cece84961973d26722f416b038d85.JPG" src="https://pic.pimg.tw/qupyqupy/1453940777-3793361455.jpg?v=1453940786" title="634cece84961973d26722f416b038d85.JPG" /></p> <p><img alt="a1e0bc29f7a6bb5c241095c0a4da3b86.JPG" src="https://pic.pimg.tw/qupyqupy/1453940777-2789318096.jpg?v=1453940786" title="a1e0bc29f7a6bb5c241095c0a4da3b86.JPG" /></p> <p><img alt="14979356bc088862f4833dc49766e345.JPG" src="https://pic.pimg.tw/qupyqupy/1453940777-3912196755.jpg?v=1453940786" title="14979356bc088862f4833dc49766e345.JPG" /></p> <p><img alt="67be0c8eebe6d33eb63f2e8fbc461f98.JPG" src="https://pic.pimg.tw/qupyqupy/1453940777-3424645092.jpg?v=1453940786" title="67be0c8eebe6d33eb63f2e8fbc461f98.JPG" /></p> <p><img alt="8e70e9c645d5ec4fea96da9a670b1bd8.JPG" src="https://pic.pimg.tw/qupyqupy/1453940777-1317210925.jpg?v=1453940786" title="8e70e9c645d5ec4fea96da9a670b1bd8.JPG" /></p> <hr /> <p>下面是一些遊戲中出現的大型怪物，這一點我蠻喜歡的，反應真實尺寸的大小，不過想要藉著抓魔獸系統把這些怪物成為夥伴是不可能的。</p> <p>藤獸。</p> <p><img alt="9dfad58c1953504f149f09472b8a818e.JPG" src="https://pic.pimg.tw/qupyqupy/1453940778-435870372.jpg?v=1453940786" title="9dfad58c1953504f149f09472b8a818e.JPG" /></p> <p>上古妖魔曼加多。</p> <p><img alt="a78cf3693c539e67ef3af13b9fbe983a.JPG" src="https://pic.pimg.tw/qupyqupy/1453940779-2321334361.jpg?v=1453940786" title="a78cf3693c539e67ef3af13b9fbe983a.JPG" /></p> <p>混沌之神卡奧斯。</p> <p><img alt="43dca1caf706d2004658cd3ce72a54dd.JPG" src="https://pic.pimg.tw/qupyqupy/1453940779-2623642135.jpg?v=1453940786" title="43dca1caf706d2004658cd3ce72a54dd.JPG" /></p> <hr /> <p>下面是結局套圖。</p> <p>緹亞繼承王位。</p> <p><img alt="c4c0177cfca88ab50141b404522920e3.JPG" src="https://pic.pimg.tw/qupyqupy/1453940780-1249538147.jpg?v=1453940786" title="c4c0177cfca88ab50141b404522920e3.JPG" /></p> <p>雅哲魯將眾人的冒險故事製作成可愛的人偶，當作龍之鎮的特產。</p> <p><img alt="3befc2eb8a97fb0a79cc495541efea19.JPG" src="https://pic.pimg.tw/qupyqupy/1453940779-2928884870.jpg?v=1453940786" title="3befc2eb8a97fb0a79cc495541efea19.JPG" /></p> <p>幻想時空三人組依然繼續他們的旅程。</p> <p>&nbsp;</p> <p><img alt="024ad6c234656b6f32646639b103ccb3.JPG" src="https://pic.pimg.tw/qupyqupy/1453940780-869649677.jpg?v=1453940786" title="024ad6c234656b6f32646639b103ccb3.JPG" /></p> <p>安潔妮寫信給賽莉耶報告眾人的情況。</p> <p><img alt="a440563b23e5ea98b94073389a099005.JPG" src="https://pic.pimg.tw/qupyqupy/1453940780-441672607.jpg?v=1453940786" title="a440563b23e5ea98b94073389a099005.JPG" /></p> <p>露菲雅跟安潔妮在某個鎮上遇見了某個人（估計是迪斯路亞）。</p> <p><img alt="c99a8582591c0a59df715aede9765763.JPG" src="https://pic.pimg.tw/qupyqupy/1453940781-874232179.jpg?v=1453940786" title="c99a8582591c0a59df715aede9765763.JPG" /></p> <p>這張應該是代表露菲雅跟迪斯路亞快樂生活在一起的意思吧。</p> <p><img alt="9c3fdb2e059afe1a1bedfa41727a81e3.JPG" src="https://pic.pimg.tw/qupyqupy/1453940781-163066153.jpg?v=1453940786" title="9c3fdb2e059afe1a1bedfa41727a81e3.JPG" /></p> <p>然而關於菲利斯多的故事並沒有因此結束．．．．．．．．．．</p>');
+    result.push('<p>下面是遊戲人物介紹。</p> <p>露菲雅，命運三女神拉克西絲的轉世，是一個冒險獵人，小時候解開了毀滅之神卡奧斯的封印，導致母親被梅莉魯附身，因此為了扭轉這結局，所以想取得傳說中的究極魔法菲利斯多，遊戲的一開始，其實個性蠻像是動畫中的秀導魔導士麗娜因巴斯，尤其被海賊酸了一下發育不全的身材後，直接發火的樣子，簡直跟麗娜一模一樣。</p> <p><img alt="ed6b53180620ab7255224d94d38b8c51.JPG" src="https://pic.pimg.tw/qupyqupy/1453940766-1456095425.jpg?v=1453940785" title="ed6b53180620ab7255224d94d38b8c51.JPG" /></p> <p>雅哲魯，一個痛恨冒險獵人的女孩，因為他家人就是被冒險獵人殺害的，不過遇見露菲雅後慢慢改觀，但是除了露菲雅一行人以外的賞金獵人還是一樣。</p> <p><img alt="3c2c59b5f31fc012c8627950a9417d62.JPG" src="https://pic.pimg.tw/qupyqupy/1453940767-1470094999.jpg?v=1453940785" title="3c2c59b5f31fc012c8627950a9417d62.JPG" /></p> <p>蕾依莎，幻想時空的主角群，身負普羅特之命運的女孩（細節不詳述，有興趣的話可以去玩幻想時空）</p> <p><img alt="6f5862c2dc3a8a78ec923edc94d5447a.JPG" src="https://pic.pimg.tw/qupyqupy/1453940767-1232829611.jpg?v=1453940785" title="6f5862c2dc3a8a78ec923edc94d5447a.JPG" /></p> <p>歐琳，身為一個盜賊因為失手被抓，正要處刑的時候，被年紀尚小緹雅所救，從此兩人成為好友，遊戲中她為了救緹雅，更把自己的生命分給她。</p> <p><img alt="c5411a62a941d973abf221c5feccb45f.JPG" src="https://pic.pimg.tw/qupyqupy/1453940768-643899329.jpg?v=1453940785" title="c5411a62a941d973abf221c5feccb45f.JPG" /></p> <p>緹雅，繼承英雄王蒼炎之血的人，是個好打抱不平的武者。</p> <p><img alt="32217e1d640049e854dea39cdd7d6223.JPG" src="https://pic.pimg.tw/qupyqupy/1453940768-3578290615.jpg?v=1453940785" title="32217e1d640049e854dea39cdd7d6223.JPG" /></p> <p>傑斯特，王國騎士，是個很講究騎士精神的人物，不過在對緹雅的追求上很被動，經常要歐琳在一旁當推手。</p> <p><img alt="42471aae074baa71be7a733e046a8261.JPG" src="https://pic.pimg.tw/qupyqupy/1453940769-2537461539.jpg?v=1453940785" title="42471aae074baa71be7a733e046a8261.JPG" /></p> <p>安潔妮，大魔導士賽莉耶的弟子，被派來監視露菲雅，不過意外的跟露菲雅成為好友，對露菲雅的友情非常的堅定（風色幻想後面幾代也有登場，不過是以不同的型態）個性相當迷糊，經常讓露菲雅哭笑不得。</p> <p><img alt="2c628ef576faf04339852e9a7881665a.JPG" src="https://pic.pimg.tw/qupyqupy/1453940769-1693042987.jpg?v=1453940785" title="2c628ef576faf04339852e9a7881665a.JPG" /></p> <p>夏露露，幻想時空主角群，和朱里安合力擊倒魔神王普羅特後，爲了對魔法的堅持來到露菲雅等人的世界，個性十分古怪，遊戲中為了生存還加入黑翼騎士團與露菲雅等人戰鬥。</p> <p><img alt="a1ba701ff3c9199a32b7ba001aefd162.JPG" src="https://pic.pimg.tw/qupyqupy/1453940770-3133860496.jpg?v=1453940785" title="a1ba701ff3c9199a32b7ba001aefd162.JPG" /></p> <p>艾薩斯，真實身分是冥界之王迪斯路亞，因為自己的族人被拉克西絲給毀滅，因此以殺死拉克西絲為目標，不過卻在一次次的戰爭中，發覺自己已經愛上了這個女神。</p> <p><img alt="4156c9b3c6aaffa74211a80e701e57b9.JPG" src="https://pic.pimg.tw/qupyqupy/1453940770-879647084.jpg?v=1453940785" title="4156c9b3c6aaffa74211a80e701e57b9.JPG" /></p> <p>朱里安，幻想時空的主角群，擁有破滅之劍，是拯救天空大陸打敗魔神王普羅特的勇者，跟露菲雅一見面就會吵架，經常要蕾依莎或安潔妮來當合事的。</p> <p><img alt="7b39cbb2594db3ee11b7ff85c42d8757.JPG" src="https://pic.pimg.tw/qupyqupy/1453940771-2597155431.jpg?v=1453940785" title="7b39cbb2594db3ee11b7ff85c42d8757.JPG" /></p> <p>朱里安扮成女裝的樣子，無奈的表情相當逗趣。</p> <p><img alt="a39512608e8207f99bae4ff2a87358f4.JPG" src="https://pic.pimg.tw/qupyqupy/1453940771-3284982650.jpg?v=1453940785" title="a39512608e8207f99bae4ff2a87358f4.JPG" /></p> <p>熾炎鳥，擁有復活的能力。</p> <p><img alt="328253f311137fbe63e10e54cce69ab5.JPG" src="https://pic.pimg.tw/qupyqupy/1453940771-1882333830.jpg?v=1453940785" title="328253f311137fbe63e10e54cce69ab5.JPG" /></p> <p>賽莉耶，不死的大魔導士，被拉克西絲賦予了永恆的生命，為了讓她同樣感受那種永恆的孤獨。<span style="line-height: 1.6;">她同時也是安潔妮的老師，得知露菲雅就是拉克西絲轉世後，就派安潔妮去監視著她。</span></p> <p><img alt="a09db141ee41d425e406bcc81b25d242.JPG" src="https://pic.pimg.tw/qupyqupy/1453940771-35129334.jpg?v=1453940785" title="a09db141ee41d425e406bcc81b25d242.JPG" /></p> <p>魔王女王，應該是串場人物吧，只有一開始跟露菲雅打了一場。</p> <p><img alt="13c3da2bc022e4a68581547f80be53f7.JPG" src="https://pic.pimg.tw/qupyqupy/1453940772-1177996487.jpg?v=1453940785" title="13c3da2bc022e4a68581547f80be53f7.JPG" /></p> <p>命運三女神　－　克羅托。</p> <p><img alt="3151ffc1baf99e454bbf1520a33665b1.JPG" src="https://pic.pimg.tw/qupyqupy/1453940772-1758505632.jpg?v=1453940785" title="3151ffc1baf99e454bbf1520a33665b1.JPG" /></p> <p>命運三女神　－　拉克西絲，唯一沒有被封印的女神。</p> <p>雖然對人類充滿怨恨，不過在卡奧斯復活的情況下，為了保護世界跟人類要了菲利斯多的力量，犧牲自己將卡奧斯封印起來。</p> <p><img alt="e50c61e0271b79f89f33e6be3316a002.JPG" src="https://pic.pimg.tw/qupyqupy/1453940773-607803437.jpg?v=1453940785" title="e50c61e0271b79f89f33e6be3316a002.JPG" /></p> <p>命運三女神　－　阿特洛。</p> <p><img alt="d5a64eeee2168d8183ea03c5c2c4924a.JPG" src="https://pic.pimg.tw/qupyqupy/1453940773-936538058.jpg?v=1453940785" title="d5a64eeee2168d8183ea03c5c2c4924a.JPG" /></p> <p>年輕的赤龍王夏菲斯，赤龍王的兒子，千年前的龍戰爭中，赤龍族被人類打敗，為了復仇，夏菲斯開始尋找傳說中的魔法菲利斯多，卻被梅莉魯利用，導致了卡奧斯的復活，遊戲中最後被有著同樣命運的蕾依莎感動，為了永遠消滅菲利斯多不再讓這股力量被人利用，甚至決定犧牲自己，將同化的菲利斯多消滅。</p> <p><img alt="baba8f106b4ecb086120a782ed623eb2.JPG" src="https://pic.pimg.tw/qupyqupy/1453940773-652795632.jpg?v=1453940786" title="baba8f106b4ecb086120a782ed623eb2.JPG" /></p> <p>恢復赤龍身的夏菲斯。</p> <p><img alt="7091d182acc9af906d75fb5ff59b701b.JPG" src="https://pic.pimg.tw/qupyqupy/1453940773-2156617986.jpg?v=1453940786" title="7091d182acc9af906d75fb5ff59b701b.JPG" /></p> <p>得到菲利斯多力量的夏菲斯。</p> <p><img alt="0bcfa3fb7f2057d4b2c5df31b22cced0.JPG" src="https://pic.pimg.tw/qupyqupy/1453940774-4278355352.jpg?v=1453940786" title="0bcfa3fb7f2057d4b2c5df31b22cced0.JPG" /></p> <p>馬修，黑翼騎士團的團長，為了成為正統的王國騎士團而努力，雖然多次與露菲雅為敵，不過在最後發覺自己被人利用，毅然決然幫助緹雅回到王國。</p> <p><img alt="d96b2234ce819725431237aef2bedd56.JPG" src="https://pic.pimg.tw/qupyqupy/1453940774-3745876082.jpg?v=1453940786" title="d96b2234ce819725431237aef2bedd56.JPG" /></p> <p>梅莉魯，卡奧斯的精神體分身，附身在露菲雅的母親身上，使命就是將卡奧斯復活。</p> <p><img alt="3941d6947f94bec9c343a78dee08b373.JPG" src="https://pic.pimg.tw/qupyqupy/1453940774-3971160722.jpg?v=1453940786" title="3941d6947f94bec9c343a78dee08b373.JPG" /></p> <p>死神裘卡，自從這個角色被設定出來以後，幾乎亂入到每個ＦＹ的遊戲裡面，說她是ＦＹ的招牌一點也不為過，ＳＰ跟二代的戲份比較多，一代只是個單純過場頭目。</p> <p><img alt="898cbe6ba4f212c90fd3bdb051cdf8f9.JPG" src="https://pic.pimg.tw/qupyqupy/1453940774-19400018.jpg?v=1453940786" title="898cbe6ba4f212c90fd3bdb051cdf8f9.JPG" /></p>');
+    result.push('<p>下面是各角色的全身圖，網路找來的，現在應該都絕版了。</p> <p><img alt="27ad51d75a91dc4cd82280c17d02807d.JPG" src="https://pic.pimg.tw/qupyqupy/1453940764-1845904868.jpg?v=1453940785" title="27ad51d75a91dc4cd82280c17d02807d.JPG" /></p> <p><img alt="9528fc490511632b079d9e9bdcbabf32.JPG" src="https://pic.pimg.tw/qupyqupy/1453940765-2916112134.jpg?v=1453940785" title="9528fc490511632b079d9e9bdcbabf32.JPG" /></p> <p><img alt="2bb530670eaa50f0f75dea7291b15272.JPG" src="https://pic.pimg.tw/qupyqupy/1453940763-3787360940.jpg?v=1453940785" title="2bb530670eaa50f0f75dea7291b15272.JPG" /></p> <p><img alt="b862508a827a75f17fb4d80c69086f60.JPG" src="https://pic.pimg.tw/qupyqupy/1453940764-2684168225.jpg?v=1453940785" title="b862508a827a75f17fb4d80c69086f60.JPG" /></p> <p><img alt="6130bc53876153d13340b97a8ff49454.JPG" src="https://pic.pimg.tw/qupyqupy/1453940765-2896509203.jpg?v=1453940785" title="6130bc53876153d13340b97a8ff49454.JPG" /></p> <p><img alt="1ced911cd50b6797b865885945a554eb.JPG" src="https://pic.pimg.tw/qupyqupy/1453940766-1921454599.jpg?v=1453940785" title="1ced911cd50b6797b865885945a554eb.JPG" /></p> <p><img alt="f2e1c7e5bd4885281f794202a226da0c.JPG" src="https://pic.pimg.tw/qupyqupy/1453940766-2820202488.jpg?v=1453940785" title="f2e1c7e5bd4885281f794202a226da0c.JPG" /></p> <p><img alt="bd03c6ab9229449e74902aaa91f5a4a0.JPG" src="https://pic.pimg.tw/qupyqupy/1453940767-3301360743.jpg?v=1453940785" title="bd03c6ab9229449e74902aaa91f5a4a0.JPG" /></p> <p><img alt="f4ca033f95cb5a083fa2d24691c3016c.JPG" src="https://pic.pimg.tw/qupyqupy/1453940769-1434931701.jpg?v=1453940785" title="f4ca033f95cb5a083fa2d24691c3016c.JPG" /></p>');
+    result.push('');
+
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
