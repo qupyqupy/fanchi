@@ -1,0 +1,330 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>主要劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>其他：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>支線劇情：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /> <p><img alt="God of War™ III Remastered_20170331223849.jpg" src="https://pic.pimg.tw/qupyqupy/1510529766-2303097881_n.jpg" title="God of War™ III Remastered_20170331223849.jpg" /></p> <p><span class="global_name_span">戰神3</span>雖然沒有一般日系遊戲美美的人物、浪漫夢幻的場景，但卻有足以比美好萊塢大片的壯闊世界、史詩劇情，從人間打到地獄再打上眾神宮殿，看著<span class="global_name_span">克雷多斯</span>為了自己的復仇，一步一步殘殺眾神、毀滅世界，確實是一個截然不同的遊戲體驗。</p>');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('戰神3');
+  paArr.push('戰神北歐篇');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('沒整理');
+
+      return resultIdx;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('CH01 光明之神巴德爾');
+  pArr.push('CH02 世界之蛇');
+  pArr.push('CH03 智慧巨人密米爾');
+  pArr.push('CH04 冥界赫爾海姆');
+  pArr.push('CH05 終局');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<p><span class="global_name_span">克雷多斯</span>正準備火葬妻子的柴火，與兒子<span class="global_name_span">阿特柔斯</span>照著妻子的遺言，砍伐著印有金手印的樹木。</p> <p>依照妻子的遺言，兩人決定前往九界最高的山峰處灑下妻子的骨灰。啟程前<span class="global_name_span">克雷多斯</span>以打獵為名測試兒子是否準備好迎接旅程中的挑戰。</p> <div class="global_ps_text"> <p>樹木上的金手印是［克雷多斯］的妻子［菲］留下的，目前猜測是［菲］為了隱藏自己而設下的結界，而往後的旅程中也可以看到許多必經之路有留下類似的印記，預估是巨人族擁有的預知能力，讓［菲］提前去巡視父子倆冒險會經過的地方而留下的。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ud1oRPe-yME?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿特柔斯</span>並沒有成功通過測試，父子兩人回到家中後，<span class="global_name_span">巴德爾</span>突然到訪，並與<span class="global_name_span">克雷多斯</span>大打出手，最後雖然成功擊退<span class="global_name_span">巴德爾</span>但是<span class="global_name_span">克雷多斯</span>意識到此地不能久留，於是就算<span class="global_name_span">阿特柔斯</span>並未準備好，仍決定帶著他展開旅程。</p> <p>途中兩人遇到了矮人<span class="global_name_span">布羅克</span>。並且得知<span class="global_name_span">克雷多斯</span>手上的斧頭正是其兄弟的作品。</p> <div class="global_ps_text"> <p>05:35 - 這裡［巴德爾］與［克雷多斯］的對話有很多想像空間，第一次玩可能覺得［巴德爾］純粹就是來找身為希臘戰神的［克雷多斯］，但玩了第二遍我卻覺得［巴德爾］是來找［菲］的。</p> <p>［比想像中矮］［大老遠離開家來到這］［你們這種族比我們好得多、聰明的多］這些由［巴德爾］說的話其實通通可以解釋成［巴德爾］是來找身為巨人族的某人，只是他並不知道長相，而把［克雷多斯］當成巨人族。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4LvVndyaGhs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<p>父子兩人在森林狩獵追趕野豬，因此遇到了林中的女巫<span class="global_name_span">弗蕾雅</span>，在獲得<span class="global_name_span">弗蕾雅</span>的咒符記號幫助後，兩人來到了世界之湖。</p> <p>在這裡發現了世界之蛇，不過因為語言不通且對方看起來並沒有敵意，兩人於是繼續往前，旅途中還遇到了矮人<span class="global_name_span">辛德里</span>。</p> <div class="global_ps_text"> <p>18:20 - 這裡兩人談到了［巴德爾］的出身。</p> <p>20:25 - 此處出現的世界之蛇在網路上有兩種說法。</p> <ul> <li>未來的 - 是因為跟［索爾］在諸神黃昏大戰過，最後被打回過去的時空，關於這一點［密米爾］在旅程中也有提到。</li> <li>現在的 - 由於在世界探索時都可以看到世界之蛇的遺骸，所以有人認為未來來的世界蛇已經逝去，但是有跟現在這時間線的世界蛇溝通過，所以現在這時間線的世界蛇才會無條件幫助［克雷多斯］父子，因為他們兩個是諸神黃昏的關鍵人物。</li> </ul> <p>另外關於世界蛇的考究，在北歐神話中是［洛基］的兒子，這點在遊戲結局前的巨人預言壁畫中可以看到［洛基］口吐長長一條類似蛇的東西，也許也暗示世界蛇在遊戲中是由［洛基］所出。</p> <p>至於世界蛇處於哪條時間線，我反而覺得並不需要太過計較，因為在北歐神話中預知未來、穿越時間的例子太多，就像貫穿全遊戲的諸神黃昏也是未來即將發生的事情。所以我覺得把整個世界觀想成有很多平行宇宙，而當中的人物可以透過某些機制觀察到其他宇宙的發展情形進而推敲出自己世界即將發生的事。</p> <p>所以在遊戲的這個世界也許同時存在兩條、三條、四條以上的世界蛇，都是從其他平行的宇宙過來的，畢竟在遊戲最後從［密米爾］口中得知芬布爾之冬已經提前一百年到來，肯定是有很多重大的因素導致這結果。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hXzoC3UHdxE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<p>兩人繼續往目的地前進，卻遇到了黑之吐息的腐化魔法阻擋，在<span class="global_name_span">弗蕾雅</span>的建議下，父子決定前往精靈國度取得亞爾夫海姆的光。</p> <div class="global_ps_text"> <p>08:23 - 這邊提到世界之蛇突然出現後沒多久後，［索爾］就與牠大戰一場，並且在那之後世界之蛇逐漸長大成現在這大小。這段對話可以知道世界之蛇在突然出現之時還在成長期，因此基於這論點我會比較相信目前這條世界之蛇應該是原本就在這條時間線的，但是關於［突然出現］這點還是很難解釋。</p> <p>34:40 - 這裡提到［菲］成為戰士前的經歷。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LKU8aiymJA4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>父子成功取得亞爾夫海姆的光，總算闖過黑之吐息。</p> <div class="global_ps_text"> <p>07:40 - 這裡［克雷多斯］所進入的灰色世界，應該是可以想成是某種幻象，也可以想成是［菲］經由亞爾夫海姆的光所傳遞的訊息，而途中［阿特柔斯］類似自白的語言，應該是他在現實世界等待［克雷多斯］時說得，可以由這些話語知道父子兩人的關係並不是非常好。</p> <p>29:24 - ［克雷多斯］講著關於賽連的故事。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9Hizv5Kf0CE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>經過千辛萬苦父子兩離登頂之路只差一小段。</p> <div class="global_ps_text"> <p>43:24 - 這裡［克雷多斯］用槲寄生做的箭幫［阿特柔斯］修補背帶，這段劇情看似不重要，其實關乎結局。</p> <p>而遊戲中並沒有明講，要破解［巴德爾］的不死之身，必須借助槲寄生的力量，這部分也是借鑑北歐神話。原神話中光明之神［巴德爾］的母親［弗蕾雅］跑遍世界各地，請求萬物發下誓言不可傷害［巴德爾］，卻唯獨一棵長在英靈殿東邊的槲寄生沒有，因此這便成為［巴德爾］唯一的破綻。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4QcdDPO2dPc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>來到山頂後，遇到<span class="global_name_span">巴德爾</span>及跟在他身旁的兩位<span class="global_name_span">索爾</span>的兒子，父子兩人等待這三人離開後，登頂與<span class="global_name_span">密米爾</span>交談。</p> <p>這才發現這邊並不是九界最高的山頂，真正的目的地應該是在巨人國度約頓海姆，由於需要<span class="global_name_span">密米爾</span>的幫助，但是又無法解除<span class="global_name_span">奧丁</span>對他身體施加的魔法，所以<span class="global_name_span">克雷多斯</span>砍下<span class="global_name_span">密米爾</span>的頭，並且前去找<span class="global_name_span">弗蕾雅</span>希望能幫<span class="global_name_span">密米爾</span>復活。</p> <div class="global_ps_text"> <p>09:10 - 這裡［阿特柔斯］講到世界之蛇是目前留在米德加爾特的巨人，也可能是最後一個巨人，也順便探問了［克雷多斯］之前的家族。</p> <p>14:40 - ［克雷多斯］講著龜兔的故事。</p> <p>［密米爾］頗像中國神話中的神農氏，在網紅［老高］的頻道中有一個論點，世界各地的神話人物很可能是指向同一批人，自從我聽了［老高］的論點，在各方各面都多長了點眼去觀察，發現還真有那麼一回事。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sXdqe5CJMHA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<p>父子兩人在世界之湖周邊進行額外的探索。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rjM-vvVqUi4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>父子兩人在矮人王國解放了龍<span class="global_name_span">歐特</span>。</p> <div class="global_ps_text"> <p>00:27 - ［克雷多斯］講著馬與獵人的故事。</p> <p>05:19 - ［克雷多斯］講著青蛙的故事。</p> <p>33:43 - ［克雷多斯］講著小偷與他母親的故事。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gspFPVkI_P4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">弗蕾雅</span>復活了<span class="global_name_span">密米爾</span>，但過程中<span class="global_name_span">克雷多斯</span>發現<span class="global_name_span">弗蕾雅</span>是神的事實，基於對神的厭惡，雙方最後鬧得不歡而散。</p> <p>父子兩聽了<span class="global_name_span">密米爾</span>的建議，為了前往約頓海姆，向世界之蛇求助。跟世界之蛇溝通過後，三人前去尋找特殊的魔法鑿子。</p> <div class="global_ps_text"> <p>00:24 - ［克雷多斯］講著螃蟹與他媽的故事。</p> <p>03:15 - ［克雷多斯］講著樵夫的故事。</p> <p>07:15 - ［克雷多斯］講著蠍子的故事。</p> <p>17:01 - 這邊可以看出［阿特柔斯］有著跟亡者溝通的能力。</p> <p>19:01 - ［弗蕾雅］在這裡之所以對［阿特柔斯］發脾氣，是因為他背上的箭是由槲寄生所製作，也是唯一可以導致他兒子［巴德爾］受傷的關鍵物。</p> <p>23:25 - ［密米爾］說著［巴德爾］不死之身的能力，但似乎剛復活，腦袋還沒完全清醒。</p> <p>29:25 - ［密米爾］說著［弗蕾雅］為什麼討厭自己的原因。</p> <p>32:10 - ［密米爾］說著關於巨人［索穆爾］的故事。</p> <p>［弗蕾雅］之所以討厭［密米爾］甚至對他吐口水的原因，是因為［奧丁］為了要獲得阿薩神族的力量，而當時［密米爾］給了結盟的建議，而導致［弗蕾雅］嫁給［奧丁］，這段悲慘的婚姻可說是由［密米爾］一手促成。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dI8wgx8nEzs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>就在快取得魔法鑿子時，<span class="global_name_span">索爾</span>的兒子們<span class="global_name_span">曼尼</span>、<span class="global_name_span">摩迪</span>擋在前方。</p> <p>一番大戰後，<span class="global_name_span">曼尼</span>被<span class="global_name_span">克雷多斯</span>擊殺，<span class="global_name_span">摩迪</span>落荒而逃，雖然取得了魔法鑿子，但就在三人準備取得前往約頓海姆的符文時，<span class="global_name_span">摩迪</span>又突然出現，雖然最後被趕跑，但是<span class="global_name_span">阿特柔斯</span>卻因此倒下了，逼於無奈<span class="global_name_span">克雷多斯</span>只好前往求助<span class="global_name_span">弗蕾雅</span>。</p> <div class="global_ps_text"> <p>05:00 - ［密米爾］講述著［索爾］屠戮巨人族的過去。</p> <p>49:10 - ［密米爾］說著［提爾］的地窖中藏有前往約頓海姆的符文。</p> <p>50:10 - ［密米爾］說著［奧丁］跟［弗蕾雅］的過往。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5A5GBrjUfIQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了救兒子，<span class="global_name_span">克雷多斯</span>前往赫爾海姆。</p> <p>取得了守門人的心臟後，<span class="global_name_span">阿特柔斯</span>終於康復了，而<span class="global_name_span">克雷多斯</span>也向<span class="global_name_span">阿特柔斯</span>坦承自己身為神的真相。</p> <div class="global_ps_text"> <p>02:35 - 這裡忽然響起的號角聲代表有人在乎喚世界之蛇，然後遊戲中並沒有說這人是誰？</p> <p>16:25 - ［密米爾］此時已經猜出［克雷多斯］是來自希臘。</p> <p>24:35 - 這邊可以知道九界的時間速度並不一樣。以科學的角度來說，重力越大的地方時間越慢，而北歐神話中透過世界樹系統可以穿梭九界，因此可以合理猜想，九界其實就是不同的星球重力也不一樣，而世界樹就是這些星球的傳送裝置。</p> <p>26:58 - 這邊談到赫爾海姆跟英靈殿的差別。</p> <p>43:01 - ［密米爾］根據［宙斯］是［克雷多斯］父親這點，猜出［克雷多斯］是斯巴達的亡魂。</p> <p>56:20 - ［阿特柔斯］詢問著關於自己身為神的能力。</p> <p>57:47 - ［阿特柔斯］詢問［弗蕾雅］為什麼會躲在森林裡當隱士，透過［密米爾］的講述，也知道了因為［奧丁］的詛咒［弗蕾雅］不能戰鬥的事實。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/n2SePtcnPuc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<p>取得符文後，三人準備前往山頂。</p> <div class="global_ps_text"> <p>00:59 - 自從得知自己是神後，［阿特柔斯］開始得意忘形。此時的［密米爾］便講起關於［提爾］的故事，講述這一位受人愛戴的戰爭之神。</p> <p>08:00 - ［提爾］喜歡在這國度之間旅行，因此他的地窖之中藏有各種事物，這邊可以看到包含了來自希臘、埃及等等的各種文物，這部分的埋梗瞬間就將世界觀擴大不少。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KPyRA1xYmGM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在上山的途中<span class="global_name_span">阿特柔斯</span>不聽<span class="global_name_span">克雷多斯</span>的勸阻殺了<span class="global_name_span">摩迪</span>。</p> <p>在山頂即將前往約頓海姆時，<span class="global_name_span">巴德爾</span>突然出現，眾人混戰之後全部跌入赫爾海姆。</p> <div class="global_ps_text"> <p>29:10 - ［阿特柔斯］受到［克雷多斯］嚴厲的教訓，因此開始反省自身，這邊我覺得不錯，我們可以藉由遊戲看出一個角色的心態轉換。</p> <p>31:40 - 這邊顯示了［阿特柔斯］殺死［摩迪］時的影像。</p> <p>35:22 - ［巴德爾］此時正看著關於自己過往的影像，從中也得知［弗蕾雅］為了怕［巴德爾］死去，而對［巴德爾］施展魔法，雖能保［巴德爾］不死，但是卻也奪去了［巴德爾］的生活樂趣，讓他食不知味、失去任何感知能力。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eUagz5rZcao?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>父子兩人找到了<span class="global_name_span">提爾</span>留下的另一條通往約頓海姆的路，並且離開了赫爾海姆。</p> <p>在<span class="global_name_span">布羅克</span>兄弟的協力下，依照<span class="global_name_span">提爾</span>留下的圖紙製作出一把鑰匙，運用這把鑰匙，父子兩人來到<span class="global_name_span">提爾</span>刻意隱藏的房間，為了提爾留下的東西，<span class="global_name_span">克雷多斯</span>準備將整個神殿翻過來。</p> <div class="global_ps_text"> <p>02:00 - 這邊出現的大鳥雖然跟玩家沒有互動，但應該是北歐神話中的［赫拉斯瓦爾格爾］是一個巨人變化而成的老鷹。</p> <p>09:38 - 這邊出現［克雷多斯］與［宙斯］決鬥的幻影，其實［阿特柔斯］是看到的，不過他之所以當下裝沒看到的原因，是此時的［阿特柔斯］已經成熟許多，甚至某一方面主動引導著［克雷多斯］繼續前進。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/r80fLBeg_uc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人找到了<span class="global_name_span">提爾</span>留下的團結石，但最後卻發現缺少了<span class="global_name_span">密米爾</span>的雙眼，於是前往世界蛇的肚子，並在裡面裡找到了<span class="global_name_span">密米爾</span>的另一隻眼睛，此時的世界蛇卻遭到攻擊，倒下的最後一刻將眾人吐了出來。</p> <p>攻擊世界蛇的正是<span class="global_name_span">巴德爾</span>，而此時來到的<span class="global_name_span">弗蕾雅</span>成為了他的目標。一邊是要找母親復仇的兒子、另一邊是阻止兒子攻擊母親的<span class="global_name_span">克雷多斯</span>、而<span class="global_name_span">弗蕾雅</span>則透過神力不停地阻擾這場戰鬥，最後<span class="global_name_span">巴德爾</span>被綁在<span class="global_name_span">阿特柔斯</span>身上的槲寄生破了不死之身，而死在<span class="global_name_span">克雷多斯</span>手上，<span class="global_name_span">弗蕾雅</span>也因此與父子兩人結下深仇大恨。</p> <div class="global_ps_text"> <p>00:05 - ［阿特柔斯］的一段話，可以顯示出他從一個小屁孩已經成為一個懂事的好兒子。</p> <p>［巴德爾］是光明之神，而他的死正是芬布爾之冬來臨的時刻，所以當［巴德爾］倒下的那刻，遊戲中開始下起雪來就是這個原因。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/x6WN2w1b-uw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>父子兩人終於成功前往約頓海姆，並且在最高的山峰處灑下了骨灰。</p> <div class="global_ps_text"> <p>［菲］之所以讓父子兩人灑下骨灰，絕對有其意義，網路上有兩派說法。</p> <ul> <li>讓父子經由這段旅程消除兩人的嫌隙。</li> <li>灑下的骨灰有著讓巨人復活的力量，為諸神黃昏做準備。</li> </ul> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NoSBmWQbH5s?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('沒整理');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var pArr = [];
+  pArr.push('');
+  pArr.push('遊戲介紹');
+  pArr.push('遊戲過程記錄');
+
+  		return pArr;
+  	}
+  	var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<p>遊戲的開頭故事敘述，這種壁畫的風格相當符合神話世界的氣氛。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OD3kE2Q7b5o?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>遊戲的開頭選單，<span class="global_name_span">克雷多斯</span>就直接在選單後面怒目而視，一看到這畫面就覺得跟其他遊戲很截然不同。</p> <p><img alt="God of War™ III Remastered_20170331224359.jpg" src="https://pic.pimg.tw/qupyqupy/1510529764-3624420061_n.jpg" title="God of War™ III Remastered_20170331224359.jpg" /></p> <p>遊戲破關後可以開啟很多隱藏選項，這當中可隱藏了很多挑戰遊戲難度的方式，就算是換個服裝也都有不同的加減效果。</p> <p><img alt="God of War™ III Remastered_20170215011327.jpg" src="https://pic.pimg.tw/qupyqupy/1510529761-2767207937_n.jpg" title="God of War™ III Remastered_20170215011327.jpg" /></p> <p>每個服裝下面都會有效果，可以挑戰不同模式的遊戲樂趣。雖然我個人比較喜歡單純以不同造型再遊戲一次，不過這設定不得不說還是挺新鮮的。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224519.jpg" src="https://pic.pimg.tw/qupyqupy/1510529766-3582299016_n.jpg" title="God of War™ III Remastered_20170331224519.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224526.jpg" src="https://pic.pimg.tw/qupyqupy/1510529768-2299547469_n.jpg" title="God of War™ III Remastered_20170331224526.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224537.jpg" src="https://pic.pimg.tw/qupyqupy/1510529768-3012418567_n.jpg" title="God of War™ III Remastered_20170331224537.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224543.jpg" src="https://pic.pimg.tw/qupyqupy/1510529768-2211755869_n.jpg" title="God of War™ III Remastered_20170331224543.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224550.jpg" src="https://pic.pimg.tw/qupyqupy/1510529769-1691239134_n.jpg" title="God of War™ III Remastered_20170331224550.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224557.jpg" src="https://pic.pimg.tw/qupyqupy/1510529769-2033589316_n.jpg" title="God of War™ III Remastered_20170331224557.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224616.jpg" src="https://pic.pimg.tw/qupyqupy/1510529772-3069951979_n.jpg" title="God of War™ III Remastered_20170331224616.jpg" /></div> <div class="global_divtd">　</div> </div> </div> <p>遊戲的其他選項，基本上我覺得<span class="global_name_span">戰神3</span>最吸引人的就是它如電影般的遊戲流程，至於這些挑戰玩家極限的額外選項確實沒怎麼吸引到我。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224459.jpg" src="https://pic.pimg.tw/qupyqupy/1510529764-2434439105_n.jpg" title="God of War™ III Remastered_20170331224459.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224506.jpg" src="https://pic.pimg.tw/qupyqupy/1510529764-1003393403_n.jpg" title="God of War™ III Remastered_20170331224506.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224630.jpg" src="https://pic.pimg.tw/qupyqupy/1510529771-199889386_n.jpg" title="God of War™ III Remastered_20170331224630.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224637.jpg" src="https://pic.pimg.tw/qupyqupy/1510529772-3812089685_n.jpg" title="God of War™ III Remastered_20170331224637.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170331224716.jpg" src="https://pic.pimg.tw/qupyqupy/1510529772-452503179_n.jpg" title="God of War™ III Remastered_20170331224716.jpg" /></div> <div class="global_divtd">　</div> </div> </div> <hr /> <p>遊戲一開始就是跟著泰坦族進攻奧林帕斯，一整個就像是大決戰的氣氛十分熱血，一開始對決的海神也很有決鬥的感覺，與巨大的假身戰鬥最後奮力一衝抓出真身，這是電影才有的動作設計啊。</p> <p><img alt="bandicam 2017-11-12 13-28-02-266.jpg" src="https://pic.pimg.tw/qupyqupy/1510529756-2380254426_n.jpg" title="bandicam 2017-11-12 13-28-02-266.jpg" /></p> <p>蓋亞心臟這場景，當初看到的時候頗為震驚，心裡還想著要是我直接在這毀掉心臟，蓋亞會不會直接跌下山，不過很可惜遊戲一開始還不能打掉心臟前的水晶。</p> <p><img alt="bandicam 2017-11-12 13-27-30-739.jpg" src="https://pic.pimg.tw/qupyqupy/1510529757-3224697327_n.jpg" title="bandicam 2017-11-12 13-27-30-739.jpg" /></p> <p>巨大的火神，很難想像他那麼巨大的身軀是要怎麼打造<span class="global_name_span">克雷多斯</span>的兵器。</p> <p><img alt="bandicam 2017-11-12 13-29-03-094.jpg" src="https://pic.pimg.tw/qupyqupy/1510529756-3646862191_n.jpg" title="bandicam 2017-11-12 13-29-03-094.jpg" /></p> <p>對決哈帝斯除了不斷血腥削肉以外，還配上輸入各種不同的 QTE ，看著<span class="global_name_span">克雷多斯</span>狂虐冥王。透過鎖鍊拔河拉靈魂的橋段很有緊張感。</p> <p><img alt="bandicam 2017-11-12 13-30-53-005.jpg" src="https://pic.pimg.tw/qupyqupy/1510529757-3553837719_n.jpg" title="bandicam 2017-11-12 13-30-53-005.jpg" /></p> <p>當初看到這些門上的巨大雕像時，還以為最後他們會動起來，戰鬥中莫名就感受到一股壓力。</p> <p><img alt="bandicam 2017-11-12 13-33-16-307.jpg" src="https://pic.pimg.tw/qupyqupy/1510529759-3704632074_n.jpg" title="bandicam 2017-11-12 13-33-16-307.jpg" /></p> <p>伊卡洛斯之翼的用途在遊戲中頗廣，場景中有很多需要滑翔的地形都需要用到。</p> <p><img alt="bandicam 2017-11-12 13-31-36-553.jpg" src="https://pic.pimg.tw/qupyqupy/1510529758-2725880686_n.jpg" title="bandicam 2017-11-12 13-31-36-553.jpg" /></p> <p>也因為這翅膀的設定，可以體驗到不同的操作模式，像來往迷宮與地獄之間的通道，就像是玩射擊遊戲一樣。</p> <p><img alt="bandicam 2017-11-12 13-31-25-599.jpg" src="https://pic.pimg.tw/qupyqupy/1510529757-1485222584_n.jpg" title="bandicam 2017-11-12 13-31-25-599.jpg" /></p> <p>這巨大的鎖鏈，爬著爬著莫名就想到七龍珠裡悟空爬上神宮殿的情節。</p> <p><img alt="bandicam 2017-11-12 13-35-04-609.jpg" src="https://pic.pimg.tw/qupyqupy/1510529759-3172539415_n.jpg" title="bandicam 2017-11-12 13-35-04-609.jpg" /></p> <p>與克羅諾斯戰鬥非常的驚人，它的身軀可是如一座大山一般，<span class="global_name_span">克雷多斯</span>只能不斷在他身上移動尋找弱點攻擊，這種誇張的身型比對決在其他遊戲可是很少見的。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2017-11-12 13-32-22-457.jpg" src="https://pic.pimg.tw/qupyqupy/1510529758-1432545948_n.jpg" title="bandicam 2017-11-12 13-32-22-457.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2017-11-12 13-33-42-540.jpg" src="https://pic.pimg.tw/qupyqupy/1510529758-726815387_n.jpg" title="bandicam 2017-11-12 13-33-42-540.jpg" /></div> </div> </div> <p>最後與宙斯的對決更是精彩，一開始兩人的互相肉搏鬥毆。</p> <p><img alt="bandicam 2017-11-12 13-39-11-634.jpg" src="https://pic.pimg.tw/qupyqupy/1510529759-1565042055_n.jpg" title="bandicam 2017-11-12 13-39-11-634.jpg" /></p> <p>接著打進蓋亞身體裡，彼此交換著武器的豪爽互砍，當一切以為塵埃落定時.....</p> <p><img alt="bandicam 2017-11-12 13-34-46-528.jpg" src="https://pic.pimg.tw/qupyqupy/1510529759-3665786268_n.jpg" title="bandicam 2017-11-12 13-34-46-528.jpg" /></p> <p>宙斯又以類似靈體的狀態復甦，甚至到了最後在<span class="global_name_span">克雷多斯</span>不斷狂歐宙斯的情節裡，也加入了停手才能看到結局的設定，真的一整個非常細心的安排，讓人非常享受在這最後決鬥中。</p> <p><img alt="bandicam 2017-11-12 13-38-07-100.jpg" src="https://pic.pimg.tw/qupyqupy/1510529759-1723171129_n.jpg" title="bandicam 2017-11-12 13-38-07-100.jpg" /></p> <p>除了單純的殺戮外，遊戲也有很多不同的解謎謎題，都做得相當有程度，像是下圖的音樂盤操作。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170213223058.jpg" src="https://pic.pimg.tw/qupyqupy/1510529762-1352077347_n.jpg" title="God of War™ III Remastered_20170213223058.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170213223139.jpg" src="https://pic.pimg.tw/qupyqupy/1510529765-2865492892_n.jpg" title="God of War™ III Remastered_20170213223139.jpg" /></div> </div> </div> <p>哈帝斯的雕像，要透過鎖住雕像雙手或是放開雙手來達到遊戲前進的目的，這裡要動些腦筋想好流程。</p> <p><img alt="bandicam 2017-11-12 13-28-52-386.jpg" src="https://pic.pimg.tw/qupyqupy/1510529757-1673422004_n.jpg" title="bandicam 2017-11-12 13-28-52-386.jpg" /></p> <hr /> <p>遊戲中的道具跟武器都各有各自的用途，這跟一般遊戲純以威力跟效用分類的規則不同，這也讓玩家除了享受斬殺快感外，額外需要一些動腦的元素。</p> <p>阿波羅之弓除了攻擊敵人以外，還可以燃燒荊棘或是點燃火爐。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730075748.jpg" src="https://pic.pimg.tw/qupyqupy/1510529773-10164396_n.jpg" title="God of War™ III Remastered_20170730075748.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730075756.jpg" src="https://pic.pimg.tw/qupyqupy/1510529772-539197620_n.jpg" title="God of War™ III Remastered_20170730075756.jpg" /></div> </div> </div> <p>流亡劍是基本的攻擊武器。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730075802.jpg" src="https://pic.pimg.tw/qupyqupy/1510529777-2002654960_n.jpg" title="God of War™ III Remastered_20170730075802.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730075811.jpg" src="https://pic.pimg.tw/qupyqupy/1510529775-1538470797_n.jpg" title="God of War™ III Remastered_20170730075811.jpg" /></div> </div> </div> <p>雅典娜神劍雖然等到跌近冥界時就會消失，但是透過神器的設定可以在後續遊戲時使用，前提是要先破關一次。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730083213.jpg" src="https://pic.pimg.tw/qupyqupy/1510529777-882888796_n.jpg" title="God of War™ III Remastered_20170730083213.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730083220.jpg" src="https://pic.pimg.tw/qupyqupy/1510529775-1928897354_n.jpg" title="God of War™ III Remastered_20170730083220.jpg" /></div> </div> </div> <p>哈帝斯勾爪，擅長對靈魂的攻擊。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730085541.jpg" src="https://pic.pimg.tw/qupyqupy/1510529778-1858070683_n.jpg" title="God of War™ III Remastered_20170730085541.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730085548.jpg" src="https://pic.pimg.tw/qupyqupy/1510529777-265179878_n.jpg" title="God of War™ III Remastered_20170730085548.jpg" /></div> </div> </div> <p>爪內還寄宿著各種神話怪物的靈魂攻擊方式。</p> <p><img alt="God of War™ III Remastered_20170730085556.jpg" src="https://pic.pimg.tw/qupyqupy/1510529778-3110789418_n.jpg" title="God of War™ III Remastered_20170730085556.jpg" /></p> <p>尼米亞護手，雖然攻擊距離並沒有很大，但是可以破壞盾兵的盾牌，跟場景上的水晶，在遊戲故事劇情的進展上非常的重要。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730152223.jpg" src="https://pic.pimg.tw/qupyqupy/1510529781-1814628913_n.jpg" title="God of War™ III Remastered_20170730152223.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730152213.jpg" src="https://pic.pimg.tw/qupyqupy/1510529779-958321889_n.jpg" title="God of War™ III Remastered_20170730152213.jpg" /></div> </div> </div> <p>直接從太陽神身上拔下來的頭，除了可以當照明設備以外，還能透過太陽神的眼睛發現隱藏的寶箱跟通道。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730152250.jpg" src="https://pic.pimg.tw/qupyqupy/1510529781-297953636_n.jpg" title="God of War™ III Remastered_20170730152250.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730152256.jpg" src="https://pic.pimg.tw/qupyqupy/1510529780-133919729_n.jpg" title="God of War™ III Remastered_20170730152256.jpg" /></div> </div> </div> <p>原本以為穿上的靴子可以移動速度變很快，不過其實是增加一種固定的移動方式。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730152319.jpg" src="https://pic.pimg.tw/qupyqupy/1510529782-768891213_n.jpg" title="God of War™ III Remastered_20170730152319.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730152329.jpg" src="https://pic.pimg.tw/qupyqupy/1510529781-4112330327_n.jpg" title="God of War™ III Remastered_20170730152329.jpg" /></div> </div> </div> <p>理論上這最後拿到的武器應該是最強的，不過用過之後反而是各有各的好，復仇兇鞭在定點攻擊上也不錯的表現，另外附加的功能是可以幫某些失去能量的設備充電。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730160151.jpg" src="https://pic.pimg.tw/qupyqupy/1510529782-1741890861_n.jpg" title="God of War™ III Remastered_20170730160151.jpg" /></div> <div class="global_divtd"><img alt="God of War™ III Remastered_20170730160157.jpg" src="https://pic.pimg.tw/qupyqupy/1510529782-3421925948_n.jpg" title="God of War™ III Remastered_20170730160157.jpg" /></div> </div> </div> <hr /> <p>破關畫面。</p> <p><img alt="God of War™ III Remastered_20170730160338.jpg" src="https://pic.pimg.tw/qupyqupy/1510529784-4153434487_n.jpg" title="God of War™ III Remastered_20170730160338.jpg" /></p>');
+  contentArr.push('<p>這次通關的遊戲過程記錄。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OwJTA6Hiqbo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return contentArr;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
