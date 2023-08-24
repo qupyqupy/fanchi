@@ -246,6 +246,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');
   activityArr.push('');
   activityArr.push('<hr /> <p><span class="redactor-invisible-space">在玩過吞食天地後，我就一直對遊戲中只能在編成所呆著的武將覺得很扼腕，假如也可以把他們派到各個城池裡面駐守，感覺應該會很有趣。</span></p> <p><span class="redactor-invisible-space">劉備傳在當時算實現了我的夢想，但遊玩之時才發現這樣的設定讓玩家疲於奔命，不斷的在掉城、攻城中重復著一場又一場的戰鬥，遊戲中雖然有很多 NPC 人物可以對話，也有很多場所可以進去探查，但是因為隨時都有可能掉城的關係，這些都不能好好的享受，算是十分可惜的地方。</span></p> <p>另外這遊戲雖然是光碟遊戲，但是要運行在 DOS 環境，算是個人電腦過渡時期的產物。</p> <p>現在想要回味的話得使用類似 DosBox 的模擬器來模擬 Dos 環境，如果是使用 DosBox 遊玩的話，記得將 DosBox 的 Config 檔中的設定&nbsp;memsize=16 改成 memsize=32，這樣遊戲才會正常，至於使用 Vmware 或是其他作業系統模擬器的玩家就自己研究看看怎麼改相關設定。</p>');
+  activityArr.push('');
 
 
 
@@ -255,6 +256,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('三國群俠傳(PC)');
   paArr.push('橫山光輝三國志(SFC)');
   paArr.push('劉備傳(DOS)');
+  paArr.push('三國戰紀(PS4)');
 
 
   var contentArr = [];
@@ -263,6 +265,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct2(1));
   contentArr.push(getAct3(1));
   contentArr.push(getAct4(1));
+  contentArr.push(getAct5(1));
 
   var pArr = [];
   pArr.push([]);
@@ -270,6 +273,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct2(2));
   pArr.push(getAct3(2));
   pArr.push(getAct4(2));
+  pArr.push(getAct5(2));
 
 
   var firstEnter = 0 ; 
@@ -336,13 +340,13 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
-      resultIdx.push('');
+      resultIdx.push('套裝效果');
 
       return resultIdx;
     }
     var result = [] ;
     result.push('');
-    result.push('');
+    result.push('<style type="text/css">.normal_title { background: #CC9999; border-radius: 10px 10px 0px 0px; padding:10px; font-weight:bold; color:#ffffff; text-align:center; margin: 5px; font-size: 20px; } .global_ps_text { border-radius: 0px; } .item_name { font-size:16px; font-weight:bold; background: #CCCCCC; color:#FFFFFF; padding: 3px; border-radius: 3px; } .global_divtable { text-align:center; margin-left: 5px; } .global_divtd { width: 47%; } </style> <div class="normal_title">一般套裝</div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">八卦套裝</div> <div class="global_divtd">四方套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="八卦.jpg" src="https://pic.pimg.tw/qupyqupy/1496879078-2199469439.jpg" title="八卦.jpg" /></div> <div class="global_divtd"><img alt="四方.jpg" src="https://pic.pimg.tw/qupyqupy/1496879078-4283089310.jpg" title="四方.jpg" /></div> </div> </div> <div class="global_ps_text">四方套裝:<br /> 東海青玉戴、北關玄絲杉、西域白寶踏、南疆赤金握、四方遊龍心。</div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">英雄套裝</div> <div class="global_divtd">飛將套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="英雄.jpg" src="https://pic.pimg.tw/qupyqupy/1496879078-1922221246.jpg" title="英雄.jpg" /></div> <div class="global_divtd"><img alt="飛將.jpg" src="https://pic.pimg.tw/qupyqupy/1496879078-1631200486.jpg" title="飛將.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">蚩尤套裝</div> <div class="global_divtd">逆戰套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="蚩尤.jpg" src="https://pic.pimg.tw/qupyqupy/1496879078-1881418069.jpg" title="蚩尤.jpg" /></div> <div class="global_divtd"><img alt="逆戰.jpg" src="https://pic.pimg.tw/qupyqupy/1496879078-4244084614.jpg" title="逆戰.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">混沌套裝</div> <div class="global_divtd">陰陽套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="混沌.jpg" src="https://pic.pimg.tw/qupyqupy/1496879078-3905435017.jpg" title="混沌.jpg" /></div> <div class="global_divtd"><img alt="陰陽.jpg" src="https://pic.pimg.tw/qupyqupy/1496879079-3996767739.jpg" title="陰陽.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">絕殺套裝</div> <div class="global_divtd">暴元套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="絕殺.jpg" src="https://pic.pimg.tw/qupyqupy/1496879080-480398778.jpg" title="絕殺.jpg" /></div> <div class="global_divtd"><img alt="暴元.jpg" src="https://pic.pimg.tw/qupyqupy/1496879080-538594688.jpg" title="暴元.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">戰神套裝</div> <div class="global_divtd">霸王套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="戰神.jpg" src="https://pic.pimg.tw/qupyqupy/1496879080-395411866.jpg" title="戰神.jpg" /></div> <div class="global_divtd"><img alt="霸王.jpg" src="https://pic.pimg.tw/qupyqupy/1496879081-2173737726.jpg" title="霸王.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">紅蓮套裝</div> <div class="global_divtd">百戰套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="紅蓮套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1498911621-1315449755.jpg?v=1498911626" title="紅蓮套裝.jpg" /></div> <div class="global_divtd"><img alt="百戰.jpg" src="https://pic.pimg.tw/qupyqupy/1503811608-963199522.jpg?v=1503811614" title="百戰.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">金剛套裝</div> <div class="global_divtd">英魂套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="金剛.jpg" src="https://pic.pimg.tw/qupyqupy/1503811608-275032837.jpg?v=1503811614" title="金剛.jpg" /></div> <div class="global_divtd"><img alt="英魂.jpg" src="https://pic.pimg.tw/qupyqupy/1503811608-1048240571.jpg?v=1503811614" title="英魂.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">悍將套裝</div> <div class="global_divtd">&nbsp;</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="悍將.jpg" src="https://pic.pimg.tw/qupyqupy/1503811608-108424022.jpg?v=1503811614" title="悍將.jpg" /></div> <div class="global_divtd">&nbsp;</div> </div> </div> <div class="normal_title">個人套裝</div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">諸葛亮-混元套裝</div> <div class="global_divtd">孫尚香-麗將套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="混元.jpg" src="https://pic.pimg.tw/qupyqupy/1496879078-363905045.jpg" title="混元.jpg" /></div> <div class="global_divtd"><img alt="麗將.jpg" src="https://pic.pimg.tw/qupyqupy/1496879081-1472673371.jpg" title="麗將.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">貂蟬-牡丹套裝</div> <div class="global_divtd">孫堅-孤狼套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="牡丹套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1498911621-2110873270.jpg?v=1498911626" title="牡丹套裝.jpg" /></div> <div class="global_divtd"><img alt="孤狼套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1498911621-48296142.jpg?v=1498911626" title="孤狼套裝.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">關羽-軍神套裝</div> <div class="global_divtd">黃芸-貫日套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="軍神套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1498911621-1680055560.jpg?v=1498911626" title="軍神套裝.jpg" /></div> <div class="global_divtd"><img alt="貫日套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1498911621-3726878394.jpg?v=1498911626" title="貫日套裝.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">馬超-獸王套裝</div> <div class="global_divtd">夏侯惇-羅喉套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="獸王套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1498911622-633600019.jpg?v=1498911626" title="獸王套裝.jpg" /></div> <div class="global_divtd"><img alt="羅喉套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1498911622-964564493.jpg?v=1498911626" title="羅喉套裝.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">小喬-天籟套裝</div> <div class="global_divtd">趙雲-火鳳套裝</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="天籟套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1499268966-1059943540.jpg?v=1499268970" title="天籟套裝.jpg" /></div> <div class="global_divtd"><img alt="火鳳套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1499268966-1437972456.jpg?v=1499268970" title="火鳳套裝.jpg" /></div> </div> </div> <div class="global_divtable"> <div class="global_divtr item_name"> <div class="global_divtd">左慈-無名套裝</div> <div class="global_divtd">&nbsp;</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="無名套裝.jpg" src="https://pic.pimg.tw/qupyqupy/1499268966-1374567388.jpg?v=1499268970" title="無名套裝.jpg" /></div> <div class="global_divtd">&nbsp;</div> </div> </div>');
     result.push('');
     result.push('');
     result.push('');
