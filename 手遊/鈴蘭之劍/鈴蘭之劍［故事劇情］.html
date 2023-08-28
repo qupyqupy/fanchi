@@ -1,0 +1,378 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+
+<hr />
+
+<p><label>選擇：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>主劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>其它：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>其它：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('序章');
+  paArr.push('愚者的旅程');
+  // paArr.push('');
+  // paArr.push('');
+  // paArr.push('');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
+  // contentArr.push(getAct3(1));
+  // contentArr.push(getAct4(1));
+  // contentArr.push(getAct5(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
+  // pArr.push(getAct3(2));
+  // pArr.push(getAct4(2));
+  // pArr.push(getAct5(2));
+
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
+  // contentArrB.push(getActB3(1));
+  // contentArrB.push(getActB4(1));
+  // contentArrB.push(getActB5(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
+  // pArrB.push(getActB3(2));
+  // pArrB.push(getActB4(2));
+  // pArrB.push(getActB5(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+  function getActB3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+    return contentArr;
+  }
+
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('序章-破碎的時空支線');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">調查異常</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/a2RVRdnh9mE?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('序章-破碎的時空');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">序章-破碎的時空</div> <p>主角再次回到<span class="global_name_span">拉維耶</span>遇害的時空，但是這次依然沒能拯救她，在<span class="global_name_span">賓士貓</span>的指引下，主角找到了隱藏在這時空中的［命運之輪］力量，有了這個就可以不斷回到過去，嘗試出改變命運的契機。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JUnW9Wr49YQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>但主角的力量太弱，即便能不斷回到過去，終究還是會迎來悲劇，只有在［混沌之海］中不斷吸取力量、壯大自己才能達成心中夢想。</p> <p>就在這時，［混沌之海］升起紅色的力量光束，那是代表［災厄］的顏色，距離［樂土］非常地近，<span class="global_name_span">賓士貓</span>急著請求主角前去解決［災厄］。</p> <p>過程中，<span class="global_name_span">拉維耶</span>、<span class="global_name_span">法卡爾</span>也來到這個空間，似乎他倆也受到了指引，總之對付［災厄］已經成為在場眾人的當前任務。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/n6pf0rdTA30?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+    return contentArr;
+  }
+
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var pArr = [];
+      pArr.push('');
+  pArr.push('序章');
+  
+
+  		return pArr;
+  	}
+  	var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">序章</div> <p>［浪涌城］正發生暴動，叛變的王國軍與暴徒將整座城變為燃燒的地獄，而主角被關在地下的牢房，即將被王國叛軍結果性命，這時一個豪爽的白髮女戰士<span class="global_name_span">拉維耶</span>踹開大門，救下了主角。</p> <p>但畢竟地牢戒備森嚴，在逃跑過程中，<span class="global_name_span">拉維耶</span>不幸被亂箭射死，主角忍住悲傷帶著<span class="global_name_span">拉維耶</span>的同伴<span class="global_name_span">麥莎</span>、<span class="global_name_span">法卡爾</span>繼續逃跑。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fmgJzKEYuW8?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>但是因為暴亂，城門已經被軍隊完全封鎖，此時後方大量的暴徒湧了上來，主角三人就這樣在軍隊與暴徒交戰中喪生了。</p> <p>不過主角強烈想改變命運的執念，引來了［樂土］中一個會說人話的賓士貓注意，在［混沌之海］中將主角撈了出來，順帶連<span class="global_name_span">麥莎</span>也來到［樂土］，這裡有著超乎常識的系統知識。</p> <p>根據賓士貓說的，兩人似乎可以在［混沌之海］中，尋找改變命運的機會。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cSaxJThiXXM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+	  return contentArr;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
