@@ -143,6 +143,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');
   activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/263892655"><img alt="cover1.png" src="https://pic.pimg.tw/qupyqupy/1671596984-3952622617-g_n.png" title="cover1.png" /></a></p>');
   activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/263892659"><img alt="cover2.jfif" src="https://pic.pimg.tw/qupyqupy/1671596982-3192698372-g_n.jpg" title="cover2.jfif" /></a></p>');
+  activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/268539319"><img alt="將星之斧與覆鎧之羊.jpg" src="https://pic.pimg.tw/qupyqupy/1693451468-3666825166-g_n.jpg" title="將星之斧與覆鎧之羊.jpg" /></a></p>');
+
 
 
 
@@ -150,29 +152,34 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('');
   paArr.push('昔日的英雄與誓約之銘文');
   paArr.push('輪迴巨鐮與無實之紅蓮');
+  paArr.push('將星之斧與覆鎧之羊');
 
 
   var contentArr = [];
   contentArr.push([]);
   contentArr.push(getAct1(1));
   contentArr.push(getAct2(1));
+  contentArr.push(getAct3(1));
 
   var pArr = [];
   pArr.push([]);
   pArr.push(getAct1(2));
   pArr.push(getAct2(2));
+  pArr.push(getAct3(2));
 
 
   var contentArrB = [];
   contentArrB.push([]);
   contentArrB.push(getActB1(1));
   contentArrB.push(getActB2(1));
+  contentArrB.push(getActB3(1));
 
 
   var pArrB = [];
   pArrB.push([]);
   pArrB.push(getActB1(2));
   pArrB.push(getActB2(2));
+  pArrB.push(getActB3(2));
 
 
   var firstEnter = 0 ; 
@@ -260,6 +267,78 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   }
 
   initAct(1);
+
+
+  function getActB4(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('沒整理');
+
+      return resultIdx;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct4(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getActB3(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('沒整理');
+
+      return resultIdx;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('第1話-將星之斧與覆鎧之羊');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
 
 
   function getActB2(idx) {
