@@ -1,5 +1,17 @@
 <style type="text/css">
-
+.sitem {
+    position: relative;
+    display: inline-block;
+}
+.sitem::before {
+    position: absolute;
+    content:attr(data-ns);
+    color: #fff;
+    font-weight: bold;
+    background: #0a0a1c;
+    left: 5px;
+    bottom: 5px;
+}
 #ccontent img {
     width: 90%;
 }
@@ -118,142 +130,182 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
         "魔化夏侯儀": {
             "avtar": '<img alt="魔化夏侯儀.png" src="https://pic.pimg.tw/qupyqupy/1669404793-2574779789-g.png" title="魔化夏侯儀.png" />',
             "c": '<img alt="陣009.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3310405998-g_n.png" title="陣009.png" />',
+            "s": '三格範圍內有氣血未滿的角色、傷害+10%'
         },
         "古倫德": {
             "avtar": '<img alt="古倫德.png" src="https://pic.pimg.tw/qupyqupy/1669404773-959988957-g.png" title="古倫德.png" />',
             "c": '<img alt="陣026.png" src="https://pic.pimg.tw/qupyqupy/1664938472-1612099370-g_n.png" title="陣026.png" />',
+            "s": '自己氣血未滿、傷害+10%'
         },
         "李逍遙": {
             "avtar": '<img alt="李逍遙.png" src="https://pic.pimg.tw/qupyqupy/1669404777-3487201883-g.png" title="李逍遙.png" />',
             "c": '<img alt="陣001.png" src="https://pic.pimg.tw/qupyqupy/1664938459-4255850267-g_n.png" title="陣001.png" />',
+            "s": '攜帶一個BUFF傷害+5%最多15%'
         },
         "尉遲良": {
             "avtar": '<img alt="尉遲良.png" src="https://pic.pimg.tw/qupyqupy/1669404783-1156848071-g.png" title="尉遲良.png" />',
             "c": '<img alt="陣002.png" src="https://pic.pimg.tw/qupyqupy/1664938459-3129635752-g_n.png" title="陣002.png" />',
+            "s": '周圍兩格有友軍傷害+10%'
         },
         "封寒月": {
             "avtar": '<img alt="封寒月.png" src="https://pic.pimg.tw/qupyqupy/1669404779-2688995795-g.png" title="封寒月.png" />',
             "c": '<img alt="陣003.png" src="https://pic.pimg.tw/qupyqupy/1664938459-330386355-g_n.png" title="陣003.png" />',
+             "s": '滿血時,物穿、法穿+10%'
         },
         "殷無邪": {
             "avtar": '<img alt="殷無邪.png" src="https://pic.pimg.tw/qupyqupy/1669404782-920167896-g.png" title="殷無邪.png" />',
             "c": '<img alt="陣004.png" src="https://pic.pimg.tw/qupyqupy/1664938459-4039513620-g_n.png" title="陣004.png" />',
+            "s": '周圍兩格有其他女性時,傷害+10%'
         },
         "武英仲": {
             "avtar": '<img alt="武英仲.png" src="https://pic.pimg.tw/qupyqupy/1669404778-1290916943-g.png" title="武英仲.png" />',
             "c": '<img alt="陣005.png" src="https://pic.pimg.tw/qupyqupy/1664938459-3994876787-g_n.png" title="陣005.png" />',
+            "s": '目標沒帶BUFF,對戰中傷害+15%'
         },
         "于小雪": {
             "avtar": '<img alt="于小雪.png" src="https://pic.pimg.tw/qupyqupy/1669404774-3311757535-g.png" title="于小雪.png" />',
             "c": '<img alt="陣006.png" src="https://pic.pimg.tw/qupyqupy/1664938460-1053162942-g_n.png" title="陣006.png" />',
+            "s": '自身少於三個DEBUFF,傷害+10%'
         },
         "黎幽": {
             "avtar": '<img alt="黎幽.png" src="https://pic.pimg.tw/qupyqupy/1669404788-4203644854-g.png" title="黎幽.png" />',
             "c": '<img alt="陣007.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3910153325-g_n.png" title="陣007.png" />',
+            "s": '目標攜帶三個以上DEBUFF,傷害+15%'
         },
         "燕赤霞": {
             "avtar": '<img alt="燕赤霞.png" src="https://pic.pimg.tw/qupyqupy/1669404789-551056332-g.png" title="燕赤霞.png" />',
             "c": '<img alt="陣008.png" src="https://pic.pimg.tw/qupyqupy/1664938463-1897114410-g_n.png" title="陣008.png" />',
+            "s": '三格範圍內每多一個角色傷害、暴擊+2%,最多8%'
         },
         "劍邪": {
             "avtar": '<img alt="劍邪.png" src="https://pic.pimg.tw/qupyqupy/1669404785-2425336594-g.png" title="劍邪.png" />',
             "c": '<img alt="陣010.png" src="https://pic.pimg.tw/qupyqupy/1664938463-2857529092-g_n.png" title="陣010.png" />',
+            "s": '周圍兩圈每多一個敵人傷害+5%,最多15%'
         },
         "夏侯儀": {
             "avtar": '<img alt="夏侯儀.png" src="https://pic.pimg.tw/qupyqupy/1669404779-2198045786-g.png" title="夏侯儀.png" />',
             "c": '<img alt="陣011.png" src="https://pic.pimg.tw/qupyqupy/1664938463-4093189218-g_n.png" title="陣011.png" />',
+            "s": 'AOE傷害+10%'
         },
         "紫楓": {
             "avtar": '<img alt="紫楓.png" src="https://pic.pimg.tw/qupyqupy/1669404784-2273053474-g.png" title="紫楓.png" />',
             "c": '<img alt="陣012.png" src="https://pic.pimg.tw/qupyqupy/1664938463-3785821738-g_n.png" title="陣012.png" />',
+            "s": '攜帶移動力提高BUFF,技能傷害+10%'
         },
         "殷劍平": {
             "avtar": '<img alt="殷劍平.png" src="https://pic.pimg.tw/qupyqupy/1669404783-2201655606-g.png" title="殷劍平.png" />',
             "c": '<img alt="陣013.png" src="https://pic.pimg.tw/qupyqupy/1664938466-937497510-g_n.png" title="陣013.png" />',
+            "s": '主動攻擊［對戰中］傷害+10%'
         },
         "霍雍": {
             "avtar": '<img alt="霍雍.png" src="https://pic.pimg.tw/qupyqupy/1669404790-2909497385-g.png" title="霍雍.png" />',
             "c": '<img alt="陣014.png" src="https://pic.pimg.tw/qupyqupy/1664938466-2013155944-g_n.png" title="陣014.png" />',
+            "s": '自身氣血高於50%且未攜帶DEBUFF, 傷害+15%'
         },
         "九陰": {
             "avtar": '<img alt="九陰.png" src="https://pic.pimg.tw/qupyqupy/1669404773-3270472879-g.png" title="九陰.png" />',
             "c": '<img alt="陣015.png" src="https://pic.pimg.tw/qupyqupy/1664938467-3965028743-g_n.png" title="陣015.png" />',
+            "s": '三格範圍內同時存在其他光和暗角,傷害、暴擊+8%'
         },
         "雲衣宮主": {
             "avtar": '<img alt="雲衣宮主.png" src="https://pic.pimg.tw/qupyqupy/1669404785-1190453365-g.png" title="雲衣宮主.png" />',
             "c": '<img alt="陣016.png" src="https://pic.pimg.tw/qupyqupy/1664938466-3102204251-g_n.png" title="陣016.png" />',
+            "s": '有主動絕學CD中,傷害+10%'
         },
         "韓千秀": {
             "avtar": '<img alt="韓千秀.png" src="https://pic.pimg.tw/qupyqupy/1669404790-4144199875-g.png" title="韓千秀.png" />',
             "c": '<img alt="陣017.png" src="https://pic.pimg.tw/qupyqupy/1664938467-1240706322-g_n.png" title="陣017.png" />',
+            "s": '主動造成傷害額外追加固傷(目標當前氣血15%)'
         },
         "召祐": {
             "avtar": '<img alt="召祐.png" src="https://pic.pimg.tw/qupyqupy/1669404774-1193384245-g.png" title="召祐.png" />',
             "c": '<img alt="陣018.png" src="https://pic.pimg.tw/qupyqupy/1664938467-638542660-g_n.png" title="陣018.png" />',
+            "s": '三格範圍內存在其他炎或冰角,傷害+10%'
         },
         "慕容璇璣": {
             "avtar": '<img alt="慕容璇璣.png" src="https://pic.pimg.tw/qupyqupy/1669404786-2407502638-g.png" title="慕容璇璣.png" />',
             "c": '<img alt="陣019.png" src="https://pic.pimg.tw/qupyqupy/1664938469-3082659195-g_n.png" title="陣019.png" />',
+            "s": '主動攻擊,暴擊率+15%'
         },
         "奚歌": {
             "avtar": '<img alt="奚歌.png" src="https://pic.pimg.tw/qupyqupy/1669404780-1711470503-g.png" title="奚歌.png" />',
             "c": '<img alt="陣020.png" src="https://pic.pimg.tw/qupyqupy/1664938470-1506070659-g_n.png" title="陣020.png" />',
+            "s": '單體技能傷害+10%'
         },
         "憛香": {
             "avtar": '<img alt="憛香.png" src="https://pic.pimg.tw/qupyqupy/1669404787-833660786-g.png" title="憛香.png" />',
             "c": '<img alt="陣027.png" src="https://pic.pimg.tw/qupyqupy/1669402609-1892198841-g_n.png" title="陣027.png" />',
+            "s": '自身沒有DEBUFF, AOE、暴擊+8%'
         },
         "白復歸": {
             "avtar": '<img alt="白復歸.png" src="https://pic.pimg.tw/qupyqupy/1669404775-3634055055-g.png" title="白復歸.png" />',
             "c": '<img alt="陣028.png" src="https://pic.pimg.tw/qupyqupy/1669402609-492604790-g_n.png" title="陣028.png" />',
+            "s": '二格內友軍攜帶DEBUFF免傷+8%,敵軍攜帶DEBUFF傷害+8%'
         },
         "鮮于超": {
             "avtar": '<img alt="鮮于超.png" src="https://pic.pimg.tw/qupyqupy/1669404792-2066986742-g.png" title="鮮于超.png" />',
             "c": '<img alt="陣029.png" src="https://pic.pimg.tw/qupyqupy/1669404783-466596928-g_n.png" title="陣029.png" />',
+            "s": '氣血大於等於70%,傷害、免傷+8%'
         },
         "白玉堂": {
             "avtar": '<img alt="白玉堂.png" src="https://pic.pimg.tw/qupyqupy/1672062699-3517534460-g.png" title="白玉堂.png" />',
             "c": '<img alt="義鼠奪風陣.png" src="https://pic.pimg.tw/qupyqupy/1672062699-610702177-g_n.png" title="義鼠奪風陣.png" />',
+            "s": '攜帶BUFF時,傷害+10%'
         },
         "允迦": {
             "avtar": '<img src="https://pic.pimg.tw/qupyqupy/1683606037-2215055201-g.png" />',
             "c": '<img src="https://pic.pimg.tw/qupyqupy/1683606039-2314742682-g_n.png" />',
+            "s": '傷害+15%、三格內每多一個敵人傷害-5%(最多-15%)'
         },
         "真胤": {
             "avtar": '<img src="https://pic.pimg.tw/qupyqupy/1683606155-139280599-g.png" />',
             "c": '<img src="https://pic.pimg.tw/qupyqupy/1683606158-3776387169-g_n.png" />',
+            "s": '二格內有友軍,技能傷害+10%'
         },
         "巴艾邇": {
             "avtar": '<img src="https://pic.pimg.tw/qupyqupy/1683606059-1786940639-g.png" />',
             "c": '<img src="https://pic.pimg.tw/qupyqupy/1683606143-3157413259-g_n.png" />',
+            "s": '傷害、暴擊+8%,兩格內每多一個友軍-4%(最多-8%)'
         },
         "阿秋": {
             "avtar": '<img src="https://pic.pimg.tw/qupyqupy/1683606132-260007963-g.png" />',
             "c": '<img src="https://pic.pimg.tw/qupyqupy/1683606136-624545938-g_n.png" />',
+            "s": '使用技能攻擊處於直線的目標,傷害、暴擊+8%'
         },
         "青": {
             "avtar": '<img src="https://pic.pimg.tw/qupyqupy/1683606137-256447198-g.png" />',
             "c": '<img src="https://pic.pimg.tw/qupyqupy/1683606034-2646843207-g_n.png" />',
+            "s": '攻擊目標每多一個DEBUFF,［對戰中］傷害+5%(最多15%)'
         },
         "星占賢者": {
             "avtar": '<img alt="星占賢者.png" src="https://pic.pimg.tw/qupyqupy/1685263742-3739818367-g.png" title="星占賢者.png" />',
             "c": '<img alt="星占賢者陣.png" src="https://pic.pimg.tw/qupyqupy/1685263742-253315766-g_n.png" title="星占賢者陣.png" />',
+            "s": '兩格內有其他光角，暴傷減免、傷害+8%'
         },
         "傅雅魚": {
             "avtar": '<img alt="傅雅魚.png" src="https://pic.pimg.tw/qupyqupy/1688059090-2341006735-g.png" title="傅雅魚.png" />',
             "c": '<img alt="雅魚陣.png" src="https://pic.pimg.tw/qupyqupy/1688059090-3591826617-g_n.png" title="雅魚陣.png" />',
+            "s": '兩格內有男的傷害+8%,有女的免傷+8%'
         },
         "殷千煬": {
             "avtar": '<img alt="殷千煬.png" src="https://pic.pimg.tw/qupyqupy/1689822909-4225240369-g.png" title="殷千煬.png" />',
             "c": '<img alt="殷千煬陣.png" src="https://pic.pimg.tw/qupyqupy/1689822910-3973795229-g_n.png" title="殷千煬陣.png" />',
+            "s": '［對戰中］氣血50%以上免傷+8%,目標氣血50%以上傷害+8%'
         },
         "朧夜": {
             "avtar": '<img alt="朧夜.png" src="https://pic.pimg.tw/qupyqupy/1689822910-2070595405-g.png" title="朧夜.png" />',
             "c": '<img alt="朧夜陣.png" src="https://pic.pimg.tw/qupyqupy/1689822910-19790679-g_n.png" title="朧夜陣.png" />',
+            "s": '與沒有克制關係的目標［對戰中］傷害+8%,受克制傷害-8%'
         },
         "露葵": {
             "avtar": '<img alt="露葵.png" src="https://pic.pimg.tw/qupyqupy/1692256584-200238975-g.png" title="露葵.png" />',
             "c": '<img alt="露葵陣.png" src="https://pic.pimg.tw/qupyqupy/1692256585-3504612434-g_n.png" title="露葵陣.png" />',
+            "s": '自身滿血時，傷害+8%，氣血未滿時，免傷+8%'
+        },
+        "羅淵女皇": {
+            "avtar": '<img alt="羅淵女皇.png" src="https://pic.pimg.tw/qupyqupy/1694660949-997427683-g.png" title="羅淵女皇.png" />',
+            "c": '<img alt="女皇陣.png" src="https://pic.pimg.tw/qupyqupy/1694660949-1551275988-g_n.png?v=1694660949" title="女皇陣.png" />',
+            "s": '攜帶BUFF傷害+8%、沒帶BUFF免傷+8%'
         }
     };
 
@@ -261,34 +313,39 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
         "韓無砂": {
             "avtar": '<img alt="韓無砂.png" src="https://pic.pimg.tw/qupyqupy/1669404791-1920420061-g.png" title="韓無砂.png" />',
             "c": '<img alt="陣021.png" src="https://pic.pimg.tw/qupyqupy/1664938470-439839000-g_n.png" title="陣021.png" />',
+            "s": '跟不是女的戰鬥時,傷害+10%'
         },
         "紫蘊": {
             "avtar": '<img alt="紫蘊.png" src="https://pic.pimg.tw/qupyqupy/1669404785-1413958991-g.png" title="紫蘊.png" />',
             "c": '<img alt="陣022.png" src="https://pic.pimg.tw/qupyqupy/1664938470-3908106087-g_n.png" title="陣022.png" />',
+            "s": '攻擊攜帶［電流］狀態的敵人, 傷害+10%'
         },
         "白苑": {
             "avtar": '<img alt="白苑.png" src="https://pic.pimg.tw/qupyqupy/1669404774-4231809998-g.png" title="白苑.png" />',
             "c": '<img alt="陣023.png" src="https://pic.pimg.tw/qupyqupy/1664938470-273402346-g_n.png" title="陣023.png" />',
+            "s": '基礎開陣效果比其他陣+5%'
         },
         "幻境朧妖": {
             "avtar": '<img alt="幻境朧妖.png" src="https://pic.pimg.tw/qupyqupy/1669404773-999664470-g.png" title="幻境朧妖.png" />',
             "c": '<img alt="陣024.png" src="https://pic.pimg.tw/qupyqupy/1664938470-590726887-g_n.png" title="陣024.png" />',
+            "s": '攻擊攜帶［遲緩］狀態的敵人, 傷害+10%'
         },
         "慕容箏": {
             "avtar": '<img alt="慕容箏.png" src="https://pic.pimg.tw/qupyqupy/1669404785-69373762-g.png" title="慕容箏.png" />',
             "c": '<img alt="陣025.png" src="https://pic.pimg.tw/qupyqupy/1664938471-3379847690-g_n.png" title="陣025.png" />',
+            "s": '攻擊攜帶［燃燒］狀態的敵人, 傷害+10%'
         }
     };
 
     function createFrame(name, avtar, c) {
-        var result = '<div class="head_frame" data-c=' + name + '><div>' + name + '</div><div>' + avtar +'</div></div>';
+        var result = '<div class="head_frame" data-c=' + name + ' data-s=' + c + '><div>' + name + '</div><div>' + avtar +'</div></div>';
         return result;
     }
 
     function showAvtar() {
         let result = '';
         for (var n in dData1) {
-            result += createFrame(n, dData1[n].avtar);
+            result += createFrame(n, dData1[n].avtar, dData1[n].s);
         }
 
         avtar1.innerHTML = result;
@@ -296,7 +353,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
         result = '';
 
         for (var n in dData2) {
-            result += createFrame(n, dData2[n].avtar);
+            result += createFrame(n, dData2[n].avtar, dData2[n].s);
         }
 
         avtar2.innerHTML = result;
@@ -331,10 +388,13 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
                 var c = dData1[ds[i].dataset.c] && dData1[ds[i].dataset.c].c
                 var r = dData2[ds[i].dataset.c] && dData2[ds[i].dataset.c].c
 
+                var c1 = dData1[ds[i].dataset.c] && dData1[ds[i].dataset.c].s
+                var r1 = dData2[ds[i].dataset.c] && dData2[ds[i].dataset.c].s
+
                 if (c) {
-                    result += c;
+                    result += `<div class="sitem" data-ns="${c1}"> ${c}</div>`;
                 } else {
-                    result += r;
+                    result += `<div class="sitem" data-ns="${r1}"> ${r}</div>`;
                 }
             }
         }
