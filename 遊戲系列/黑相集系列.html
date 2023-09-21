@@ -1,0 +1,251 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('棉蘭號');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+  // contentArr.push(getAct2(1));
+  // contentArr.push(getAct3(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+  // pArr.push(getAct2(2));
+  // pArr.push(getAct3(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+      resultIdx.push('');
+
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+
+    return result;
+  }
+
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+      resultIdx.push('飛機殘骸');
+      resultIdx.push('廢棄貨輪');
+  		resultIdx.push('');
+      resultIdx.push('');
+      resultIdx.push('');
+      resultIdx.push('');
+
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">飛機殘骸</div> <p>劇情開始，一艘軍艦上正發生詭異的超自然現象，所有的軍人都遭到恐怖的經歷而失去生命。</p> <p>畫面一轉，四個年輕人正準備搭乘小遊艇［米蘭公爵號］出海潛水遊玩，當中<span class="global_name_span">布萊德</span>與<span class="global_name_span">艾力克斯</span>為兄弟關係，<span class="global_name_span">茱莉亞</span>、<span class="global_name_span">康瑞德</span>為兄妹關係，<span class="global_name_span">茱莉亞</span>跟<span class="global_name_span">艾力克斯</span>是男女朋友，因為這層關係才讓四人聚在一起。</p> <p>為了安全起見，四人還找了一個女船長<span class="global_name_span">菲莉絲</span>，她是［米蘭公爵號］的主人，畢竟出海這件事情還是得有個經驗豐富的人來帶領。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YlUUEHXez9k?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>四人這次出海的目標，是一個二戰時期被擊落的飛機殘骸，在<span class="global_name_span">茱莉亞</span>跟<span class="global_name_span">艾力克斯</span>潛水的期間，一艘快艇差點撞上了［米蘭公爵號］，快艇上的三人面露兇色，加上<span class="global_name_span">康瑞德</span>那富家公子的囂張氣焰，現場氣氛陷入緊張。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IdpWfCdAOn0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>另一邊，<span class="global_name_span">茱莉亞</span>跟<span class="global_name_span">艾力克斯</span>結束了潛水的冒險，浮上海面後，剛好看到快艇離開，緊接著［米蘭公爵號］上發出爆炸，還好一切都是虛驚一場。</p> <p>當晚五人正準備討論著關於這次冒險的事情，負責去拿啤酒的<span class="global_name_span">康瑞德</span>卻趁機跟<span class="global_name_span">菲莉絲</span>親密接觸，似乎短短的一天，兩人已經陷入火熱的關係中。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/R-_GsfAxqu8?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
