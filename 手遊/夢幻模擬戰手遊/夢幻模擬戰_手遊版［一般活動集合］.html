@@ -166,6 +166,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//歡迎來到蘭古利薩學園
   activityArr.push('');//艾路薩利亞決戰慶典
   activityArr.push('');//火車大劫案
+  activityArr.push('');//艾梅達傳說溯時之旅
 
 
 
@@ -200,6 +201,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('歡迎來到蘭古利薩學園');
   paArr.push('艾路薩利亞決戰慶典');
   paArr.push('火車大劫案');
+  paArr.push('艾梅達傳說溯時之旅');
 
 
   var contentArr = [];
@@ -233,6 +235,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct27(1));
   contentArr.push(getAct28(1));
   contentArr.push(getAct29(1));
+  contentArr.push(getAct30(1));
 
 
   var pArr = [];
@@ -266,6 +269,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct27(2));
   pArr.push(getAct28(2));
   pArr.push(getAct29(2));
+  pArr.push(getAct30(2));
 
 
   var firstEnter = 0 ; 
@@ -327,6 +331,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   }
 
   initAct(1);
+
+  function getAct31(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+      resultIdx.push('挑戰');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+    result.push('');
+
+    return result;
+  }
 
   function getAct30(idx) {
     if (idx == 2){
