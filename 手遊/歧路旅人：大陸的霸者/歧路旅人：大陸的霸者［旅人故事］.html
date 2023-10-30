@@ -101,6 +101,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  <select id="head_select_s" style="width: 20%;">
   
  </select>
+
+ <label>鬥技場：</label> 
+ <select id="head_select_d" style="width: 20%;">
+  
+ </select>
  </p>
 
 <hr />
@@ -133,6 +138,12 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  <select id="foot_select_s" style="width: 20%;">
   
  </select>
+
+
+ <label>鬥技場：</label> 
+ <select id="foot_select_d" style="width: 20%;">
+  
+ </select>
  </p>
 
 
@@ -140,6 +151,62 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 
 <script>
+
+
+  (function(){
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('<div class="title_text">緹奇蓮</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E62ZOvMxaH0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">達爾文</span>是<span class="global_name_span">緹奇蓮</span>的弟弟，兩人小時候因為父母欠債的關係，被賣到不同的地方，分別前相約十年後在［維克塔霍洛］團聚。</p> <p>但在當時並沒有約定確切的地點，所以<span class="global_name_span">緹奇蓮</span>才會去參加鬥技大賽，希望能藉著曝光，吸引弟弟前來相認。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IJh_yOHD0-c?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一批盜賊盯上了<span class="global_name_span">緹奇蓮</span>在鬥技場贏得的獎金，設下陷阱要加害於她，正所謂雙拳難敵四掌，危急時刻<span class="global_name_span">達爾文</span>突然現身解圍。</p> <p>不過<span class="global_name_span">達爾文</span>卻沒有要跟<span class="global_name_span">緹奇蓮</span>相認的意思，還告知她趕快離開［維克塔霍洛］，之後便頭也不回的離去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HRdA8zVQVRc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>原來<span class="global_name_span">達爾文</span>被<span class="global_name_span">索恩達伊克</span>盜賊團控制，被迫進行盜賊的活動，而且他們似乎計畫要在鬥技大賽生事，知道這件事情的<span class="global_name_span">緹奇蓮</span>決定向衛兵隊請求協助。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RTojqbW4jmI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了讓弟弟脫離盜賊團，<span class="global_name_span">緹奇蓮</span>親手解決了<span class="global_name_span">索恩達伊克</span>，只不過<span class="global_name_span">達爾文</span>雖然是被迫，但做的壞事也不少，即便在最後他為剷除盜賊團盡了一份力，但死罪可免活罪難逃。</p> <p><span class="global_name_span">達爾文</span>需要花十年的時間來償還自己犯下的錯誤，臨行前他再次與<span class="global_name_span">緹奇蓮</span>約定十年後在［維克塔霍洛］相聚。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9huRXKug__Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('');
+    contentArr.push('');
+    contentArr.push('');
+  
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('緹奇蓮');
+  pArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_d");
+  var footSelect = document.getElementById("foot_select_d");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
 
 
 (function(){
