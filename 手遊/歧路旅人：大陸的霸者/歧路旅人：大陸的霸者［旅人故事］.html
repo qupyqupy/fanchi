@@ -76,20 +76,29 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
 <hr />
 <p><label>財富：</label> 
-<select id="head_select_o" style="width: 15%;">
+<select id="head_select_o" style="width: 20%;">
   
  </select>
  <label>權力：</label> 
-<select id="head_select_m" style="width: 15%;">
+<select id="head_select_m" style="width: 20%;">
   
  </select>
  <label>名聲：</label> 
- <select id="head_select_w" style="width: 15%;">
+ <select id="head_select_w" style="width: 20%;">
   
  </select>
 
+ </p>
+ <p>
+
  <label>EX：</label> 
- <select id="head_select_ex" style="width: 15%;">
+ <select id="head_select_ex" style="width: 20%;">
+  
+ </select>
+
+
+ <label>聯動：</label> 
+ <select id="head_select_s" style="width: 20%;">
   
  </select>
  </p>
@@ -98,19 +107,30 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <div id="ch"></div>
 <hr />
 <p><label>財富：</label> 
-<select id="foot_select_o" style="width: 15%;">
+<select id="foot_select_o" style="width: 20%;">
   
  </select>
  <label>權力：</label> 
-<select id="foot_select_m" style="width: 15%;">
+<select id="foot_select_m" style="width: 20%;">
   
  </select>
  <label>名聲：</label> 
- <select id="foot_select_w" style="width: 15%;">
+ <select id="foot_select_w" style="width: 20%;">
   
  </select>
+
+
+ </p>
+ <p>
+
  <label>EX：</label> 
- <select id="foot_select_ex" style="width: 15%;">
+ <select id="foot_select_ex" style="width: 20%;">
+  
+ </select>
+
+
+ <label>聯動：</label> 
+ <select id="foot_select_s" style="width: 20%;">
   
  </select>
  </p>
@@ -120,6 +140,65 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 
 <script>
+
+
+(function(){
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('<div class="title_text">艾維斯</div> <p><span class="global_name_span">艾維斯</span>與<span class="global_name_span">亞黛拉</span>意外來到［奧魯斯特拉大陸］，才剛到就跟主角一起擊退魔物，這<span class="global_name_span">艾維斯</span>心也真大，在陌生的地方、面對第一次見到的人，竟然還提議一起喝酒。</p> <p>酒過三巡，<span class="global_name_span">艾維斯</span>即便來到［異世界］，仍心心念念尋找［晨星］的事情，但到了［圖書館］收集情報才發現這世界的字完全看不懂，還有隨身［魔導書］幫他翻譯，反正現在也找不到回去原本世界的路，乾脆就直接加入主角團一起冒險。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cMeh35DaLxQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［圖書館］的資料已經無法滿足<span class="global_name_span">艾維斯</span>，所以在主角的建議下，來到［追憶之塔］的地下圖書館尋找回到原本世界的方法，在學者貓<span class="global_name_span">萊拉</span>的指引下，大家來到［世界的扭曲］尋找線索。</p> <p>在擊倒一個王級魔物後，［魔導書］浮現了兩個女孩的身影，<span class="global_name_span">阿尼艾斯</span>、<span class="global_name_span">伊蒂亞</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/t28Alw-31cc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>透過［世界的扭曲］入口，大量的魔物湧入［追憶之塔］，於是<span class="global_name_span">艾維斯</span>等人解除危機後，便進入［世界的扭曲］搜索，發現了源頭［黑色的晨星］。</p> <p>正要破壞之際，，<span class="global_name_span">阿尼艾斯</span>、<span class="global_name_span">伊蒂亞</span>兩人出現，在，<span class="global_name_span">阿尼艾斯</span>的淨化能力下，［黑色的晨星］消失的無影無蹤。</p> <p>經過短暫的相處，兩個少女大致了解狀況，為了回到原本的世界，決定加入隊伍一起行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/t5-xEJaFQxk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>破壞神的僕從，水晶精靈<span class="global_name_span">艾姬莉</span>利用［黑色的晨星］來收集人們的慾望，並且凝聚成［黑暗水晶］，只要水晶失控她就可以成為破壞神，這樣的大動作，讓［無名小鎮］的居民開始產生異樣，心中的慾望被擴大，做出許多不理智的事情。</p> <p><span class="global_name_span">艾維斯</span>他們察覺後，一同來到［世界的扭曲］的深處，阻止了<span class="global_name_span">艾姬莉</span>的野心，終於世界恢復了和平。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/o5vYgj6_edc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">阿尼艾斯</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xva_4jWprF0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">伊蒂亞</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/27jXN_rjYxE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">亞黛拉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-IVnMAkpE2A?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>酒館新來的廚師<span class="global_name_span">多拉</span>有著一副好手藝，她做出的餐點得到<span class="global_name_span">亞黛拉</span>的極度好評，也因此兩人逐漸成為朋友。</p> <p>當<span class="global_name_span">多拉</span>生病發燒時，<span class="global_name_span">亞黛拉</span>還展現出［藥師］的實力，幫忙找草藥治病，這本事可是連<span class="global_name_span">艾維斯</span>都不知道。</p> <p>在一次品嘗<span class="global_name_span">多拉</span>的湯品時，<span class="global_name_span">亞黛拉</span>想起了原本的世界，這股思念讓<span class="global_name_span">多拉</span>誤會、以為是自己手藝不好，因此甘冒危險去［大蛇巢穴］找尋新鮮食材，還好<span class="global_name_span">亞黛拉</span>等人及時趕到，不然<span class="global_name_span">多拉</span>就要結束在魔物口中。</p> <p>事後大夥解開誤會，但<span class="global_name_span">多拉</span>不願意提及自己的過去，似乎她是個有故事的人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b07a_3J0pYk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>原來<span class="global_name_span">多拉</span>自小父母雙亡，之後被一名廚師<span class="global_name_span">雷默思</span>收養，這人廚藝好、對待<span class="global_name_span">多拉</span>視如己出，這讓<span class="global_name_span">多拉</span>度過一段幸福的日子。</p> <p>但有一天<span class="global_name_span">雷默思</span>突然一反常態，將<span class="global_name_span">多拉</span>掃地出門，這讓<span class="global_name_span">多拉</span>十分難過、即便現在已經在酒館有一份穩定的工作，卻也常常心神不寧、擔驚受怕。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E0aeaMbaQCw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">亞黛拉</span>想修復<span class="global_name_span">多拉</span>心中的傷痕，特別跑了一趟她的故鄉［恩波格洛］，想要收集新鮮的食材，做出屬於<span class="global_name_span">多拉</span>家鄉的味道。</p> <p>過程中意外得知<span class="global_name_span">雷默思</span>早於多年前就因疾病［格雷思熱］而去世，<span class="global_name_span">多拉</span>在得知養父去世、以及喝了故鄉的湯品後，決心回［恩波格洛］一趟。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LlgySq3cTIM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>回到故鄉的<span class="global_name_span">多拉</span>，感受到人們思念師傅料理的熱情，同時也知道當初<span class="global_name_span">雷默思</span>因為怕自己感染［格雷思熱］，才將自己趕出門的原因。</p> <p>與過去和解的<span class="global_name_span">多拉</span>，還順便感化了忌妒<span class="global_name_span">雷默思</span>才能的廚師<span class="global_name_span">馬塞德</span>，之後更立志要成為像師傅一樣被人記住的廚師。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Xr5oBk6vFNA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">瑟雷諾亞</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/whDU6LFN6f4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ex1UA578-yY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vaWfJwNIBsI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/L4RxRE_CVik?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('艾維斯(BD聯動)');
+  pArr.push('阿尼艾斯(BD聯動)');
+  pArr.push('伊蒂亞(BD聯動)');
+  pArr.push('亞黛拉(BD聯動)');
+  pArr.push('瑟雷諾亞(三角戰略聯動)');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_s");
+  var footSelect = document.getElementById("foot_select_s");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
 
 (function(){
     var contentArr = [] ;
@@ -205,8 +284,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('<div class="title_text">勒凡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uR-iDVQhMrw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">約倫</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3aqgfeJZcTM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">普利基特</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/t5JMYn5gGp4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>為了復興遭到<span class="global_name_span">泰塔斯</span>摧殘的［恩波格洛］，教會特別指定<span class="global_name_span">普利基特</span>擔任觀光大使。</p> <p>而她本人對這重任顯得沒有信心，在主角鼓勵下才決定利用［恩波菇］做成的餡餅來推廣宣傳，結果卻因為廚藝拉垮，辣到連當地人都直接吐槽，瞬間建立起來的一點點信心馬上就被摧毀的蕩然無存。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Lk6Nbb7JKvE?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一計不成、再生一計，既然食物方面沒天分，那便從可愛的［白豹］幼崽著手吧，那可愛又黏人的特點，也許可以為［恩波格洛］招來不少人潮。</p> <p>但成年的［白豹］卻是十分兇猛，<span class="global_name_span">普利基特</span>被嚇了一次之後，果斷放棄這個計畫。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/K9_o8-wgjuY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>要復興城鎮，果然還是宣傳在地文化最好，<span class="global_name_span">普利基特</span>這次想復活已經停辦許久的文化祭典，一方面可以讓村民大家熱鬧熱鬧，另一方面這也是不錯的宣傳手段。</p> <p>一切都有條不紊地進行著，但就在祭典即將開辦之際，會場卻突然遭到破壞。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JZCC3cZ6sQo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在村民齊心合力下，祭典會場再次準備完成，之前破壞會場的魔物也被<span class="global_name_span">普利基特</span>解決，這次祭典舉辦的很成功，讓教會對<span class="global_name_span">普利基特</span>刮目相看，於是又委託她繼續周遊大陸，幫忙復興殘破的城鎮。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/iWM0XvIHLNQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">雪娜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Xk9qoqmzGWY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">亞黛拉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-IVnMAkpE2A?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>酒館新來的廚師<span class="global_name_span">多拉</span>有著一副好手藝，她做出的餐點得到<span class="global_name_span">亞黛拉</span>的極度好評，也因此兩人逐漸成為朋友。</p> <p>當<span class="global_name_span">多拉</span>生病發燒時，<span class="global_name_span">亞黛拉</span>還展現出［藥師］的實力，幫忙找草藥治病，這本事可是連<span class="global_name_span">艾維斯</span>都不知道。</p> <p>在一次品嘗<span class="global_name_span">多拉</span>的湯品時，<span class="global_name_span">亞黛拉</span>想起了原本的世界，這股思念讓<span class="global_name_span">多拉</span>誤會、以為是自己手藝不好，因此甘冒危險去［大蛇巢穴］找尋新鮮食材，還好<span class="global_name_span">亞黛拉</span>等人及時趕到，不然<span class="global_name_span">多拉</span>就要結束在魔物口中。</p> <p>事後大夥解開誤會，但<span class="global_name_span">多拉</span>不願意提及自己的過去，似乎她是個有故事的人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b07a_3J0pYk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>原來<span class="global_name_span">多拉</span>自小父母雙亡，之後被一名廚師<span class="global_name_span">雷默思</span>收養，這人廚藝好、對待<span class="global_name_span">多拉</span>視如己出，這讓<span class="global_name_span">多拉</span>度過一段幸福的日子。</p> <p>但有一天<span class="global_name_span">雷默思</span>突然一反常態，將<span class="global_name_span">多拉</span>掃地出門，這讓<span class="global_name_span">多拉</span>十分難過、即便現在已經在酒館有一份穩定的工作，卻也常常心神不寧、擔驚受怕。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E0aeaMbaQCw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">亞黛拉</span>想修復<span class="global_name_span">多拉</span>心中的傷痕，特別跑了一趟她的故鄉［恩波格洛］，想要收集新鮮的食材，做出屬於<span class="global_name_span">多拉</span>家鄉的味道。</p> <p>過程中意外得知<span class="global_name_span">雷默思</span>早於多年前就因疾病［格雷思熱］而去世，<span class="global_name_span">多拉</span>在得知養父去世、以及喝了故鄉的湯品後，決心回［恩波格洛］一趟。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LlgySq3cTIM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>回到故鄉的<span class="global_name_span">多拉</span>，感受到人們思念師傅料理的熱情，同時也知道當初<span class="global_name_span">雷默思</span>因為怕自己感染［格雷思熱］，才將自己趕出門的原因。</p> <p>與過去和解的<span class="global_name_span">多拉</span>，還順便感化了忌妒<span class="global_name_span">雷默思</span>才能的廚師<span class="global_name_span">馬塞德</span>，之後更立志要成為像師傅一樣被人記住的廚師。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Xr5oBk6vFNA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">雪娜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Xk9qoqmzGWY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');  
   contentArr.push('<div class="title_text">閃達</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lVXThGWAkbU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">獨行俠盜賊泰里翁</div> <p><span class="global_name_span">泰里翁</span>拯救了因為戰爭失去父母，而想當盜賊獲取生存希望的兄弟，利用計謀讓當地一對富裕夫妻收留了他們。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KNs2xjFFeoE?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">泰里翁</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LW7UmydGc2c?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">奧蘭橘</span>是個以種蘋果維生的小孩，因為<span class="global_name_span">泰里翁</span>幫她偷回被小偷順走的錢包，因此對盜賊這個職業很嚮往，並且堅持要成為<span class="global_name_span">泰里翁</span>的弟子，這可讓<span class="global_name_span">泰里翁</span>十分頭大。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NAGFkyEDWHQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>因為<span class="global_name_span">泰里翁</span>堅持不收<span class="global_name_span">奧蘭橘</span>為徒弟，所以她跑去投靠壞盜賊<span class="global_name_span">阿爾瓊德</span>，這讓<span class="global_name_span">泰里翁</span>十分擔心，開始拯救<span class="global_name_span">奧蘭橘</span>的行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dT9KUxYucuw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>由於<span class="global_name_span">阿爾瓊德</span>的根據地只能讓女生進去，所以<span class="global_name_span">泰里翁</span>無奈地打扮成女生。</p> <p>在那他發現<span class="global_name_span">阿爾瓊德</span>似乎有控制人心的特殊能力，而且秘密培養手下練習女僕的技能，看來這後面肯定有很大的陰謀。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UK0LlDlE9os?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿爾瓊德</span>的目的就是訓練女僕進入有錢人家的宅邸，等到偷竊行動結束後，就把女僕當作棄子，連同宅邸一起燒毀，而她那控制人心的能力，其實就是利用<span class="global_name_span">奧蘭橘</span>父母種植的蘋果提煉出的香水結合自己的體香產生的。</p> <p>只不過這種能力只對女生有用，所以她的根據地只能讓女生進入，同時<span class="global_name_span">阿爾瓊德</span>也是殺害<span class="global_name_span">奧蘭橘</span>父母的兇手，這實在諷刺，沒想到<span class="global_name_span">奧蘭橘</span>成為仇人的棋子。</p> <p><span class="global_name_span">泰里翁</span>洞悉<span class="global_name_span">阿爾瓊德</span>的犯罪手法，因此設下陷阱將她一網打盡，為了感謝<span class="global_name_span">泰里翁</span>，<span class="global_name_span">奧蘭橘</span>姊妹將自家栽種的蘋果命名為［泰里翁］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8x1llAYUyKQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">特蕾莎</div> <p>遵守［眼見為實］這個準則，<span class="global_name_span">特蕾莎</span>代替父親準備出鎮賣梨，但畢竟涉世未深，梨子被盜賊<span class="global_name_span">比可科</span>偷走，這下兩人的梁子可結大了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BRqUMmyxR5k?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
@@ -243,7 +321,6 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push('約倫');
   pArr.push('普利基特');
   pArr.push('雪娜');
-  pArr.push('亞黛拉(BD聯動)');
   pArr.push('閃達');
   pArr.push('泰里翁');
   pArr.push('特蕾莎');
@@ -324,8 +401,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('<div class="title_text">美麗且危險的旅行商人烏魯代</div> <p><span class="global_name_span">烏魯代</span>一直在尋找一個手背有傷的男人，在她的旅途中經常拜託無辜民眾幫她找人，其實是將這些人當作誘餌，引來壞人。</p> <p>所以可以猜想她要找的人，必定是盜匪之類的，而這行為也讓她被稱為［可疑的商人］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dn-gd07_c3g?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">烏魯代</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UWQY5F2wEYg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">炎之神官普洛梅</div> <p><span class="global_name_span">普洛梅</span>是虔誠的聖火神信徒，只要是遇到為非作歹的壞人，就算對方是傳說英雄<span class="global_name_span">泰塔斯</span>的手下，也會豪不猶豫出手制裁，也因為這樣他通常無法在同一個地方待太久。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/j8qNsCGx7eQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> ');
   contentArr.push('<div class="title_text">吉爾梅拉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WXA4ZbHKxDA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">伊蒂亞</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/27jXN_rjYxE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">瑟雷諾亞</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/whDU6LFN6f4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ex1UA578-yY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vaWfJwNIBsI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/L4RxRE_CVik?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  
   contentArr.push('');
   contentArr.push('');
   contentArr.push('');
@@ -365,8 +441,6 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push('烏魯代');
   pArr.push('普洛梅');
   pArr.push('吉爾梅拉');
-  pArr.push('伊蒂亞(BD聯動)');
-  pArr.push('瑟雷諾亞(三角戰略聯動)');
 
 
 
@@ -444,11 +518,9 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('<div class="title_text">卡傑斯</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/N8jaO2crFqs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">盧米斯</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/plHJOf-Kt9k?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">賽西莉的商業頭腦</div> <p>離開鬥技場的環境，<span class="global_name_span">賽西莉</span>轉行當起賣東西的商人，她因為成長環境的關係，對於幫客人挑選武器這方面有獨到的見解，經常幫忙隔壁的武器攤位賣東西，但自己的攤位卻是生意慘淡。</p> <p>即便鄰居勸她賣武器，但她非常排斥，堅持不肯轉行。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jsuKX-HCX90?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">賽西莉</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HKiPn_OseFU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">泰蕾茲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ymCwin3Yhc8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">艾維斯</div> <p><span class="global_name_span">艾維斯</span>與<span class="global_name_span">亞黛拉</span>意外來到［奧魯斯特拉大陸］，才剛到就跟主角一起擊退魔物，這<span class="global_name_span">艾維斯</span>心也真大，在陌生的地方、面對第一次見到的人，竟然還提議一起喝酒。</p> <p>酒過三巡，<span class="global_name_span">艾維斯</span>即便來到［異世界］，仍心心念念尋找［晨星］的事情，但到了［圖書館］收集情報才發現這世界的字完全看不懂，還有隨身［魔導書］幫他翻譯，反正現在也找不到回去原本世界的路，乾脆就直接加入主角團一起冒險。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cMeh35DaLxQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>［圖書館］的資料已經無法滿足<span class="global_name_span">艾維斯</span>，所以在主角的建議下，來到［追憶之塔］的地下圖書館尋找回到原本世界的方法，在學者貓<span class="global_name_span">萊拉</span>的指引下，大家來到［世界的扭曲］尋找線索。</p> <p>在擊倒一個王級魔物後，［魔導書］浮現了兩個女孩的身影，<span class="global_name_span">阿尼艾斯</span>、<span class="global_name_span">伊蒂亞</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/t28Alw-31cc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>透過［世界的扭曲］入口，大量的魔物湧入［追憶之塔］，於是<span class="global_name_span">艾維斯</span>等人解除危機後，便進入［世界的扭曲］搜索，發現了源頭［黑色的晨星］。</p> <p>正要破壞之際，，<span class="global_name_span">阿尼艾斯</span>、<span class="global_name_span">伊蒂亞</span>兩人出現，在，<span class="global_name_span">阿尼艾斯</span>的淨化能力下，［黑色的晨星］消失的無影無蹤。</p> <p>經過短暫的相處，兩個少女大致了解狀況，為了回到原本的世界，決定加入隊伍一起行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/t5-xEJaFQxk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><p>破壞神的僕從，水晶精靈<span class="global_name_span">艾姬莉</span>利用［黑色的晨星］來收集人們的慾望，並且凝聚成［黑暗水晶］，只要水晶失控她就可以成為破壞神，這樣的大動作，讓［無名小鎮］的居民開始產生異樣，心中的慾望被擴大，做出許多不理智的事情。</p> <p><span class="global_name_span">艾維斯</span>他們察覺後，一同來到［世界的扭曲］的深處，阻止了<span class="global_name_span">艾姬莉</span>的野心，終於世界恢復了和平。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/o5vYgj6_edc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">泰蕾茲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ymCwin3Yhc8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');  
   contentArr.push('<div class="title_text">萊歐尼爾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/adh_EivC-60?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">萊歐尼爾</span>揪主角一起去討伐邪龍。</p> <p>不過邪龍沒找到，卻遇上壞騎士<span class="global_name_span">奧古蘭德</span>正在調戲良家婦女<span class="global_name_span">迪亞</span>，<span class="global_name_span">萊歐尼爾</span>自然看不過眼、出手阻止，卻也因此多了一個仇家。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/iKbbOwDOOgU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>騎士精神就是熱於助人，今天的任務是幫<span class="global_name_span">迪亞</span>修復首飾，一旁的<span class="global_name_span">奧古蘭德</span>看到<span class="global_name_span">萊歐尼爾</span>在執行騎士的職責時，心中感到特別的不爽。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JU-EqQ2GUyk?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">奧古蘭德</span>利用<span class="global_name_span">萊歐尼爾</span>的名義，將<span class="global_name_span">迪亞</span>騙到魔物的巢穴，最後雖然人平安無事，但這事情可不能就這樣算了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vhzahBfDmXY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>擊敗<span class="global_name_span">奧古蘭德</span>後，<span class="global_name_span">萊歐尼爾</span>以騎士道感化了他，接著便繼續踏上尋找邪龍的旅途。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/shjTcegbIZ0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">哈雷</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/J4D8Y3uQTCI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
-  contentArr.push('<div class="title_text">阿尼艾斯</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xva_4jWprF0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">哈雷</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/J4D8Y3uQTCI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');  
   contentArr.push('');
   contentArr.push('');
   contentArr.push('');
@@ -489,10 +561,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push('盧米斯');
   pArr.push('賽西莉');
   pArr.push('泰蕾茲');
-  pArr.push('艾維斯(BD聯動)');
   pArr.push('萊歐尼爾');
   pArr.push('哈雷');
-  pArr.push('阿尼艾斯(BD聯動)');
   
 
   var firstEnter = 0 ; 
