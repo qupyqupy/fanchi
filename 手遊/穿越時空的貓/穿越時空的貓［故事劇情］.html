@@ -123,8 +123,6 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <div class="ch">其它</div>
  <p>穿越時空的貓［角色劇情］：<a href="https://qupyqupy.pixnet.net/blog/post/229324196-%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%EF%BC%BB%E8%A7%92%E8%89%B2%E5%8A%87%E6%83%85%EF%BC%BD">https://qupyqupy.pixnet.net/blog/post/229324196</a></p>
 
-  <p>穿越時空的貓［隱藏魔王］：<a href="https://qupyqupy.pixnet.net/blog/post/229260947-%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%EF%BC%BB%E9%9A%B1%E8%97%8F%E9%AD%94%E7%8E%8B%EF%BC%BD">https://qupyqupy.pixnet.net/blog/post/229260947</a></p>
-
   <p>穿越時空的貓［王國國立劇場］：<a href="https://qupyqupy.pixnet.net/blog/post/229830959">https://qupyqupy.pixnet.net/blog/post/229830959</a></p>
 
 
@@ -154,6 +152,12 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  </select>
  </p>
 
+ <p><label>隱藏魔王：</label> 
+<select id="head_select_e" style="width: 20%;">
+  
+ </select>
+ </p>
+
 <hr />
 <div id="ch"></div>
 
@@ -173,11 +177,90 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  </select>
  </p>
 
-
+ <p><label>隱藏魔王：</label> 
+<select id="foot_select_e" style="width: 20%;">
+  
+ </select>
+ </p>
 
 <hr />
 
 <script>
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">哥布林大王</div> <p>在古代的［崎路里之路］進入時之塔前的那段路往右走到底，開寶箱打敗一個低等哥布林。之後就可以前往現代［月影之森］深處挑戰哥布林大王</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/mQsx_X8qSzg?wmode=transparent" title="YouTube video player" width="560"></iframe><div class="title_text">光輝黎明</div> <p>位置在古代［早陸平原］的上方。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rPI1hkr6h18?wmode=transparent" title="YouTube video player" width="560"></iframe><div class="title_text">黑球</div> <p>位置在未來［邊緣之島］的左上方地圖。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4-4xQeRCCEA?wmode=transparent" title="YouTube video player" width="560"></iframe>');//第1部隱王
+  contentArr.push('<div class="title_text">無名少女</div> <p>［無名少女］副本打滿1000次就可以挑戰。</p> <p>聽［無名少女］的對話，應該是從某個因為<span class="global_name_span">阿爾德</span>而消失的未來人所製造的。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zqb3-3jZPjA?wmode=transparent" title="YouTube video player" width="560"></iframe> </p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SfjB4_1aDR4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">食火鳥</div> <p><span class="global_name_span">伽琉</span>加入後可以到［科林達平原］左下方入口地圖打［食火鳥］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9oAusMh34dU?wmode=transparent" title="YouTube video player" width="560"></iframe> </p> <div class="title_text">梅爾維爾勒夫</div> <p>在打倒<span class="global_name_span">男爵</span>的地方可以找到［守衛召喚機］，接著前往［霸者之塔］的入口右邊通道打［梅爾維爾勒夫］。</p><div class="global_ps_text"> <p>這個魔王我印象相當深刻，記得有一天在社群看到一個照片，上面是一朵真實世界的雲飄在空中，那雲的造型完全就跟這魔王一模一樣，我記得還有上新聞。</p> </div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ij7uzrn2aHI?wmode=transparent" title="YouTube video player" width="560"></iframe> </p><div class="title_text">小美</div>  <p>［小美］在［托托樂園］可以找到。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BMKR2UHK_OU?wmode=transparent" title="YouTube video player" width="560"></iframe> </p><div class="title_text">滅鬼狂犬</div>  <p>在1.5部最後迷宮可以遇到。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1n81gsnxjlI?wmode=transparent" title="YouTube video player" width="560"></iframe> </p><div class="title_text">黑板</div>  <p>在博物館拿到［巨魔之鑰］的房間可以拿到關鍵道具，然後回到博物館入口往右邊道路繞道後方，即可打開門挑戰。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BuDGKumy-CU?wmode=transparent" title="YouTube video player" width="560"></iframe> </p>');//第1.5部隱王
+  contentArr.push('<div class="title_text">Terra Nivium</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yh6slvRcUbw?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">冰獄鬼</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ffX_43B8xUc?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">苦膽</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rKBK1oaHWkQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//第2部隱王
+  contentArr.push('<div class="title_text">天狐</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/237tvuFPFb0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">鬼蜘蛛</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pGrN9vMIggI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">單輪怪</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZcJX5C_5G48?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">陸吾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zIDKYecDB0w?wmode=transparent" title="YouTube video player" width="560"></iframe> </p><div class="title_text">海月火</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NRiQMU0lIqk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">拒魔</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZEbZbfJ1N14?wmode=transparent" title="YouTube video player" width="560"></iframe> </p> <div class="title_text">妖狸</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lqHIh7bU-O0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">巴蛇</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/J9puvNq1p_4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//現代東方八妖
+  contentArr.push('<div class="title_text">開啟八妖任務</div> <p><span class="global_name_span">阿爾德</span>受到一個神祕土偶職人所托，展開討伐八妖的旅程。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Sy6R0B9U_Ek?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">木靈</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5y253pc-0PA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">玄龜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kGYN98Q1q6Q?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">赤殿中</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tyoi4XPjQw4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">面靈氣</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Crma_TcWIFQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">黑和尚</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MNJWbfNfVnI?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">煙煙羅</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ubKiGPWMdzc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">蟹和尚</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/S_kHCgzmZTQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">夜雀</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kf5q34VuMPQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">後續劇情</div><p>成功討伐八妖後，為了恢復土偶職人的記憶，<span class="global_name_span">阿爾德</span>準備尋找關鍵物品。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kN5rniCTkOc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>原來所謂八妖其實原本只有六大妖，<span class="global_name_span">面靈氣</span>與<span class="global_name_span">黑和尚</span>是土偶職人所製造的孩子，當初是為了打敗六大妖才失控被一起封印住，恢復記憶的土偶職人總算獲得了解脫。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JDlUpsEWE14?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//古代東方八妖
+  contentArr.push('<div class="title_text">16妖觸發對話</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NGST-ARtYGY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">天狐&赤殿中</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/PYy-MK_DUBc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">玄龜&單輪怪</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yw_kUa1zFBA?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">煙煙羅&拒魔</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YcCilBGG2uQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">面靈氣&鬼蜘蛛</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DdEwPob9PTY?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">蟹坊主&陸吾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/x9k5VUdXLUw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//冥峽界十六妖
+  contentArr.push('<div class="title_text">羅特利貝雷</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hntgjhDYhD4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">雷根貝姆</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/f8_100UaSIg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//貓道隱王
+  contentArr.push('<div class="title_text">天茸</div> <p>打到血剩一半會鎖血，所以AF要留到第二波再放。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/iOq6pcXBZxk?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">失控鍊仗獵犬</div> <p>這隻王用水屬打會降攻、火屬打會升攻，相對來說用水屬慢慢打可以磨到打贏。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/L-CzmM-5JHM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//魔劍2外傳
+  contentArr.push('<div class="title_text">最強爺爺</div> <p><span class="global_name_span">阿爾德</span>跟爺爺比試後，才知道原來眼前的老人是個深藏不露的高手，為了之後可以面對更強大的敵人，於是決定接受爺爺的特訓。</p> <p>本來爺爺最後想用實戰的方式驗收特訓的成果，但是當作武器的手杖卻不勘使用。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b8-efonnUek?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這天<span class="global_name_span">菲妮</span>提起之前準備送給爺爺的禮物，因為當初魔獸王攻擊村莊的關係，所以手杖一直都沒有送出去，如今手杖也弄丟了。</p> <p>於是兩人前往［月影之森］尋找當初弄丟的禮物，但是怎麼找都找不到，這時<span class="global_name_span">菲妮</span>遇到一個身負雙刀的紅髮男子，並從他手中接過手杖，聽他說話似乎是爺爺的舊識。</p> <p>拿到手杖禮物的爺爺，覺得非常開心，隨手一揮竟然發出凌厲的刀氣。</p> <div class="global_ps_text"> <p>紅髮男子名叫做<span class="global_name_span">維克多</span>，真正的身分是<span class="global_name_span">阿爾德</span>爺爺年輕時候的冒險夥伴，因為一些緣故導致肉體停止生長，所以才一直維持不老的模樣。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Wa6__9uRHRM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>終於爺爺發揮實力，強大的氣場連大地都為之震動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/g_l2657dbCI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>時空貓的魔王戰沒甚麼訣竅, 謹記三點。</p> <ul> <li>降攻把敵人降到弱雞、降智把敵人降成白癡。</li> <li>加盾把我方加成鐵金剛。</li> <li>AF滿了就放了, 別浪費。</li> </ul> <p>基本上我這陣容可以磨光所有的魔王。</p> <ul> <li>水斧加盾、次輸出。</li> <li>瑪莉加盾、主恢復。</li> <li>眼神姊加盾、降攻、上痛、神坦。</li> <li>7616主輸出、降防、降速。</li> </ul> <p>而且可以特別注意下,  因為水斧的關係，我MP從頭到尾都沒有乾的跡象。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YIUHWVjBFA8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//最強爺爺  
+  contentArr.push('<div class="title_text">無臉</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vuEH_cap7fQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6JMxtuusYks?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">米露哲婭</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/goYtWr-cXjQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">風之人工精靈 - Insula Ventorum</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dnOahn7pxIE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">火之人工精靈 - Sinus Aestuum</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BS-9D9W5UF0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">水之人工精靈 - Imbrium Basin</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yiQkUSGgpyg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">地之人工精靈 - LacusSolitudinis</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YZOIK1z3tzc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">晶之人工精靈 - Terra Nivium</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rXtrpTS_sk8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//外典劍之詩篇與失樂之翼
+  contentArr.push('<div class="title_text">EPS-209 Murphy</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lTZpeJsO5Q0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//外典靈長之理與樞機之天秤
+  contentArr.push('<div class="title_text">雙子</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/D8EhB2MejYI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VZBAFv54tUM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CIBYAPgYYIo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//女神異聞錄5聯動
+  contentArr.push('<div class="title_text">真風精靈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3sQkygFXaww?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">真火精靈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0zryv2s8_Kg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">真土精靈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hy3kmq9RFnQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">真水精靈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1EuqsJPOocc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//傳奇系列聯動
+  contentArr.push('<div class="title_text">LV 175</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bsYj2KIyTtU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">LV 180</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Gneq5B-K_DM?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">LV 185</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/if91xZhwpbE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">LV 190</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FTHRJvDBBTY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//烏庫亞吉(小藍)
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('第1部隱王');
+  pArr.push('第1.5部隱王');
+  pArr.push('第2部隱王');
+  pArr.push('現代東方八妖');
+  pArr.push('古代東方八妖');
+  pArr.push('冥峽界十六妖');
+  pArr.push('貓道隱王');
+  pArr.push('魔劍2外傳');
+  pArr.push('最強爺爺');
+  pArr.push('外典劍之詩篇與失樂之翼');
+  pArr.push('外典靈長之理與樞機之天秤');
+  pArr.push('女神異聞錄5聯動');
+  pArr.push('傳奇系列聯動');
+  pArr.push('烏庫亞吉(小藍)');
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_e");
+  var footSelect = document.getElementById("foot_select_e");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
 
    (function(){
     var contentArr = [] ;
