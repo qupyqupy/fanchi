@@ -117,10 +117,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
    (function(){
   var activityArr = [];
   activityArr.push('');
-  activityArr.push('');
-  activityArr.push('');
-  activityArr.push('');
-  activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3YNrrgE8G00?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  activityArr.push('');//序章
+  activityArr.push('');//愚者的旅程
+  activityArr.push('');//樂土的盛宴
+  activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3YNrrgE8G00?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//災厄之影-火焰與重生力量
+  activityArr.push('');//於焦土之上
 
 
 
@@ -130,7 +131,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('愚者的旅程');
   paArr.push('樂土的盛宴');
   paArr.push('災厄之影-火焰與重生力量');
-  // paArr.push('');
+  paArr.push('於焦土之上');
 
 
   var contentArr = [];
@@ -139,7 +140,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct2(1));
   contentArr.push(getAct3(1));
   contentArr.push(getAct4(1));
-  // contentArr.push(getAct5(1));
+  contentArr.push(getAct5(1));
 
   var pArr = [];
   pArr.push([]);
@@ -147,7 +148,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct2(2));
   pArr.push(getAct3(2));
   pArr.push(getAct4(2));
-  // pArr.push(getAct5(2));
+  pArr.push(getAct5(2));
 
 
   var contentArrB = [];
@@ -156,7 +157,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArrB.push(getActB2(1));
   contentArrB.push(getActB3(1));
   contentArrB.push(getActB4(1));
-  // contentArrB.push(getActB5(1));
+  contentArrB.push(getActB5(1));
 
 
   var pArrB = [];
@@ -165,7 +166,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArrB.push(getActB2(2));
   pArrB.push(getActB3(2));
   pArrB.push(getActB4(2));
-  // pArrB.push(getActB5(2));
+  pArrB.push(getActB5(2));
 
 
   var firstEnter = 0 ; 
@@ -253,6 +254,74 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   }
 
   initAct(1);
+
+   function getActB6(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  function getAct6(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+    return contentArr;
+  }
+
+
+  function getActB5(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  function getAct5(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('01~05幕');
+  pArr.push('06~10幕');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">援軍</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sDCwSw2QYD4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">獵手</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IUBZ3Z4wSgE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">貓鼠</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/FDLMmr-kR24?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">敵之聲</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tzWv_T647n4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">盟友</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xHKyPCSYKVE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+
+    return contentArr;
+  }
 
 
   function getActB4(idx) {
