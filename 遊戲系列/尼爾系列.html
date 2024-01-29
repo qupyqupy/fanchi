@@ -75,23 +75,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 </style>
 <hr />
 
-<div class="about_link">
-<p>夢幻模擬戰_手遊版［命運之扉］：<a href="https://qupyqupy.pixnet.net/blog/post/232019209-%E5%A4%A2%E5%B9%BB%E6%A8%A1%E6%93%AC%E6%88%B0_%E6%89%8B%E9%81%8A%E7%89%88%EF%BC%BB%E5%91%BD%E9%81%8B%E4%B9%8B%E6%89%89%EF%BC%BD">https://qupyqupy.pixnet.net/blog/post/232019209</a></p>
-
-<p>夢幻模擬戰_手遊版［一般活動集合］：<a href="https://qupyqupy.pixnet.net/blog/post/231879169-%E5%A4%A2%E5%B9%BB%E6%A8%A1%E6%93%AC%E6%88%B0_%E6%89%8B%E9%81%8A%E7%89%88%EF%BC%BB%E4%B8%80%E8%88%AC%E6%B4%BB%E5%8B%95%E9%9B%86%E5%90%88%EF%BC%BD">https://qupyqupy.pixnet.net/blog/post/231879169</a></p>
-
-<p>夢幻模擬戰_手遊版［聯動活動集合］：<a href="https://qupyqupy.pixnet.net/blog/post/231879160-%E5%A4%A2%E5%B9%BB%E6%A8%A1%E6%93%AC%E6%88%B0_%E6%89%8B%E9%81%8A%E7%89%88%EF%BC%BB%E8%81%AF%E5%8B%95%E6%B4%BB%E5%8B%95%E9%9B%86%E5%90%88%EF%BC%BD">https://qupyqupy.pixnet.net/blog/post/231879160</a></p>
-
-<p>夢幻模擬戰_手遊版［家園系統對話］：<a href="https://qupyqupy.pixnet.net/blog/post/231248437-%E5%A4%A2%E5%B9%BB%E6%A8%A1%E6%93%AC%E6%88%B0_%E6%89%8B%E9%81%8A%E7%89%88%EF%BC%BB%E5%AE%B6%E5%9C%92%E7%B3%BB%E7%B5%B1%E5%B0%8D%E8%A9%B1%EF%BC%BD">https://qupyqupy.pixnet.net/blog/post/231248437</a></p>
-
-
-<p>夢幻模擬戰_手遊版［告白］：<a href="https://qupyqupy.pixnet.net/blog/post/229025885-%E5%A4%A2%E5%B9%BB%E6%A8%A1%E6%93%AC%E6%88%B0_%E6%89%8B%E9%81%8A%E7%89%88%EF%BC%BB%E5%91%8A%E7%99%BD%EF%BC%BD">https://qupyqupy.pixnet.net/blog/post/229025885</a></p>
-</div>
-
-
-<hr />
-
-<p><label>冒險的大陸：</label> 
+<p><label>選擇：</label> 
 <select id="activity_select" style="width: 35%;">
  </select>
  </p>
@@ -105,7 +89,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <p><label>主線劇情：</label> 
 <select id="head_select" style="width: 35%;">
  </select>
- <label>支線劇情：</label> 
+ <label>其他：</label> 
  <select id="head_select_m" style="width: 35%;">
   
  </select>
@@ -118,7 +102,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <p><label>主線劇情：</label> 
 <select id="foot_select" style="width: 35%;">
  </select>
- <label>支線劇情：</label> 
+ <label>其他：</label> 
  <select id="foot_select_m" style="width: 35%;">
  </select>
  </p>
@@ -311,11 +295,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var pArr = [];
   pArr.push('');
+  pArr.push('少年時期支線(1)');
+  pArr.push('少年時期支線(2)');
+  pArr.push('少年時期支線(遠行購物)');
+  pArr.push('少年時期支線(搬運務必慎重)');
   pArr.push('');
 
       return pArr;
     }
     var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">獵野豬</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2DcOrSQaI5s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">整理圖書館</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pjCGIrRzOtw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">悠娜的料理</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aKyqpmtMxlk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">巨大的蛋</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wiQCJ9opop4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">守衛的幫手</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ejz6oOZ4EJM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//少年時期支線(1)
+  contentArr.push('<div class="title_text">特效藥</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aZ19TkVMfow?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">招牌家常菜</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eQbiiDVydx4?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">收集藥草</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aSlGoZOxIQg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//少年時期支線(2)
+  contentArr.push('<div class="title_text">遠行購物1</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/STPgpqM0U64?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">遠行購物2</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3GMOYTh7xCk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//少年時期支線(遠行購物)
+  contentArr.push('<div class="title_text">搬運務必慎重1</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/z4ejlloMItU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">搬運務必慎重2</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/q6CeUMV3fHs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//少年時期支線(搬運務必慎重)
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
   contentArr.push('');
   contentArr.push('');
     
