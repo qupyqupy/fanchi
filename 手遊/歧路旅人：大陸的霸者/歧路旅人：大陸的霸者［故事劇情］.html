@@ -109,6 +109,10 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <select id="head_select_s" style="width: 20%;">
   
  </select>
+ <label>種子故事：</label> 
+<select id="head_select_seed" style="width: 20%;">
+  
+ </select>
  </p>
 
 <hr />
@@ -145,6 +149,10 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
  <p><label>試煉之塔：</label> 
 <select id="foot_select_s" style="width: 20%;">
+  
+ </select>
+ <label>種子故事：</label> 
+<select id="foot_select_seed" style="width: 20%;">
   
  </select>
  </p>
@@ -707,6 +715,64 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   var maxCount = contentArr.length - 1;
   var headSelect = document.getElementById("head_select_s");
   var footSelect = document.getElementById("foot_select_s");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">CH01 救世的手抄本</div> <p>代表災厄的［黑色彩虹］突然出現在［無名小鎮］，侵蝕著這裡的居民，還好自稱［救世魔女］的<span class="global_name_span">迪特蕾娜</span>出手消滅彩虹，但是要真正阻止災厄蔓延，必須前往［聖樹］尋找擁有拯救世界力量的聖獸。</p> <p><span class="global_name_span">迪特蕾娜</span>將藏有這線索的［救世手抄本］交給主角，也將救世的責任託付給他。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uC6Ug3QxBUk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('CH01 救世的手抄本');
+  pArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_seed");
+  var footSelect = document.getElementById("foot_select_seed");
 
 
   for (var i = 1; i < pArr.length; i++) {
