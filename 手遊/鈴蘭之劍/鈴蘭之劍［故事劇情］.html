@@ -123,6 +123,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3YNrrgE8G00?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//災厄之影-火焰與重生力量
   activityArr.push('');//於焦土之上
   activityArr.push('');//春願保衛戰
+  activityArr.push('');//沙礫的天平
   activityArr.push('');//網頁活動
 
 
@@ -135,6 +136,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('災厄之影-火焰與重生力量');
   paArr.push('於焦土之上');
   paArr.push('春願保衛戰');
+  paArr.push('沙礫的天平');
   paArr.push('網頁活動');
 
 
@@ -146,6 +148,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct4(1));
   contentArr.push(getAct5(1));
   contentArr.push(getAct6(1));
+  contentArr.push(getAct8(1));
   contentArr.push(getAct7(1));
 
   var pArr = [];
@@ -156,6 +159,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct4(2));
   pArr.push(getAct5(2));
   pArr.push(getAct6(2));
+  pArr.push(getAct8(2));
   pArr.push(getAct7(2));
 
 
@@ -167,6 +171,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArrB.push(getActB4(1));
   contentArrB.push(getActB5(1));
   contentArrB.push(getActB6(1));
+  contentArrB.push(getActB8(1));
   contentArrB.push(getActB7(1));
 
 
@@ -178,6 +183,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArrB.push(getActB4(2));
   pArrB.push(getActB5(2));
   pArrB.push(getActB6(2));
+  pArrB.push(getActB8(2));
   pArrB.push(getActB7(2));
 
 
@@ -267,6 +273,39 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
+  function getActB9(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  function getAct9(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+    return contentArr;
+  }
+
   function getActB8(idx) {
     if (idx == 2){
       var pArr = [];
@@ -288,14 +327,14 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var pArr = [];
   pArr.push('');
-  pArr.push('');
+  pArr.push('01~05幕');
   pArr.push('');
 
       return pArr;
     }
     var contentArr = [] ;
   contentArr.push('');
-  contentArr.push('');
+  contentArr.push('<div class="title_text">無名小卒</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GzX6NN6LQMY?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">拔刀相助</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/B2UFkRvJnys?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">迷路的少女</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TwwoD6X9xxQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">前線的行商</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Yp18j6Xvf1A?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return contentArr;
   }
