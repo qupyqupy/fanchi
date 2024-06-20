@@ -128,6 +128,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//歸來的鈴蘭
   activityArr.push('');//浪涌杯爭霸戰
   activityArr.push('');//網頁活動
+  activityArr.push('');//角色劇情
 
 
 
@@ -144,6 +145,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('歸來的鈴蘭');
   paArr.push('浪涌杯爭霸戰');
   paArr.push('網頁活動');
+  paArr.push('角色劇情');
 
 
   var contentArr = [];
@@ -159,6 +161,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct10(1));
   contentArr.push(getAct11(1));
   contentArr.push(getAct7(1));
+  contentArr.push(getAct12(1));
 
   var pArr = [];
   pArr.push([]);
@@ -173,6 +176,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct10(2));
   pArr.push(getAct11(2));
   pArr.push(getAct7(2));
+  pArr.push(getAct12(2));
 
 
   var contentArrB = [];
@@ -188,6 +192,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArrB.push(getActB10(1));
   contentArrB.push(getActB11(1));
   contentArrB.push(getActB7(1));
+  contentArrB.push(getActB12(1));
 
 
   var pArrB = [];
@@ -203,6 +208,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArrB.push(getActB10(2));
   pArrB.push(getActB11(2));
   pArrB.push(getActB7(2));
+  pArrB.push(getActB12(2));
 
 
   var firstEnter = 0 ; 
@@ -291,6 +297,38 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
+  function getActB13(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  function getAct13(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+    return contentArr;
+  }
+
 
 function getActB12(idx) {
     if (idx == 2){
@@ -313,12 +351,15 @@ function getActB12(idx) {
     if (idx == 2){
       var pArr = [];
   pArr.push('');
-  pArr.push('');
+  pArr.push('鈴蘭之劍');
+  pArr.push('薇爾德');
+
 
       return pArr;
     }
     var contentArr = [] ;
   contentArr.push('');
+  contentArr.push('<div class="title_text">拉維耶</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/14vXL-xz810?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">麥莎</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7eeX9DqLDWk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('');
 
     return contentArr;
