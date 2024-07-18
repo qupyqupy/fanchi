@@ -124,6 +124,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/V1IEy7_KL1U?wmode=transparent" title="YouTube video player" width="560"></iframe></p> ');//天地戰紀
   activityArr.push('');//怪物與神明
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RQKXt3RYOxY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//朝花夕拾
+  activityArr.push('');//浮雲朝露
 
 
 
@@ -145,6 +146,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('天地戰紀');
   paArr.push('怪物與神明');
   paArr.push('朝花夕拾');
+  paArr.push('浮雲朝露');
 
 
   var contentArr = [];
@@ -165,6 +167,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct14(1));
   contentArr.push(getAct15(1));
   contentArr.push(getAct16(1));
+  contentArr.push(getAct17(1));
 
   var pArr = [];
   pArr.push([]);
@@ -184,6 +187,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct14(2));
   pArr.push(getAct15(2));
   pArr.push(getAct16(2));
+  pArr.push(getAct17(2));
 
 
   var firstEnter = 0 ; 
@@ -246,7 +250,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct17(idx) {
+  function getAct18(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -258,6 +262,24 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
       return resultIdx;
     }
     var result = [] ;
+    result.push('');
+    result.push('');
+
+    return result;
+  }
+
+  function getAct17(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+      resultIdx.push('');
+
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
     result.push('');
     result.push('');
 
