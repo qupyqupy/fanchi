@@ -1,4 +1,16 @@
 <style type="text/css">
+	.little_tittle {
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: cornsilk;
+    display: inline-block;
+    background-color: #6d695c;
+    background-image: repeating-linear-gradient(120deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .1) 1px, transparent 1px, transparent 60px), linear-gradient(60deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%, rgba(0, 0, 0, .1)), linear-gradient(120deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%, rgba(0, 0, 0, .1));
+    background-size: 70px 120px;
+  }
+
 .title_text {
   text-align: center;
   margin-top: 10px;
@@ -75,6 +87,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 </style>
 
 <hr />
+<div class="little_tittle">奧魯斯特拉篇</div>
+
 <p><label>主線劇情：</label> 
 <select id="head_select_o" style="width: 20%;">
   
@@ -116,8 +130,26 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  </p>
 
 <hr />
+<div class="little_tittle">索里斯帝亞篇</div>
+
+<p><label>主線劇情：</label> 
+<select id="head_select_o2" style="width: 20%;">
+  
+ </select>
+ <label>支線劇情：</label> 
+<select id="head_select_m2" style="width: 20%;">
+  
+ </select>
+
+<hr />
+
+
+
 <div id="ch"></div>
 <hr />
+
+<div class="little_tittle">奧魯斯特拉篇</div>
+
 <p><label>主線劇情：</label> 
 <select id="foot_select_o" style="width: 20%;">
   
@@ -156,6 +188,19 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   
  </select>
  </p>
+
+
+<hr />
+<div class="little_tittle">索里斯帝亞篇</div>
+
+<p><label>主線劇情：</label> 
+<select id="foot_select_o2" style="width: 20%;">
+  
+ </select>
+ <label>支線劇情：</label> 
+<select id="foot_select_m2" style="width: 20%;">
+  
+ </select>
 
 
 <hr />
@@ -880,6 +925,123 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   
 
   })();
+
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  
+
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('被選中者序章');
+  pArr.push('被選中者CH01');
+  
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_o2");
+  var footSelect = document.getElementById("foot_select_o2");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
+
+   (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">酒館的委託、收集鍛造素材、經常失蹤、街道的魔物、要來杯雞尾酒嗎</div> <div class="global_ps_text"> <p>00:00 - 酒館的委託</p> <p>03:28 - 收集鍛造素材</p> <p>04:47 - 經常失蹤</p> <p>07:12 - 街道的魔物</p> <p>09:03 - 要來杯雞尾酒嗎。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/stfeR-7O3Sg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">逢魔的領域</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_Ya8qUYsQEM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  
+
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('支線探索');
+  pArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m2");
+  var footSelect = document.getElementById("foot_select_m2");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
+  
   
 </script>
 <p>&nbsp;</p>
