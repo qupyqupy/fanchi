@@ -1,0 +1,238 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('閃之軌跡改');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('序章 托爾茲軍官學院');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<div class="title_text">序章 托爾茲軍官學院</div> <p>一開始是倒敘，<span class="global_name_span">黎恩</span>所屬的［VII班］要阻止敵人利用［列車砲］攻擊［克洛斯貝爾］的通商會議，目的是［鐵血宰相］的項上人頭，就在事情進展到關鍵時，時光回到<span class="global_name_span">黎恩</span>入學［托爾茲軍官學院］的那天。</p> <p>開學典禮上，學生被分為［白色貴族］、［綠色平民］、［紅色？］制服，<span class="global_name_span">黎恩</span>很自然跟同樣穿紅色制服的<span class="global_name_span">艾略特</span>攀談起來，這算他入學的第一個朋友。</p> <p>教官<span class="global_name_span">莎拉</span>領著所有紅色制服的學生來到一處廢宿舍，並解釋穿著紅色制服的是今年才增設的［VII班］，算是特科班，來到此地的目的就是要測試眾人的能力，說完就啟動地板機關，在場眾人隨即跌落地下。</p> <p>因為事出突然，<span class="global_name_span">黎恩</span>不小心將臉貼在<span class="global_name_span">亞莉莎</span>的胸部上，這讓女方十分生氣，還沒開始合作就惹了一個對頭。</p> <p>接著教官<span class="global_name_span">莎拉</span>介紹起每個人都有配給的次世代戰術導力器［ARCUS］，這東西不僅可以通訊還能讓使用者擁有魔法，甚至還有其他隱藏的功能。</p> <div class="global_ps_text"> <p>17:30 - 看見公園睡覺的<span class="global_name_span">菲</span>。</p> <p>18:51 - 在教堂禱告的<span class="global_name_span">蓋烏斯</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fDVO7_xeFc0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>本來應該大家齊心協力一起突破試煉，但身為四大貴族［艾爾巴雷亞公爵家］的<span class="global_name_span">尤西斯</span>卻與十分討厭貴族的<span class="global_name_span">馬奇亞斯</span>吵了起來，兩人賭氣各自離開單獨行動，而一直表現很怕麻煩的<span class="global_name_span">菲</span>也緊跟其後，剩下的人為了安全起見就分成兩組行動。</p> <p>跟<span class="global_name_span">黎恩</span>一組的是最先認識的<span class="global_name_span">艾略特</span>，與高大的異國留學生<span class="global_name_span">蓋烏斯</span>，三人在路上遇到<span class="global_name_span">馬奇亞斯</span>，確認三人都不是貴族後，就加入隊伍一起行動，看來<span class="global_name_span">馬奇亞斯</span>在貴族這方面的偏見實在很深。</p> <p>途中又陸續遇到［VII班］的同學，只不過大家都十分有個性，並沒有要一起行動的意願，從<span class="global_name_span">尤西斯</span>口中還得知<span class="global_name_span">馬奇亞斯</span>其實是帝都首長的兒子，並且猜測他討厭貴族的原因，就是因為父親所屬的［改革派］與［貴族派］對立的關係。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KdMRSug2WvU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>把守在出口的是［石之守護者遠古門犬］，因為它會不斷再生，應付起來十分麻煩，這時［VII班］全員到齊，在戰鬥中大家突然被一光罩包圍，瞬間似乎達到心意相通的境界，趁著這優勢順利擊倒敵人。</p> <p>教官<span class="global_name_span">莎拉</span>這才現身解釋原因，這一切都是眾人手上的［ARCUS］效果，成立［VII班］的目的就是訓練出能善用［ARCUS］的特殊部隊，而通過試煉的眾人，無一例外選擇繼續待在［VII班］。</p> <div class="global_ps_text"> <p>［VII班］的成員有九個。</p> <p>除主角<span class="global_name_span">黎恩</span>外，還有不小心與他有肌膚之親的<span class="global_name_span">亞莉莎</span>。</p> <p>異國留學生<span class="global_name_span">蓋烏斯</span>、怕麻煩隨時處於懶洋洋狀態的<span class="global_name_span">菲</span>。</p> <p>新型魔導杖的兩個測試員<span class="global_name_span">艾略特</span>與<span class="global_name_span">艾瑪</span>，實力在新生中最強的劍士<span class="global_name_span">勞拉</span>。</p> <p>貴族中的貴族<span class="global_name_span">尤西斯</span>、還有與之對頭的首長兒子<span class="global_name_span">馬奇亞斯</span>。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Zwwp5mitnhA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+    result.push('');
+
+
+
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
