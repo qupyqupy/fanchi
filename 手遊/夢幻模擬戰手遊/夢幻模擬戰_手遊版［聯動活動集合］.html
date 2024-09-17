@@ -125,6 +125,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/266880627"><img alt="cover.jpg" src="https://pic.pimg.tw/qupyqupy/1684212965-3439935549-g_n.jpg" title="cover.jpg" /></a></p>');//光明之響
   activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/268753328"><img alt="cover.jpg" src="https://pic.pimg.tw/qupyqupy/1694131083-1619845221-g_n.jpg" title="cover.jpg" /></a></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ee3OAqgKVlw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//秀逗魔導士
   activityArr.push('<hr /><img alt="cover.jpg" src="https://pic.pimg.tw/qupyqupy/1709981999-594717753-g_n.jpg?v=1709982000" title="cover.jpg" />');//強殖裝甲
+  activityArr.push('');//危機交錯領域之戰
 
 
 
@@ -144,6 +145,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('奏影與聖印歌');
   paArr.push('艾路薩利亞的異魔');
   paArr.push('殖裝覺醒 迫近的黯影');
+  paArr.push('危機交錯領域之戰');
 
 
   var contentArr = [];
@@ -162,6 +164,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct12(1));
   contentArr.push(getAct13(1));
   contentArr.push(getAct14(1));
+  contentArr.push(getAct15(1));
 
   var pArr = [];
   pArr.push([]);
@@ -179,6 +182,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct12(2));
   pArr.push(getAct13(2));
   pArr.push(getAct14(2));
+  pArr.push(getAct15(2));
 
 
   var firstEnter = 0 ; 
@@ -241,7 +245,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct15(idx) {
+  function getAct16(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -251,6 +255,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     }
     var result = [] ;
     result.push('');
+    result.push('');
+
+    return result;
+  }
+
+  function getAct15(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+      resultIdx.push('挑戰');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">歡迎來到交錯領域</div> <p>玩家<span class="global_name_span">001</span>來到交錯領域，與［夢幻模擬戰］的英雄一起對抗［上尉密令］的反派，就在快要通過第一關時，一個巨大的海怪將［夢幻模擬戰］的英雄打敗，還好有［投幣續命］的設定，最終英雄們齊刷刷復活，並且擊敗海怪。</p> <p>玩家<span class="global_name_span">001</span>簡單介紹自己所知的世界觀後，就丟下<span class="global_name_span">艾爾文</span>、<span class="global_name_span">迪哈爾特</span>、<span class="global_name_span">黑貓傑克</span>三人，自己退出遊戲休息去了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tPPRBbfHlEM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
     result.push('');
 
     return result;
