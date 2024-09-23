@@ -141,6 +141,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   
  </select>
 
+ <label>追憶之書：</label> 
+ <select id="head_select_ws" style="width: 20%;">
+  
+ </select>
+
 <hr />
 
 
@@ -199,6 +204,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  </select>
  <label>支線劇情：</label> 
 <select id="foot_select_m2" style="width: 20%;">
+  
+ </select>
+
+ <label>追憶之書：</label> 
+ <select id="foot_select_ws" style="width: 20%;">
   
  </select>
 
@@ -1013,6 +1023,61 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   var maxCount = contentArr.length - 1;
   var headSelect = document.getElementById("head_select_m2");
   var footSelect = document.getElementById("foot_select_m2");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">城市的回憶 ~歡迎來到索里斯帝亞~</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uvOkZMpGRYA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//照片事件
+  contentArr.push('<div class="title_text">來自兜帽男的信</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bMT1pq0qRxk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//其他
+  
+
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('照片事件');
+  pArr.push('其他');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_ws");
+  var footSelect = document.getElementById("foot_select_ws");
 
 
   for (var i = 1; i < pArr.length; i++) {
