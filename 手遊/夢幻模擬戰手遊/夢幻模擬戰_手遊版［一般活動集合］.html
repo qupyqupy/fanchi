@@ -169,6 +169,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//艾梅達傳說溯時之旅
   activityArr.push('');//惡夜迷霧歸來記
   activityArr.push('');//吉雪騰龍舞祥瑞
+  activityArr.push('<hr /><p>大家正準備六周年的慶典，<span class="global_name_span">殼中少女</span>、<span class="global_name_span">盧克蕾蒂婭</span>兩人卻突然入侵，掌握了整個會場的控制權。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Z5MBp8m7I8c?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//LIVE狂想嘉年華
 
 
 
@@ -206,6 +207,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('艾梅達傳說溯時之旅');
   paArr.push('惡夜迷霧歸來記');
   paArr.push('吉雪騰龍舞祥瑞');
+  paArr.push('LIVE狂想嘉年華');
 
 
   var contentArr = [];
@@ -242,6 +244,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct30(1));
   contentArr.push(getAct31(1));
   contentArr.push(getAct32(1));
+  contentArr.push(getAct33(1));
 
 
   var pArr = [];
@@ -278,6 +281,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct30(2));
   pArr.push(getAct31(2));
   pArr.push(getAct32(2));
+  pArr.push(getAct33(2));
 
 
   var firstEnter = 0 ; 
@@ -340,7 +344,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct33(idx) {
+  function getAct34(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -352,6 +356,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     var result = [] ;
     result.push('');
     result.push('');
+    result.push('');
+
+    return result;
+  }
+
+  function getAct33(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+      resultIdx.push('挑戰');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">無盡的戰域</div> <p>遲到的<span class="global_name_span">羅蘭</span>、<span class="global_name_span">普蕾茜婭</span>稀哩糊塗的闖過被控制的第一副本關卡。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/81-USc74yy4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
     result.push('');
 
     return result;
