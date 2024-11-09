@@ -126,6 +126,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RQKXt3RYOxY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//朝花夕拾
   activityArr.push('');//浮雲朝露
   activityArr.push('');//徇天記
+  activityArr.push('');//曲海金戈
 
 
 
@@ -149,6 +150,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('朝花夕拾');
   paArr.push('浮雲朝露');
   paArr.push('徇天記');
+  paArr.push('曲海金戈');
 
 
   var contentArr = [];
@@ -171,6 +173,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct16(1));
   contentArr.push(getAct17(1));
   contentArr.push(getAct18(1));
+  contentArr.push(getAct19(1));
 
   var pArr = [];
   pArr.push([]);
@@ -192,6 +195,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct16(2));
   pArr.push(getAct17(2));
   pArr.push(getAct18(2));
+  pArr.push(getAct19(2));
 
 
   var firstEnter = 0 ; 
@@ -254,7 +258,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct19(idx) {
+  function getAct20(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -268,6 +272,24 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     var result = [] ;
     result.push('');
     result.push('');
+
+    return result;
+  }
+
+  function getAct19(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+      resultIdx.push('挑戰');
+
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+    result.push('<div class="title_text">舊憶無痕</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/O2Tl-xb15p4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">舊憶怨結</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DL5xoOlUUtQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">今時舊事</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZWrCwJokSww?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return result;
   }
