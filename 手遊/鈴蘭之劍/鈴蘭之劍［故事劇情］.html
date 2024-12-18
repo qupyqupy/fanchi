@@ -131,7 +131,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//正義的兩極
   activityArr.push('');//小魔女大冒險
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1XaLAHbQ9_k?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//融斷禁忌之翼
-  activityArr.push('');//網頁活動
+  activityArr.push('');//心海漫遊
+  activityArr.push('');//其他活動
   activityArr.push('');//角色劇情
 
 
@@ -152,7 +153,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('正義的兩極');
   paArr.push('小魔女大冒險');
   paArr.push('融斷禁忌之翼');
-  paArr.push('網頁活動');
+  paArr.push('心海漫遊');
+  paArr.push('其他活動');
   paArr.push('角色劇情');
 
 
@@ -172,6 +174,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct14(1));
   contentArr.push(getAct15(1));
   contentArr.push(getAct16(1));
+  contentArr.push(getAct17(1));
   contentArr.push(getAct7(1));
   contentArr.push(getAct12(1));
 
@@ -191,6 +194,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct14(2));
   pArr.push(getAct15(2));
   pArr.push(getAct16(2));
+  pArr.push(getAct17(2));
   pArr.push(getAct7(2));
   pArr.push(getAct12(2));
 
@@ -211,6 +215,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArrB.push(getActB14(1));
   contentArrB.push(getActB15(1));
   contentArrB.push(getActB16(1));
+  contentArrB.push(getActB17(1));
   contentArrB.push(getActB7(1));
   contentArrB.push(getActB12(1));
 
@@ -231,6 +236,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArrB.push(getActB14(2));
   pArrB.push(getActB15(2));
   pArrB.push(getActB16(2));
+  pArrB.push(getActB17(2));
   pArrB.push(getActB7(2));
   pArrB.push(getActB12(2));
 
@@ -321,6 +327,38 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
+  function getActB18(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  function getAct18(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+    return contentArr;
+  }
+
   function getActB17(idx) {
     if (idx == 2){
       var pArr = [];
@@ -342,13 +380,15 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var pArr = [];
   pArr.push('');
-  pArr.push('');
+  pArr.push('劇情');
+  pArr.push('幕間');
 
       return pArr;
     }
     var contentArr = [] ;
   contentArr.push('');
-  contentArr.push('');
+  contentArr.push('<div class="title_text">序、信念的起點、破水而出、珍貴之物、勇氣之光</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Say70MwkyGU?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">喧囂一日、按時抵達、陷入悖論、追覓</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xOmO_RSl7oQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">破鏡、伊南娜的信</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DHS0bYw80vc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">通關檢查、談兵、壓力釋放、提前相會</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/smWcxfxmqdE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">最後的從容、攪人清夢、道聽塗說</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b8BWL92QlyI?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">鏡破</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RFzNalSKTaE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return contentArr;
   }
@@ -705,6 +745,7 @@ function getActB12(idx) {
   pArr.push('');
   pArr.push('樂土大煥新');
   pArr.push('蔻蔻娜的小冒險');
+  pArr.push('混沌之海大集結');
 
       return pArr;
     }
@@ -712,6 +753,8 @@ function getActB12(idx) {
   contentArr.push('');
   contentArr.push('<div class="title_text">樂土大煥新</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aT8WKzpUMrg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/msgXf3VzaUg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
   contentArr.push('<div class="title_text">蔻蔻娜的小冒險</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Hrc2CbGRtHg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">混沌之海大集結</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/petIvLjH6MI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
 
     return contentArr;
   }
