@@ -1,0 +1,24 @@
+<style type="text/css">
+   h2.title {
+    background-color: #026873;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, .07) 50%, transparent 50%), linear-gradient(90deg, rgba(255, 255, 255, .13) 50%, transparent 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, .17) 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, .19) 50%);
+    background-size: 13px, 29px, 37px, 53px;
+    color: #fff6d5;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-shadow: -1px -1px 0 #774b00, 1px -1px 0 #774b00, -1px 1px 0 #774b00, 1px 1px 0 #774b00;
+   }
+
+   div.widget.PageList h2 {
+    background: radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54, 78, 39, 0) 12%, rgba(54, 78, 39, 0)) 50px 0, radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210, 202, 171, 0) 12%, rgba(210, 202, 171, 0)) 50px 0, radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54, 78, 39, 0) 12%, rgba(54, 78, 39, 0)) 0 50px, radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210, 202, 171, 0) 12%, rgba(210, 202, 171, 0)) 0 50px, radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210, 202, 171, 0) 17%), radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54, 78, 39, 0) 17%), radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210, 202, 171, 0) 17%) 50px 50px, radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54, 78, 39, 0) 17%) 50px 50px;
+    background-color: #63773F;
+    background-size: 100px 100px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #774b00, 1px -1px 0 #774b00, -1px 1px 0 #774b00, 1px 1px 0 #774b00;
+}
+
+</style>
