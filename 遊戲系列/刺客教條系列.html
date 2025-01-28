@@ -1,0 +1,250 @@
+<style type="text/css">
+  .animus {
+ text-align: center;
+ color: #555555;
+ font-size: 20px;
+ background: #BBBBBB;
+ padding: 10px;
+ margin-bottom: 5px;
+ margin-top: 5px;
+ font-weight: bold;
+}
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('<hr /><p><a href="http://qupyqupy.pixnet.net/album/photo/237194906"><img alt="Assassin’s Creed® Chronicles_ China_20180324145114.jpg" src="https://pic.pimg.tw/qupyqupy/1523124015-813505011_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324145114.jpg" /></a></p>');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('編年史-中國篇');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+    
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('遊戲介紹');
+      resultIdx.push('場景介紹');
+      resultIdx.push('遊玩影片');
+      resultIdx.push('Animus故事資料庫');
+      resultIdx.push('Animus人物資料庫');
+
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<p><span class="global_name_span">刺客教條</span>編年史三部曲在我看來算是小品遊戲，採用橫向卷軸2.5D的視角進行遊戲，但仍保留諸多系列的要素。中國篇主要的時間點是衰敗中的明朝，遊戲中可以遇到很多說中文的敵人，感覺額外的親切。</p> <p>這款遊戲我是趁著過年大特惠，用80%優惠購入的，我覺得購買數位版慢慢會成為主流的遊戲銷售方式。以往玩家會購買實體版多半是為了收藏或是可以當作二手片賣出，而現在數位版動不動就以破五折的價格促銷、遊戲光碟的收藏也是個額外的開銷，在大環境經濟狀況沒有好轉下，我認為越來越多人會選擇數位版。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237198092"><img alt="cost.png" src="https://pic.pimg.tw/qupyqupy/1523159351-4209878211_n.png?v=1523159357" title="cost.png" /></a></p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194915"><img alt="20171231091958.jpg" src="https://pic.pimg.tw/qupyqupy/1523124015-2840875681_n.jpg" title="20171231091958.jpg" /></a></p> <p>遊戲有分三種難度，一開始只能選擇正常版，隨著破關一輪之後可以選擇其他模式，基本上只有難度的調整而劇情方面是一樣的。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194909"><img alt="Assassin’s Creed® Chronicles_ China_20180324145156.jpg" src="https://pic.pimg.tw/qupyqupy/1523124015-866763666_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324145156.jpg" /></a></p> <p>破關後還可以直接選擇要遊玩的章節，這設定很方便用來解成就。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195062"><img alt="Assassin’s Creed® Chronicles_ China_20180401122531.jpg" src="https://pic.pimg.tw/qupyqupy/1523124079-1377205463_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180401122531.jpg" /></a></p> <p>玩正常版遊戲的話，每解鎖一個新的動作就會有<span class="global_name_span">埃齊奧</span>出面指導的教學情節。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194930"><img alt="Assassin’s Creed® Chronicles_ China_20180324151021.jpg" src="https://pic.pimg.tw/qupyqupy/1523124035-2064892431_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324151021.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194948"><img alt="Assassin’s Creed® Chronicles_ China_20180324151142.jpg" src="https://pic.pimg.tw/qupyqupy/1523124046-3419934167_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324151142.jpg" /></a></div> </div> </div> <p>每個關卡的結算畫面，這遊戲首重的就是匿蹤，設定的最高鬼影金牌就是不殺一人且不被發現完成遊戲。這讓遊玩變得有趣，總是會想著要用怎樣的方式去繞過看似難以避開的守衛。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194954"><img alt="Assassin’s Creed® Chronicles_ China_20180324151932.jpg" src="https://pic.pimg.tw/qupyqupy/1523124047-4084492388_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324151932.jpg" /></a></p> <p>遊戲還有額外項目可以解鎖，這邊需要登入<span class="global_name_span">UPLAY</span>用U幣解鎖。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195047"><img alt="Assassin’s Creed® Chronicles_ China_20180325222741.jpg" src="https://pic.pimg.tw/qupyqupy/1523124076-293087350_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325222741.jpg" /></a></p> <p>我覺得只有<span class="global_name_span">王陽明的刀</span><span class="global_name_span">埃齊奧的刺客裝束</span>這兩項比較吸引人，因為可以直接在遊戲中看到換裝後的效果，其他的在網路上都能找得到。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195068"><img alt="王陽明的刀.jpg" src="https://pic.pimg.tw/qupyqupy/1523124082-1840485947_n.jpg" title="王陽明的刀.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195074"><img alt="埃齊奧的刺客裝束.jpg" src="https://pic.pimg.tw/qupyqupy/1523124082-57237374_n.jpg" title="埃齊奧的刺客裝束.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195071"><img alt="主題歌曲.jpg" src="https://pic.pimg.tw/qupyqupy/1523124082-2761574307_n.jpg" title="主題歌曲.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195077"><img alt="電腦桌面背景圖片.jpg" src="https://pic.pimg.tw/qupyqupy/1523124083-1949760224_n.jpg" title="電腦桌面背景圖片.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195059"><img alt="一般概念藝術包.jpg" src="https://pic.pimg.tw/qupyqupy/1523124079-172615934_n.jpg" title="一般概念藝術包.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195065"><img alt="人物概念藝術包.jpg" src="https://pic.pimg.tw/qupyqupy/1523124080-3293292725_n.jpg" title="人物概念藝術包.jpg" /></a></div> </div> </div> <p><span class="global_name_span">埃齊奧的刺客裝束</span>我是覺得沒有原本主角一身黑色裝束好看。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195050"><img alt="Assassin’s Creed® Chronicles_ China_20180325223457.jpg" src="https://pic.pimg.tw/qupyqupy/1523124076-1179215562_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325223457.jpg" /></a></p> <p>黑色裝束比較適合主角纖細的體型，看起來也比較神秘。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194951"><img alt="Assassin’s Creed® Chronicles_ China_20180324151810.jpg" src="https://pic.pimg.tw/qupyqupy/1523124047-3913867269_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324151810.jpg" /></a></p>');
+    result.push('<p>可以看得出來場景相當精緻，明暗效果做得相當不錯。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194912"><img alt="Assassin’s Creed® Chronicles_ China_20180324145454.jpg" src="https://pic.pimg.tw/qupyqupy/1523124015-2250213938_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324145454.jpg" /></a></p> <p>中國式的水墨效果展現的相當漂亮，每個畫面都相當有意境，彷彿在看一幅幅大家之作。</p> <p>月黑風高的碼頭、氣勢磅礡的群山之中、寧靜安逸的農村田間、殺機重重的王宮後院等等都很有味道。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194963"><img alt="Assassin’s Creed® Chronicles_ China_20180324152041.jpg" src="https://pic.pimg.tw/qupyqupy/1523124050-1343641636_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324152041.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194981"><img alt="Assassin’s Creed® Chronicles_ China_20180324155815.jpg" src="https://pic.pimg.tw/qupyqupy/1523124054-2932996509_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324155815.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195011"><img alt="Assassin’s Creed® Chronicles_ China_20180324173959.jpg" src="https://pic.pimg.tw/qupyqupy/1523124065-1540087409_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324173959.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195005"><img alt="Assassin’s Creed® Chronicles_ China_20180325185857.jpg" src="https://pic.pimg.tw/qupyqupy/1523124064-774666757_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325185857.jpg" /></a></div> </div> </div> <p>大旗飄逸的效果也是非常的唯美。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195029"><img alt="Assassin’s Creed® Chronicles_ China_20180325202125.jpg" src="https://pic.pimg.tw/qupyqupy/1523124071-263925588_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325202125.jpg" /></a></p> <p>這種圓月黑夜的畫面，就很有臥虎藏龍電影的氛圍。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195026"><img alt="Assassin’s Creed® Chronicles_ China_20180325193822.jpg" src="https://pic.pimg.tw/qupyqupy/1523124070-3797869337_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325193822.jpg" /></a></p> <p>最後在長城決戰的場景，非常的磅礡狀況。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195038"><img alt="Assassin’s Creed® Chronicles_ China_20180325205850.jpg" src="https://pic.pimg.tw/qupyqupy/1523124075-584299827_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325205850.jpg" /></a></p> <p>遊戲進行中不時可以遇到講中文的敵人，對於華人玩家而言相當有帶入感。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194918"><img alt="Assassin’s Creed® Chronicles_ China_20180324145509.jpg" src="https://pic.pimg.tw/qupyqupy/1523124016-107799277_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324145509.jpg" /></a></p> <p>原本刺客複雜的操作，遊戲把它變成簡單的提示，只需要看著畫面上提示的按鈕操作即可，也因此就算是新手也能體會到流暢的操作感。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194927"><img alt="Assassin’s Creed® Chronicles_ China_20180324150017.jpg" src="https://pic.pimg.tw/qupyqupy/1523124035-2499203691_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324150017.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194933"><img alt="Assassin’s Creed® Chronicles_ China_20180324150355.jpg" src="https://pic.pimg.tw/qupyqupy/1523124035-3053008201_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324150355.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194945"><img alt="Assassin’s Creed® Chronicles_ China_20180324151220.jpg" src="https://pic.pimg.tw/qupyqupy/1523124046-2797034229_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324151220.jpg" /></a></div> </div> </div> <p>匿蹤的方式非常簡單粗爆，只要不在敵人的視線範圍內，就算是身處敵人旁邊或是正面也同樣不會被發現。</p> <p>雖然不太寫實但在2.5D的世界中這樣的呈現已經是非常好了，而玩家也可以依照這種簡單判別方式作出各種合理的攻略。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194921"><img alt="Assassin’s Creed® Chronicles_ China_20180324145758.jpg" src="https://pic.pimg.tw/qupyqupy/1523124016-2302326631_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324145758.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194936"><img alt="Assassin’s Creed® Chronicles_ China_20180324150514.jpg" src="https://pic.pimg.tw/qupyqupy/1523124035-3411449621_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324150514.jpg" /></a></div> </div> </div> <p>躲在凹處，就算的人從旁邊經過也不會被發現。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194975"><img alt="Assassin’s Creed® Chronicles_ China_20180324152240.jpg" src="https://pic.pimg.tw/qupyqupy/1523124053-3130999542_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324152240.jpg" /></a></p> <p>躲在樹叢中，這裡有比較寫實的設定，躲進去之後就不能移動，不然會被敵方發現。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194987"><img alt="Assassin’s Creed® Chronicles_ China_20180324154032.jpg" src="https://pic.pimg.tw/qupyqupy/1523124057-1949530354_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324154032.jpg" /></a></p> <p>如果是吊在天花板上，可以收斂自己身型躲避敵方的探查。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195008"><img alt="Assassin’s Creed® Chronicles_ China_20180324170318.jpg" src="https://pic.pimg.tw/qupyqupy/1523124064-3194962477_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324170318.jpg" /></a></p> <p>在鬧市裡可以躲在人群之中，這部分也是刺客教條系列都有的元素。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195002"><img alt="Assassin’s Creed® Chronicles_ China_20180324174010.jpg" src="https://pic.pimg.tw/qupyqupy/1523124063-2682987670_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324174010.jpg" /></a></p> <p>只要不在視線範圍內，就算在敵人正前方一樣不會被發現，這種設定讓我每次看到都覺得很有趣。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195023"><img alt="Assassin’s Creed® Chronicles_ China_20180325194414.jpg" src="https://pic.pimg.tw/qupyqupy/1523124071-1177742379_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325194414.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195035"><img alt="Assassin’s Creed® Chronicles_ China_20180325202113.jpg" src="https://pic.pimg.tw/qupyqupy/1523124072-3197723305_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325202113.jpg" /></a></div> </div> </div> <p>遊戲還有設置一些讓玩家容易被發現的機關，像是會叫的守衛犬。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194966"><img alt="Assassin’s Creed® Chronicles_ China_20180324154402.jpg" src="https://pic.pimg.tw/qupyqupy/1523124051-920562358_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324154402.jpg" /></a></p> <p>容易被驚動的小鳥。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194972"><img alt="Assassin’s Creed® Chronicles_ China_20180324154550.jpg" src="https://pic.pimg.tw/qupyqupy/1523124053-2343216189_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324154550.jpg" /></a></p> <p>踏在上面會發出聲響吸引敵人注意的木板。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194984"><img alt="Assassin’s Creed® Chronicles_ China_20180324160444.jpg" src="https://pic.pimg.tw/qupyqupy/1523124056-1382681831_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324160444.jpg" /></a></p> <p>敵人的種類也相當多，像是提著燈籠的警衛就會發現躲在暗處的主角，不過假如只想當個殺人如麻的刺客無視鬼影金牌的成就，這些阻礙倒不算是甚麼。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194993"><img alt="Assassin’s Creed® Chronicles_ China_20180324161825.jpg" src="https://pic.pimg.tw/qupyqupy/1523124058-3302794547_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324161825.jpg" /></a></p> <p>如果不幸引起警戒的話，只有殺光的人或是找個地方躲藏等時限結束後再進行攻略。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237195041"><img alt="Assassin’s Creed® Chronicles_ China_20180325203318.jpg" src="https://pic.pimg.tw/qupyqupy/1523124075-2811231885_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325203318.jpg" /></a></p> <p>我個人是比較不喜歡這種躲躲藏藏的玩法，當解鎖<span class="global_name_span">Helix刺殺</span>技能之後，我根本就把這遊戲當作一般橫向過關遊戲在玩，看影片中那流暢華麗的擊殺動作，這才夠暢快嘛。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Qi6A3Xh1Hjs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">鷹眼視覺</span>可以說是刺客教條中的經典系統，遊戲中也是完整呈現。紅色為敵人、藍色為自己、金色為刺殺目標。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194924"><img alt="Assassin’s Creed® Chronicles_ China_20180324150214.jpg" src="https://pic.pimg.tw/qupyqupy/1523124035-471106138_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324150214.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194942"><img alt="Assassin’s Creed® Chronicles_ China_20180324151410.jpg" src="https://pic.pimg.tw/qupyqupy/1523124045-786581940_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324151410.jpg" /></a></div> </div> </div> <p>除了<span class="global_name_span">鷹眼視覺</span>以外，最經典的<span class="global_name_span">信仰之躍</span>當然也有。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194969"><img alt="Assassin’s Creed® Chronicles_ China_20180324152144.jpg" src="https://pic.pimg.tw/qupyqupy/1523124052-1414416337_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324152144.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195017"><img alt="Assassin’s Creed® Chronicles_ China_20180325190706.jpg" src="https://pic.pimg.tw/qupyqupy/1523124068-3385937412_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325190706.jpg" /></a></div> </div> </div> <p>透過<span class="global_name_span">信仰之躍</span>就可同步地圖上的資訊，所有隱藏的寶物、收集元素都可以在這畫面發現。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/237194960"><img alt="Assassin’s Creed® Chronicles_ China_20180324152128.jpg" src="https://pic.pimg.tw/qupyqupy/1523124049-2760491243_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324152128.jpg" /></a></p> <p>遊戲中也設計了許多刺客的移動、攀爬動作，走獨木、走麻繩、爬屋簷、吊單槓。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194957"><img alt="Assassin’s Creed® Chronicles_ China_20180324151322.jpg" src="https://pic.pimg.tw/qupyqupy/1523124046-1141028905_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324151322.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194939"><img alt="Assassin’s Creed® Chronicles_ China_20180324151440.jpg" src="https://pic.pimg.tw/qupyqupy/1523124045-575542827_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324151440.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194978"><img alt="Assassin’s Creed® Chronicles_ China_20180324154602.jpg" src="https://pic.pimg.tw/qupyqupy/1523124054-1866048135_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324154602.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237195014"><img alt="Assassin’s Creed® Chronicles_ China_20180325192808.jpg" src="https://pic.pimg.tw/qupyqupy/1523124066-3408509714_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180325192808.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237194990"><img alt="Assassin’s Creed® Chronicles_ China_20180324155949.jpg" src="https://pic.pimg.tw/qupyqupy/1523124057-425357375_n.jpg" title="Assassin’s Creed® Chronicles_ China_20180324155949.jpg" /></a></div> <div class="global_divtd">&nbsp;</div> </div> </div>');
+    result.push('<p>以下是這次遊玩的過程影片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AhJoPhuLEz8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/seA-RYZvhgA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RbUfvZ_Rhlw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CRXfTbJJHps?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fnK-glU27js?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/n1XwjUGn-ZU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8237of3pEIE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nJaZzvszCTg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HV6Z-E-lAco?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tL2ews0BdBw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fTs1Vk3M3Mg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WmNITQ9-hmQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('<p>Animus資料庫的內容非常豐富，這邊只摘錄跟劇情有相關的部分。</p> <div class="animus">第一卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170300"><img alt="story01_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015422-3669716939_n.jpg?v=1523015493" title="story01_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170306"><img alt="story01_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015422-519402093_n.jpg?v=1523015493" title="story01_2.jpg" /></a></div> </div> </div> <div class="animus">第二卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170303"><img alt="story02_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015422-1083295032_n.jpg?v=1523015493" title="story02_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170312"><img alt="story02_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015423-186987140_n.jpg?v=1523015493" title="story02_2.jpg" /></a></div> </div> </div> <div class="animus">第三卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170309"><img alt="story03_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015422-3590411684_n.jpg?v=1523015494" title="story03_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170315"><img alt="story03_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015426-630756997_n.jpg?v=1523015494" title="story03_2.jpg" /></a></div> </div> </div> <div class="animus">第四卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170324"><img alt="story04_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015428-1273113709_n.jpg?v=1523015494" title="story04_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170318"><img alt="story04_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015427-2869060020_n.jpg?v=1523015494" title="story04_2.jpg" /></a></div> </div> </div> <div class="animus">第五卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170327"><img alt="story05_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015431-2735887587_n.jpg?v=1523015494" title="story05_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170321"><img alt="story05_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015428-3519681981_n.jpg?v=1523015494" title="story05_2.jpg" /></a></div> </div> </div> <div class="animus">第六卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170330"><img alt="story06_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015432-3189030016_n.jpg?v=1523015494" title="story06_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170339"><img alt="story06_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015435-3410852143_n.jpg?v=1523015494" title="story06_2.jpg" /></a></div> </div> </div> <div class="animus">第七卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170333"><img alt="story07_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015433-2418164068_n.jpg?v=1523015494" title="story07_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170336"><img alt="story07_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015434-2677701285_n.jpg?v=1523015494" title="story07_2.jpg" /></a></div> </div> </div> <div class="animus">第八卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170342"><img alt="story08_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015435-1180832552_n.jpg?v=1523015494" title="story08_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170345"><img alt="story08_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015440-3363697347_n.jpg?v=1523015494" title="story08_2.jpg" /></a></div> </div> </div> <div class="animus">第九卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170360"><img alt="story09_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015446-2186263719_n.jpg?v=1523015494" title="story09_1.jpg" /></a></div> </div> </div> <div class="animus">第十卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170348"><img alt="story10_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015440-142279719_n.jpg?v=1523015494" title="story10_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170351"><img alt="story10_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015441-2842641184_n.jpg?v=1523015494" title="story10_2.jpg" /></a></div> </div> </div> <div class="animus">第十一卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170354"><img alt="story11_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015442-2353418112_n.jpg?v=1523015494" title="story11_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170369"><img alt="story11_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015445-608157796_n.jpg?v=1523015494" title="story11_2.jpg" /></a></div> </div> </div> <div class="animus">第十二卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170366"><img alt="story12_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015446-363075028_n.jpg?v=1523015494" title="story12_1.jpg" /></a></div> </div> </div> <div class="animus">第十三卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170363"><img alt="story13_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015446-4280722873_n.jpg?v=1523015494" title="story13_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170357"><img alt="story13_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015444-3657066683_n.jpg?v=1523015494" title="story13_2.jpg" /></a></div> </div> </div> <div class="animus">第十四卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170372"><img alt="story14_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015447-3896772468_n.jpg?v=1523015494" title="story14_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170375"><img alt="story14_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015448-3038834704_n.jpg?v=1523015494" title="story14_2.jpg" /></a></div> </div> </div> <div class="animus">第十五卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170390"><img alt="story15_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015451-2652047621_n.jpg?v=1523015494" title="story15_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170387"><img alt="story15_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015451-3062255898_n.jpg?v=1523015494" title="story15_2.jpg" /></a></div> </div> </div> <div class="animus">第十六卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170384"><img alt="story16_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015451-1766118751_n.jpg?v=1523015494" title="story16_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170381"><img alt="story16_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015451-3476935108_n.jpg?v=1523015494" title="story16_2.jpg" /></a></div> </div> </div> <div class="animus">第十七卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170393"><img alt="story17_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015452-955562265_n.jpg?v=1523015494" title="story17_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170396"><img alt="story17_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015453-1956204145_n.jpg?v=1523015494" title="story17_2.jpg" /></a></div> </div> </div> <div class="animus">第十八卷</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170399"><img alt="story18_1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015454-1312872535_n.jpg?v=1523015494" title="story18_1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170414"><img alt="story18_2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015457-111837365_n.jpg?v=1523015494" title="story18_2.jpg" /></a></div> </div> </div>');
+    result.push('<p>我把遊戲全破甚至獎杯都顯示收集完成了，但是少云的記憶就是缺5，估計是翻譯時翻錯的緣故。</p> <div class="animus">少芸的記憶</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170405"><img alt="少云的記憶01.jpg" src="https://pic.pimg.tw/qupyqupy/1523015457-3514495530_n.jpg?v=1523015494" title="少云的記憶01.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170411"><img alt="少云的記憶02.jpg" src="https://pic.pimg.tw/qupyqupy/1523015457-4236965693_n.jpg?v=1523015494" title="少云的記憶02.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170408"><img alt="少云的記憶03.jpg" src="https://pic.pimg.tw/qupyqupy/1523015457-2226051794_n.jpg?v=1523015494" title="少云的記憶03.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170417"><img alt="少云的記憶04.jpg" src="https://pic.pimg.tw/qupyqupy/1523015460-1364423792_n.jpg?v=1523015494" title="少云的記憶04.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170420"><img alt="少云的記憶06.jpg" src="https://pic.pimg.tw/qupyqupy/1523015463-2606049477_n.jpg?v=1523015494" title="少云的記憶06.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170429"><img alt="少云的記憶07.jpg" src="https://pic.pimg.tw/qupyqupy/1523015464-291159976_n.jpg?v=1523015494" title="少云的記憶07.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170426"><img alt="少云的記憶08.jpg" src="https://pic.pimg.tw/qupyqupy/1523015464-3431422521_n.jpg?v=1523015494" title="少云的記憶08.jpg" /></a></div> <div class="global_divtd"></div> </div> </div> <hr /> <div class="animus">少芸</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170402"><img alt="少云.jpg" src="https://pic.pimg.tw/qupyqupy/1523015457-165575859_n.jpg?v=1523015494" title="少云.jpg" /></a></div> </div> </div> <div class="animus">王陽明</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170423"><img alt="王陽明1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015464-2581496960_n.jpg?v=1523015494" title="王陽明1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170432"><img alt="王陽明2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015465-553702836_n.jpg?v=1523015494" title="王陽明2.jpg" /></a></div> </div> </div> <div class="animus">丘聚</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170435"><img alt="丘聚.jpg" src="https://pic.pimg.tw/qupyqupy/1523015467-2339808399_n.jpg?v=1523015495" title="丘聚.jpg" /></a></div> </div> </div> <div class="animus">正德皇帝</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170438"><img alt="正德皇帝1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015467-3680385612_n.jpg?v=1523015495" title="正德皇帝1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170441"><img alt="正德皇帝2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015468-4049968867_n.jpg?v=1523015495" title="正德皇帝2.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170444"><img alt="正德皇帝3.jpg" src="https://pic.pimg.tw/qupyqupy/1523015468-1462254389_n.jpg?v=1523015495" title="正德皇帝3.jpg" /></a></div> </div> </div> <div class="animus">朱九淵</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170450"><img alt="朱九淵.jpg" src="https://pic.pimg.tw/qupyqupy/1523015470-2355615999_n.jpg?v=1523015495" title="朱九淵.jpg" /></a></div> </div> </div> <div class="animus">谷大用</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170462"><img alt="谷大用.jpg" src="https://pic.pimg.tw/qupyqupy/1523015473-3983327217_n.jpg?v=1523015495" title="谷大用.jpg" /></a></div> </div> </div> <div class="animus">洪立威</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170453"><img alt="洪立威.jpg" src="https://pic.pimg.tw/qupyqupy/1523015471-2219181512_n.jpg?v=1523015495" title="洪立威.jpg" /></a></div> </div> </div> <div class="animus">俺答汗</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170459"><img alt="俺答汗.jpg" src="https://pic.pimg.tw/qupyqupy/1523015473-496261480_n.jpg?v=1523015495" title="俺答汗.jpg" /></a></div> </div> </div> <div class="animus">埃齊奧</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170465"><img alt="埃齊奧1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015475-2756628142_n.jpg?v=1523015495" title="埃齊奧1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170456"><img alt="埃齊奧2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015473-460071441_n.jpg?v=1523015495" title="埃齊奧2.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170468"><img alt="埃齊奧3.jpg" src="https://pic.pimg.tw/qupyqupy/1523015475-502133011_n.jpg?v=1523015495" title="埃齊奧3.jpg" /></a></div> </div> </div> <div class="animus">馬永成</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170483"><img alt="馬永成.jpg" src="https://pic.pimg.tw/qupyqupy/1523015476-2460751422_n.jpg?v=1523015495" title="馬永成.jpg" /></a></div> </div> </div> <div class="animus">高鳳</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170474"><img alt="高鳳.jpg" src="https://pic.pimg.tw/qupyqupy/1523015477-188653422_n.jpg?v=1523015495" title="高鳳.jpg" /></a></div> </div> </div> <div class="animus">張永</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170477"><img alt="張永1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015478-2582300580_n.jpg?v=1523015495" title="張永1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170471"><img alt="張永2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015476-2675554947_n.jpg?v=1523015495" title="張永2.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170489"><img alt="張永3.jpg" src="https://pic.pimg.tw/qupyqupy/1523015481-1996982387_n.jpg?v=1523015495" title="張永3.jpg" /></a></div> </div> </div> <div class="animus">張皇后</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170480"><img alt="張皇后1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015479-770361580_n.jpg?v=1523015495" title="張皇后1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170492"><img alt="張皇后2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015482-3638953403_n.jpg?v=1523015495" title="張皇后2.jpg" /></a></div> </div> </div> <div class="animus">嘉靖皇帝</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170486"><img alt="嘉靖皇帝1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015481-753874088_n.jpg?v=1523015495" title="嘉靖皇帝1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170498"><img alt="嘉靖皇帝2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015483-1165330166_n.jpg?v=1523015495" title="嘉靖皇帝2.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170495"><img alt="嘉靖皇帝3.jpg" src="https://pic.pimg.tw/qupyqupy/1523015483-231595920_n.jpg?v=1523015495" title="嘉靖皇帝3.jpg" /></a></div> </div> </div> <div class="animus">劉瑾</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170504"><img alt="劉瑾1.jpg" src="https://pic.pimg.tw/qupyqupy/1523015484-3037929222_n.jpg?v=1523015495" title="劉瑾1.jpg" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170501"><img alt="劉瑾2.jpg" src="https://pic.pimg.tw/qupyqupy/1523015483-108623750_n.jpg?v=1523015495" title="劉瑾2.jpg" /></a></div> </div> </div> <div class="animus">魏彬</div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/237170507"><img alt="魏彬.jpg" src="https://pic.pimg.tw/qupyqupy/1523015484-4222980570_n.jpg?v=1523015495" title="魏彬.jpg" /></a></div> </div> </div>');
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
