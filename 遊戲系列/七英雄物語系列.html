@@ -1,0 +1,239 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('七英雄物語');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('遊戲介紹');
+      resultIdx.push('主角群介紹');
+      resultIdx.push('其他角色');
+      resultIdx.push('結局畫面');
+
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<p>這是一款 18 禁的遊戲，不過遊戲內容還算好玩，就算去除掉情色的部分還是款不錯的小品。</p> <p>故事內容敘述著七個人救助一個平凡村莊的故事，情節跟黑澤明導演的經典電影七武士很像，裡面沒有壯闊的史詩劇情也沒有開外掛的主角威能，算是一個平凡中的英雄故事。另外附帶一提，1989年由鄭少秋、梁朝偉、莫少聰、張學友、午馬、成奎安、林國斌主演的電影七福將（忠義群英）也是同樣類型的故事內容，導致我在玩的時候不時浮現電影中的經典畫面。</p> <hr /> <p>遊戲標誌。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206194068"><img alt=" 2015-12-15 09-25-39-121.jpg" src="https://pic.pimg.tw/qupyqupy/1450185819-1722942138_n.jpg?v=1450185832" title="" /></a></p> <p>遊戲開頭選單。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206162475"><img alt=" 2015-12-14 21-35-09-173.jpg" src="https://pic.pimg.tw/qupyqupy/1450140609-1894870983_n.jpg?v=1450140619" title="" /></a></p> <p>懷念的遊戲密碼輸入畫面。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206162463"><img alt=" 2015-12-14 21-31-46-381.jpg" src="https://pic.pimg.tw/qupyqupy/1450140609-4143084119_n.jpg?v=1450140619" title="" /></a></p> <p>遊戲安裝設定畫面。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206162484"><img alt=" 2015-12-14 22-01-38-586.jpg" src="https://pic.pimg.tw/qupyqupy/1450140611-4098111399_n.jpg?v=1450140619" title="" /></a></p> <p>遊戲在音樂方面的表現不俗，以下這首是我覺得最熱血的。</p> <div class="sound_player" data-title="七英雄物語配樂"><iframe allowfullscreen="" class="no-convert" frameborder="0" src="https://www.youtube.com/embed/r9X8B7TuNtU?wmode=transparent" title="YouTube video player"></iframe></div> <hr /> <p>雖然遊戲是 18 禁，但在每關地圖的編排上也頗有水準，有幾張地圖還需要動些腦筋，在這點上我認為已經超越很多國產的純戰棋遊戲。</p> <p>救慕潔的這關，需要準確的<span style="color:rgb(255, 0, 0)">利用四個夥伴的移動力來分配攻擊的位置</span>，必須在一回合內同時擊敗四個敵人才能過關，雖然條件不難，但我第一次玩時還是卡關，後來才發覺這不是普通練級殺怪就好的戰棋遊戲。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206194080"><img alt=" 2015-12-15 21-20-42-182.jpg" src="https://pic.pimg.tw/qupyqupy/1450185820-1163429594.jpg?v=1450185832" title="" /></a></p> <p>遇見會不斷分裂的史萊姆，<span style="color:rgb(255, 0, 0)">隊伍的攻擊力必須高於史萊姆的分裂能力才能順利過關</span>，實際上這關完全是遊戲設計者給玩家的練功關卡，如果不能意會到這點，而隨便就將史萊姆本體擊敗，接下來幾關可能就因為隊伍戰力不夠而面臨卡關命運。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206194035"><img alt=" 2015-12-15 09-10-44-570.jpg" src="https://pic.pimg.tw/qupyqupy/1450185815-1317282743.jpg?v=1450185831" title="" /></a></p> <p>隊伍中的五位戰力都在泡溫泉，只剩兩個男性角色在外對付惡鬼，如果在史萊姆那關沒有好好鍛練雷依、佛利茲的話，極有可能無法順利過此關。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206194083"><img alt=" 2015-12-15 09-30-04-291.jpg" src="https://pic.pimg.tw/qupyqupy/1450185820-123491137.jpg?v=1450185832" title="" /></a></p> <p>要護衛馬車通過層層的盜賊守備，而馬車不受玩家控制，這考驗著玩家阻擋敵人的能力。這種模式又讓我想到國產遊戲笑傲江湖中有段護衛林平之的劇情，林平之不管敵方有多少人直管往前衝，讓我一邊消滅敵人還要一邊幫忙擋刀，簡直跟這關的馬車一模一樣啊！</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206345181"><img alt=" 2015-12-15 23-14-13-092.jpg" src="https://pic.pimg.tw/qupyqupy/1450492495-2927347003.jpg?v=1450492522" title="" /></a></p> <div><span style="color:rgb(255, 0, 0)">敵人會不斷的重生，完全沒有消滅的方法，只有當到達某個地點時才能過關</span>。每當玩到這類關卡時，只能先打帶跑，把敵人帶離重生點，之後再將敵人消滅，這樣重生後的敵人就會因為附近沒有攻擊對象而呆在原地。</div> <div> <p><a href="http://qupyqupy.pixnet.net/album/photo/206345187"><img alt=" 2015-12-16 08-48-08-651.jpg" src="https://pic.pimg.tw/qupyqupy/1450492496-1615084844_n.jpg?v=1450492522" title="" /></a></p> <p>類似史萊姆關卡的死靈法師，只是強度完全不同，但由於我方的雪兒至此已經算得到非常多的鍛鍊了，可以輕鬆靠著遠程攻擊將死靈法師消滅。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206345196"><img alt=" 2015-12-16 09-05-43-215.jpg" src="https://pic.pimg.tw/qupyqupy/1450492497-2871671348.jpg?v=1450492522" title="" /></a></p> <p>村人遭到催眠攻擊主角一行人的關卡，非但不能殺死村民，還得繞開他們後消滅幕後催眠的兇手。看下圖我方人員被村民團團圍住的景況真是讓人氣悶。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206345202"><img alt=" 2015-12-16 09-09-42-201.jpg" src="https://pic.pimg.tw/qupyqupy/1450492498-3129092980.jpg?v=1450492522" title="" /></a></p> <p>最後魔王黑魔龍，算是遊戲中較為單純的地圖了，沒有特別的戰略方式，單純以力量決定勝負的關卡。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206345217"><img alt=" 2015-12-16 22-51-31-826.jpg" src="https://pic.pimg.tw/qupyqupy/1450492500-839529475.jpg?v=1450492522" title="" /></a></p> </div>');
+    result.push('<p>雷依。</p> <p>戰後失去工作的傭兵，不知道是為了正義還是為了溫飽而答應去解救村子，各能力相當的中庸，是個非常好用的戰鬥單位。</p> <table> <tbody> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162472"><img src="https://pic.pimg.tw/qupyqupy/1450140609-4028533769.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162496"><img alt=" 2015-12-14 22-24-36-627.jpg" src="https://pic.pimg.tw/qupyqupy/1450140611-1589382077.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162541"><img alt=" 2015-12-14 23-46-26-608.jpg" src="https://pic.pimg.tw/qupyqupy/1450140614-33244188.jpg?v=1450140620" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162466"><img alt=" 2015-12-14 21-54-46-843.jpg" src="https://pic.pimg.tw/qupyqupy/1450140609-2935343707.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162493"><img alt=" 2015-12-14 22-23-42-254.jpg" src="https://pic.pimg.tw/qupyqupy/1450140611-3763696818.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162538"><img alt=" 2015-12-14 23-45-20-638.jpg" src="https://pic.pimg.tw/qupyqupy/1450140614-3583412014.jpg?v=1450140620" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345220"><img alt=" 2015-12-16 22-58-28-102.jpg" height="119" src="https://pic.pimg.tw/qupyqupy/1450492501-369165654.jpg?v=1450492522" style="width: 159px; height: 119px;" title="" width="159" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345223"><img alt=" 2015-12-16 22-58-30-286.jpg" height="143" src="https://pic.pimg.tw/qupyqupy/1450492501-392656521.jpg?v=1450492523" style="width: 166px; height: 143px;" title="" width="166" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345226"><img height="130" src="https://pic.pimg.tw/qupyqupy/1450492501-281834069.jpg?v=1450492523" style="width: 150px; height: 130px;" title="" width="150" /></a></td> </tr> </tbody> </table> <p>佛利茲。</p> <p>雷依在酒館裡面遇到的騎士，最後在保衛村莊的戰役中壯烈犧牲了。擁有透過看眼睛就能分辨人內心的技能？移動力很低且攻擊容易Miss。</p> <table> <tbody> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162481"><img src="https://pic.pimg.tw/qupyqupy/1450140611-765123164.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162526"><img alt=" 2015-12-14 23-42-36-617.jpg" src="https://pic.pimg.tw/qupyqupy/1450140613-2927648939.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194044" rel="color: rgb(17, 85, 204); text-decoration: underline;"><img alt=" 2015-12-15 09-18-59-888.jpg" src="https://pic.pimg.tw/qupyqupy/1450185817-2090757949.jpg?v=1450185831" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162478"><img alt=" 2015-12-14 22-06-32-623.jpg" src="https://pic.pimg.tw/qupyqupy/1450140610-808245827.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162529"><img src="https://pic.pimg.tw/qupyqupy/1450140613-3688325890.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"> <p><a href="http://qupyqupy.pixnet.net/album/photo/206194041"><img alt=" 2015-12-15 09-18-29-507.jpg" src="https://pic.pimg.tw/qupyqupy/1450185817-902543130.jpg?v=1450185831" title="" /></a></p> </td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345256"><img alt=" 2015-12-16 22-59-00-002.jpg" height="155" src="https://pic.pimg.tw/qupyqupy/1450492503-1101757416.jpg?v=1450492523" style="width: 193px; height: 155px;" title="" width="193" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345253" rel="color: rgb(17, 85, 204); text-decoration: underline;"><img alt=" 2015-12-16 22-59-03-506.jpg" height="159" src="https://pic.pimg.tw/qupyqupy/1450492502-3571869979.jpg?v=1450492523" style="width: 192px; height: 159px;" title="" width="192" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345259"><img alt=" 2015-12-16 22-59-06-235.jpg" height="146" src="https://pic.pimg.tw/qupyqupy/1450492503-2732731138.jpg?v=1450492523" style="width: 170px; height: 146px;" title="" width="170" /></a></td> </tr> </tbody> </table> <p>蘿拉。</p> <p>是個非常毒舌又特別能講中要點的大姊人物，非常愛捉弄雷依，是隊伍中唯一能執行恢復魔法的單位，雖然攻防戰力不強，確實十分重要。</p> <table> <tbody> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162490"><img src="https://pic.pimg.tw/qupyqupy/1450140611-1571412048.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162547"><img alt=" 2015-12-14 23-50-23-824.jpg" src="https://pic.pimg.tw/qupyqupy/1450140615-1204320226.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194062"><img alt=" 2015-12-15 09-22-26-613.jpg" src="https://pic.pimg.tw/qupyqupy/1450185819-3414335035.jpg?v=1450185832" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162487"><img src="https://pic.pimg.tw/qupyqupy/1450140611-2201584068.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162544"><img alt=" 2015-12-14 23-49-20-703.jpg" src="https://pic.pimg.tw/qupyqupy/1450140614-621454130.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194065"><img alt=" 2015-12-15 09-21-35-530.jpg" src="https://pic.pimg.tw/qupyqupy/1450185819-4138842496.jpg?v=1450185832" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345232"><img alt=" 2015-12-16 22-58-37-585.jpg" height="153" src="https://pic.pimg.tw/qupyqupy/1450492501-234817047.jpg?v=1450492523" style="width: 170px; height: 153px;" title="" width="170" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345238" rel="color: rgb(17, 85, 204); text-decoration: underline;"><img alt=" 2015-12-16 22-58-41-404.jpg" height="148" src="https://pic.pimg.tw/qupyqupy/1450492501-864994844.jpg?v=1450492523" style="width: 174px; height: 148px;" title="" width="174" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345244"><img height="153" src="https://pic.pimg.tw/qupyqupy/1450492501-1432650106.jpg?v=1450492523" style="width: 180px; height: 153px;" title="" width="180" /></a></td> </tr> </tbody> </table> <p>米蘭達。</p> <p>曾被男人欺騙過感情，所以將自己武裝起來，但內心深處仍是個渴望愛的女人。也許是基於自己悲慘的遭遇所以對慕潔有份異常的責任感。隊伍中強大的攻防單位，在攻擊力方面甚至比主角還強大。</p> <table> <tbody> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162499"><img src="https://pic.pimg.tw/qupyqupy/1450140611-3610412086.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162532"><img src="https://pic.pimg.tw/qupyqupy/1450140613-46436819.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194029"><img src="https://pic.pimg.tw/qupyqupy/1450185814-2618714565.jpg?v=1450185831" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162502"><img src="https://pic.pimg.tw/qupyqupy/1450140612-1689507187.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162535"><img src="https://pic.pimg.tw/qupyqupy/1450140613-3971625165.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194026"><img src="https://pic.pimg.tw/qupyqupy/1450185814-2449879901.jpg?v=1450185831" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345298"><img height="135" src="https://pic.pimg.tw/qupyqupy/1450492506-530910375.jpg?v=1450492523" style="width: 169px; height: 135px;" title="" width="169" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345295" rel="color: rgb(17, 85, 204); text-decoration: underline;"><img height="137" src="https://pic.pimg.tw/qupyqupy/1450492506-2721345562.jpg?v=1450492523" style="width: 182px; height: 137px;" title="" width="182" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345313"><img height="152" src="https://pic.pimg.tw/qupyqupy/1450492507-1440426544.jpg?v=1450492523" style="width: 168px; height: 152px;" title="" width="168" /></a></td> </tr> </tbody> </table> <p>慕潔。</p> <p>魔法村的小孩，因為擁有強大的魔力而遭到村民的忌憚，不斷被村民追殺直到遇見米蘭達而跟在她身邊。雖然是魔法師，但是並沒有範圍攻擊，且防禦力極差，但能間接攻擊，算適合補刀的角色。</p> <table> <tbody> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162505"><img src="https://pic.pimg.tw/qupyqupy/1450140612-3420682542.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162559"><img src="https://pic.pimg.tw/qupyqupy/1450140615-2200315171.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194050"><img src="https://pic.pimg.tw/qupyqupy/1450185817-1131378777.jpg?v=1450185832" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162508"><img src="https://pic.pimg.tw/qupyqupy/1450140612-2673829070.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162562"><img src="https://pic.pimg.tw/qupyqupy/1450140615-129799389.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194053"><img alt=" 2015-12-15 09-19-17-473.jpg" src="https://pic.pimg.tw/qupyqupy/1450185817-3560607490.jpg?v=1450185831" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345286"><img alt=" 2015-12-16 22-59-22-837.jpg" height="126" src="https://pic.pimg.tw/qupyqupy/1450492504-155119518.jpg?v=1450492523" style="width: 147px; height: 126px;" title="" width="147" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345289" rel="color: rgb(17, 85, 204); text-decoration: underline;"><img alt=" 2015-12-16 22-59-24-787.jpg" height="155" src="https://pic.pimg.tw/qupyqupy/1450492505-4229873554.jpg?v=1450492523" style="width: 170px; height: 155px;" title="" width="170" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345292"><img alt=" 2015-12-16 22-59-27-368.jpg" height="160" src="https://pic.pimg.tw/qupyqupy/1450492505-1388360030.jpg?v=1450492523" style="width: 202px; height: 160px;" title="" width="202" /></a></td> </tr> </tbody> </table> <p>雪兒。</p> <p>黑暗妖精跟妖精的混血兒，初遇時她向雷依等人辯稱［自己不是黑暗妖精，只是比較黑而已］這句話頗有趣味。隊伍中攻擊範圍最大的角色，在後期用來狙擊敵方魔法師角色非常好用。</p> <table> <tbody> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162511"><img alt=" 2015-12-14 23-18-02-557.jpg" src="https://pic.pimg.tw/qupyqupy/1450140612-3056823620.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162565"><img alt=" 2015-12-14 23-52-25-615.jpg" src="https://pic.pimg.tw/qupyqupy/1450140615-1304116512.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194059"><img alt=" 2015-12-15 09-20-25-917.jpg" src="https://pic.pimg.tw/qupyqupy/1450185818-1294945735.jpg?v=1450185832" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162514"><img alt=" 2015-12-14 23-18-58-399.jpg" src="https://pic.pimg.tw/qupyqupy/1450140612-2436863367.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162568"><img alt=" 2015-12-14 23-51-27-291.jpg" src="https://pic.pimg.tw/qupyqupy/1450140615-1381906142.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194056"><img alt=" 2015-12-15 09-19-58-184.jpg" src="https://pic.pimg.tw/qupyqupy/1450185818-3153892404.jpg?v=1450185832" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345241"><img alt=" 2015-12-16 22-58-47-988.jpg" height="170" src="https://pic.pimg.tw/qupyqupy/1450492501-2604713184.jpg?v=1450492523" style="width: 150px; height: 170px;" title="" width="150" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345247" rel="color: rgb(17, 85, 204); text-decoration: underline;"><img alt=" 2015-12-16 22-58-52-441.jpg" height="164" src="https://pic.pimg.tw/qupyqupy/1450492502-3166590237.jpg?v=1450492523" style="width: 159px; height: 164px;" title="" width="159" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345250"><img alt=" 2015-12-16 22-58-56-253.jpg" height="157" src="https://pic.pimg.tw/qupyqupy/1450492502-1052299928.jpg?v=1450492523" style="width: 189px; height: 157px;" title="" width="189" /></a></td> </tr> </tbody> </table> <p>小忍。</p> <p>自己的親大哥為了將她訓練成一個殺人機器，而玩弄她的感情，是個有悲慘遭遇的角色。有著高移動力高攻擊力的特色，在戰場上的支援度相黨高。</p> <table> <tbody> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162523"><img alt=" 2015-12-14 23-25-48-034.jpg" src="https://pic.pimg.tw/qupyqupy/1450140613-894284283.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162553"><img alt=" 2015-12-14 23-48-14-402.jpg" src="https://pic.pimg.tw/qupyqupy/1450140614-456192716.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194023"><img alt=" 2015-12-15 09-17-58-569.jpg" src="https://pic.pimg.tw/qupyqupy/1450185814-3515373209.jpg?v=1450185831" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162520"><img alt=" 2015-12-14 23-23-56-323.jpg" src="https://pic.pimg.tw/qupyqupy/1450140612-2136253293.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162550"><img alt=" 2015-12-14 23-46-34-369.jpg" src="https://pic.pimg.tw/qupyqupy/1450140615-1007043830.jpg?v=1450140620" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206194020"><img alt=" 2015-12-15 09-17-21-649.jpg" src="https://pic.pimg.tw/qupyqupy/1450185814-2019850316.jpg?v=1450185831" title="" /></a></td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345268"><img alt=" 2015-12-16 22-59-11-052.jpg" height="121" src="https://pic.pimg.tw/qupyqupy/1450492503-1236234085.jpg?v=1450492523" style="width: 185px; height: 121px;" title="" width="185" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345271" rel="color: rgb(17, 85, 204); text-decoration: underline;"><img alt=" 2015-12-16 22-59-13-985.jpg" height="139" src="https://pic.pimg.tw/qupyqupy/1450492503-3161864051.jpg?v=1450492523" style="width: 182px; height: 139px;" title="" width="182" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345280"><img alt=" 2015-12-16 22-59-17-568.jpg" height="137" src="https://pic.pimg.tw/qupyqupy/1450492504-2324799280.jpg?v=1450492523" style="width: 193px; height: 137px;" title="" width="193" /></a></td> </tr> </tbody> </table>');
+    result.push('<table> <tbody> <tr> <td style="text-align: center;" width="33%">拉爾</td> <td style="text-align: center;" width="34%">米多</td> <td style="text-align: center;" width="33%">一半的王室徽章</td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162460"><img alt=" 2015-12-14 21-54-14-561.jpg" src="https://pic.pimg.tw/qupyqupy/1450140609-3340001871.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162469"><img alt=" 2015-12-14 21-54-21-093.jpg" src="https://pic.pimg.tw/qupyqupy/1450140609-2918905212.jpg?v=1450140619" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206162517"><img alt=" 2015-12-14 23-20-24-574.jpg" src="https://pic.pimg.tw/qupyqupy/1450140612-3032611214.jpg?v=1450140620" title="" /></a></td> </tr> <tr> <td style="padding:8px;">村子派出去尋找勇者的二人組之一，個性較為堅強，這也反應在角色的臉譜上。</td> <td style="padding:8px;">村子派出去尋找勇者的二人組之一，個性較為懦弱，本來還以為這個角色最後會出賣村子，但到遊戲後段反而沒啥戲份。</td> <td style="padding:8px;">雪兒持有的一半王室徽章，貌似甚麼重要的功用，才會引起妖精人馬的搶奪，但到遊戲最後都沒有說明。</td> </tr> <tr> <td> <p>&nbsp;</p> </td> <td>&nbsp;</td> <td>&nbsp;</td> </tr> <tr> <td style="text-align: center;">一半的王室徽章</td> <td style="text-align: center;">完整的王室徽章</td> <td style="text-align: center;">黑水晶</td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345211"><img alt=" 2015-12-16 22-49-18-609.jpg" src="https://pic.pimg.tw/qupyqupy/1450492500-316798688.jpg?v=1450492522" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345214"><img alt=" 2015-12-16 22-49-33-039.jpg" src="https://pic.pimg.tw/qupyqupy/1450492500-3662673951.jpg?v=1450492522" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345199"><img alt=" 2015-12-16 22-04-44-708.jpg" src="https://pic.pimg.tw/qupyqupy/1450492498-2698553121.jpg?v=1450492522" title="" /></a></td> </tr> <tr> <td>阿爾西所持有的另一半王市徽章。</td> <td>完整的王室徽章，也證明了阿爾西與雪兒之間的兄妹關係事實。</td> <td>能使黑魔龍復活的道具。</td> </tr> <tr> <td style="text-align: center;">白水晶</td> <td style="text-align: center;">阿爾西</td> <td style="text-align: center;">多肯</td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345205"><img alt=" 2015-12-16 22-06-57-574.jpg" src="https://pic.pimg.tw/qupyqupy/1450492498-643031861.jpg?v=1450492522" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345178"><img alt=" 2015-12-15 22-47-40-275.jpg" src="https://pic.pimg.tw/qupyqupy/1450492495-660623777.jpg?v=1450492522" title="" /></a></td> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345190"><img alt=" 2015-12-16 08-56-52-332.jpg" src="https://pic.pimg.tw/qupyqupy/1450492496-1244964694.jpg?v=1450492522" title="" /></a></td> </tr> <tr> <td>能封印黑魔龍的道具，但是必須犧牲一個人的性命。</td> <td>為了復活黑魔龍而當了多肯的手下，當取得黑水晶後背叛多肯，是個城府極深的傢伙。</td> <td>盜賊的首領，是一個沒腦的典型壞人。</td> </tr> <tr> <td style="text-align: center;">村子長老</td> <td>&nbsp;</td> <td>&nbsp;</td> </tr> <tr> <td style="text-align: center;"><a href="http://qupyqupy.pixnet.net/album/photo/206345172"><img alt=" 2015-12-15 22-10-49-872.jpg" src="https://pic.pimg.tw/qupyqupy/1450492495-3254124604.jpg?v=1450492522" title="" /></a></td> <td>&nbsp;</td> <td>&nbsp;</td> </tr> <tr> <td>村中的長老。</td> <td>&nbsp;</td> <td>&nbsp;</td> </tr> </tbody> </table>');
+    result.push('<p>以下是遊戲六種結局的懷念畫面，因為七人當中最後必然會犧牲兩人，而佛利茲已經佔去其中一個名額了，所以每個懷念畫面都有他。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206345154"><img alt="758243577_m.jpg" src="https://pic.pimg.tw/qupyqupy/1450492493-3951495622.jpg?v=1450492522" title="" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206345148"><img alt="758243592_m.jpg" src="https://pic.pimg.tw/qupyqupy/1450492492-3277857106.jpg?v=1450492522" title="" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206345145"><img alt="758243699_m.jpg" src="https://pic.pimg.tw/qupyqupy/1450492492-1208685121.jpg?v=1450492522" title="" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206345160"><img alt="758243758_m.jpg" src="https://pic.pimg.tw/qupyqupy/1450492493-2736317186.jpg?v=1450492522" title="" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206345157"><img alt="758243805_m.jpg" src="https://pic.pimg.tw/qupyqupy/1450492493-1143459680.jpg?v=1450492522" title="" /></a></div> <div class="global_divtd"><a href="http://qupyqupy.pixnet.net/album/photo/206345166"><img alt="758243880_m.jpg" src="https://pic.pimg.tw/qupyqupy/1450492494-3361311687.jpg?v=1450492522" title="" /></a></div> </div> </div> <div> <p>結局影片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Sn2GSDdGRCw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> </div> <p>破關後，開始選單會多出一個欣賞的選項，裡面有音樂欣賞 + CG 欣賞。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206345310"><img alt=" 2015-12-16 23-01-00-873.jpg" src="https://pic.pimg.tw/qupyqupy/1450492507-2285585623_n.jpg?v=1450492523" title="" /></a></p> <p>音樂欣賞介面。</p> <p><a href="http://qupyqupy.pixnet.net/album/photo/206345316"><img alt=" 2015-12-16 23-01-37-946.jpg" src="https://pic.pimg.tw/qupyqupy/1450492507-3949477918_n.jpg?v=1450492523" title="" /></a></p> <p>遊戲過場畫面影片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RiQgZniUBqc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('');
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
