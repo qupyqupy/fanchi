@@ -1,0 +1,237 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('鬼武者');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+    
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('遊戲介紹');
+      resultIdx.push('武器 戰術殼');
+      resultIdx.push('故事劇情');
+
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+	  result.push('<p><a href="https://qupyqupy.pixnet.net/album/photo/248252995"><img alt="Onimusha_ Warlords_20190331202054.jpg" src="https://pic.pimg.tw/qupyqupy/1561256109-3318878476_n.jpg" title="Onimusha_ Warlords_20190331202054.jpg" /></a></p> <p>鬼武者算是讓我非常有情懷的遊戲，在90年代惡靈古堡獲得大大成功之後，這類型的遊戲頓時間如雨後春筍一般迅速拓展開來，其中像是寄生前夜、沉默之丘、恐龍危機都是裡面的佼佼者，但是這些作品多半是以恐怖氣氛為主，對於驚悚遊戲有抗拒的玩家，多半都是買回來玩個一兩天就束之高閣了。</p> <p>然而鬼武者雖然也是面對鬼怪，但整體的氣氛從音樂開始都是塑造一種磅礡熱血的英雄故事，當然主角臉模請到金城武來擔當，在當時也是相當吸引人的地方。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248252989"><img alt="Onimusha_ Warlords_20190331202608.jpg" src="https://pic.pimg.tw/qupyqupy/1561256108-2370153608_n.jpg" title="Onimusha_ Warlords_20190331202608.jpg" /></a></p> <hr /> <p>也因為對鬼武者的情懷，當宣布要在PS4上復刻時我就一直在關注，不過在買回來開機進入的瞬間我就傻住了，雖然說是高清復刻，但是整體畫面跟PS2時的幾乎沒兩樣，看著<span class="global_name_span">左馬介</span>那可憐的小腳ㄚ，根本全部黏在一起啊。</p> <p>不過回頭想想，這才是卡普空的正常表現，惡靈古堡2那誠意滿滿的復刻才是奇蹟。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253001"><img alt="Onimusha_ Warlords_20190331203300.jpg" src="https://pic.pimg.tw/qupyqupy/1561256109-250010118_n.jpg" title="Onimusha_ Warlords_20190331203300.jpg" /></a></p> <p>這次的遊玩雖說是重溫舊夢，也讓我體驗了以前遊戲吸引人之處，首先因為硬體效能關係，所以所有的場景都是固定視角，跟現在大部分遊戲可以自由調整視角有很大的不同，在移動上有相當大的不便。</p> <p>但是這也是有好處的，因為視角大部分都是經過編排的，所以遊戲開發團隊對玩家的體驗掌握度是更大的，像是半俯瞰視角、由下而上的後背視角，這類衝擊性比較高的視覺設計就是現在大部分遊戲沒有的。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253004"><img alt="Onimusha_ Warlords_20190331203428.jpg" src="https://pic.pimg.tw/qupyqupy/1561256109-3944025417_n.jpg" title="Onimusha_ Warlords_20190331203428.jpg" /></a></p> <p>像這種浪漫的賞月畫面，在現今遊戲也是比較難看到的。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253013"><img alt="Onimusha_ Warlords_20190401235901.jpg" src="https://pic.pimg.tw/qupyqupy/1561256113-1983984954_n.jpg" title="Onimusha_ Warlords_20190401235901.jpg" /></a></p> <p>遊戲中螢石收集的要素讓當初我是邊行走邊按探索，深怕漏了一個就沒機會拿到了，尤其是當地獄之門出現以後，原本天守閣部分會崩塌，有些地區是再也進不去了。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253130"><img alt="Onimusha_ Warlords_20190609183753.jpg" src="https://pic.pimg.tw/qupyqupy/1561256142-4154448936_n.jpg" title="Onimusha_ Warlords_20190609183753.jpg" /></a></p> <p>這是最後進入幻魔本營的地獄之門，這種設計風格類似孔雀王漫畫的風格，既詭異又華麗。在電影版的孔雀王跟國產電影12生肖中，也大量使用類似的造型與色調做為魔王大本營的藍圖。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253025"><img alt="Onimusha_ Warlords_20190402002045.jpg" src="https://pic.pimg.tw/qupyqupy/1561256115-2726484664_n.jpg" title="Onimusha_ Warlords_20190402002045.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253028"><img alt="Onimusha_ Warlords_20190402002126.jpg" src="https://pic.pimg.tw/qupyqupy/1561256116-3504387481_n.jpg" title="Onimusha_ Warlords_20190402002126.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253055"><img alt="Onimusha_ Warlords_20190402002413.jpg" src="https://pic.pimg.tw/qupyqupy/1561256122-1920800918_n.jpg" title="Onimusha_ Warlords_20190402002413.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253034"><img alt="Onimusha_ Warlords_20190402002420.jpg" src="https://pic.pimg.tw/qupyqupy/1561256120-4099114944_n.jpg" title="Onimusha_ Warlords_20190402002420.jpg" /></a></div> </div> </div> <p>最後魔宮會不停生出怪的噁心肉團，這種設計彷彿魔宮不只是一個建築還帶有生命。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253037"><img alt="Onimusha_ Warlords_20190402002537.jpg" src="https://pic.pimg.tw/qupyqupy/1561256120-678694399_n.jpg" title="Onimusha_ Warlords_20190402002537.jpg" /></a></p> <p>遊戲最終的魔王，當初因為看不懂劇情，還覺得<span class="global_name_span">信長</span>變成這副模樣，畢竟遊戲一開始整個焦點都在<span class="global_name_span">信長</span>身上。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253049"><img alt="Onimusha_ Warlords_20190402003306.jpg" src="https://pic.pimg.tw/qupyqupy/1561256122-2942632851_n.jpg" title="Onimusha_ Warlords_20190402003306.jpg" /></a></p> <p>到最後結局動畫<span class="global_name_span">左馬介</span>變身成帥氣的鬼武者，當初網路不發達，曾經有傳言說破關10次都拿到鬼武者稱號的話，就可以操縱此一型態的<span class="global_name_span">左馬介</span>，這芭樂在當初浪費了我不少時間。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253064"><img alt="Onimusha_ Warlords_20190501123504.jpg" src="https://pic.pimg.tw/qupyqupy/1561256125-1029418790_n.jpg" title="Onimusha_ Warlords_20190501123504.jpg" /></a></p> <p>遊戲其中一個獎杯名稱挺有意思的，當初金城武在日本拍了一部連續劇叫做［神啊！請給我多一點時間！］這也是金城武翻紅的重要作品之一，這裡有點致敬這段歷史的意味。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253040"><img alt="Onimusha_ Warlords_20190402003912.jpg" src="https://pic.pimg.tw/qupyqupy/1561256121-1907777855_n.jpg" title="Onimusha_ Warlords_20190402003912.jpg" /></a></p> <hr /> <p>這熊貓裝在當時真是惡趣味，連笼手都變成可愛的造型，也讓遊玩時的感受有所不同，不過我個人是拿到後只玩到進天守閣就放棄了，真心太出戲。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253052"><img alt="Onimusha_ Warlords_20190402004209.jpg" src="https://pic.pimg.tw/qupyqupy/1561256123-3801592019_n.jpg" title="Onimusha_ Warlords_20190402004209.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253046"><img alt="Onimusha_ Warlords_20190402004338.jpg" src="https://pic.pimg.tw/qupyqupy/1561256122-850862937_n.jpg" title="Onimusha_ Warlords_20190402004338.jpg" /></a></div> </div> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253058"><img alt="Onimusha_ Warlords_20190402004501.jpg" src="https://pic.pimg.tw/qupyqupy/1561256123-3204099314_n.jpg" title="Onimusha_ Warlords_20190402004501.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253061"><img alt="Onimusha_ Warlords_20190402004618.jpg" src="https://pic.pimg.tw/qupyqupy/1561256125-2950088332_n.jpg" title="Onimusha_ Warlords_20190402004618.jpg" /></a></div> </div> </div> <p>鬼武者因為是惡靈古堡體系出生的，所以解謎的關卡不少，再次玩到時有點感動。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252992"><img alt="Onimusha_ Warlords_20190331204553.jpg" src="https://pic.pimg.tw/qupyqupy/1561256107-1069547727_n.jpg" title="Onimusha_ Warlords_20190331204553.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253007"><img alt="Onimusha_ Warlords_20190331212048.jpg" src="https://pic.pimg.tw/qupyqupy/1561256110-3573949864_n.jpg" title="Onimusha_ Warlords_20190331212048.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253010"><img alt="Onimusha_ Warlords_20190331212154.jpg" src="https://pic.pimg.tw/qupyqupy/1561256112-1061623669_n.jpg" title="Onimusha_ Warlords_20190331212154.jpg" /></a></div> </div> </div> <p>當初這個解除淹水的機關真的頗難，足足在這邊GG好幾次，這次遊玩意外的一次解。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253022"><img alt="Onimusha_ Warlords_20190331232607.jpg" src="https://pic.pimg.tw/qupyqupy/1561256115-2681475798_n.jpg" title="Onimusha_ Warlords_20190331232607.jpg" /></a></p> <p>跟<span class="global_name_span">左馬介</span>一起行動的女忍者<span class="global_name_span">楓</span>在當初的人氣是很旺的，尤其當年玩的都是日文版，還一度以為她跟<span class="global_name_span">左馬介</span>是一對。</p> <p>不過遊戲最後<span class="global_name_span">左馬介</span>很放心的把重傷的她放在一處房間裡，自己就跑去救<span class="global_name_span">雪姬</span>了，這段真是很不合理，在妖怪橫行的城內，這種行為無異送肉。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253019"><img alt="Onimusha_ Warlords_20190402001839.jpg" src="https://pic.pimg.tw/qupyqupy/1561256114-2680357168_n.jpg" title="Onimusha_ Warlords_20190402001839.jpg" /></a></p> <p><span class="global_name_span">楓</span>的最強武器。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253016"><img alt="Onimusha_ Warlords_20190401230224.jpg" src="https://pic.pimg.tw/qupyqupy/1561256114-3331113755_n.jpg" title="Onimusha_ Warlords_20190401230224.jpg" /></a></p> <hr /> <p><span class="global_name_span">總嚴</span>該是一開始擋在地下寺院門口的木乃伊。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253073"><img alt="Onimusha_ Warlords_20190519094801.jpg" src="https://pic.pimg.tw/qupyqupy/1561256127-1812051859_n.jpg" title="Onimusha_ Warlords_20190519094801.jpg" /></a></p> <p><span class="global_name_span">最妙</span>將幻魔入侵後的所見所聞都畫在紙上供後人得知，然而他的最後下落卻是沒細說，我覺得看著這些最妙之書記載的事情，<span class="global_name_span">最妙</span>最後其實已經有些思想偏差，也許入了幻魔陣營也不一定。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253067"><img alt="Onimusha_ Warlords_20190519094923.jpg" src="https://pic.pimg.tw/qupyqupy/1561256127-2686808369_n.jpg" title="Onimusha_ Warlords_20190519094923.jpg" /></a></p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253079"><img alt="Onimusha_ Warlords_20190519095800.jpg" src="https://pic.pimg.tw/qupyqupy/1561256128-186835759_n.jpg" title="Onimusha_ Warlords_20190519095800.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253076"><img alt="Onimusha_ Warlords_20190519095824.jpg" src="https://pic.pimg.tw/qupyqupy/1561256128-3082244682_n.jpg" title="Onimusha_ Warlords_20190519095824.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253082"><img alt="Onimusha_ Warlords_20190519100722.jpg" src="https://pic.pimg.tw/qupyqupy/1561256129-852293530_n.jpg" title="Onimusha_ Warlords_20190519100722.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252986"><img alt="bandicam 2019-06-23 10-00-13-562.jpg" src="https://pic.pimg.tw/qupyqupy/1561256104-4284245474_n.jpg" title="bandicam 2019-06-23 10-00-13-562.jpg" /></a></div> </div> </div> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253091"><img alt="Onimusha_ Warlords_20190526125620.jpg" src="https://pic.pimg.tw/qupyqupy/1561256132-4178814106_n.jpg" title="Onimusha_ Warlords_20190526125620.jpg" /></a></p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253112"><img alt="Onimusha_ Warlords_20190609112236.jpg" src="https://pic.pimg.tw/qupyqupy/1561256139-1984587017_n.jpg" title="Onimusha_ Warlords_20190609112236.jpg" /></a></p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253124"><img alt="Onimusha_ Warlords_20190609115401.jpg" src="https://pic.pimg.tw/qupyqupy/1561256141-1798209825_n.jpg" title="Onimusha_ Warlords_20190609115401.jpg" /></a></p> <p>以下文件有極大可能是遊戲中會遇到的幻魔科學家<span class="global_name_span">基爾丹斯坦</span>所著。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253031"><img alt="Onimusha_ Warlords_20190402002136.jpg" src="https://pic.pimg.tw/qupyqupy/1561256117-3195424351_n.jpg" title="Onimusha_ Warlords_20190402002136.jpg" /></a></p> <p>紅之書。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253085"><img alt="Onimusha_ Warlords_20190526125726.jpg" src="https://pic.pimg.tw/qupyqupy/1561256131-3483835805_n.jpg" title="Onimusha_ Warlords_20190526125726.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253094"><img alt="Onimusha_ Warlords_20190526125751.jpg" src="https://pic.pimg.tw/qupyqupy/1561256132-4039756740_n.jpg" title="Onimusha_ Warlords_20190526125751.jpg" /></a></div> </div> </div> <p>藍之書。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248253088"><img alt="Onimusha_ Warlords_20190526131111.jpg" src="https://pic.pimg.tw/qupyqupy/1561256131-2700404181_n.jpg" title="Onimusha_ Warlords_20190526131111.jpg" /></a></p> <p>碧之書。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253100"><img alt="Onimusha_ Warlords_20190526131254.jpg" src="https://pic.pimg.tw/qupyqupy/1561256134-3109925506_n.jpg" title="Onimusha_ Warlords_20190526131254.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253097"><img alt="Onimusha_ Warlords_20190526131319.jpg" src="https://pic.pimg.tw/qupyqupy/1561256133-2727201721_n.jpg" title="Onimusha_ Warlords_20190526131319.jpg" /></a></div> </div> </div> <p>澄之書。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253109"><img alt="Onimusha_ Warlords_20190526131334.jpg" src="https://pic.pimg.tw/qupyqupy/1561256137-527119971_n.jpg" title="Onimusha_ Warlords_20190526131334.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253106"><img alt="Onimusha_ Warlords_20190526131353.jpg" src="https://pic.pimg.tw/qupyqupy/1561256137-4268640504_n.jpg" title="Onimusha_ Warlords_20190526131353.jpg" /></a></div> </div> </div> <p>白之書。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253118"><img alt="Onimusha_ Warlords_20190526131848.jpg" src="https://pic.pimg.tw/qupyqupy/1561256137-1361515308_n.jpg" title="Onimusha_ Warlords_20190526131848.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253103"><img alt="Onimusha_ Warlords_20190526131918.jpg" src="https://pic.pimg.tw/qupyqupy/1561256135-2921934364_n.jpg" title="Onimusha_ Warlords_20190526131918.jpg" /></a></div> </div> </div> <p>幻魔啟示錄。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253115"><img alt="Onimusha_ Warlords_20190526132020.jpg" src="https://pic.pimg.tw/qupyqupy/1561256138-811839319_n.jpg" title="Onimusha_ Warlords_20190526132020.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253127"><img alt="Onimusha_ Warlords_20190609120538.jpg" src="https://pic.pimg.tw/qupyqupy/1561256141-74134573_n.jpg" title="Onimusha_ Warlords_20190609120538.jpg" /></a></div> </div> </div>');
+    result.push('<p>武器跟戰術殼的部分算是我覺得鬼武者一代成功的系統，明確定義了武器的特性，在戰鬥中視地形敵人切換適用的武器，讓玩家在操作上有一定的爽度，當然配上一閃系統更有武士對決的感覺。</p> <p>遊戲中最強的昆沙門劍，可惜拿到時已經接近尾聲，並不能完全體會出他到底強到甚麼程度。</p> <p><a href="https://qupyqupy.pixnet.net/album/photo/248252980"><img alt="bandicam 2019-06-22 19-27-14-795.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-456602714.jpg" title="bandicam 2019-06-22 19-27-14-795.jpg" /></a></p> <p>要拿到昆沙門劍必須在進入最後魔宮之前，先進入魔空空間取得昆沙門笛才可以在最後魔宮中拿取。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252998"><img alt="Onimusha_ Warlords_20190331210759.jpg" src="https://pic.pimg.tw/qupyqupy/1561256109-4183028784_n.jpg" title="Onimusha_ Warlords_20190331210759.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253070"><img alt="Onimusha_ Warlords_20190501122359.jpg" src="https://pic.pimg.tw/qupyqupy/1561256127-3859624866_n.jpg" title="Onimusha_ Warlords_20190501122359.jpg" /></a></div> </div> </div> <p>遊戲中的鬼魂模式全破的話，就可以在本傳遊戲一開始就拿取昆沙門之劍，不過因為太耗時，我一直都沒碰過。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253139"><img alt="Onimusha_ Warlords_20190609191656.jpg" src="https://pic.pimg.tw/qupyqupy/1561256144-4245300411_n.jpg" title="Onimusha_ Warlords_20190609191656.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248253142"><img alt="Onimusha_ Warlords_20190609191803.jpg" src="https://pic.pimg.tw/qupyqupy/1561256144-2840345740_n.jpg" title="Onimusha_ Warlords_20190609191803.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252923"><img alt="bandicam 2019-06-22 19-16-06-410.jpg" src="https://pic.pimg.tw/qupyqupy/1561256099-17637389.jpg" title="bandicam 2019-06-22 19-16-06-410.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252944"><img alt="bandicam 2019-06-22 19-18-37-008.jpg" src="https://pic.pimg.tw/qupyqupy/1561256100-2500513865.jpg" title="bandicam 2019-06-22 19-18-37-008.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252977"><img alt="bandicam 2019-06-22 19-25-57-921.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-2440528310.jpg" title="bandicam 2019-06-22 19-25-57-921.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252926"><img alt="bandicam 2019-06-22 19-17-10-711.jpg" src="https://pic.pimg.tw/qupyqupy/1561256099-2223595559.jpg" title="bandicam 2019-06-22 19-17-10-711.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252947"><img alt="bandicam 2019-06-22 19-17-27-398.jpg" src="https://pic.pimg.tw/qupyqupy/1561256099-1435852248.jpg" title="bandicam 2019-06-22 19-17-27-398.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252971"><img alt="bandicam 2019-06-22 19-20-02-433.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-1294342393.jpg" title="bandicam 2019-06-22 19-20-02-433.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252920"><img alt="bandicam 2019-06-22 19-17-00-777.jpg" src="https://pic.pimg.tw/qupyqupy/1561256099-2908770146.jpg" title="bandicam 2019-06-22 19-17-00-777.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252935"><img alt="bandicam 2019-06-22 19-18-28-477.jpg" src="https://pic.pimg.tw/qupyqupy/1561256100-2167739575.jpg" title="bandicam 2019-06-22 19-18-28-477.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252965"><img alt="bandicam 2019-06-22 19-23-41-363.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-1863296380.jpg" title="bandicam 2019-06-22 19-23-41-363.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252929"><img alt="bandicam 2019-06-22 19-17-15-424.jpg" src="https://pic.pimg.tw/qupyqupy/1561256100-1151753811.jpg" title="bandicam 2019-06-22 19-17-15-424.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252932"><img alt="bandicam 2019-06-22 19-17-58-571.jpg" src="https://pic.pimg.tw/qupyqupy/1561256100-3887845314.jpg" title="bandicam 2019-06-22 19-17-58-571.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252962"><img alt="bandicam 2019-06-22 19-21-51-988.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-574132659.jpg" title="bandicam 2019-06-22 19-21-51-988.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252938"><img alt="bandicam 2019-06-22 19-19-35-201.jpg" src="https://pic.pimg.tw/qupyqupy/1561256100-2478669747.jpg" title="bandicam 2019-06-22 19-19-35-201.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252959"><img alt="bandicam 2019-06-22 19-24-50-087.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-1760942931.jpg" title="bandicam 2019-06-22 19-24-50-087.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252968"><img alt="bandicam 2019-06-22 19-25-25-630.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-217947480.jpg" title="bandicam 2019-06-22 19-25-25-630.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252941"><img alt="bandicam 2019-06-22 19-19-38-309.jpg" src="https://pic.pimg.tw/qupyqupy/1561256100-4135900857.jpg" title="bandicam 2019-06-22 19-19-38-309.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252950"><img alt="bandicam 2019-06-22 19-19-47-129.jpg" src="https://pic.pimg.tw/qupyqupy/1561256100-1111536236.jpg" title="bandicam 2019-06-22 19-19-47-129.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252983"><img alt="bandicam 2019-06-22 19-26-12-127.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-3385607636.jpg" title="bandicam 2019-06-22 19-26-12-127.jpg" /></a></div> </div> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252953"><img alt="bandicam 2019-06-22 19-21-05-182.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-2599908433.jpg" title="bandicam 2019-06-22 19-21-05-182.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252956"><img alt="bandicam 2019-06-22 19-21-09-925.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-3452268291.jpg" title="bandicam 2019-06-22 19-21-09-925.jpg" /></a></div> <div class="global_divtd"><a href="https://qupyqupy.pixnet.net/album/photo/248252974"><img alt="bandicam 2019-06-22 19-25-41-706.jpg" src="https://pic.pimg.tw/qupyqupy/1561256102-1365076931.jpg" title="bandicam 2019-06-22 19-25-41-706.jpg" /></a></div> </div> </div>');
+    result.push('<p><span class="global_name_span">左馬介</span>收到<span class="global_name_span">雪姬</span>的求救來信，因此來到了稻葉山城。沒想到才跟<span class="global_name_span">雪姬</span>碰面就被一個巨大怪物打至昏迷，<span class="global_name_span">雪姬</span>也因此被怪物帶走。</p> <p><span class="global_name_span">左馬介</span>在昏迷中繼承了鬼之一族的力量，自此總算獲得與幻魔一拼的實力。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4y8W6Idpfb0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>來到城內擊敗了巨型幻魔後，<span class="global_name_span">左馬介</span>遇到了一個名為<span class="global_name_span">基爾丹斯坦</span>的幻魔科學家，匆匆一督後<span class="global_name_span">左馬介</span>繼續往前。</p> <p>甫進主城就看到<span class="global_name_span">豐臣秀吉</span>在抓著一個名為<span class="global_name_span">夢丸</span>的小孩，此時<span class="global_name_span">夢丸</span>趁著兩人分心之際逃走了，而<span class="global_name_span">左馬介</span>與<span class="global_name_span">豐臣秀吉</span>一陣交談後也不歡而散。</p> <p>繼續往前遇到<span class="global_name_span">楓</span>正追著<span class="global_name_span">夢丸</span>，然而<span class="global_name_span">夢丸</span>並不信任兩人所以掙脫逃走了，把<span class="global_name_span">夢丸</span>託付給<span class="global_name_span">楓</span>後，<span class="global_name_span">左馬介</span>繼續往城內探索尋找<span class="global_name_span">雪姬</span>的下落。</p> <div class="global_ps_text"> <p>夢丸其實就是日後的名將前田慶次。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yzcFz5ofVVQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">左馬介</span>在城內又遇見<span class="global_name_span">豐臣秀吉</span>，並從他口中得知再過不久暗黑儀式便要展開，這也代表了<span class="global_name_span">雪姬</span>即將成為<span class="global_name_span">織田信長</span>野心下的犧牲品。</p> <p>繼續往前找到<span class="global_name_span">夢丸</span>後，此時一個婢女前來告知<span class="global_name_span">雪姬</span>的下落，然而沒想到這是<span class="global_name_span">豐臣秀吉</span>的陷阱，於是<span class="global_name_span">左馬介</span>被困住，而<span class="global_name_span">楓</span><span class="global_name_span">夢丸</span>也被假的<span class="global_name_span">左馬介</span>襲擊，<span class="global_name_span">夢丸</span>因此被帶走。</p> <div class="global_ps_text"> <p>暗黑儀式必須讓雪姬先陷入絕望與憎恨之中，再將幻魔之力注入其血液之中，讓織田信長在此時喝下藉此與幻魔締結契約獲得力量，所以豐臣秀吉要捉夢丸的理由就是因為夢丸是雪姬珍愛之人。</p> </div> <div class="global_ps_text"> <p>以前的遊戲真的劇情上有許多不合理處，如果我是豐臣秀吉不會只打昏楓，要嘛就地解決、要嘛一起抓走，絕對不會留著她一命在城內到處亂晃。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KXEdLm_bksQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>醒來的<span class="global_name_span">楓</span>找到了<span class="global_name_span">雪姬</span>，但可惜被<span class="global_name_span">基爾丹斯坦</span>提前一步帶走，眼見救雪姬無望，<span class="global_name_span">楓</span>決定先找到<span class="global_name_span">左馬介</span>。</p> <p>另一邊醒來的<span class="global_name_span">左馬介</span>，在擊敗自己的冒牌貨後，總算找到<span class="global_name_span">夢丸</span>，但<span class="global_name_span">夢丸</span>卻眼睜睜在眼前被另一個昆蟲型態的幻魔帶到幻魔世界，隨即在大門前出現了一道結界，此時<span class="global_name_span">楓</span>也來到此地，兩人決定分開尋找解開結界的方法。</p> <div class="global_ps_text"> <p>這名昆蟲幻魔叫做赫庫芭，是少數能召喚地獄門的高等幻魔。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RA1cHj3Xxa8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">左馬介</span>擊敗<span class="global_name_span">赫庫芭</span>取得了破魔弓，<span class="global_name_span">楓</span>也拿到了破魔箭，然而強大的爆炸讓<span class="global_name_span">楓</span>受了重傷，<span class="global_name_span">左馬介</span>將其安置好後，便獨自前往幻魔的世界。</p> <div class="global_ps_text"> <p>雖然說是安置，但其實就是找個沒有防禦能力的房間把楓放在那邊自生自滅，這段劇情也是早期遊戲不合理之處。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pXiZGqOttUs?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">左馬介</span>破除結界之後，在迷宮深處化身鬼武者擊敗了幻魔王，然而此戰過後卻失去了蹤跡。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4YQTaKSLP1w?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('');
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
