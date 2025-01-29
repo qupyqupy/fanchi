@@ -1,0 +1,261 @@
+<style type="text/css">
+  .people_title {
+  text-align: left;
+  font-weight: bold;
+  width: 50%;
+}
+.ps_text {
+  border: 5px dashed lightblue;
+  padding: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('太空戰士VI(SFC)');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var resultIdx = [];
+  		resultIdx.push('');
+  		resultIdx.push('遊戲介紹');
+      resultIdx.push('過場情節畫面');
+      resultIdx.push('全召喚獸, 頭目');
+
+  		return resultIdx;
+  	}
+  	var result = [] ;
+	  result.push('');
+    result.push('<p>太空戰士６是我接觸的第一款超任ＲＰＧ遊戲，在這之前我對角色扮演可以說充滿排斥感。雖然語言不通，但是看著遊戲中的人物富有表情的小動作，還有充滿奇想的世界慢慢引發了我玩下去的動力。</p> <p>主要是登場的１４個人物各有各的特殊能力，這點比起五代而言好多了，有玩過五代的都知道五代是用轉職系統在角色的能力上面加強，這點固然不錯，但是六代把各種職業變成一個個具有故事的角色，那是更棒的一件事情，尤其像是卡烏這種可以習得敵方技巧的角色，更是讓我在獸之原呆上一整天也不會無聊。</p> <hr /> <p>這是遊戲封面。</p> <p><img alt="51b0848109719f161a08b7cf82e6b174.JPG" src="https://pic.pimg.tw/qupyqupy/1457231213-923995642.jpg?v=1457231785" title="51b0848109719f161a08b7cf82e6b174.JPG" /></p> <p>這是遊戲背面。</p> <p>看到大容量２４ＭＢ，我就很佩服以前製作遊戲的人，可以用那麼小的容量作一個完整的遊戲，完成度真的很高，現在遊戲動不動就破２Ｇ，但完成度可能還比不上以前的這些老遊戲。</p> <p><img alt="7c1c9fcaaa86fd70eef425f2e8b08668.JPG" src="https://pic.pimg.tw/qupyqupy/1457231213-3745909423.jpg?v=1457231785" title="7c1c9fcaaa86fd70eef425f2e8b08668.JPG" /></p> <p>這是遊戲開頭畫面。</p> <p><img alt="44e67d2f3016dad1fbecfeed7e57b85d.JPG" src="https://pic.pimg.tw/qupyqupy/1457231214-3937132204.jpg?v=1457231785" title="44e67d2f3016dad1fbecfeed7e57b85d.JPG" /></p> <p>遊戲開頭動畫影片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/C1KIRqWAZu8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <hr /> <p>故事方面！可以分成兩大部分，世界崩壞前與崩壞後。</p> <ul> <li>崩壞前的故事：<br /> 主要是敘述帝國與反帝國的回歸者組織之間的對抗，而蒂娜就變成了兩股勢力之間平衡的重要棋子，最後藉著蒂娜的能力開啟封魔璧，幻獸群起而出毀滅了帝國，不過卻在帝王的計謀下將幻獸變成魔石，並且為了取得傳說中三鬥神的力量，將魔大陸重現。在魔大陸上，帝國的傑夫卡背叛了帝王，並且取得了三鬥神的力量毀滅了世界。</li> <li>崩壞後的故事：<br /> 眾角色在世界崩壞後，又再度聚集在一起，最終將傑夫卡打敗同時魔法與幻獸也因為三鬥神力量的消失，一同流逝在世界的彼端。而在崩壞後集合夥伴的過程中，也是遊戲相當用心的部分，深刻解析每個夥伴的心理層面，每個人都有他不願意面對或是失去動力的來源，藉由解決各種事件來喚醒各角色動力的這部分是我覺得這代最成功的地方。</li> </ul> <p>另外遊戲的經典喬段非常多，像是崩壞前的歌劇院、傑夫卡的奸笑、幻獸大出籠後被群滅化為魔石、艾德馬修兩兄弟的無俚頭對話、大章魚的追擊、卡烏與父親相認．．．．．．．實在太多了，而且每個印象都十分的清晰，真的是不可多得的好作品。</p> <p>太空戰士遊戲中，我最喜歡的就是他多樣的交通工具，包括了陸行鳥、船、飛龍、飛空艇，當中最喜歡就是搭著飛空艇在世界亂飛的感覺，下圖右方就是飛空艇，這代在世界崩壞前跟崩壞後可駕駛的飛空艇造型不一樣。下圖是西傑亞他朋友的飛空艇，而他自己的則在逃離魔大陸時壞掉了。</p> <p><img alt="d7bf5ca80b172f967dbcfd4e3b8b35bd.PNG" src="https://pic.pimg.tw/qupyqupy/1457231214-2106802364.png?v=1457231785" title="d7bf5ca80b172f967dbcfd4e3b8b35bd.PNG" /></p> <p>飛空艇內彷彿玩家的小基地一樣，所有的夥伴都會在這邊。</p> <p><img alt="dc182cc955191a6ea62a7548e21a29e7.PNG" src="https://pic.pimg.tw/qupyqupy/1457231214-105184880.png?v=1457231785" title="dc182cc955191a6ea62a7548e21a29e7.PNG" /></p> <p>另外一個交通工具陸行鳥，除了在城鎮中有租用的商店以外，在野外也有許多隱藏的陸行鳥租用店。</p> <p><img alt="9ce2219c5880ddbd6f2015fa252e070b.PNG" src="https://pic.pimg.tw/qupyqupy/1457231214-2322204451.png?v=1457231785" title="9ce2219c5880ddbd6f2015fa252e070b.PNG" /></p> <p>雖然比不上飛空艇亂飛的快感，但是在遊戲前期，也是相當方便的工具。</p> <p><img alt="553410fb2e635af4e00ec1347e9b243a.PNG" src="https://pic.pimg.tw/qupyqupy/1457231215-848718324.png?v=1457231785" title="553410fb2e635af4e00ec1347e9b243a.PNG" /></p> <p>遊戲中也有紀錄點的設置，除了在大原野以外，如果在迷宮內沒有紀錄點是無法進行遊戲儲存。下圖人物上方的光點就是紀錄點。</p> <p><img alt="7ba77e0df5106d0134b6e9ef715a0c84.PNG" src="https://pic.pimg.tw/qupyqupy/1457231219-4109243032_n.png?v=1457231785" title="7ba77e0df5106d0134b6e9ef715a0c84.PNG" /></p> <p>在紀錄點除了可以進行儲存以外，如果有帳棚道具，也可以直接搭帳棚進行休息。在迷宮內這部分相當重要，尤其是最後一關瓦礫之塔迷宮，相當耗費時間，遇到的敵人又十分強勁，魔力、體力的消耗更是非比尋常。</p> <p><img alt="374fdb1e94be34b498a4f7ad92d4f5a8.PNG" src="https://pic.pimg.tw/qupyqupy/1457231220-4272167963_n.png?v=1457231785" title="374fdb1e94be34b498a4f7ad92d4f5a8.PNG" /></p> <p>下圖是我認為這次遊戲讓我印象最深的地方，就是分組戰鬥。</p> <p>由於加入的角色非常多，但是一次隊伍裡面只能有四個人，這種設定通常會讓玩家固定玩四種角色，而忽略了其他角色的培養，但是這次有分組戰鬥的遊戲方式，像是遊戲前期的那魯雪攻防戰或是最後一關的瓦礫之塔，都必須將現有的夥伴分成三組來進行，強迫玩家一定要培養所有角色，但這同時玩家也能體驗每個角色的優缺點，這點在ＲＰＧ中，我覺得是相當不錯的設計。</p> <p><img alt="2ec2914a0da008976e0c00212e5033f7.PNG" src="https://pic.pimg.tw/qupyqupy/1457231218-3030365914.png?v=1457231785" title="2ec2914a0da008976e0c00212e5033f7.PNG" /></p> <p>下圖是本代的一大特點，魔石系統。</p> <p>雖然本代已經將五代繁多的職業，分成每個角色固定的特殊能力，但是在魔法方面則是以魔石系統呈現，遊戲中可以得到許多幻獸變成的魔石，一方面可以藉由戰鬥招喚這些魔石代表的招喚獸，也可以藉由裝備魔石學習相關魔法。裝備魔石時，在畫面上可以看到可學習的魔法種類與學習的狀況，當學習到達１００％的時候，這角色便能應用該魔法。</p> <p><img alt="9fcf30558a48ce8ae306c0a66c184002.PNG" src="https://pic.pimg.tw/qupyqupy/1457231219-3712116692.png?v=1457231785" title="9fcf30558a48ce8ae306c0a66c184002.PNG" /></p> <p>下圖是戰鬥畫面，太空戰士獨創的計時即時戰鬥系統跟當時熱門的勇者鬥惡龍回合制戰鬥相比可以說是相當創新。</p> <p>後來我國國產遊戲也有許多仿造這樣的即時戰鬥，像是妖魔道、軒轅劍三等等。另外各角色的特殊技能使用也頗具創新，像是馬修的必殺技就必須像是在玩格鬥遊戲一樣在那邊搓絕招、西傑亞的特殊技能竟然要用吃角子老虎來決定技能的效果，這些在當時角色扮演遊戲裡面都可以說是前無古人的創意。</p> <p><img alt="2fe21e8e66312768e29d43411149877a.PNG" src="https://pic.pimg.tw/qupyqupy/1457231221-3637932038.png?v=1457231785" title="2fe21e8e66312768e29d43411149877a.PNG" /></p> <hr /> <p>下面是人物的介紹。</p> <p>遊戲中會加入的人物不只１４員，不過少數為因應劇情的關係死亡或是離開，如：帝國將軍雷歐、回歸者組織巴南、一開始的兩個帝國士兵等等，所以只以可以參加最後一戰的１４位角色為主。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd people_title">蒂娜，遊戲中的女主角，是人類與幻獸結合產下的女孩。</div> <div class="global_divtd people_title">洛克，為了復活以前的女友而成為財寶獵人。</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="7320405fbe14d73ebe72452ccecd0753.JPG" src="https://pic.pimg.tw/qupyqupy/1457231220-3752317594.jpg?v=1457231785" title="7320405fbe14d73ebe72452ccecd0753.JPG" /></div> <div class="global_divtd"><img alt="04ae8546ffae8efcb91b2108fc1e6365.JPG" src="https://pic.pimg.tw/qupyqupy/1457231230-2499610427.jpg?v=1457231785" title="04ae8546ffae8efcb91b2108fc1e6365.JPG" /></div> </div> <div class="global_divtr people_title"> <div class="global_divtd people_title">句句，以模仿為生存力量的模仿師。</div> <div class="global_divtd people_title">雪男，莫古里的小弟。</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="2cde0f12f997d10861c629c5586335a3.JPG" src="https://pic.pimg.tw/qupyqupy/1457231223-1829227788.jpg?v=1457231785" title="2cde0f12f997d10861c629c5586335a3.JPG" /></div> <div class="global_divtd"><img alt="d932a0bb99dc03b9180e1ae821302637.JPG" src="https://pic.pimg.tw/qupyqupy/1457231223-3359629248.jpg?v=1457231785" title="d932a0bb99dc03b9180e1ae821302637.JPG" /></div> </div> <div class="global_divtr people_title"> <div class="global_divtd people_title">艾德，馬修的哥哥，是費洛加的城主。</div> <div class="global_divtd people_title">馬修，艾德的弟弟。</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="99449066782e5d5e07732e1532923bb4.JPG" src="https://pic.pimg.tw/qupyqupy/1457231222-2837972172.jpg?v=1457231785" title="99449066782e5d5e07732e1532923bb4.JPG" /></div> <div class="global_divtd"><img alt="d128389b0cb509d370c6be8ce4d580d1.JPG" src="https://pic.pimg.tw/qupyqupy/1457231223-2497197773.jpg?v=1457231786" title="d128389b0cb509d370c6be8ce4d580d1.JPG" /></div> </div> <div class="global_divtr people_title"> <div class="global_divtd people_title">影忍，他的真實身分似乎與莉露姆有關。遊戲最後要逃出傑夫卡瓦礫之塔時，他選擇留下，並沒有跟著眾人一起逃出去，彷彿是爲了贖罪。</div> <div class="global_divtd people_title">莎莉斯，帝國的女將軍。</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="762dad2b8f4f9d3f54763cf680eed0a8.JPG" src="https://pic.pimg.tw/qupyqupy/1457231224-1213712621.jpg?v=1457231786" title="762dad2b8f4f9d3f54763cf680eed0a8.JPG" /></div> <div class="global_divtd"><img alt="108ef995ef30e6d2199b42de59d828e1.JPG" src="https://pic.pimg.tw/qupyqupy/1457231227-3297743849.jpg?v=1457231786" title="108ef995ef30e6d2199b42de59d828e1.JPG" /></div> </div> <div class="global_divtr people_title"> <div class="global_divtd people_title">加源，異國的武士，家人被傑夫卡用毒給害死。</div> <div class="global_divtd people_title">卡烏，獸之原遇到的少年，遊戲中有一段他跟親生父親相認的情節，不過結果．．．</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="a4d5ecea53704c64eaf0fc54555b77f8.JPG" src="https://pic.pimg.tw/qupyqupy/1457231224-2839670219.jpg?v=1457231786" title="a4d5ecea53704c64eaf0fc54555b77f8.JPG" /></div> <div class="global_divtd"><img alt="835eb3333d1f6c906ec5884826c1efec.JPG" src="https://pic.pimg.tw/qupyqupy/1457231226-2391446540.jpg?v=1457231786" title="835eb3333d1f6c906ec5884826c1efec.JPG" /></div> </div> <div class="global_divtr people_title"> <div class="global_divtd people_title">西傑亞，飛空艇的擁有者，在崩壞後取得第二個飛空艇時可以知道他的過去，還有位與他一起追求翱翔空中夢想的夥伴，不過卻因為事故去世了。</div> <div class="global_divtd people_title">斯特拉格斯，莉露姆的爺爺。</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="43f749326f213641652ccfbd91f293e2.JPG" src="https://pic.pimg.tw/qupyqupy/1457231225-3435773109.jpg?v=1457231786" title="43f749326f213641652ccfbd91f293e2.JPG" /></div> <div class="global_divtd"><img alt="dedf0eaedcd102e2140d32291bf1fb66.JPG" src="https://pic.pimg.tw/qupyqupy/1457231226-4132003627.jpg?v=1457231786" title="dedf0eaedcd102e2140d32291bf1fb66.JPG" /></div> </div> <div class="global_divtr people_title"> <div class="global_divtd people_title">莉露姆，似乎跟影忍有所關係，證據是影忍的狗狗很親近他。</div> <div class="global_divtd people_title">莫古里，遊戲中的創意角色，我當初也是被這角色的造型給吸引到的，在太空戰士１３之２中有很多的戲份演出。</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="ed18d49553c23db1f79dd80253eab1b5.JPG" src="https://pic.pimg.tw/qupyqupy/1457231226-7806337.jpg?v=1457231786" title="ed18d49553c23db1f79dd80253eab1b5.JPG" /></div> <div class="global_divtd"><img alt="fb2d8dd3c59dc077f396421a19d2c92b.JPG" src="https://pic.pimg.tw/qupyqupy/1457231227-11917475.jpg?v=1457231786" title="fb2d8dd3c59dc077f396421a19d2c92b.JPG" /></div> </div> </div>');
+	  result.push('<p>下面是遊戲中的過場情節畫面。</p> <p>這是一開始蒂娜被帝國操縱，前去攻打那魯雪。</p> <p><img alt="9dd152460cbe8f11ec69a0951ef38a82.JPG" src="https://pic.pimg.tw/qupyqupy/1457231227-76591224.jpg?v=1457231786" title="9dd152460cbe8f11ec69a0951ef38a82.JPG" /></p> <p>馬修跳下瀑布的豪邁舉動。</p> <p><img alt="260410a15a265cd2ff1157a819a1b3dd.JPG" src="https://pic.pimg.tw/qupyqupy/1457231228-2460124309.jpg?v=1457231786" title="260410a15a265cd2ff1157a819a1b3dd.JPG" /></p> <p>傑夫卡帶著帝國士兵，前去攻打那魯雪。</p> <p><img alt="22e94377fc4795808f46fdab21f7494f.JPG" src="https://pic.pimg.tw/qupyqupy/1457231230-2274003409.jpg?v=1457231786" title="22e94377fc4795808f46fdab21f7494f.JPG" /></p> <p>冰之幻獸與帝娜第一次產生感應。</p> <p><img alt="b9a899a7848f7f825755d02f30842060.JPG" src="https://pic.pimg.tw/qupyqupy/1457231231-178052034.jpg?v=1457231786" title="b9a899a7848f7f825755d02f30842060.JPG" /></p> <p>恢復幻獸之身的蒂娜，因為控制不住力量，到處亂飛。</p> <p><img alt="0dacd164e4e2df15290071dd430ac78e.JPG" src="https://pic.pimg.tw/qupyqupy/1457231231-1628767973.jpg?v=1457231786" title="0dacd164e4e2df15290071dd430ac78e.JPG" /></p> <p>眾人駕著飛空艇，入侵帝國，這飛空艇就是西傑亞擁有的。</p> <p><img alt="6771c2174d344f2ad2b1d0ce915efca9.JPG" src="https://pic.pimg.tw/qupyqupy/1457231231-2143088521.jpg?v=1457231786" title="6771c2174d344f2ad2b1d0ce915efca9.JPG" /></p> <p>十幾年前，蒂娜剛出生不久，因為帝國的入侵，幻獸界決定啟動封魔璧，而蒂娜一家人便因此被隔絕在幻獸界之外，帝王趁機將蒂娜據為己有。</p> <p><img alt="16a0558b9ea225e37b99c28ff59a266d.JPG" src="https://pic.pimg.tw/qupyqupy/1457231231-638062579.jpg?v=1457231786" title="16a0558b9ea225e37b99c28ff59a266d.JPG" /></p> <p>封魔璧。</p> <p><img alt="8b2b25ce7df94130618d761594a7d76d.JPG" src="https://pic.pimg.tw/qupyqupy/1457231231-1653638894.jpg?v=1457231786" title="8b2b25ce7df94130618d761594a7d76d.JPG" /></p> <p>遊戲中會挑戰主角數次的大章魚帶著偉大的師父前來挑戰。</p> <p><img alt="b29582ebfe777e2a012618cf6d73e7af.JPG" src="https://pic.pimg.tw/qupyqupy/1457231232-793422767.jpg?v=1457231786" title="b29582ebfe777e2a012618cf6d73e7af.JPG" /></p> <p>三鬥神。</p> <p><img alt="2f4d028ca0ff70f3fcdc5bea8648436f.JPG" src="https://pic.pimg.tw/qupyqupy/1457231233-3351396044.jpg?v=1457231786" title="2f4d028ca0ff70f3fcdc5bea8648436f.JPG" /></p> <p>世界崩壞時，飛空艇受不了衝擊而分裂。</p> <p><img alt="4d64d78acc53a91240323009bffb8f87.JPG" src="https://pic.pimg.tw/qupyqupy/1457231233-3789208871.jpg?v=1457231786" title="4d64d78acc53a91240323009bffb8f87.JPG" /></p> <p>世界崩壞。</p> <p><img alt="e684b6f981666c44960f9f68c88820a0.JPG" src="https://pic.pimg.tw/qupyqupy/1457231233-1703813906.jpg?v=1457231786" title="e684b6f981666c44960f9f68c88820a0.JPG" /></p> <p>莎莉斯救了西德之後，搭著木筏準備尋找失散在世界各地的夥伴。</p> <div class="ps_text"> <p>曾經有網路傳說西德跟雷歐可以加入，不過我試了很多次都沒有成功。</p> </div> <p><img alt="01886e83280baeaba441e7881e8b8989.JPG" src="https://pic.pimg.tw/qupyqupy/1457231235-1779554517.jpg?v=1457231786" title="01886e83280baeaba441e7881e8b8989.JPG" /></p> <p>再度尋找到艾德。</p> <p><img alt="1111b84a1ddf428c1c0a537c9de5fcd4.JPG" src="https://pic.pimg.tw/qupyqupy/1457231236-2805591592.jpg?v=1457231786" title="1111b84a1ddf428c1c0a537c9de5fcd4.JPG" /></p> <p>西傑亞回想起之前與夥伴在空中競速的回憶。</p> <p><img alt="543341b68e3127786c185a79cf8c4371.JPG" src="https://pic.pimg.tw/qupyqupy/1457231236-1921218968.jpg?v=1457231786" title="543341b68e3127786c185a79cf8c4371.JPG" /></p> <p>解開封印的幻獸。</p> <p><img alt="33ee1230a61f77830aa48bd473f738de.JPG" src="https://pic.pimg.tw/qupyqupy/1457231236-1784458915.jpg?v=1457231786" title="33ee1230a61f77830aa48bd473f738de.JPG" /></p> <p>第二架飛空艇，也是西傑亞的夥伴遺留下來的遺物。</p> <p><img alt="336eb58342162bca519ba7a739a17fa2.JPG" src="https://pic.pimg.tw/qupyqupy/1457231236-1960768997.jpg?v=1457231786" title="336eb58342162bca519ba7a739a17fa2.JPG" /></p> <p>再次遇見莉露姆。</p> <p><img alt="c00792079b2580332fcd889db318da7c.JPG" src="https://pic.pimg.tw/qupyqupy/1457231239-3318114164.jpg?v=1457231786" title="c00792079b2580332fcd889db318da7c.JPG" /></p> <p>莉露姆說服爺爺再次加入。</p> <p><img alt="aa9311b5f22889a3f13cfe9d6221ffe5.JPG" src="https://pic.pimg.tw/qupyqupy/1457231239-3150469234.jpg?v=1457231786" title="aa9311b5f22889a3f13cfe9d6221ffe5.JPG" /></p> <p>為了幫卡烏與父親相認，夥伴們正幫卡烏治裝。</p> <p><img alt="f57ab6f2ef58b1fa23c362c6909392e0.JPG" src="https://pic.pimg.tw/qupyqupy/1457231239-1113972813.jpg?v=1457231786" title="f57ab6f2ef58b1fa23c362c6909392e0.JPG" /></p> <p>不過父親不願意認他，卡烏這時候只覺得知道父親還活著就好了。</p> <p><img alt="7e2f89ffda138500270de003f9da412b.JPG" src="https://pic.pimg.tw/qupyqupy/1457231242-441826027.jpg?v=1457231786" title="7e2f89ffda138500270de003f9da412b.JPG" /></p> <p>奧丁與魔導士間的決鬥。</p> <p><img alt="50891d0f8e1932a4c1d78a305a6237a9.JPG" src="https://pic.pimg.tw/qupyqupy/1457231241-999027310.jpg?v=1457231786" title="50891d0f8e1932a4c1d78a305a6237a9.JPG" /></p> <p>馬修的師父原來沒有死，並且傳授給馬修最強的必殺技。</p> <p><img alt="834beb88be9d9f5936706abc65e14e1f.JPG" src="https://pic.pimg.tw/qupyqupy/1457231241-2439360883.jpg?v=1457231786" title="834beb88be9d9f5936706abc65e14e1f.JPG" /></p> <p>下面是我打最後魔王的影片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/61ITMgEbcYk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/SOP6PyXyNFk?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <hr /> <p>下面是結局影片。</p> <p>最有趣的地方就是救莫古里的那段，把莫古里當作夾娃娃機裡面的禮物直接勾起來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kvlc0-4rdWo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/cUs3SQmPZJM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>下面是結局畫面套圖，供影片失效時，回味用。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="b1dae4593bdd9c596882073dbe79a61c.JPG" src="https://pic.pimg.tw/qupyqupy/1457231241-1346689542.jpg?v=1457231786" title="b1dae4593bdd9c596882073dbe79a61c.JPG" /></div> <div class="global_divtd"><img alt="5daddb3182588c4d5f0b5d70789e7342.JPG" src="https://pic.pimg.tw/qupyqupy/1457231242-2529055416.jpg?v=1457231786" title="5daddb3182588c4d5f0b5d70789e7342.JPG" /></div> <div class="global_divtd"><img alt="bed8b4410efb77a5d0336361aa682102.JPG" src="https://pic.pimg.tw/qupyqupy/1457231242-2606012343.jpg?v=1457231786" title="bed8b4410efb77a5d0336361aa682102.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="c3221a64585fda73680f80dab9aefaa6.JPG" src="https://pic.pimg.tw/qupyqupy/1457231243-58752904.jpg?v=1457231786" title="c3221a64585fda73680f80dab9aefaa6.JPG" /></div> <div class="global_divtd"><img alt="dce0bcadfb1c12de86280b641c14d967.JPG" src="https://pic.pimg.tw/qupyqupy/1457231243-1854708110.jpg?v=1457231786" title="dce0bcadfb1c12de86280b641c14d967.JPG" /></div> <div class="global_divtd"><img alt="37da98cef7b17161be729eeaf5a3fcd6.JPG" src="https://pic.pimg.tw/qupyqupy/1457231243-3431087068.jpg?v=1457231786" title="37da98cef7b17161be729eeaf5a3fcd6.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="545fe58e57e0dccb9056f5d3a83a4ee9.JPG" src="https://pic.pimg.tw/qupyqupy/1457231244-1077376687.jpg?v=1457231786" title="545fe58e57e0dccb9056f5d3a83a4ee9.JPG" /></div> <div class="global_divtd"><img alt="6bd6425fb12335700a6dc79616e829be.JPG" src="https://pic.pimg.tw/qupyqupy/1457231244-3733394399.jpg?v=1457231787" title="6bd6425fb12335700a6dc79616e829be.JPG" /></div> <div class="global_divtd"><img alt="aafb000d5edbeec242076d84fbe34be4.JPG" src="https://pic.pimg.tw/qupyqupy/1457231244-2788557455.jpg?v=1457231787" title="aafb000d5edbeec242076d84fbe34be4.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="c18fc792dcc91d48ba1992adb57a93cf.JPG" src="https://pic.pimg.tw/qupyqupy/1457231245-3906553769.jpg?v=1457231787" title="c18fc792dcc91d48ba1992adb57a93cf.JPG" /></div> <div class="global_divtd"><img alt="7fa0f38b07c85f4b474c5c4d98d2edbf.JPG" src="https://pic.pimg.tw/qupyqupy/1457231246-1681087815.jpg?v=1457231787" title="7fa0f38b07c85f4b474c5c4d98d2edbf.JPG" /></div> <div class="global_divtd"><img alt="5735acc661f6dedb39e5f4d5e0db0d68.JPG" src="https://pic.pimg.tw/qupyqupy/1457231246-3441245998.jpg?v=1457231787" title="5735acc661f6dedb39e5f4d5e0db0d68.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="c1e2c0c53f9d275e1093cf537db421b6.JPG" src="https://pic.pimg.tw/qupyqupy/1457231246-2228400943.jpg?v=1457231787" title="c1e2c0c53f9d275e1093cf537db421b6.JPG" /></div> <div class="global_divtd"><img alt="44d6ed42166c6c676a818190a2621b58.JPG" src="https://pic.pimg.tw/qupyqupy/1457231246-2069113264.jpg?v=1457231787" title="44d6ed42166c6c676a818190a2621b58.JPG" /></div> <div class="global_divtd"><img alt="1174c9dd992b1c092a509796974832fe.JPG" src="https://pic.pimg.tw/qupyqupy/1457231246-2785099329.jpg?v=1457231787" title="1174c9dd992b1c092a509796974832fe.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="a9e10851fdd21b24971d4d0c45ae35d6.JPG" src="https://pic.pimg.tw/qupyqupy/1457231247-478309868.jpg?v=1457231787" title="a9e10851fdd21b24971d4d0c45ae35d6.JPG" /></div> <div class="global_divtd"><img alt="a86bfb1e6a945729acaf27b7cfa2365c.JPG" src="https://pic.pimg.tw/qupyqupy/1457231247-1496507456.jpg?v=1457231787" title="a86bfb1e6a945729acaf27b7cfa2365c.JPG" /></div> <div class="global_divtd"><img alt="5d3171ccc038440a61318f9c5d9dc672.JPG" src="https://pic.pimg.tw/qupyqupy/1457231247-209876228.jpg?v=1457231787" title="5d3171ccc038440a61318f9c5d9dc672.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="f485082e1445bf9489a79f0881932ad2.JPG" src="https://pic.pimg.tw/qupyqupy/1457231247-1706138907.jpg?v=1457231787" title="f485082e1445bf9489a79f0881932ad2.JPG" /></div> <div class="global_divtd"><img alt="37b274d07e59d3252c9209ebe419c55a.JPG" src="https://pic.pimg.tw/qupyqupy/1457231248-2274596439.jpg?v=1457231787" title="37b274d07e59d3252c9209ebe419c55a.JPG" /></div> <div class="global_divtd"><img alt="05e7ead4903fed86c3c74b290c3d2c8b.JPG" src="https://pic.pimg.tw/qupyqupy/1457231248-887316277.jpg?v=1457231787" title="05e7ead4903fed86c3c74b290c3d2c8b.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="e40cf9e444823adf3e424fc1cf463202.JPG" src="https://pic.pimg.tw/qupyqupy/1457231249-446121990.jpg?v=1457231787" title="e40cf9e444823adf3e424fc1cf463202.JPG" /></div> <div class="global_divtd"><img alt="372b2bdf95c80a99f763bd3830a9644b.JPG" src="https://pic.pimg.tw/qupyqupy/1457231249-3486950124.jpg?v=1457231787" title="372b2bdf95c80a99f763bd3830a9644b.JPG" /></div> <div class="global_divtd"><img alt="799631ec9162951d9bc53940709ebc73.JPG" src="https://pic.pimg.tw/qupyqupy/1457231249-2761039534.jpg?v=1457231787" title="799631ec9162951d9bc53940709ebc73.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="d59cc65aade29762f998bc36c47399d6.JPG" src="https://pic.pimg.tw/qupyqupy/1457231250-2310342311.jpg?v=1457231787" title="d59cc65aade29762f998bc36c47399d6.JPG" /></div> <div class="global_divtd"><img alt="6cbf1174b787c02391103ac3c87b16bf.JPG" src="https://pic.pimg.tw/qupyqupy/1457231250-3554872055.jpg?v=1457231787" title="6cbf1174b787c02391103ac3c87b16bf.JPG" /></div> <div class="global_divtd"><img alt="ffa7e42203c28bf8d6c03b6827f71aeb.JPG" src="https://pic.pimg.tw/qupyqupy/1457231250-3703687727.jpg?v=1457231787" title="ffa7e42203c28bf8d6c03b6827f71aeb.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="d9552924a578fc5f04ddc2b9a7a01f39.JPG" src="https://pic.pimg.tw/qupyqupy/1457231251-2779889130.jpg?v=1457231787" title="d9552924a578fc5f04ddc2b9a7a01f39.JPG" /></div> <div class="global_divtd"><img alt="f22d41e15000b45e1eddaa662c80eca4.JPG" src="https://pic.pimg.tw/qupyqupy/1457231252-2541950340.jpg?v=1457231787" title="f22d41e15000b45e1eddaa662c80eca4.JPG" /></div> <div class="global_divtd"><img alt="4ce865cad076488cf0fdcd12cd533d9d.JPG" src="https://pic.pimg.tw/qupyqupy/1457231252-4023282050.jpg?v=1457231787" title="4ce865cad076488cf0fdcd12cd533d9d.JPG" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="e0e6cc1d574ac9cdcb241c423e377251.JPG" src="https://pic.pimg.tw/qupyqupy/1457231252-1169451990.jpg?v=1457231787" title="e0e6cc1d574ac9cdcb241c423e377251.JPG" /></div> </div> </div>');
+    result.push('<p>太空戰士６裡面總共有２７隻招喚獸，其中奧丁有重複的（真奧丁跟假奧丁）所以在這邊只列出２６隻。</p> <p>麒麟。</p> <p><img alt="0a572497636015b4f4d2e03217461c4c.JPG" src="https://pic.pimg.tw/qupyqupy/1456143073-470552866.jpg?v=1456143145" title="0a572497636015b4f4d2e03217461c4c.JPG" /></p> <p>拉姆。</p> <p><img alt="b4470af0690e1443ffcdb50b6818e50f.JPG" src="https://pic.pimg.tw/qupyqupy/1456143073-1648641289.jpg?v=1456143145" title="b4470af0690e1443ffcdb50b6818e50f.JPG" /></p> <p>凱特，傳說中的貓國國王。</p> <p><img alt="8f18986e222cee9cb3ec19d2d47b7a36.JPG" src="https://pic.pimg.tw/qupyqupy/1456143074-2088586672.jpg?v=1456143145" title="8f18986e222cee9cb3ec19d2d47b7a36.JPG" /></p> <p>塞任，河神的女兒。</p> <p><img alt="a4d40cf9c143c250f5ef600833ee6f8a.JPG" src="https://pic.pimg.tw/qupyqupy/1456143074-3860439777.jpg?v=1456143145" title="a4d40cf9c143c250f5ef600833ee6f8a.JPG" /></p> <p>伊佛雷特，火神。（很多遊戲都會出現）</p> <p><img alt="4b0199c628dd54f5ce3283d2ffa3c7c0.JPG" src="https://pic.pimg.tw/qupyqupy/1456143076-1244194350.jpg?v=1456143145" title="4b0199c628dd54f5ce3283d2ffa3c7c0.JPG" /></p> <p>希瓦，魔神。</p> <p><img alt="3681faafdd1e46e0f86aa7a048bd1689.JPG" src="https://pic.pimg.tw/qupyqupy/1456143076-3539040918.jpg?v=1456143145" title="3681faafdd1e46e0f86aa7a048bd1689.JPG" /></p> <p>獨角獸，西臘神話中的聖獸。</p> <p><img alt="bc4392d579f3e424781014228dca9379.JPG" src="https://pic.pimg.tw/qupyqupy/1456143076-3972996651.jpg?v=1456143145" title="bc4392d579f3e424781014228dca9379.JPG" /></p> <p>馬丁，在遊戲中是女主角蒂娜的父親。</p> <p><img alt="3107cf33eb227e58f24e01a05178fb15.JPG" src="https://pic.pimg.tw/qupyqupy/1456143077-2739512204.jpg?v=1456143145" title="3107cf33eb227e58f24e01a05178fb15.JPG" /></p> <p>俾斯麥。</p> <p><img alt="e7e04171fcd87cb8f52246c6ff2c0e04.JPG" src="https://pic.pimg.tw/qupyqupy/1456143077-2880101315.jpg?v=1456143145" title="e7e04171fcd87cb8f52246c6ff2c0e04.JPG" /></p> <p>卡班庫爾，紅寶石獸。</p> <p><img alt="2a482ff4a4f06caa8478cce6bde9d493.JPG" src="https://pic.pimg.tw/qupyqupy/1456143078-317922954.jpg?v=1456143145" title="2a482ff4a4f06caa8478cce6bde9d493.JPG" /></p> <p>魅影。</p> <p><img alt="25231c1bac922b6a335c714995d21c6e.JPG" src="https://pic.pimg.tw/qupyqupy/1456143078-3596520510.jpg?v=1456143145" title="25231c1bac922b6a335c714995d21c6e.JPG" /></p> <p>卡托布雷帕斯。</p> <p><img alt="99a6e0e5a19d3d18334a695c11a949f6.JPG" src="https://pic.pimg.tw/qupyqupy/1456143078-3452410051.jpg?v=1456143145" title="99a6e0e5a19d3d18334a695c11a949f6.JPG" /></p> <p>熾天使。</p> <p><img alt="6ed8ac4df7dc7597532b4269a7a1815e.JPG" src="https://pic.pimg.tw/qupyqupy/1456143079-95219265.jpg?v=1456143145" title="6ed8ac4df7dc7597532b4269a7a1815e.JPG" /></p> <p>彩鳥。</p> <p><img alt="5d00e6308cf21f7f43f7303f4014b194.JPG" src="https://pic.pimg.tw/qupyqupy/1456143079-1277513086.jpg?v=1456143145" title="5d00e6308cf21f7f43f7303f4014b194.JPG" /></p> <p>次元者。</p> <p><img alt="bf3669eef9c8f0c9ddd4eb5d473dbb57.JPG" src="https://pic.pimg.tw/qupyqupy/1456143079-2299315571.jpg?v=1456143145" title="bf3669eef9c8f0c9ddd4eb5d473dbb57.JPG" /></p> <p>石巨人。</p> <p><img alt="0220f16a00f134c0e06346aa743107c3.JPG" src="https://pic.pimg.tw/qupyqupy/1456143080-1304652119.jpg?v=1456143145" title="0220f16a00f134c0e06346aa743107c3.JPG" /></p> <p>芬利爾，冰狼。</p> <p><img alt="4e15b89a0b0c4c9ee29bb3cec4aa0891.JPG" src="https://pic.pimg.tw/qupyqupy/1456143081-3471892554.jpg?v=1456143145" title="4e15b89a0b0c4c9ee29bb3cec4aa0891.JPG" /></p> <p>迦嘍羅。</p> <p><img alt="05789f692661ec37bdcbee9969ed5b0e.JPG" src="https://pic.pimg.tw/qupyqupy/1456143082-1219041790.jpg?v=1456143145" title="05789f692661ec37bdcbee9969ed5b0e.JPG" /></p> <p>巨蟒。</p> <p><img alt="7dcb636b284c93ed6022d59524c0a167.JPG" src="https://pic.pimg.tw/qupyqupy/1456143082-2355668810.jpg?v=1456143145" title="7dcb636b284c93ed6022d59524c0a167.JPG" /></p> <p>拉克希絲。</p> <p><img alt="3644e7f6cd84e377dbebd9f492e28544.JPG" src="https://pic.pimg.tw/qupyqupy/1456143082-3710444189.jpg?v=1456143145" title="3644e7f6cd84e377dbebd9f492e28544.JPG" /></p> <p>巴哈姆特。</p> <p><img alt="e6661915ee91d36c5087b98cf3f4b531.JPG" src="https://pic.pimg.tw/qupyqupy/1456143083-2408908887.jpg?v=1456143145" title="e6661915ee91d36c5087b98cf3f4b531.JPG" /></p> <p>亞歷山大。</p> <p><img alt="ab1c1bab2b785281dedce88f321457d1.JPG" src="https://pic.pimg.tw/qupyqupy/1456143083-4099455679.jpg?v=1456143145" title="ab1c1bab2b785281dedce88f321457d1.JPG" /></p> <p>鳳凰。</p> <p><img alt="deacb453853260ebc670000329d1c93f.JPG" src="https://pic.pimg.tw/qupyqupy/1456143083-2725138206.jpg?v=1456143145" title="deacb453853260ebc670000329d1c93f.JPG" /></p> <p>諸神黃昏。</p> <p><img alt="de10ce7987306bd045cc65b55401306b.JPG" src="https://pic.pimg.tw/qupyqupy/1456143084-3213125880.jpg?v=1456143145" title="de10ce7987306bd045cc65b55401306b.JPG" /></p> <p>奧丁。</p> <p><img alt="51c14b849d353e3633e491c91be3d846.JPG" src="https://pic.pimg.tw/qupyqupy/1456143084-474695596.jpg?v=1456143145" title="51c14b849d353e3633e491c91be3d846.JPG" /></p> <p>三鬥神，打倒八龍後取得。</p> <p><img alt="9bb5abab63b9952529e9220222fd39bb.JPG" src="https://pic.pimg.tw/qupyqupy/1456143085-531325005.jpg?v=1456143145" title="9bb5abab63b9952529e9220222fd39bb.JPG" /></p> <hr /> <p>世界崩壞後，在世界各地會出現所謂的八龍。擊倒牠們，可以拿到最強的魔石。</p> <p>下面便是八龍的造型。</p> <p><img alt="88a5bfaf33c6d5d301f073a708ebcf33.JPG" src="https://pic.pimg.tw/qupyqupy/1456143085-4246768258.jpg?v=1456143145" title="88a5bfaf33c6d5d301f073a708ebcf33.JPG" /></p> <p><img alt="36872f576265afb880aed6b7470ccf00.JPG" src="https://pic.pimg.tw/qupyqupy/1456143085-4831780.jpg?v=1456143145" title="36872f576265afb880aed6b7470ccf00.JPG" /></p> <p><img alt="a5e868e056ea1b62ee4ccb1c73a702ed.JPG" src="https://pic.pimg.tw/qupyqupy/1456143086-971317242.jpg?v=1456143145" title="a5e868e056ea1b62ee4ccb1c73a702ed.JPG" /></p> <p><img alt="0c61684a53b2fa012bea1e33c15becc7.JPG" src="https://pic.pimg.tw/qupyqupy/1456143087-3555707597.jpg?v=1456143145" title="0c61684a53b2fa012bea1e33c15becc7.JPG" /></p> <p><img alt="f984432cc15220c8791ebfc1ba569c49.JPG" src="https://pic.pimg.tw/qupyqupy/1456143088-2930752468.jpg?v=1456143145" title="f984432cc15220c8791ebfc1ba569c49.JPG" /></p> <p><img alt="4cc2117174b8ef92e19fc4337ce1d9e1.JPG" src="https://pic.pimg.tw/qupyqupy/1456143087-2371092383.jpg?v=1456143145" title="4cc2117174b8ef92e19fc4337ce1d9e1.JPG" /></p> <p><img alt="709be8061e264192a3c1854951346fd4.JPG" src="https://pic.pimg.tw/qupyqupy/1456143088-3369812565.jpg?v=1456143145" title="709be8061e264192a3c1854951346fd4.JPG" /></p> <p><img alt="cc4188378495013fac7a38dceebc93d2.JPG" src="https://pic.pimg.tw/qupyqupy/1456143090-227001598.jpg?v=1456143145" title="cc4188378495013fac7a38dceebc93d2.JPG" /></p> <hr /> <p>下面是遊戲中出現的魔王，在２Ｄ遊戲的時代，其實很難展現出實體大小的戰鬥場景，所以有些巨形魔王，在裡面就顯得比較小一點。</p> <p>遊戲一開始的魔王，這時候由於我方都開著魔導機器人所以攻略並不難，只需要小心當牠頭縮進去殼中的時候會使用反擊的魔法，圖中的兩個帝國士兵只是暫時加入我方的過場人物。</p> <p><img alt="4a49a1f254475d27db753419e18d69e2.JPG" src="https://pic.pimg.tw/qupyqupy/1456143090-296457282.jpg?v=1456143145" title="4a49a1f254475d27db753419e18d69e2.JPG" /></p> <p>馬修的師兄，也是其師父的兒子（爲什麼他可以操縱熊）</p> <p><img alt="cae8d393a2605e0128b43e8bee11f310.JPG" src="https://pic.pimg.tw/qupyqupy/1456143091-2115901388.jpg?v=1456143146" title="cae8d393a2605e0128b43e8bee11f310.JPG" /></p> <p>遊戲中會出現許多次的章魚，不斷的挑戰主角們但是屢戰屢敗，最後跑到鬥技場當服務員。</p> <p>圖中像是金毛獅王的，是暫時加入我方的過場角色。</p> <p><img alt="fa7f9400a2dbf493ad5296281fe4831f.JPG" src="https://pic.pimg.tw/qupyqupy/1456143093-3152482335.jpg?v=1456143146" title="fa7f9400a2dbf493ad5296281fe4831f.JPG" /></p> <p><img alt="2e76af625c21448f9499108d1ff03e36.JPG" src="https://pic.pimg.tw/qupyqupy/1456143094-2421882904.jpg?v=1456143146" title="2e76af625c21448f9499108d1ff03e36.JPG" /></p> <p>傑夫卡，遊戲中最大的反派人物，一開始只是一個力量弱小的帝國將領，為人卑鄙，用下毒的方式攻陷卡瑪城，最後背叛了帝國國王，取得三鬥神的力量，毀滅世界。</p> <p><img alt="9758e9258497c2903ed6a820f9101b74.JPG" src="https://pic.pimg.tw/qupyqupy/1456143095-1589590359.jpg?v=1456143146" title="9758e9258497c2903ed6a820f9101b74.JPG" /></p> <p>遊戲中最強的劍士奇格菲。</p> <p>圖中的幽靈是在魔列車上隨時可以招入伙的過場夥伴，擅長自爆。</p> <p><img alt="58c698d6ad431d3f19eb3144937a28e3.JPG" src="https://pic.pimg.tw/qupyqupy/1456143096-1678377794.jpg?v=1456143146" title="58c698d6ad431d3f19eb3144937a28e3.JPG" /></p> <p>魔列車，專門載死去的人前往靈界。</p> <p><img alt="1b7ab7f5beae127f77653f9b15b5be7e.JPG" src="https://pic.pimg.tw/qupyqupy/1456143096-2100754170.jpg?v=1456143146" title="1b7ab7f5beae127f77653f9b15b5be7e.JPG" /></p> <p>傑夫卡，另一個造型。</p> <p><img alt="6cc0858998b723748758056b461938ff.JPG" src="https://pic.pimg.tw/qupyqupy/1456143096-2950414444.jpg?v=1456143146" title="6cc0858998b723748758056b461938ff.JPG" /></p> <p><img alt="9e66ccd40257bd9ab8ff1d306fc14b4c.JPG" src="https://pic.pimg.tw/qupyqupy/1456143098-1527497749.jpg?v=1456143146" title="9e66ccd40257bd9ab8ff1d306fc14b4c.JPG" /></p> <p><img alt="3b64b9f002cad6919cbd09e00f5afa89.JPG" src="https://pic.pimg.tw/qupyqupy/1456143098-2071659202.jpg?v=1456143146" title="3b64b9f002cad6919cbd09e00f5afa89.JPG" /></p> <p><img alt="1857945fc9836c811eae58b98e56a1e6.JPG" src="https://pic.pimg.tw/qupyqupy/1456143098-1286817733.jpg?v=1456143146" title="1857945fc9836c811eae58b98e56a1e6.JPG" /></p> <p><img alt="c72c00b790b9399f908075a9a7c005c5.JPG" src="https://pic.pimg.tw/qupyqupy/1456143099-135532265.jpg?v=1456143146" title="c72c00b790b9399f908075a9a7c005c5.JPG" /></p> <p><img alt="1017dcca2bf23ad067fe5a5e5680d946.JPG" src="https://pic.pimg.tw/qupyqupy/1456143099-2046820707.jpg?v=1456143146" title="1017dcca2bf23ad067fe5a5e5680d946.JPG" /></p> <p><img alt="823571e1752d446fd77961598f9a3371.JPG" src="https://pic.pimg.tw/qupyqupy/1456143100-2148725704.jpg?v=1456143146" title="823571e1752d446fd77961598f9a3371.JPG" /></p> <p>帝國雷歐將軍與傑夫卡的決鬥，個人十分喜愛雷歐這個角色，不僅有全體攻擊的絕招，連普通攻擊都能四連打。可惜他不能正式加入隊伍，許多年前有人流傳雷歐的加入法，可是經過測試都是虛構的。</p> <p><img alt="5d45cffcdeda07ff4ab73b945bd0a3d9.JPG" src="https://pic.pimg.tw/qupyqupy/1456143100-2425665140.jpg?v=1456143146" title="5d45cffcdeda07ff4ab73b945bd0a3d9.JPG" /></p> <p><img alt="791aa9bf1c576772ec96531711b9ccf1.JPG" src="https://pic.pimg.tw/qupyqupy/1456143101-1054463730.jpg?v=1456143146" title="791aa9bf1c576772ec96531711b9ccf1.JPG" /></p> <p>大章魚最後一次的挑戰，雖然還帶了幫手，不過仍然是失敗告終。</p> <p><img alt="6b65dc4a7ea3a62166a89bf0ea047bfa.JPG" src="https://pic.pimg.tw/qupyqupy/1456143101-2055219177.jpg?v=1456143146" title="6b65dc4a7ea3a62166a89bf0ea047bfa.JPG" /></p> <p>帝國空戰機。</p> <p><img alt="ed7f4ec13f1c3535d414e0110efca026.JPG" src="https://pic.pimg.tw/qupyqupy/1456143103-3910385253.jpg?v=1456143146" title="ed7f4ec13f1c3535d414e0110efca026.JPG" /></p> <p>在魔大陸上的怪物。</p> <p><img alt="c1545a324ed4e1cdec45c88efb9546be.JPG" src="https://pic.pimg.tw/qupyqupy/1456143102-2798305860.jpg?v=1456143146" title="c1545a324ed4e1cdec45c88efb9546be.JPG" /></p> <p><img alt="363b773bf334f3894c62019638b77ab8.JPG" src="https://pic.pimg.tw/qupyqupy/1456143105-4242504297.jpg?v=1456143146" title="363b773bf334f3894c62019638b77ab8.JPG" /></p> <p>世界崩壞後，襲擊女主角居住村莊的怪獸，為了擊倒牠，女主角再度重拾本身力量。</p> <p><img alt="b44f289d273ea0b2d6b0836065c7b881.JPG" src="https://pic.pimg.tw/qupyqupy/1456143105-213246018.jpg?v=1456143146" title="b44f289d273ea0b2d6b0836065c7b881.JPG" /></p> <p>纏住費加洛城機關的觸手。</p> <p><img alt="05fce93dbff326fe6c3eeea12ff47020.JPG" src="https://pic.pimg.tw/qupyqupy/1456143106-2940701329.jpg?v=1456143146" title="05fce93dbff326fe6c3eeea12ff47020.JPG" /></p> <p>這個寶箱怪物在神龍奇兵裡面也有出現過，其實有認真玩遊戲的人都可以發現到，神龍奇兵裡面很多怪物的造型都是從太空戰士６裡面拿出來用的。</p> <p><img alt="79984b6fd6d828e1ddd87430f562b18d.JPG" src="https://pic.pimg.tw/qupyqupy/1456143106-3290173752.jpg?v=1456143146" title="79984b6fd6d828e1ddd87430f562b18d.JPG" /></p> <p><img alt="7441560e06fae4ddf88f26d954cb6005.JPG" src="https://pic.pimg.tw/qupyqupy/1456143107-1200137866.jpg?v=1456143146" title="7441560e06fae4ddf88f26d954cb6005.JPG" /></p> <p>冰之幻獸。</p> <p><img alt="8d981a5abfbc09a2294d0c6c0ce5dfb2.JPG" src="https://pic.pimg.tw/qupyqupy/1456143107-1440326661.jpg?v=1456143146" title="8d981a5abfbc09a2294d0c6c0ce5dfb2.JPG" /></p> <p>雪男，只要打敗他之後，帶莫古里去找他，就可以說服他加入，因為莫古里是他的老大。</p> <p><img alt="8203a8a7f368315c64cec746b162e845.JPG" src="https://pic.pimg.tw/qupyqupy/1456143108-620445656.jpg?v=1456143146" title="8203a8a7f368315c64cec746b162e845.JPG" /></p> <p><img alt="72a0abc45d2d5bf00129ababcadf0097.JPG" src="https://pic.pimg.tw/qupyqupy/1456143108-3053914438.jpg?v=1456143146" title="72a0abc45d2d5bf00129ababcadf0097.JPG" /></p> <p><img alt="161574668f61d1768615940965d9c73a.JPG" src="https://pic.pimg.tw/qupyqupy/1456143108-1639005164.jpg?v=1456143146" title="161574668f61d1768615940965d9c73a.JPG" /></p> <p><img alt="9d448d6673ce933f9f25c2024d0b7cd4.JPG" src="https://pic.pimg.tw/qupyqupy/1456143109-740281393.jpg?v=1456143146" title="9d448d6673ce933f9f25c2024d0b7cd4.JPG" /></p> <p>這種朦朧美的魔王其實還是看的出來整個線條畫的還蠻棒的。</p> <p><img alt="6d0883ad1aa8a33b223c4c5e40a61277.JPG" src="https://pic.pimg.tw/qupyqupy/1456143110-216286868.jpg?v=1456143146" title="6d0883ad1aa8a33b223c4c5e40a61277.JPG" /></p> <p><img alt="56dbf012c4d174ad3131543d6dfc2540.JPG" src="https://pic.pimg.tw/qupyqupy/1456143109-1287300849.jpg?v=1456143146" title="56dbf012c4d174ad3131543d6dfc2540.JPG" /></p> <p><img alt="8ee10f3aa277a484f919ed7b0f910135.JPG" src="https://pic.pimg.tw/qupyqupy/1456143110-1982209029.jpg?v=1456143146" title="8ee10f3aa277a484f919ed7b0f910135.JPG" /></p> <p>這是世界崩壞後，在東北方小島出現的敵人，不要把他擊倒，他會將人吸入隱藏角色模仿師的洞穴裡面。</p> <p><img alt="a7c4f0b24c9355f1119201bd911196ae.JPG" src="https://pic.pimg.tw/qupyqupy/1456143112-1068839640.jpg?v=1456143146" title="a7c4f0b24c9355f1119201bd911196ae.JPG" /></p> <p>莉露姆（圖中第二位）他爺爺（圖中第一位）年輕時，想要打倒的傳說中怪物。</p> <p><img alt="8b3181c830874c0517470926df3cd9fc.JPG" src="https://pic.pimg.tw/qupyqupy/1456143112-1903597738.jpg?v=1456143146" title="8b3181c830874c0517470926df3cd9fc.JPG" /></p> <p>夢之三兄弟。</p> <p><img alt="ada7f3d5fb40aa2a4102fee7042520ad.JPG" src="https://pic.pimg.tw/qupyqupy/1456143113-2507944017.jpg?v=1456143146" title="ada7f3d5fb40aa2a4102fee7042520ad.JPG" /></p> <p>圖中出現的河童是一種狀態攻擊後的現象，不過河童狀態下可以裝備超強的武器防具，所以好壞是很難分別的。</p> <p><img alt="8cc4529f80a3cdb686c8c21a2fd2a67f.JPG" src="https://pic.pimg.tw/qupyqupy/1456143113-2350846454.jpg?v=1456143146" title="8cc4529f80a3cdb686c8c21a2fd2a67f.JPG" /></p> <p><img alt="9537cd16b9ed5972a019814dab439c3e.JPG" src="https://pic.pimg.tw/qupyqupy/1456143113-1555579422.jpg?v=1456143146" title="9537cd16b9ed5972a019814dab439c3e.JPG" /></p> <p>三鬥神。</p> <p><img alt="351c19361aab7041fc1fdf888a156f23.JPG" src="https://pic.pimg.tw/qupyqupy/1456143114-976082823.jpg?v=1456143146" title="351c19361aab7041fc1fdf888a156f23.JPG" /></p> <p><img alt="49ca17635be6d36b639313828142302c.JPG" src="https://pic.pimg.tw/qupyqupy/1456143115-3465579598.jpg?v=1456143146" title="49ca17635be6d36b639313828142302c.JPG" /></p> <p><img alt="e41b76ccbc6e0d270b7b903af50e40aa.JPG" src="https://pic.pimg.tw/qupyqupy/1456143115-616736876.jpg?v=1456143146" title="e41b76ccbc6e0d270b7b903af50e40aa.JPG" /></p> <p>最後決戰出現的魔王，算是連續戰鬥，如果打倒一個畫面就會往上升，繼續擊倒下一個魔王。</p> <p><img alt="768453426e184b3f45e8e22b576a458b.JPG" src="https://pic.pimg.tw/qupyqupy/1456143116-2970571080.jpg?v=1456143146" title="768453426e184b3f45e8e22b576a458b.JPG" /></p> <p><img alt="418bae535b80250d23bf20139d220694.JPG" src="https://pic.pimg.tw/qupyqupy/1456143118-3759923634.jpg?v=1456143146" title="418bae535b80250d23bf20139d220694.JPG" /></p> <p><img alt="230b52648284126a39fd30ff7c50e7e8.JPG" src="https://pic.pimg.tw/qupyqupy/1456143118-3624402553.jpg?v=1456143146" title="230b52648284126a39fd30ff7c50e7e8.JPG" /></p> <p>已經取得三鬥神力量的傑夫卡。</p> <p><img alt="2bee9e007824dca76bbe7736d9173631.JPG" src="https://pic.pimg.tw/qupyqupy/1456143119-4291721048.jpg?v=1456143147" title="2bee9e007824dca76bbe7736d9173631.JPG" /></p>');
+
+	  return result;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
