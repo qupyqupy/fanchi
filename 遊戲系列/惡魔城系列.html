@@ -1,0 +1,300 @@
+<style type="text/css">
+  .beelzebub .global_divtd {
+    width: 50%;
+  }
+  
+  .beelzebub img {
+    height: 200px;
+    max-width: 100%;
+  }
+  .global_divtable.moon_people .global_divtd {
+    width: 33%;
+  }  
+
+  .beelzebub_title {
+    margin: 10px 0px;
+    color: #FFFFFF;
+    background: #5E5A54;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    font-weight: 900;
+    font-size: 22px;
+    text-shadow: 1px 0px 1px #B8AA95,
+      -1px 0px 1px #B8AA95,
+      0px 1px 1px #B8AA95,
+      0px -1px 1px #B8AA95;
+  }
+
+.moon_people .name_title .global_divtd {
+    background: #800000;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFACD;
+    text-shadow: 1px 0px 1px #FF0000,
+      -1px 0px 1px #FF0000,
+      0px 1px 1px #FF0000,
+      0px -1px 1px #FF0000;
+  }
+  
+  .moon_people .detail_text .global_divtd {
+    text-align: left;
+    vertical-align: text-top;
+    color: #A52A2A;
+    border-right: 2px dashed #805300;
+    border-left: 2px dashed #805300;
+  }
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('月下夜想曲');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var pArr = [];
+  		pArr.push('');
+  		pArr.push('遊戲介紹');
+      pArr.push('隱藏事件, 彩蛋');
+      pArr.push('登場人物');
+      pArr.push('魔王造型');
+
+
+  		return pArr;
+  	}
+  	var contentArr = [] ;
+	  contentArr.push('');
+    contentArr.push('<p>在月下夜想曲還沒出現之前，惡魔城系列的遊戲一直是以橫向卷軸過關為主，大家對惡魔城系列的印象也都停在［一個人類拿著長鞭，在吸血鬼的城堡內不斷打倒怪物］的動作過關遊戲。</p> <p><img alt="bandicam 2016-07-02 18-03-49-660.jpg" src="https://pic.pimg.tw/qupyqupy/1468143801-4172825617.jpg" title="bandicam 2016-07-02 18-03-49-660.jpg" /></p> <p>但就在 1997 年，惡魔城系列有了巨大的轉變，月下夜想曲的推出成了整個系列的一大轉折，普遍認為此作品為系列的顛峰之作，個人也認為如此。</p> <p>遊戲不但打破傳統規範，更加將系列特有的遊戲氣氛保留起來並且昇華，主角為［艾卡多］吸血鬼德古拉之子，擁有變身、魔法、招喚使魔，而且還可以使用聖器，光是這豐富的操作設定就讓人百玩不膩。</p> <p>再加上遊戲已經變得不是普通的動作過關類型，添加了角色扮演的元素在裡面，有更多的劇情敘述跟尋寶的樂趣，使得月下變成經典中的經典。</p> <hr /> <p>這是遊戲封面。</p> <p><img alt="1256458390949.jpg" src="https://pic.pimg.tw/qupyqupy/1468143777-3083528366_n.jpg" title="1256458390949.jpg" /></p> <p>遊戲原畫，非常有中古世紀那種黑暗詭譎的氣氛。</p> <p><img alt="恶魔城月下夜想曲.jpg" src="https://pic.pimg.tw/qupyqupy/1468143802-2495305339_n.jpg" title="恶魔城月下夜想曲.jpg" /></p> <p>遊戲開頭畫面與選單。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-13-35-858.jpg" src="https://pic.pimg.tw/qupyqupy/1468143777-905406726_n.jpg" title="bandicam 2016-06-15 22-13-35-858.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-14-00-355.jpg" src="https://pic.pimg.tw/qupyqupy/1468143777-1283370904_n.jpg" title="bandicam 2016-06-15 22-14-00-355.jpg" /></div> </div> </div> <hr /> <div class="global_game_secret"> <p>在一開始輸入名字時，輸入特殊的姓名可以得到不同的初始狀態。</p> <ul> <li><strong>X-X!V&#39;&#39;Q：</strong>一開始幸運值就99，而且還擁有［ラピス&middot;ラズリ］，這對於打寶相當有幫助。雖然除了幸運以外其他能力會變成0，但我個人覺得仍然很值得。<br /> <img alt="bandicam 2016-07-02 11-48-31-692.jpg" src="https://pic.pimg.tw/qupyqupy/1468143800-1422633730_n.jpg" title="bandicam 2016-07-02 11-48-31-692.jpg" /></li> <li><strong>AXEARMOR：</strong>可以得到［アックスアーマーの鎧］，是個可以變身成藍斧戰士的好東西。 <div class="global_dvitable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-15-03-193.jpg" src="https://pic.pimg.tw/qupyqupy/1468143777-3437676699_n.jpg" title="bandicam 2016-06-15 22-15-03-193.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-55-59-637.jpg" src="https://pic.pimg.tw/qupyqupy/1468143796-3791262552_n.jpg" title="bandicam 2016-06-30 22-55-59-637.jpg" /></div> </div> </div> </li> <li><strong>RICHTER：</strong>當用｛艾卡多］打過逆城通關後才有用，可以使用［里希特］來遊戲，體驗跟［艾卡多］不一樣的遊戲方式。 <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-02 09-40-55-136.jpg" src="https://pic.pimg.tw/qupyqupy/1468143797-659202006_n.jpg" title="bandicam 2016-07-02 09-40-55-136.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-02 09-41-08-113.jpg" src="https://pic.pimg.tw/qupyqupy/1468143797-591705060_n.jpg" title="bandicam 2016-07-02 09-41-08-113.jpg" /></div> </div> </div> </li> </ul> <hr /> <p>［艾卡多］被石化後，有機會變成惡魔的樣子，當初第一次看到時還有點被那強悍的氣勢嚇到。</p> <p><img alt="bandicam 2016-07-08 06-45-57-508.jpg" src="https://pic.pimg.tw/qupyqupy/1468143801-2687804895_n.jpg" title="bandicam 2016-07-08 06-45-57-508.jpg" /></p> <p>當遊戲進行到逆城時，回到正城的藏書庫找老爺爺（就是遊戲中唯一的商人角色）。</p> <p>到他正下的方間，不斷地用衝刺跳去撞他，隨著次數增加會得到不同的寶物，重點是在撞的途中不能落地才有效。</p> <ul> <li><strong>1次：</strong>加生命上限（ライフアップ）</li> <li><strong>16次：</strong>珍稀戒指（レアリング）</li> <li><strong>24次：</strong>吸血伯爵的衣服（ドラキュラのふく）</li> <li><strong>64次（可落地）：</strong>斧頭兵鎧甲（アックスアーマーの鎧）</li> </ul> <p><img alt="bandicam 2016-06-30 22-48-52-756.jpg" src="https://pic.pimg.tw/qupyqupy/1468143796-1710204530_n.jpg" title="bandicam 2016-06-30 22-48-52-756.jpg" /></p> </div> <hr /> <p>遊戲一開始會接著前作的最後［里希特］擊倒［德古拉］的最後一幕，由於只是單純的跑劇情，所以不管怎麼打都會贏。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-16-28-079.jpg" src="https://pic.pimg.tw/qupyqupy/1468143777-3110783287_n.jpg" title="bandicam 2016-06-15 22-16-28-079.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-21-02-147.jpg" src="https://pic.pimg.tw/qupyqupy/1468143780-4182151475_n.jpg" title="bandicam 2016-06-15 22-21-02-147.jpg" /></div> </div> </div> <p>因為遊戲一開始就可以操作［里希特］，所以很容易聯想到之後會有隱藏要素可以以［里希特］進行遊戲。</p> <p>使用［里希特］遊戲時，還可以打到逆城，不過由於並沒有［艾卡多］那豐富的變身系統、道具使用、等級提升，所以在移動以及對敵方面的技術要求就較高了。</p> <p><img alt="bandicam 2016-07-02 10-50-09-713.jpg" src="https://pic.pimg.tw/qupyqupy/1468143798-2662146676_n.jpg" title="bandicam 2016-07-02 10-50-09-713.jpg" /></p> <p>［里希特］也同樣可以睡棺材來恢復紀錄、藉由傳送點往來城內各處，不過如果睡棺材這部分能改由其他方式，或許能讓遊戲感不那麼突兀。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-02 10-53-30-498.jpg" src="https://pic.pimg.tw/qupyqupy/1468143798-4259467853_n.jpg" title="bandicam 2016-07-02 10-53-30-498.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-02 11-08-20-274.jpg" src="https://pic.pimg.tw/qupyqupy/1468143798-4117459034_n.jpg" title="bandicam 2016-07-02 11-08-20-274.jpg" /></div> </div> </div> <p>［里希特］擁有傳統的惡魔城主角操作特性，並且也擁有許多副武器可以使用。</p> <ul> <li><strong>&uarr; + 攻擊鍵</strong>：可使用目前裝備的副武器。</li> <li><strong>特殊攻擊鍵</strong>：可施展目前裝備副武器的特殊攻擊，值得一提的是，當玩家一開始都沒吃到任何副武器時，按下特殊攻擊鍵就可以使用｛火焰鞭］，這招可是惡魔城2代最強的招式。</li> </ul> <p><img alt="bandicam 2016-07-02 11-29-40-707.jpg" src="https://pic.pimg.tw/qupyqupy/1468143800-3850952658_n.jpg" title="bandicam 2016-07-02 11-29-40-707.jpg" /></p> <p>下面是［里希特］使用特殊攻擊時的影片。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><iframe allowfullscreen="" class="no-convert" frameborder="0" src="https://www.youtube.com/embed/KgcYhwbootw?wmode=transparent" title="YouTube video player"></iframe></div> <div class="global_divtd"><iframe allowfullscreen="" class="no-convert" frameborder="0" src="https://www.youtube.com/embed/RxDfyikvf6g?wmode=transparent" title="YouTube video player"></iframe></div> </div> </div> <p>下面是［里希特］使用的招式輸入法。</p> <ul> <li><strong>&larr; &larr; or &rarr;&rarr;</strong>：快跑移動。 <p><img alt="bandicam 2016-07-02 11-12-39-305.jpg" src="https://pic.pimg.tw/qupyqupy/1468143799-3229999969_n.jpg" title="bandicam 2016-07-02 11-12-39-305.jpg" /></p> </li> <li><strong>連兩下跳</strong>：原地後空翻。 <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-02 11-11-45-469.jpg" src="https://pic.pimg.tw/qupyqupy/1468143799-2205552801_n.jpg" title="bandicam 2016-07-02 11-11-45-469.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-02 11-11-45-670.jpg" src="https://pic.pimg.tw/qupyqupy/1468143799-3012959775_n.jpg" title="bandicam 2016-07-02 11-11-45-670.jpg" /></div> </div> </div> </li> <li><strong>按住攻擊鍵後旋轉方向鍵</strong>：可以使用鞭子攻擊靠近的敵人。<br /> <img alt="bandicam 2016-07-02 11-08-57-314.jpg" src="https://pic.pimg.tw/qupyqupy/1468143798-1810769124_n.jpg" title="bandicam 2016-07-02 11-08-57-314.jpg" /></li> <li><strong>&darr; + 跳</strong>：下段滑行。<br /> <img alt="bandicam 2016-07-02 11-08-32-838.jpg" src="https://pic.pimg.tw/qupyqupy/1468143798-2379728497_n.jpg" title="bandicam 2016-07-02 11-08-32-838.jpg" /></li> <li><strong>&darr; + 跳跳</strong>：本來是下段滑行，再按一下跳後會變成彈起攻擊。</li> <li><strong>&darr;&uarr; + 跳</strong>：類似［艾卡多］的超級跳，但是帶有攻擊判定。同時也是［里希特］重要的移動方式，用這招可以到達［艾卡多］需要變身為蝙蝠才能到達的地方。在逆城中類似下方這種地形，就必須利用這招來到達。 <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-02 10-52-15-976.jpg" src="https://pic.pimg.tw/qupyqupy/1468143798-1185680338_n.jpg" title="bandicam 2016-07-02 10-52-15-976.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-02 11-29-27-086.jpg" src="https://pic.pimg.tw/qupyqupy/1468143799-3897467057_n.jpg" title="bandicam 2016-07-02 11-29-27-086.jpg" /></div> </div> </div> </li> <li><strong>&uarr;&darr; ↘ &rarr; + 攻擊</strong>：中段突進，帶有攻擊判定。</li> </ul> <p>以下是［里希特］的結局影片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Q39dQS6zp2w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <hr /> <p>人物的狀態列，有著一般動作遊戲沒有的豐富選項。</p> <p>這種加入 RPG 元素的方式，除了可以彌補手殘玩家進行遊戲的難度以外，更可以加深整個遊戲的耐完度。</p> <p><img alt="bandicam 2016-06-15 22-23-40-637.jpg" src="https://pic.pimg.tw/qupyqupy/1468143780-3845922510_n.jpg" title="bandicam 2016-06-15 22-23-40-637.jpg" /></p> <p>惡魔城的地圖，對於沒探索的地方會以反灰作表示，這對於玩家進行遊戲時非常方便。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-08 15-13-31-592.jpg" src="https://pic.pimg.tw/qupyqupy/1468143802-88811795_n.jpg" title="bandicam 2016-07-08 15-13-31-592.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-08 15-54-19-602.jpg" src="https://pic.pimg.tw/qupyqupy/1468143802-2208428847_n.jpg" title="bandicam 2016-07-08 15-54-19-602.jpg" /></div> </div> </div> <p>遊戲一開始本來［艾卡多］身上就有著十分強力的裝備，不過遇到［死神］之後會被全部收走。</p> <div class="global_ps_text"> <p>有一種方式可以不被［死神］收裝。</p> <ul> <li>先破關一次。</li> <li>重新開始遊戲，名字輸入幸運 99 的那一個。</li> <li>接著輪到［艾卡多］進入惡魔城後，完全不要打敵人，走到遇到［死神］的那個房間入口處。</li> <li>這時候你左邊應該有個狼，把裝備脫光光只剩下披風，給狼撞一下（被狼撞時，需要是跳起來往下落的狀態）。</li> <li>順利的話［艾卡多］會飛到［死神］右邊的房間。</li> <li>成功。</li> </ul> </div> <p><img alt="bandicam 2016-06-15 22-28-43-775.jpg" src="https://pic.pimg.tw/qupyqupy/1468143780-2695726233_n.jpg" title="bandicam 2016-06-15 22-28-43-775.jpg" /></p> <p>在惡魔城內各處散落著各式各樣的魔導器，有些是增加主角基本素質，有些則能開啟一些特殊操作，例如二段跳、變身等，在這系列作中可是頗新潮的嘗試。</p> <p><img alt="bandicam 2016-06-15 22-30-48-451.jpg" src="https://pic.pimg.tw/qupyqupy/1468143781-3195133474_n.jpg" title="bandicam 2016-06-15 22-30-48-451.jpg" /></p> <p>記錄點與傳送點。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-31-39-660.jpg" src="https://pic.pimg.tw/qupyqupy/1468143781-2913915762_n.jpg" title="bandicam 2016-06-15 22-31-39-660.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 23-05-57-047.jpg" src="https://pic.pimg.tw/qupyqupy/1468143782-2591795339_n.jpg" title="bandicam 2016-06-15 23-05-57-047.jpg" /></div> </div> </div> <p>值得一提的是，在正城時有個特殊的房間，裡面裝扮的猶如紀錄點一樣，但是卻是個通往魔王戰的傳送點，第一次玩的時候還因此沒紀錄就 GameOver，這也算遊戲公司的一點小小惡意吧。</p> <p><img alt="bandicam 2016-06-23 21-38-15-151.jpg" src="https://pic.pimg.tw/qupyqupy/1468143787-387140010_n.jpg" title="bandicam 2016-06-23 21-38-15-151.jpg" /></p> <p>每個場景來往之間的固定通道樣式，充滿著詭異的氣氛。</p> <p><img alt="bandicam 2016-06-15 22-31-55-137.jpg" src="https://pic.pimg.tw/qupyqupy/1468143781-1535896869_n.jpg" title="bandicam 2016-06-15 22-31-55-137.jpg" /></p> <p>因為［艾卡多］在人形的時候並不能衝刺，所以常常利用這種向後滑行來增加移動速度。</p> <p><img alt="bandicam 2016-06-23 22-35-13-742.jpg" src="https://pic.pimg.tw/qupyqupy/1468143789-2231970551_n.jpg" title="bandicam 2016-06-23 22-35-13-742.jpg" /></p> <p>遇到這種針地域的地形，最初只能靠著變身成蝙蝠小心翼翼的移動，等得到一個可以破壞針地形的鎧甲就可以如下圖般自由行走了。</p> <p><img alt="bandicam 2016-06-23 01-10-47-454.jpg" src="https://pic.pimg.tw/qupyqupy/1468143787-2232146616_n.jpg" title="bandicam 2016-06-23 01-10-47-454.jpg" /></p> <p>惡魔城內賣東西的老爺爺，在他這可以買到魔導器、消耗性道具、也能看怪物圖鑑還有魔王攻略法等等，是遊戲中的一大助力。</p> <p><img alt="bandicam 2016-06-15 22-54-27-745.jpg" src="https://pic.pimg.tw/qupyqupy/1468143782-1089679930_n.jpg" title="bandicam 2016-06-15 22-54-27-745.jpg" /></p> <p>初期移動時會遇到許多如下圖般的機關，需要動點腦筋才能順利通過，像是可移動的箱子配上針地板就變成了可以跳上去的高台。</p> <p><img alt="bandicam 2016-07-02 13-00-20-553.jpg" src="https://pic.pimg.tw/qupyqupy/1468143800-3682739967_n.jpg" title="bandicam 2016-07-02 13-00-20-553.jpg" /></p> <p>惡魔城內也有不少藏在牆壁裡的寶物，需要透過擊破來發現，這時候就會覺得全範圍必殺技、全範圍攻擊性道具真好用。</p> <p><img alt="bandicam 2016-06-18 19-36-17-686.jpg" src="https://pic.pimg.tw/qupyqupy/1468143782-3190841518_n.jpg" title="bandicam 2016-06-18 19-36-17-686.jpg" /></p> <p>下圖這房間的右邊書櫃是可以推開的，第一次推開時不禁讚嘆［惡魔城真是處處都是秘密］。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-02 13-13-59-444.jpg" src="https://pic.pimg.tw/qupyqupy/1468143800-3212844718_n.jpg" title="bandicam 2016-07-02 13-13-59-444.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-02 13-14-03-157.jpg" src="https://pic.pimg.tw/qupyqupy/1468143800-3833809268_n.jpg" title="bandicam 2016-07-02 13-14-03-157.jpg" /></div> </div> </div> <p>在正城的時候可以透過望眼鏡觀看城外的景物，不過從中看到的人物到遊戲結束也不知道他是甚麼角色。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-18 19-37-52-179.jpg" src="https://pic.pimg.tw/qupyqupy/1468143782-668352897_n.jpg" title="bandicam 2016-06-18 19-37-52-179.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-18 19-38-23-467.jpg" src="https://pic.pimg.tw/qupyqupy/1468143783-1313999207_n.jpg" title="bandicam 2016-06-18 19-38-23-467.jpg" /></div> </div> </div> <p>在正城的地下水脈撐船人。</p> <p><img alt="bandicam 2016-06-18 21-01-49-099.jpg" src="https://pic.pimg.tw/qupyqupy/1468143783-545031123_n.jpg" title="bandicam 2016-06-18 21-01-49-099.jpg" /></p> <p>如果要收集完整個怪物圖鑑，下圖紅泥般的怪物可要注意，這可是在打正城圖書館魔王時才有機會打到的怪物，錯過就沒有了。一定要等到魔王將牠招喚出來後才可以擊敗魔王。</p> <p><img alt="bandicam 2016-06-19 08-25-08-662.jpg" src="https://pic.pimg.tw/qupyqupy/1468143784-1741188798.jpg" title="bandicam 2016-06-19 08-25-08-662.jpg" /></p> <p>令一個讓我印象深刻的場景，巨大的時鐘並且在四周周滿了通道，左上方的通道必須等一段時間後他會自動打開，右上方的得使用跟時間有關的副武器才會開啟，這些元素在當時網路不流行的年代，可不是靠聯想就能想出來的。</p> <p><img alt="bandicam 2016-06-22 23-33-23-509.jpg" src="https://pic.pimg.tw/qupyqupy/1468143785-3952389066_n.jpg" title="bandicam 2016-06-22 23-33-23-509.jpg" /></p> <p>遊戲 GameOver 的畫面。</p> <p><img alt="bandicam 2016-06-30 22-32-57-389.jpg" src="https://pic.pimg.tw/qupyqupy/1468143796-4242673141_n.jpg" title="bandicam 2016-06-30 22-32-57-389.jpg" /></p>');
+    contentArr.push('<p>遊戲中非常吸引人的使魔系統，共有七個使魔可以加入，能提供的協助也是五花八門，除了幫忙攻擊、恢復、增值變身能力、開機關等等，還有隱藏的事件可以利用使魔觸發。</p> <p><img alt="bandicam 2016-07-02 09-08-44-202.jpg" src="https://pic.pimg.tw/qupyqupy/1468143797-4111610797_n.jpg" title="bandicam 2016-07-02 09-08-44-202.jpg" /></p> <p>像是選擇蝙蝠使魔，變身成蝙蝠後，會多來好幾隻蝙蝠，而且連吐火時跟來的那些蝙蝠也會跟著一起吐，有種玩沙羅曼蛇的感覺。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 00-56-00-324.jpg" src="https://pic.pimg.tw/qupyqupy/1468143786-2650841255_n.jpg" title="bandicam 2016-06-23 00-56-00-324.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 00-56-07-638.jpg" src="https://pic.pimg.tw/qupyqupy/1468143786-3441598833_n.jpg" title="bandicam 2016-06-23 00-56-07-638.jpg" /></div> </div> </div> <p>惡魔則可以幫忙打開隱藏的機關通道，開之前還會有一段說話。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 22-20-08-052.jpg" src="https://pic.pimg.tw/qupyqupy/1468143788-1428836566_n.jpg" title="bandicam 2016-06-23 22-20-08-052.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-24-52-745.jpg" src="https://pic.pimg.tw/qupyqupy/1468143794-1197629892_n.jpg" title="bandicam 2016-06-30 22-24-52-745.jpg" /></div> </div> </div> <p>在惡魔城內總有些地方可以看到能坐下的椅子或沙發，原本我以為這只是一種可以看到［艾卡多］另一面的單純設計，並不會有甚麼特殊事件。</p> <p>但還是有些許事件隱藏在這不起眼的設定裡，像是下圖類似告解的場景，想必也是讓玩過的人印象深刻。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-19 08-34-04-177.jpg" src="https://pic.pimg.tw/qupyqupy/1468143785-40383870_n.jpg" title="bandicam 2016-06-19 08-34-04-177.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-47-14-420.jpg" src="https://pic.pimg.tw/qupyqupy/1468143781-580218284_n.jpg" title="bandicam 2016-06-15 22-47-14-420.jpg" /></div> </div> </div> <p>另一個坐椅子的隱藏事件就是半妖精唱歌了，當獲得使魔半妖精後，找個地方坐久一點，她就會開始唱歌囉。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_uTN3rNl2Zc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>本作的武器裝備通常都擁有著隱藏在裡面的力量，令我印象最深的就是引出盾牌技能的法杖，這個設定真的會讓玩家變成盾牌收集狂，因為每次引出的盾牌技能都有特別不同的效果，一直想要把所有技能都看過一遍。</p> <p><img alt="bandicam 2016-07-02 13-25-47-151.jpg" src="https://pic.pimg.tw/qupyqupy/1468143801-1645841312.jpg" title="bandicam 2016-07-02 13-25-47-151.jpg" /></p> <p>以下是所有盾牌技能的影片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Psrp0g7TxKQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <hr /> <p>假如沒有很認真探索惡魔城的話，大部分可能都不會知道逆城的存在，因此會走入壞結局。</p> <p>［艾卡多］不知道［里希特］是被控制的，打敗［里希特］後就覺得一切都結束了，可是幕後的黑手仍在進行著自己的計劃，當然結局影片並沒有提到這點，有很多人是跟同學、朋友討論才知道有逆城這回事。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VpDeNHjNH90?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>進入逆城後，整個顛倒的世界所產生的刺激感，我至今仍然無法忘記，不過有許多地方的移動要重新思索方式，雖然只是把原本遊戲物件反過來，但仍是多了不少的遊戲性。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 22-34-58-993.jpg" src="https://pic.pimg.tw/qupyqupy/1468143789-103399976_n.jpg" title="bandicam 2016-06-23 22-34-58-993.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 22-37-10-137.jpg" src="https://pic.pimg.tw/qupyqupy/1468143791-1675989761_n.jpg" title="bandicam 2016-06-23 22-37-10-137.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 23-32-52-732.jpg" src="https://pic.pimg.tw/qupyqupy/1468143793-3269180050_n.jpg" title="bandicam 2016-06-23 23-32-52-732.jpg" /></div> </div> </div> <p>以下是這次遊戲的紀錄，結局時［瑪麗亞］會追上去找［艾卡多］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/90u2cdz84uI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>另一個真結局，［瑪麗亞］不會追上去找［艾卡多］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5wkhh89SAnc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這是我在逆城打過印象最深的魔王，本來進入逆城後對付所有魔王都勢如破竹，唯有這魔王我卡了很久也練了很久等級才打過。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oDZE4RvTpYU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('<div class="beelzebub_title">登場人物</div> <div class="global_divtable moon_people"> <div class="global_divtr name_title"> <div class="global_divtd">德古拉</div> <div class="global_divtd">里希特</div> <div class="global_divtd">死神</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-17-32-013.jpg" src="https://pic.pimg.tw/qupyqupy/1468143777-443292534.jpg" title="bandicam 2016-06-15 22-17-32-013.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-17-39-031.jpg" src="https://pic.pimg.tw/qupyqupy/1468143779-1204548494.jpg" title="bandicam 2016-06-15 22-17-39-031.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-26-59-004.jpg" src="https://pic.pimg.tw/qupyqupy/1468143780-1542101922.jpg" title="bandicam 2016-06-15 22-26-59-004.jpg" /></div> </div> <div class="global_divtr detail_text"> <div class="global_divtd">吸血鬼之王，主角［艾卡多］的父親，曾被［里希特］所封印。［德古拉］本來並沒有如此贈恨人類，全因［艾卡多］的母親被村民當作巫女燒死，從此發誓要毀滅無知的人類，取代上帝成為新的創世者。</div> <div class="global_divtd">曾封印［德古拉］的最強吸血鬼獵人，但之後中了［沙夫特］的魔法而失蹤。</div> <div class="global_divtd">［德古拉］的心腹，會稱［艾卡多］為少爺。</div> </div> <div class="global_divtr name_title"> <div class="global_divtd">艾卡多</div> <div class="global_divtd">瑪麗亞</div> <div class="global_divtd">老爺爺</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-27-30-123.jpg" src="https://pic.pimg.tw/qupyqupy/1468143780-3869353963.jpg" title="bandicam 2016-06-15 22-27-30-123.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-42-13-772.jpg" src="https://pic.pimg.tw/qupyqupy/1468143781-4005563472.jpg" title="bandicam 2016-06-15 22-42-13-772.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-53-30-512.jpg" src="https://pic.pimg.tw/qupyqupy/1468143782-1791390895.jpg" title="bandicam 2016-06-15 22-53-30-512.jpg" /></div> </div> <div class="global_divtr detail_text"> <div class="global_divtd">本作的主角，是［德古拉］與［麗莎］的兒子，曾與貝爾蒙特家的先祖［拉爾夫&middot;貝爾蒙特］一起擊倒自己的父親，隨即便進入了長眠。他的名字就是父親［德古拉］的反寫（Alucard）（Dracula），以此表示要反抗自己的命運與父親。</div> <div class="global_divtd">［里希特］的戀人［安妮特］的妹妹，有操縱四聖獸的能力，一直搜尋［里希特］的下落，相信能在惡魔城內找到［里希特］所以單槍匹馬闖進惡魔城。</div> <div class="global_divtd">［德古拉］的心腹，跟［死神］一起照顧過小時候的［艾卡多］，因為貪財所以在［艾卡多］決定給他報酬後，會在惡魔城內提供［艾卡多］幫助。</div> </div> <div class="global_divtr name_title"> <div class="global_divtd">撐船人</div> <div class="global_divtd">里希特（城主）</div> <div class="global_divtd">麗莎</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-18 21-01-54-232.jpg" src="https://pic.pimg.tw/qupyqupy/1468143784-2353447777.jpg" title="bandicam 2016-06-18 21-01-54-232.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-22 23-47-54-270.jpg" src="https://pic.pimg.tw/qupyqupy/1468143785-1818671840.jpg" title="bandicam 2016-06-22 23-47-54-270.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 21-39-07-439.jpg" src="https://pic.pimg.tw/qupyqupy/1468143787-667042890.jpg" title="bandicam 2016-06-23 21-39-07-439.jpg" /></div> </div> <div class="global_divtr detail_text"> <div class="global_divtd">在惡魔城地下水脈的船夫。</div> <div class="global_divtd">［里希特］中了［沙夫特］魔法後的樣子。</div> <div class="global_divtd">［艾卡多］的母親，因為被人類當作巫女燒死，所以造成［德古拉］對人類的強烈怨恨，但臨終時曾叮囑［艾卡多］不要怨恨人類，［艾卡多］也因此走上跟父親對抗的道路。</div> </div> <div class="global_divtr name_title"> <div class="global_divtd">魅魔</div> <div class="global_divtd">沙夫特</div> <div class="global_divtd">&nbsp;</div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 21-40-18-198.jpg" src="https://pic.pimg.tw/qupyqupy/1468143787-3204294469.jpg" title="bandicam 2016-06-23 21-40-18-198.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 22-27-14-146.jpg" src="https://pic.pimg.tw/qupyqupy/1468143788-4080505779.jpg" title="bandicam 2016-06-23 22-27-14-146.jpg" /></div> <div class="global_divtd">&nbsp;</div> </div> <div class="global_divtr detail_text"> <div class="global_divtd">能變換人們所愛之人的樣子，並且趁虛而入的魔女。</div> <div class="global_divtd">本來是教會的牧師，但後來背叛教會成為［德古拉］的心腹，數年前雖然成功復活［德古拉］但是卻被［里希特］給阻止，於是［沙夫特］死裡逃生後便設計這一連串的事件，產生了本作的故事。</div> <div class="global_divtd">&nbsp;</div> </div> </div>');
+	  contentArr.push('<div class="beelzebub_title">正城的魔王</div> <div class="global_divtable beelzebub"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-38-27-105.jpg" src="https://pic.pimg.tw/qupyqupy/1468143781-2933422932.jpg" title="bandicam 2016-06-15 22-38-27-105.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-15 22-48-07-964.jpg" src="https://pic.pimg.tw/qupyqupy/1468143782-1370314865.jpg" title="bandicam 2016-06-15 22-48-07-964.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-15 23-19-38-691.jpg" src="https://pic.pimg.tw/qupyqupy/1468143782-2513985073.jpg" title="bandicam 2016-06-15 23-19-38-691.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-18 19-48-47-666.jpg" src="https://pic.pimg.tw/qupyqupy/1468143783-3890211076_n.jpg" title="bandicam 2016-06-18 19-48-47-666.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-18 20-01-54-724.jpg" src="https://pic.pimg.tw/qupyqupy/1468143783-2067729827.jpg" title="bandicam 2016-06-18 20-01-54-724.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-18 20-22-06-693.jpg" src="https://pic.pimg.tw/qupyqupy/1468143783-1615129490.jpg" title="bandicam 2016-06-18 20-22-06-693.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-18 20-36-56-077.jpg" src="https://pic.pimg.tw/qupyqupy/1468143783-45609937_n.jpg" title="bandicam 2016-06-18 20-36-56-077.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-18 20-37-14-375.jpg" src="https://pic.pimg.tw/qupyqupy/1468143783-896494794_n.jpg" title="bandicam 2016-06-18 20-37-14-375.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-19 08-24-25-697.jpg" src="https://pic.pimg.tw/qupyqupy/1468143784-1776586812.jpg" title="bandicam 2016-06-19 08-24-25-697.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-22 23-48-18-935.jpg" src="https://pic.pimg.tw/qupyqupy/1468143785-213160240_n.jpg" title="bandicam 2016-06-22 23-48-18-935.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 00-33-46-073.jpg" src="https://pic.pimg.tw/qupyqupy/1468143785-1403363292.jpg" title="bandicam 2016-06-23 00-33-46-073.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 00-34-56-827.jpg" src="https://pic.pimg.tw/qupyqupy/1468143785-1667825087.jpg" title="bandicam 2016-06-23 00-34-56-827.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 21-40-36-632.jpg" src="https://pic.pimg.tw/qupyqupy/1468143787-2933205208.jpg" title="bandicam 2016-06-23 21-40-36-632.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 22-30-59-737.jpg" src="https://pic.pimg.tw/qupyqupy/1468143788-4222397852_n.jpg" title="bandicam 2016-06-23 22-30-59-737.jpg" /></div> </div> </div> <div class="beelzebub_title">逆城的魔王</div> <div class="global_divtable beelzebub"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 22-35-26-011.jpg" src="https://pic.pimg.tw/qupyqupy/1468143789-3107573563_n.jpg" title="bandicam 2016-06-23 22-35-26-011.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 22-55-27-114.jpg" src="https://pic.pimg.tw/qupyqupy/1468143791-1056345361.jpg" title="bandicam 2016-06-23 22-55-27-114.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 23-29-14-022.jpg" src="https://pic.pimg.tw/qupyqupy/1468143791-1106659013.jpg" title="bandicam 2016-06-23 23-29-14-022.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-23 23-35-07-188.jpg" src="https://pic.pimg.tw/qupyqupy/1468143793-3150822446.jpg" title="bandicam 2016-06-23 23-35-07-188.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-23 23-48-28-793.jpg" src="https://pic.pimg.tw/qupyqupy/1468143793-3483150417_n.jpg" title="bandicam 2016-06-23 23-48-28-793.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-02-02-561.jpg" src="https://pic.pimg.tw/qupyqupy/1468143794-296987186_n.jpg" title="bandicam 2016-06-30 22-02-02-561.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-23-57-510.jpg" src="https://pic.pimg.tw/qupyqupy/1468143794-4030934946_n.jpg" title="bandicam 2016-06-30 22-23-57-510.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-24-07-026.jpg" src="https://pic.pimg.tw/qupyqupy/1468143794-2468085546_n.jpg" title="bandicam 2016-06-30 22-24-07-026.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-31-23-937.jpg" src="https://pic.pimg.tw/qupyqupy/1468143794-854197389_n.jpg" title="bandicam 2016-06-30 22-31-23-937.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-31-41-585.jpg" src="https://pic.pimg.tw/qupyqupy/1468143795-1749133629_n.jpg" title="bandicam 2016-06-30 22-31-41-585.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-32-03-267.jpg" src="https://pic.pimg.tw/qupyqupy/1468143796-531198846_n.jpg" title="bandicam 2016-06-30 22-32-03-267.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-30 22-32-22-432.jpg" src="https://pic.pimg.tw/qupyqupy/1468143796-2469773893_n.jpg" title="bandicam 2016-06-30 22-32-22-432.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-30 23-32-30-160.jpg" src="https://pic.pimg.tw/qupyqupy/1468143797-500238807_n.jpg" title="bandicam 2016-06-30 23-32-30-160.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-06-30 23-46-41-942.jpg" src="https://pic.pimg.tw/qupyqupy/1468143797-2907239875_n.jpg" title="bandicam 2016-06-30 23-46-41-942.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-06-30 23-48-40-391.jpg" src="https://pic.pimg.tw/qupyqupy/1468143797-3255651622_n.jpg" title="bandicam 2016-06-30 23-48-40-391.jpg" /></div> <div class="global_divtd">&nbsp;</div> </div> </div>');
+
+	  return contentArr;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
