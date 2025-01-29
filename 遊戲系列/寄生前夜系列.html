@@ -1,0 +1,250 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+<p><label>選擇遊戲：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>選擇：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>選擇：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');
+  activityArr.push('');
+
+
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('寄生前夜');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+  	nowAct = activitySelect.value;
+  	initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value, backTop = true) {
+    document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;
+      if (backTop) {
+      	scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+  	document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+  	headSelect.innerHTML = '';
+  	footSelect.innerHTML = '';
+
+  	for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    initPage(1, false);
+  }
+
+  initAct(1);
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+
+    return result;
+  }
+
+
+  function getAct1(idx) {
+  	if (idx == 2){
+  		var pArr = [];
+  		pArr.push('');
+  		pArr.push('遊戲介紹');
+
+
+  		return pArr;
+  	}
+  	var contentArr = [] ;
+	  contentArr.push('');
+    contentArr.push('<p>改編自日本作家［瀨名秀明］的科幻小說。值得一提的是該小說在第二屆日本恐怖小說比賽中獲得冠軍。</p> <p>在 90 年代時的遊戲主要還是以劍、魔法為主的英雄式勇者幻想題材，但這大部分是因為遊戲硬體條件而限制了遊戲種類。這情形在 PS 、SS 等次世代遊戲出現後開始有了巨大的轉變，尤其是［惡靈古堡］的成功，讓科幻題材的遊戲逐漸備受歡迎。異魔就是當時產出的經典系列之一。</p> <hr /> <p>遊戲開頭動畫。</p> <p>背景音樂充滿了懸疑、緊張的氣氛。各種在畫面上浮現的文字帶出片段的故事內容，真的是非常精彩。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ad-RWl6xR9c?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一開始進入遊戲不管是場景氛圍、進行方式都與［惡靈古堡］頗為類似，但實際上［異魔］卻是一個角色扮演遊戲，有升級制度、裝備替換、角色培養，雖然從頭到尾只有主角［艾雅］可以操作。</p> <div class="global_ps_text"> <p>遊戲一開始［艾雅］的性感禮服裝扮真的是非常成功的設計。</p> <p>在當時遊戲店內有很多試玩的人聚集，這樣性感的遊戲主角確實吸引了不少人的目光。</p> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-08 22-07-49-994.jpg" src="https://pic.pimg.tw/qupyqupy/1471145479-651782797_n.jpg" title="bandicam 2016-07-08 22-07-49-994.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-08 22-15-41-459.jpg" src="https://pic.pimg.tw/qupyqupy/1471145479-4167267870_n.jpg" title="bandicam 2016-07-08 22-15-41-459.jpg" /></div> </div> </div> <p>遊戲的故事圍繞在［艾雅］、［伊娃］這兩個女人身上，主要是說粒線體經過了億萬年的進化後，已經進化到可以取代人類的地步。</p> <p>而［艾雅］、［伊娃］兩人身上的歷線體已經得到覺醒，兩人因為立場相異所以展開了對抗。</p> <div class="global_ps_text"> <p>粒線體這東西我查書才知道人體內真的是有。</p> <p>在遊戲裡的概念大概是指因為粒線體的進化速度遠超過寄宿的生物並且產生了自己的意識，所以才會發生粒線體直接在人體內覺醒突變進化。但在遊戲過程中可以得知多半還有人類的科學因素才造成了這次的危機。</p> </div> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-52-32-723.jpg" src="https://pic.pimg.tw/qupyqupy/1471145486-2817360591_n.jpg" title="bandicam 2016-08-07 16-52-32-723.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 17-18-36-137.jpg" src="https://pic.pimg.tw/qupyqupy/1471145486-4056864835_n.jpg" title="bandicam 2016-08-07 17-18-36-137.jpg" /></div> </div> </div> <p>［艾雅］穿禮服的樣子十分性感可愛。</p> <p><img alt="bandicam 2016-08-07 17-05-03-671.jpg" src="https://pic.pimg.tw/qupyqupy/1471145486-2409847196_n.jpg" title="bandicam 2016-08-07 17-05-03-671.jpg" /></p> <p>雖然在動畫裡面的［艾雅］十分性感可愛，但一進入正常遊戲時的操作畫面頓時變得很平面，現也是初期 3D遊戲所能呈現的極致。</p> <p><img alt="bandicam 2016-08-07 14-16-42-844.jpg" src="https://pic.pimg.tw/qupyqupy/1471145481-1242390635_n.jpg" title="bandicam 2016-08-07 14-16-42-844.jpg" /></p> <p>在設定上只有［艾雅］可以對抗［伊娃］，其餘人一靠近就會產生自燃現象，即便是如此，［艾雅］的普通人夥伴還是會提供各種協助。像是武器改造、情報提供等，這些都能在警局內得到滿足。</p> <p><img alt="bandicam 2016-07-08 23-02-14-234.jpg" src="https://pic.pimg.tw/qupyqupy/1471145479-3518871590_n.jpg" title="bandicam 2016-07-08 23-02-14-234.jpg" /></p> <p>［丹尼爾］是［艾雅］的警察同事，因為自己老婆在事件中被［伊娃］殺害，所以導致他對［伊娃］的仇恨心很深，也因此拼了命協助［艾雅］。</p> <p>正常遊戲的最後一戰，他從直升機上跳下來送子彈給［艾雅］的橋段十分熱血，全身著火落海的畫面也讓人印象深刻。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-52-38-990.jpg" src="https://pic.pimg.tw/qupyqupy/1471145486-2209064577_n.jpg" title="bandicam 2016-08-07 16-52-38-990.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 17-05-17-481.jpg" src="https://pic.pimg.tw/qupyqupy/1471145486-3689017724_n.jpg" title="bandicam 2016-08-07 17-05-17-481.jpg" /></div> </div> </div> <p>從日本來的［前田］，可以從他口中得知日本也曾發生粒線體事件，遊戲中他似乎很喜歡［艾雅］會不停送她日本的護身符，也因為這樣，最後要交給［艾雅］對抗粒線體的子彈時被［丹尼爾］誤以為又要送啥沒用的怪東西而強行拉走。這橋段看的時候是蠻有趣的。當然［丹尼爾］最後也因為這樣硬得從直升機上跳下來送子彈。</p> <p><img alt="bandicam 2016-08-07 17-05-19-687.jpg" src="https://pic.pimg.tw/qupyqupy/1471145487-587156913_n.jpg" title="bandicam 2016-08-07 17-05-19-687.jpg" /></p> <p>瘋狂的科學家［克萊姆］博士，跟［伊娃］有所接觸，因為知道了在日本的粒線體事件始末，為了替［伊娃］誕生出完美的粒線體生物而研究人工授精。</p> <div class="global_ps_text"> <p>在日本的發生的粒線體事件。</p> <p>原本在日本的［伊娃］(不是指這次在紐約的［伊娃］），本來打算生出一個完美的粒線體生物，但是由於來自父親的粒線體排斥而失敗。</p> <p>所以［克萊姆］的研究就是把精子內的粒線體給去除掉，再讓［伊娃］受孕。</p> </div> <p><img alt="bandicam 2016-07-08 23-22-17-643.jpg" src="https://pic.pimg.tw/qupyqupy/1471145480-2191281311_n.jpg" title="bandicam 2016-07-08 23-22-17-643.jpg" /></p> <p>［伊娃］懷孕的樣子，在視覺上真的很衝擊，整個場景畫面猶如異形翻版。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 15-49-27-114.jpg" src="https://pic.pimg.tw/qupyqupy/1471145483-4276346558_n.jpg" title="bandicam 2016-08-07 15-49-27-114.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-21-20-103.jpg" src="https://pic.pimg.tw/qupyqupy/1471145484-842361464_n.jpg" title="bandicam 2016-08-07 16-21-20-103.jpg" /></div> </div> </div> <p>最後［伊娃］生出的完美生命體，初看時像個小惡魔，會以驚人的速度成長進化，在與［艾雅］短暫交戰間不斷的長大，遊戲的最後［艾雅］要逃離它的追趕，那逃命的過程真的十分緊張刺激。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-46-53-526.jpg" src="https://pic.pimg.tw/qupyqupy/1471145485-4136481653_n.jpg" title="bandicam 2016-08-07 16-46-53-526.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-50-06-821.jpg" src="https://pic.pimg.tw/qupyqupy/1471145485-603681285_n.jpg" title="bandicam 2016-08-07 16-50-06-821.jpg" /></div> </div> </div> <p>［伊娃］可以算是這次紐約事件的起源，他其實原身是歌劇女演員［彌麗莎］，但是由於為了演出而服用大量藥物，造成身體衰弱，導致體內的［伊娃］控制了身體。</p> <p>很多人以為［彌麗莎］是因為體內的粒線體覺醒兒性情大變，其實正確來講應該是體內的粒線體［伊娃］取代了她本人的意識，而她本人卻被封鎖在身體的某一處。</p> <div class="global_ps_text"> <p>遊戲中到處都充滿了［彌麗莎］唱歌的背景音樂，這點讓異魔詭異的氣氛增加不少。</p> </div> <p><img alt="bandicam 2016-08-07 16-21-36-416.jpg" src="https://pic.pimg.tw/qupyqupy/1471145484-4157167593_n.jpg" title="bandicam 2016-08-07 16-21-36-416.jpg" /></p> <p>遊戲中［艾雅］可以利用各種槍支進行戰鬥，沒有子彈時也可以直用警棍，而且還可以操縱角色在戰場上隨意走動。</p> <p>由於戰鬥不像一般 RPG 遊戲一樣只是下下指令、看看結果就好，熟悉敵人攻擊方式並且適時閃避也是非常重要的，因為這設計讓玩家可以利用操作技術突破高等級的敵人。</p> <div class="global_ps_text"> <p>當戰鬥時準備利用槍支射擊時，會有射程問題，在射程內才能打又準又痛。</p> <p>除了槍支、警棍外，因為［艾雅］也是粒線體覺醒的人類，所以也能使用粒線體相關的特殊能力（另類的超能力之類的）。</p> </div> <p><img alt="bandicam 2016-07-09 07-05-49-277.jpg" src="https://pic.pimg.tw/qupyqupy/1471145481-1082944558_n.jpg" title="bandicam 2016-07-09 07-05-49-277.jpg" /></p> <p>歸功於 3D的遊戲畫面，對決體積大的異常怪物場面也頗有魄力。</p> <p><img alt="bandicam 2016-08-07 14-23-14-475.jpg" src="https://pic.pimg.tw/qupyqupy/1471145482-1008179403_n.jpg" title="bandicam 2016-08-07 14-23-14-475.jpg" /></p> <p>遊戲中常可以看到這種電影式的運鏡手法，在當時相當令人驚艷。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-08 22-42-56-410.jpg" src="https://pic.pimg.tw/qupyqupy/1471145479-1464763378_n.jpg" title="bandicam 2016-07-08 22-42-56-410.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-08 23-27-39-674.jpg" src="https://pic.pimg.tw/qupyqupy/1471145480-8554149_n.jpg" title="bandicam 2016-07-08 23-27-39-674.jpg" /></div> </div> </div> <p>故事中還有戰鬥機、軍艦的出場，對決巨大的粒線體生物彷彿是酷斯拉的電影版場景。</p> <p><img alt="bandicam 2016-08-07 16-27-25-218.jpg" src="https://pic.pimg.tw/qupyqupy/1471145484-4246186834_n.jpg" title="bandicam 2016-08-07 16-27-25-218.jpg" /></p> <p>沾滿粒線體肉泥的自由女神像。</p> <p><img alt="bandicam 2016-08-07 16-39-58-176.jpg" src="https://pic.pimg.tw/qupyqupy/1471145485-3640552044_n.jpg" title="bandicam 2016-08-07 16-39-58-176.jpg" /></p> <p>大地圖的移動畫面，還有白天、黑夜之分，這點小細節也注意到了。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-08 23-18-34-478.jpg" src="https://pic.pimg.tw/qupyqupy/1471145480-923309275_n.jpg" title="bandicam 2016-07-08 23-18-34-478.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-08 23-27-12-964.jpg" src="https://pic.pimg.tw/qupyqupy/1471145480-2277700724_n.jpg" title="bandicam 2016-07-08 23-27-12-964.jpg" /></div> </div> </div> <p>遊戲場景方面十分用心，完全能體會到激似於異形的詭異、恐怖感。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 14-55-59-096.jpg" src="https://pic.pimg.tw/qupyqupy/1471145482-2636485649_n.jpg" title="bandicam 2016-08-07 14-55-59-096.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 14-56-28-639.jpg" src="https://pic.pimg.tw/qupyqupy/1471145482-3146733176_n.jpg" title="bandicam 2016-08-07 14-56-28-639.jpg" /></div> </div> </div> <p>獨自坐電梯時，那種幽閉恐懼的感覺也十分突出。</p> <p><img alt="bandicam 2016-08-07 13-50-21-181.jpg" src="https://pic.pimg.tw/qupyqupy/1471145481-3249718647_n.jpg" title="bandicam 2016-08-07 13-50-21-181.jpg" /></p> <p>即便受限於硬體效能，但不能看出場景在細節的光影部分仍是處理的不錯。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 15-27-48-341.jpg" src="https://pic.pimg.tw/qupyqupy/1471145482-218776434_n.jpg" title="bandicam 2016-08-07 15-27-48-341.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 15-37-32-250.jpg" src="https://pic.pimg.tw/qupyqupy/1471145483-3096149136_n.jpg" title="bandicam 2016-08-07 15-37-32-250.jpg" /></div> </div> </div> <p>若論起 90年代最火紅的電影，侏儸紀公園一定榜上有名，遊戲也搭上了這股風潮。看那快突破螢幕的巨大恐龍骸骨頭部多有魄力。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 15-47-30-898.jpg" src="https://pic.pimg.tw/qupyqupy/1471145483-1475147299_n.jpg" title="bandicam 2016-08-07 15-47-30-898.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-17-43-368.jpg" src="https://pic.pimg.tw/qupyqupy/1471145483-1939083594_n.jpg" title="bandicam 2016-08-07 16-17-43-368.jpg" /></div> </div> </div> <p>GameOver畫面。</p> <p><img alt="bandicam 2016-08-07 14-26-14-035.jpg" src="https://pic.pimg.tw/qupyqupy/1471145482-2783253212_n.jpg" title="bandicam 2016-08-07 14-26-14-035.jpg" /></p> <p>遊戲中還有另一種被戰鬥機撞死的GameOver畫面。</p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Vw6jNHOCNAw" title="YouTube video player" width="560"></iframe></p> <p>第一次破關後，繼承記錄再玩第二輪就可以發現隱藏的［克萊斯勒大樓］。</p> <p><img alt="bandicam 2016-08-07 17-24-25-850.jpg" src="https://pic.pimg.tw/qupyqupy/1471145487-723292041_n.jpg" title="bandicam 2016-08-07 17-24-25-850.jpg" /></p> <p>大樓共有 77層，在最頂樓可以遇見［艾雅］的姐妹［瑪雅］，也是最純種的［伊娃］。［艾雅］就是移植了［瑪雅］的眼角膜才擁有粒線體覺醒的能力，而［彌麗莎］則是移植了［瑪雅］的腎臟才化身為另一個［伊娃］。</p> <p><img alt="bandicam 2016-08-07 18-55-50-269.jpg" src="https://pic.pimg.tw/qupyqupy/1471145489-254494242_n.jpg" title="bandicam 2016-08-07 18-55-50-269.jpg" /></p> <p>［克萊斯勒大樓］雖然有真正結局可以看，但是整體迷宮設計太過枯燥乏味，搞得很像線上遊戲的打寶密地一樣，雖然很多強力裝備，可是由於是單人遊戲，根本找不到人炫耀。</p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/TVfzVqUmCzc" title="YouTube video player" width="560"></iframe></p> <hr /> <p>遊戲中遇到的各個魔王級敵人。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-07-08 22-40-15-070.jpg" src="https://pic.pimg.tw/qupyqupy/1471145479-610705557_n.jpg" title="bandicam 2016-07-08 22-40-15-070.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-07-09 07-05-14-869.jpg" src="https://pic.pimg.tw/qupyqupy/1471145480-465415067_n.jpg" title="bandicam 2016-07-09 07-05-14-869.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 14-21-53-260.jpg" src="https://pic.pimg.tw/qupyqupy/1471145481-3286882799_n.jpg" title="bandicam 2016-08-07 14-21-53-260.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 13-41-35-722.jpg" src="https://pic.pimg.tw/qupyqupy/1471145481-213017310_n.jpg" title="bandicam 2016-08-07 13-41-35-722.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 15-00-17-565.jpg" src="https://pic.pimg.tw/qupyqupy/1471145482-3780728766_n.jpg" title="bandicam 2016-08-07 15-00-17-565.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 15-30-52-288.jpg" src="https://pic.pimg.tw/qupyqupy/1471145483-2370670830_n.jpg" title="bandicam 2016-08-07 15-30-52-288.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 15-38-33-070.jpg" src="https://pic.pimg.tw/qupyqupy/1471145483-1808854899_n.jpg" title="bandicam 2016-08-07 15-38-33-070.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-16-43-464.jpg" src="https://pic.pimg.tw/qupyqupy/1471145483-662053635_n.jpg" title="bandicam 2016-08-07 16-16-43-464.jpg" /></div> </div> </div> <p>粒線體竟然能操縱巨大的恐龍骸骨來襲，這段恐龍長肉的動畫做得很有創意。</p> <p><img alt="bandicam 2016-08-07 16-18-06-571.jpg" src="https://pic.pimg.tw/qupyqupy/1471145484-4157719685_n.jpg" title="bandicam 2016-08-07 16-18-06-571.jpg" /></p> <p>打［伊娃］的這一戰，處理的很像最後一戰，連［伊娃］的大絕招放得都比最終完美生命體有魄力。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-38-36-278.jpg" src="https://pic.pimg.tw/qupyqupy/1471145484-2082708365_n.jpg" title="bandicam 2016-08-07 16-38-36-278.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-40-15-679.jpg" src="https://pic.pimg.tw/qupyqupy/1471145485-4235677076_n.jpg" title="bandicam 2016-08-07 16-40-15-679.jpg" /></div> </div> </div> <p>最終完美生物會有四個階段要打，不過因為會得到［前田］開發出用來對抗粒線體的子彈，所以其實打得比［伊娃］還輕鬆。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-48-52-022.jpg" src="https://pic.pimg.tw/qupyqupy/1471145485-4269085492_n.jpg" title="bandicam 2016-08-07 16-48-52-022.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-49-21-039.jpg" src="https://pic.pimg.tw/qupyqupy/1471145485-2061590825_n.jpg" title="bandicam 2016-08-07 16-49-21-039.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-50-29-149.jpg" src="https://pic.pimg.tw/qupyqupy/1471145486-1727851611_n.jpg" title="bandicam 2016-08-07 16-50-29-149.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 16-51-27-158.jpg" src="https://pic.pimg.tw/qupyqupy/1471145486-2261230614_n.jpg" title="bandicam 2016-08-07 16-51-27-158.jpg" /></div> </div> </div> <p>在遊戲第二輪的隱藏關卡［克萊斯勒大樓］所會遇到的魔王級怪物。</p> <div class="global_divtable"> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 17-37-16-690.jpg" src="https://pic.pimg.tw/qupyqupy/1471145487-2981412383_n.jpg" title="bandicam 2016-08-07 17-37-16-690.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 17-55-54-165.jpg" src="https://pic.pimg.tw/qupyqupy/1471145487-2166848697_n.jpg" title="bandicam 2016-08-07 17-55-54-165.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 18-03-54-059.jpg" src="https://pic.pimg.tw/qupyqupy/1471145487-638233214_n.jpg" title="bandicam 2016-08-07 18-03-54-059.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 18-16-26-443.jpg" src="https://pic.pimg.tw/qupyqupy/1471145488-4150824303_n.jpg" title="bandicam 2016-08-07 18-16-26-443.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 18-25-50-433.jpg" src="https://pic.pimg.tw/qupyqupy/1471145488-3396311328_n.jpg" title="bandicam 2016-08-07 18-25-50-433.jpg" /></div> <div class="global_divtd"><img alt="bandicam 2016-08-07 18-31-30-038.jpg" src="https://pic.pimg.tw/qupyqupy/1471145488-3469245915_n.jpg" title="bandicam 2016-08-07 18-31-30-038.jpg" /></div> </div> <div class="global_divtr"> <div class="global_divtd"><img alt="bandicam 2016-08-07 18-42-59-948.jpg" src="https://pic.pimg.tw/qupyqupy/1471145488-3489287317_n.jpg" title="bandicam 2016-08-07 18-42-59-948.jpg" /></div> <div class="global_divtd">&nbsp;</div> </div> </div> <p>最終隱藏大魔王純種［伊娃］，仔細看可以發現造型跟［艾雅］使用粒線體最終能力解放時的外型一模一樣。</p> <p><img alt="bandicam 2016-08-07 18-58-31-666.jpg" src="https://pic.pimg.tw/qupyqupy/1471145489-2091942027_n.jpg" title="bandicam 2016-08-07 18-58-31-666.jpg" /></p> <hr /> <p>以下是遊戲過程影片，劇情很短一直是異魔一代被人拿出來討論的缺點之一，但我覺得故事在每一個段落都非常精彩，像是在看一部電影一樣，所以劇情短對我來說反而是個優點。</p> <p><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/UG7PMIf2hTg" title="YouTube video player" width="560"></iframe></p>');
+    contentArr.push('');
+
+	  return contentArr;
+  }
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
