@@ -127,6 +127,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//浮雲朝露
   activityArr.push('');//徇天記
   activityArr.push('');//曲海金戈
+  activityArr.push('<hr /><p>劇情超水的一期活動，純粹就是帶出新角人設，但是跟主線也沒啥重要的連結，還有<span class="global_name_span">殷劍平</span>與<span class="global_name_span">封寒月</span>有個孩子叫做<span class="global_name_span">寧</span>，其他的劇情一語概括就是［敵人來了］。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fzWaKtVyRXs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//雲泥何跡
 
 
 
@@ -151,6 +152,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('浮雲朝露');
   paArr.push('徇天記');
   paArr.push('曲海金戈');
+  paArr.push('雲泥何跡');
 
 
   var contentArr = [];
@@ -174,6 +176,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct17(1));
   contentArr.push(getAct18(1));
   contentArr.push(getAct19(1));
+  contentArr.push(getAct20(1));
 
   var pArr = [];
   pArr.push([]);
@@ -196,6 +199,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct17(2));
   pArr.push(getAct18(2));
   pArr.push(getAct19(2));
+  pArr.push(getAct20(2));
 
 
   var firstEnter = 0 ; 
@@ -258,7 +262,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct20(idx) {
+  function getAct21(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -272,6 +276,22 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     var result = [] ;
     result.push('');
     result.push('');
+
+    return result;
+  }
+
+  function getAct20(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">仙塵之間、不期而遇、變生不測、波瀾迭起</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QcFe1E-IiWQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">神雀秘事壹、瘴霧隱祟、夙世積怨、疑竇叢生、神雀秘事貳</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xZjzIGK9LEg?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">芳草之地、朱樓幻景、樊籠久困、神雀秘事參肆</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-E-qi-jLcTE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return result;
   }
