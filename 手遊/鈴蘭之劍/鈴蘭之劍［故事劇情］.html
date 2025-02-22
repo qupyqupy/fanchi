@@ -132,6 +132,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//小魔女大冒險
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1XaLAHbQ9_k?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//融斷禁忌之翼
   activityArr.push('');//心海漫遊
+  activityArr.push('');//迷宮飯聯動-舌尖上的伊利亞
   activityArr.push('');//其他活動
   activityArr.push('');//角色劇情
 
@@ -154,6 +155,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('小魔女大冒險');
   paArr.push('融斷禁忌之翼');
   paArr.push('心海漫遊');
+  paArr.push('迷宮飯聯動-舌尖上的伊利亞');
   paArr.push('其他活動');
   paArr.push('角色劇情');
 
@@ -175,6 +177,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct15(1));
   contentArr.push(getAct16(1));
   contentArr.push(getAct17(1));
+  contentArr.push(getAct18(1));
   contentArr.push(getAct7(1));
   contentArr.push(getAct12(1));
 
@@ -195,6 +198,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct15(2));
   pArr.push(getAct16(2));
   pArr.push(getAct17(2));
+  pArr.push(getAct18(2));
   pArr.push(getAct7(2));
   pArr.push(getAct12(2));
 
@@ -216,6 +220,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArrB.push(getActB15(1));
   contentArrB.push(getActB16(1));
   contentArrB.push(getActB17(1));
+  contentArrB.push(getActB18(1));
   contentArrB.push(getActB7(1));
   contentArrB.push(getActB12(1));
 
@@ -237,6 +242,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArrB.push(getActB15(2));
   pArrB.push(getActB16(2));
   pArrB.push(getActB17(2));
+  pArrB.push(getActB18(2));
   pArrB.push(getActB7(2));
   pArrB.push(getActB12(2));
 
@@ -327,6 +333,38 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
+  function getActB19(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+  function getAct19(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+
+    return contentArr;
+  }
+
   function getActB18(idx) {
     if (idx == 2){
       var pArr = [];
@@ -348,13 +386,13 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var pArr = [];
   pArr.push('');
-  pArr.push('');
+  pArr.push('劇情');
 
       return pArr;
     }
     var contentArr = [] ;
   contentArr.push('');
-  contentArr.push('');
+  contentArr.push('<div class="title_text">迷宮之始、擊敗噗露噗露、異世界來客、意外的美味、他腳滑了快跑</div> <p>［混沌之海］出現神祕的迷宮，<span class="global_name_span">麥莎</span>失陷其中，於是大家興師動眾來尋找，遇到同樣迷失在這的<span class="global_name_span">瑪露希爾</span>與<span class="global_name_span">法琳</span>，他們也有想要找到的同伴，於是雙方人馬一起行動。</p> <p>過程中遇到強大的魔物［噩夢魔羊］，牠一直要眾人交出［最美味的菜譜］，好不容易甩掉牠後，眾人進入了更深一層的迷宮入口。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0pWSph0EoLo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return contentArr;
   }
