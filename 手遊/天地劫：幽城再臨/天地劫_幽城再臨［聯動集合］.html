@@ -116,6 +116,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/v1RgslWqFAM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//國風聯動-恒沙世界
   activityArr.push('<hr /><p>這次聯動劇情，實在賣情懷賣得過分，一開始劇情有點懸疑的感覺，到後面直接放飛自我，想努力分析隱藏在背後的整個劇情脈絡，但顯然編劇並沒有想那麼多，再不合理也直接餵給玩家。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/siOytre5mPU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//軒轅劍-雲和山的彼端
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-WMs6Gi2CS4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//國風聯動-西遊記
+  activityArr.push('');//國風聯動-封神篇
 
 
 
@@ -129,6 +130,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('國風聯動-恒沙世界');
   paArr.push('軒轅劍-雲和山的彼端');
   paArr.push('國風聯動-西遊記');
+  paArr.push('國風聯動-封神篇');
 
 
   var contentArr = [];
@@ -141,6 +143,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct6(1));
   contentArr.push(getAct7(1));
   contentArr.push(getAct8(1));
+  contentArr.push(getAct9(1));
 
   var pArr = [];
   pArr.push([]);
@@ -152,6 +155,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct6(2));
   pArr.push(getAct7(2));
   pArr.push(getAct8(2));
+  pArr.push(getAct9(2));
 
 
   var firstEnter = 0 ; 
@@ -214,7 +218,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct9(idx) {
+
+  function getAct10(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -231,6 +236,27 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
     return result;
   }
+
+  function getAct9(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('人物對話');
+      resultIdx.push('劇情正篇-殷墟餘燼');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">初識哪吒</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GsrdQv5_wuE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">初識楊戩</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OmKRijM_cso?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('<div class="title_text">邪祭疑雲、古墓異畫、幻象之境</div> <p><span class="global_name_span">奚歌</span>調查女子失蹤的案件來到［湯陰荒塚］，這裡寒森森的，還有人正以邪法祭祀，<span class="global_name_span">奚歌</span>將他們剷除之後，一個女子從祭祀的巨鼎跳了出來，她叫做<span class="global_name_span">妲己</span>與殷商時代的妖女同名，身邊還有個叫做<span class="global_name_span">四海</span>的小男孩。</p> <p><span class="global_name_span">妲己</span>失去記憶，但是腦中有個聲音一直在指引她，一行人跟著線索來到一處古墓，卻觸動機關被傳入壁畫之中，地點正是殷商王都［朝歌］，而且正好是周軍攻城的時刻，解決畫中的機關妖物後，一個神氣的聲音叫住<span class="global_name_span">妲己</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qIHhqEHKtdQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+
+
+    return result;
+  }
+
 
   function getAct8(idx) {
     if (idx == 2){
