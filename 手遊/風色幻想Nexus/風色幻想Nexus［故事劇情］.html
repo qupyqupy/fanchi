@@ -96,6 +96,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <select id="head_select_m" style="width: 20%;">
   
  </select>
+
+ <label>奇蹟聖典：</label> 
+<select id="head_select_t" style="width: 20%;">
+  
+ </select>
  </p>
 
 
@@ -126,6 +131,10 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <select id="foot_select_m" style="width: 20%;">
   
  </select>
+ <label>奇蹟聖典：</label> 
+<select id="foot_select_t" style="width: 20%;">
+  
+ </select>
  </p>
 
 
@@ -143,6 +152,63 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 
 <script>
+
+  //奇蹟聖典
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">追逐、誤會一場、混亂、密林之中、清晨狩獵</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XsR4y1BeUaI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">前往、更改計畫、措手不及、協助守衛、村民鬧事、地痞找碴、回旅館、偶遇、騷動、不平靜、城中市集</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3qXB44_T96w?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">拍賣會、突襲、危機、破壞、追蹤、魔獸出現、堅持、苦戰、最終時刻、對抗、旅館前、虛影戰鬥、鬧事醉漢、高空作戰、代理戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jZ2uhREHmog?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//序章-冒險啟程,群星盛會
+  contentArr.push('');//
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('序章-冒險啟程,群星盛會');
+  pArr.push('CH01');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_t");
+  var footSelect = document.getElementById("foot_select_t");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
 
   //回憶語錄
   (function(){
