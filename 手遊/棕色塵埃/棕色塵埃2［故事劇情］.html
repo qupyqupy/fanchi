@@ -1,0 +1,392 @@
+<style type="text/css">
+	.little_tittle {
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: cornsilk;
+    display: inline-block;
+    background-color: #6d695c;
+    background-image: repeating-linear-gradient(120deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .1) 1px, transparent 1px, transparent 60px), linear-gradient(60deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%, rgba(0, 0, 0, .1)), linear-gradient(120deg, rgba(0, 0, 0, .1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .1) 75%, rgba(0, 0, 0, .1));
+    background-size: 70px 120px;
+  }
+
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+
+<p><label>主線劇情：</label> 
+<select id="head_select_o" style="width: 20%;">
+  
+ </select>
+ <label>角色劇情：</label> 
+<select id="head_select_m" style="width: 20%;">
+  
+ </select>
+
+ <label>聯動劇情：</label> 
+<select id="head_select_t" style="width: 20%;">
+  
+ </select>
+ </p>
+
+
+ <p>
+ <label>　　其他：</label> 
+<select id="head_select_p" style="width: 20%;">
+  
+ </select>
+ </p>
+
+
+<hr />
+
+
+
+<div id="ch"></div>
+<hr />
+
+
+<p><label>主線劇情：</label> 
+<select id="foot_select_o" style="width: 20%;">
+  
+ </select>
+ <label>角色劇情：</label> 
+<select id="foot_select_m" style="width: 20%;">
+  
+ </select>
+ <label>聯動劇情：</label> 
+<select id="foot_select_t" style="width: 20%;">
+  
+ </select>
+ </p>
+
+
+ <p>
+
+  <label>　　其他：</label> 
+<select id="foot_select_p" style="width: 20%;">
+  
+ </select>
+ </p>
+
+<hr />
+
+<script>
+
+  //聯動劇情
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('');
+  pArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_t");
+  var footSelect = document.getElementById("foot_select_t");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
+
+
+	//其他
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">公會聯合戰開啟</div><p><iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40W%E6%B3%95%E5%A5%87%E7%9A%84%E5%B8%9D%E7%AA%A9W%3A7%2F%E6%A3%95%E8%89%B2%E5%A1%B5%E5%9F%832%EF%BC%BB%E5%85%AC%E6%9C%83%E8%81%AF%E5%90%88%E6%88%B0%E9%96%8B%E5%95%9F%EF%BC%BD%3A9?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');//公會戰
+  contentArr.push('<div class="title_text">末日之書開啟</div><p><iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40W%E6%B3%95%E5%A5%87%E7%9A%84%E5%B8%9D%E7%AA%A9W%3A7%2F%E6%A3%95%E8%89%B2%E5%A1%B5%E5%9F%832%EF%BC%BB%E6%9C%AB%E6%97%A5%E4%B9%8B%E6%9B%B8%E9%96%8B%E5%95%9F%EF%BC%BD%3A9?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');//末日之書
+  contentArr.push('<div class="title_text">冒險航線開啟</div><p><iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40W%E6%B3%95%E5%A5%87%E7%9A%84%E5%B8%9D%E7%AA%A9W%3A7%2F%E6%A3%95%E8%89%B2%E5%A1%B5%E5%9F%832%EF%BC%BB%E5%86%92%E9%9A%AA%E8%88%AA%E7%B7%9A%E9%96%8B%E5%95%9F%EF%BC%BD%3Aa?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');//冒險航路
+  contentArr.push('<div class="title_text">鏡中之戰開啟</div><p><iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40W%E6%B3%95%E5%A5%87%E7%9A%84%E5%B8%9D%E7%AA%A9W%3A7%2F%E6%A3%95%E8%89%B2%E5%A1%B5%E5%9F%832%EF%BC%BB%E9%8F%A1%E4%B8%AD%E4%B9%8B%E6%88%B0%E9%96%8B%E5%95%9F%EF%BC%BD%3Ae?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');//鏡中之戰
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('公會戰');
+  pArr.push('末日之書');
+  pArr.push('冒險航路');
+  pArr.push('鏡中之戰');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_p");
+  var footSelect = document.getElementById("foot_select_p");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
+
+
+//角色劇情
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
+
+
+
+  //主線劇情
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_o");
+  var footSelect = document.getElementById("foot_select_o");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+  
+  
+</script>
+
+
+
+
+
+
+
+
