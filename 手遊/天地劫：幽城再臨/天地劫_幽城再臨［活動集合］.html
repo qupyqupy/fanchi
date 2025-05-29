@@ -130,6 +130,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p>劇情超水的一期活動，純粹就是帶出新角人設，但是跟主線也沒啥重要的連結，還有<span class="global_name_span">殷劍平</span>與<span class="global_name_span">封寒月</span>有個孩子叫做<span class="global_name_span">寧</span>，其他的劇情一語概括就是［敵人來了］。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fzWaKtVyRXs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//雲泥何跡
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/D8spnz9u-Uo?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//疏影橫斜
   activityArr.push('<hr /><p>這次的正篇故事是［徇天記］的第二集，接著<span class="global_name_span">雪芝</span>下凡之後的故事。</p> <p>但仍然是為了推新角色的流水帳劇情，不斷補世界觀、補人物設定，但故事缺乏主軸，就算用［徇天記］當作一個系列包裝，卻對上次故事沒有更好的延續，我看完兩集甚至不知道主角是誰？若是群像故事，也該有個貫穿要素，目前全都沒看到，希望遊戲編劇能回歸初衷，就算是早期港漫最常遇見的爛尾劇情，也懂得在每期最後勾出這期或是下期的故事重點。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Wo4FzUYVV48?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//塵落襟江
+  activityArr.push('');//龍蛇交泰
 
 
 
@@ -157,6 +158,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('雲泥何跡');
   paArr.push('疏影橫斜');
   paArr.push('塵落襟江');
+  paArr.push('龍蛇交泰');
 
 
   var contentArr = [];
@@ -183,6 +185,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct20(1));
   contentArr.push(getAct21(1));
   contentArr.push(getAct22(1));
+  contentArr.push(getAct23(1));
 
   var pArr = [];
   pArr.push([]);
@@ -208,6 +211,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct20(2));
   pArr.push(getAct21(2));
   pArr.push(getAct22(2));
+  pArr.push(getAct23(2));
 
 
   var firstEnter = 0 ; 
@@ -270,7 +274,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct23(idx) {
+  function getAct24(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -284,6 +288,22 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     var result = [] ;
     result.push('');
     result.push('');
+
+    return result;
+  }
+
+  function getAct23(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('野火春風');
+
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">夢醒</div> <p>［大夢誰先覺？平生我自知。 草堂春睡足，窗外日遲遲］。</p> <p><span class="global_name_span">韓無砂</span>被<span class="global_name_span">殷劍平</span>一行人擊敗之後，陷入矇矓的意識，再次醒來自己的型態與名字都變了，在這個當下她叫做<span class="global_name_span">赤魃</span>。</p> <p>周遭貌似夥伴的人都只當她一時失憶，才會有奇怪的反應，這時一個對<span class="global_name_span">赤魃</span>有非份之想的<span class="global_name_span">史副都頭</span>率兵前來，想以逃役的罪名逮捕眾人，<span class="global_name_span">赤魃</span>不想委身於他，兩方人馬大打出手，得罪了官爺，<span class="global_name_span">赤魃</span>一夥只能趁著天色漸暗，先去村子找個躲藏地方。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AFq3ZhZsgn0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return result;
   }
