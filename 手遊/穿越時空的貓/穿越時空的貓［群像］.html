@@ -144,6 +144,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/263892655"><img alt="cover1.png" src="https://pic.pimg.tw/qupyqupy/1671596984-3952622617-g_n.png" title="cover1.png" /></a></p>');
   activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/263892659"><img alt="cover2.jfif" src="https://pic.pimg.tw/qupyqupy/1671596982-3192698372-g_n.jpg" title="cover2.jfif" /></a></p>');
   activityArr.push('<hr /><p><a href="https://qupyqupy.pixnet.net/album/photo/268539319"><img alt="將星之斧與覆鎧之羊.jpg" src="https://pic.pimg.tw/qupyqupy/1693451468-3666825166-g_n.jpg" title="將星之斧與覆鎧之羊.jpg" /></a></p>');
+  activityArr.push('');//落日之墟與光輝的守護者
 
 
 
@@ -153,6 +154,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('昔日的英雄與誓約之銘文');
   paArr.push('輪迴巨鐮與無實之紅蓮');
   paArr.push('將星之斧與覆鎧之羊');
+  paArr.push('落日之墟與光輝的守護者');
 
 
   var contentArr = [];
@@ -160,12 +162,14 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct1(1));
   contentArr.push(getAct2(1));
   contentArr.push(getAct3(1));
+  contentArr.push(getAct4(1));
 
   var pArr = [];
   pArr.push([]);
   pArr.push(getAct1(2));
   pArr.push(getAct2(2));
   pArr.push(getAct3(2));
+  pArr.push(getAct4(2));
 
 
   var contentArrB = [];
@@ -173,6 +177,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArrB.push(getActB1(1));
   contentArrB.push(getActB2(1));
   contentArrB.push(getActB3(1));
+  contentArrB.push(getActB4(1));
 
 
   var pArrB = [];
@@ -180,6 +185,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArrB.push(getActB1(2));
   pArrB.push(getActB2(2));
   pArrB.push(getActB3(2));
+  pArrB.push(getActB4(2));
 
 
   var firstEnter = 0 ; 
@@ -268,6 +274,41 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
+  function getActB5(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('沒整理');
+
+      return resultIdx;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('沒整理');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct5(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
 
   function getActB4(idx) {
     if (idx == 2){
@@ -291,13 +332,13 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var pArr = [];
   pArr.push('');
-  pArr.push('');
+  pArr.push('落日之墟與光輝的守護者');
 
       return pArr;
     }
     var contentArr = [] ;
   contentArr.push('');
-  contentArr.push('');
+  contentArr.push('<div class="title_text">落日之墟與光輝的守護者</div> <p><span class="global_name_span">莉娜里亞</span>是新進的［COA］搜查官，身旁還跟著最新型號的無人機<span class="global_name_span">科斯莫斯</span>，因為打遊戲睡過頭，錯過參加研習的巴士，本來想就這樣請假的<span class="global_name_span">莉娜里亞</span>卻不幸遇到<span class="global_name_span">阿爾德</span>這個爛好人，無奈答應乘坐<span class="global_name_span">合成鬼龍</span>前往的提議。</p> <p>但研習地點卻看到一片狼藉，學員跟教官遭到軍用級的無人武器襲擊，與此同時［艾路茲恩］也遭到恐怖攻擊，<span class="global_name_span">雷莉</span>剛好就在現場，並且追著嫌疑犯而去，另外<span class="global_name_span">謝提</span>正在調查新型號無人武器［審判者］的盜竊事件，來到一處陌生的廣大區域，這在受到量子電腦監控的［艾路茲恩］幾乎不可能發生，他隨即意識到有個天大的陰謀正在此處醞釀。</p> <p>回說<span class="global_name_span">莉娜里亞</span>這邊，重傷的長官掌握［艾路茲恩］可能遭到恐攻的事實，於是委託狀態完全的<span class="global_name_span">莉娜里亞</span>去找<span class="global_name_span">司政官</span>確認目前的情況，只是沒想到<span class="global_name_span">司政官</span>早就被綁架，<span class="global_name_span">莉娜里亞</span>利用<span class="global_name_span">科斯莫斯</span>獨有的［時間切割］技術，以影像技術還原現場，並且找到人造人是嫌犯的證據。</p> <p>正當<span class="global_name_span">莉娜里亞</span>依據線索調閱監視影像時，發現追捕恐攻嫌犯的<span class="global_name_span">雷莉</span>正遭到無人武器［審判者］的攻擊，而控制它的是一個叫做［薔薇花蕾］的組織。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9OtZ7OePjNQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">莉娜里亞</span>與<span class="global_name_span">阿爾德</span>及時趕到［廢棄公路99］支援<span class="global_name_span">雷莉</span>，但是［審判者］的護罩堅不可摧，三人只能被迫逃跑，跳下公路到達一處本不該存在的［破碎鎮］。</p> <p>另一邊調查過程中受傷的<span class="global_name_span">謝提</span>被村民<span class="global_name_span">托雷莉絲</span>發現，便帶回［破碎鎮］醫治，這裡是被某個量子電腦毀滅的城鎮，村民都對［艾路茲恩］上層的人懷有敵意，眾人會合後馬上意識到或許能在這找到［薔薇花蕾］的情報。</p> <p>調查後發現綁走<span class="global_name_span">司政官</span>的人造人，成功掃描它的記憶體，推理後得知<span class="global_name_span">司政官</span>如今的位置就在［失落區塊］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9WUAB-MZUVc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>不過前往［失落區塊］需要鑰匙卡，<span class="global_name_span">阿爾德</span>一行人就找上<span class="global_name_span">廢品商人</span>做交易，代價就是尋找一個男人的行蹤，經過調查發現這男人可能是［艾路茲恩］恐攻的炸彈製造者，而且這整件事情都與［薔薇花蕾］有關。</p> <p>至於一直協助眾人的<span class="global_name_span">托雷莉絲</span>其實也是［薔薇花蕾］的成員。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/F3J493ZJ-Ng?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>眾人取得鑰匙卡之後抵達［失落區塊］，這裡本是一個城鎮，但因為當時領袖為了城鎮自由與［艾路茲恩］上層鬧翻，甚至衍生成武力勢力，所以被量子電腦毀滅，而［薔薇花蕾］就是繼承當時的反抗勢力，要對［系統］復仇的組織。</p> <p>在［失落區塊］深處，眾人遇到［薔薇花蕾］的領袖<span class="global_name_span">艾歐拉</span>，她長得跟<span class="global_name_span">托雷莉絲</span>一模一樣，原來<span class="global_name_span">托雷莉絲</span>是以她為樣本複製出來的克隆人，目的就是潛藏在［破碎鎮］成為組織的眼睛，但是<span class="global_name_span">托雷莉絲</span>與<span class="global_name_span">阿爾德</span>一行人相處的這段日子，開始懷疑組織的正當性，在理念不同的情況下，當面被<span class="global_name_span">艾歐拉</span>處決。</p> <p><span class="global_name_span">阿爾德</span>一行人追趕著<span class="global_name_span">艾歐拉</span>，並且透過<span class="global_name_span">莉娜里亞</span>與無人機<span class="global_name_span">科斯莫斯</span>的合體攻擊，破除［審判者］的護罩，眼見大勢已去，<span class="global_name_span">艾歐拉</span>坦白所有事實，令眾人訝異的是克隆技術不僅複製了<span class="global_name_span">托雷莉絲</span>，而是把遭到毀滅的城鎮完全複製一份成為［破碎鎮］與當中的居民，本來只是當作反攻的據點，縮小與上層的戰力差距，但如今<span class="global_name_span">艾歐拉</span>認為這些克隆人早就有自己的意識，於是想為了他們的生存努力。</p> <p>而［破碎鎮］的危機來自即將甦醒的量子電腦，如果它發現這個計劃以外的城鎮，必定又是一起抹除行動，果然隨即傳來的震動，就是量子電腦打算讓整個區塊跌落地面的前奏，在救出<span class="global_name_span">司政官</span>後，眾人隨即投入拯救區塊的行動中，並且成功阻止動力爐的毀滅。</p> <p>結局<span class="global_name_span">司政官</span>為［破碎鎮］做了妥善的安排，讓鎮民短期內獲得和平，唯一遺憾的是<span class="global_name_span">莉娜里亞</span>本想透過這次功勞申請轉任情報官，但傑出的表現讓眾人稱讚她有著優秀搜查官的能力，她也因此被迫留下。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KcIVYII7Lw4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
     
 
 
