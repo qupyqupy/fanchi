@@ -92,6 +92,10 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <select id="head_select_o" style="width: 20%;">
   
  </select>
+ <label>海之檻歌：</label> 
+<select id="head_select_s" style="width: 20%;">
+  
+ </select>
  </p>
 
 
@@ -107,13 +111,74 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <select id="foot_select_o" style="width: 20%;">
   
  </select>
+ <label>海之檻歌：</label> 
+<select id="foot_select_s" style="width: 20%;">
+  
+ </select>
  </p>
 
 <hr />
 
 <script>
 
-  //主線劇情
+	//海之檻歌
+	 (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">最後的旅程</div> <p>故事發生在一個靠海的小村，吟詩遊人<span class="global_name_span">馬克貝因</span>已經是個62歲的老爺爺，與孫子<span class="global_name_span">弗特</span>就像朋友一樣。</p> <p>這天<span class="global_name_span">弗特</span>偷看爺爺的信，知道爺爺為了尋找［水底的旋律］要離開村子出去冒險，爺孫倆解決［克蘭卡村］的水底噴毒魔獸後，得到［共鳴石］，這是傳說中的吟詩遊人<span class="global_name_span">雷歐涅</span>的作品，透過演奏可以發揮神秘的力量，這樣的東西總共有24個，集齊全部［共鳴石］重現［水底的旋律］就是<span class="global_name_span">馬克貝因</span>的夢想。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/pNM4lEHW1TU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">夢想的起點、心動的首秀、糟糕的邂逅</div> <p><span class="global_name_span">弗特</span>參加［平傑爾獨奏會］後，得到了第二名，更堅定自己吟詩遊人的夢想，決定跟著爺爺出外冒險，同行的還有一直暗戀<span class="global_name_span">弗特</span>的<span class="global_name_span">烏娜</span>。</p> <p>再次回到［平傑爾］辦理各處的出入境手續，由於在獨奏會上的精采表現，<span class="global_name_span">弗特</span>累積了一票粉絲，於是決定在啟程前舉辦個人首秀，以表達對這群粉絲的感激，但這期間三人已經被［史因格盜賊團］盯上。</p> <p>就在前往［法格特］準備出海時，三人的行李被［史因格盜賊團］搶走，對方還使用辣椒粉攻擊，這讓<span class="global_name_span">弗特</span>與<span class="global_name_span">馬克貝因</span>十分記恨，將盜賊抓捕歸案後，仍不忘用辣椒粉復仇。</p> <p>但總歸事情是安然落幕，三人搭上大船遇上<span class="global_name_span">加雷諾大使</span>，並且為暈船的他演奏一曲，這一曲也開啟眾人未知的旅行！！同時間被抓的［史因格盜賊團］成員眼見就要被關入監牢，但他們的老大卻踏著輕快的步伐出現.......</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0EunJrLqMfw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//序章 旅人們的前奏曲
+  contentArr.push('');//
+  
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('序章 旅人們的前奏曲');
+  pArr.push('');
+
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_s");
+  var footSelect = document.getElementById("foot_select_s");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
+
+  //朱紅血
 
   (function(){
     var contentArr = [] ;
@@ -182,8 +247,6 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
       scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
     }
   }
-  
-  initPage(1);
 
   })();
   
