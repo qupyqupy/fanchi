@@ -94,6 +94,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
  <p>
 
+  <label>擁有：</label> 
+ <select id="head_select_oo" style="width: 20%;">
+  
+ </select>
+
  <label>支配：</label> 
  <select id="head_select_mm" style="width: 20%;">
   
@@ -103,6 +108,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  <select id="head_select_ww" style="width: 20%;">
   
  </select>
+
+  
 
  </p>
 
@@ -163,6 +170,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
  <p>
 
+  <label>擁有：</label> 
+ <select id="foot_select_oo" style="width: 20%;">
+  
+ </select>
+
  <label>支配：</label> 
  <select id="foot_select_mm" style="width: 20%;">
   
@@ -172,6 +184,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  <select id="foot_select_ww" style="width: 20%;">
   
  </select>
+
+  
 
  </p>
 
@@ -215,6 +229,59 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 
 <script>
+
+  (function(){
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('<div class="title_text">傑因</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9GK6V673mE0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>村人都在因為魔物襲擊而驚慌失措，<span class="global_name_span">傑因</span>卻顯得十分興奮，不僅擊敗來襲的魔物，更將［風暴蠕蟲］的肉做成甜辣紅燒肉，讓村人都沉浸在美味的幸福感中。</p> <p>但這樣仍不及父親<span class="global_name_span">羅山</span>追求的目標，<span class="global_name_span">傑因</span>依然立志向前追求美味的極限。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-YkZpS4GMYw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//傑因
+    contentArr.push('');
+  
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('傑因');
+  pArr.push('');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_oo");
+  var footSelect = document.getElementById("foot_select_oo");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
 
   (function(){
     var contentArr = [] ;
