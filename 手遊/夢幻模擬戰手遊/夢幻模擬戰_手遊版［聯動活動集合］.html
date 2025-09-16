@@ -127,6 +127,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><img alt="cover.jpg" src="https://pic.pimg.tw/qupyqupy/1709981999-594717753-g_n.jpg?v=1709982000" title="cover.jpg" />');//強殖裝甲
   activityArr.push('');//危機交錯領域之戰
   activityArr.push('');//KO決運的命籌
+  activityArr.push('');//迷霧的賞金
 
 
 
@@ -148,6 +149,8 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('殖裝覺醒 迫近的黯影');
   paArr.push('危機交錯領域之戰');
   paArr.push('KO決運的命籌');
+  paArr.push('迷霧的賞金');
+
 
 
   var contentArr = [];
@@ -168,6 +171,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct14(1));
   contentArr.push(getAct15(1));
   contentArr.push(getAct16(1));
+  contentArr.push(getAct17(1));
 
   var pArr = [];
   pArr.push([]);
@@ -187,6 +191,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct14(2));
   pArr.push(getAct15(2));
   pArr.push(getAct16(2));
+  pArr.push(getAct17(2));
 
 
   var firstEnter = 0 ; 
@@ -249,11 +254,27 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct17(idx) {
+  function getAct18(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
       resultIdx.push('');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+    return result;
+  }
+
+  function getAct17(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情上');
+      resultIdx.push('劇情下');
 
       return resultIdx;
     }
