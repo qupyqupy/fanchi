@@ -122,6 +122,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p><img alt="cover.png" src="https://pic.pimg.tw/qupyqupy/1702607528-1412769271-g_n.png" title="cover.png" /></p>');//末路之囚與啟途八重奏
   activityArr.push('<hr /><p><img alt="cover.png" src="https://pic.pimg.tw/qupyqupy/1705636523-2312684655-g_n.png" title="cover.png" /></p><hr /> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/2TAVl1efY9I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//救世神子與黎明大樹
   activityArr.push('');//THE KING OF FIGHTERS ANOTHER BOUT
+  activityArr.push('');//悠遠睿智與秘密孤城
 
 
 
@@ -133,6 +134,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('末路之囚與啟途八重奏');
   paArr.push('救世神子與黎明大樹');
   paArr.push('THE KING OF FIGHTERS ANOTHER BOUT');
+  paArr.push('悠遠睿智與秘密孤城');
 
 
   var contentArr = [];
@@ -143,6 +145,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct4(1));
   contentArr.push(getAct5(1));
   contentArr.push(getAct6(1));
+  contentArr.push(getAct7(1));
 
   var pArr = [];
   pArr.push([]);
@@ -152,6 +155,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct4(2));
   pArr.push(getAct5(2));
   pArr.push(getAct6(2));
+  pArr.push(getAct7(2));
 
 
   var contentArrB = [];
@@ -162,6 +166,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArrB.push(getActB4(1));
   contentArrB.push(getActB5(1));
   contentArrB.push(getActB6(1));
+  contentArrB.push(getActB7(1));
 
 
   var pArrB = [];
@@ -172,6 +177,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArrB.push(getActB4(2));
   pArrB.push(getActB5(2));
   pArrB.push(getActB6(2));
+  pArrB.push(getActB7(2));
 
 
   var firstEnter = 0 ; 
@@ -260,6 +266,41 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
+  function getActB8(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct8(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
   function getActB7(idx) {
     if (idx == 2){
       var pArr = [];
@@ -282,13 +323,21 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var pArr = [];
   pArr.push('');
-  pArr.push('');
+  pArr.push('序幕');
+  pArr.push('CH01 兩極化的城堡');
+  pArr.push('CH02 兩人的去向');
+  pArr.push('CH03 初始之地');
+  pArr.push('CH04 悠遠睿智');
 
       return pArr;
     }
     var contentArr = [] ;
   contentArr.push('');
-  contentArr.push('');
+  contentArr.push('<div class="title_text">序幕</div> <p><span class="global_name_span">萊莎</span>一行人穿越了一個門一般的洞穴，來到一處有奇異風景的地方，找回失散的同伴後，大家分頭探索，結果<span class="global_name_span">萊莎</span>亂碰一個會說話的裝置，隨即那個門一般的洞穴又出現了，並且這次主動把眾人吸入。</p> <p><span class="global_name_span">萊莎</span>醒來後身在一個陌生的城堡內，夥伴又再次走散，然而這次只有<span class="global_name_span">科洛蒂婭</span>遍尋不著，這時大家發現城堡內有一個落單的女孩子。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/k0di54zEAiA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//序幕
+  contentArr.push('<div class="title_text">兩極化的城堡</div> <p>另一邊在做日常巡邏的<span class="global_name_span">阿爾德</span>聽村民說附近有一片區域瀰漫霧氣並且逐漸擴大，他便前往調查，穿過霧氣後，看到的是一座老舊的城堡，進入後正好遇到<span class="global_name_span">萊莎</span>一行人。</p> <p>而<span class="global_name_span">萊莎</span>她們在城堡遇到的女孩子叫做<span class="global_name_span">路德薇卡</span>她正在尋找朋友<span class="global_name_span">卡露娜</span>，當<span class="global_name_span">阿爾德</span>推開房門時，眾人都驚訝門裡門外簡直是兩個世界，一邊輝煌整潔，另一邊破敗老舊。</p> <p>大家互相討論整理情報，<span class="global_name_span">阿爾德</span>推測眾人應該是被捲入類似時空隧道的洞穴才會出現在這，至於要怎麼回去暫時也沒想到，反正當務之急是尋找<span class="global_name_span">科洛蒂婭</span>與<span class="global_name_span">卡露娜</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/n4eLHMhXM60?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">萊莎</span>臨時在城堡內弄了一個簡易的煉金工坊，並且鍊出鐮刀、鐵鎚，終於排除障礙物來到城堡外面，這時<span class="global_name_span">路德薇卡</span>建議去附近的農場找找看，因為<span class="global_name_span">卡露娜</span>失蹤前就是前往農場，也許<span class="global_name_span">科洛蒂婭</span>也在那邊。</p> <p>結果好巧不巧，<span class="global_name_span">科洛蒂婭</span>正好遇到<span class="global_name_span">卡露娜</span>，由於四周充滿魔物，<span class="global_name_span">科洛蒂婭</span>又受了傷，所以兩人先找了安全的地方暫時休息。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eNqnLAB109g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//CH01 兩極化的城堡
+  contentArr.push('<div class="title_text">兩人的去向</div> <p>因為霧氣很大，大家在前往農場的路上差點迷了路，還好<span class="global_name_span">卡露娜</span>有用繃帶綁在樹上當標記，大家就沿著記號前進。</p> <p>另一邊<span class="global_name_span">卡露娜</span>安頓好<span class="global_name_span">科洛蒂婭</span>後，便想朝著礦場前進，<span class="global_name_span">科洛蒂婭</span>因為擔心她的安危就跟了出去，沒想到竟然遇到魔物，還好<span class="global_name_span">萊莎</span>一行人循著記號與<span class="global_name_span">科洛蒂婭</span>的笛聲找了過來，剛好救下<span class="global_name_span">科洛蒂婭</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/uQTaUvOhu24?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著大家前往採礦場，看到昏迷倒在地上的<span class="global_name_span">卡露娜</span>，由於治療魔法並沒有甚麼效果，所以大家直接回城堡，順便把鍊金工坊升級，而治療<span class="global_name_span">卡露娜</span>的藥品稱為［歐里菲斯水滴］，從<span class="global_name_span">路德薇卡</span>口中得知要到［艾古圖］去買，這讓<span class="global_name_span">阿爾德</span>大吃一驚，因為［艾古圖］可是兩萬年前的古代城鎮，而眾人如今是身處現代，這代表<span class="global_name_span">路德薇卡</span>已經活了超過兩萬年的時間。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EDta3e6X9Ao?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//CH02 兩人的去向
+  contentArr.push('<div class="title_text">初始之地</div> <p><span class="global_name_span">阿爾德</span>帶著大家回到古代順利取得［歐里菲斯果實］，這可是製作［歐里菲斯水滴］的材料，接下來就是用煉金術把藥品煉出來。</p> <p>這趟古代行同時也發現［歐里菲斯小鎮］有著超越同時代的科技水平，被村人稱為賢者的神秘人創造了這一切，雖然居住在城堡內，但並沒有緣分見到，但既然住在城堡內，等回到現代問<span class="global_name_span">卡露娜</span>或<span class="global_name_span">路德薇卡</span>也是可以的。</p> <p>與此同時留在現代城堡的<span class="global_name_span">安佩爾</span>與<span class="global_name_span">莉拉</span>發現隱藏在城堡內的密門。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kBN4wT2MqGg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>煉出［歐里菲斯水滴］後，<span class="global_name_span">卡露娜</span>終於甦醒，從她口中得知原來［歐里菲斯小鎮］之所以會變成現在殘破的景象，是因為某天以城堡為中心在森林外圍開始發生異變，森林像是有生命一樣不斷朝城堡靠近，同時伴隨大量魔物，所過之處事物都迅速衰敗，到最後只有堅持留在城堡裡的<span class="global_name_span">卡露娜</span>、<span class="global_name_span">路德薇卡</span>存活下來。</p> <p>而<span class="global_name_span">安佩爾</span>兩人發現的密門，裡面是賢者創造的各種未來科技裝置，可見賢者是誤入時空隧道來到古代，並且利用自己的知識使用稜晶技術讓［歐里菲斯小鎮］逐漸繁榮，但賢者並沒有忘記回到未來，於是在這密室中研究靠自己的力量創造時空隧道。</p> <p>只是［幻異稜晶］失控造成了異變，整個小鎮被隔絕在時間長河外，即便外界經過兩萬年，小鎮內仍只是流逝些許時間，而那不斷靠近城堡的森林就是分界，所以被侵蝕的地方會瞬間追回應該流逝時間跨度，如果要停止異狀就只能中和這股力量，而需要的物質只存在兩個世界中間地帶，也就是最一開始<span class="global_name_span">萊莎</span>一行人到的空間，至於賢者在很久以前就獨自前往尋找，至今仍沒有消息。</p> <p>還沒說完，<span class="global_name_span">卡露娜</span>突然變成怪物，［幻異稜晶］的失控力量會侵蝕人的身體並且發生轉化，其他小鎮居民之所以會不見也是因為跑出城堡後變成怪物，擊敗<span class="global_name_span">卡露娜</span>後，她用最後的意識將<span class="global_name_span">路德薇卡</span>託付給<span class="global_name_span">萊莎</span>一行人，自己則利用［白煌晶石］與［幻異稜晶］產生共鳴，打開通往中間地帶的時空隧道，臨走前將自己的飾品交給<span class="global_name_span">萊莎</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/wLVB0_pHHF0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//CH03 初始之地
+  contentArr.push('<div class="title_text">悠遠睿智</div> <p><span class="global_name_span">萊莎</span>修復<span class="global_name_span">卡露娜</span>留下的飾品，並且成功打開一扇門，裡面有著<span class="global_name_span">卡露娜</span>留下的情報，除了交代事情的來龍去脈，還有最重要的［白煌晶石］煉製方法。</p> <p>於是大家又穿越時空，前往古代與未來收集素材，最終成功找齊了所有材料。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CWhXtrNJaVw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>但這時<span class="global_name_span">路德薇卡</span>的身體卻開始發生轉化，她之前一直待在城堡內所以不受異化影響，但遇到<span class="global_name_span">萊莎</span>一行人之後，為了尋找<span class="global_name_span">卡露娜</span>而踏進異變影響區域。</p> <p>雖然暫時還找不到治療方法，但既然［白煌晶石］已經煉製完成，眾人決定先打開通往中間地帶的時空隧道救出<span class="global_name_span">卡露娜</span>，只要找到中和［幻異稜晶］的方法，應該多少能解決一些問題。</p> <p>在中間地帶果然找到賢者留下來裝有粉末的瓶子，這粉末有抑制異變的效果，<span class="global_name_span">萊莎</span>看了一下突然產生靈感，透過簡陋的設備將粉末與［歐里菲斯水滴］進行優化煉製，產出的［歐里菲斯秘藥］果然大幅度減緩<span class="global_name_span">路德薇卡</span>的身體異化。</p> <p>在中間地帶深處，大家發現變成怪物的<span class="global_name_span">卡露娜</span>與已經消亡的賢者，擊敗<span class="global_name_span">卡露娜</span>後，大家利用［歐里菲斯秘藥］成功將<span class="global_name_span">卡露娜</span>變回人身，而賢者透過最後的意識殘存，將中和［幻異稜晶］的物質託付給<span class="global_name_span">萊莎</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fg_o0DFg6WQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>最後<span class="global_name_span">萊莎</span>成功中和［幻異稜晶］，<span class="global_name_span">路德薇卡</span>兩人的異化也因此解除，本來所有的異變就是［幻異稜晶］引起，就連<span class="global_name_span">萊莎</span>她們回到原本世界的方法也迎刃而解。</p> <p>只是連結兩個世界的契機萬中無一，一旦回去就是永別了，大家再一次來到城堡前一起看著天空，<span class="global_name_span">萊莎</span>決定先在這世界晃悠研究一陣子，這場冒險就這樣畫下句點。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Z9tKlLvMGPg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//CH04 悠遠睿智
     
 
 
