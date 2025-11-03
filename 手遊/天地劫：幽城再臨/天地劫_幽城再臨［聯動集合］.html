@@ -117,6 +117,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('<hr /><p>這次聯動劇情，實在賣情懷賣得過分，一開始劇情有點懸疑的感覺，到後面直接放飛自我，想努力分析隱藏在背後的整個劇情脈絡，但顯然編劇並沒有想那麼多，再不合理也直接餵給玩家。</p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/siOytre5mPU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//軒轅劍-雲和山的彼端
   activityArr.push('<hr /><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-WMs6Gi2CS4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//國風聯動-西遊記
   activityArr.push('');//國風聯動-封神篇
+  activityArr.push('');//國風聯動-長槍映月
 
 
 
@@ -131,6 +132,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('軒轅劍-雲和山的彼端');
   paArr.push('國風聯動-西遊記');
   paArr.push('國風聯動-封神篇');
+  paArr.push('國風聯動-長槍映月');
 
 
   var contentArr = [];
@@ -144,6 +146,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct7(1));
   contentArr.push(getAct8(1));
   contentArr.push(getAct9(1));
+  contentArr.push(getAct10(1));
 
   var pArr = [];
   pArr.push([]);
@@ -156,6 +159,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct7(2));
   pArr.push(getAct8(2));
   pArr.push(getAct9(2));
+  pArr.push(getAct10(2));
 
 
   var firstEnter = 0 ; 
@@ -218,8 +222,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-
-  function getAct10(idx) {
+  function getAct11(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -230,6 +233,27 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     var result = [] ;
     result.push('');
     result.push('');
+
+
+
+
+    return result;
+  }
+
+
+  function getAct10(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('人物對話');
+      resultIdx.push('劇情');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">初識趙雲</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HiWCoOAlAew?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">初識上官玥</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/I-GtlP4_y1M?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//人物對話
+    result.push('<div class="title_text">長阪疑情、此世彼世、巫迴迷影</div> <p><span class="global_name_span">虞兮</span>三人追蹤魔染痕跡來到［長坂坡］，遇到魔化的陣亡士兵作亂，這時<span class="global_name_span">趙雲</span>出現，並且與三人並肩作戰解決這場危機。</p> <p>這時候的<span class="global_name_span">趙雲</span>在死後被封為［巡界使］，任務是引渡敗亡的兵將魂魄，在穿越來此之前，正在［長坂坡］引渡<span class="global_name_span">糜夫人</span>的亡魂。</p> <p>但隨後一道［時空裂縫］出現，從中出現的<span class="global_name_span">刀八</span>跟<span class="global_name_span">趙雲</span>對付一招之後就匆匆離去，<span class="global_name_span">趙雲</span>也不急著追趕，只因為眼前的［時空裂縫］透出亡魂氣息，於是進入其中，接著便遇到<span class="global_name_span">虞兮</span>三人。</p> <p>這時<span class="global_name_span">承影</span>出現，告知她與<span class="global_name_span">刀八</span>是追尋魔神下落而來，如今卻因為遇到［玄冥教眾］而失散了，於是大家秉持著仗義的原則，前往［巫迴寨］，並且在［玄冥教眾］手中拯救這裡的百姓，並且遇到上官家的女兒，［威遠鏢局］的<span class="global_name_span">上官玥</span>，從這小女娃口中得知自己的哥哥<span class="global_name_span">上官墨竹</span>被鳥嘴面具人抓走，並且在背後操控［玄冥教］的人叫做<span class="global_name_span">冥皇鄲陰</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OXznggv82iw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">故人重逢、深入敵穴、冥皇再臨</div> <p><span class="global_name_span">上官玥</span>身上有［魔蠱］中的［母蠱］，有了它就能操控所有的［子蠱］，等於受［子蠱］感染的人越多，就能掌握更大的力量，而且目前極難解開這種控制，<span class="global_name_span">上官玥</span>在脫逃時，順帶將［玄冥教］這個至寶偷走，自然［玄冥教］會將她視為目標追捕。</p> <p>但<span class="global_name_span">上官玥</span>也沒在怕的，帶著眾人直搗敵人根據地，並且救出受［子蠱］控制的<span class="global_name_span">鮮于超</span>以及被［玄冥教］抓走的百姓。</p> <p>只是當眾人準備離開時，<span class="global_name_span">冥皇鄲陰</span>與鬼疫之一的<span class="global_name_span">蠱</span>聯手到來，將<span class="global_name_span">上官玥</span>與<span class="global_name_span">鮮于超</span>一起抓走。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/05_RbObW5IE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">長槍映月、夢生異談、蛻骨生道</div> <p>原來<span class="global_name_span">蠱</span>的本體被封印在黃泉之下，因此需要奪取［母蠱］利用這力量破除封印，讓本體重歸世間。</p> <p>但最終還是被眾人阻止了，而<span class="global_name_span">蠱</span>看到<span class="global_name_span">趙雲</span>後，嘴裡直哆嗦喊著［蒼龍孟君］，兩人必定有段往事。</p> <p>故事最後，<span class="global_name_span">上官玥</span>回憶哥哥被抓，也許是因為<span class="global_name_span">上官墨竹</span>是消失的［崆峒印器靈］，<span class="global_name_span">虞兮</span>便想著前往［東海］與<span class="global_name_span">尉遲良</span>會合，臨走前，眾人找了<span class="global_name_span">刀八</span>與<span class="global_name_span">承影</span>，並且封印了［時空裂縫］。</p> <p>然後是一段<span class="global_name_span">冥皇鄲陰</span>遇到<span class="global_name_span">蠱</span>的劇情。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jWGDgkTZki0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">往世兵戈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5zW6k-iV4kU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//劇情
 
 
 
