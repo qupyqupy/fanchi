@@ -1,0 +1,406 @@
+<style type="text/css">
+  .origin {
+  text-align: center;
+}
+
+.origin img {
+  height: 430px;
+}
+  .ch {
+  position: relative;
+  width: calc(95% - 2.5em);
+  border-radius: 0.2em;
+  background: #996666;
+  background: linear-gradient(-45deg, transparent 15px, #996666 0);
+  -webkit-filter: drop-shadow(2px 2px 4px gray);
+  filter: drop-shadow(2px 2px 4px gray);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  padding: 0.7em 0.7em 0.7em 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+.ch::after {
+  content: url('https://pic.pimg.tw/qupyqupy/1550284548-2117827845.png?v=1550284552');
+  position: absolute;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px px black);
+  left: 0.3em;
+  top: 0.6em;
+}
+
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+  radial-gradient(
+    circle at bottom left,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top right,
+    transparent 0,
+    transparent 2em,
+    beige 2em,
+    beige 4em,
+    transparent 4em,
+    transparent 6em,
+    khaki 6em,
+    khaki 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at top left,
+    transparent 0,
+    transparent 2em,
+    navajowhite 2em,
+    navajowhite 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ),
+  radial-gradient(
+    circle at bottom right,
+    transparent 0,
+    transparent 2em,
+    palegoldenrod 2em,
+    palegoldenrod 4em,
+    transparent 4em,
+    transparent 6em,
+    peachpuff 6em,
+    peachpuff 8em,
+    transparent 8em,
+    transparent 10em
+  ), blanchedalmond;
+  
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+<hr />
+
+
+<p><label>篇章：</label> 
+<select id="activity_select" style="width: 35%;">
+ </select>
+ </p>
+
+
+<div id="ch_head"></div>
+
+<hr />
+
+
+<p><label>主線劇情：</label> 
+<select id="head_select" style="width: 35%;">
+ </select>
+ <label>其他：</label> 
+ <select id="head_select_m" style="width: 35%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+
+<hr />
+<p><label>主線劇情：</label> 
+<select id="foot_select" style="width: 35%;">
+ </select>
+ <label>其他：</label> 
+ <select id="foot_select_m" style="width: 35%;">
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+   (function(){
+  var activityArr = [];
+  activityArr.push('');
+  activityArr.push('');//徬徨的少女與久遠的漩渦
+
+  var paArr = [];
+  paArr.push('');
+  paArr.push('徬徨的少女與久遠的漩渦');
+
+
+  var contentArr = [];
+  contentArr.push([]);
+  contentArr.push(getAct1(1));
+
+  var pArr = [];
+  pArr.push([]);
+  pArr.push(getAct1(2));
+
+  var contentArrB = [];
+  contentArrB.push([]);
+  contentArrB.push(getActB1(1));
+
+
+  var pArrB = [];
+  pArrB.push([]);
+  pArrB.push(getActB1(2));
+
+
+  var firstEnter = 0 ; 
+  var nowAct = 1;
+  var maxCount = contentArr.length - 1;
+  var activitySelect = document.getElementById("activity_select");
+  var headSelect = document.getElementById("head_select");
+  var footSelect = document.getElementById("foot_select");
+  var headSelectB = document.getElementById("head_select_m");
+  var footSelectB = document.getElementById("foot_select_m");
+
+
+  for (var i = 1; i < paArr.length; i++) {
+      activitySelect.add(new Option(paArr[i], i));
+    }
+
+  activitySelect.onchange = function () {
+    nowAct = activitySelect.value;
+    initAct(nowAct);
+  } 
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+
+  headSelectB.onchange = function () {
+    initPage(headSelectB.value, true, true);
+  } 
+  
+  footSelectB.onchange = function () {
+    initPage(footSelectB.value, true, true);
+  } 
+  
+  
+  function initPage(value, backTop = true, isBranch = false) {
+    if (isBranch) {
+      document.getElementById("ch").innerHTML = contentArrB[nowAct][value];
+    } else {
+      document.getElementById("ch").innerHTML = contentArr[nowAct][value];
+    }
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      if (isBranch) {
+        headSelectB.value = value ;
+        footSelectB.value = value ;
+      } else {
+        headSelect.value = value ;
+        footSelect.value = value ;
+      }
+      
+      if (backTop) {
+        scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+      }    
+      
+    }
+  }
+
+  function initAct(idx) {
+    document.getElementById("ch_head").innerHTML = activityArr[idx];
+
+    headSelect.innerHTML = '';
+    footSelect.innerHTML = '';
+    headSelectB.innerHTML = '';
+    footSelectB.innerHTML = '';
+
+    for (var i = 1; i < pArr[idx].length; i++) {
+      headSelect.add(new Option(pArr[idx][i], i));
+      footSelect.add(new Option(pArr[idx][i], i));
+    }
+
+    for (var i = 1; i < pArrB[idx].length; i++) {
+      headSelectB.add(new Option(pArrB[idx][i], i));
+      footSelectB.add(new Option(pArrB[idx][i], i));
+    }
+
+    initPage(1, false, false);
+  }
+
+  initAct(1);
+
+  function getActB2(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct2(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+
+  function getActB1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('劇情補遺');
+  pArr.push('支線');
+  pArr.push('莫比烏斯');
+  pArr.push('諾克西斯對話');
+  pArr.push('白金的蓓蕾支線');
+  pArr.push('亡國之王支線');
+  pArr.push('七彩之鄉支線');
+  pArr.push('七彩之鄉後話');
+  pArr.push('純淨的樂園支線');
+  pArr.push('曉光的牢籠支線');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">砍樹拿寶箱</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8RgBtUj-_T0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">凱琉奇路圖書館的資料</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vZmxQa86MRU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">呂之國的記憶</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zl_rIEyoBaM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">淡淡的熟悉感</div> <p><span class="global_name_span">諾娜</span>看著從<span class="global_name_span">幻影</span>那拿到的寶石，總覺得有淡淡的熟悉感，而且當初剛接觸時，腦中似乎浮現了一些畫面，可能與自己失去的記憶有關。</p> <p>在<span class="global_name_span">諾克西斯</span>的幫助下，找到了可以投射寶石內容的儀器，從中看到了許多斷斷續續的影像，這些讓<span class="global_name_span">諾娜</span>似乎恢復了些記憶，為了能完整解析寶石的內容，<span class="global_name_span">諾克西斯</span>決定尋找能修復儀器的素材。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rFrYbl7WIsU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">追憶.魔導武裝國科克雷亞</div> <p>在<span class="global_name_span">諾克西斯</span>與全村的努力下，儀器終於被修復了，總算是可以完整解析寶石內的影像。</p> <p>原來<span class="global_name_span">諾娜</span>的真實身分是［魔導武裝國科克雷亞］女王的養女，這個國家有著獨一無二的結界保護，因此與世隔絕，人民都能安穩的過生活，但結界的控制裝置卻在某一天故障，失控的結界毀滅了整個國家，倖存下來的女王通過時空隧道回到過去，試圖阻止悲劇的發生。</p> <p>但是無論做出任何改變，悲劇依舊不停地上演，女王不斷經歷著殺死過去的自己、目睹國民的喪生、控制裝置的失控，這樣的輪迴猶如一個閉鎖的時空，無止盡的折磨女王的心智。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hP2OXaOziZQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在其中一次輪迴中，女王殺死過去自己行為被<span class="global_name_span">諾娜</span>看到，自從那一次開始，時空隧道不再出現，但時間卻自動開始循環，最終形成時空漩渦，［魔導武裝國科克雷亞］因此也永遠停留在毀滅前的那三天。</p> <p>為了拯救自己的養母與國民，<span class="global_name_span">諾娜</span>決定去尋找這個閉鎖時空。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Bzi-P2IEXRE?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">追憶.歷史的盡頭</div> <p>在［白夜時層］的未來，人類因為戰爭幾近滅族，星球則遭受到前所未有的汙染，倖存下來的人類想透過回到過去糾正錯誤，讓星球獲得另一種未來，但［白夜時層］因為人類不斷利用時空回朔的戰爭行為，變成一種［恆定狀態］，簡單說就是無法改變未來走向。</p> <p>這時候<span class="global_name_span">幻影</span>出現在人類面前，並且給予唯一一次能不受時層干擾，穿越回過去的機會，然而目前的［白夜時層］會以每個時代的生命能量多寡，而做出修正歷史，如果造成人類大量傷亡的戰爭沒有發生，那時層就會介入修正，要逃脫這種機制，最後的人們想出利用科技製造一個人工生命體，並從中注入<span class="global_name_span">幻影</span>的力量，這樣逃避時層之眼的她，就有機會改變人類的命運。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fnhwys4SCPI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>集合殘存人類的智慧結晶，［奇蹟之子］<span class="global_name_span">諾娜</span>終於誕生，依照計畫，她將回到遙遠的過去，並無意識的在［科克雷亞］引發巨大的爆炸，當眾多生命能量消失，［白夜時層］來不及做出修補時，未來殘存的人類將一舉回到過去替代［科克雷亞］消失的生命能量，這樣人類就可以在這循環中延續下去，這是個殘酷又無奈的計畫。</p> <p><span class="global_name_span">諾娜</span>知道自己是造成［科克雷亞］悲劇的元凶，情緒立即崩潰，在<span class="global_name_span">阿爾德</span>的安慰下才振作起來，就在兩人想著如何拯救［科克雷亞］時，一個巨狼化身的少女來到［阿拉拉特］，因為她的關係，眾人找到了前往［科克雷亞］的線索。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6dQEf6BHqYw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">教學對話</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/V1pQFhYUeA8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">解鎖對話</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Wk7Ou-5lnOQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push(' <div class="title_text">諾克西斯對話</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UtOs_WXUKS4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kzaRZG_ta_0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hgW5WOITFMk?wmode=transparent" title="YouTube video player" width="560"></iframe></p><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Rdsbql0aTkg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">逃跑的荷姆克魯斯</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QY9VUZgaJKM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">生髮藥</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/e2TugCVW6vc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">合成物質之極</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lw1Fyns9ceM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">為誰而下的決心</div> <p>幫老太太找回在污染廢墟中的家族照片。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VOViS654RvQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">流傳到未來的故事</div> <p>幫圖書管理員找書。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rggEdviZNA4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">牠們的選擇</div> <p>幫研究員採集魔物樣本。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7I5TZjyJoQA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">凱琉奇路的守護者</div> <p>幫清潔工代理打掃工作。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oLFVNVuXBPU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">尋找騎士</div> <p>尋找騎士<span class="global_name_span">艾蓮</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Wt7V-BfT3u0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">最有效的良藥</div> <p>幫婦人找出去採藥的兒子。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Cen3v_9jm6Y?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">第1000屆凱琉奇路測驗</div> <p>參加圖書館的測驗。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4A1KpLLR6D8?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">凱琉奇路體操</div> <p>做做體操。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GTpMn6blCGA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">御仁城的地下房間</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VNOzy12wenw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">機關倉庫</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hJ1B4WiiGAY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">修復機關武士</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8jScDG220LA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lu3kSheHU5Y?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">後話</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/-GItQ6wF2gU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gzg1gGdODxw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/JkFtjXANuM4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">下落不明的寶物</div> <p>幫小女孩找回遺失的金黃色石頭。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YNPGLRLv44A?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">幫忙孩子們重修舊好</div> <p>兩個小孩因為一只懷錶鬧得不愉快，<span class="global_name_span">阿爾德</span>幫忙修好懷錶後，見證了兩個小孩握手言和的過程。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/bDRlzIZ0Xqg?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">鐘樓的秘密房間</div> <p><span class="global_name_span">阿爾德</span>發現隱藏在鐘樓地下的房間，並且從裡面找到一些小孩可能喜歡的書籍。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/E08sf-I-CoQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">床單的去向</div> <p>風很大，<span class="global_name_span">阿爾德</span>幫孩子們找回被吹走的床單後，得到了製作滑翔翼的材料。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Jm8wuwTjMxY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">想要表達謝意</div> <p><span class="global_name_span">阿爾德</span>幫孩子做送禮用的吊飾，因此得到地下室的鑰匙。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qgbQWsJMk0k?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">烈風之活性元素</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jhU4uwqWQxo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">沃土之活性元素</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/BIdhJThju6s?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">靈魂調味</div> <p><span class="global_name_span">八雲</span>只是肚子餓，一如往常地跑去餐廳吃飯，這是上班族一天難得的放鬆時刻，結果非但想吃的餐點沒有，更遇上［塵愛會］的人來收保護費，自己還被莫名其妙打了一頓，事後更被老闆威脅幫他從［塵愛會］的人手中取回製作餐點的醬汁，這都市真是沒一個好人，不管加害者還是受害者都一樣。</p> <p>還好老闆還有點良心，<span class="global_name_span">八雲</span>拿回醬汁後，至少還得到一頓免錢的餐點。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/KEUOFVh69dw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">沒什麼意義的喜悅</div> <p>有個熱銷的飲料，號稱可以帶給人們快樂，<span class="global_name_span">八雲</span>遵從長官命令來探查探查，結果發現這飲料全靠一種［香菇］發揮效用，說是類似毒品的存在也不為過，從偷聽的內容還發現這一切似乎跟［分部長］有關。</p> <p><span class="global_name_span">八雲</span>也真是衰，才查到些線索就被人發現蹤跡，又莫名其妙被打了一頓，事後為了親自嘗嘗飲料的味道，還被半強迫的去採集［香菇］，就在採完［香菇］後，看到其他喝下飲料人呈現的狀態，<span class="global_name_span">八雲</span>踩了煞車，畢竟這種靠外來物質麻痺自己的東西，沾上了肯定沒啥好事情。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QMBwWwJlIew?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">雙倍的愉悅</div> <p><span class="global_name_span">八雲</span>一直記恨曾經被［塵愛會］痛扁的經歷，現在擁有力量，又剛好回到過去，自然要去報一箭之仇，這次用不同的方式幫助餐館老闆恢復暢銷餐點的銷售，<span class="global_name_span">八雲</span>同樣得到一頓免費餐點，還跟<span class="global_name_span">庫莫斯</span>一起享用，這快樂是之前無法體驗到的。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WK2MJ73lISs?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">沒什麼意義的溫柔</div> <p><span class="global_name_span">庫莫斯</span>拿來一杯快樂能量飲，這讓<span class="global_name_span">八雲</span>想起輪迴之前被扁的事情，這次直接靠著力量逼負責人說出關於飲料的事情，原來是［分部長］跟［塵愛會］搞的，看起來背後應該有巨大的利益勾結。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0MrSTHK9CJI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">有如塵埃的自尊</div> <p>［塵愛會］不敵<span class="global_name_span">八雲</span>的力量，就在即將覆滅之際，<span class="global_name_span">庫莫斯</span>因為愛慕［塵愛會］的大姐頭，直接出手阻止，還好有這一阻，才有機會問出［塵愛會］是被［分部長］指使，才幹出那些傷天害理的事情。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/A0d-Q2E04tc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    
+
+
+    return contentArr;
+  }
+
+
+
+
+  function getAct1(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('序章');
+  pArr.push('徘徊的命運與雷之軌跡 (上)');
+  pArr.push('徘徊的命運與雷之軌跡 (下)');
+  pArr.push('徘徊的命運與雷之軌跡 (壞結局)');
+  pArr.push('徘徊的命運與雷之軌跡 (真結局)');
+  pArr.push('徘徊的命運與白金的蓓蕾 (上)');
+  pArr.push('徘徊的命運與白金的蓓蕾 (下)');
+  pArr.push('徘徊的命運與白金的蓓蕾 (壞結局)');
+  pArr.push('徘徊的命運與白金的蓓蕾 (真結局)');
+  pArr.push('徘徊的命運與亡國之王 (上)');
+  pArr.push('徘徊的命運與亡國之王 (下)');
+  pArr.push('徘徊的命運與亡國之王 (壞結局)');
+  pArr.push('徘徊的命運與亡國之王 (真結局)');
+  pArr.push('徘徊的命運與七彩之鄉 (上)');
+  pArr.push('徘徊的命運與七彩之鄉 (下)');
+  pArr.push('徘徊的命運與七彩之鄉 (真結局)');
+  pArr.push('徘徊的命運與純淨的樂園 (上)');
+  pArr.push('徘徊的命運與純淨的樂園 (下)');
+  pArr.push('徘徊的命運與純淨的樂園 (真結局)');
+  pArr.push('徘徊的命運與曉光的牢籠 (上)');
+  pArr.push('徘徊的命運與曉光的牢籠 (下)');
+  pArr.push('徘徊的命運與曉光的牢籠 (真結局)');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">序章</div> <p>穿得像小紅帽的<span class="global_name_span">諾娜</span>，孤獨地在異空間走著，彷彿在等待著某人的到來。</p> <p>接著畫面轉到<span class="global_name_span">阿爾德</span>這邊，按照慣例被人叫醒，今天他要去參加［巴路奧其］警衛隊的訓練，睡過頭的他急忙跑去與同伴會合，由於村子附近有魔物出現，大家決定先去［月影之森］解決這隱藏威脅後再進行訓練。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8NnHfRK79no?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>順利忙完後，這天就這樣結束了，然而此時神秘的力量啟動，<span class="global_name_span">阿爾德</span>隔天醒來，發現自己竟然進入時間循環中，昨天經歷的種種事情又再發生一次，經過許多次時間旅行，<span class="global_name_span">阿爾德</span>對這種事情異常敏銳，加上［巨魔怨念］從旁提醒，他找到了一個神祕的裂縫。</p> <p>裂縫的另一邊是巨大的力量漩渦，受它影響<span class="global_name_span">阿爾德</span>才會不斷重複過著同一天，既然知道問題所在，只需要斬斷漩渦與世界的連結就可以解決眼前的問題，然而當裂縫被切開後，從斷面傳出了女孩子的呼救，身為爛好人的<span class="global_name_span">阿爾德</span>自然是想也不想直接跳進去救人。</p> <p>接著便是與神祕女孩<span class="global_name_span">諾娜</span>的第一次相遇。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yBLDbDJVcms?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了幫<span class="global_name_span">諾娜</span>找到回家的路，兩人開始在這巨大的漩渦內側探索，由於跟各時代連結，這到處都是漂流過來的稀奇物品。</p> <p>繼續四處查探，遇到了同樣迷失在此的<span class="global_name_span">諾克西斯</span>，當初他是連人帶村一起被傳送到漩渦內側，因此與村人一起在這建立了據點［阿拉拉特］，雖然暫時找不到回去的方法，但各時代漂流過來的東西倒也能支撐生活，比較特別的是這個據點竟然都是男人。</p> <p>雙方接著交換了所知的情報，得知這附近有個被稱為［迷宮］的地方，同時<span class="global_name_span">諾克西斯</span>也提醒<span class="global_name_span">阿爾德</span>不要讓村子其他人知道［巨魔怨念］有切開時空的能力，講話間神色盡顯怪異。</p> <p>此時村人跑來告知，村子附近出現了奇怪的光柱.......，<span class="global_name_span">阿爾德</span>猜想這或許是<span class="global_name_span">諾娜</span>找尋回家道路的一個契機。</p> <div class="global_ps_text"> <p>02:22 - <span class="global_name_span">諾娜</span>想看海，這是她腦中殘存的記憶，一條在遠方閃閃發光的水平線。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qNpPaJhoa_8?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與雷之軌跡（上）</div> <p><span class="global_name_span">阿爾德</span>一行人走進奇怪的光柱中，意外來到<span class="global_name_span">雷心王</span>的年代，眼前是一座被戰火吞噬的要塞名喚［天雷］，四周都是在戰火中失去生命的人類士兵。</p> <p><span class="global_name_span">阿爾德</span>兩人在要塞中探索一番，得知這一切都是［巨魔族］所為，殘存的士兵認為這一切都是因為戰神<span class="global_name_span">戈萊達斯</span>將［戰神之斧］傳給孫女<span class="global_name_span">奧爾蕾雅</span>所致，因為這小ㄚ頭無法發揮斧頭的力量，才讓［巨魔族］如此輕易就搗毀整個要塞。</p> <p>得到這些情報後，<span class="global_name_span">阿爾德</span>發覺這與自己熟知的歷史並不一樣，［巨魔族］竟然在戰役中慢慢掌握優勢，如此下去人類必將迎來慘敗，此時遠方傳來一個少女的哭泣聲，她扛著一柄大斧，正是之前從士兵口中聽到的<span class="global_name_span">奧爾蕾雅</span>，她似乎是因為內疚，正朝著懸崖走去，<span class="global_name_span">阿爾德</span>還來不急反應，她便一躍而下結束自己的生命。</p> <p>突然間，神秘的力量再度啟動，<span class="global_name_span">阿爾德</span>兩人又進入了時間循環中，看來這裡也是被時之漩渦影響的時間點，這代表著兩人還有機會改變這天的結局，救下<span class="global_name_span">奧爾蕾雅</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MpYfF4y45Q0?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這時要塞裡，因為［巨魔族］提前告知約戰時間，所有守衛士兵正在積極備戰，聽說戰神<span class="global_name_span">戈萊達斯</span>即將到來，各個士氣高漲，但一想到戰神的繼承人是一個女孩子，似乎都感到有些洩氣，認為女孩是無法承擔戰神之名的重擔。</p> <p><span class="global_name_span">阿爾德</span>本想著利用當初在［巴路奧其］的方法，停止這時間循環，卻從［巨魔怨念］口中得知，這時代因為跟時之漩渦接觸過久，已經自成一股循環力量，就算切開與時之漩渦的連結，依然會自己重複同一個時間段的狀態，再加上這世界的歷史與自己熟知的不同，<span class="global_name_span">阿爾德</span>決定與<span class="global_name_span">諾娜</span>展開調查。</p> <p>首先就是去［悠尼岡］找尋真正的歷史，在這遇上了非常崇拜<span class="global_name_span">奧爾蕾雅</span>的小公主<span class="global_name_span">米悠</span>，從她口中得知<span class="global_name_span">奧爾蕾雅</span>可是個相當厲害的女戰神，不僅智勇兼備，更是不損一兵一卒就能打贏戰役的不敗英雄，這似乎與<span class="global_name_span">阿爾德</span>看到的本人相差甚遠。</p> <p>而且根據歷史，在［天雷要塞］的戰役中，雖然是<span class="global_name_span">奧爾蕾雅</span>首次個人戰役，但人類方卻是以大勝作終，<span class="global_name_span">阿爾德</span>卻看到人類慘敗的結局，看來問題就出在這裡，為了糾正這錯誤，<span class="global_name_span">諾娜</span>提議帶著<span class="global_name_span">米悠</span>回到戰役的那一天。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/U9eNdlVAPJU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>此時［天雷要塞］中，戰神<span class="global_name_span">戈萊達斯</span>已經帶著<span class="global_name_span">奧爾蕾雅</span>來到，此時他已經察覺到［巨魔族］的約戰只是一種迷惑敵人的手段，相信襲擊將會在不久之後來到，訓斥完要塞士兵後，他發現了在一旁的<span class="global_name_span">阿爾德</span>等人。</p> <p>看到［巨魔怨念］後，<span class="global_name_span">戈萊達斯</span>認定眼前的並非一般人，雖然沒辦法完全信任，但還是將<span class="global_name_span">阿爾德</span>等人分配到<span class="global_name_span">奧爾蕾雅</span>底下，這也證明他對孫女的實力有一定的認可。</p> <p>但<span class="global_name_span">奧爾蕾雅</span>本人卻是沒甚麼信心，甚至還害怕一次遇到太多不認識的人，一直撐到遠離要塞的郊外才放聲大哭，這極度破壞了她在<span class="global_name_span">米悠</span>心中的戰神形象，原來那平常嚴肅的表情都是裝出來的，而且面臨即將與［巨魔族］的戰鬥，她也只是對自己逃跑的速度有信心.......</p> <p>至於手中的［戰神之斧］，<span class="global_name_span">奧爾蕾雅</span>壓根也沒想繼承，把這斧頭視為燙手山芋，想直接送給<span class="global_name_span">米悠</span>，這麼膽小又沒自信的人，實在很難想像是歷史中的英雄。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Bix7D3Zmgdc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這時［巨魔族］的偵查兵已經跟人類士兵發生衝突，<span class="global_name_span">奧爾蕾雅</span>竟然害怕地躲在一旁的大樹下，<span class="global_name_span">米悠</span>無奈只好出手先解決巨魔再說，但意想不到的是在一名士兵被抓做俘虜時，<span class="global_name_span">奧爾蕾雅</span>卻一反常態，提斧上陣直接擊退巨魔。</p> <p>本以為這才是<span class="global_name_span">奧爾蕾雅</span>的真面目，但危機解除後，她又嚇得蹲在地上發抖，在看到周圍士兵都圍上來稱讚她時，<span class="global_name_span">奧爾蕾雅</span>當場嚇得暈了過去，是那種睜著眼睛站立的失去意識。</p> <p>隔天要塞傳來消息，［巨魔族］以驚人的數量襲擊了要塞，當<span class="global_name_span">奧爾蕾雅</span>抵達救援時，眼前已經是一片殘破不堪，為首的<span class="global_name_span">混沌巨魔</span>正對<span class="global_name_span">戈萊達斯</span>發出無數次的重擊，<span class="global_name_span">奧爾蕾雅</span>看到隨即代替爺爺與<span class="global_name_span">混沌巨魔</span>戰鬥。</p> <p><span class="global_name_span">阿爾德</span>等人都預感到這場戰鬥就是歷史的分水嶺，必須得贏。</p> <p>戰鬥中，一名［白色幻影］突然出現，從他話中得知，他就是賦予巨魔力量，改變歷史的關鍵存在，而這一切是有他自己的目的存在，雖然有些意義不明，但眾人身處的這個［白夜時層］有著異於其他時層的規則，會根據唯一的未來，修復過去歷史的各種矛盾，因此在巨魔戰役中，如果人類沒有取得勝利，便會不斷重複這個時間區段，一直到人類戰勝為止。一直造成這種重複時空，就是［白色幻影］的目的。</p> <p>就當<span class="global_name_span">諾娜</span>疑惑［白色幻影］為何要製造這種重複時空時，［白色幻影］只是稱呼她為［雛鳥］，並說著未來總有一天會知道的。</p> <p>這時一旁的<span class="global_name_span">混沌巨魔</span>早就耐不住性子聽眾人長篇大論，直接把［白色幻影］吸收，因此力量大大增強，向眾人揮出一記重拳，<span class="global_name_span">戈萊達斯</span>就這樣為了替孫女擋下致命一擊而受了重傷，憤怒的<span class="global_name_span">奧爾蕾雅</span>隨即展開反擊，<span class="global_name_span">混沌巨魔</span>則因為突然得到的力量並不穩定，決定先行撤退。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MzrSFtlewhQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與雷之軌跡（下）</div> <p>現在戰神<span class="global_name_span">戈萊達斯</span>已經失去戰鬥能力，防守要塞的重擔就落在<span class="global_name_span">奧爾蕾雅</span>身上，但她無法回應守兵對於［戰神之斧］繼承人的期待，她壓根就覺得自己不配成為英雄，成為大家心中那個精神支柱。</p> <p>看到自己一直崇拜的偶像如此膽小，<span class="global_name_span">米悠</span>氣的直接轉頭就走，而<span class="global_name_span">阿爾德</span>與<span class="global_name_span">諾娜</span>因為看過人類戰敗後的慘況，為了不讓慘劇重演，決定要拚盡全力找到扭轉情況的方法。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/ZYT4TQYBfQE?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>首先從一個奇怪的男人口中得知，<span class="global_name_span">戈萊達斯</span>曾經暗中吩咐他，如果自己遭遇不測，要好好照顧<span class="global_name_span">奧爾蕾雅</span>的事情，從他手中接過一本名為［斧術兵法指南］，但內容卻是記載著養育<span class="global_name_span">奧爾蕾雅</span>的過程，當中流露不少<span class="global_name_span">戈萊達斯</span>對這孫女的真正看法，之所以那麼嚴格訓練孫女，也只是怕她被仇敵<span class="global_name_span">混沌巨魔</span>所害。</p> <p>［真正的英雄，是打從心底害怕死亡的人，不只重視自己的生命，更重視夥伴的生存］。</p> <p>看過這本書後，<span class="global_name_span">奧爾蕾雅</span>對英雄這個身分有了新的體悟，加上<span class="global_name_span">阿爾德</span>在一旁施展嘴遁，她堅定自己的意志要防守住要塞。</p> <p>當務之急，是去找<span class="global_name_span">米悠</span>道歉，解開兩人的心結，不過<span class="global_name_span">米悠</span>其實也沒真的生氣，之前的表現全是因為她能理解<span class="global_name_span">奧爾蕾雅</span>承受的壓力，畢竟自己也是從小在人民期待的眼神中長大，尊貴的公主身分也給了她不小的壓力。</p> <p>如果<span class="global_name_span">奧爾蕾雅</span>無法承擔，那不如放她自由，但看到重新振作起來的<span class="global_name_span">奧爾蕾雅</span>，<span class="global_name_span">米悠</span>也重新加入隊伍，為對抗巨魔獻出力量。</p> <p>這時<span class="global_name_span">米悠</span>正在研究投石器的擺法，這給了<span class="global_name_span">奧爾蕾雅</span>靈感，與其對準巨魔發射，不如攻擊山壁引發山崩，限縮敵人的進攻路線，這樣便可集中力量與巨魔對陣。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zSz3gnsUJvA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>靠著模仿爺爺說話語氣，<span class="global_name_span">奧爾蕾雅</span>成功鎮攝住要塞內的士兵，不過自己卻因為太過緊張而失去意識，還好有<span class="global_name_span">諾娜</span>在一旁支援，最終團結眾人調整戰術，準備迎接與巨魔的決戰。</p> <p>但企圖影響歷史的可不只<span class="global_name_span">阿爾德</span>一行人，［幻影們］直接在戰場張開了結界，所有的巨魔都獲得力量的提升，與此同時<span class="global_name_span">混沌巨魔</span>也攻入要塞，大家只能被迫兵分兩路迎敵。</p> <p>最終憑藉著夥伴之間的羈絆，總算打倒<span class="global_name_span">混沌巨魔</span>，［幻影］至此也認輸決定離開這個時代，臨走前交給<span class="global_name_span">諾娜</span>一塊寶石，說這本來就是屬於她的，應該能為其找回記憶提供一些幫助。</p> <p>就在大家覺得事情告一段落時，另一股巨魔軍隊趁著人類精疲力盡的時刻，突然發起攻擊，但這早在<span class="global_name_span">戈萊達斯</span>的預料之中，就算無法戰鬥，他還是利用自己的威名逼退這群巨魔。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LTBVRV3Fs0s?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>但令人傷心的是，當<span class="global_name_span">奧爾蕾雅</span>去跟爺爺傳捷報時，<span class="global_name_span">戈萊達斯</span>已經因為傷重而與世長辭了。</p> <p>雖然說這樣的結局是歷史的必然，但<span class="global_name_span">阿爾德</span>總感覺事情沒有就此結束。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nyhp6IXnyu4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與雷之軌跡（壞結局）</div> <p>如果甚麼都不做，直接睡覺等著明天到來，就會贏來人類慘敗，［天雷要塞］失守的結局。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sWXCQJ73sv0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與雷之軌跡（真結局）</div> <p><span class="global_name_span">阿爾德</span>在［天雷要塞］利用［巨魔怨念］劈向一個奇異裂縫，隨即看到了許多歷史的幻象，這與很久之前在［艾路茲恩］看到的類似，莫非歷史還存有另一個可能性？</p> <p>這時<span class="global_name_span">阿爾德</span>想起了［幻影］的話，這個［白夜時層］非常堅持歷史要維持它原本的樣子，也許正是目前的歷史並非正確，所以才出現那奇異的裂縫，給<span class="global_name_span">阿爾德</span>等人糾正歷史的機會。</p> <p>這代表<span class="global_name_span">戈萊達斯</span>也可能因此獲救，為了劈開那奇異的裂縫，<span class="global_name_span">阿爾德</span>與<span class="global_name_span">諾娜</span>前往時之大漩渦中的村莊［阿拉拉特］，在那遇上了吃下<span class="global_name_span">混沌巨魔</span>力量的魔物。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zX9Dn4xn3xg?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>擊敗魔物後，從牠身上掉落的能量結晶剛好可以用來開啟裂縫，就這樣<span class="global_name_span">阿爾德</span>兩人找上<span class="global_name_span">奧爾蕾雅</span>、<span class="global_name_span">米悠</span>，一起回到［天雷要塞］發生戰爭的時刻，成功拯救了<span class="global_name_span">戈萊達斯</span>。</p> <p>至此歷史終於改寫，<span class="global_name_span">奧爾蕾雅</span>也能如願陪伴著爺爺。</p> <div class="global_ps_text"> <p>06:40 - <span class="global_name_span">戈萊達斯</span>手上的拿的斧頭與<span class="global_name_span">貝內迪特</span>一模一樣，不知道是不是伏筆。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TE0gP_XB-YY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與白金的蓓蕾（上）</div> <p>穿越光柱，<span class="global_name_span">阿爾德</span>與<span class="global_name_span">諾娜</span>兩人來到一處看似沒有人跡的宮殿，不過四處調查卻可以看到不少有人活動過的跡象，只是像是遭遇到甚麼事件，突然消失了一樣。</p> <p>好不容易找到一個人，但他似乎遭受到重大的刺激，完全沒辦法好好溝通，就在一股寒意襲來後，眼前的人竟然化作一攤鹽巴，看來這裡的確有詭異的事件正在發生。</p> <p>就當兩人繼續深入探索，終於看到造成這一切的慘狀的畸形怪物，只見那怪物仰天長嘯，一股寒意瞬間襲來，<span class="global_name_span">阿爾德</span>兩人似乎也要變成一攤鹽巴之際，時間開始倒流。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/73RRKotGRKI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>當兩人回過神時，發現周遭已經沒有之前的漆黑恐怖氣氛，宮殿裡到處都是［煉金術師］，與這邊的人交談後，得知這裡是古代的［白金之塔］，是［煉金術師］聚集的地方，眼前的這些人，絕對想不到幾日後，這裡會變成恐怖的人間煉獄。</p> <p>要阻止悲劇，必須找到造成時空循環的［扭曲］，目前最有可能的就是［煉金術師］們口中所說兩日後的［大型鍊成］，為了獲得更多情報，<span class="global_name_span">阿爾德</span>決定來找<span class="global_name_span">拉切特</span>聊聊。</p> <p>從這打探出有關傳說鍊金術師<span class="global_name_span">帕基利烏斯</span>的傳聞，一旁的<span class="global_name_span">蕾蕾</span>聽到這些有趣的事情，心中那不羈的心似乎被激活了，於是偷偷摸摸跟著<span class="global_name_span">阿爾德</span>來到［白金之塔］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tE3OrU57jac?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">蕾蕾</span>的爺爺是大賢者<span class="global_name_span">西蒙</span>，與鍊金術師<span class="global_name_span">帕基利烏斯</span>是朋友同時也是競爭者，但就算有這層關係，<span class="global_name_span">帕基利烏斯</span>依然不留情面地下了逐客令，不過他的弟子<span class="global_name_span">阿爾瑪</span>似乎對<span class="global_name_span">蕾蕾</span>非常有興趣，提示大夥提升自己的鍊金術師等級，前往白銀階層找他。</p> <p><span class="global_name_span">阿爾德</span>等人首先鍊成出［荷姆克魯斯］這個以鍊金術創造的生命，獲得了從黑鐵晉升赤銅的資格。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9T8IwMV0Oz4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了阻止兩天後將發生的大型鍊金術悲劇，按照正常升級流程顯然來不及，還好在<span class="global_name_span">阿爾德</span>、<span class="global_name_span">蕾蕾</span>兩人的雙層忽悠下，<span class="global_name_span">阿爾瑪</span>破例收大家為弟子，這樣就可以跨越階級，直接抵達白銀階層。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/jTPx15v5Ojw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>接著要順利見到<span class="global_name_span">帕基利烏斯</span>的話，得先幫忙<span class="global_name_span">阿爾瑪</span>完成至高無上的［人體鍊成］，這聽起來就有點恐怖，［鋼鍊］的悲劇似乎即將在此重現。</p> <p>幫助<span class="global_name_span">阿爾瑪</span>收集完鍊成材料後，終於順利來到黃金階層，在<span class="global_name_span">帕基利烏斯</span>的房間內，<span class="global_name_span">阿爾德</span>等人調查到驚人的事實。</p> <p>原來<span class="global_name_span">阿爾瑪</span>是<span class="global_name_span">帕基利烏斯</span>的女兒，因為曾經喪失過生命，被<span class="global_name_span">帕基利烏斯</span>利用［靈體鍊成］重新復活過來，所以如今<span class="global_name_span">阿爾瑪</span>的身體是［荷姆克魯斯］，但這有個缺點，每隔一段時間當身體力量耗盡時，就會開始崩潰，為了解決這問題，<span class="global_name_span">帕基利烏斯</span>才會想在兩天後的大型鍊成中，做出鍊金術至寶［賢者之石］。</p> <p>雖然知道可能會發生意外，但如今的<span class="global_name_span">帕基利烏斯</span>是不會聽信<span class="global_name_span">阿爾德</span>等人的說詞，無奈被轟出房間的眾人，突然想到<span class="global_name_span">阿爾瑪</span>正在進行所謂［人體鍊成］，而那術式是從<span class="global_name_span">帕基利烏斯</span>那偷來的，果然當回到<span class="global_name_span">阿爾瑪</span>房間時，她已經完成［人體鍊成］，從中察覺到自己可能是［荷姆克魯斯］的事實。</p> <p>在與<span class="global_name_span">帕基利烏斯</span>對質中，得知<span class="global_name_span">阿爾瑪</span>如今之所以可以正常活著，全因其母親<span class="global_name_span">墨丘莉</span>犧牲生命造出的力量結晶，但是這股力量逐漸消耗中，除非造出［賢者之石］代替，否則<span class="global_name_span">阿爾瑪</span>得再次消亡只是時間問題。</p> <p>在無數次的實驗中，<span class="global_name_span">帕基利烏斯</span>清楚知道自己無法完成［賢者之石］，因此接受［幻影］的蠱惑，想以匯聚［冥］的［愚者之石］作為替代品，這也就是<span class="global_name_span">阿爾德</span>他們看到慘劇的發生原因。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oc4ym96AHOA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與白金的蓓蕾（下）</div> <p>如果能成功將［賢者之石］鍊成，或許就能讓<span class="global_name_span">帕基利烏斯</span>打消使用［愚者之石］的想法。</p> <p>於是<span class="global_name_span">阿爾德</span>將看到的未來告訴<span class="global_name_span">阿爾瑪</span>，希望能借助她鍊金師的專業，阻止未來的慘劇發生，但是就連她師父<span class="global_name_span">帕基利烏斯</span>都無法順利鍊成［賢者之石］，所以<span class="global_name_span">蕾蕾</span>提議去找爺爺<span class="global_name_span">西蒙</span>，畢竟是與<span class="global_name_span">帕基利烏斯</span>齊名的大魔法師，也許可以從他那得到幫助。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TpHXabPvUlM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>有了大賢者<span class="global_name_span">西蒙</span>的提示，加上<span class="global_name_span">阿爾瑪</span>與<span class="global_name_span">蕾蕾</span>合作，集鍊金術與魔法兩家所長，終於鍊出［賢者之卑石］，雖然比不上真正的［賢者之石］，但卻是眾人對抗［愚者之石］的唯一希望。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UlU5Y3mqT90?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>最終合大家的力量終於破壞［愚者之石］，<span class="global_name_span">帕基利烏斯</span>也醒悟了過來，但<span class="global_name_span">阿爾瑪</span>在戰鬥中消耗過多的生命力，身體已經支持不住，<span class="global_name_span">帕基利烏斯</span>當下決定犧牲自己的生命，保住<span class="global_name_span">阿爾瑪</span>繼續活下去，雖然結果將這閉鎖的時空解放，但結局總有些遺憾。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kSQ6bLTRe_w?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">帕基利烏斯</span>的驟逝，多少也引起［白金之塔］中鍊金術師的不安，繼承黃金鍊金術師的<span class="global_name_span">阿爾瑪</span>決定暫時留下來領導大家，但在夜深人靜時，她總會想著，如果自己能再多做些甚麼？是不是可以改變師父的命運。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RyuBAkBc3V4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與白金的蓓蕾（壞結局）</div> <p>甚麼都不做，讓<span class="global_name_span">阿爾瑪</span>直接進行［賢者之石］的鍊成，就會導致悲劇重演。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QsSCkNaJ0Z4?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與白金的蓓蕾（真結局）</div> <p>在［白金之塔］，一個奇異的裂縫顯示出另一個可能性！那是<span class="global_name_span">帕基利烏斯</span>、<span class="global_name_span">阿爾瑪</span>與另一名女子在塔內對談的景象，這代表了或許有機會可以拯救<span class="global_name_span">帕基利烏斯</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/4ncq5C-T8hY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>通過時間裂縫，大夥來到決戰前夕，這次<span class="global_name_span">阿爾瑪</span>以鍊金術喚醒沉睡在寵物貓裡的<span class="global_name_span">墨丘莉</span>意識，因為有了<span class="global_name_span">墨丘莉</span>的幫助，<span class="global_name_span">帕基利烏斯</span>雖然還是逃不了犧牲的命運，卻額外爭取到生存的時間。</p> <p>恢復記憶的<span class="global_name_span">阿爾瑪</span>終於可以不留遺憾的與自己父母道別，不再因為自己是［荷姆克魯斯］的原因而羞於啟齒，大夥在最後都彌補了心中的缺憾。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sw3mX0t8w9A?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與亡國之王（上）</div> <p>穿越光柱來到［凱琉奇路王國］，此時這裡正準備進行［飄浮儀式］，這是為了離開受到汙染大地，將整個王國升到空中的龐大計畫，但在飄浮過程中卻發生意外，整個王國從空中墜落地面，國民死傷慘重，留下一位領導者看著慘況暗自神傷。</p> <p>看來這就是這次要解決的循環悲劇，但實在沒甚麼線索，<span class="global_name_span">阿爾德</span>於是想到同伴中［凱琉奇路王國］王族後裔的<span class="global_name_span">克勞特</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Kk6wVdetGtY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">克勞特</span>本來就對復興［凱琉奇路王國］有著深度的執念，一聽可以見證祖國滅亡的瞬間，馬上就來勁了，毫不遲疑答應<span class="global_name_span">阿爾德</span>一起前往閉鎖的時空。</p> <p>根據詳細調查與推理，<span class="global_name_span">克勞特</span>認為原本的歷史並沒有舉行［飄浮儀式］，也許這正是解除扭曲的關鍵，但從現在的情況來看，這儀式關係著國民的生存，雖然改變歷史並不是解決的方法，但為了守護國民的生命<span class="global_name_span">克勞特</span>決定找現任國王<span class="global_name_span">克勞迪歐</span>。</p> <p>若要讓［飄浮儀式］成功，必須集齊兩位王族的魔力，首先<span class="global_name_span">克勞特</span>必須解開魔力的枷鎖，於是聽從<span class="global_name_span">克勞迪歐</span>的指示，前往［選定之塔］證明自己有身為國王的資格。</p> <p>講起［選定之塔］的試煉，並非單純以武力就能通過的，必須以幫助、愛護國民的實際行為，才能獲得<span class="global_name_span">凱琉奇路</span>的認可，為此<span class="global_name_span">克勞特</span>成立［凱琉奇路幫忙隊］，開始四處接支線任務，幫忙國民解決煩惱。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Zq9Uas1NwL8?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>通過層層試煉，<span class="global_name_span">克勞特</span>成功解開魔力的枷鎖，但［飄浮儀式］還是失敗了，這時<span class="global_name_span">幻影</span>現身，從他與<span class="global_name_span">克勞迪歐</span>的交談中，得知只要<span class="global_name_span">克勞迪歐</span>失去生命就會啟動時間倒流。</p> <p><span class="global_name_span">克勞迪歐</span>在國民喪生與得知被<span class="global_name_span">幻影</span>欺騙的雙重打擊下，決定將［始祖龍的神靈］交給<span class="global_name_span">克勞特</span>，這是個能參加真正王者試煉的寶物，希望<span class="global_name_span">克勞特</span>能以此找到拯救國民的方法，接著便慷慨赴死啟動時間重啟。</p> <p><span class="global_name_span">克勞特</span>雖然有些感傷，但頭腦清醒地推理出正確的歷史中<span class="global_name_span">克勞迪歐</span>應該是存活的，如果［飄浮儀式］注定失敗，首先就要阻止這儀式的進行，才有可能拯救<span class="global_name_span">克勞迪歐</span>與國民，首先要先找到在前幾次輪迴成功說服國王阻止儀式的騎士<span class="global_name_span">艾蓮</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/w81cNfSMtzs?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與亡國之王（下）</div> <p>雖然得到<span class="global_name_span">艾蓮</span>的幫助，但這個時間點的<span class="global_name_span">克勞迪歐</span>深受<span class="global_name_span">幻影</span>蠱惑，依然決定要舉行［飄浮儀式］，並且前往［正宗寶座］。</p> <p><span class="global_name_span">克勞特</span>本想追上去，但碰觸石板的瞬間，面臨了是否要接受真正王者試煉的抉擇。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zCx4zmXNSBs?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>成功通過王者試煉的<span class="global_name_span">克勞特</span>獲得來自<span class="global_name_span">凱琉奇路</span>的聖劍、白衣，誓要以此力量阻止悲劇發生。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6Q-XlwXyVjI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>最終雖然阻止了［飄浮儀式］，但受到<span class="global_name_span">幻影</span>的影響，<span class="global_name_span">克勞迪歐</span>解放了血脈中的力量，成為一頭龍。</p> <p>即便在魔物大量入侵王城時，<span class="global_name_span">克勞迪歐</span>把這股力量用在守護人民上，但已經不是人的他，無法在與自己的人民生活在一起，只能無奈地展翅飛離。</p> <p>而經過一場大難的國民，已經無法繼續待在自己的故鄉，只能投奔鄰國，這樣的結局似乎有些遺憾。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/VZoxB-LdrpM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與亡國之王（壞結局）</div> <p>不接受王者試煉，則慘劇會再度發生。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/T9xInB1URlM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與亡國之王（真結局）</div> <p>［白夜時層］這次仍然為矯正扭曲歷史留下一絲機會，再次回到關鍵點的<span class="global_name_span">克勞特</span>使用寶玉儲存記憶的特性，將之前經歷過的悲慘結局一一展現給<span class="global_name_span">克勞迪歐</span>看，這讓他下定決心與<span class="global_name_span">幻影</span>決裂。</p> <p>雖然最後［凱琉奇路王國］依舊迎來滅國的命運，但王與人民都存活了下來，靜待著未來某一刻復國的契機。</p> <p>而<span class="global_name_span">克勞特</span>之所以知道正確歷史為何，全是因為<span class="global_name_span">克勞迪歐</span>與<span class="global_name_span">艾蓮</span>就是他的曾祖父母，並且曾經與年幼的自己相處過，所以矯正歷史，也是確保在這個時層自己能夠順利誕生。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fu8zpbgB1uQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與七彩之鄉（上）</div> <p>這次順著光柱指引來到［白夜時層］中的現代東方大陸，此時的［鬼族］異常強大，竟然橫掃其他人類國家，在大陸掀起一片腥風血雨，而這時層的公主<span class="global_name_span">花燦月華</span>面對這樣的慘況，顯得十分抗拒與害怕，而一直維護他的<span class="global_name_span">朱雀</span>，因為阻止戰爭傷害同伴的罪刑，將被狂熱的戰爭份子處決。</p> <p>就在此時，時間開始回朔，當<span class="global_name_span">阿爾德</span>、<span class="global_name_span">諾娜</span>回過神來，發現處在一個黑暗的建築，旁邊突然冒出的一隻貓竟然打開時空隧道，一溜煙跳進<span class="global_name_span">阿爾德</span>等人的［主時空層］，但因為只是一隻貓，所以並沒有引起太多留意，畢竟貓在這個世界是有很大的特權的。</p> <p>兩人在建築物內四處探索，誤打誤撞遇見了<span class="global_name_span">花燦月華</span>，原來這裡是［呂之國］的城堡，這個公主心眼挺大，看見行跡可疑的兩人竟然還主動交朋友，身為公主的她有個偉大的願望，就是征服世界，讓所有人沒有國家之間的區別隔閡，但是一直被幽禁在城堡可做不了這樣的事情，於是與<span class="global_name_span">阿爾德</span>兩人開始進行逃離城堡的行動。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8D_2r5-bA24?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這<span class="global_name_span">花燦月華</span>十分機靈古怪，各種胡話張口就來，跟主時層的<span class="global_name_span">月華</span>簡直天差地別，但也多虧如此，騙得城堡內人的幫助，收集齊用來逃脫的工具。</p> <p>逃跑的過程中，竟然遇到主時層的<span class="global_name_span">月華</span>，她之所以會來到這，全是因為之前那隻貓的關係，看來牠跑去主時層的目的，就是要引導<span class="global_name_span">月華</span>來此。</p> <p>雖然<span class="global_name_span">月華</span>與<span class="global_name_span">花燦月華</span>初次見面就有點爭執，但眼下大家還是以逃離為優先考量，沿路遇見了不少機關，看來這類學問在［呂之國］十分盛行。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aA3Et7DhDRU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>大夥突破層層難關，最後在<span class="global_name_span">朱雀</span>的神救援下，終於逃出了城堡，然而在過程中，<span class="global_name_span">花燦月華</span>卻發現平常城堡中的大家都是機關人偶，這背後肯定有個陰謀家，為了一直軟禁公主才布置了這一切。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/EalubJpY9ws?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與七彩之鄉（下）</div> <p>來到鎮上與百姓交談後，發現領主也就是<span class="global_name_span">花燦月華</span>的父親有很大的問題，似乎他正在謀劃著戰爭，並且假借<span class="global_name_span">花燦月華</span>的名義，頒布許多命令。</p> <p>感受到不對勁氣氛的<span class="global_name_span">阿爾德</span>決定將看到的未來告訴<span class="global_name_span">花燦月華</span>，為了阻止東方大陸陷入戰爭的煉獄中，大夥準備前往領主的居城，當面問個清楚。</p> <p>本來還擔心進城的問題，但<span class="global_name_span">月華</span>長得很像<span class="global_name_span">花燦月華</span>的母親，以這個國家的皇后之姿進城，是再也簡單不過的事情了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/hBb_4TfJuZs?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>領主居住的城堡［御仁城］十分巨大，當中機關也非常複雜，到頂層見到領主時，果然<span class="global_name_span">幻影</span>也在此處，看來又是祂造成這閉鎖時空，但更令人意外的是［領主的真實身分］，竟然是世界上第一位咒術師<span class="global_name_span">崖真</span>，他解決了<span class="global_name_span">花燦月華</span>的父母親，藉由靈魂轉移侵佔領主的身體，企圖利用<span class="global_name_span">花燦月華</span>的名義，準備在明天發起戰爭。</p> <p>就當眾人準備出手阻止他，<span class="global_name_span">崖真</span>周圍散發著強大的氣場，一個衝擊就將大夥擊出門外，眼下也沒其他方法可以對付<span class="global_name_span">崖真</span>，大家只能暫時撤退。</p> <p>雖然遭受接連打擊，但<span class="global_name_span">花燦月華</span>為了守護自己的國民，依然振作起來，為了對抗咒術師大軍，得先聚齊國家內其他的強大勢力。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Oh-0mnwpuCw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>聚集其餘國民的效忠後，一場［呂之國］的內戰爆發了，兩股巨大的勢力衝擊下，國家邁向了滅亡的命運，但時空依舊回朔，也許［呂之國］的覆滅，並不是這個［白夜時層］認定的未來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sg14ODNkziQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了不讓國家覆滅，<span class="global_name_span">花燦月華</span>使用嘴遁成功將咒術師的勢力說服，接下來只需要將陰謀家<span class="global_name_span">崖真</span>解決，歷史就能回到正軌。</p> <p>大戰前，<span class="global_name_span">朱雀</span>提議去泡泡溫泉，大家就這樣洗滌身心放鬆了一下，彼此交換內心的想法。</p> <p><span class="global_name_span">花燦月華</span>雖然痛恨<span class="global_name_span">崖真</span>，卻不打算取他的性命，在她的偉大理想中，應該是所有人都和平相處，這也包含<span class="global_name_span">崖真</span>，但<span class="global_name_span">朱雀</span>心裡卻截然相反，這樣的執著，與主時層的<span class="global_name_span">朱雀</span>顯然一樣。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oblAG_ZN-kI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>宣戰儀式當天，孤立無援的<span class="global_name_span">崖真</span>展開最後的反撲，但依舊無濟於事，最終被擊敗，雖然<span class="global_name_span">花燦月華</span>有意放他一馬，但<span class="global_name_span">朱雀</span>卻擅自結果了<span class="global_name_span">崖真</span>的性命，背負起謀害領主的罪名，離開了［呂之國］。</p> <p>十分不捨的<span class="global_name_span">花燦月華</span>整理完複雜的心情，與自己的國民一起參加了［迎接御魂的祭典］，在重歸和平的現在，把祭典當作慶功宴辦是再好不過的。</p> <p>而這取之不易的和平，背後也有許多其他勢力的幫助，像是<span class="global_name_span">墨染紫央</span>的暗中部屬，還有那隻來歷不明的貓，結果到最後牠也只對<span class="global_name_span">月華</span>有反應，到底是個甚麼東西也不知道</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eh9I-NfJeAU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與七彩之鄉（真結局）</div> <p><span class="global_name_span">朱雀</span>的離開，顯然對<span class="global_name_span">花燦月華</span>造成不小影響，［白夜時層］顯然也不認同這樣的結局，故意留了個機會給<span class="global_name_span">阿爾德</span>等人導正歷史。</p> <p>回到過去後，趁著泡溫泉的時光，<span class="global_name_span">花燦月華</span>對<span class="global_name_span">朱雀</span>進行了真情告白，沒有仇恨的執著，<span class="global_name_span">朱雀</span>最終留在［呂之國］，<span class="global_name_span">崖真</span>也活了下來，只不過苦了<span class="global_name_span">花燦月華</span>要面對不斷而來的政務與<span class="global_name_span">朱雀</span>的嘮叨。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7Z4GFZoe_0Y?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與純淨的樂園（上）</div> <p><span class="global_name_span">瑪莉艾爾</span>被一隻發光的貓帶到［白夜時層］，正好遇上了同樣來到此的<span class="global_name_span">阿爾德</span>與<span class="global_name_span">諾娜</span>，依照以往的經歷，這裡應該即將發生悲劇，三人為了獲得更多情報，開始在附近調查。</p> <p>過程中，時間莫名開始回朔，<span class="global_name_span">瑪莉艾爾</span>在異像發生前曾看到模糊的血腥影像，發生地點可能就在不遠處的鐘樓內。</p> <p>鐘樓內，一個叫做<span class="global_name_span">瑪莉</span>的女子，帶著一群孤兒過著與世隔絕的生活，細問下才知道這裡是座孤島，沒看過外人的孩子們，興奮地帶著<span class="global_name_span">阿爾德</span>三人要一起做家事。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zIxniLkby_E?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>從幫忙的互動中，得知這座島上並沒有人能吃的食物，四處的土壤與水都遭到了污染，大家的糧食來源全靠一個［叔叔］救濟，雖然清苦但也樂得自在。另外<span class="global_name_span">瑪莉</span>不知道出於甚麼原因？並沒有教這群孩子識字。</p> <p>為了改善［食物］的問題，<span class="global_name_span">阿爾德</span>三人準備在附近開墾農田。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/xVSjuj80cKM?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿爾德</span>發現孤島上有一種白色的礦石，在附近的水與土壤都沒有遭到汙染，於是修好鏟子後，直接找了一塊地開墾出簡易的農田。</p> <p>接著<span class="global_name_span">阿爾德</span>他們修建了吊橋，並找到了適合栽種的種子，可孤島的異常環境讓栽種的作物，迅速成長又迅速枯萎，氣餒的同時，鐘樓的鐘聲響起，為了不讓<span class="global_name_span">瑪莉</span>跟孩子們擔心，加上天色已晚，還是先回去好了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/gxNgEGGoync?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>當晚鐘樓發生了小插曲，<span class="global_name_span">瑪莉</span>似乎在上層的房間隱藏著某些事物，<span class="global_name_span">阿爾德</span>三人畢竟是客人，沒經過主人的同意也不方便繼續搜索，結果三人被打發去陪小孩睡覺，在朦朧間受到一股力量影響，沉沉的睡去。</p> <p>隔天一大早，一樓大廳傳來熱鬧的聲音，原來是會送食物的［叔叔］<span class="global_name_span">伊凡</span>來了，他瘸著腿、臉色看起來也不是很好，看到<span class="global_name_span">阿爾德</span>三人便慢慢走來，只用唇語說了［孩子們...還有....］，之後看到<span class="global_name_span">瑪莉</span>也來到大廳，就直接衝出大門，追也追不上。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8LB0zEbUjvA?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>一頭霧水的眾人索性乾脆不理，繼續探索種植農作物的種子，不過結果還是跟上次一樣，作物一下子就枯萎了。</p> <p>這時鐘樓傳來<span class="global_name_span">瑪莉</span>倒下的消息，當大家趕回來時，<span class="global_name_span">瑪莉</span>卻閉門不見、躲在房間裡，同時鐘樓裡的孩子們都變得十分怪異，只會重複無意義的動作、無意義的回答。</p> <p>樓內一片混亂，<span class="global_name_span">阿爾德</span>三人跟著孩子們來到最頂層，卻看見一名孩子將藏在這裡的<span class="global_name_span">幻影</span>活生生吃了，而<span class="global_name_span">瑪莉</span>在看到這一幕時，崩潰的舉起短劍刺向孩子，這一刻時間開始回朔。</p> <p>這一切發生得太快、又毫無頭緒，為了真相，這次<span class="global_name_span">阿爾德</span>決定直接闖進頂樓房間內。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ija6LT3EcbU?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">幻影</span>果然在房間內，祂似乎與之前遇到的<span class="global_name_span">幻影</span>不同，十分關心孩子們與<span class="global_name_span">瑪莉</span>。</p> <p>原來祂就是之前會送食物過來的<span class="global_name_span">伊凡</span>，祂想要做的，並不是無止盡的時間循環，而是拯救<span class="global_name_span">瑪莉</span>與孩子們，如果照著正確的歷史走，他們將因為島上的有毒物質，化為無意識的怪物，但食物並不容易取得，之前<span class="global_name_span">伊凡</span>的糧食來源，其實是自身的肉塊，然而這也是有毒性的，隨著攝取增加，將會化為混沌的種族，彼此互相吞噬，這也就是上一個循環，孩子們最終異常的原因。</p> <p>顯然<span class="global_name_span">伊凡</span>的作法並不正確，因此他將拯救鐘樓裡人們的希望，寄託在外來的<span class="global_name_span">阿爾德</span>三人身上。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QS5BegNYuSY?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與純淨的樂園（下）</div> <p>只要徹底解決吃的問題，那麼所有人應該都能得救，這次從暴龍身上取得的種子有著異常的生命力，果然順利種出沒有枯萎的植物。</p> <p>正高興的時候，<span class="global_name_span">瑪莉</span>來找三人，此時面臨該讓<span class="global_name_span">瑪莉艾爾</span>或是<span class="global_name_span">阿爾德</span>跟著<span class="global_name_span">瑪莉</span>回去聊天。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3rGRaWZh4l0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>如果選擇<span class="global_name_span">瑪莉艾爾</span>，由於她直接的質問，<span class="global_name_span">瑪莉</span>毫無猶豫地露出她對孩子們強烈的控制慾，以及對<span class="global_name_span">阿爾德</span>三人突然來到的厭惡感。</p> <p><span class="global_name_span">瑪莉</span>一直都知道<span class="global_name_span">伊凡</span>提供的食物是甚麼，卻還是讓孩子們繼續食用，雖然自己擁有淨化能力，但也只能淨化一小部分食物，而這能力讓自身負擔極大的代價，如此的困境，<span class="global_name_span">瑪莉</span>決定將<span class="global_name_span">瑪莉艾爾</span>當作孩子的食物，還好最後<span class="global_name_span">伊凡</span>伸出援手，才能幸免於難。</p> <p>結局用盡力量的<span class="global_name_span">伊凡</span>緩緩變為光點消失，而露出真面目的<span class="global_name_span">瑪莉</span>，最終卻被孩子們刺殺。</p> <p>悲劇依舊是發生了，時間再度回朔，這次決定換<span class="global_name_span">阿爾德</span>回去跟<span class="global_name_span">瑪莉</span>聊天。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GJivDMhxMpw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>嘴遁天王<span class="global_name_span">阿爾德</span>生動的敘述著自己的冒險故事，這似乎有一丁點打動<span class="global_name_span">瑪莉</span>，但她仍想把眼前的男人當成給孩子們的食物，就在短刀亮出的瞬間，屋外傳來魔物的吼叫聲與孩子們的呼救聲。</p> <p><span class="global_name_span">阿爾德</span>不管眼前的<span class="global_name_span">瑪莉</span>想幹啥！直接先衝出去救孩子再說。</p> <p>農田那邊，之前栽種的植物變成一個巨大的魔物，並且孩子們還與它產生共鳴，都變成了奇異的狀態，一個接一個跳入大海奔向自由，<span class="global_name_span">瑪莉</span>自然無法接受，十分地沮喪，但<span class="global_name_span">伊凡</span>卻認為這是最好的結局，孩子們以另一種形式活在這世上，已經比之前那無數次輪迴優勝的多。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/XnxvqPg06y0?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>失去孩子們的<span class="global_name_span">瑪莉</span>雖然不用再煩惱食物的問題，但心情卻異常低落，而力量耗盡的<span class="global_name_span">伊凡</span>難逃消失的命運，最終化為一把劍陪在<span class="global_name_span">瑪莉</span>身邊。</p> <p>孤島開始有人類的船隻到來，<span class="global_name_span">瑪莉</span>也許再過不久就會隨著船隻回歸人類的世界，<span class="global_name_span">瑪莉艾爾</span>似乎功成身退，被發光的貓強制送回原本的時層，無法徹底拯救<span class="global_name_span">瑪莉</span>的結局，讓<span class="global_name_span">阿爾德</span>、<span class="global_name_span">諾娜</span>兩人感到無比的悲傷，真的太遺憾了。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/b8avAIemV2k?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與純淨的樂園（真結局）</div> <p>［白夜時層］這次照舊留下了改變結局的機會，回到過去的<span class="global_name_span">阿爾德</span>三人，成功說服還保有輪迴記憶的<span class="global_name_span">伊凡</span>合作，首先要調查的就是讓孩子們異變的植物。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HwfEJtWiW70?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>那植物某種意義上來說算是［新人類］，擁有自己意識、可以溝通，而<span class="global_name_span">瑪莉</span>早就知道關於這植物的事情，一直想伺機奪走。</p> <p><span class="global_name_span">瑪莉</span>這人非常複雜，有著異常的執念、又不願意聽進別人說的話，但<span class="global_name_span">瑪莉艾爾</span>還是想拯救她，在見到孩子們的真心後，<span class="global_name_span">瑪莉</span>瞬間頓悟，也願意相信眼前的大家，朝著幸福的結局努力。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NB7i_MnydOs?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>對於植物的處置，<span class="global_name_span">瑪莉</span>選擇尊重生命，放任它繼續成長，但同時也開始對孩子們的教育，讓他們理解該植物的危險性，避免被植物影響化為奇異的狀態。</p> <p>之後整座島嶼在<span class="global_name_span">瑪莉</span>與<span class="global_name_span">瑪莉艾爾</span>聯手施展的淨化下，環境開始產生了變化，外來的商船也因為魔法產生的巨大光芒發現了這座島，不再與世隔絕，食物的問題自然也能解決。</p> <p>只是<span class="global_name_span">伊凡</span>最終還是逃不了消失的命運，畢竟在之前他已經消耗了太多力量，但自己關心的人們能真正得救，已經沒有任何遺憾了。</p> <div class="global_ps_text"> <p>外史的六個故事中，就屬純淨的樂園最一言難盡，感覺夾帶了大量的私貨，對<span class="global_name_span">瑪莉</span>人性的過度探討，各種不夠詳細的事件描述，可能讓有興趣的玩家回味無窮，但是對我這種玩家而言，卻覺得不是一個好的故事基底。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/puudKpoS6sQ?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與曉光的牢籠（上）</div> <p><span class="global_name_span">阿爾德</span>與<span class="global_name_span">諾娜</span>兩人這次來到未來的都市，才剛抵達就親眼看到［KMS公司］分部的建築大樓瞬間消失，而這一切都出自一個白色挑染的少年<span class="global_name_span">八雲</span>之手，他擁有強大的力量，能一瞬間就將分公司轟到別的時空。</p> <p><span class="global_name_span">阿爾德</span>正準備好好跟他講道理，但<span class="global_name_span">八雲</span>只一眨眼的功夫就繞到其身後，受襲的同時，時間開始回朔，看來這次扭曲的源頭很明顯就是<span class="global_name_span">八雲</span>。</p> <p>幸運的是，在過去的時空探索時，身為［KMS公司］職員的<span class="global_name_span">八雲</span>自然地出現在<span class="global_name_span">阿爾德</span>兩人面前，要是能在這時間點說服他放下摧毀大樓的念頭，就能阻止閉鎖時空了吧，因此<span class="global_name_span">阿爾德</span>死纏爛打就是要黏著<span class="global_name_span">八雲</span>。</p> <p>首先要做的是獲取<span class="global_name_span">八雲</span>的信任，所以<span class="global_name_span">阿爾德</span>兩人開始幫他推廣起［KMS公司］的吉祥物［庫莫斯］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lh4oNxjES3c?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>先在這都市逛逛，［塵埃市］雖然名字聽起來很髒，不過生活環境倒還好，居民也都很和善，只需要小心一個神秘組織［塵愛會］。</p> <p>回到辦公室，正好看到<span class="global_name_span">八雲</span>被領導訓話，被強塞各種他不擅長的工作，又不合理的要求業績，想離職卻怕找不到其他工作，同事又都只顧著自己，沒有人會在職場上伸出援手，每天都被枯燥、麻煩充滿，難得回到家卻沒時間能好好放鬆、享受下，這就是<span class="global_name_span">八雲</span>每天要面對的生活，因此他格外希望［明天］不要到來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WV2LpqbYemc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>隔天<span class="global_name_span">阿爾德</span>兩人開始替<span class="global_name_span">八雲</span>工作，努力提升業績。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/h7zZJHVzzNo?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>經過一整天糟心的工作，<span class="global_name_span">八雲</span>習慣性地對著吉祥物［庫莫斯］抱怨，沒想到這時<span class="global_name_span">庫莫斯</span>竟然獲得生命，並且直認<span class="global_name_span">八雲</span>當老爸，這下除了工作以外，回家還要聽這兒子在一旁聒噪，完全是一個不得清閒的狀態。</p> <p>但<span class="global_name_span">庫莫斯</span>的降臨確實改變了<span class="global_name_span">八雲</span>，它是<span class="global_name_span">幻影</span>賦予力量才產生生命，並且擁有強大的力量，這股力量還同步到<span class="global_name_span">八雲</span>身上，讓手無縛雞之力的他能夠擊退［塵愛會］的惡勢力。</p> <p>突然獲得超能力的<span class="global_name_span">八雲</span>，似乎還不適應這樣的改變，依舊聽著上司的吩咐繼續工作，連<span class="global_name_span">庫莫斯</span>都忍不住吐槽，但這就是上班族難以改變的奴性。</p> <p>但人只要被逼到絕境，瞬間就能做出超越習慣、理智的事情，得知自己的部門將被賣給［塵愛會］，並且下放到受到汙染的地上，<span class="global_name_span">八雲</span>感到前所未有的絕望，加上<span class="global_name_span">庫莫斯</span>在一旁慫恿，<span class="global_name_span">八雲</span>徹底解放自己的力量，向分部的上司與同事展開報復，於是悲劇再次發生，時間開始回朔。</p> <p>這次因為有<span class="global_name_span">庫莫斯</span>的存在，<span class="global_name_span">八雲</span>還保留輪迴前的記憶，<span class="global_name_span">阿爾德</span>向他敘述關於閉鎖時空的事情，本想這樣可以阻止他再度毀滅分公司，沒想到這次<span class="global_name_span">八雲</span>黑化的徹底，永遠不會到來的明天不正是自己想要的願望。</p> <p>但一切還有轉機，只要幫助<span class="global_name_span">八雲</span>提升業績，那部門就不會被賣掉，應該就能阻止悲劇的發生。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/YSRiLDSJc48?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與曉光的牢籠（下）</div> <p>經過不斷的努力，好不容易把部門業績提升到第三名，但這時候［塵愛會］卻突然跑來砸場子，更動用黑勢力<span class="global_name_span">八雲</span>沒辦法在這城市生存下去，要是在以前，這手段可能還有點用，現在<span class="global_name_span">八雲</span>可是有超能力，乾脆就跟著<span class="global_name_span">阿爾德</span>一起去與［塵愛會］正面對決。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/TlyNu04xfAc?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>擊敗［塵愛會］後，本以為達到業績的<span class="global_name_span">八雲</span>會就此放棄摧毀大樓，但他本人實際的目的是不想迎來明天，所以就算不摧毀大樓，只要讓［分部長］失去生命，一樣可以進入閉鎖時空，這樣的執念就連<span class="global_name_span">庫莫斯</span>也阻止不了。</p> <p>無奈之下，<span class="global_name_span">阿爾德</span>以武力制止了<span class="global_name_span">八雲</span>，但時間依舊發生了回朔。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/0hhT-oeb7eI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>從［塵愛會］大姐頭那邊得到［分部長］年輕時的照片，這模樣簡直跟<span class="global_name_span">八雲</span>一模一樣，把照片拿給<span class="global_name_span">八雲</span>看後，<span class="global_name_span">幻影</span>突然出現，並且大方承認是自己造就這一切，而這次閉鎖時空有雙重保險，一個是<span class="global_name_span">八雲</span>一個是［分部長］。</p> <p>覺得自己被耍的<span class="global_name_span">八雲</span>雖然乖張的想法並沒有改變，但被人操弄的感覺實在不爽，眾人準備去找［分部長］<span class="global_name_span">老八雲</span>問個清楚。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IX6fqvubOts?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>這個<span class="global_name_span">老八雲</span>是個可憐人，從其他時層被發光的貓引導過來，來到三十年前的時代，為了回去見自己心愛的人，獨自研究努力三十年的時空隧道，卻發現了年輕的自己。</p> <p>感覺到無法見到心愛的人，<span class="global_name_span">老八雲</span>把這股氣出在<span class="global_name_span">八雲</span>身上，這才導致現在的<span class="global_name_span">八雲</span>有著如此乖張的個性，但這一切都是<span class="global_name_span">幻影</span>的陰謀，他擅自改變發光的貓開啟的時空隧道，才造成<span class="global_name_span">老八雲</span>的悲劇，雖然最後眾人成功阻止閉鎖時空，但<span class="global_name_span">老八雲</span>的遭遇實在令人惋惜。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UKEOtLR8JIg?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">徘徊的命運與曉光的牢籠（真結局）</div> <p>［白夜時層］這次依舊留下了改變結局的機會。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rDpAo8aQGIw?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">八雲</span>偷看了<span class="global_name_span">老八雲</span>的日記，才發現那心愛的人，只是願意多跟<span class="global_name_span">老八雲</span>講話的路人，不過這早就該料到了，畢竟是未來的自己。</p> <p><span class="global_name_span">八雲</span>利用自己的力量，將<span class="global_name_span">老八雲</span>送回原來的時層，自己在經歷那麼多事情以後，雖然破爛的人生依然，但<span class="global_name_span">八雲</span>也學會怎麼享受迎來未知的明天。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/_FdgwZtcTEI?wmode=wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+    return contentArr;
+  }
+
+  
+  })();
+
+</script>
+<p>&nbsp;</p>
+
+
+
+
