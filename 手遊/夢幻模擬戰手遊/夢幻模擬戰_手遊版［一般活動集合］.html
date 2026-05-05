@@ -175,6 +175,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//百鬼夜行祭
   activityArr.push('');//造夢慶典大作戰
   activityArr.push('');//駛向無盡之海
+  activityArr.push('');//穿越時空的祈願
 
 
 
@@ -218,6 +219,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('百鬼夜行祭');
   paArr.push('造夢慶典大作戰');
   paArr.push('駛向無盡之海');
+  paArr.push('穿越時空的祈願');
 
 
   var contentArr = [];
@@ -260,6 +262,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct36(1));
   contentArr.push(getAct37(1));
   contentArr.push(getAct38(1));
+  contentArr.push(getAct39(1));
 
 
   var pArr = [];
@@ -302,6 +305,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct36(2));
   pArr.push(getAct37(2));
   pArr.push(getAct38(2));
+  pArr.push(getAct39(2));
 
 
   var firstEnter = 0 ; 
@@ -364,7 +368,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct39(idx) {
+  function getAct40(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -377,6 +381,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     result.push('');
     result.push('');
     result.push('');
+
+    return result;
+  }
+
+  function getAct39(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+      resultIdx.push('挑戰');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">消失的馬修、魔王與勇者、校園怪談、骨犀騎士</div> <p>這故事講的是<span class="global_name_span">初真澤瑞達</span>所在的時空，<span class="global_name_span">馬修</span>因為拯救<span class="global_name_span">初真澤瑞達</span>而消失，所以<span class="global_name_span">初真澤瑞達</span>騎著小摩托車到各個平行時空收集有關<span class="global_name_span">馬修</span>的物品，希望用這些喚回所在時空的<span class="global_name_span">馬修</span>。</p> <p>結果招喚出來的是<span class="global_name_span">維坦</span>，但在各個時空的<span class="global_name_span">馬修</span>幫助下成功將其擊敗，結局是<span class="global_name_span">初真澤瑞達</span>的時空在<span class="global_name_span">羅蘭</span>的幫助下再次逆轉回朔，<span class="global_name_span">初真澤瑞達</span>將再次踏上尋找<span class="global_name_span">馬修</span>的旅途。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Z8fk-u063yc?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OX0Yz2gUYjM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('<div class="title_text">預兆! 新年運勢、執事升職記、冰與火之歌</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/vCin5hxY0X8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">非誠勿擾</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/zDEJRrEPglY?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">獎金保衛戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HRSR3IqvHJs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return result;
   }
