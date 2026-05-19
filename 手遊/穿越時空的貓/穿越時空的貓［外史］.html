@@ -150,28 +150,34 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   var activityArr = [];
   activityArr.push('');
   activityArr.push('');//徬徨的少女與久遠的漩渦
+  activityArr.push('');//望鄉之魂與逆星旅行者
 
   var paArr = [];
   paArr.push('');
   paArr.push('徬徨的少女與久遠的漩渦');
+  paArr.push('望鄉之魂與逆星旅行者');
 
 
   var contentArr = [];
   contentArr.push([]);
   contentArr.push(getAct1(1));
+  contentArr.push(getAct2(1));
 
   var pArr = [];
   pArr.push([]);
   pArr.push(getAct1(2));
+  pArr.push(getAct2(2));
 
   var contentArrB = [];
   contentArrB.push([]);
   contentArrB.push(getActB1(1));
+  contentArrB.push(getActB2(1));
 
 
   var pArrB = [];
   pArrB.push([]);
   pArrB.push(getActB1(2));
+  pArrB.push(getActB2(2));
 
 
   var firstEnter = 0 ; 
@@ -260,6 +266,44 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
+  function getActB3(idx) {
+    if (idx == 2){
+      var pArr = [];
+      pArr.push('');
+      pArr.push('');
+      pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('');
+    contentArr.push('');
+    contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
+
+  function getAct3(idx) {
+    if (idx == 2){
+      var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+      return pArr;
+    }
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('');
+    
+
+
+    return contentArr;
+  }
+
   function getActB2(idx) {
     if (idx == 2){
       var pArr = [];
@@ -285,13 +329,15 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     if (idx == 2){
       var pArr = [];
   pArr.push('');
-  pArr.push('');
+  pArr.push('序章');
+  pArr.push('幻靈之劍與祈誓的燈火');
 
       return pArr;
     }
     var contentArr = [] ;
   contentArr.push('');
-  contentArr.push('');
+  contentArr.push('<div class="title_text">序章</div> <p>一個神祕少女從天而降，被掛在［巴路奧其］的［阿爾德雕像］上，在她昏迷期間，<span class="global_name_span">阿爾德</span>遇上一個持劍的幻影，就當要被劍斬中時，少女及時出現救了他。</p> <p>少女叫做<span class="global_name_span">露薇</span>，能利用手中的［超時空領域之劍］打開［傳送門］來往各時代，她的目的是阻止那持劍的［喪劍幻影］，這是幻影中特別的個體，手中的劍具有各種特殊力量，可以斬斷特別的東西，襲擊<span class="global_name_span">阿爾德</span>的［喪劍幻影］<span class="global_name_span">幻影.晦暝爾</span>，是擁有［斬斷可能性之劍］，一旦被攻擊到就會被斬斷所有可能性，意味著從頭到尾徹底消失，彷彿從來就沒存在過，<span class="global_name_span">露薇</span>的父親與世界就是這樣消失的，<span class="global_name_span">露薇</span>之所以還能活著，是因為在千鈞一髮之際，利用父親研究的［時相觀測船.卡伊洛斯］離開時間長河才能倖免。</p> <p>［喪劍幻影］有這樣恐怖的力量，自然不能放任不管，所以<span class="global_name_span">露薇</span>展開名為［伊甸計畫］的作戰，首先就是要完成［超時空領域之劍］，為此需要先擊敗其他五個［喪劍幻影］，從他們手中的劍吸取能量，簡單說就是先打五個弱小的，削弱敵方勢力同時增強自己的力量，再來對付最強的<span class="global_name_span">幻影.晦暝爾</span>。</p> <div class="global_ps_text"> <p>關於［幻影］，這裡有個設定，就是被歷史拋棄的可能性，所以每個［幻影］都有一個對應的真實人物，在生前因為某種原因最後才會成為［幻影］。</p> </div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/kVpWHPBTCoY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//序章
+  contentArr.push('<div class="title_text">幻靈之劍與祈誓的燈火</div> <p><span class="global_name_span">露薇</span>偵測到第一個［喪劍幻影］的蹤跡，帶著<span class="global_name_span">阿爾德</span>來到一個魔獸與人類戰爭的時代，這時候的人類分成很多股勢力，並沒有團結在一起，當中一個叫做［誓導騎士會］的組織，領導人<span class="global_name_span">蘭塞爾</span>試圖以［誓約］的力量團結統一所有人類。</p> <p>騎士會中有個叫做<span class="global_name_span">伊萊諾亞</span>的誓導師，她能透過儀式將每個人的誓約具現化成一把光狀的劍，這在普通人眼中類似於一種神蹟，而且經過<span class="global_name_span">蘭塞爾</span>的解說，這種具現化還可以用於戰鬥，稱之為［誓約之聖劍］，這讓<span class="global_name_span">阿爾德</span>不由得想起<span class="global_name_span">安娜貝爾</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/nkwU9w3eRQ8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了找尋［喪劍幻影］的蹤跡，<span class="global_name_span">阿爾德</span>兩人開始協助騎士會的行動，過程中得知幾件事情。</p> <ul> <li>騎士會預定邀請附近勢力，召開名為［大同誓盟典禮］的集會，利用<span class="global_name_span">伊萊諾亞</span>的能力，具現化在場所有人的誓約，促進人類的統一，增加對抗魔獸的資本。</li> <li>騎士會對於［誓約］十分尊崇，領地內的人被剝奪了［祈禱］的權利，至少名面上是這樣。</li> </ul> <p><span class="global_name_span">阿爾德</span>幫忙騎士會鎮壓了平原區域的魔獸後，來自［帝爾堡克同盟］的使節<span class="global_name_span">杜米特魯</span>拜訪騎士會並且尋求合作，由於［帝爾堡克同盟］內部意見並不統一，<span class="global_name_span">杜米特魯</span>提出由自己接受誓約儀式親眼見證［誓約之劍］，以此來說服其他人，但就在儀式完成後，［喪劍幻影］突然出現，並且襲擊了騎士會領地的人，<span class="global_name_span">阿爾德</span>透過［巨魔怨念］與［喪劍幻影］發生共鳴，看到了屬於［喪劍幻影］的記憶，那是一副領地內被屠戮燃燒的悲慘景象。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WrF9XGpGVII?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">阿爾德</span>一行人一路追著［喪劍幻影］，但無奈仍讓祂逃走，而這幻影的能力是［斬斷誓約之劍］，因此被襲擊的村民不僅所屬［誓約之劍］被毀，精神也遭受強大的衝擊，紛紛說出被襲擊都是［誓約］害得之類的話。</p> <p>既然知道［喪劍幻影］的目標是斬斷誓約，那麼［大同誓盟典禮］理應延期，然而<span class="global_name_span">蘭塞爾</span>卻不這麼想，既然不能改變領導人的想法，<span class="global_name_span">阿爾德</span>一行人打算做力所能及的事情，幫助騎士會鎮壓了森林區域的魔獸。</p> <p>之後<span class="global_name_span">蘭塞爾</span>與<span class="global_name_span">杜米特魯</span>密會，原來<span class="global_name_span">杜米特魯</span>想利用騎士會的力量當上新國家的國王，<span class="global_name_span">蘭塞爾</span>自然不想同流合汙，雙方談崩後，<span class="global_name_span">杜米特魯</span>也亮出與魔獸合作的底牌，本來這對<span class="global_name_span">蘭塞爾</span>也不是威脅，只是［喪劍幻影］突然出現，［誓約之聖劍］當場破碎，身心受創的<span class="global_name_span">蘭塞爾</span>在這情況下與魔獸交戰，最終失去生命。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LK1bm0yAKQM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>本以為［誓約之聖劍］的破碎與［喪劍幻影］有關，但其實是騎士會中的騎士因為<span class="global_name_span">杜米特魯</span>的私下賄賂而內心動搖，因此［誓約］力量大打折扣所致。</p> <p><span class="global_name_span">阿爾德</span>鼓勵<span class="global_name_span">伊萊諾亞</span>重新振作起來後，大家決定如期舉辦［大同誓盟典禮］，以此為誘餌引來［喪劍幻影］進行決鬥，戰鬥中<span class="global_name_span">伊萊諾亞</span>發現這個［喪劍幻影］的真身竟然是<span class="global_name_span">蘭塞爾</span>，準確的說是另一個時空被世界拋棄的其中一個<span class="global_name_span">蘭塞爾</span>的可能性，震驚之餘不慎露出破綻，還好她師傅及時擋在前面，硬挨了［喪劍幻影］一劍，雖然師傅重傷，但在還存有意識的情況下，說出［誓約］與［祈禱］同樣重要的話。</p> <p>在之後的調查也發現<span class="global_name_span">蘭塞爾</span>暗地裡有幫領地的村民建造隱蔽的祈禱用禮拜堂，這讓<span class="global_name_span">伊萊諾亞</span>想到對抗［喪劍幻影］的辦法，但首先要進一步擴大騎士會的勢力，招募更多心志堅定的夥伴加入。</p> <p>最終靠著凝聚許多堅強意志之人的［誓約之劍］，即便破碎都能再重新凝聚的力量，擊敗了［喪劍幻影］，理應這時一切應該告一段落，但<span class="global_name_span">露薇</span>提出可以讓時光倒流，回到決定是否舉辦［大同誓盟典禮］的那一刻。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/9Rat0IpUFks?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>為了拯救更多人，以及了解<span class="global_name_span">喪劍蘭塞爾</span>為何會成為毀滅誓約的幻影，<span class="global_name_span">伊萊諾亞</span>決定將時光倒流。</p> <p>這次<span class="global_name_span">伊萊諾亞</span>展現新的誓約形式，強大的人立下［誓約］，弱小的人獻上［祈禱］，最終凝聚成一把更加強大的［誓約之聖劍］，戰鬥過程中也得知<span class="global_name_span">喪劍蘭塞爾</span>的過去就是因為太過相信［誓約］，忽略人心的脆弱，最終領地被魔獸入侵，<span class="global_name_span">伊萊諾亞</span>與親人夥伴則被暴民奪去生命，自己也在絕望中自縊。</p> <p>擊敗<span class="global_name_span">喪劍蘭塞爾</span>後，<span class="global_name_span">蘭塞爾</span>在最後時刻利用這個身體容器與兒子<span class="global_name_span">加爾</span>告別，最終騎士會終於統一人類，建立新的王國［米格蘭斯］，而一直協助<span class="global_name_span">阿爾德</span>一行人的女騎士<span class="global_name_span">安</span>則將人們的［祈禱］化為力量，成為祈禱之騎士<span class="global_name_span">安娜</span>。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/AlROfxCjIqs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//幻靈之劍與祈誓的燈火
     
 
 
