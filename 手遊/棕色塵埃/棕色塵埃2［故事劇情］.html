@@ -121,6 +121,15 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  </p>
 
 
+ <p>
+  <label>店長主線：</label> 
+<select id="head_select_master" style="width: 20%;">
+  
+ </select>
+
+ </p>
+
+
 <hr />
 
 
@@ -162,9 +171,70 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
  </select>
  </p>
 
+
+ <p>
+
+  <label>店長主線：</label> 
+<select id="foot_select_master" style="width: 20%;">
+  
+ </select>
+ </p>
+
 <hr />
 
 <script>
+
+	//店長主線
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">CH01 次元邊界</div> <p>開頭貌似因為某件事情失敗，<span class="global_name_span">貝拉</span>指示<span class="global_name_span">羅安</span>重啟世界。</p> <p>接著<span class="global_name_span">店長</span>在［格魯菲餐廳］醒來，但是自己已經記不起來許多事情，於是<span class="global_name_span">貝拉</span>開始引導並且教<span class="global_name_span">店長</span>透過餐廳的工作收集慾望和情感，只要持續完成這些事情就能恢復記憶。</p> <p>幾天後，餐廳發生震動，<span class="global_name_span">貝拉</span>帶著<span class="global_name_span">店長</span>來到餐廳地下，一個被稱為［奧庫勒斯之門］的地方，這裡是整個餐廳的核心，有通往各個平行世界的後門，看著監視螢幕，有兩個世界因為情感力量的消失，導致裝置故障，眼下的任務就是去修復它。</p> <p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E5%BA%97%E9%95%B7%E5%8D%A1%E5%B8%B6CH01%EF%BC%BB%E6%AC%A1%E5%85%83%E9%82%8A%E7%95%8C01%EF%BC%BD%3A5?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p> <p><span class="global_name_span">貝拉</span>教<span class="global_name_span">店長</span>如何利用收集來的情感力量為裝置充能，修復完成後，<span class="global_name_span">貝拉</span>開始描述關於［格魯菲餐廳］真正的功用。</p> <p>每個世界誕生之初，都是由情感力量構成，［格魯菲餐廳］是為了避免這些世界產生混亂而設立的監測場所，然而<span class="global_name_span">伊蓓羅雅</span>的出現開始破壞這樣的平衡，她執著於消滅情感力量，只需要一個世界被她成功消滅，剩下的世界就會像骨牌效應一樣一個接一個毀滅，而<span class="global_name_span">店長</span>是唯一能收集並且操縱情感流動的人，為瀕臨滅亡的世界注入情感力量就是<span class="global_name_span">店長</span>的任務。</p> <p>就當<span class="global_name_span">貝拉</span>講得差不多時，餐廳又發生了震動，入口處與［夜世界］連結，<span class="global_name_span">悠絲緹亞</span>一行人狼狽地躲入餐廳，她們全身是傷，當中一個叫做<span class="global_name_span">艾雅</span>的白髮少女更是支撐不住倒地，<span class="global_name_span">貝拉</span>趕緊幫忙安排休息的地方。</p> <p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E5%BA%97%E9%95%B7%E5%8D%A1%E5%B8%B6CH01%EF%BC%BB%E6%AC%A1%E5%85%83%E9%82%8A%E7%95%8C02%EF%BC%BD%3A6?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p> <p>稍加休整後，<span class="global_name_span">悠絲緹亞</span>說起之前的經歷，她們一行人正準備前往惡魔之地［凱那爾］，但在路上卻遭到一群［墮天使］的攻擊，當中一個叫做<span class="global_name_span">蘭</span>的戰士特別強大，是守護［墮天使之地-雷文］的第十位［雷蓓莉絲］，她對<span class="global_name_span">悠絲緹亞</span>使用［泰拉］力量卻沒有墮落十分好奇，就想著抓<span class="global_name_span">悠絲緹亞</span>回去做實驗，危急時刻<span class="global_name_span">艾雅</span>使用最後力量解圍，但自己也因此狀態惡化，眾人只能立即逃跑，接下來就到了餐廳。</p> <p><span class="global_name_span">貝拉</span>立即看出<span class="global_name_span">艾雅</span>的狀態惡化是因為累積許多負面情感在體內導致的，於是引導<span class="global_name_span">店長</span>吸取<span class="global_name_span">艾雅</span>體內的能量，結果<span class="global_name_span">艾雅</span>瞬間就恢復了。</p> <p>既然夥伴已經沒事了，<span class="global_name_span">悠絲緹亞</span>隨即準備動身離開，只是看著一行人離去的背影，<span class="global_name_span">店長</span>始終還是放心不下。</p> <p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E5%BA%97%E9%95%B7%E5%8D%A1%E5%B8%B6CH01%EF%BC%BB%E6%AC%A1%E5%85%83%E9%82%8A%E7%95%8C03%EF%BC%BD%3A7?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p> <p>先離開的<span class="global_name_span">悠絲緹亞</span>一行人又遭到<span class="global_name_span">蘭</span>的攻擊，為了讓<span class="global_name_span">悠絲緹亞</span>因為［泰拉］墮落，<span class="global_name_span">蘭</span>不惜強行引出<span class="global_name_span">悠絲緹亞</span>內心的創傷，這時<span class="global_name_span">店長</span>強行介入，吸收<span class="global_name_span">悠絲緹亞</span>溢出的負面能量。</p> <p>雖然<span class="global_name_span">悠絲緹亞</span>翅膀確實被染黑，但卻沒有墮落的跡象，反而力量大增與<span class="global_name_span">蘭</span>打的有來有回，戰鬥正酣時，<span class="global_name_span">蘭</span>接到指令返回［墮天使之地-雷文］。</p> <p>戰鬥過後，大家在餐廳互相討論，發現共同的敵人都是夢境之主<span class="global_name_span">伊蓓羅雅</span>，於是<span class="global_name_span">店長</span>順理成章加入眾人的行列。</p> <p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E5%BA%97%E9%95%B7%E5%8D%A1%E5%B8%B6CH01%EF%BC%BB%E6%AC%A1%E5%85%83%E9%82%8A%E7%95%8C04%EF%BC%BD%3Af?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('CH01 次元邊界');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_master");
+  var footSelect = document.getElementById("foot_select_master");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+
+  initPage(1);
+
+  })();
 
   //活動卡帶
   (function(){
@@ -304,7 +374,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push('<div class="title_text">安潔莉卡</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E5%AE%89%E6%BD%94%E8%8E%89%E5%8D%A1%EF%BC%BD%3A6?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><div class="title_text">泰瑞絲</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E6%B3%B0%E7%91%9E%E7%B5%B2%EF%BC%BD%3A0?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E6%B3%B0%E7%91%9E%E7%B5%B2EX%EF%BC%BD%3A3?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><div class="title_text">羅安</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E7%BE%85%E5%AE%89%EF%BC%BD%3A3?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E7%BE%85%E5%AE%89EX%EF%BC%BD%3A0?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><div class="title_text">奧利維爾</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E5%A5%A7%E5%88%A9%E7%B6%AD%E7%88%BE%EF%BC%BD%3A8?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');//有緣之客(安潔莉卡,泰瑞絲,羅安,奧利維爾)
   contentArr.push('<div class="title_text">愛麗潔</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E6%84%9B%E9%BA%97%E6%BD%9401%EF%BC%BD%3Ab?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E6%84%9B%E9%BA%97%E6%BD%9402%EF%BC%BD%3Ae?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E6%84%9B%E9%BA%97%E6%BD%9403%EF%BC%BD%3Ab?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%9C%89%E7%B7%A3%E4%B9%8B%E5%AE%A2%EF%BC%BB%E6%84%9B%E9%BA%97%E6%BD%94EX%EF%BC%BD%3A8?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');//有緣之客(愛麗潔)
   contentArr.push('<div class="title_text">夢幻廣場</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E5%85%A7%E5%AE%B9%E5%8D%A1%E5%B8%B6%EF%BC%BB%E5%A4%A2%E5%B9%BB%E5%BB%A3%E5%A0%B4%EF%BC%BD%3A3?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><div class="title_text">釣魚</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E5%85%A7%E5%AE%B9%E5%8D%A1%E5%B8%B6%EF%BC%BB%E5%A4%A2%E5%B9%BB%E5%BB%A3%E5%A0%B4_%E9%87%A3%E9%AD%9A%EF%BC%BD%3Ab?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><div class="title_text">1000日煙火</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%A3%95%E8%89%B2%E5%A1%B5%E5%9F%832%EF%BC%BB1000%E6%97%A5%E7%85%99%E7%81%AB%EF%BC%BD%3A3?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p><div class="title_text">領地開啟</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E5%BB%A3%E5%A0%B4%EF%BC%BB%E9%A0%98%E5%9C%B0%E9%96%8B%E5%95%9F%EF%BC%BD%3A6?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');//夢幻廣場
-  contentArr.push('');
+  contentArr.push('<div class="title_text">開啟對話</div><p><iframe id="odysee-iframe" style="width:80%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/%40%E7%A9%BF%E8%B6%8A%E6%99%82%E7%A9%BA%E7%9A%84%E8%B2%93%E6%94%AF%E7%B7%9A%E5%8A%87%E6%83%85%3Ad%2F%E6%AD%BB%E9%AD%82%E4%B9%8B%E7%9B%A4%EF%BC%BB%E9%96%8B%E5%95%9F%E5%B0%8D%E8%A9%B1%EF%BC%BD%3A1?r=fmAkDE97HYuQUZFcjDdDgK3N3jtoSfmB" allowfullscreen></iframe></p>');//死魂之盤
 
   var pArr = [];
   pArr.push('');
@@ -319,6 +389,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push('有緣之客(安潔莉卡,泰瑞絲,羅安,奧利維爾)');
   pArr.push('有緣之客(愛麗潔)');
   pArr.push('夢幻廣場');
+  pArr.push('死魂之盤');
 
 
   var firstEnter = 0 ; 
@@ -576,8 +647,6 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
       scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
     }
   }
-  
-  initPage(1);
 
   })();
   
