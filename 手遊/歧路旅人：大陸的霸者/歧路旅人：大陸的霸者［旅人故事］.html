@@ -160,6 +160,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   
  </select>
 
+ <label>慶典：</label> 
+ <select id="head_select_happy" style="width: 20%;">
+  
+ </select>
+
  </p>
 
 <hr />
@@ -250,6 +255,11 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   
  </select>
 
+ <label>慶典：</label> 
+ <select id="foot_select_happy" style="width: 20%;">
+  
+ </select>
+
  </p>
 
 
@@ -257,6 +267,66 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 
 <script>
+
+  //慶典
+  (function(){
+    var contentArr = [] ;
+    contentArr.push('');
+    contentArr.push('<div class="title_text">舞者菲歐兒 海邊之舞</div> <p>換裝的<span class="global_name_span">菲歐兒</span>由於衣料變輕，戰鬥時相當不習慣，經過短暫的特訓，終於磨練出不同的戰鬥風格。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NPP1t9CLrsw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">菲歐兒EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8--4HhtjKjs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//舞者菲歐兒
+   contentArr.push('<div class="title_text">盜賊塔圖洛克</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GwlqWYqhWV0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">不會放過任何想要得到的獵物</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UmQQ8vEeMCE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//盜賊塔圖洛克
+    contentArr.push('<div class="title_text">舞者巴爾傑羅</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/y4jdbZuSrDE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">旅行章魚家族的羈絆</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/M6kGPcrOykU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//舞者巴爾傑羅
+    contentArr.push('<div class="title_text">盜賊莉妮特</div> <p>一家海水浴場的老闆因為老婆過世而一厥不振，甚至凶狠的趕跑來消費的<span class="global_name_span">莉妮特</span>一行人，但老闆的女兒卻友善地將眾人留下來，大家一起整理店面時發現老闆娘留下的遺書，決定重現店內經典的魔獸料理。</p> <p>老闆吃下魔獸料理後，想起過往與老婆的點滴，於是振作起來，<span class="global_name_span">莉妮特</span>一行人也因此在海水浴場如願玩了起來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ws-tYKnKENc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//盜賊莉妮特
+    contentArr.push('<div class="title_text">獵人艾特里克斯</div> <p><span class="global_name_span">艾特里克斯</span>以自己當餌，引誘並且清除在自己領地搞人口販賣的壞人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qbhuBv1DgBg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//獵人艾特里克斯
+  
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('舞者菲歐兒');
+  pArr.push('盜賊塔圖洛克');
+  pArr.push('舞者巴爾傑羅');
+  pArr.push('盜賊莉妮特');
+  pArr.push('獵人艾特里克斯');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_happy");
+  var footSelect = document.getElementById("foot_select_happy");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  initPage(1);
+
+  })();
 
   //霸者
   (function(){
@@ -915,18 +985,13 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 (function(){
     var contentArr = [] ;
     contentArr.push('');
-    contentArr.push('<div class="title_text">舞者菲歐兒 海邊之舞</div> <p>換裝的<span class="global_name_span">菲歐兒</span>由於衣料變輕，戰鬥時相當不習慣，經過短暫的特訓，終於磨練出不同的戰鬥風格。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/NPP1t9CLrsw?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">菲歐兒EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/8--4HhtjKjs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
     contentArr.push('<div class="title_text">藥師普里姆蘿潔 魅惑的治療</div> <p>因為城鎮流行起［桑謝德熱］，很多同事跟客人都病倒了，所以<span class="global_name_span">普里姆蘿潔</span>開始幫<span class="global_name_span">特毆</span>治療病人，意外發現自己藥師的才能。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/MZ_Hb-IX8zU?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">普里姆蘿潔EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7mQxda2iKRk?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//普里姆蘿潔EX
     contentArr.push('<div class="title_text">舞者阿拉烏妮重燃的希望</div> <p><span class="global_name_span">阿拉烏妮</span>想要重啟對［聖火神］的祈禱儀式，但是關鍵的［奉納舞］卻早已經失傳，於是她找來<span class="global_name_span">莉妮特</span>幫忙，兩人重新編排了新的舞蹈，這將成為新的傳統繼續延續下去。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/5MXuy42N4K4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">阿拉烏妮EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3wx3z3bY42g?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//阿拉烏妮EX
     contentArr.push('<div class="title_text">舞者海茵特森林的喧囂</div> <p><span class="global_name_span">海茵特</span>為了避免魔物與人類的衝突，特別接受了舞蹈訓練，利用這個技巧將魔物群引導遠離村子。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/08Fkh0xeHyQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">海茵特EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/IZrGtXbkHxw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//海茵特EX
     contentArr.push('<div class="title_text">獵人特蕾莎　被大自然包圍</div> <p>為了討伐魔物，<span class="global_name_span">特蕾莎</span>向<span class="global_name_span">斯凱亞克羅</span>學習獵人技巧，換上獵人服裝的<span class="global_name_span">特蕾莎</span>意外地融合進大自然內，最終隱藏人類氣息成功討伐魔物。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/tUOHVxANn04?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">特蕾莎EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/LUu4eul7szQ?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//特蕾莎EX
-    contentArr.push('<div class="title_text">潔卡莉特EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CxWLnOR4tMI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">潔卡莉特</span>買了一批瘦弱的馬，在路上遇到<span class="global_name_span">炎龍</span>，才得知這竟然是他的失蹤的愛馬［岩馬］，為了感謝<span class="global_name_span">潔卡莉特</span>，於是<span class="global_name_span">炎龍</span>送給她一套槍法家的服裝，<span class="global_name_span">潔卡莉特</span>因此開啟槍法家之路。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7QPEohTy2B0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//潔卡莉特EX
-    contentArr.push('<div class="title_text">塔圖洛克EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/GwlqWYqhWV0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">不會放過任何想要得到的獵物</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UmQQ8vEeMCE?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//塔圖洛克EX
-    contentArr.push('<div class="title_text">巴爾傑羅EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/y4jdbZuSrDE?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">旅行章魚家族的羈絆</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/M6kGPcrOykU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//巴爾傑羅EX
+    contentArr.push('<div class="title_text">潔卡莉特EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/CxWLnOR4tMI?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">潔卡莉特</span>買了一批瘦弱的馬，在路上遇到<span class="global_name_span">炎龍</span>，才得知這竟然是他的失蹤的愛馬［岩馬］，為了感謝<span class="global_name_span">潔卡莉特</span>，於是<span class="global_name_span">炎龍</span>送給她一套槍法家的服裝，<span class="global_name_span">潔卡莉特</span>因此開啟槍法家之路。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/7QPEohTy2B0?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//潔卡莉特EX    
     contentArr.push('<div class="title_text">迪特蕾娜EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/QAqlWpY7xAM?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>轉職成獵人的<span class="global_name_span">迪特蕾娜</span>誤將商人貓<span class="global_name_span">利克</span>當作獵物，還好及時停手才沒有釀成悲劇。</p> <p>之後<span class="global_name_span">迪特蕾娜</span>又成功利用獵人的技能，解救被魔獸抓走的<span class="global_name_span">利克</span>，接下來就是要用這新力量解決［畏孵之書］造成的混亂。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sR_bdQtooNs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//迪特蕾娜EX
-    contentArr.push('<div class="title_text">艾麗卡EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u3s8oIgEV98?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//艾麗卡EX
-    contentArr.push('<div class="title_text">莉妮特EX</div> <p>一家海水浴場的老闆因為老婆過世而一厥不振，甚至凶狠的趕跑來消費的<span class="global_name_span">莉妮特</span>一行人，但老闆的女兒卻友善地將眾人留下來，大家一起整理店面時發現老闆娘留下的遺書，決定重現店內經典的魔獸料理。</p> <p>老闆吃下魔獸料理後，想起過往與老婆的點滴，於是振作起來，<span class="global_name_span">莉妮特</span>一行人也因此在海水浴場如願玩了起來。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/Ws-tYKnKENc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//莉妮特EX
-    contentArr.push('<div class="title_text">艾特里克斯EX</div> <p><span class="global_name_span">艾特里克斯</span>以自己當餌，引誘並且清除在自己領地搞人口販賣的壞人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/qbhuBv1DgBg?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//艾特里克斯EX
+    contentArr.push('<div class="title_text">艾麗卡EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/u3s8oIgEV98?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//艾麗卡EX    
     contentArr.push('<div class="title_text">雷比娜EX</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eJe5P8W476I?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//雷比娜EX
     contentArr.push('');
     contentArr.push('');
@@ -934,18 +999,13 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   var pArr = [];
   pArr.push('');
-  pArr.push('菲歐兒EX');
   pArr.push('普里姆蘿潔EX');
   pArr.push('阿拉烏妮EX');
   pArr.push('海茵特EX');
   pArr.push('特蕾莎EX');
   pArr.push('潔卡莉特EX');
-  pArr.push('塔圖洛克EX');
-  pArr.push('巴爾傑羅EX');
   pArr.push('迪特蕾娜EX');
   pArr.push('艾麗卡EX');
-  pArr.push('莉妮特EX');
-  pArr.push('艾特里克斯EX');
   pArr.push('雷比娜EX');
 
 
