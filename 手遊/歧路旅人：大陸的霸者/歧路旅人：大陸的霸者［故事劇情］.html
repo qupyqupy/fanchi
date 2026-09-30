@@ -87,6 +87,14 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 </style>
 
 <hr />
+<div class="little_tittle">單機版</div>
+<p><label>單機一代：</label> 
+<select id="head_select_ot1" style="width: 20%;">
+  
+ </select>
+ </p>
+
+<hr />
 <div class="little_tittle">奧魯斯特拉篇</div>
 
 <p><label>主線劇情：</label> 
@@ -159,6 +167,16 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
 
 <div id="ch"></div>
+
+<hr />
+
+<div class="little_tittle">單機版</div>
+
+<p><label>單機一代：</label> 
+<select id="foot_select_ot1" style="width: 20%;">
+  
+ </select>
+</p>
 <hr />
 
 <div class="little_tittle">奧魯斯特拉篇</div>
@@ -229,6 +247,70 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 <hr />
 
 <script>
+	(function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">賽拉斯</div> <p><span class="global_name_span">賽拉斯</span>在王立學院當老師，熱於教學與分享知識，但<span class="global_name_span">伊馮校長</span>卻對他將王立學院的貴重資料以論文公開的方式嗤之以鼻，<span class="global_name_span">伊馮校長</span>只想著獨佔這些知識獲得利益，所以兩人一直都相處不融洽。</p> <p><span class="global_name_span">賽拉斯</span>調查書籍［聖火教會史］失竊的事件，找到犯人<span class="global_name_span">學者拉塞爾</span>，並且從他口中得到更多失竊書籍的下落，在整理調查中發現一本名為［邊獄之書］的貴重書籍也失竊了。</p> <p>這時女學生<span class="global_name_span">泰蕾茲</span>因為<span class="global_name_span">賽拉斯</span>對另一個學生<span class="global_name_span">瑪莉公主</span>過於親近，吃醋向<span class="global_name_span">伊馮校長</span>告發兩人正在發展戀情的謠言，因此<span class="global_name_span">賽拉斯</span>被處以流放離開的處罰，而這正合<span class="global_name_span">賽拉斯</span>的心意，如今就是很好的機會去尋找［邊獄之書］的下落。</p> <p>附帶一提<span class="global_name_span">賽拉斯</span>神經大條到把散播謠言的<span class="global_name_span">泰蕾茲</span>當成對學問有著深厚的研究興趣，一點都沒察覺到她散播謠言其實是因為忌妒喜愛的情緒。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/daPe5QtLyAw?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+  contentArr.push('<div class="title_text">特蕾莎</div> <p>有海盜入侵<span class="global_name_span">特蕾莎</span>居住的海港小鎮，在一個剛靠岸的商船船長<span class="global_name_span">雷歐</span>的幫助下，<span class="global_name_span">特蕾莎</span>搞出一桶［睡眠酒］，靠著演技獻給海盜們，總算把他們給迷暈了。</p> <p>就在<span class="global_name_span">特蕾莎</span>想把海盜搶走的東西給拿回來時，卻不慎驚醒了他們，即便裝傻充楞也沒辦法乎弄過去，還好商船船長<span class="global_name_span">雷歐</span>拿著一桿長槍來幫忙，原來他真實身分是傳說中的大海盜，這威名讓在場海盜嚇得直接烙跑。</p> <p>之後<span class="global_name_span">雷歐</span>邀請<span class="global_name_span">特蕾莎</span>去他船上參觀，並且執意要送一樣寶物給她，意外發現<span class="global_name_span">特蕾莎</span>擁有天生對物品的優秀識別能力，最終<span class="global_name_span">特蕾莎</span>挑了一個不起眼的手記，裡面記載了前一任擁有者在世界各處旅行的紀錄，被內容吸引的<span class="global_name_span">特蕾莎</span>決定出外旅行，並且由自己完成剩下一半的空白手記。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DvuLjM4O5WI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//特蕾莎篇
+  contentArr.push('<div class="title_text">歐爾貝克</div> <p><span class="global_name_span">歐爾貝克</span>曾經是［荷魯布爾古］的［剛劍騎士］，但好友<span class="global_name_span">艾爾哈特</span>卻在八年前的一次戰爭中，背叛自己的國家，親手結束主君的生命，失去好友與國家的<span class="global_name_span">歐爾貝克</span>之後來到［鵝卵石村］，化名<span class="global_name_span">巴克</span>當個普通的鄉下劍士。</p> <p>但亂世中的小鎮也不平靜，山賊襲擊了村莊，抓走仰慕自己的小孩<span class="global_name_span">菲利浦</span>，<span class="global_name_span">歐爾貝克</span>獨自來到賊窩要救出小孩，意外得知好友<span class="global_name_span">艾爾哈特</span>的情報，將山賊的事情解決之後，<span class="global_name_span">歐爾貝克</span>離開村子踏上旅程，不管如何他都想當面問問<span class="global_name_span">艾爾哈特</span>八年前的真相。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/DGtrz-HyekA?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//歐爾貝克篇
+  contentArr.push('<div class="title_text">普里姆蘿潔</div> <p><span class="global_name_span">普里姆蘿潔</span>小時候，父親被三個有著烏鴉刺青的男人殺害，為了復仇她來到沙漠小鎮［桑謝德］以舞孃的身分生活，因為有傳聞其中一名男人就在這出沒，為此她忍受了酒吧老闆的凌辱、騷擾，同事之間的忌妒迫害，還有村民的歧視眼光。</p> <p>只有同樣是舞孃的<span class="global_name_span">優絲法</span>對<span class="global_name_span">普里姆蘿潔</span>釋出善意，然而當有烏鴉刺青的其中一個男子出現時，發現他竟然與酒吧老闆<span class="global_name_span">赫爾根尼修</span>認識。</p> <p><span class="global_name_span">赫爾根尼修</span>發現<span class="global_name_span">普里姆蘿潔</span>的行動，並且抓住<span class="global_name_span">優絲法</span>，並在<span class="global_name_span">普里姆蘿潔</span>的眼前將其殺害，再無任何顧慮的<span class="global_name_span">普里姆蘿潔</span>擊敗<span class="global_name_span">赫爾根尼修</span>，並在他身上找到烏鴉刺青男子的情報，於是她離開村子，要去尋找殺父仇人。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/sVn6Ez41MJY?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');//普里姆蘿潔篇
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+  contentArr.push('');
+
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('賽拉斯篇');
+  pArr.push('特蕾莎篇');
+  pArr.push('歐爾貝克篇');
+  pArr.push('普里姆蘿潔篇');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_ot1");
+  var footSelect = document.getElementById("foot_select_ot1");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+
+  })();
+
   (function(){
     var contentArr = [] ;
     contentArr.push('');
