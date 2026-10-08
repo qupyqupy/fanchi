@@ -137,6 +137,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//長夜漫漫
   activityArr.push('');//白浪逐潮
   activityArr.push('');//時何來春
+  activityArr.push('');//千山重明
 
 
 
@@ -171,6 +172,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('長夜漫漫');
   paArr.push('白浪逐潮');
   paArr.push('時何來春');
+  paArr.push('千山重明');
 
 
   var contentArr = [];
@@ -204,6 +206,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct27(1));
   contentArr.push(getAct28(1));
   contentArr.push(getAct29(1));
+  contentArr.push(getAct30(1));
 
   var pArr = [];
   pArr.push([]);
@@ -236,6 +239,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct27(2));
   pArr.push(getAct28(2));
   pArr.push(getAct29(2));
+  pArr.push(getAct30(2));
 
 
   var firstEnter = 0 ; 
@@ -298,13 +302,29 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct30(idx) {
+  function getAct31(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
       resultIdx.push('');
       resultIdx.push('');
       resultIdx.push('');
+
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('');
+
+    return result;
+  }
+
+  function getAct30(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('千山重明');
 
 
       return resultIdx;
