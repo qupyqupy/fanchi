@@ -130,6 +130,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//迷霧的賞金
   activityArr.push('');//火柴 煉金術與聖誕夜
   activityArr.push('');//命運的重逢
+  activityArr.push('');//降臨! 異動的王座
 
 
 
@@ -154,6 +155,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('迷霧的賞金');
   paArr.push('火柴 煉金術與聖誕夜');
   paArr.push('命運的重逢');
+  paArr.push('降臨! 異動的王座');
 
 
 
@@ -178,6 +180,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct17(1));
   contentArr.push(getAct18(1));
   contentArr.push(getAct19(1));
+  contentArr.push(getAct20(1));
 
   var pArr = [];
   pArr.push([]);
@@ -200,6 +203,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct17(2));
   pArr.push(getAct18(2));
   pArr.push(getAct19(2));
+  pArr.push(getAct20(2));
 
 
   var firstEnter = 0 ; 
@@ -262,7 +266,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct20(idx) {
+  function getAct21(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -273,6 +277,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     var result = [] ;
     result.push('');
     result.push('');
+
+    return result;
+  }
+
+  function getAct20(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+      resultIdx.push('挑戰');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<p>劇情非常的簡陋，大概就是<span class="global_name_span">破壞神</span>藉著<span class="global_name_span">庫魯加</span>準備入侵［艾路薩利亞］，皇帝<span class="global_name_span">巴恩哈特</span>第一個發現，並且與帝國四將一起阻止［黑光流］，同時與稍微恢復神智的<span class="global_name_span">夜叉王凱</span>合作，要一起擊敗<span class="global_name_span">破壞神</span>與<span class="global_name_span">庫魯加</span>。</p> <p>然後就是<span class="global_name_span">夜叉王凱</span>引導集結了<span class="global_name_span">艾爾文</span>、<span class="global_name_span">修羅王秋亞人</span>等夥伴，最終擊敗降臨在<span class="global_name_span">庫魯加</span>身上的<span class="global_name_span">破壞神</span>。</p> <div class="title_text">漆黑的王座、羽落的指引</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/aDJDtzF_So8?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">炎龍的認可、幻霧之誡、騎士的決鬥、黑暗的真相</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/fJahRc_QF34?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">封鎮之源、帝國的意志</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/UXajNBqkx6Y?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <div class="title_text">破曉之戰</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/L1_Eh1hIJuU?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('<div class="title_text">轉生！黎明之光, 來襲！侵染之影</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/B7l-qk6qJCc?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">破滅！黑暗之心</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/HFAgVWwz0Ec?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">守護！流光之火</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/l6XFWcp3v2U?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">終結！破曉之日</div><p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/oy3dFcbSYWs?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return result;
   }
