@@ -176,6 +176,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   activityArr.push('');//造夢慶典大作戰
   activityArr.push('');//駛向無盡之海
   activityArr.push('');//穿越時空的祈願
+  activityArr.push('');//夢幻電影節
 
 
 
@@ -220,6 +221,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   paArr.push('造夢慶典大作戰');
   paArr.push('駛向無盡之海');
   paArr.push('穿越時空的祈願');
+  paArr.push('夢幻電影節');
 
 
   var contentArr = [];
@@ -263,6 +265,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   contentArr.push(getAct37(1));
   contentArr.push(getAct38(1));
   contentArr.push(getAct39(1));
+  contentArr.push(getAct40(1));
 
 
   var pArr = [];
@@ -306,6 +309,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
   pArr.push(getAct37(2));
   pArr.push(getAct38(2));
   pArr.push(getAct39(2));
+  pArr.push(getAct40(2));
 
 
   var firstEnter = 0 ; 
@@ -368,7 +372,7 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 
   initAct(1);
 
-  function getAct40(idx) {
+  function getAct41(idx) {
     if (idx == 2){
       var resultIdx = [];
       resultIdx.push('');
@@ -381,6 +385,23 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
     result.push('');
     result.push('');
     result.push('');
+
+    return result;
+  }
+
+  function getAct40(idx) {
+    if (idx == 2){
+      var resultIdx = [];
+      resultIdx.push('');
+      resultIdx.push('劇情');
+      resultIdx.push('挑戰');
+
+      return resultIdx;
+    }
+    var result = [] ;
+    result.push('');
+    result.push('<div class="title_text">波贊魯的救贖、浪漫永業號</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/1qHmIdBwvk4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">負債者聯盟、午夜閃靈</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/eiiPDTlsXP4?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">功夫熊媽、天下第一武道會</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/yaxpABLZ-O0?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">隱藏關卡</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/OKGg8KIY3Wc?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+    result.push('<div class="title_text">奪寶奇兵、越獄</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/lklr1nNjfZc?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">賭博默示錄</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/rA2G3uY2Y8w?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">死亡郵輪</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/f6tr275RpYM?wmode=transparent" title="YouTube video player" width="560"></iframe></p><div class="title_text">飢餓站台</div> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/RezY_MeGVYM?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
 
     return result;
   }
