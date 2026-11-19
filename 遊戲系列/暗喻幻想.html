@@ -1,0 +1,219 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>　主線：</label> 
+<select id="head_select_o" style="width: 15%;">
+  
+ </select>
+ <label>支線：</label> 
+<select id="head_select_m" style="width: 15%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+<hr />
+<p><label>　主線：</label> 
+<select id="foot_select_o" style="width: 15%;">
+  
+ </select>
+ <label>支線：</label> 
+<select id="foot_select_m" style="width: 15%;">
+  
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+  (function(){
+    var contentArr = [] ;
+    contentArr.push('');
+  contentArr.push('');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">6月篇</div> <p>故事發生在王國王都，現任國王在寢宮中遭到野心勃勃的軍官<span class="global_name_span">路易</span>無情刺殺，使整個王國瞬間陷入群龍無首的混亂局面。</p> <p>身為受人歧視的少數種族［艾爾達族］少年，主角為了拯救多年前遭詛咒而陷入沉睡的摯友王子，與妖精夥伴<span class="global_name_span">嘉莉卡</span>一同潛入王都，準備執行反抗軍秘密交辦的任務。</p> <p>兩人此行的目標是與潛伏在王國軍中的臥底同志<span class="global_name_span">葛萊亞斯</span>接頭，並聯手刺殺施下詛咒的元兇<span class="global_name_span">路易</span>，藉此打破王子身上的詛咒。</p> <p>為了順利接近身為軍方高層的目標，主角在王都的徵兵處報名從軍，並在現場結識了出身沒落貴族、為人正直且富有正義感的［克雷瑪族］青年<span class="global_name_span">斯特羅爾</span>。</p> <p>接著主角與<span class="global_name_span">斯特羅爾</span>正式被編入新兵部隊，隨即奉命搭乘馬車出發，前往［北部邊境要塞］執行任務。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/dIM80ykByQU?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>然而就在主角與<span class="global_name_span">斯特羅爾</span>抵達北部邊境要塞時，卻發現這座防線早已遭到未知怪物［源人］的血腥屠戮，駐守士兵幾乎全軍覆沒。</p> <p>面對遠超認知、散發著絕望與不安氣息的扭曲怪物，兩人一度陷入必死的絕境。</p> <p>在保護同伴的強烈意志驅使下，主角內心深處響起一道聲音，接著從胸口拔出圓盤狀的東西，覺醒名為［探究者］的力量，隨後將恐怖的源人擊敗。</p> <p>戰後，兩人終於見到臥底的同志<span class="global_name_span">葛萊亞斯</span>，在夜晚的營火旁正式確認了彼此暗殺<span class="global_name_span">路易</span>、拯救王子的共同目標。</p> <p>主角也在這晚的睡夢中進入了神秘空間，遇見了自稱作家的神祕男子<span class="global_name_span">摩爾</span>，獲得了掌控與研究各種原型之力的關鍵指引。</p> <p>隔天清晨，為了秘密潛回王都，一行人決定穿越危險重重的［諾爾德廢棄礦山］，在礦坑入口處做好萬全準備後，正式踏入這座充滿魔物與秘密的地下迷宮。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/3hHoCe3dSOI?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('6月篇');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_o");
+  var footSelect = document.getElementById("foot_select_o");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  initPage(1);
+
+
+  })();
+
+  
+  
+</script>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
