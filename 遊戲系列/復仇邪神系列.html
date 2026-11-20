@@ -1,0 +1,219 @@
+<style type="text/css">
+.title_text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 3px white, 0 0 5px black;
+  padding: 3px;
+  letter-spacing: 3px;
+
+  
+  background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;
+}
+.foot_btn {
+  width: 50%;
+}
+</style>
+
+<hr />
+<p><label>二代主線：</label> 
+<select id="head_select_o" style="width: 15%;">
+  
+ </select>
+ <label>二代支線：</label> 
+<select id="head_select_m" style="width: 15%;">
+  
+ </select>
+ </p>
+
+<hr />
+<div id="ch"></div>
+<hr />
+<p><label>二代主線：</label> 
+<select id="foot_select_o" style="width: 15%;">
+  
+ </select>
+ <label>二代支線：</label> 
+<select id="foot_select_m" style="width: 15%;">
+  
+ </select>
+ </p>
+
+
+
+<hr />
+
+<script>
+  (function(){
+    var contentArr = [] ;
+    contentArr.push('');
+  contentArr.push('');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('');
+
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_m");
+  var footSelect = document.getElementById("foot_select_m");
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  
+  })();
+
+  (function(){
+    var contentArr = [] ;
+  contentArr.push('');
+  contentArr.push('<div class="title_text">傑拉爾篇</div> <p>故事開端於傳說中被稱為救世主的［七英雄］再度現身之際，然而他們並非前來拯救世界，而是化身為帶來毀滅與災厄的復仇者。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/WgSsPnOjXRo?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p>在［巴雷努帝國］的首都［阿瓦隆］，皇帝<span class="global_name_span">雷昂</span>帶領著勇猛的長子<span class="global_name_span">維克托</span>以及性格溫厚、不擅長戰鬥的次子<span class="global_name_span">傑拉爾</span>，一同在帝國邊境討伐作亂的魔物。</p> <p>就在<span class="global_name_span">雷昂</span>與<span class="global_name_span">傑拉爾</span>外出征戰之際，七英雄之一的<span class="global_name_span">庫吉辛</span>突然襲擊了留守［阿瓦隆］的<span class="global_name_span">維克托</span>，並以詭異的必殺技［奪魂］無情地奪走了他的性命。</p> <p>得知長子慘死的噩耗後，<span class="global_name_span">雷昂</span>悲憤交加，為了向<span class="global_name_span">庫吉辛</span>復仇，他與神秘的魔女<span class="global_name_span">歐艾薇</span>立下契約，獲得了能將記憶與能力代代相傳的禁忌秘術［傳承法］。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/6ESttsAZpyA?wmode=transparent" title="YouTube video player" width="560"></iframe></p> <p><span class="global_name_span">雷昂</span>帶著<span class="global_name_span">傑拉爾</span>殺入<span class="global_name_span">庫吉辛</span>所在的［索蒙］，雖然父子倆聯手重創了強敵，但<span class="global_name_span">雷昂</span>卻在親自承受<span class="global_name_span">庫吉辛</span>的［靈魂強奪］時耗盡生命，臨終前發動［傳承法］將畢生力量與復仇的意志託付給了次子<span class="global_name_span">傑拉爾</span>。</p> <p>繼承父親遺志的<span class="global_name_span">傑拉爾</span>正式登基成為新任皇帝，他一改過去懦弱的性格，迅速整合帝國軍力，首先帶兵出擊並成功掃蕩了趁亂襲擊首都［阿瓦隆］的［哥布林］巢穴，邁出了對抗七英雄的第一步。</p> <p><iframe allowfullscreen="" class="no-convert" frameborder="0" height="315" src="https://www.youtube.com/embed/e1iNp_EiLa4?wmode=transparent" title="YouTube video player" width="560"></iframe></p>');
+
+
+  var pArr = [];
+  pArr.push('');
+  pArr.push('傑拉爾篇');
+
+
+  var firstEnter = 0 ; 
+  var nowPage = 1;
+  var maxCount = contentArr.length - 1;
+  var headSelect = document.getElementById("head_select_o");
+  var footSelect = document.getElementById("foot_select_o");
+
+
+  for (var i = 1; i < pArr.length; i++) {
+    headSelect.add(new Option(pArr[i], i));
+    footSelect.add(new Option(pArr[i], i));
+  }
+  
+
+  headSelect.onchange = function () {
+    initPage(headSelect.value);
+  } 
+  
+  footSelect.onchange = function () {
+    initPage(footSelect.value);
+  } 
+  
+  
+  function initPage(value) {
+    nowPage = value;
+    document.getElementById("ch").innerHTML = contentArr[value];
+
+    
+    if (firstEnter == 0) {
+      firstEnter = 1 ; 
+    }
+    else {
+      headSelect.value = value ;
+      footSelect.value = value ;    
+      scroll(0,headSelect.offsetTop + headSelect.offsetParent.offsetTop);
+    }
+  }
+  initPage(1);
+
+
+  })();
+
+  
+  
+</script>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
